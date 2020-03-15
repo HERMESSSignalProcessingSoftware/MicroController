@@ -1,0 +1,56 @@
+\hypertarget{stm32f7xx__hal__hcd_8c}{}\doxysection{D\+:/\+H\+E\+R\+M\+E\+S\+S\+\_\+\+S\+P\+Software/\+Micro\+Controller/\+Cube/\+Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Src/stm32f7xx\+\_\+hal\+\_\+hcd.c File Reference}
+\label{stm32f7xx__hal__hcd_8c}\index{D:/HERMESS\_SPSoftware/MicroController/Cube/Drivers/STM32F7xx\_HAL\_Driver/Src/stm32f7xx\_hal\_hcd.c@{D:/HERMESS\_SPSoftware/MicroController/Cube/Drivers/STM32F7xx\_HAL\_Driver/Src/stm32f7xx\_hal\_hcd.c}}
+
+
+H\+CD H\+AL module driver. This file provides firmware functions to manage the following functionalities of the U\+SB Peripheral Controller\+:  
+
+
+{\ttfamily \#include \char`\"{}stm32f7xx\+\_\+hal.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+H\+CD H\+AL module driver. This file provides firmware functions to manage the following functionalities of the U\+SB Peripheral Controller\+: 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team
+\begin{DoxyItemize}
+\item Initialization and de-\/initialization functions
+\item IO operation functions
+\item Peripheral Control functions
+\item Peripheral State functions
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyVerb}==============================================================================
+                  ##### How to use this driver #####
+==============================================================================
+[..]
+  (#)Declare a HCD_HandleTypeDef handle structure, for example:
+     HCD_HandleTypeDef  hhcd;
+
+  (#)Fill parameters of Init structure in HCD handle
+
+  (#)Call HAL_HCD_Init() API to initialize the HCD peripheral (Core, Host core, ...)
+
+  (#)Initialize the HCD low level resources through the HAL_HCD_MspInit() API:
+      (##) Enable the HCD/USB Low Level interface clock using the following macros
+           (+++) __HAL_RCC_USB_OTG_FS_CLK_ENABLE();
+           (+++) __HAL_RCC_USB_OTG_HS_CLK_ENABLE(); (For High Speed Mode)
+           (+++) __HAL_RCC_USB_OTG_HS_ULPI_CLK_ENABLE(); (For High Speed Mode)
+
+      (##) Initialize the related GPIO clocks
+      (##) Configure HCD pin-out
+      (##) Configure HCD NVIC interrupt
+
+  (#)Associate the Upper USB Host stack to the HAL HCD Driver:
+      (##) hhcd.pData = phost;
+
+  (#)Enable HCD transmission and reception:
+      (##) HAL_HCD_Start();\end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2017 S\+T\+Microelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under B\+SD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+B\+S\+D-\/3-\/\+Clause 

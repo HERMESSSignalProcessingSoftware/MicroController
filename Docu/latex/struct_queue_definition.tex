@@ -1,0 +1,46 @@
+\hypertarget{struct_queue_definition}{}\doxysection{Queue\+Definition Struct Reference}
+\label{struct_queue_definition}\index{QueueDefinition@{QueueDefinition}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a487dc7e43b380c58212cba72bc33e0ed}\label{struct_queue_definition_a487dc7e43b380c58212cba72bc33e0ed}} 
+int8\+\_\+t $\ast$ {\bfseries pc\+Head}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_abdf13cc013c8488848cee3fce4f0fed3}\label{struct_queue_definition_abdf13cc013c8488848cee3fce4f0fed3}} 
+int8\+\_\+t $\ast$ {\bfseries pc\+Write\+To}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a465f204ad74d1afa02f57ebc8931a8d6}\label{struct_queue_definition_a465f204ad74d1afa02f57ebc8931a8d6}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\mbox{\hyperlink{struct_queue_pointers}{QueuePointers\_t}} {\bfseries xQueue}\\
+\>\mbox{\hyperlink{struct_semaphore_data}{SemaphoreData\_t}} {\bfseries xSemaphore}\\
+\} {\bfseries u}\\
+
+\end{tabbing}\item 
+\mbox{\Hypertarget{struct_queue_definition_aaab135c4345cb0393d6ff3cd5164c7b2}\label{struct_queue_definition_aaab135c4345cb0393d6ff3cd5164c7b2}} 
+\mbox{\hyperlink{structx_l_i_s_t}{List\+\_\+t}} {\bfseries x\+Tasks\+Waiting\+To\+Send}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_af6d61526f77beee659cd604a0c473359}\label{struct_queue_definition_af6d61526f77beee659cd604a0c473359}} 
+\mbox{\hyperlink{structx_l_i_s_t}{List\+\_\+t}} {\bfseries x\+Tasks\+Waiting\+To\+Receive}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a12b07a40152d0f21488ca06d362d13d1}\label{struct_queue_definition_a12b07a40152d0f21488ca06d362d13d1}} 
+volatile U\+Base\+Type\+\_\+t {\bfseries ux\+Messages\+Waiting}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_ae80d17a812c669d4d41265b7f693988c}\label{struct_queue_definition_ae80d17a812c669d4d41265b7f693988c}} 
+U\+Base\+Type\+\_\+t {\bfseries ux\+Length}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a81bb7d3826909244baa9debf5a55abb0}\label{struct_queue_definition_a81bb7d3826909244baa9debf5a55abb0}} 
+U\+Base\+Type\+\_\+t {\bfseries ux\+Item\+Size}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_ac750a3f75a6e174adbc697e473a0dd13}\label{struct_queue_definition_ac750a3f75a6e174adbc697e473a0dd13}} 
+volatile int8\+\_\+t {\bfseries c\+Rx\+Lock}
+\item 
+\mbox{\Hypertarget{struct_queue_definition_a24ac3f0707f098da2a22244d843fcf82}\label{struct_queue_definition_a24ac3f0707f098da2a22244d843fcf82}} 
+volatile int8\+\_\+t {\bfseries c\+Tx\+Lock}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+H\+E\+R\+M\+E\+S\+S\+\_\+\+S\+P\+Software/\+Micro\+Controller/\+Cube/\+Middlewares/\+Third\+\_\+\+Party/\+Free\+R\+T\+O\+S/\+Source/queue.\+c\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{group___s_p_i___exported___functions___group1}{}\doxysection{S\+P\+I\+\_\+\+Exported\+\_\+\+Functions\+\_\+\+Group1}
+\label{group___s_p_i___exported___functions___group1}\index{SPI\_Exported\_Functions\_Group1@{SPI\_Exported\_Functions\_Group1}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___s_p_i___exported___functions___group1_gaadb9d40e710c714d96b2501996658c44}\label{group___s_p_i___exported___functions___group1_gaadb9d40e710c714d96b2501996658c44}} 
+\mbox{\hyperlink{stm32f7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def}} {\bfseries H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+Init} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{S\+P\+I\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+\mbox{\Hypertarget{group___s_p_i___exported___functions___group1_gaca2db2a7bbed96ac013c565080fb61f2}\label{group___s_p_i___exported___functions___group1_gaca2db2a7bbed96ac013c565080fb61f2}} 
+\mbox{\hyperlink{stm32f7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def}} {\bfseries H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+De\+Init} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{S\+P\+I\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group1_ga17f583be14b22caffa6c4e56dcd035ef}{H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{S\+P\+I\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\begin{DoxyCompactList}\small\item\em S\+PI M\+SP Initialization This function configures the hardware resources used in this example. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group1_gabadc4d4974af1afd943e8d13589068e1}{H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{S\+P\+I\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\begin{DoxyCompactList}\small\item\em S\+PI M\+SP De-\/\+Initialization This function freeze the hardware resources used in this example. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___s_p_i___exported___functions___group1_gabadc4d4974af1afd943e8d13589068e1}\label{group___s_p_i___exported___functions___group1_gabadc4d4974af1afd943e8d13589068e1}} 
+\index{SPI\_Exported\_Functions\_Group1@{SPI\_Exported\_Functions\_Group1}!HAL\_SPI\_MspDeInit@{HAL\_SPI\_MspDeInit}}
+\index{HAL\_SPI\_MspDeInit@{HAL\_SPI\_MspDeInit}!SPI\_Exported\_Functions\_Group1@{SPI\_Exported\_Functions\_Group1}}
+\doxysubsubsection{\texorpdfstring{HAL\_SPI\_MspDeInit()}{HAL\_SPI\_MspDeInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{S\+P\+I\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hspi }\end{DoxyParamCaption})}
+
+
+
+S\+PI M\+SP De-\/\+Initialization This function freeze the hardware resources used in this example. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hspi} & S\+PI handle pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+S\+P\+I1 G\+P\+IO Configuration ~\newline
+ P\+D7 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+M\+O\+SI P\+G9 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+M\+I\+SO P\+G11 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+S\+CK
+
+S\+P\+I2 G\+P\+IO Configuration ~\newline
+ P\+C1 -\/-\/-\/---$>$ S\+P\+I2\+\_\+\+M\+O\+SI P\+C2 -\/-\/-\/---$>$ S\+P\+I2\+\_\+\+M\+I\+SO P\+A9 -\/-\/-\/---$>$ S\+P\+I2\+\_\+\+S\+CK
+
+S\+P\+I3 G\+P\+IO Configuration ~\newline
+ P\+B2 -\/-\/-\/---$>$ S\+P\+I3\+\_\+\+M\+O\+SI P\+C10 -\/-\/-\/---$>$ S\+P\+I3\+\_\+\+S\+CK P\+C11 -\/-\/-\/---$>$ S\+P\+I3\+\_\+\+M\+I\+SO
+
+S\+P\+I4 G\+P\+IO Configuration ~\newline
+ P\+E2 -\/-\/-\/---$>$ S\+P\+I4\+\_\+\+S\+CK P\+E5 -\/-\/-\/---$>$ S\+P\+I4\+\_\+\+M\+I\+SO P\+E6 -\/-\/-\/---$>$ S\+P\+I4\+\_\+\+M\+O\+SI
+
+S\+P\+I5 G\+P\+IO Configuration ~\newline
+ P\+F7 -\/-\/-\/---$>$ S\+P\+I5\+\_\+\+S\+CK P\+F8 -\/-\/-\/---$>$ S\+P\+I5\+\_\+\+M\+I\+SO P\+F9 -\/-\/-\/---$>$ S\+P\+I5\+\_\+\+M\+O\+SI
+
+S\+P\+I6 G\+P\+IO Configuration ~\newline
+ P\+A6 -\/-\/-\/---$>$ S\+P\+I6\+\_\+\+M\+I\+SO P\+A7 -\/-\/-\/---$>$ S\+P\+I6\+\_\+\+M\+O\+SI P\+G13 -\/-\/-\/---$>$ S\+P\+I6\+\_\+\+S\+CK\mbox{\Hypertarget{group___s_p_i___exported___functions___group1_ga17f583be14b22caffa6c4e56dcd035ef}\label{group___s_p_i___exported___functions___group1_ga17f583be14b22caffa6c4e56dcd035ef}} 
+\index{SPI\_Exported\_Functions\_Group1@{SPI\_Exported\_Functions\_Group1}!HAL\_SPI\_MspInit@{HAL\_SPI\_MspInit}}
+\index{HAL\_SPI\_MspInit@{HAL\_SPI\_MspInit}!SPI\_Exported\_Functions\_Group1@{SPI\_Exported\_Functions\_Group1}}
+\doxysubsubsection{\texorpdfstring{HAL\_SPI\_MspInit()}{HAL\_SPI\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{S\+P\+I\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hspi }\end{DoxyParamCaption})}
+
+
+
+S\+PI M\+SP Initialization This function configures the hardware resources used in this example. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hspi} & S\+PI handle pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+S\+P\+I1 G\+P\+IO Configuration ~\newline
+ P\+D7 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+M\+O\+SI P\+G9 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+M\+I\+SO P\+G11 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+S\+CK
+
+S\+P\+I2 G\+P\+IO Configuration ~\newline
+ P\+C1 -\/-\/-\/---$>$ S\+P\+I2\+\_\+\+M\+O\+SI P\+C2 -\/-\/-\/---$>$ S\+P\+I2\+\_\+\+M\+I\+SO P\+A9 -\/-\/-\/---$>$ S\+P\+I2\+\_\+\+S\+CK
+
+S\+P\+I3 G\+P\+IO Configuration ~\newline
+ P\+B2 -\/-\/-\/---$>$ S\+P\+I3\+\_\+\+M\+O\+SI P\+C10 -\/-\/-\/---$>$ S\+P\+I3\+\_\+\+S\+CK P\+C11 -\/-\/-\/---$>$ S\+P\+I3\+\_\+\+M\+I\+SO
+
+S\+P\+I4 G\+P\+IO Configuration ~\newline
+ P\+E2 -\/-\/-\/---$>$ S\+P\+I4\+\_\+\+S\+CK P\+E5 -\/-\/-\/---$>$ S\+P\+I4\+\_\+\+M\+I\+SO P\+E6 -\/-\/-\/---$>$ S\+P\+I4\+\_\+\+M\+O\+SI
+
+S\+P\+I5 G\+P\+IO Configuration ~\newline
+ P\+F7 -\/-\/-\/---$>$ S\+P\+I5\+\_\+\+S\+CK P\+F8 -\/-\/-\/---$>$ S\+P\+I5\+\_\+\+M\+I\+SO P\+F9 -\/-\/-\/---$>$ S\+P\+I5\+\_\+\+M\+O\+SI
+
+S\+P\+I6 G\+P\+IO Configuration ~\newline
+ P\+A6 -\/-\/-\/---$>$ S\+P\+I6\+\_\+\+M\+I\+SO P\+A7 -\/-\/-\/---$>$ S\+P\+I6\+\_\+\+M\+O\+SI P\+G13 -\/-\/-\/---$>$ S\+P\+I6\+\_\+\+S\+CK

@@ -1,0 +1,52 @@
+\hypertarget{stm32f7xx__it_8c}{}\doxysection{D\+:/\+H\+E\+R\+M\+E\+S\+S\+\_\+\+S\+P\+Software/\+Micro\+Controller/\+Cube/\+Src/stm32f7xx\+\_\+it.c File Reference}
+\label{stm32f7xx__it_8c}\index{D:/HERMESS\_SPSoftware/MicroController/Cube/Src/stm32f7xx\_it.c@{D:/HERMESS\_SPSoftware/MicroController/Cube/Src/stm32f7xx\_it.c}}
+
+
+Interrupt Service Routines.  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f7xx\+\_\+it.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{stm32f7xx__it_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}\label{stm32f7xx__it_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}} 
+void \mbox{\hyperlink{stm32f7xx__it_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}{N\+M\+I\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Non maskable interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32f7xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea}\label{stm32f7xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea}} 
+void \mbox{\hyperlink{stm32f7xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea}{Hard\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Hard fault interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32f7xx__it_8c_a3150f74512510287a942624aa9b44cc5}\label{stm32f7xx__it_8c_a3150f74512510287a942624aa9b44cc5}} 
+void \mbox{\hyperlink{stm32f7xx__it_8c_a3150f74512510287a942624aa9b44cc5}{Mem\+Manage\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Memory management fault. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32f7xx__it_8c_a850cefb17a977292ae5eb4cafa9976c3}\label{stm32f7xx__it_8c_a850cefb17a977292ae5eb4cafa9976c3}} 
+void \mbox{\hyperlink{stm32f7xx__it_8c_a850cefb17a977292ae5eb4cafa9976c3}{Bus\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Pre-\/fetch fault, memory access fault. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32f7xx__it_8c_a1d98923de2ed6b7309b66f9ba2971647}\label{stm32f7xx__it_8c_a1d98923de2ed6b7309b66f9ba2971647}} 
+void \mbox{\hyperlink{stm32f7xx__it_8c_a1d98923de2ed6b7309b66f9ba2971647}{Usage\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Undefined instruction or illegal state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32f7xx__it_8c_adbdfb05858cc36fc520974df37ec3cb0}\label{stm32f7xx__it_8c_adbdfb05858cc36fc520974df37ec3cb0}} 
+void \mbox{\hyperlink{stm32f7xx__it_8c_adbdfb05858cc36fc520974df37ec3cb0}{Debug\+Mon\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Debug monitor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32f7xx__it_8c_ad1fd361bc5ad89facee67c76d1ff8dc0}\label{stm32f7xx__it_8c_ad1fd361bc5ad89facee67c76d1ff8dc0}} 
+void \mbox{\hyperlink{stm32f7xx__it_8c_ad1fd361bc5ad89facee67c76d1ff8dc0}{T\+I\+M1\+\_\+\+U\+P\+\_\+\+T\+I\+M10\+\_\+\+I\+R\+Q\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles T\+I\+M1 update interrupt and T\+I\+M10 global interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{stm32f7xx__it_8c_a25fc663547539bc49fecc0011bd76ab5}\label{stm32f7xx__it_8c_a25fc663547539bc49fecc0011bd76ab5}} 
+\mbox{\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def}} {\bfseries htim1}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interrupt Service Routines. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2020 S\+T\+Microelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license S\+L\+A0044, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+S\+L\+A0044 
