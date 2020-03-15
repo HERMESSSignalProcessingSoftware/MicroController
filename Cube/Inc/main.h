@@ -58,6 +58,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define UART4_DAPI_RX_Pin GPIO_PIN_9
+#define UART4_DAPI_RX_GPIO_Port GPIOI
+#define UART4_DAPI_TX_Pin GPIO_PIN_13
+#define UART4_DAPI_TX_GPIO_Port GPIOH
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

@@ -63,6 +63,11 @@ UART_HandleTypeDef huart4;
 HCD_HandleTypeDef hhcd_USB_OTG_FS;
 
 osThreadId defaultTaskHandle;
+osThreadId ADCManagerHandle;
+osThreadId TelemetryTaskHandle;
+osMutexId Mutex1Handle;
+osMutexId Mutex2Handle;
+osSemaphoreId BinSemaphore1Handle;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -83,6 +88,8 @@ static void MX_UART4_Init(void);
 static void MX_USB_OTG_FS_HCD_Init(void);
 static void MX_USB_OTG_HS_USB_Init(void);
 void StartDefaultTask(void const * argument);
+void ADCManager_entry(void const * argument);
+void TelemetryTask_entrie(void const * argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -136,9 +143,23 @@ int main(void)
 
   /* USER CODE END 2 */
 
+  /* Create the mutex(es) */
+  /* definition and creation of Mutex1 */
+  osMutexDef(Mutex1);
+  Mutex1Handle = osMutexCreate(osMutex(Mutex1));
+
+  /* definition and creation of Mutex2 */
+  osMutexDef(Mutex2);
+  Mutex2Handle = osMutexCreate(osMutex(Mutex2));
+
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
+
+  /* Create the semaphores(s) */
+  /* definition and creation of BinSemaphore1 */
+  osSemaphoreDef(BinSemaphore1);
+  BinSemaphore1Handle = osSemaphoreCreate(osSemaphore(BinSemaphore1), 1);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -154,8 +175,16 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 1024);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
+  /* definition and creation of ADCManager */
+  osThreadDef(ADCManager, ADCManager_entry, osPriorityNormal, 0, 1024);
+  ADCManagerHandle = osThreadCreate(osThread(ADCManager), NULL);
+
+  /* definition and creation of TelemetryTask */
+  osThreadDef(TelemetryTask, TelemetryTask_entrie, osPriorityNormal, 0, 1024);
+  TelemetryTaskHandle = osThreadCreate(osThread(TelemetryTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -717,6 +746,42 @@ void StartDefaultTask(void const * argument)
     osDelay(1);
   }
   /* USER CODE END 5 */ 
+}
+
+/* USER CODE BEGIN Header_ADCManager_entry */
+/**
+* @brief Function implementing the ADCManager thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_ADCManager_entry */
+void ADCManager_entry(void const * argument)
+{
+  /* USER CODE BEGIN ADCManager_entry */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END ADCManager_entry */
+}
+
+/* USER CODE BEGIN Header_TelemetryTask_entrie */
+/**
+* @brief Function implementing the TelemetryTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_TelemetryTask_entrie */
+void TelemetryTask_entrie(void const * argument)
+{
+  /* USER CODE BEGIN TelemetryTask_entrie */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END TelemetryTask_entrie */
 }
 
  /**
