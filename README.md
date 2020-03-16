@@ -16,7 +16,7 @@ Comments you shall not remove: (example from the UART4_Init fuction) It is creat
 /* USER CODE BEGIN UART4_Init 0 */
 
 /* USER CODE END UART4_Init 0 */
-```    
+```C    
 If this comment is your comment or its looks like a comment from a team member, feel free to edit it. 
 ```
 /* No comment */ 
