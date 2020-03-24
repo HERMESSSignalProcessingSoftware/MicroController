@@ -1,20 +1,9 @@
 # MicroController
 ## Content
-- How to start?
 - What do we do?
 - Used Hardware
 - Used Software  
 - Cube
-## How to start?
-At first you need to see the software linked below!   
-Follow these steps:  
-- Clone the repository  
-- Add your name in the file `Kleinstgruppen/autor.tex` 
-- - Add your Name with a coma at the end and a new line (hit enter)
-- Create your directory e.g. 'SoftwareDesign'  
-- Add your files  
-You do not know how to use latex? Do you want to learn it? Check out the 'Kleinstgruppen/Vorlage',  it is a copy of a bachelorthesis in  LaTex.  
-You can also pay attention to the main `.tex` file
 ## What do we do?
 TODO: Write down some content!
 ## Used Hardware
@@ -27,7 +16,7 @@ Comments you shall not remove: (example from the UART4_Init fuction) It is creat
 /* USER CODE BEGIN UART4_Init 0 */
 
 /* USER CODE END UART4_Init 0 */
-```C    
+​```C    
 If this comment is your comment or its looks like a comment from a team member, feel free to edit it. 
 ```
 /* No comment */ 
@@ -38,3 +27,5 @@ If this comment is your comment or its looks like a comment from a team member, 
 - [Pulse View](https://sigrok.org/wiki/PulseView)
 - [GitHub Desktop](https://desktop.github.com/)
 - [Inkscape](https://inkscape.org/de/)
+
+```
