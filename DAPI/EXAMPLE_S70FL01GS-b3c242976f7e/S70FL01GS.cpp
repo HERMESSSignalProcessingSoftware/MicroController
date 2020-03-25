@@ -213,7 +213,7 @@ void S70FL01GS::writeLong(int addr, long value)
     wait(0.1);
 }
 
-long S70FL01GS::raedLong(int addr)
+long S70FL01GS::readLong(int addr)
 {
     //Read the 4 bytes from the eeprom memory.
     writeEnable();
@@ -228,6 +228,9 @@ long S70FL01GS::raedLong(int addr)
     long three = this->write(DUMMY_ADDR);
     long two = this->write(DUMMY_ADDR);
     long one = this->write(DUMMY_ADDR);
+    chipDisable();
+    writeDisable();
+    wait(0.1);
 
     //Return the recomposed long by using bitshift.
     return ((four << 0) & 0xFF) + ((three << 8) & 0xFFFF) + ((two << 16) & 0xFFFFFF) + ((one << 24) & 0xFFFFFFFF);
