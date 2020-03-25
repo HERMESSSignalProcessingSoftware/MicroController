@@ -1,12 +1,15 @@
 # MicroController
 ## Content
 - What do we do?
+- Nice to know
 - Used Hardware
 - Structure
 - Cube
 - Used Software  
 ## What do we do?
 TODO: Write down some content!
+## Nice to know
+Avoid spaces in filenames!  
 ## Used Hardware
 We are using a STM32F779 a 216 Mhz Coretex M7 controller. [STM32 F779BIT6](https://www.st.com/en/microcontrollers-microprocessors/stm32f7x9.html)  
 ## Structure
@@ -23,7 +26,7 @@ Comments you shall not remove: (example from the UART4_Init fuction) It is creat
 /* USER CODE BEGIN UART4_Init 0 */
 
 /* USER CODE END UART4_Init 0 */
-```    
+```
 If this comment is your comment or its looks like a comment from a team member, feel free to edit it. 
 ```
 /* No comment */ 
@@ -34,5 +37,7 @@ If this comment is your comment or its looks like a comment from a team member, 
 - [Pulse View](https://sigrok.org/wiki/PulseView)
 - [GitHub Desktop](https://desktop.github.com/)
 - [Inkscape](https://inkscape.org/de/)
+
+```
 
 ```
