@@ -37,6 +37,7 @@ If this comment is your comment or its looks like a comment from a team member, 
 - [Pulse View](https://sigrok.org/wiki/PulseView)
 - [GitHub Desktop](https://desktop.github.com/)
 - [Inkscape](https://inkscape.org/de/)
+- [PAPDesigner](https://www.heise.de/download/product/papdesigner-51889)
 
 ```
 
