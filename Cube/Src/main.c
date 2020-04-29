@@ -68,8 +68,9 @@ static void MX_SPI5_Init(void);
 static void MX_SPI6_Init(void);
 static void MX_UART4_Init(void);
 static void MX_UART8_Init(void);
-/* USER CODE BEGIN PFP */
 
+/* USER CODE BEGIN PFP */
+void led_blinky(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -138,6 +139,8 @@ int main(void)
   MX_UART8_Init();
   /* USER CODE BEGIN 2 */
 
+	//Testfunktionen
+	led_blinky();
 
   /* USER CODE END 2 */
 
@@ -145,12 +148,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {		
-		HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_SET);
-		HAL_Delay(100);
-		HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_RESET);
-		HAL_Delay(100);
-		char *out = "AA";
-		HAL_UART_Transmit(&huart4, &out, sizeof(out), 100);
+		
+		
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -663,6 +662,23 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void led_blinky(void)
+	{
+	while(1)
+		{
+			HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET);
+			HAL_Delay(200);
+				
+			HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_SET);
+			HAL_Delay(100);
+		}
+}
 /* USER CODE END 4 */
 
 /**
