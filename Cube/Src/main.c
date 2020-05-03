@@ -33,6 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+uint16_t counter = 0;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -53,8 +54,6 @@ UART_HandleTypeDef huart4;
 UART_HandleTypeDef huart8;
 
 /* USER CODE BEGIN PV */
-/* Single byte to store input */
-unsigned char byte = 'A';
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -71,6 +70,10 @@ static void MX_UART8_Init(void);
 
 /* USER CODE BEGIN PFP */
 void led_blinky(void);
+void led_singleblink(void);
+void huart4_send(uint8_t* toSend, uint16_t size);
+void huart8_send(uint8_t* toSend, uint16_t size);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -100,8 +103,8 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-	MX_UART4_Init();
-	HAL_UART_MspInit(&huart4);
+
+	
 	
 	
 	GPIO_InitTypeDef GPIO_InitStruct;
@@ -140,7 +143,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 	//Testfunktionen
-	led_blinky();
+	//led_blinky();
+	led_singleblink();
+	led_singleblink();
+	led_singleblink();
+	
 
   /* USER CODE END 2 */
 
@@ -151,9 +158,11 @@ int main(void)
 		
 		
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
-		
+		huart8_send((uint8_t *)"Hello World!", 12);
+		led_singleblink();
+		counter++;
+		//HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
@@ -662,6 +671,19 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void led_singleblink(void){
+	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_SET);
+	HAL_Delay(100);
+				
+	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET);
+	HAL_Delay(100);
+}
 void led_blinky(void)
 	{
 	while(1)
@@ -678,6 +700,12 @@ void led_blinky(void)
 			HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_SET);
 			HAL_Delay(100);
 		}
+}
+void huart4_send(uint8_t* toSend, uint16_t size){
+	HAL_UART_Transmit(&huart4, toSend, size, HAL_MAX_DELAY);
+}
+void huart8_send(uint8_t* toSend, uint16_t size){
+	HAL_UART_Transmit(&huart8, toSend, size, HAL_MAX_DELAY);
 }
 /* USER CODE END 4 */
 
