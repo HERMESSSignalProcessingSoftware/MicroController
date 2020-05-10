@@ -29,7 +29,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <string.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,7 +101,7 @@ int main(void)
   MX_UART4_Init();
   MX_UART8_Init();
   MX_UART5_Init();
-  MX_WWDG_Init();
+ // MX_WWDG_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -109,9 +109,10 @@ int main(void)
   /* Init scheduler */
   osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init(); 
+  Huart4_send("Config Done!\n\r", strlen("Config Done!\n\r"));
   /* Start scheduler */
   osKernelStart();
-  Huart8_send((uint8_t*)"Hello World!", 12);
+ 
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -120,6 +121,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  Huart4_send((uint8_t*)"Hello World!", 12);
+	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+	  osDelay(2000);
   }
   /* USER CODE END 3 */
 }

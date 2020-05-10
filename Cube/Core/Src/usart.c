@@ -262,16 +262,9 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 } 
 
 /* USER CODE BEGIN 1 */
-/**
- *
- */
 void Huart4_send(uint8_t* toSend, uint16_t size){
 	HAL_UART_Transmit(&huart4, toSend, size, HAL_MAX_DELAY);
 }
-
-/**
- *
- */
 void Huart8_send(uint8_t* toSend, uint16_t size){
 	HAL_UART_Transmit(&huart8, toSend, size, HAL_MAX_DELAY);
 }
