@@ -26,7 +26,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
-
+#include <string.h>
+#include "usart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -179,7 +180,8 @@ void Heartbeat(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
+	  osDelay(200);
   }
   /* USER CODE END Heartbeat */
 }
@@ -194,9 +196,15 @@ void Heartbeat(void *argument)
 void MemoryEntry(void *argument)
 {
   /* USER CODE BEGIN MemoryEntry */
+	uint32_t once = 0;
+	uint8_t * helloMsg = "Hello From Memory Thread!";
   /* Infinite loop */
   for(;;)
   {
+	  if (once == 0) {
+		  Huart8_send(helloMsg, strlen((char*)helloMsg));
+		  once = 1;
+	  }
     osDelay(1);
   }
   /* USER CODE END MemoryEntry */
@@ -212,9 +220,14 @@ void MemoryEntry(void *argument)
 void ADCData(void *argument)
 {
   /* USER CODE BEGIN ADCData */
+	uint32_t once = 0;
+	uint8_t * helloMsg = "Hello From ADC Thread!";
   /* Infinite loop */
   for(;;)
   {
+	  if (once == 0) {
+		  Huart8_send(helloMsg, strlen((char*)helloMsg));
+	  }
     osDelay(1);
   }
   /* USER CODE END ADCData */

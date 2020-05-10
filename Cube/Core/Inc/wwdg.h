@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * File Name          : USART.h
+  * File Name          : WWDG.h
   * Description        : This file provides code for the configuration
-  *                      of the USART instances.
+  *                      of the WWDG instances.
   ******************************************************************************
   * @attention
   *
@@ -17,8 +17,8 @@
   ******************************************************************************
   */
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __usart_H
-#define __usart_H
+#ifndef __wwdg_H
+#define __wwdg_H
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -30,27 +30,22 @@
 
 /* USER CODE END Includes */
 
-extern UART_HandleTypeDef huart4;
-extern UART_HandleTypeDef huart5;
-extern UART_HandleTypeDef huart8;
+extern WWDG_HandleTypeDef hwwdg;
 
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
-void MX_UART4_Init(void);
-void MX_UART5_Init(void);
-void MX_UART8_Init(void);
+void MX_WWDG_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-void Huart4_send(uint8_t* toSend, uint16_t size);
-void Huart8_send(uint8_t* toSend, uint16_t size);
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
 }
 #endif
-#endif /*__ usart_H */
+#endif /*__ wwdg_H */
 
 /**
   * @}
