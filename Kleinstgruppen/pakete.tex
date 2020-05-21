@@ -11,7 +11,7 @@
 \usepackage{caption}
 \usepackage{stix}
 \usepackage{booktabs}
-\usepackage{nonfloat}
+%\usepackage{nonfloat}
 \usepackage{multicol}
 \usepackage{tabularx}
 \usepackage{url}
@@ -22,6 +22,19 @@
 \usepackage{float}
 \usepackage[english]{babel} % Woerterbuch
 %\usepackage[ngerman]{babel}
+% Markdown setup
+%\usepackage[hashEnumerators,smartEllipses]{markdown}
+\usepackage{markdown}
+
+\markdownSetup{
+	renderers = {
+		link     = {#1},        % Render a link as the link label.
+		emphasis = {\emph{#1}}, % Render emphasis using `\emph`.
+	}
+}
+
+\usepackage{longtable, ltablex}		% advanced table tools
+
 \definecolor{tableHeader}{RGB}{255,238,205}
 \definecolor{white}{RGB}{255,255,255}
 \usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=3.0cm]{geometry} % Seitengeometrie
@@ -47,3 +60,5 @@
 %]{biblatex}
 %\addbibresource{test.bib} 
 \newcommand{\quotes}[1]{\glqq#1\grqq}
+% Options for packages loaded elsewhere
+
