@@ -203,8 +203,9 @@ void MemoryEntry(void *argument)
   for(;;)
   {
 	  HAL_GPIO_TogglePin(LED_4_GPIO_Port, LED_4_Pin);
-	  Huart4_send(msg_u4, strlen((char*)msg_u4));
-    osDelay(1000);
+	//  Huart4_send(msg_u4, strlen((char*)msg_u4));
+	  InterSPUTransmit((uint8_t*)"asdf", 4);
+    osDelay(50);
   }
   /* USER CODE END MemoryEntry */
 }

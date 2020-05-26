@@ -67,7 +67,7 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOH, ADC6_RES_Pin|SPI4_CS_Pin|ADC2_START_Pin|FL_1_HLD_Pin 
-                          |FL_1_WP_Pin|FL_1_RES_Pin|FL_1_CS2_Pin, GPIO_PIN_RESET);
+                          |FL_1_WP_Pin|FL_1_RES_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, ADC5_START_Pin|ADC5_RES_Pin|ADC6_START_Pin, GPIO_PIN_RESET);
@@ -79,11 +79,16 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOJ, SPI3_CS_Pin|ADC1_START_Pin|ADC1_RES_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(FL_1_CS2_GPIO_Port, FL_1_CS2_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(FL_1_CS1_GPIO_Port, FL_1_CS1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_8|FL_2_HLD_Pin|FL_2_RES_Pin|FL_2_CS2_Pin 
-                          |FL_2_CS1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_8|FL_2_HLD_Pin|FL_2_RES_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, FL_2_CS2_Pin|FL_2_CS1_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pins : PE3 PE4 PE7 PE8 
                            PE9 PE10 PE11 PE12 

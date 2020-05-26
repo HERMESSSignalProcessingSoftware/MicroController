@@ -1,0 +1,45 @@
+#ifndef _INCLUDED_USERDEBUG_H_
+#define _INCLUDED_USERDEBUG_H_
+
+#include <cyu3system.h>
+
+#define INFO    0
+#define ERROR   0
+#define FAILURE 0
+#define FUNCTION_INFO_PRINT 0
+
+#define BACKFLOW_DETECT           /* Enable if buffer overflow conditions are to be detected. */
+#define DEBUG_PRINT_FRAME_COUNT   /* Enable UART debug prints to print the frame count every end of frame */
+//#define DEBUG_PRINT_FPGA_RESOLUTION
+
+#include <string.h>
+
+#define FILENAME (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+
+#define debug(format, args...) fprintf (stderr, format, args)
+
+#define informationPrint(fmt, ...) \
+        do { \
+        	if (INFO) \
+        		CyU3PDebugPrint(4, "%s:%d:%s:Info: "fmt "\r\n", FILENAME, __LINE__, __func__, ##__VA_ARGS__); \
+        } while (0)
+
+#define functionInformationPrint() \
+        do { \
+        	if (FUNCTION_INFO_PRINT) \
+        		CyU3PDebugPrint(4, "%s:%d:%s: enter the function \r\n", FILENAME, __LINE__, __func__); \
+        } while (0)
+
+#define errorPrint(fmt, ...) \
+        do { \
+        	if (ERROR) \
+        		CyU3PDebugPrint(4, "%s:%d:%s:Error:" fmt "\r\n", FILENAME, __LINE__, __func__, ##__VA_ARGS__); \
+        } while (0)
+
+#define failurePrint(fmt, ...) \
+        do { \
+        	if (FAILURE) \
+        		CyU3PDebugPrint(4, "%s:%d:%s:Failure:" fmt "\r\n", FILENAME, __LINE__, __func__, ##__VA_ARGS__); \
+        } while (0)
+
+#endif

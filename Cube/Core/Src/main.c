@@ -24,9 +24,8 @@
 #include "adc.h"
 #include "spi.h"
 #include "usart.h"
-#include "wwdg.h"
 #include "gpio.h"
-
+#include <stdlib.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -101,15 +100,38 @@ int main(void)
   MX_UART4_Init();
   MX_UART8_Init();
   MX_UART5_Init();
- // MX_WWDG_Init();
   /* USER CODE BEGIN 2 */
-
+  uint8_t buf[] = {0x90, 0x00, 0x00, 0x00}; //READ ID
+  uint8_t *buffer = (uint8_t  *)malloc(64);
+  HAL_GPIO_WritePin(FL_2_CS1_GPIO_Port, FL_2_CS1_Pin, GPIO_PIN_RESET);
+  HAL_SPI_TransmitReceive_IT(&hspi2,buf, buffer, 4);
+  HAL_SPI_Receive_IT(&hspi2, buffer, 64);
+  if (*buffer)
+	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+  HAL_GPIO_WritePin(FL_2_CS1_GPIO_Port, FL_2_CS1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(FL_2_CS2_GPIO_Port, FL_2_CS2_Pin, GPIO_PIN_RESET);
+  HAL_SPI_Transmit(&hspi2,buf, 4, HAL_MAX_DELAY);
+  HAL_SPI_Receive(&hspi2, buffer, 64, HAL_MAX_DELAY);
+    if (*buffer)
+  	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+  HAL_GPIO_WritePin(FL_2_CS2_GPIO_Port, FL_2_CS2_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(FL_1_CS1_GPIO_Port, FL_1_CS1_Pin, GPIO_PIN_RESET);
+  HAL_SPI_Transmit(&hspi6,buf, 4, HAL_MAX_DELAY);
+  HAL_SPI_Receive(&hspi6, buffer, 64, HAL_MAX_DELAY);
+    if (*buffer)
+  	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+  HAL_GPIO_WritePin(FL_1_CS1_GPIO_Port, FL_1_CS1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(FL_1_CS1_GPIO_Port, FL_1_CS2_Pin, GPIO_PIN_RESET);
+  HAL_SPI_Transmit(&hspi6,buf, 4, HAL_MAX_DELAY);
+  HAL_SPI_Receive(&hspi6, buffer, 64, HAL_MAX_DELAY);
+    if (*buffer)
+  	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+  HAL_GPIO_WritePin(FL_1_CS2_GPIO_Port, FL_1_CS2_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
 
   /* Init scheduler */
   osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init(); 
-  Huart4_send("Config Done!\n\r", strlen("Config Done!\n\r"));
   /* Start scheduler */
   osKernelStart();
  
@@ -121,9 +143,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  Huart4_send((uint8_t*)"Hello World!", 12);
-	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
-	  osDelay(2000);
+
   }
   /* USER CODE END 3 */
 }

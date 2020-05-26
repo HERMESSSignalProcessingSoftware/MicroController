@@ -45,6 +45,7 @@ void MX_UART8_Init(void);
 /* USER CODE BEGIN Prototypes */
 void Huart4_send(uint8_t* toSend, uint16_t size);
 void Huart8_send(uint8_t* toSend, uint16_t size);
+void InterSPUTransmit(uint8_t * data, uint16_t size);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

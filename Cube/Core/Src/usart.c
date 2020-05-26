@@ -268,6 +268,10 @@ void Huart4_send(uint8_t* toSend, uint16_t size){
 void Huart8_send(uint8_t* toSend, uint16_t size){
 	HAL_UART_Transmit(&huart8, toSend, size, HAL_MAX_DELAY);
 }
+
+void InterSPUTransmit(uint8_t * data, uint16_t size) {
+	HAL_UART_Transmit(&huart5, data, size, HAL_MAX_DELAY);
+}
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
