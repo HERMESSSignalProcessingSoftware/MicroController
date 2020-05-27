@@ -14,9 +14,11 @@
 
 /**
  * there are 12 times 16 bit ADCs -> 192 bit = 24 byte
+ * 8 bytes are used to transmit the current mcu status and the adc status to earth
+ * there also will be a number to identify the frame
  */
 #define NUMBEROFBYTES 24
-#define SIZE 36
+#define SIZE 32
 /**
  * Timestamp and number as identification to the ground station
  * system status contains [11:0] ADC error bits. [14:12] MCU Status bits.
