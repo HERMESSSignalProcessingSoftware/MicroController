@@ -71,6 +71,13 @@ const osThreadAttr_t ADCTask_attributes = {
   .priority = (osPriority_t) osPriorityAboveNormal,
   .stack_size = 1024 * 4
 };
+/* Definitions for ManagementThrea */
+osThreadId_t ManagementThreaHandle;
+const osThreadAttr_t ManagementThrea_attributes = {
+  .name = "ManagementThrea",
+  .priority = (osPriority_t) osPriorityAboveNormal,
+  .stack_size = 512 * 4
+};
 /* Definitions for MemoryConfigQueue */
 osMessageQueueId_t MemoryConfigQueueHandle;
 const osMessageQueueAttr_t MemoryConfigQueue_attributes = {
@@ -96,6 +103,11 @@ osMutexId_t MemoryConfigMutexHandle;
 const osMutexAttr_t MemoryConfigMutex_attributes = {
   .name = "MemoryConfigMutex"
 };
+/* Definitions for TelemetrySememphore */
+osSemaphoreId_t TelemetrySememphoreHandle;
+const osSemaphoreAttr_t TelemetrySememphore_attributes = {
+  .name = "TelemetrySememphore"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -105,6 +117,7 @@ const osMutexAttr_t MemoryConfigMutex_attributes = {
 void Heartbeat(void *argument);
 void MemoryEntry(void *argument);
 void ADCData(void *argument);
+void StartTask04(void *argument);
 void SysTickRef(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -128,6 +141,10 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_MUTEX */
 	/* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
+
+  /* Create the semaphores(s) */
+  /* creation of TelemetrySememphore */
+  TelemetrySememphoreHandle = osSemaphoreNew(1, 1, &TelemetrySememphore_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
 	/* add semaphores, ... */
@@ -161,6 +178,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of ADCTask */
   ADCTaskHandle = osThreadNew(ADCData, NULL, &ADCTask_attributes);
+
+  /* creation of ManagementThrea */
+  ManagementThreaHandle = osThreadNew(StartTask04, NULL, &ManagementThrea_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
@@ -273,6 +293,24 @@ void ADCData(void *argument)
 		osDelay(500);
 	}
   /* USER CODE END ADCData */
+}
+
+/* USER CODE BEGIN Header_StartTask04 */
+/**
+* @brief Function implementing the ManagementThrea thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask04 */
+void StartTask04(void *argument)
+{
+  /* USER CODE BEGIN StartTask04 */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTask04 */
 }
 
 /* SysTickRef function */
