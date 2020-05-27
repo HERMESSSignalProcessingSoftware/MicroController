@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+ * All rights reserved.</center></h2>
+ *
+ * This software component is licensed by ST under Ultimate Liberty license
+ * SLA0044, the "License"; You may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:
+ *                             www.st.com/SLA0044
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -25,7 +25,7 @@
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
-#include <stdlib.h>
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -60,7 +60,6 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 /* USER CODE END 0 */
 
 /**
@@ -101,32 +100,7 @@ int main(void)
   MX_UART8_Init();
   MX_UART5_Init();
   /* USER CODE BEGIN 2 */
-  uint8_t buf[] = {0x90, 0x00, 0x00, 0x00}; //READ ID
-  uint8_t *buffer = (uint8_t  *)malloc(64);
-  HAL_GPIO_WritePin(FL_2_CS1_GPIO_Port, FL_2_CS1_Pin, GPIO_PIN_RESET);
-  HAL_SPI_TransmitReceive_IT(&hspi2,buf, buffer, 4);
-  HAL_SPI_Receive_IT(&hspi2, buffer, 64);
-  if (*buffer)
-	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
-  HAL_GPIO_WritePin(FL_2_CS1_GPIO_Port, FL_2_CS1_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(FL_2_CS2_GPIO_Port, FL_2_CS2_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi2,buf, 4, HAL_MAX_DELAY);
-  HAL_SPI_Receive(&hspi2, buffer, 64, HAL_MAX_DELAY);
-    if (*buffer)
-  	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
-  HAL_GPIO_WritePin(FL_2_CS2_GPIO_Port, FL_2_CS2_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(FL_1_CS1_GPIO_Port, FL_1_CS1_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi6,buf, 4, HAL_MAX_DELAY);
-  HAL_SPI_Receive(&hspi6, buffer, 64, HAL_MAX_DELAY);
-    if (*buffer)
-  	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
-  HAL_GPIO_WritePin(FL_1_CS1_GPIO_Port, FL_1_CS1_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(FL_1_CS1_GPIO_Port, FL_1_CS2_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi6,buf, 4, HAL_MAX_DELAY);
-  HAL_SPI_Receive(&hspi6, buffer, 64, HAL_MAX_DELAY);
-    if (*buffer)
-  	  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
-  HAL_GPIO_WritePin(FL_1_CS2_GPIO_Port, FL_1_CS2_Pin, GPIO_PIN_SET);
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -138,13 +112,12 @@ int main(void)
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+	while (1) {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 
-  }
+	}
   /* USER CODE END 3 */
 }
 
@@ -239,7 +212,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
+	/* User can add his own implementation to report the HAL error return state */
 
   /* USER CODE END Error_Handler_Debug */
 }
@@ -255,8 +228,8 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 { 
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
-     tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+	/* User can add his own implementation to report the file name and line number,
+	 tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */

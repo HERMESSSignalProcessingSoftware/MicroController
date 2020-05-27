@@ -221,6 +221,7 @@ static void MX_SPI3_Init(void)
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
 {
     volatile uint8_t x = 5;
+    osSignalSet(osThread()
 }
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)

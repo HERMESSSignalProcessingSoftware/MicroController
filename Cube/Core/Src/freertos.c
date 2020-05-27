@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * File Name          : freertos.c
-  * Description        : Code for freertos applications
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * File Name          : freertos.c
+ * Description        : Code for freertos applications
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+ * All rights reserved.</center></h2>
+ *
+ * This software component is licensed by ST under Ultimate Liberty license
+ * SLA0044, the "License"; You may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:
+ *                             www.st.com/SLA0044
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -27,6 +27,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
 #include "usart.h"
+#include "spi.h"
 #include <string.h>
 /* USER CODE END Includes */
 
@@ -98,7 +99,7 @@ const osMutexAttr_t MemoryConfigMutex_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-   
+
 /* USER CODE END FunctionPrototypes */
 
 void Heartbeat(void *argument);
@@ -115,7 +116,7 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-       
+
   /* USER CODE END Init */
   /* Create the mutex(es) */
   /* creation of MemoryDataMutex */
@@ -125,11 +126,11 @@ void MX_FREERTOS_Init(void) {
   MemoryConfigMutexHandle = osMutexNew(&MemoryConfigMutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
+	/* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
-  /* add semaphores, ... */
+	/* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* Create the timer(s) */
@@ -137,7 +138,7 @@ void MX_FREERTOS_Init(void) {
   SysTickHandle = osTimerNew(SysTickRef, osTimerPeriodic, NULL, &SysTick_attributes);
 
   /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
+	/* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the queue(s) */
@@ -148,7 +149,7 @@ void MX_FREERTOS_Init(void) {
   MemoryDataQueueHandle = osMessageQueueNew (255, sizeof(uint32_t), &MemoryDataQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
+	/* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -162,72 +163,115 @@ void MX_FREERTOS_Init(void) {
   ADCTaskHandle = osThreadNew(ADCData, NULL, &ADCTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
+	/* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
 }
 
 /* USER CODE BEGIN Header_Heartbeat */
 /**
-  * @brief  Function implementing the HeartBeatTask thread.
-  * @param  argument: Not used 
-  * @retval None
-  */
+ * @brief  Function implementing the HeartBeatTask thread.
+ * @param  argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_Heartbeat */
 void Heartbeat(void *argument)
 {
   /* USER CODE BEGIN Heartbeat */
 	uint8_t *msg = "Hello From Heartbeat Thread!\n\r";
-  /* Infinite loop */
-  for(;;)
-  {
-	  HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
-	  Huart4_send(msg, strlen((char*)msg));
-	  osDelay(200);
-  }
+	/* Infinite loop */
+	for (;;) {
+		HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
+		//Huart4_send(msg, strlen((char*) msg));
+		osDelay(200);
+	}
   /* USER CODE END Heartbeat */
 }
 
 /* USER CODE BEGIN Header_MemoryEntry */
 /**
-* @brief Function implementing the MemoryTask thread.
-* @param argument: Not used
-* @retval None
-*/
+ * @brief Function implementing the MemoryTask thread.
+ * @param argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_MemoryEntry */
 void MemoryEntry(void *argument)
 {
   /* USER CODE BEGIN MemoryEntry */
 	uint8_t *msg_u4 = "Hello From Memory Thread!\n\r";
-  /* Infinite loop */
-  for(;;)
-  {
-	  HAL_GPIO_TogglePin(LED_4_GPIO_Port, LED_4_Pin);
-	//  Huart4_send(msg_u4, strlen((char*)msg_u4));
-	  InterSPUTransmit((uint8_t*)"asdf", 4);
-    osDelay(50);
-  }
+	osEvent t;
+	HAL_GPIO_WritePin(FL_2_RES_GPIO_Port, FL_2_RES_Pin, GPIO_PIN_SET);
+	osDelay(20);
+	HAL_GPIO_WritePin(FL_2_RES_GPIO_Port, FL_2_RES_Pin, GPIO_PIN_RESET);
+	/* Infinite loop */
+	for (;;) {
+		HAL_GPIO_TogglePin(LED_4_GPIO_Port, LED_4_Pin);
+		//  Huart4_send(msg_u4, strlen((char*)msg_u4));
+		InterSPUTransmit((uint8_t*) "asdf", 4);
+		/*READ ID*/
+		uint8_t buf[] = { 0x90, 0x00, 0x00, 0x01 };
+		/*ALTERNATIV*/
+		uint8_t b[] = "\x090\x000\x000\x001";
+
+		uint8_t buffer[100];
+		for (int i = 0; i < 100; i++) {
+			buffer[i] = 0;
+		}
+		HAL_GPIO_WritePin(FL_2_CS1_GPIO_Port, FL_2_CS1_Pin, GPIO_PIN_RESET);
+		//HAL_GPIO_WritePin(FL_2_CS2_GPIO_Port, FL_2_CS2_Pin, GPIO_PIN_RESET);
+//S		HAL_SPI_Transmit_IT(&hspi2, "Hallo Welt!", 11);
+//		HAL_SPI_Transmit_IT(&hspi3, "Hallo Welt!", 11);
+//		HAL_SPI_Transmit_IT(&hspi4, "Hallo Welt!", 11);
+//		HAL_SPI_Transmit_IT(&hspi5, "Hallo Welt!", 11);
+//		HAL_SPI_Transmit_IT(&hspi6, "Hallo Welt!", 11);
+		HAL_SPI_Transmit_IT(&hspi2, b, 4);
+//		HAL_SPI_Transmit_IT(&hspi3, b, 4);
+//		HAL_SPI_Transmit_IT(&hspi4, b, 4);
+//		HAL_SPI_Transmit_IT(&hspi5, b, 4);
+//		HAL_SPI_Transmit_IT(&hspi6, b, 4);
+		HAL_SPI_Receive_IT(&hspi2, buffer, 4);
+		for (int i = 0; i < 100; i++) {
+			if (buffer[i] != 0) {
+				Huart4_send("FOUND!\n\r", strlen("FOUND!\n"));
+				Huart4_send(buffer, 4);
+				Huart4_send("END\n\r",strlen("END\n\r"));
+			}
+		}
+		HAL_GPIO_WritePin(FL_2_CS1_GPIO_Port, FL_2_CS1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(FL_2_CS2_GPIO_Port, FL_2_CS2_Pin, GPIO_PIN_SET);
+		osDelay(200);
+	//	t = osSignalWait(0x01 | 0x02, 50);
+//		if (t.status == osEventSignal) {
+//			if (t.value.signals & 0x01) {
+//				uint8_t * m = "RX Interrupt!! \n\r";
+//				Huart4_send(m, strlen(m));
+//			} else if (t.value.signals & 0x02) {
+//				uint8_t * m = "TX Complete! \n\r";
+//				Huart4_send(m, strlen(m));
+//			}
+//		}
+
+	}
   /* USER CODE END MemoryEntry */
 }
 
 /* USER CODE BEGIN Header_ADCData */
 /**
-* @brief Function implementing the ADCTask thread.
-* @param argument: Not used
-* @retval None
-*/
+ * @brief Function implementing the ADCTask thread.
+ * @param argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_ADCData */
 void ADCData(void *argument)
 {
   /* USER CODE BEGIN ADCData */
 	uint8_t *msg = "Hello From ADC Thread!\n\r";
-  /* Infinite loop */
-  for(;;)
-  {
-	  HAL_GPIO_TogglePin(LED_3_GPIO_Port, LED_3_Pin);
-	  Huart4_send(msg, strlen((char*)msg));
-	  osDelay(500);
-  }
+	/* Infinite loop */
+	for (;;) {
+		HAL_GPIO_TogglePin(LED_3_GPIO_Port, LED_3_Pin);
+		//Huart4_send(msg, strlen((char*) msg));
+		osDelay(500);
+	}
   /* USER CODE END ADCData */
 }
 
@@ -235,13 +279,13 @@ void ADCData(void *argument)
 void SysTickRef(void *argument)
 {
   /* USER CODE BEGIN SysTickRef */
-  
+
   /* USER CODE END SysTickRef */
 }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-     
+
 /* USER CODE END Application */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
