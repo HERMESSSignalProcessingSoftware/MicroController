@@ -1,0 +1,1265 @@
+#include <cyu3error.h>
+
+#include "../inc/sensor_sonyIMX214.h"
+#include "../inc/sensor_sonyIMX214_settings.h"
+#include "../inc/sensor_sonyIMX214AddressDefines.h"
+#include "../inc/I2C_SensorBasics.h"
+#include "../inc/userDebug.h"
+#include "../inc/binary_macros.h"
+
+
+CyU3PReturnStatus_t SensorSonyIMX214WriteXByte
+(
+    uint16_t Addr,
+    uint8_t count,
+    uint8_t *buf
+)
+{
+  CyU3PReturnStatus_t status = CY_U3P_SUCCESS;
+
+  status = SensorWriteXByte
+  (
+    I2C_SONY_SENSOR_ADDRESS_WRITE,
+    Addr,
+    count,
+    buf
+  );
+
+
+  if (status != CY_U3P_SUCCESS)
+    errorPrint("fail to write to the SensorSony at the address %x (hex), Error Code = %d", Addr, status);
+
+
+  return status;
+}
+
+CyU3PReturnStatus_t SensorSonyIMX214WriteOneByte
+(
+    uint16_t Addr,
+    uint8_t buf
+)
+{
+
+  CyU3PReturnStatus_t status = CY_U3P_SUCCESS;
+
+  status = SensorWriteXByte
+  (
+    I2C_SONY_SENSOR_ADDRESS_WRITE,
+    Addr,
+    1,
+    &buf
+  );
+
+  if (status != CY_U3P_SUCCESS)
+    errorPrint("fail to write to the SensorSony at the address %x (hex) the value %d, Error Code = %d", Addr, buf, status);
+
+  return status;
+}
+
+CyU3PReturnStatus_t SensorSonyIMX214ReadXByte
+(
+    uint16_t Addr,
+    uint8_t count,
+    uint8_t *buf
+)
+{
+
+  CyU3PReturnStatus_t status = CY_U3P_SUCCESS;
+
+  status = SensorRead
+  (
+     I2C_SONY_SENSOR_ADDRESS_READ,
+     CUT1B(Addr),
+     CUT0B(Addr),
+    count,
+    buf
+  );
+
+  if (status != CY_U3P_SUCCESS)
+    errorPrint("fail to read to the SensorSony at the address %x (hex), Error Code = %d", Addr, status);
+
+  return status;
+}
+
+
+CyU3PReturnStatus_t
+SensorSonyIMX214SoftwareReset
+(
+  void
+)
+{
+  return SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_SOFTWARE_RESET,
+    SENSOR_SONY_IMX214_ENABLE
+  );
+}
+
+
+
+
+
+//CSI lande mode page 29
+// 0x01 == 2 Lines
+// 0x03 == 4 Lines
+void
+SensorSonyIMX214CSILANEMODE
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_CSI_LINE_MODE,
+    0x01
+  );
+}
+
+/*
+ * 0 stay in HS mode
+ * 1 switch to low power mode
+ */
+void
+SensorSonyIMX214MipiCLKModi
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_CLBLANKSTOP,
+    0x00
+  );
+}
+
+
+void
+SensorSonyIMX214HDRCaptureMode
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_HDR_MODE,
+    0x00
+  );
+
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_HDR_RESOLUTION_REDUCTION,
+    0x11
+  );
+
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_HDR_EXPOSURE_RATIO,
+    0x01
+  );
+}
+
+//**********************************
+//Image area determination
+//page 38
+//**********************************
+void
+SensorSonyIMX214ImageAreaDeterminationSetting
+(
+  uint16_t uint16_xleftCorner, uint16_t uint16_yleftCorner,
+  uint16_t uint16_xrightCorner, uint16_t uint16_yrightCorner
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(uint16_xleftCorner);
+  buf[1] = CUT0B(uint16_xleftCorner);
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_X_ADDR_START,
+    2,
+    buf
+  );
+
+  buf[0] = CUT1B(uint16_yleftCorner);
+  buf[1] = CUT0B(uint16_yleftCorner);
+
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_Y_ADDR_START,
+    2,
+    buf
+  );
+
+  buf[0] = CUT1B(uint16_xrightCorner);
+  buf[1] = CUT0B(uint16_xrightCorner);
+
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_X_ADDR_END,
+    2,
+    buf
+  );
+
+  buf[0] = CUT1B(uint16_yrightCorner);
+  buf[1] = CUT0B(uint16_yrightCorner);
+
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_Y_ADDR_END,
+    2,
+    buf
+  );
+}
+
+//**********************************
+//sub sampling mode setting
+//page 60
+//**********************************
+void
+SensorSonyIMX214SubSamplingMode
+(
+  void
+)
+{
+  uint8_t buf[2];
+  buf[0] = 0x00;
+  buf[1] = 0x01;
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_X_EVEN_INC,
+    2,
+    buf
+  );
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_X_ODD_INC,
+    2,
+    buf
+  );
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_Y_EVEN_INC,
+    2,
+    buf
+  );
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_Y_ODD_INC,
+    2,
+    buf
+  );
+}
+
+
+//**********************************
+//binningMode
+//1       => 2x2
+//2       => 4x4
+//others  => no Binning
+//binningWeighting
+//1       => summed (for low light
+//2       => bayer weighting
+//others  =>avreged weighting
+//**********************************
+void
+SensorSonyIMX214BinningMode
+(
+  uint8_t binningMode, 
+  uint8_t binningWeighting
+)
+{
+  
+  switch(binningMode) 
+  {
+    case 1:
+      SensorSonyIMX214WriteOneByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_BINNING_MODE,
+        SENSOR_SONY_IMX214_ENABLE
+      );
+      
+      SensorSonyIMX214WriteOneByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_BINNING_TYPE,
+        0x22
+      );
+
+      SensorSonyIMX214WriteOneByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_BINNING_WEIGHTING,
+        binningWeighting
+      );            
+      break;
+    case 2:
+      SensorSonyIMX214WriteOneByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_BINNING_MODE,
+        SENSOR_SONY_IMX214_ENABLE
+      );
+
+      SensorSonyIMX214WriteOneByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_BINNING_TYPE,
+        0x44
+      );
+
+      SensorSonyIMX214WriteOneByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_BINNING_WEIGHTING,
+        binningWeighting
+      );
+      break;
+    default:
+      SensorSonyIMX214WriteOneByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_BINNING_MODE,
+        SENSOR_SONY_IMX214_DISABLE
+      );
+      
+      SensorSonyIMX214WriteOneByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_BINNING_TYPE,
+        SENSOR_SONY_IMX214_DISABLE
+      );
+
+      SensorSonyIMX214WriteOneByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_BINNING_WEIGHTING,
+        SENSOR_SONY_IMX214_DISABLE
+      );            
+      break;
+  }
+}
+
+void
+SensorSonyIMX214ManufactureSpecifiedRegister
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_3000,
+    0x35
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_3050,
+    0x00
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_3054,
+    0x01
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_305C,
+    0x11
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_305D,
+    0x00
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_401D,
+    0x10
+  );
+}
+
+
+//**********************************
+//IMX214 Application Note page 30
+//bitDepth
+//10       => RAW  10 bit
+//2       => COMP  8 bit //not implemented 
+//3       => COMP 10 bit //not implemented
+//others  => RAW   8 bit
+//**********************************
+void
+SensorSonyIMX214BitDepth
+(
+  uint8_t bitDepth
+)
+{ 
+  uint8_t buf[2];
+
+      buf[0] = bitDepth;
+      buf[1] = bitDepth;
+      SensorSonyIMX214WriteXByte
+      (
+        SENSOR_SONY_IMX214_ADDRESS_CSI_DATA_FORMAT,
+        2,
+        buf
+      );
+
+}
+
+void
+SensorSonyIMX214OutputCropSettings
+(
+  uint16_t horizontalSize,
+  uint16_t verticalSize
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(horizontalSize);
+  buf[1] = CUT0B(horizontalSize);
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_X_OUTPUT_SIZE,
+    2,
+    buf
+  );
+  
+  buf[0] = CUT1B(verticalSize);
+  buf[1] = CUT0B(verticalSize);
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_Y_OUTPUT_SIZE,
+    2,
+    buf
+  );
+
+}
+
+
+//**********************************
+//scaling related register
+//page 65
+//**********************************
+//no scaling
+void
+SensorSonyIMX214ScallingMode
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_SCALE_MODE,
+    0x00
+  );
+  
+  uint8_t buf[2];
+
+  buf[0] = 0x00;
+  buf[1] = 0x10;
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_SCALE_M,
+    2,
+    buf
+  );
+}
+
+
+void
+SensorSonyIMX214setTotalFrameContainerSize
+(
+  uint16_t horizontalSize,
+  uint16_t verticalSize
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(horizontalSize);
+  buf[1] = CUT0B(horizontalSize);
+  SensorSonyIMX214WriteXByte
+  (
+	SENSOR_SONY_IMX214_ADDRESS_X_TOTAL_NUMBER_PIXEL,
+    2,
+    buf
+  );
+
+  buf[0] = CUT1B(verticalSize);
+  buf[1] = CUT0B(verticalSize);
+  SensorSonyIMX214WriteXByte
+  (
+	SENSOR_SONY_IMX214_ADDRESS_Y_TOTAL_NUMBER_LINES,
+    2,
+    buf
+  );
+
+
+}
+
+void
+SensorSonyIMX214DigitalCrop
+(
+  uint16_t horizontalSize,
+  uint16_t verticalSize
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = 0x00;
+  buf[1] = 0x00;
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_DIGITAL_CROP_X_OFFSET,
+    2,
+    buf
+  );
+  
+  buf[0] = 0x00;
+  buf[1] = 0x00;
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_DIGITAL_CROP_Y_OFFSET,
+    2,
+    buf
+  );
+  
+  buf[0] = CUT1B(horizontalSize);
+  buf[1] = CUT0B(horizontalSize);
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_DIGITAL_CROP_IMAGE_WIDTH,
+    2,
+    buf
+  );
+
+  buf[0] = CUT1B(verticalSize);
+  buf[1] = CUT0B(verticalSize);
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_DIGITAL_CROP_IMAGE_HEIGHT,
+    2,
+    buf
+  );
+
+
+}
+
+void
+SensorSonyIMX214PLLSettings
+(
+  void
+)
+{
+  
+  SensorSonyIMX214writeINCKSettings(CUT1B(SENSOR_SONY_IMX214_PLL_EXCK_FREQ_U8_U8),
+                                    CUT0B(SENSOR_SONY_IMX214_PLL_EXCK_FREQ_U8_U8));
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_VTPXCK_DIV,
+    SENSOR_SONY_IMX214_PLL_VT_PIX_CLK_DIV
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_VTSYCK_DIV,
+    SENSOR_SONY_IMX214_PLL_VT_SYS_CLK_DIV
+  );
+  
+
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_PREPLLCK_VT_DIV,
+    SENSOR_SONY_IMX214_PLL_VT_PREDIV
+  );
+  
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(SENSOR_SONY_IMX214_PLL_VT_MPY);
+  buf[1] = CUT0B(SENSOR_SONY_IMX214_PLL_VT_MPY);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_PLL_VT_MPY,
+    2,
+    buf
+  );
+
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_OPPXCK_DIV,
+    SENSOR_SONY_IMX214_PLL_OP_PIX_CLK_DIV
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_OPSYCK_DIV,
+    SENSOR_SONY_IMX214_PLL_OP_SYS_CLK_DIV
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_PLL_MULT_DIV,
+    SENSOR_SONY_IMX214_PLL_MULT_DRIV
+  );
+}
+
+
+void
+SensorSonyIMX214DataRateSettings
+(
+  uint32_t dataRate
+)
+{
+  uint8_t buf[4];
+
+  buf[0] = CUT3B(dataRate);
+  buf[1] = CUT2B(dataRate);
+  buf[2] = CUT1B(dataRate);
+  buf[3] = CUT0B(dataRate);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_REQ_LINK_BIT_RATE,
+    4,
+    buf
+  );
+}
+
+
+void
+SensorSonyIMX214ShadingCorrectionDisable
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_SHADING_CORRECTION_ENABLE,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+}
+
+
+void
+SensorSonyIMX214GreenImbalanceFilterDisable
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_GREEN_IMBALANCE_FILTER_ENABLE,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+}
+
+
+void
+SensorSonyIMX214GreenImbalanceFilterWeight
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_GREEN_IMBALANCE_FILTER_WEIGHT,
+    0x00
+  );
+}
+
+
+void
+SensorSonyIMX214BlackLevelCorrectionDisable
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_BLACK_LEVEL_CORRECTION_ENABLE,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+}
+
+
+void
+SensorSonyIMX214MappingCoupletCorrectDisable
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MAPPING_COUPLET_CORRECT_ENABLE,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+}
+
+
+void
+SensorSonyIMX214SingleDefectCorrectDisable
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_SINGLE_DEFECT_CORRECT_ENABLE,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+
+  SensorSonyIMX214WriteOneByte
+  (
+    0x0B08,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+}
+
+
+void
+SensorSonyIMX214RMSC_NR_MODEdisable
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_RMSC_NR_MODE,
+    0x07
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_3011,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+    
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_3018,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_3019,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_301A,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_30A2,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_30B4,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_3A02,
+    0xFF
+  );
+  
+}
+
+void
+SensorSonyIMX214StatsEnable
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_STATS_OUT_EN,
+    0x01
+  );
+}
+
+void
+SensorSonyIMX214StatsDisable
+(
+  void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_STATS_OUT_EN,
+    SENSOR_SONY_IMX214_DISABLE
+  );
+}
+
+void
+SensorSonyIMX214StatsSettings
+(
+  uint16_t horizontalSize
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(horizontalSize);
+  buf[1] = CUT0B(horizontalSize);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_5062,
+    2,
+    buf
+  );
+  
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MANUFACTURER_5064,
+    0x00
+  );
+}
+
+
+void
+SensorSonyIMX214ElectronicShutterSetting
+(
+  uint16_t coarseIntegTime
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(coarseIntegTime);
+  buf[1] = CUT0B(coarseIntegTime);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_COARSE_INTEG_TIME,
+    2,
+    buf
+  );
+
+  buf[0] = CUT1B(coarseIntegTime/2);
+  buf[1] = CUT0B(coarseIntegTime/2);
+
+  SensorSonyIMX214WriteXByte
+  (
+      SENSOR_SONY_IMX214_ADDRESS_ST_COARSE_INTEG_TIME,
+    2,
+    buf
+  );
+
+}
+
+
+void
+SensorSonyIMX214AnalogGainGlobal
+(
+  uint16_t analogGainGlobal
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(analogGainGlobal);
+  buf[1] = CUT0B(analogGainGlobal);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_ANA_GAIN_GLOBAL,
+    2,
+    buf
+  );
+}
+
+
+void
+SensorSonyIMX214digitalGainGreen
+(
+  uint16_t digitalGainGreen
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(digitalGainGreen);
+  buf[1] = CUT0B(digitalGainGreen);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_DIG_GAIN_GR,
+    2,
+    buf
+  );
+}
+
+
+void
+SensorSonyIMX214digitalGainRed
+(
+  uint16_t digitalGainRed
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(digitalGainRed);
+  buf[1] = CUT0B(digitalGainRed);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_DIG_GAIN_R,
+    2,
+    buf
+  );
+}
+
+void
+SensorSonyIMX214digitalGainBlue
+(
+  uint16_t digitalGainBlue
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(digitalGainBlue);
+  buf[1] = CUT0B(digitalGainBlue);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_DIG_GAIN_B,
+    2,
+    buf
+  );
+}
+
+void
+SensorSonyIMX214digitalGainGb
+(
+  uint16_t digitalGainGb
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(digitalGainGb);
+  buf[1] = CUT0B(digitalGainGb);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_DIG_GAIN_GB,
+    2,
+    buf
+  );
+}
+
+
+void
+SensorSonyIMX214ShortAnalogueGainGlobal
+(
+  uint16_t analogueGainGlobal
+)
+{
+  uint8_t buf[2];
+
+  buf[0] = CUT1B(analogueGainGlobal);
+  buf[1] = CUT0B(analogueGainGlobal);
+  
+  SensorSonyIMX214WriteXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_SHORT_ANALOGUE_GAIN_GLOBAL,
+    2,
+    buf
+  );
+}
+
+
+void
+SensorSonyIMX214StartingStreaming
+(
+    void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MODE_SEL,
+    0x01
+  );
+}
+
+
+void
+SensorSonyIMX214StopStreaming
+(
+    void
+)
+{
+  SensorSonyIMX214WriteOneByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MODE_SEL,
+    0x00
+  );
+}
+
+void
+SensorSonyIMX214Init
+(
+ SensorSonyIMX214InitParam *dataIn
+)
+{
+
+
+  SensorSonyIMX214StopStreaming();
+  CyU3PThreadSleep(1000); //wait until the sensor reset is done
+
+  //SensorSonyIMX214MipiCLKModi();
+  SensorSonyIMX214CSILANEMODE();
+  //SensorSonyIMX214GlobalSettings();
+  SensorSonyIMX214AnalogSettings();
+
+
+  SensorSonyIMX214HDRCaptureMode();
+  SensorSonyIMX214setTotalFrameContainerSize(dataIn->resolutionHorizontalContainerSize,
+      dataIn->resolutionVerticalContainerSize);
+
+  SensorSonyIMX214ImageAreaDeterminationSetting(dataIn->uint16_xleftCorner,
+      dataIn->uint16_yleftCorner, dataIn->uint16_xrightCorner, dataIn->uint16_yrightCorner);
+
+  SensorSonyIMX214SubSamplingMode();
+  SensorSonyIMX214BinningMode(dataIn->binningMode, dataIn->binningWeighting);
+  SensorSonyIMX214ManufactureSpecifiedRegister();
+
+  SensorSonyIMX214BitDepth(dataIn->bitDepth);
+
+  SensorSonyIMX214ScallingMode();
+  SensorSonyIMX214OutputCropSettings(dataIn->horizontalSize,dataIn->verticalSize);
+  SensorSonyIMX214DigitalCrop(dataIn->horizontalSize,dataIn->verticalSize);
+
+  SensorSonyIMX214PLLSettings();
+  SensorSonyIMX214DataRateSettings(dataIn->dataRate);
+
+  SensorSonyIMX214ShadingCorrectionDisable();
+  SensorSonyIMX214GreenImbalanceFilterDisable();
+  SensorSonyIMX214GreenImbalanceFilterWeight();
+  SensorSonyIMX214BlackLevelCorrectionDisable();
+  SensorSonyIMX214MappingCoupletCorrectDisable();
+  SensorSonyIMX214SingleDefectCorrectDisable();
+  SensorSonyIMX214RMSC_NR_MODEdisable();
+  SensorSonyIMX214StatsDisable();
+
+  SensorSonyIMX214StatsSettings(dataIn->horizontalSize);
+
+  SensorSonyIMX214ElectronicShutterSetting(dataIn->coarseIntegTime);
+
+  SensorSonyIMX214AnalogGainGlobal(dataIn->gain.analogGainGlobal);
+  SensorSonyIMX214digitalGainGreen(dataIn->gain.digitalGainGreen);
+  SensorSonyIMX214digitalGainRed(dataIn->gain.digitalGainRed);
+  SensorSonyIMX214digitalGainBlue(dataIn->gain.digitalGainBlue);
+  SensorSonyIMX214digitalGainGb(dataIn->gain.digitalGainGb);
+  SensorSonyIMX214ShortAnalogueGainGlobal(dataIn->gain.analogueGainGlobal);
+
+}
+
+void
+SensorSonyIMX214CheckSensorResolution
+(
+    void
+)
+{
+
+  uint8_t buf[2];
+  uint16_t uint16_tmp;
+  CyU3PReturnStatus_t apiRetStatus = CY_U3P_SUCCESS;
+
+  apiRetStatus = SensorSonyIMX214ReadXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_X_OUTPUT_SIZE,
+    2,
+    buf
+  );
+
+  uint16_tmp = B16(buf[0],buf[1]);
+  if (apiRetStatus == CY_U3P_SUCCESS)
+    informationPrint("Sensor horizontal resolution is set to %d (dec) %x (hex)",uint16_tmp, uint16_tmp);
+  else
+    errorPrint("fail to read horizontal resolution, Error Code = %d", apiRetStatus);
+
+  apiRetStatus = SensorSonyIMX214ReadXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_Y_OUTPUT_SIZE,
+    2,
+    buf
+  );
+
+  uint16_tmp = B16(buf[0],buf[1]);
+  if (apiRetStatus == CY_U3P_SUCCESS)
+    informationPrint("Sensor vertical resolution is set to %d (dex) %x (hex)",uint16_tmp, uint16_tmp);
+  else
+    errorPrint("fail to read vertical resolution, Error Code = %d", apiRetStatus);
+
+}
+
+void
+SensorSonyIMX214CheckResetStatus
+(
+    void
+)
+{
+  CyU3PReturnStatus_t apiRetStatus = CY_U3P_SUCCESS;
+  uint8_t tmp;
+
+  apiRetStatus = SensorSonyIMX214ReadXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_SOFTWARE_RESET,
+    1,
+    &tmp
+  );
+  if (apiRetStatus == CY_U3P_SUCCESS)
+    informationPrint("Sensor reset status is %d",tmp);
+  else
+    errorPrint("fail to check the reset status of the sensor, Error Code = %d", apiRetStatus);
+
+}
+
+
+void
+SensorSonyIMX214CheckStreamingStatus
+(
+    void
+)
+{
+  CyU3PReturnStatus_t apiRetStatus = CY_U3P_SUCCESS;
+  uint8_t tmp;
+
+  apiRetStatus = SensorSonyIMX214ReadXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_MODE_SEL,
+    1,
+    &tmp
+  );
+
+  if (apiRetStatus == CY_U3P_SUCCESS)
+    informationPrint("Sensor streaming status is %d",tmp);
+  else
+    errorPrint("fail to check the streaming status of the sensor, Error Code = %d", apiRetStatus);
+
+}
+
+void
+SensorSonyIMX214writeINCKSettings
+(
+    uint8_t integralOfINCK, uint8_t fractionalOfINCK
+)
+{
+  uint8_t buf[2];
+
+
+  buf[0] = integralOfINCK;
+  buf[1] = fractionalOfINCK;
+
+  SensorSonyIMX214WriteXByte
+  (
+      SENSOR_SONY_IMX214_ADDRESS_EXCK_FREQ,
+    2,
+    buf
+  );
+
+}
+
+
+void
+SensorSonyIMX214CheckINCKSettings
+(
+    void
+)
+{
+  CyU3PReturnStatus_t apiRetStatus = CY_U3P_SUCCESS;
+  uint8_t tmp[2];
+  apiRetStatus = SensorSonyIMX214ReadXByte
+  (
+    SENSOR_SONY_IMX214_ADDRESS_EXCK_FREQ,
+    2,
+    tmp
+  );
+
+
+  if (apiRetStatus == CY_U3P_SUCCESS)
+    informationPrint("Sensor INCK Setting is %d.%d (dec)",tmp[0], tmp[1]);
+  else
+    errorPrint("fail to check the sensor INCK Settings, Error Code = %d", apiRetStatus);
+
+}
+
+
+
+void
+SensorSonyIMX214GlobalSettings
+(
+  void
+)
+{
+    SensorSonyIMX214WriteOneByte(0x0101,0x00);
+    SensorSonyIMX214WriteOneByte(0x0105,0x01);
+    SensorSonyIMX214WriteOneByte(0x0106,0x01);
+    SensorSonyIMX214WriteOneByte(0x4550,0x02);
+    SensorSonyIMX214WriteOneByte(0x4601,0x04);
+    SensorSonyIMX214WriteOneByte(0x4642,0x01);
+    SensorSonyIMX214WriteOneByte(0x6227,0x11);
+    SensorSonyIMX214WriteOneByte(0x6276,0x00);
+    SensorSonyIMX214WriteOneByte(0x900E,0x06);
+    SensorSonyIMX214WriteOneByte(0xA802,0x90);
+    SensorSonyIMX214WriteOneByte(0xA803,0x11);
+    SensorSonyIMX214WriteOneByte(0xA804,0x62);
+    SensorSonyIMX214WriteOneByte(0xA805,0x77);
+    SensorSonyIMX214WriteOneByte(0xA806,0xAE);
+    SensorSonyIMX214WriteOneByte(0xA807,0x34);
+    SensorSonyIMX214WriteOneByte(0xA808,0xAE);
+    SensorSonyIMX214WriteOneByte(0xA809,0x35);
+    SensorSonyIMX214WriteOneByte(0xA80A,0x62);
+    SensorSonyIMX214WriteOneByte(0xA80B,0x83);
+    SensorSonyIMX214WriteOneByte(0xAE33,0x00);
+    
+
+ 
+
+}
+
+void
+SensorSonyIMX214AnalogSettings
+(
+  void
+)
+{
+    SensorSonyIMX214WriteOneByte(0x4174,0x00);
+    SensorSonyIMX214WriteOneByte(0x4175,0x11);
+    SensorSonyIMX214WriteOneByte(0x4612,0x29);
+    SensorSonyIMX214WriteOneByte(0x461B,0x2C);
+    SensorSonyIMX214WriteOneByte(0x461F,0x06);
+    SensorSonyIMX214WriteOneByte(0x4635,0x07);
+    SensorSonyIMX214WriteOneByte(0x4637,0x30);
+    SensorSonyIMX214WriteOneByte(0x463F,0x18);
+    SensorSonyIMX214WriteOneByte(0x4641,0x0D);
+    SensorSonyIMX214WriteOneByte(0x465B,0x2C);
+    SensorSonyIMX214WriteOneByte(0x465F,0x2B);
+    SensorSonyIMX214WriteOneByte(0x4663,0x2B);
+    SensorSonyIMX214WriteOneByte(0x4667,0x24);
+    SensorSonyIMX214WriteOneByte(0x466F,0x24);
+    SensorSonyIMX214WriteOneByte(0x470E,0x09);
+    SensorSonyIMX214WriteOneByte(0x4909,0xAB);
+    SensorSonyIMX214WriteOneByte(0x490B,0x95);
+    SensorSonyIMX214WriteOneByte(0x4915,0x5D);
+    SensorSonyIMX214WriteOneByte(0x4A5F,0xFF);
+    SensorSonyIMX214WriteOneByte(0x4A61,0xFF);
+    SensorSonyIMX214WriteOneByte(0x4A73,0x62);
+    SensorSonyIMX214WriteOneByte(0x4A85,0x00);
+    SensorSonyIMX214WriteOneByte(0x4A87,0xFF);
+    SensorSonyIMX214WriteOneByte(0x583C,0x04);
+    SensorSonyIMX214WriteOneByte(0x620E,0x04);
+    SensorSonyIMX214WriteOneByte(0x6EB2,0x01);
+    SensorSonyIMX214WriteOneByte(0x6EB3,0x00);
+    SensorSonyIMX214WriteOneByte(0x9300,0x02);
+    
+}
+
