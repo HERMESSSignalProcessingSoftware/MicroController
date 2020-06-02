@@ -1,0 +1,71 @@
+
+
+\chapter{Tests}\label{test}
+
+The system tests are for validation of functionality. Each hardware component need to pass the below defined test cases.  
+
+\section{ADC}\label{test:adc}
+
+\begin{longtable}[]{|m{0.2\linewidth}| m{0.4\linewidth}| m{0.4\linewidth}|} \hline
+	\textbf{Testcase} & \textbf{Description} & \textbf{Result}\\ \hline
+	\endhead
+1 & Configuration &\\ \hline
+1.1 & Speed &\\ \hline
+1.2 & Setting speed to 2ksp &\\ \hline
+1.3 & Setting Resolution to 16 bit &\\ \hline
+2 & Start of convertion &\\ \hline
+3 & Interrupt triggered &\\ \hline
+4 & Read result &\\ \hline
+
+\end{longtable}
+
+\section{MCU}\label{test:mcu}
+
+\begin{longtable}[]{|m{0.2\linewidth}| m{0.4\linewidth}| m{0.4\linewidth}|} \hline
+	\textbf{Testcase} & \textbf{Description} & \textbf{Result}\\ \hline
+	\endhead
+1 & Data handling ADC &\\ \hline
+2 & compression &\\ \hline
+3 & Packet building &\\ \hline
+3.1 & Checksums &\\ \hline
+3.2 & Checkup packages &\\ \hline
+4 & Datatransmission telemetry &\\ \hline
+5 & Mutlithreading &\\ \hline
+5.1 & No deadlocks &\\ \hline
+6 & DAPI Functions &\\ \hline
+6.1 & Corrupt commands &\\ \hline
+6.2 & Inconsistent commands &\\ \hline
+6.3 & Settings MCU &\\ \hline
+7 & Memory &\\ \hline
+8 & Access 2. MCU via IMCU Communication & \\ \hline
+8.1 & Send start command to 2. MCU & \\ \hline
+8.2 & Start of functionality is right after command is transmitted & \\ \hline 
+\end{longtable}
+
+\section{Memory}\label{test:memory}
+
+\begin{longtable}[]{|m{0.2\linewidth}| m{0.4\linewidth}| m{0.4\linewidth}|} \hline
+	\textbf{Testcase} & \textbf{Description} & \textbf{Result}\\ \hline
+	\endhead
+1 & Memory configuration &\\ \hline
+2 & Data handling &\\ \hline
+2.1 & Write data &\\ \hline
+2.2 & Read data &\\ \hline
+2.3 & Remove data &\\ \hline
+
+\end{longtable}
+
+\section{DAPI}\label{test:dapi}
+
+\begin{longtable}[]{|m{0.2\linewidth}| m{0.4\linewidth}| m{0.4\linewidth}|} \hline 
+\textbf{Testcase} & \textbf{Description} & \textbf{Result}\\ \hline
+\endhead
+1 & Access MCU &\\ \hline
+2 & Run systemtests &\\ \hline
+3 & Data transfer &\\ \hline
+3.1 & Transfer of valid data &\\ \hline
+3.2 & Transfer of invalid data &\\ \hline
+4 & Usability &\\ \hline
+
+\end{longtable}
+

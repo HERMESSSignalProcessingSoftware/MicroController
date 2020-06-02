@@ -1,10 +1,10 @@
 %Bemerkung: Diese Datei wird über den \input{<name>.tex} in einer anderen .tex Datei %eingebunden. Daher müsst ihr euren Kram einfach nur noch runterschreiben
 %Beispielsweise: 
-\section{ADC}
-\subsection{Internal ADC}
+\chapter{ADC}
+\section{Internal ADC}
 The ADC or Analog Digital Converter is a part of control system. In our case is the ADC a part of a microcontroller. (STM32F769/779) An ADC converts analog signals, for example a voltage, into a digital value. After the conversion, the microcontroller is able to use the digital values for different purposes. This is necessary, since the microcontroller is not able to use the analog values, which are provided by the sensors. The main task is to receive data passed by the temperature sensor. For practice purposes we made a GitHub repository to make there the first attempts to program the ADC. \\ \\
 The Microcontroller has Two 12-bit DACs, three 12-bit ADCs and can take 2,4 MSPS. (million Samples per second or MHz) 
-\subsection{External ADC}
+\section{External ADC}
 Our extern ADC (ADS1148-Q1 Automotive) has 16 Bit with 2-kSPS and is connected with the strain gauges. We have twelve strain gauges and six extern ADCs. There are two strain gauges connected to one ADC. The reason for that is, that each of the ADCs offers two channels with a conversion speed of 1kHz. \\ \\
 It is necessary to consider the speed of the built-in sensors. Otherwise we might overload the system with redundant data. Furthermore, it is important to know, that our measurement results are varying. On one hand we have the strain gauges, which values change quite fast. On the other hand, we have the temperature which is a rather slowly altering value. \\ \\
 All in all, we decided to use the extern ADC with 1kHz speed to capture the signal from the strain gauge and take for the temperature sensor (PT100) the intern
