@@ -1,7 +1,5 @@
 //#include "stdafx.h"
-#include <Windows.h>
-#include <stdio.h>
-#include <string.h>
+#include "DAPI_Workstation.h"
 HANDLE initialiseUART(DCB* SerialParams);
 
 int main(void)
@@ -75,8 +73,90 @@ Exit2:
     return 0;
 }
 
-void readData(void) {
-    
+void readData(HANDLE * hComm) {
+    sendByte(READ_ALL, *hComm);
+    initializeReceiveUART(hComm);
+    char Bytescount1 = receiveData(hComm);
+    char Bytescount2 = receiveData(hComm);
+    char Bytescount3 = receiveData(hComm);
+    char Bytescount4 = receiveData(hComm);
+    unsigned int Bytescount = 0;
+    Bytescount += Bytescount1;
+    Bytescount = Bytescount << 8;
+    Bytescount += Bytescount2;
+    Bytescount = Bytescount << 8;
+    Bytescount += Bytescount3;
+    Bytescount = Bytescount << 8;
+    Bytescount += Bytescount4;
+    sendByte(ACKNOWLEDGED, *hComm);
+    FILE* outFile = fopen(OUTFILENAME, "rw");
+    char buffer [256] = {0};
+    for (int i = 0; i < Bytescount / 256 + 1; i++) {
+        for (int o = 0; o < 256; o++) {
+            buffer[o] = receiveData(hComm);
+        }
+        char Checksum1 = receiveData(hComm);
+        char Checksum2 = receiveData(hComm);
+        char Checksum3 = receiveData(hComm);
+        char Checksum4 = receiveData(hComm);
+        unsigned int Checksum = 0;
+        Checksum += Checksum1;
+        Checksum = Checksum << 8;
+        Checksum += Checksum2;
+        Checksum = Checksum << 8;
+        Checksum += Checksum3;
+        Checksum = Checksum << 8;
+        Checksum += Checksum4;
+        
+        //crcInit();
+        if (Checksum != 1/*TODO checksum calculation*/) {
+            printf("Checksum not valid, aborting transmission (Page: %d)", i);
+            fclose(outFile);
+            break;
+        }
+        if (i == Bytescount / 256) { // Last Page
+            for (int p = 0; p < Bytescount % 256; p++) {
+                fprintf(outFile, "%c", buffer[p]);
+                fclose(outFile);
+                printf("Data downloaded successfully");
+            }
+
+        }
+        else {                      //Not last Page
+            for (int p = 0; p < 256; p++) {
+                fprintf(outFile, "%c", buffer[p]);
+            }
+        }
+        sendByte(ACKNOWLEDGED, *hComm);
+    }
+}
+
+char receiveData(HANDLE* hComm) {
+    char temp = 0;
+    int NumberOfBytesRead = 0;
+    BOOL Status = ReadFile(*hComm, &temp, sizeof(temp), &NumberOfBytesRead, NULL);
+    return temp;
+}
+
+void initializeReceiveUART(HANDLE * hComm) {
+    DWORD dwEventMask;     // Event mask to trigger
+    BOOL Status = SetCommMask(*hComm, EV_RXCHAR);
+    if (Status == FALSE)
+    {
+        printf_s("\nError to in Setting CommMask\n\n");
+        CloseHandle(*hComm);//Closing the Serial Port
+        system("pause");
+        return 0;
+    }
+    //Setting WaitComm() Event
+    Status = WaitCommEvent(*hComm, &dwEventMask, NULL); //Wait for the character to be received
+    if (Status == FALSE)
+    {
+        printf_s("\nError! in Setting WaitCommEvent()\n\n");
+        CloseHandle(*hComm);//Closing the Serial Port
+        system("pause");
+        return 0;
+    }
 }
 
 int sendByte(char data, HANDLE hComm) {
@@ -93,7 +173,7 @@ int sendByte(char data, HANDLE hComm) {
     }
 }
 
-HANDLE initialiseUART(DCB* SerialParams){
+HANDLE initializeUART(DCB* SerialParams){
     BOOL   Status;
     HANDLE hComm;
     COMMTIMEOUTS timeouts = { 0 };  //Initializing timeouts structure
@@ -101,8 +181,8 @@ HANDLE initialiseUART(DCB* SerialParams){
     wchar_t PortNo[20] = { 0 }; //contain friendly name
 
     printf_s("Enter the Com Port: ");
-    wscanf_s(L"%s", pszPortName, (unsigned)_countof(pszPortName));
-    swprintf_s(PortNo, 20, L"\\\\.\\%s", pszPortName);
+    wscanf_s(L"%ls", pszPortName, (unsigned)_countof(pszPortName));
+    swprintf_s(PortNo, 20, L"\\\\.\\%ls", pszPortName);
     //Open the serial com port
     hComm = CreateFile(PortNo, //friendly name
         GENERIC_READ | GENERIC_WRITE,      // Read/Write Access
