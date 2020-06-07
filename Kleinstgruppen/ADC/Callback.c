@@ -33,10 +33,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) { // Externer Interrupt Callback
 
 		HAL_SPI_TransmitReceive(&hspi5, &readdata[0], &receivingdata[0], 4, 20);//Pointer incompatible  WARUM??????????
 		HAL_Delay(1);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, GPIO_PIN_SET); // CS HIGH
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET); // Licht
 		if ((i < 301)) {
-			result[i] = ((uint16_t) receivingdata[1] << 8) | receivingdata[2];
+			result[i] = ((uint16_t) receivingdata[1] << 8) | receivingdata[2]; // Shift Operation LSB und MSB verheiraten
 
 			i++;
 		}
