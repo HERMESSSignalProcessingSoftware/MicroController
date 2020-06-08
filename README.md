@@ -7,7 +7,7 @@
 - Cube
 - Used Software  
 ## What do we do?
-TODO: Write down some content!
+This project is about developing software for our own measurement system. The goal is to measure the structural strain of a sounding rocket. Therefore we have been developing your own PCB with 16 Bit ADC and two memory units. During flight, the MCU needs to store the values of the 9 ADCs to the memmory. 
 ## Nice to know
 Avoid spaces in filenames!  
 ## Used Hardware

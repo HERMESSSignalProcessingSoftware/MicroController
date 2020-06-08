@@ -257,6 +257,7 @@ void MemoryEntry(void *argument)
 				Huart4_send("END\n\r",strlen("END\n\r"));
 			}
 		}
+
 		HAL_GPIO_WritePin(FL_2_CS1_GPIO_Port, FL_2_CS1_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(FL_2_CS2_GPIO_Port, FL_2_CS2_Pin, GPIO_PIN_SET);
 		osDelay(200);
