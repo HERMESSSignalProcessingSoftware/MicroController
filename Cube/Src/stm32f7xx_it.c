@@ -1,5 +1,6 @@
 /* USER CODE BEGIN Header */
 /**
+<<<<<<< HEAD
   ******************************************************************************
   * @file    stm32f7xx_it.c
   * @brief   Interrupt Service Routines.
@@ -16,13 +17,34 @@
   *
   ******************************************************************************
   */
+=======
+ ******************************************************************************
+ * @file    stm32f7xx_it.c
+ * @brief   Interrupt Service Routines.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+ * All rights reserved.</center></h2>
+ *
+ * This software component is licensed by ST under Ultimate Liberty license
+ * SLA0044, the "License"; You may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:
+ *                             www.st.com/SLA0044
+ *
+ ******************************************************************************
+ */
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f7xx_it.h"
+<<<<<<< HEAD
 #include "FreeRTOS.h"
 #include "task.h"
+=======
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -34,7 +56,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -58,10 +84,34 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+<<<<<<< HEAD
 extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN EV */
 
+=======
+extern UART_HandleTypeDef huart4;
+extern UART_HandleTypeDef huart8;
+/* USER CODE BEGIN EV */
+<<<<<<< HEAD
+
+=======
+/**
+ * @brief AHBP_ERROR_HANDLER
+ *
+ * Implementing a function to resolve this bus error.
+ *
+ *@todo: Implement a nice way to solve this problem
+ *
+ *
+ */
+void AHBP_ERROR_HANDLER(void) {
+	while(1) {
+
+	}
+}
+>>>>>>> Telemetry
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -86,7 +136,29 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
+<<<<<<< HEAD
 
+=======
+	if (SCB->HFSR & (1 << 30)) { //Forced bit set -> Read other fault status registers to find the cause
+		//read MemManage MMFSR
+		uint32_t value_mmfar = SCB->MMFAR;
+		if (value_mmfar != 0x0) {
+			//Memory Management Fault Adress set
+		}
+		uint32_t value_CFSR = SCB->CFSR; // Just bit 0 to 7 are important
+		//
+		uint32_t value_MMFSR = value_CFSR & 0x000000FF; // Selection last 8 bit for memory management fault examination
+		uint32_t value_BFSR = value_CFSR & 0x0000ff00; // Selection  of bits [15:8] for Bus fault examination
+		uint32_t value_USFR = value_CFSR & 0xFFFF0000; // Selection of bits [31:16] for usage fault examination
+<<<<<<< HEAD
+=======
+		// READ ABFSR Register to check if it is the same again!
+//		if (value_ABFSR & 0x4) { //AHBP Error
+//			AHBP_ERROR_HANDLER();
+//		}
+>>>>>>> Telemetry
+	}
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
@@ -141,7 +213,100 @@ void UsageFault_Handler(void)
 }
 
 /**
+<<<<<<< HEAD
   * @brief This function handles Debug monitor.
+=======
+  * @brief This function handles System service call via SWI instruction.
+  */
+void SVC_Handler(void)
+{
+  /* USER CODE BEGIN SVCall_IRQn 0 */
+
+  /* USER CODE END SVCall_IRQn 0 */
+  /* USER CODE BEGIN SVCall_IRQn 1 */
+
+  /* USER CODE END SVCall_IRQn 1 */
+}
+
+/**
+<<<<<<<< HEAD:Cube/Src/stm32f7xx_it.c
+  * @brief This function handles Debug monitor.
+========
+  * @brief This function handles EXTI line0 interrupt.
+  */
+void EXTI0_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI0_IRQn 0 */
+
+  /* USER CODE END EXTI0_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+  /* USER CODE BEGIN EXTI0_IRQn 1 */
+
+  /* USER CODE END EXTI0_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line1 interrupt.
+  */
+void EXTI1_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI1_IRQn 0 */
+
+  /* USER CODE END EXTI1_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
+  /* USER CODE BEGIN EXTI1_IRQn 1 */
+
+  /* USER CODE END EXTI1_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line2 interrupt.
+  */
+void EXTI2_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI2_IRQn 0 */
+
+  /* USER CODE END EXTI2_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+  /* USER CODE BEGIN EXTI2_IRQn 1 */
+
+  /* USER CODE END EXTI2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line3 interrupt.
+  */
+void EXTI3_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI3_IRQn 0 */
+
+  /* USER CODE END EXTI3_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+  /* USER CODE BEGIN EXTI3_IRQn 1 */
+
+  /* USER CODE END EXTI3_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line[9:5] interrupts.
+  */
+void EXTI9_5_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI9_5_IRQn 0 */
+
+  /* USER CODE END EXTI9_5_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_5);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_6);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
+  /* USER CODE BEGIN EXTI9_5_IRQn 1 */
+
+  /* USER CODE END EXTI9_5_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM1 update interrupt and TIM10 global interrupt.
+>>>>>>>> parent of c98f8bb... Merge branch 'Development':Cube/Core/Src/stm32f7xx_it.c
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
   */
 void DebugMon_Handler(void)
 {
@@ -153,6 +318,54 @@ void DebugMon_Handler(void)
   /* USER CODE END DebugMonitor_IRQn 1 */
 }
 
+<<<<<<< HEAD
+=======
+/**
+  * @brief This function handles Pendable request for system service.
+  */
+void PendSV_Handler(void)
+{
+  /* USER CODE BEGIN PendSV_IRQn 0 */
+
+  /* USER CODE END PendSV_IRQn 0 */
+  /* USER CODE BEGIN PendSV_IRQn 1 */
+
+  /* USER CODE END PendSV_IRQn 1 */
+}
+
+/**
+<<<<<<<< HEAD:Cube/Src/stm32f7xx_it.c
+  * @brief This function handles System tick timer.
+========
+  * @brief This function handles EXTI line[15:10] interrupts.
+  */
+void EXTI15_10_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+
+  /* USER CODE END EXTI15_10_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_12);
+  /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+
+  /* USER CODE END EXTI15_10_IRQn 1 */
+}
+
+/**
+  * @brief This function handles SPI3 global interrupt.
+>>>>>>>> parent of c98f8bb... Merge branch 'Development':Cube/Core/Src/stm32f7xx_it.c
+  */
+void SysTick_Handler(void)
+{
+  /* USER CODE BEGIN SysTick_IRQn 0 */
+
+  /* USER CODE END SysTick_IRQn 0 */
+  HAL_IncTick();
+  /* USER CODE BEGIN SysTick_IRQn 1 */
+
+  /* USER CODE END SysTick_IRQn 1 */
+}
+
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 /******************************************************************************/
 /* STM32F7xx Peripheral Interrupt Handlers                                    */
 /* Add here the Interrupt Handlers for the used peripherals.                  */
@@ -161,6 +374,7 @@ void DebugMon_Handler(void)
 /******************************************************************************/
 
 /**
+<<<<<<< HEAD
   * @brief This function handles TIM1 update interrupt and TIM10 global interrupt.
   */
 void TIM1_UP_TIM10_IRQHandler(void)
@@ -172,6 +386,33 @@ void TIM1_UP_TIM10_IRQHandler(void)
   /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 1 */
 
   /* USER CODE END TIM1_UP_TIM10_IRQn 1 */
+=======
+  * @brief This function handles UART4 global interrupt.
+  */
+void UART4_IRQHandler(void)
+{
+  /* USER CODE BEGIN UART4_IRQn 0 */
+
+  /* USER CODE END UART4_IRQn 0 */
+  HAL_UART_IRQHandler(&huart4);
+  /* USER CODE BEGIN UART4_IRQn 1 */
+
+  /* USER CODE END UART4_IRQn 1 */
+}
+
+/**
+  * @brief This function handles UART8 global interrupt.
+  */
+void UART8_IRQHandler(void)
+{
+  /* USER CODE BEGIN UART8_IRQn 0 */
+
+  /* USER CODE END UART8_IRQn 0 */
+  HAL_UART_IRQHandler(&huart8);
+  /* USER CODE BEGIN UART8_IRQn 1 */
+
+  /* USER CODE END UART8_IRQn 1 */
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 }
 
 /* USER CODE BEGIN 1 */

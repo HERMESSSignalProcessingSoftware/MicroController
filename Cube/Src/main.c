@@ -20,7 +20,10 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+<<<<<<< HEAD
 #include "cmsis_os.h"
+=======
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -34,6 +37,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+<<<<<<< HEAD
+=======
+uint16_t counter = 0;
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -42,6 +49,7 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+<<<<<<< HEAD
 
 CRYP_HandleTypeDef hcryp;
 __ALIGN_BEGIN static const uint32_t pKeyCRYP[6] __ALIGN_END = {
@@ -52,6 +60,10 @@ HASH_HandleTypeDef hhash;
 RNG_HandleTypeDef hrng;
 
 SPI_HandleTypeDef hspi1;
+=======
+ADC_HandleTypeDef hadc1;
+
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 SPI_HandleTypeDef hspi2;
 SPI_HandleTypeDef hspi3;
 SPI_HandleTypeDef hspi4;
@@ -59,6 +71,7 @@ SPI_HandleTypeDef hspi5;
 SPI_HandleTypeDef hspi6;
 
 UART_HandleTypeDef huart4;
+<<<<<<< HEAD
 
 HCD_HandleTypeDef hhcd_USB_OTG_FS;
 
@@ -70,21 +83,31 @@ osMutexId Mutex2Handle;
 osSemaphoreId BinSemaphore1Handle;
 /* USER CODE BEGIN PV */
 
+=======
+UART_HandleTypeDef huart8;
+
+/* USER CODE BEGIN PV */
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+<<<<<<< HEAD
 static void MX_CRYP_Init(void);
 static void MX_HASH_Init(void);
 static void MX_RNG_Init(void);
 static void MX_SPI1_Init(void);
+=======
+static void MX_ADC1_Init(void);
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 static void MX_SPI2_Init(void);
 static void MX_SPI3_Init(void);
 static void MX_SPI4_Init(void);
 static void MX_SPI5_Init(void);
 static void MX_SPI6_Init(void);
 static void MX_UART4_Init(void);
+<<<<<<< HEAD
 static void MX_USB_OTG_FS_HCD_Init(void);
 static void MX_USB_OTG_HS_USB_Init(void);
 void StartDefaultTask(void const * argument);
@@ -92,6 +115,15 @@ void ADCManager_entry(void const * argument);
 void TelemetryTask_entrie(void const * argument);
 
 /* USER CODE BEGIN PFP */
+=======
+static void MX_UART8_Init(void);
+
+/* USER CODE BEGIN PFP */
+void led_blinky(void);
+void led_singleblink(void);
+void huart4_send(uint8_t* toSend, uint16_t size);
+void huart8_send(uint8_t* toSend, uint16_t size);
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 
 /* USER CODE END PFP */
 
@@ -123,20 +155,52 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
+<<<<<<< HEAD
+=======
+	
+	
+	
+	GPIO_InitTypeDef GPIO_InitStruct;
+	GPIO_InitStruct.Pin = LED_1_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
+	HAL_GPIO_Init(LED_1_GPIO_Port, &GPIO_InitStruct);
+	
+	GPIO_InitStruct.Pin = LED_2_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
+	HAL_GPIO_Init(LED_2_GPIO_Port, &GPIO_InitStruct);
+	
+	GPIO_InitStruct.Pin = LED_3_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
+	HAL_GPIO_Init(LED_3_GPIO_Port, &GPIO_InitStruct);
+	
+	GPIO_InitStruct.Pin = LED_4_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
+	HAL_GPIO_Init(LED_4_GPIO_Port, &GPIO_InitStruct);
+	
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+<<<<<<< HEAD
   MX_CRYP_Init();
   MX_HASH_Init();
   MX_RNG_Init();
   MX_SPI1_Init();
+=======
+  MX_ADC1_Init();
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
   MX_SPI2_Init();
   MX_SPI3_Init();
   MX_SPI4_Init();
   MX_SPI5_Init();
   MX_SPI6_Init();
   MX_UART4_Init();
+<<<<<<< HEAD
   MX_USB_OTG_FS_HCD_Init();
   MX_USB_OTG_HS_USB_Init();
   /* USER CODE BEGIN 2 */
@@ -201,6 +265,32 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+=======
+  MX_UART8_Init();
+  /* USER CODE BEGIN 2 */
+
+	//Testfunktionen
+	//led_blinky();
+	led_singleblink();
+	led_singleblink();
+	led_singleblink();
+	
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {		
+		
+		
+    /* USER CODE END WHILE */
+    /* USER CODE BEGIN 3 */
+		huart8_send((uint8_t *)"Hello World!", 12);
+		led_singleblink();
+		counter++;
+		//HAL_Delay(1000);
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
   }
   /* USER CODE END 3 */
 }
@@ -218,6 +308,7 @@ void SystemClock_Config(void)
   /** Configure the main internal regulator output voltage 
   */
   __HAL_RCC_PWR_CLK_ENABLE();
+<<<<<<< HEAD
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
   /** Initializes the CPU, AHB and APB busses clocks 
   */
@@ -229,20 +320,33 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLN = 432;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 9;
+=======
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
+  /** Initializes the CPU, AHB and APB busses clocks 
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
   }
+<<<<<<< HEAD
   /** Activate the Over-Drive mode 
   */
   if (HAL_PWREx_EnableOverDrive() != HAL_OK)
   {
     Error_Handler();
   }
+=======
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
   /** Initializes the CPU, AHB and APB busses clocks 
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+<<<<<<< HEAD
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
@@ -255,6 +359,20 @@ void SystemClock_Config(void)
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_UART4|RCC_PERIPHCLK_CLK48;
   PeriphClkInitStruct.Uart4ClockSelection = RCC_UART4CLKSOURCE_PCLK1;
   PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLL;
+=======
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_UART4|RCC_PERIPHCLK_UART8;
+  PeriphClkInitStruct.Uart4ClockSelection = RCC_UART4CLKSOURCE_PCLK1;
+  PeriphClkInitStruct.Uart8ClockSelection = RCC_UART8CLKSOURCE_PCLK1;
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -262,6 +380,7 @@ void SystemClock_Config(void)
 }
 
 /**
+<<<<<<< HEAD
   * @brief CRYP Initialization Function
   * @param None
   * @retval None
@@ -380,6 +499,54 @@ static void MX_SPI1_Init(void)
   /* USER CODE BEGIN SPI1_Init 2 */
 
   /* USER CODE END SPI1_Init 2 */
+=======
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion) 
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. 
+  */
+  sConfig.Channel = ADC_CHANNEL_4;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 
 }
 
@@ -613,12 +780,16 @@ static void MX_UART4_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN UART4_Init 2 */
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
   /* USER CODE END UART4_Init 2 */
 
 }
 
 /**
+<<<<<<< HEAD
   * @brief USB_OTG_FS Initialization Function
   * @param None
   * @retval None
@@ -667,6 +838,39 @@ static void MX_USB_OTG_HS_USB_Init(void)
   /* USER CODE BEGIN USB_OTG_HS_Init 2 */
 
   /* USER CODE END USB_OTG_HS_Init 2 */
+=======
+  * @brief UART8 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_UART8_Init(void)
+{
+
+  /* USER CODE BEGIN UART8_Init 0 */
+
+  /* USER CODE END UART8_Init 0 */
+
+  /* USER CODE BEGIN UART8_Init 1 */
+
+  /* USER CODE END UART8_Init 1 */
+  huart8.Instance = UART8;
+  huart8.Init.BaudRate = 115200;
+  huart8.Init.WordLength = UART_WORDLENGTH_8B;
+  huart8.Init.StopBits = UART_STOPBITS_1;
+  huart8.Init.Parity = UART_PARITY_NONE;
+  huart8.Init.Mode = UART_MODE_TX_RX;
+  huart8.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart8.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart8.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart8.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart8) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN UART8_Init 2 */
+
+  /* USER CODE END UART8_Init 2 */
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 
 }
 
@@ -681,6 +885,7 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
+<<<<<<< HEAD
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOI_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
@@ -804,6 +1009,173 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
   /* USER CODE END Callback 1 */
 }
+=======
+  __HAL_RCC_GPIOI_CLK_ENABLE();
+  __HAL_RCC_GPIOF_CLK_ENABLE();
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOJ_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOF, SPI3_CS2_Pin|LED_3_Pin|LED_2_Pin|LED_1_Pin 
+                          |ADC4_START_Pin|ADC4_RES_Pin|SPI5_CS_Pin|ADC3_START_Pin 
+                          |ADC3_RES_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOI, SPI4_CS2_Pin|SPI5_CS2_Pin|LED_4_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOH, ADC6_RES_Pin|SPI4_CS_Pin|ADC2_START_Pin|FL_1_HLD_Pin 
+                          |FL_1_WP_Pin|FL_1_RES_Pin|FL_1_CS2_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, ADC5_START_Pin|ADC5_RES_Pin|ADC6_START_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(ADC2_RES_GPIO_Port, ADC2_RES_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOJ, SPI3_CS_Pin|ADC1_START_Pin|ADC1_RES_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(FL_1_CS1_GPIO_Port, FL_1_CS1_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_8|FL_2_HLD_Pin|FL_2_RES_Pin|FL_2_CS2_Pin 
+                          |FL_2_CS1_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : SPI3_CS2_Pin LED_3_Pin LED_2_Pin LED_1_Pin 
+                           ADC4_START_Pin ADC4_RES_Pin SPI5_CS_Pin ADC3_START_Pin 
+                           ADC3_RES_Pin */
+  GPIO_InitStruct.Pin = SPI3_CS2_Pin|LED_3_Pin|LED_2_Pin|LED_1_Pin 
+                          |ADC4_START_Pin|ADC4_RES_Pin|SPI5_CS_Pin|ADC3_START_Pin 
+                          |ADC3_RES_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SPI4_CS2_Pin SPI5_CS2_Pin LED_4_Pin */
+  GPIO_InitStruct.Pin = SPI4_CS2_Pin|SPI5_CS2_Pin|LED_4_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : ADC4_DRDY_Pin ADC2_DRDY_Pin */
+  GPIO_InitStruct.Pin = ADC4_DRDY_Pin|ADC2_DRDY_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : ADC6_RES_Pin SPI4_CS_Pin ADC2_START_Pin FL_1_HLD_Pin 
+                           FL_1_WP_Pin FL_1_RES_Pin FL_1_CS2_Pin */
+  GPIO_InitStruct.Pin = ADC6_RES_Pin|SPI4_CS_Pin|ADC2_START_Pin|FL_1_HLD_Pin 
+                          |FL_1_WP_Pin|FL_1_RES_Pin|FL_1_CS2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : ADC5_START_Pin ADC5_RES_Pin ADC6_START_Pin */
+  GPIO_InitStruct.Pin = ADC5_START_Pin|ADC5_RES_Pin|ADC6_START_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : ADC5_DRDY_Pin ADC6_DRDY_Pin */
+  GPIO_InitStruct.Pin = ADC5_DRDY_Pin|ADC6_DRDY_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : ADC2_RES_Pin */
+  GPIO_InitStruct.Pin = ADC2_RES_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(ADC2_RES_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SPI3_CS_Pin ADC1_START_Pin ADC1_RES_Pin */
+  GPIO_InitStruct.Pin = SPI3_CS_Pin|ADC1_START_Pin|ADC1_RES_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOJ, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : ADC3_DRDY_Pin */
+  GPIO_InitStruct.Pin = ADC3_DRDY_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(ADC3_DRDY_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : FL_1_CS1_Pin */
+  GPIO_InitStruct.Pin = FL_1_CS1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(FL_1_CS1_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PD8 FL_2_HLD_Pin FL_2_RES_Pin FL_2_CS2_Pin 
+                           FL_2_CS1_Pin */
+  GPIO_InitStruct.Pin = GPIO_PIN_8|FL_2_HLD_Pin|FL_2_RES_Pin|FL_2_CS2_Pin 
+                          |FL_2_CS1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SODS_OPT_Pin SOE_OPT_Pin LO_OPT_Pin */
+  GPIO_InitStruct.Pin = SODS_OPT_Pin|SOE_OPT_Pin|LO_OPT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
+
+}
+
+/* USER CODE BEGIN 4 */
+void led_singleblink(void){
+	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_SET);
+	HAL_Delay(100);
+				
+	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET);
+	HAL_Delay(100);
+}
+void led_blinky(void)
+	{
+	while(1)
+		{
+			HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET);
+			HAL_Delay(200);
+				
+			HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_SET);
+			HAL_Delay(100);
+		}
+}
+void huart4_send(uint8_t* toSend, uint16_t size){
+	HAL_UART_Transmit(&huart4, toSend, size, HAL_MAX_DELAY);
+}
+void huart8_send(uint8_t* toSend, uint16_t size){
+	HAL_UART_Transmit(&huart8, toSend, size, HAL_MAX_DELAY);
+}
+/* USER CODE END 4 */
+>>>>>>> parent of c98f8bb... Merge branch 'Development'
 
 /**
   * @brief  This function is executed in case of error occurrence.

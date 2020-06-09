@@ -52,7 +52,9 @@ void HardFault_Handler(void);
 void MemManage_Handler(void);
 void BusFault_Handler(void);
 void UsageFault_Handler(void);
+void SVC_Handler(void);
 void DebugMon_Handler(void);
+<<<<<<< HEAD:Cube/Inc/stm32f7xx_it.h
 void EXTI0_IRQHandler(void);
 void EXTI1_IRQHandler(void);
 void EXTI2_IRQHandler(void);
@@ -62,12 +64,12 @@ void TIM1_UP_TIM10_IRQHandler(void);
 void SPI2_IRQHandler(void);
 void EXTI15_10_IRQHandler(void);
 void SPI3_IRQHandler(void);
+=======
+void PendSV_Handler(void);
+void SysTick_Handler(void);
+>>>>>>> parent of c98f8bb... Merge branch 'Development':Cube/Core/Inc/stm32f7xx_it.h
 void UART4_IRQHandler(void);
-void UART5_IRQHandler(void);
 void UART8_IRQHandler(void);
-void SPI4_IRQHandler(void);
-void SPI5_IRQHandler(void);
-void SPI6_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
