@@ -7,11 +7,11 @@
 - Cube
 - Used Software  
 ## What do we do?
-This project is about developing software for our own measurement system. The goal is to measure the structural strain of a sounding rocket. Therefore we have been developing your own PCB with 16 Bit ADC and two memory units. During flight, the MCU needs to store the values of the 9 ADCs to the memmory. 
+TODO: Write down some content!
 ## Nice to know
 Avoid spaces in filenames!  
 ## Used Hardware
-We are using a STM32F779 a 216 MHz Coretex M7 controller. [STM32 F779BIT6](https://www.st.com/en/microcontrollers-microprocessors/stm32f7x9.html)  
+We are using a STM32F779 a 216 Mhz Coretex M7 controller. [STM32 F779BIT6](https://www.st.com/en/microcontrollers-microprocessors/stm32f7x9.html)  
 ## Structure
 The repository contains the main software project `Cube`. There you will find some the generated source code and the STM32CubeMx project.   
 The `Docu` folder contains the generated software documentation from the doxygen comments.  
