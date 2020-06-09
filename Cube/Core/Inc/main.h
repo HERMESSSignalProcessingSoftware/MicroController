@@ -80,6 +80,7 @@ void Error_Handler(void);
 #define ADC4_RES_GPIO_Port GPIOF
 #define ADC4_DRDY_Pin GPIO_PIN_0
 #define ADC4_DRDY_GPIO_Port GPIOH
+#define ADC4_DRDY_EXTI_IRQn EXTI0_IRQn
 #define ADC6_RES_Pin GPIO_PIN_1
 #define ADC6_RES_GPIO_Port GPIOH
 #define ADC5_START_Pin GPIO_PIN_0
@@ -92,10 +93,13 @@ void Error_Handler(void);
 #define DAPI_TX_GPIO_Port GPIOA
 #define ADC5_DRDY_Pin GPIO_PIN_1
 #define ADC5_DRDY_GPIO_Port GPIOA
+#define ADC5_DRDY_EXTI_IRQn EXTI1_IRQn
 #define ADC6_DRDY_Pin GPIO_PIN_2
 #define ADC6_DRDY_GPIO_Port GPIOA
+#define ADC6_DRDY_EXTI_IRQn EXTI2_IRQn
 #define ADC2_DRDY_Pin GPIO_PIN_3
 #define ADC2_DRDY_GPIO_Port GPIOH
+#define ADC2_DRDY_EXTI_IRQn EXTI3_IRQn
 #define SPI4_CS_Pin GPIO_PIN_4
 #define SPI4_CS_GPIO_Port GPIOH
 #define ADC2_START_Pin GPIO_PIN_5
@@ -110,6 +114,7 @@ void Error_Handler(void);
 #define ADC1_RES_GPIO_Port GPIOJ
 #define ADC3_DRDY_Pin GPIO_PIN_12
 #define ADC3_DRDY_GPIO_Port GPIOF
+#define ADC3_DRDY_EXTI_IRQn EXTI15_10_IRQn
 #define SPI5_CS_Pin GPIO_PIN_13
 #define SPI5_CS_GPIO_Port GPIOF
 #define ADC3_START_Pin GPIO_PIN_14
@@ -146,10 +151,13 @@ void Error_Handler(void);
 #define EXP_OUT_GPIO_Port GPIOE
 #define SODS_OPT_Pin GPIO_PIN_5
 #define SODS_OPT_GPIO_Port GPIOI
+#define SODS_OPT_EXTI_IRQn EXTI9_5_IRQn
 #define SOE_OPT_Pin GPIO_PIN_6
 #define SOE_OPT_GPIO_Port GPIOI
+#define SOE_OPT_EXTI_IRQn EXTI9_5_IRQn
 #define LO_OPT_Pin GPIO_PIN_7
 #define LO_OPT_GPIO_Port GPIOI
+#define LO_OPT_EXTI_IRQn EXTI9_5_IRQn
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

@@ -55,28 +55,21 @@ osThreadId_t HeartBeatTaskHandle;
 const osThreadAttr_t HeartBeatTask_attributes = {
   .name = "HeartBeatTask",
   .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 512 * 4
+  .stack_size = 128 * 4
 };
-/* Definitions for MemoryTask */
-osThreadId_t MemoryTaskHandle;
-const osThreadAttr_t MemoryTask_attributes = {
-  .name = "MemoryTask",
+/* Definitions for DataHandleingTa */
+osThreadId_t DataHandleingTaHandle;
+const osThreadAttr_t DataHandleingTa_attributes = {
+  .name = "DataHandleingTa",
   .priority = (osPriority_t) osPriorityHigh,
-  .stack_size = 2048 * 4
-};
-/* Definitions for ADCTask */
-osThreadId_t ADCTaskHandle;
-const osThreadAttr_t ADCTask_attributes = {
-  .name = "ADCTask",
-  .priority = (osPriority_t) osPriorityAboveNormal,
   .stack_size = 1024 * 4
 };
-/* Definitions for ManagementThrea */
-osThreadId_t ManagementThreaHandle;
-const osThreadAttr_t ManagementThrea_attributes = {
-  .name = "ManagementThrea",
-  .priority = (osPriority_t) osPriorityAboveNormal,
-  .stack_size = 512 * 4
+/* Definitions for ManagementTask */
+osThreadId_t ManagementTaskHandle;
+const osThreadAttr_t ManagementTask_attributes = {
+  .name = "ManagementTask",
+  .priority = (osPriority_t) osPriorityLow,
+  .stack_size = 256 * 4
 };
 /* Definitions for MemoryConfigQueue */
 osMessageQueueId_t MemoryConfigQueueHandle;
@@ -115,9 +108,8 @@ const osSemaphoreAttr_t TelemetrySememphore_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void Heartbeat(void *argument);
-void MemoryEntry(void *argument);
-void ADCData(void *argument);
-void StartTask04(void *argument);
+void DataHandleing(void *argument);
+void Management(void *argument);
 void SysTickRef(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -173,14 +165,11 @@ void MX_FREERTOS_Init(void) {
   /* creation of HeartBeatTask */
   HeartBeatTaskHandle = osThreadNew(Heartbeat, NULL, &HeartBeatTask_attributes);
 
-  /* creation of MemoryTask */
-  MemoryTaskHandle = osThreadNew(MemoryEntry, NULL, &MemoryTask_attributes);
+  /* creation of DataHandleingTa */
+  DataHandleingTaHandle = osThreadNew(DataHandleing, NULL, &DataHandleingTa_attributes);
 
-  /* creation of ADCTask */
-  ADCTaskHandle = osThreadNew(ADCData, NULL, &ADCTask_attributes);
-
-  /* creation of ManagementThrea */
-  ManagementThreaHandle = osThreadNew(StartTask04, NULL, &ManagementThrea_attributes);
+  /* creation of ManagementTask */
+  ManagementTaskHandle = osThreadNew(Management, NULL, &ManagementTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
@@ -208,110 +197,40 @@ void Heartbeat(void *argument)
   /* USER CODE END Heartbeat */
 }
 
-/* USER CODE BEGIN Header_MemoryEntry */
+/* USER CODE BEGIN Header_DataHandleing */
 /**
- * @brief Function implementing the MemoryTask thread.
- * @param argument: Not used
- * @retval None
- */
-/* USER CODE END Header_MemoryEntry */
-void MemoryEntry(void *argument)
-{
-  /* USER CODE BEGIN MemoryEntry */
-	uint8_t *msg_u4 = "Hello From Memory Thread!\n\r";
-	osEvent t;
-	HAL_GPIO_WritePin(FL_2_RES_GPIO_Port, FL_2_RES_Pin, GPIO_PIN_SET);
-	osDelay(20);
-	HAL_GPIO_WritePin(FL_2_RES_GPIO_Port, FL_2_RES_Pin, GPIO_PIN_RESET);
-	/* Infinite loop */
-	for (;;) {
-		HAL_GPIO_TogglePin(LED_4_GPIO_Port, LED_4_Pin);
-		//  Huart4_send(msg_u4, strlen((char*)msg_u4));
-		InterSPUTransmit((uint8_t*) "asdf", 4);
-		/*READ ID*/
-		uint8_t buf[] = { 0x90, 0x00, 0x00, 0x01 };
-		/*ALTERNATIV*/
-		uint8_t b[] = "\x090\x000\x000\x001";
-
-		uint8_t buffer[100];
-		for (int i = 0; i < 100; i++) {
-			buffer[i] = 0;
-		}
-		HAL_GPIO_WritePin(FL_2_CS1_GPIO_Port, FL_2_CS1_Pin, GPIO_PIN_RESET);
-		//HAL_GPIO_WritePin(FL_2_CS2_GPIO_Port, FL_2_CS2_Pin, GPIO_PIN_RESET);
-//S		HAL_SPI_Transmit_IT(&hspi2, "Hallo Welt!", 11);
-//		HAL_SPI_Transmit_IT(&hspi3, "Hallo Welt!", 11);
-//		HAL_SPI_Transmit_IT(&hspi4, "Hallo Welt!", 11);
-//		HAL_SPI_Transmit_IT(&hspi5, "Hallo Welt!", 11);
-//		HAL_SPI_Transmit_IT(&hspi6, "Hallo Welt!", 11);
-		HAL_SPI_Transmit_IT(&hspi2, b, 4);
-//		HAL_SPI_Transmit_IT(&hspi3, b, 4);
-//		HAL_SPI_Transmit_IT(&hspi4, b, 4);
-//		HAL_SPI_Transmit_IT(&hspi5, b, 4);
-//		HAL_SPI_Transmit_IT(&hspi6, b, 4);
-		HAL_SPI_Receive_IT(&hspi2, buffer, 4);
-		for (int i = 0; i < 100; i++) {
-			if (buffer[i] != 0) {
-				Huart4_send("FOUND!\n\r", strlen("FOUND!\n"));
-				Huart4_send(buffer, 4);
-				Huart4_send("END\n\r",strlen("END\n\r"));
-			}
-		}
-
-		HAL_GPIO_WritePin(FL_2_CS1_GPIO_Port, FL_2_CS1_Pin, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(FL_2_CS2_GPIO_Port, FL_2_CS2_Pin, GPIO_PIN_SET);
-		osDelay(200);
-	//	t = osSignalWait(0x01 | 0x02, 50);
-//		if (t.status == osEventSignal) {
-//			if (t.value.signals & 0x01) {
-//				uint8_t * m = "RX Interrupt!! \n\r";
-//				Huart4_send(m, strlen(m));
-//			} else if (t.value.signals & 0x02) {
-//				uint8_t * m = "TX Complete! \n\r";
-//				Huart4_send(m, strlen(m));
-//			}
-//		}
-
-	}
-  /* USER CODE END MemoryEntry */
-}
-
-/* USER CODE BEGIN Header_ADCData */
-/**
- * @brief Function implementing the ADCTask thread.
- * @param argument: Not used
- * @retval None
- */
-/* USER CODE END Header_ADCData */
-void ADCData(void *argument)
-{
-  /* USER CODE BEGIN ADCData */
-	uint8_t *msg = "Hello From ADC Thread!\n\r";
-	/* Infinite loop */
-	for (;;) {
-		HAL_GPIO_TogglePin(LED_3_GPIO_Port, LED_3_Pin);
-		//Huart4_send(msg, strlen((char*) msg));
-		osDelay(500);
-	}
-  /* USER CODE END ADCData */
-}
-
-/* USER CODE BEGIN Header_StartTask04 */
-/**
-* @brief Function implementing the ManagementThrea thread.
+* @brief Function implementing the DataHandleingTa thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTask04 */
-void StartTask04(void *argument)
+/* USER CODE END Header_DataHandleing */
+void DataHandleing(void *argument)
 {
-  /* USER CODE BEGIN StartTask04 */
+  /* USER CODE BEGIN DataHandleing */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END StartTask04 */
+  /* USER CODE END DataHandleing */
+}
+
+/* USER CODE BEGIN Header_Management */
+/**
+* @brief Function implementing the ManagementTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Management */
+void Management(void *argument)
+{
+  /* USER CODE BEGIN Management */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Management */
 }
 
 /* SysTickRef function */
