@@ -29,7 +29,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+<<<<<<< HEAD
 
+=======
+#include "Telemetry.h"
+>>>>>>> Telemetry
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,7 +106,11 @@ int main(void)
   MX_UART5_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
+<<<<<<< HEAD
 
+=======
+  uint32_t ret = Test();
+>>>>>>> Telemetry
   /* USER CODE END 2 */
 
   /* Init scheduler */

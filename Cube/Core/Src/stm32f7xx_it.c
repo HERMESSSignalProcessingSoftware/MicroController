@@ -69,7 +69,24 @@ extern UART_HandleTypeDef huart8;
 extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN EV */
+<<<<<<< HEAD
 
+=======
+/**
+ * @brief AHBP_ERROR_HANDLER
+ *
+ * Implementing a function to resolve this bus error.
+ *
+ *@todo: Implement a nice way to solve this problem
+ *
+ *
+ */
+void AHBP_ERROR_HANDLER(void) {
+	while(1) {
+
+	}
+}
+>>>>>>> Telemetry
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -105,6 +122,13 @@ void HardFault_Handler(void)
 		uint32_t value_MMFSR = value_CFSR & 0x000000FF; // Selection last 8 bit for memory management fault examination
 		uint32_t value_BFSR = value_CFSR & 0x0000ff00; // Selection  of bits [15:8] for Bus fault examination
 		uint32_t value_USFR = value_CFSR & 0xFFFF0000; // Selection of bits [31:16] for usage fault examination
+<<<<<<< HEAD
+=======
+		// READ ABFSR Register to check if it is the same again!
+//		if (value_ABFSR & 0x4) { //AHBP Error
+//			AHBP_ERROR_HANDLER();
+//		}
+>>>>>>> Telemetry
 	}
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
