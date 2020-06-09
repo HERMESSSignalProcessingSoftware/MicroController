@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file    stm32f7xx_it.c
-  * @brief   Interrupt Service Routines.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    stm32f7xx_it.c
+ * @brief   Interrupt Service Routines.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+ * All rights reserved.</center></h2>
+ *
+ * This software component is licensed by ST under Ultimate Liberty license
+ * SLA0044, the "License"; You may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:
+ *                             www.st.com/SLA0044
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -34,7 +34,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
- 
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -94,7 +94,18 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
+	if (SCB->HFSR & (1 << 30)) { //Forced bit set -> Read other fault status registers to find the cause
+		//read MemManage MMFSR
+		uint32_t value_mmfar = SCB->MMFAR;
+		if (value_mmfar != 0x0) {
+			//Memory Management Fault Adress set
+		}
+		uint32_t value_CFSR = SCB->CFSR; // Just bit 0 to 7 are important
+		//
+		uint32_t value_MMFSR = value_CFSR & 0x000000FF; // Selection last 8 bit for memory management fault examination
+		uint32_t value_BFSR = value_CFSR & 0x0000ff00; // Selection  of bits [15:8] for Bus fault examination
+		uint32_t value_USFR = value_CFSR & 0xFFFF0000; // Selection of bits [31:16] for usage fault examination
+	}
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
