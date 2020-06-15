@@ -24,6 +24,7 @@ uint32_t Test(void) {
 	assert(b == 1);
 */
 	b &= testTelemetry();
+	/*TODO: Was macht assert auf dem MCU*/
 	assert(b == 1);
 	return b;
 }
