@@ -62,6 +62,13 @@ const osThreadAttr_t UARTTransmit_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
   .stack_size = 128 * 4
 };
+/* Definitions for HeartBeat */
+osThreadId_t HeartBeatHandle;
+const osThreadAttr_t HeartBeat_attributes = {
+  .name = "HeartBeat",
+  .priority = (osPriority_t) osPriorityLow,
+  .stack_size = 128 * 4
+};
 /* Definitions for dataQueue */
 osMessageQueueId_t dataQueueHandle;
 const osMessageQueueAttr_t dataQueue_attributes = {
@@ -75,6 +82,7 @@ const osMessageQueueAttr_t dataQueue_attributes = {
 
 void StartMeasurement(void *argument);
 void TransmitTask(void *argument);
+void HeartBeatTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -114,6 +122,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of UARTTransmit */
   UARTTransmitHandle = osThreadNew(TransmitTask, NULL, &UARTTransmit_attributes);
+
+  /* creation of HeartBeat */
+  HeartBeatHandle = osThreadNew(HeartBeatTask, NULL, &HeartBeat_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -155,6 +166,24 @@ void TransmitTask(void *argument)
     osDelay(1);
   }
   /* USER CODE END TransmitTask */
+}
+
+/* USER CODE BEGIN Header_HeartBeatTask */
+/**
+* @brief Function implementing the HeartBeat thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_HeartBeatTask */
+void HeartBeatTask(void *argument)
+{
+  /* USER CODE BEGIN HeartBeatTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END HeartBeatTask */
 }
 
 /* Private application code --------------------------------------------------*/
