@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * File Name          : freertos.c
-  * Description        : Code for freertos applications
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * File Name          : freertos.c
+ * Description        : Code for freertos applications
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+ * All rights reserved.</center></h2>
+ *
+ * This software component is licensed by ST under Ultimate Liberty license
+ * SLA0044, the "License"; You may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:
+ *                             www.st.com/SLA0044
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -77,7 +77,7 @@ const osMessageQueueAttr_t dataQueue_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-   
+
 /* USER CODE END FunctionPrototypes */
 
 void StartMeasurement(void *argument);
@@ -93,19 +93,19 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-       
+
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
+	/* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
-  /* add semaphores, ... */
+	/* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
+	/* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the queue(s) */
@@ -113,7 +113,7 @@ void MX_FREERTOS_Init(void) {
   dataQueueHandle = osMessageQueueNew (128, sizeof(uint32_t), &dataQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
+	/* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -127,68 +127,66 @@ void MX_FREERTOS_Init(void) {
   HeartBeatHandle = osThreadNew(HeartBeatTask, NULL, &HeartBeat_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
+	/* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
 }
 
 /* USER CODE BEGIN Header_StartMeasurement */
 /**
-  * @brief  Function implementing the measureTask thread.
-  * @param  argument: Not used 
-  * @retval None
-  */
+ * @brief  Function implementing the measureTask thread.
+ * @param  argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_StartMeasurement */
 void StartMeasurement(void *argument)
 {
   /* USER CODE BEGIN StartMeasurement */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+	/* Infinite loop */
+	for (;;) {
+		osDelay(1);
+	}
   /* USER CODE END StartMeasurement */
 }
 
 /* USER CODE BEGIN Header_TransmitTask */
 /**
-* @brief Function implementing the UARTTransmit thread.
-* @param argument: Not used
-* @retval None
-*/
+ * @brief Function implementing the UARTTransmit thread.
+ * @param argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_TransmitTask */
 void TransmitTask(void *argument)
 {
   /* USER CODE BEGIN TransmitTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+	/* Infinite loop */
+	for (;;) {
+		osDelay(1);
+	}
   /* USER CODE END TransmitTask */
 }
 
 /* USER CODE BEGIN Header_HeartBeatTask */
 /**
-* @brief Function implementing the HeartBeat thread.
-* @param argument: Not used
-* @retval None
-*/
+ * @brief Function implementing the HeartBeat thread.
+ * @param argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_HeartBeatTask */
 void HeartBeatTask(void *argument)
 {
   /* USER CODE BEGIN HeartBeatTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+	/* Infinite loop */
+	for (;;) {
+		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+		osDelay(200);
+	}
   /* USER CODE END HeartBeatTask */
 }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-     
+
 /* USER CODE END Application */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
