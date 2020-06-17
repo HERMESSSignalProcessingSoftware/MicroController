@@ -26,7 +26,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
-
+#include "adc.h"
+#include "signal.h"
+#include "usart.h"
+#include <string.h>
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -143,7 +147,19 @@ void StartMeasurement(void *argument)
 {
   /* USER CODE BEGIN StartMeasurement */
 	/* Infinite loop */
+	uint32_t data = 0;
+	osStatus_t s = 0;
+	uint8_t msg[100];
+	HAL_ADC_Start_IT(&hadc1);
 	for (;;) {
+		s = osMessageQueueGet(dataQueueHandle, &data, 1, 1);
+		if (s == osErrorTimeout) {
+			// Just catch it
+		} else if (s == osOK) {
+			sprintf(msg, "%d\n\r\0", data);
+			HAL_UART_Transmit(&huart2, msg, strlen(msg), 10);
+		}
+//		HAL_UART_Transmit(&huart1, &data, 4, 10);
 		osDelay(1);
 	}
   /* USER CODE END StartMeasurement */
@@ -179,7 +195,7 @@ void HeartBeatTask(void *argument)
 	/* Infinite loop */
 	for (;;) {
 		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		osDelay(200);
+		osDelay(100);
 	}
   /* USER CODE END HeartBeatTask */
 }
