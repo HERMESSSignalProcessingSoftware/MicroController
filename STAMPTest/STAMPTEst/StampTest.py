@@ -8,7 +8,6 @@ Small Datavisualisation tool for STAMPTEst software.
 
 @author: Robin Grimsmann
 """
-
 import serial  
 import numpy as np
 from multiprocessing import Process, Pool, Lock 
@@ -65,7 +64,7 @@ def animate(i):
    #    line.set_ydata(values[-:])
    #    values = values[1:]
 #defining the serial port
-ser = serial.Serial(port, baud)
+
 
 
 def GetVoltage(value_b):
@@ -93,8 +92,11 @@ def DataGathering(arg):
     global rawDataCnt
     global GLOBAL_EXIT
     global values
-    ser.close()
-    ser.open()
+    try:
+        ser = serial.Serial(port, baud)
+        ser.open()
+    except:
+        return 
     print("Hello Form DataGathering!")
     ser.write(CMD_START)
     start_t = time.time()
@@ -114,8 +116,9 @@ def DataGathering(arg):
     ser.write(CMD_EXIT)
     ser.close()
 
+
+#not used 
 def DataProcessing(arg):
-    
     pass
 
             
@@ -128,7 +131,7 @@ def startMeasurment():
     global RUNNING
     global t
     t = threading.Thread(target=DataGathering, args=(0,))
-    t2 = threading.Thread(target=DataProcessing, args=(0,))  
+ #   t2 = threading.Thread(target=DataProcessing, args=(0,))  
     if (start_Str.get() == "Start"):
         start_Str.set("Stop")
         GLOBAL_EXIT = False
@@ -205,4 +208,3 @@ top.protocol("WM_DELETE_WINDOW", onExit)
 
 top.mainloop()
 
-        
