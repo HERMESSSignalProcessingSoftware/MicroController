@@ -83,6 +83,7 @@ const osMessageQueueAttr_t dataQueue_attributes = {
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 extern uint16_t globaldata[];
+extern uint32_t watermark;
 /* USER CODE END FunctionPrototypes */
 
 void StartMeasurement(void *argument);
@@ -155,11 +156,12 @@ void StartMeasurement(void *argument)
 
 	for (;;) {
 		status = osThreadFlagsWait(0x1, osFlagsWaitAll, osWaitForever);
+		HAL_UART_Receive_IT(&huart2, &cmd, 1);
 		if (cmd & 0x1){
-			HAL_UART_Receive_IT(&huart2, &cmd, 1);
 			HAL_ADC_Start_IT(&hadc1);
 		} else if (cmd & 0x2) {
-			osThreadFlagsSet(UARTTransmitHandle, 0x2);
+			HAL_ADC_Stop_IT(&hadc1);
+			watermark = 0;
 		}
 		osDelay(1);
 	}

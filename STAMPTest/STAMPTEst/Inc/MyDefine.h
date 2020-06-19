@@ -22,7 +22,7 @@
 #include "main.h"
 
 /*Buffer is 2 byte entry array */
-#define PAGESIZE 1024
+#define PAGESIZE 256
 #define WATERMARK_MAX 2 * PAGESIZE
 
 

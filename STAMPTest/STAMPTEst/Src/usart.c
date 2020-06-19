@@ -19,13 +19,13 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usart.h"
-#include "cmsis_os2.h"
+
 /* USER CODE BEGIN 0 */
+#include "cmsis_os2.h"
 extern osThreadId_t measureTaskHandle;
 /*Called if buffer is full! So make sure you are using the right buffer size for controll
  * commands*/
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	uint32_t b = 0;
 	osThreadFlagsSet(measureTaskHandle, 0x1);
 	__NOP();
 }
@@ -57,7 +57,7 @@ void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
-  HAL_UART_MspInit(&huart2);
+
 }
 
 void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
