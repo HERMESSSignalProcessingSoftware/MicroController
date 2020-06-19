@@ -5,8 +5,8 @@
  *      Author: Robin Grimsmann
  */
 
-#ifndef TASK_H_
-#define TASK_H_
+#ifndef MY_DEFINE_H__
+#define MY_DEFINE_H__
 
 //extern osThreadId_t measureTaskHandle;
 //
@@ -18,6 +18,12 @@
 //
 ///* Definitions for dataQueue */
 //extern osMessageQueueId_t dataQueueHandle;
+
+#include "main.h"
+
+/*Buffer is 2 byte entry array */
+#define PAGESIZE 1024
+#define WATERMARK_MAX 2 * PAGESIZE
 
 
 #endif /* TASK_H_ */

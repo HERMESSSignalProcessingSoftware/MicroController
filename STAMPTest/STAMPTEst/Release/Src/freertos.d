@@ -28,6 +28,8 @@ Src/freertos.o: ../Src/freertos.c \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_cortex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_adc.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_adc_ex.h \
+ ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_crc.h \
+ ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_crc_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h \
@@ -40,7 +42,8 @@ Src/freertos.o: ../Src/freertos.c \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- ../Inc/adc.h ../Inc/main.h ../Inc/signal.h ../Inc/usart.h
+ ../Inc/adc.h ../Inc/main.h ../Inc/signal.h ../Inc/usart.h \
+ ../Inc/MyDefine.h
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
@@ -102,6 +105,10 @@ Src/freertos.o: ../Src/freertos.c \
 
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_adc_ex.h:
 
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_crc.h:
+
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_crc_ex.h:
+
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h:
 
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h:
@@ -133,3 +140,5 @@ Src/freertos.o: ../Src/freertos.c \
 ../Inc/signal.h:
 
 ../Inc/usart.h:
+
+../Inc/MyDefine.h:

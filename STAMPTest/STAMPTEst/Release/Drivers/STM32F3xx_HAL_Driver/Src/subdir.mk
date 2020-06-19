@@ -8,6 +8,8 @@ C_SRCS += \
 ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc.c \
 ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c \
 ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.c \
 ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c \
 ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.c \
 ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.c \
@@ -29,6 +31,8 @@ OBJS += \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc.o \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.o \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o \
+./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.o \
+./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.o \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.o \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.o \
@@ -50,6 +54,8 @@ C_DEPS += \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc.d \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.d \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.d \
+./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.d \
+./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.d \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.d \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.d \
 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.d \
@@ -76,6 +82,10 @@ Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.o: ../Drivers/STM32F3xx_HA
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o: ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.o: ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.o: ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o: ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.o: ../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.c

@@ -29,6 +29,7 @@
 #include "adc.h"
 #include "signal.h"
 #include "usart.h"
+#include "MyDefine.h"
 #include <string.h>
 #include <stdio.h>
 /* USER CODE END Includes */
@@ -81,7 +82,7 @@ const osMessageQueueAttr_t dataQueue_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+extern uint16_t globaldata[];
 /* USER CODE END FunctionPrototypes */
 
 void StartMeasurement(void *argument);
@@ -147,19 +148,19 @@ void StartMeasurement(void *argument)
 {
   /* USER CODE BEGIN StartMeasurement */
 	/* Infinite loop */
-	uint32_t data = 0;
-	osStatus_t s = 0;
-	uint8_t msg[100];
-	HAL_ADC_Start_IT(&hadc1);
+	uint8_t cmd;
+	osStatus_t status = {0};
+	//HAL_UART_Transmit(&huart2, &d, 1,0);
+	HAL_UART_Receive_IT(&huart2, &cmd, 1);
+
 	for (;;) {
-		s = osMessageQueueGet(dataQueueHandle, &data, 1, 1);
-		if (s == osErrorTimeout) {
-			// Just catch it
-		} else if (s == osOK) {
-			sprintf(msg, "%d\n\r\0", data);
-			HAL_UART_Transmit(&huart2, msg, strlen(msg), 10);
+		status = osThreadFlagsWait(0x1, osFlagsWaitAll, osWaitForever);
+		if (cmd & 0x1){
+			HAL_UART_Receive_IT(&huart2, &cmd, 1);
+			HAL_ADC_Start_IT(&hadc1);
+		} else if (cmd & 0x2) {
+			osThreadFlagsSet(UARTTransmitHandle, 0x2);
 		}
-//		HAL_UART_Transmit(&huart1, &data, 4, 10);
 		osDelay(1);
 	}
   /* USER CODE END StartMeasurement */
@@ -176,7 +177,11 @@ void TransmitTask(void *argument)
 {
   /* USER CODE BEGIN TransmitTask */
 	/* Infinite loop */
+	osStatus_t status = {0};
 	for (;;) {
+		status = osThreadFlagsWait(0x2, osFlagsWaitAny, osWaitForever);
+		HAL_NVIC_DisableIRQ(ADC1_IRQn);
+		HAL_UART_Transmit_IT(&huart2, (uint8_t*)globaldata, WATERMARK_MAX);
 		osDelay(1);
 	}
   /* USER CODE END TransmitTask */

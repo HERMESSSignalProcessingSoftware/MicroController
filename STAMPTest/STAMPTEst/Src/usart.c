@@ -19,9 +19,21 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usart.h"
-
+#include "cmsis_os2.h"
 /* USER CODE BEGIN 0 */
-
+extern osThreadId_t measureTaskHandle;
+/*Called if buffer is full! So make sure you are using the right buffer size for controll
+ * commands*/
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	uint32_t b = 0;
+	osThreadFlagsSet(measureTaskHandle, 0x1);
+	__NOP();
+}
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
+	//Disabled in DataHandler Thread
+	HAL_NVIC_EnableIRQ(ADC1_IRQn);
+	__NOP();
+}
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart2;
@@ -45,7 +57,7 @@ void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
-
+  HAL_UART_MspInit(&huart2);
 }
 
 void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
@@ -72,6 +84,9 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     GPIO_InitStruct.Alternate = GPIO_AF7_USART2;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+    /* USART2 interrupt Init */
+    HAL_NVIC_SetPriority(USART2_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(USART2_IRQn);
   /* USER CODE BEGIN USART2_MspInit 1 */
 
   /* USER CODE END USART2_MspInit 1 */
@@ -95,6 +110,8 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
     */
     HAL_GPIO_DeInit(GPIOA, USART_TX_Pin|USART_RX_Pin);
 
+    /* USART2 interrupt Deinit */
+    HAL_NVIC_DisableIRQ(USART2_IRQn);
   /* USER CODE BEGIN USART2_MspDeInit 1 */
 
   /* USER CODE END USART2_MspDeInit 1 */

@@ -19,6 +19,8 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_cortex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_adc.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_adc_ex.h \
+ ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_crc.h \
+ ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_crc_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h \
@@ -38,7 +40,8 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- ../Inc/adc.h ../Inc/main.h ../Inc/usart.h ../Inc/gpio.h
+ ../Inc/adc.h ../Inc/main.h ../Inc/crc.h ../Inc/usart.h ../Inc/gpio.h \
+ ../Inc/MyDefine.h
 
 ../Inc/main.h:
 
@@ -82,6 +85,10 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_adc_ex.h:
 
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_crc.h:
+
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_crc_ex.h:
+
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h:
 
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h:
@@ -124,6 +131,10 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 
 ../Inc/main.h:
 
+../Inc/crc.h:
+
 ../Inc/usart.h:
 
 ../Inc/gpio.h:
+
+../Inc/MyDefine.h:

@@ -28,7 +28,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "MyDefine.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -38,11 +38,13 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define BAUD 460800
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+uint16_t globaldata[WATERMARK_MAX] = {0};
+uint32_t watermark = 0;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -67,6 +69,7 @@ void MX_FREERTOS_Init(void);
 //	sprintf(msg, "%d\n\r\0", data);
 //	HAL_UART_Transmit(&huart2, msg, strlen(msg), 10);
 //}
+
 /* USER CODE END 0 */
 
 /**
@@ -101,7 +104,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
-
   /* USER CODE END 2 */
 
   /* Init scheduler */
