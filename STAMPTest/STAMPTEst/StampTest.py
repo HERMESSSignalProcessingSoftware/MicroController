@@ -26,7 +26,7 @@ CMD_START = b'\x01'
 CMD_EXIT = b'\x02'
 BUFFERSIZE = 512
 RUNNING = False
-MEASURMENT_DIFF = False
+MEASURMENT_DIFF = True
 GLOBAL_EXIT = False 
 
 rawDataLock = Lock()
@@ -194,8 +194,9 @@ button_start = Tk.Button(top, textvariable=start_Str, command = lambda: startMea
 
 button_trigger = Tk.Button(top, text="Trigger")
 
-canvas = FigureCanvasTkAgg(fig, master=top)
-canvas.get_tk_widget().pack(side=Tk.TOP, fill=Tk.BOTH, expand=1)
+#buggy -> removed for test
+#canvas = FigureCanvasTkAgg(fig, master=top)
+#canvas.get_tk_widget().pack(side=Tk.TOP, fill=Tk.BOTH, expand=1)
 
 #Darstellung Buggy, stützt laufend ab. keine Ahnung warum. Bei Messbrücke sollte das aber egal sein.
 #ani = animation.FuncAnimation(fig, animate, interval=1000)

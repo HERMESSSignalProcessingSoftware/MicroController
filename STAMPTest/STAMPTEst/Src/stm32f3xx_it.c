@@ -71,6 +71,10 @@ extern UART_HandleTypeDef huart2;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern ADC_HandleTypeDef hadc1;
+extern UART_HandleTypeDef huart2;
+extern TIM_HandleTypeDef htim1;
+
 /* USER CODE BEGIN EV */
 extern ADC_HandleTypeDef hadc1;
 extern UART_HandleTypeDef huart2;
