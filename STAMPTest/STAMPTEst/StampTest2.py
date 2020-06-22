@@ -30,18 +30,19 @@ def GetVoltage(value_b):
         Docu comment
         if the measurment is differencial: negativ values are possible, values below 2**12 / 2 = 2048 are likely a negativ value
     """
-    value = 0x00000fff & ToInt(value_b)
+    value = ToInt(value_b)
     #differecial measurment buggy due to information leak of adc ref voltage for this mode
-    if (MEASURMENT_DIFF == True):
-        faktor = 1
-        if (value < 2**11):
-            faktor = -1
-        return faktor * (value / 2**12 ) * (3.3 / 2)
+    if (MEASURMENT_DIFF == True): 
+        # Failed, may the value be wrong..
+        return (value / 2**12 ) * (3.3)
     else:
         return (value / 2**12 ) * 3.3
 
 def ToInt(value_b):
-    return int.from_bytes(value_b, "little")
+    if (MEASURMENT_DIFF == True):
+        return int.from_bytes(value_b, "little", signed = True)
+    else:
+        return int.from_bytes(value_b, "little")
 
 def MA(li):
     return np.average(li)
