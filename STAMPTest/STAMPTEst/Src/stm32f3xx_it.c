@@ -192,13 +192,15 @@ void ADC1_IRQHandler(void)
 	uint32_t data = HAL_ADC_GetValue(&hadc1);
 	//uint8_t msg[100] = {0};
 	//sprintf(msg, "%d\n\r", data);
-	globaldata[watermark++] = 0x00000FFF & data;
+	if (watermark % 2 == 0)
+		globaldata[watermark++] = (0x00000FFF & data) | CHANNEL_6; //
+	else
+		globaldata[watermark++] = (0x00000FFF & data) | CHANNEL_7; //
 	if (watermark >= WATERMARK_MAX - 1) {
 		watermark = 0;
 		osThreadFlagsSet(UARTTransmitHandle, 0x2);
 		//HAL_UART_Transmit(&huart2, "FULL!\n\r", 5, 0); //Because it will be called form ISR
 	}
-	//osSignalSet(&measureTaskHandle, ADC_VALUE);
   /* USER CODE END ADC1_IRQn 1 */
 }
 

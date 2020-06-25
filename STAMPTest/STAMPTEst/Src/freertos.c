@@ -158,8 +158,10 @@ void StartMeasurement(void *argument)
 		status = osThreadFlagsWait(0x1, osFlagsWaitAll, osWaitForever);
 		HAL_UART_Receive_IT(&huart2, &cmd, 1);
 		if (cmd & 0x1){
+			osThreadFlagsSet(HeartBeatHandle, ThreadFlagHBStart);
 			HAL_ADC_Start_IT(&hadc1);
 		} else if (cmd & 0x2) {
+			osThreadFlagsSet(HeartBeatHandle, ThreadFlagHBStop);
 			HAL_ADC_Stop_IT(&hadc1);
 			watermark = 0;
 		}
@@ -196,13 +198,23 @@ void TransmitTask(void *argument)
  * @retval None
  */
 /* USER CODE END Header_HeartBeatTask */
+int running = 0;
 void HeartBeatTask(void *argument)
 {
   /* USER CODE BEGIN HeartBeatTask */
 	/* Infinite loop */
 	for (;;) {
-		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		osDelay(100);
+		if (running == 0) {
+			osThreadFlagsWait(ThreadFlagHBStart, osFlagsWaitAny, osWaitForever);
+			running = 1;
+		} else {
+			osStatus_t status = osThreadFlagsWait(ThreadFlagHBStop, osFlagsWaitAny, 100);
+			if (status == osErrorTimeout ) {
+				HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+			} else {
+				running = 0;
+			}
+		}
 	}
   /* USER CODE END HeartBeatTask */
 }

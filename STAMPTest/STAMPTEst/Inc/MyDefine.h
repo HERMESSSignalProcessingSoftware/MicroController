@@ -25,5 +25,10 @@
 #define PAGESIZE 256
 #define WATERMARK_MAX 2 * PAGESIZE
 
+#define CHANNEL_6 (1 << 13)
+#define CHANNEL_7 (1 << 14)
 
-#endif /* TASK_H_ */
+#define ThreadFlagHBStart 	0x1
+#define ThreadFlagHBStop 	0x2
+
+#endif
