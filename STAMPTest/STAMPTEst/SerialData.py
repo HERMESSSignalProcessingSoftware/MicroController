@@ -2,6 +2,7 @@ import serial
 import pickle 
 import time
 import numpy as np
+import matplotlib.pyplot as plt 
 
 COM = "COM10"
 BAUD = 460800
@@ -37,25 +38,36 @@ ser.open()
 #    x1 = 0x00000fff &  values[i]
 #    x2 = 0x00000fff &  values[i+1]
 #    print("{0:.4f} - {1:.4f} = {2:.4f} ({3} - {4} = {5})".format(v1, v2, v1 - v2, x1, x2, x1 - x2))
-
+raw = "no"
 def Calibration():
     global supply
+    global raw
     print("Make sure you connected the ADC Channel 6 to the supply voltage of the bridge!")
-    raw = input("Connected [yes: defalut(no)]: ")
+    if (raw == "no"):
+        raw = input("Connected [yes: defalut(no)]: ")
     if (raw.lower() == "yes"):
         ser.close()
         ser.open()
         ser.write(CMD_START)
         start = time.time()
-        x = ser.read(2 * BUFFER * 2**12)
-        print("Data Collected!")
+        DATA_LEN = 2**15
+        x = ser.read(DATA_LEN)
+        data_col  = time.time() - start
+        print("Data Collected! Time: {0:.2f} ({1:.2f})".format(data_col, DATA_LEN / data_col))
+        ser.write(CMD_END)
         ser.close()
         values = np.array([])
-        for i in range(0, 2 * BUFFER * 2**12, 2):
-            values = np.append(Voltage(0x00000FFF & ToInt(x[i*2:(i+1)*2])))
+        for i in range(0, DATA_LEN // 2, 2):
+            values = np.append(values, Voltage(0x00000FFF & ToInt(x[i*2:(i+1)*2])))
+        plt.plot(values)
         supply = np.average(values)
         print("Set Ref Voltage {0}".format(supply))
-        print("Took {0:.2f}s".format(time.time() - start))
+        print("Done! Took {0:.2f}s".format(time.time() - start))
+        local = time.localtime()
+        plt.savefig("D:\\Data\\supply_{0}_{1}_{2}.png".format(local.tm_sec, local.tm_min, local.tm_hour))
+
+for _ in range(10):
+    Calibration()
 
 def PraseInput(raw):
     global RUNNING 
@@ -73,6 +85,6 @@ def PraseInput(raw):
         print(hlp)
 
 RUNNING = True
-while(RUNNING):
-    raw_in = input("#")
-    PraseInput(raw_in)
+#while(RUNNING):
+#    raw_in = input("#")
+#    PraseInput(raw_in)
