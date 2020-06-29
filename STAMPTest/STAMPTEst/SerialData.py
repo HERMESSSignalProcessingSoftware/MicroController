@@ -171,7 +171,7 @@ def MeasureBridge(length = 64 * BUFFER):
 noLoadOffset = 0.0
 def Abgleich():
     global noLoadOffset
-    print("Make sure, that nothing applied any load to your wheatstone bridge!")
+    print("Make sure, that no load is applied to your wheatstone bridge!")
     raw = input("Start? [default(yes); no]")
     if (raw.lower() != 'no'):
         x = ReadData(16 * BUFFER)
