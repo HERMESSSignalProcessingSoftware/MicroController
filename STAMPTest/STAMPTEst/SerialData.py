@@ -16,7 +16,7 @@ BUFFER = 512
 CHANNEL6 = (1 << 13)
 CHANNEL7 = (1 << 14)
 
-MA_LEN = 8
+MA_LEN = 16
 
 WORKINGDIR = "D:\\Data\\"
 
@@ -134,26 +134,32 @@ def _MeasureBridge(length):
     for i in range(0, len(measurment), MA_LEN * 2):
         filterd2 = np.append(filterd2, MA(measurment[i:i+(MA_LEN * 2)]))
 
-    ft = scipy.fftpack.fft(measurment)
-    plt.figure()
-    plt.subplot(311)
+    local = time.localtime()
+
+    plt.figure(dpi=200)
+    plt.subplot(211)
     plt.plot(measurment)
+    #plt.plot(np.mean(measurment))
     plt.grid(True)
     #plt.xticks(np.arange(0, len(measurment))))
     plt.title("Bridge Measurement")
-
-    plt.subplot(312)
+    plt.subplot(212)
+    plt.plot(np.repeat(np.mean(measurment), len(measurment)))
+    plt.grid(True)
+    plt.title("Average {:.8}V".format(np.mean(measurment)))
+    plt.subplots_adjust(hspace=1.5)
+    plt.savefig("{}measurement1_{}_{}_{}.png".format(WORKINGDIR, local.tm_hour, local.tm_min, local.tm_sec))
+    plt.figure(dpi=200)
+    plt.subplot(211)
     plt.plot(filterd)
     plt.title("Moving Average {}".format(MA_LEN))
     plt.grid(True)
-    plt.subplot(313)
+    plt.subplot(212)
     plt.plot(filterd2)
     plt.title("Moving Average {}".format(MA_LEN * 2))
     plt.grid(True)
-    plt.subplots_adjust(hspace=0.5)
-    local = time.localtime()
-    plt.show()
-    #plt.savefig("{}measurement_{}_{}_{}.png".format(WORKINGDIR, local.tm_hour, local.tm_min, local.tm_sec))
+    plt.subplots_adjust(hspace=1.5)
+    plt.savefig("{}measurement2_{}_{}_{}.png".format(WORKINGDIR, local.tm_hour, local.tm_min, local.tm_sec))
 
 
 def MeasureBridge(length = 64 * BUFFER):
@@ -162,6 +168,22 @@ def MeasureBridge(length = 64 * BUFFER):
     if (raw.lower() != "no"):
        _MeasureBridge(length)
 
+noLoadOffset = 0.0
+def Abgleich():
+    global noLoadOffset
+    print("Make sure, that nothing applied any load to your wheatstone bridge!")
+    raw = input("Start? [default(yes); no]")
+    if (raw.lower() != 'no'):
+        x = ReadData(16 * BUFFER)
+        values = np.array([])
+        for i in range(8 * BUFFER):
+            values = np.append(values, Voltage(0x00000fff & ToInt(x[i*2:(i+1)*2])))
+        wheatstonevalues = np.array([])
+        for i in range(0, len(values),2):
+            wheatstonevalues = np.append(wheatstonevalues, values[i] - values[i+1])
+        noLoadOffset = np.average(wheatstonevalues)
+        print("No Load offset: {:.8f}V".format(noLoadOffset))
 #Calibration()
 GetSpeed()
+Abgleich()
 MeasureBridge()
