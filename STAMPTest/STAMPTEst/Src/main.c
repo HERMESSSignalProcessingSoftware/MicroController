@@ -160,7 +160,7 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC1;
-  PeriphClkInit.Adc1ClockSelection = RCC_ADC1PLLCLK_DIV256;
+  PeriphClkInit.Adc1ClockSelection = RCC_ADC1PLLCLK_DIV32;
 
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {

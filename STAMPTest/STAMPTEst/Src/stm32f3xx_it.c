@@ -189,7 +189,8 @@ void ADC1_IRQHandler(void)
   /* USER CODE END ADC1_IRQn 0 */
   HAL_ADC_IRQHandler(&hadc1);
   /* USER CODE BEGIN ADC1_IRQn 1 */
-	uint32_t data = HAL_ADC_GetValue(&hadc1);
+	uint32_t data 	= HAL_ADC_GetValue(&hadc1);
+	uint32_t d2 	= HAL_ADC_GetValue(&hadc1);
 	//uint8_t msg[100] = {0};
 	//sprintf(msg, "%d\n\r", data);
 	if (watermark % 2 == 0)

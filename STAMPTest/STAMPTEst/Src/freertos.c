@@ -198,10 +198,10 @@ void TransmitTask(void *argument)
  * @retval None
  */
 /* USER CODE END Header_HeartBeatTask */
-int running = 0;
 void HeartBeatTask(void *argument)
 {
   /* USER CODE BEGIN HeartBeatTask */
+	uint32_t running = 0;
 	/* Infinite loop */
 	for (;;) {
 		if (running == 0) {
