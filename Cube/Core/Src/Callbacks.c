@@ -12,12 +12,22 @@
 #include "FreeRTOSConfig.h"
 #include "cmsis_os.h"
 #include <stdlib.h>
+#include "DAPI.h"
 
 volatile uint32_t spi6txCnt = 0;
 
 
 extern osThreadId_t MemoryTaskHandle;
+extern osThreadId_t DAPI_Thread_ID;
 
+
+void DAPI_UART_TransmissionReceivedCallback(void){
+	osThreadFlagsSet(DAPI_Thread_ID, DAPI_TRANSMISSION_RECEIVED_FLAG);
+}
+
+void DAPI_UART_TransmissionFailedCallback(void){
+	osThreadFlagsSet(DAPI_Thread_ID, DAPI_TRANSMISSION_FAILED_FLAG);
+}
 /**
  *
  */
