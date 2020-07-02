@@ -43,14 +43,29 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-uint16_t globaldata[WATERMARK_MAX] = {0};
+uint16_t globaldata[WATERMARK_MAX] = { 0 };
 uint32_t watermark = 0;
+
+//Commands
+uint8_t receivingdata[4] = {1,1,1,1};
+uint8_t readdata[4]= {0x12,0xff,0xff,0xff}; // READ DATA Befehlssatz
+uint8_t readregister[2]= {0x20, 0x03}; // READ Register Befehlssatz
+uint8_t nop[2] = {0xff,0xff}; // NOP Befehle
+uint8_t transmitdata[3] = {0x12, 0xff, 0xff};// READ DATA Befehlssatz und 16 SCLK's
+uint16_t result[300] = {0};//FANGVARIABLE
+int i = 0;
+uint8_t registervalue[6]={9,9,9,9,9,9}; //ERGEBNIS des Registers
+uint8_t reset_command[1] = {0x06};
+uint8_t sdatac_command[1] = {0x16};
+uint8_t wreg_command[6] = {0x40, 0x03, 0x01, 0x00, 0x03, 0x42};//BCS -> RESET dann CHANNEL ANX0 auswahl
+uint8_t sync_command[1] = {0x04};
+uint16_t buffer[1] = {0};
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern ADC_HandleTypeDef hadc1;
 extern osMessageQueueId_t dataQueueHandle;
 /* USER CODE END PV */
 
@@ -69,7 +84,6 @@ void MX_FREERTOS_Init(void);
 //	sprintf(msg, "%d\n\r\0", data);
 //	HAL_UART_Transmit(&huart2, msg, strlen(msg), 10);
 //}
-
 /* USER CODE END 0 */
 
 /**

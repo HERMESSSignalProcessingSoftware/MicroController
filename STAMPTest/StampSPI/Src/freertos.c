@@ -26,7 +26,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
-#include "adc.h"
 #include "signal.h"
 #include "usart.h"
 #include "MyDefine.h"
@@ -155,16 +154,7 @@ void StartMeasurement(void *argument)
 	HAL_UART_Receive_IT(&huart2, &cmd, 1);
 
 	for (;;) {
-		status = osThreadFlagsWait(0x1, osFlagsWaitAll, osWaitForever);
-		HAL_UART_Receive_IT(&huart2, &cmd, 1);
-		if (cmd & 0x1){
-			osThreadFlagsSet(HeartBeatHandle, ThreadFlagHBStart);
-			HAL_ADC_Start_IT(&hadc1);
-		} else if (cmd & 0x2) {
-			osThreadFlagsSet(HeartBeatHandle, ThreadFlagHBStop);
-			HAL_ADC_Stop_IT(&hadc1);
-			watermark = 0;
-		}
+
 		osDelay(1);
 	}
   /* USER CODE END StartMeasurement */
@@ -183,9 +173,7 @@ void TransmitTask(void *argument)
 	/* Infinite loop */
 	osStatus_t status = {0};
 	for (;;) {
-		status = osThreadFlagsWait(0x2, osFlagsWaitAny, osWaitForever);
-		HAL_NVIC_DisableIRQ(ADC1_IRQn);
-		HAL_UART_Transmit_IT(&huart2, (uint8_t*)globaldata, WATERMARK_MAX);
+
 		osDelay(1);
 	}
   /* USER CODE END TransmitTask */
