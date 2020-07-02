@@ -71,7 +71,6 @@ extern UART_HandleTypeDef huart2;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern ADC_HandleTypeDef hadc1;
 extern UART_HandleTypeDef huart2;
 extern TIM_HandleTypeDef htim1;
 
@@ -178,32 +177,6 @@ void DebugMon_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f3xx.s).                    */
 /******************************************************************************/
-
-/**
-  * @brief This function handles ADC1 interrupt.
-  */
-void ADC1_IRQHandler(void)
-{
-  /* USER CODE BEGIN ADC1_IRQn 0 */
-
-  /* USER CODE END ADC1_IRQn 0 */
-  HAL_ADC_IRQHandler(&hadc1);
-  /* USER CODE BEGIN ADC1_IRQn 1 */
-	uint32_t data 	= HAL_ADC_GetValue(&hadc1);
-	uint32_t d2 	= HAL_ADC_GetValue(&hadc1);
-	//uint8_t msg[100] = {0};
-	//sprintf(msg, "%d\n\r", data);
-	if (watermark % 2 == 0)
-		globaldata[watermark++] = (0x00000FFF & data) | CHANNEL_6; //
-	else
-		globaldata[watermark++] = (0x00000FFF & data) | CHANNEL_7; //
-	if (watermark >= WATERMARK_MAX - 1) {
-		watermark = 0;
-		osThreadFlagsSet(UARTTransmitHandle, 0x2);
-		//HAL_UART_Transmit(&huart2, "FULL!\n\r", 5, 0); //Because it will be called form ISR
-	}
-  /* USER CODE END ADC1_IRQn 1 */
-}
 
 /**
   * @brief This function handles TIM1 update and TIM16 interrupts.
