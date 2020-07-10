@@ -69,6 +69,8 @@ void Error_Handler(void);
 #define nCS_GPIO_Port GPIOB
 #define LD2_Pin GPIO_PIN_13
 #define LD2_GPIO_Port GPIOB
+#define Time_Pin GPIO_PIN_8
+#define Time_GPIO_Port GPIOC
 #define nDRDY_Pin GPIO_PIN_10
 #define nDRDY_GPIO_Port GPIOA
 #define nDRDY_EXTI_IRQn EXTI15_10_IRQn

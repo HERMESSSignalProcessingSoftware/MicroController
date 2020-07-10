@@ -27,7 +27,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "ADC.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,18 +48,16 @@
 
 /* USER CODE BEGIN PV */
 //Commands
-uint8_t receivingdata[4] = {1,1,1,1};
-uint8_t readdata[4]= {0x12,0xff,0xff,0xff}; // READ DATA Befehlssatz
-uint8_t readregister[2]= {0x20, 0x03}; // READ Register Befehlssatz
-uint8_t nop[2] = {0xff,0xff}; // NOP Befehle
+
 uint8_t transmitdata[3] = {0x12, 0xff, 0xff};// READ DATA Befehlssatz und 16 SCLK's
-uint16_t result[300] = {0};//FANGVARIABLE
+uint16_t result[1024] = {0};//FANGVARIABLE
+
+/*Defined output buffer memcpy result to outputbuffer and transmit it*/
+uint16_t outputBuffer[1024] = {0};
+
 int i = 0;
 uint8_t registervalue[6]={9,9,9,9,9,9}; //ERGEBNIS des Registers
-uint8_t reset_command[1] = {0x06};
-uint8_t sdatac_command[1] = {0x16};
-uint8_t wreg_command[6] = {0x40, 0x03, 0x01, 0x00, 0x03, 0x42};//BCS -> RESET dann CHANNEL ANX0 auswahl
-uint8_t sync_command[1] = {0x04};
+
 uint16_t buffer[1] = {0};
 /* USER CODE END PV */
 
@@ -143,7 +141,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL8;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL16;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -157,7 +155,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV4;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
     Error_Handler();
   }
