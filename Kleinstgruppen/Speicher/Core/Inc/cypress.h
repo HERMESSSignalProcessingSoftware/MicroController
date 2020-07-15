@@ -8,11 +8,6 @@
 #ifndef INC_CYPRESS_H_
 #define INC_CYPRESS_H_
 
-
-
-#endif /* INC_CYPRESS_H_ */
-
-
 //Cypress commands
 
 #define c_READID 0x9F
@@ -41,6 +36,11 @@ int readPage(uint8_t *data, uint32_t address, SPI_Values SPI_val);
 int chipErase(SPI_Values SPI_val);
 uint32_t testMemory(void);
 void writeReady(SPI_Values SPI_val);
+
+
+#endif /* INC_CYPRESS_H_ */
+
+
 
 
 
