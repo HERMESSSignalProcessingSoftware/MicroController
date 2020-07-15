@@ -10,12 +10,16 @@
 
 //Cypress commands
 
-#define c_READID 0x9F
-#define c_READ 0x13
-#define c_WRITEPAGE 0x12
-#define c_WREN 0x06
+
 #define c_WRDI 0x04
+#define c_READSTATUSREG1 0x05
+#define c_WREN 0x06
+#define c_READSTATUSREG2 0x07
+#define c_WRITEPAGE 0x12
+#define c_READ 0x13
+#define c_READID 0x9F
 #define c_CE 0xC7
+
 
 typedef struct{
 	SPI_HandleTypeDef *spihandle;
@@ -29,6 +33,8 @@ typedef struct {
 	int16_t Temp_Data[3];
 }Datensatz;
 
+
+//Kommentare Fehlen!! 
 uint8_t readStatus(SPI_Values SPI_val);
 int writeByte(uint8_t data,SPI_Values SPI_val);
 int writePage(uint8_t *data, uint32_t address, SPI_Values SPI_val);
