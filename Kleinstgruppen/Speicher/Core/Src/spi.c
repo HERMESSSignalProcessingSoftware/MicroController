@@ -17,7 +17,7 @@ uint8_t tmp_add;
 uint8_t readStatus(SPI_Values SPI_val)
 {
 	uint8_t	data;
-	uint8_t command = 0x05;
+	uint8_t command = c_READSTATUSREG1;
 	//CS1 low
 	HAL_GPIO_WritePin(SPI_val.CS_Port, SPI_val.CS_Pin, GPIO_PIN_RESET);
 	//send command
