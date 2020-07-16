@@ -59,6 +59,8 @@ int i = 0;
 uint8_t registervalue[6]={9,9,9,9,9,9}; //ERGEBNIS des Registers
 
 uint16_t buffer[1] = {0};
+
+extern UART_HandleTypeDef huart2;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -104,7 +106,6 @@ int main(void)
   MX_SPI3_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -119,7 +120,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  HAL_UART_Transmit_IT(&huart2, (uint8_t*)"HALLO WELT!", 11);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
