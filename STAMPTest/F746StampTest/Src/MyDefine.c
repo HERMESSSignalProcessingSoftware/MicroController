@@ -117,5 +117,6 @@ uint32_t adc_test(void) {
  * Handle interrupt, get interrupt id (from lookup table) and set bitmap
  */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-
+	uint8_t t = ADCLookup[LOOKUP_PIN_INDEX(GPIO_Pin)];
+	ADCBitMap = ADCBitMap & (~(0x1 << t));
 }

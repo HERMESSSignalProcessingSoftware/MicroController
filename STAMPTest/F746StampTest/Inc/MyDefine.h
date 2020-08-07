@@ -41,9 +41,10 @@
 
 #define NUMBER_OF_PINBLOCKS 11
 #define NUMBER_OF_PINS 16
-
+#define ADCBITMAPNORMAL 0xFFFFFFFF
 /*Lookup table*/
-extern uint8_t ADCLookup[NUMBER_OF_PINBLOCKS][NUMBER_OF_PINS];
+//extern uint8_t ADCLookup[NUMBER_OF_PINBLOCKS][NUMBER_OF_PINS];
+extern uint8_t ADCLookup[NUMBER_OF_PINS];
 /* ADC bit map */
 extern uint32_t ADCBitMap;
 

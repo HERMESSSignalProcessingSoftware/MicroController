@@ -92,19 +92,28 @@ int main(void)
   MX_USART3_UART_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-//	init_adc();
+  init_adc();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   uint32_t s = 0;
+  uint8_t data[2] = {0};
+  HAL_GPIO_WritePin(nRES_GPIO_Port, nRES_Pin, GPIO_PIN_SET);
+  HAL_Delay(10);
+  HAL_GPIO_WritePin(nRES_GPIO_Port, nRES_Pin, GPIO_PIN_SET);
 	while (1) {
     /* USER CODE END WHILE */
-		s = LOOKUP_PIN_INDEX(nDRDY_Pin);
-		s = LOOKUP_PINBLOCK_INDEX(nDRDY_GPIO_Port);
-		s = ADCLookup[LOOKUP_PINBLOCK_INDEX(nDRDY_GPIO_Port)][LOOKUP_PIN_INDEX(nDRDY_Pin)];
-		s = ADCBitMap & (~(0x1 << s));
-	/* USER CODE BEGIN 3 */
+
+    /* USER CODE BEGIN 3 */
+		if (ADCBitMap == 0xFFFFFFFE) {
+			//Read ADC Value here
+			HAL_GPIO_WritePin(nCS_GPIO_Port, nCS_Pin, GPIO_PIN_RESET);		//CS LOW
+			HAL_SPI_Transmit(&hspi1, (uint8_t*)rdata, 1, 1);
+			HAL_SPI_TransmitReceive(&hspi1, (uint8_t*)nop, data, 2, 1);//Pointer incompatible  WARUM??????????
+			HAL_GPIO_WritePin(nCS_GPIO_Port, nCS_Pin, GPIO_PIN_SET);
+			ADCBitMap = ADCBITMAPNORMAL;
+		}
 	}
   /* USER CODE END 3 */
 }
