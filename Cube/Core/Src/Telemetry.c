@@ -11,7 +11,6 @@
 #include "test.h"
 
 extern CRC_HandleTypeDef hcrc;
-extern osSemaphoreId_t TelemetrySememphoreHandle;
 
 /**
  * CreateHeader

@@ -10,7 +10,6 @@
 
 #include <stdlib.h>
 #include "main.h"
-#include "cmsis_os.h"
 
 /**
  * there are 9 times 16 bit ADCs

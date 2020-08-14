@@ -8,15 +8,11 @@
 
 #include "spi.h"
 #include "main.h"
-#include "FreeRTOS.h"
-#include "FreeRTOSConfig.h"
-#include "cmsis_os.h"
 #include <stdlib.h>
+#include "SPU.h"
 
 volatile uint32_t spi6txCnt = 0;
 
-
-extern osThreadId_t MemoryTaskHandle;
 
 /**
  *
@@ -50,28 +46,34 @@ void HAL_SPI_ErrorCallback (SPI_HandleTypeDef * hspi) {
 	}
 
 	sprintf(msg, "SPI %d Critical! \n\r\0", spiN);
-	Huart4_send(msg, strlen(msg));
+	//Huart4_send(msg, strlen(msg));
 	free(msg);
 }
 
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
-	volatile uint8_t x = 5;
-	if (hspi->Instance == hspi2.Instance) {
-		spi6txCnt;
-	} else if (hspi->Instance == hspi6.Instance) {
-		spi6txCnt++;
-	//	osSignalSet(MemoryTaskHandle, 0x02);
+	/*if (hspi->Instance == hspi6.Instance) {
 
-	}
+	}*/
 }
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi) {
-	volatile uint8_t y = 5;
-	if (hspi->Instance == hspi2.Instance) {
-		spi6txCnt;
-	} else if (hspi->Instance == hspi6.Instance) {
-		spi6txCnt  += y;
-		InterSPUTransmit("!", 1);
-		//osSignalSet(MemoryTaskHandle, 0x01);
+
+}
+
+
+/* Overwrite the internal void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) function */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	switch (GPIO_Pin) {
+	case SODS_OPT_Pin:
+		Toggle(SODS);
+		break;
+	case SOE_OPT_Pin:
+		Toggle(SOE);
+		break;
+	case LO_OPT_Pin:
+		Toogle(LO);
+		break;
+	default:
+		break;
 	}
 }
