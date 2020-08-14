@@ -8,20 +8,39 @@
 #include <SPU.h>
 #include "usart.h"
 #include <stdlib.h>
+#include "stm32f7xx_hal.h"
+#include "ADC.h"
+#include "Memory.h"
 
 Config_t config = { 0 };
 
 /**
  * ADC Look Up Table
  */
-uint8_t ADCLookup[NUMBER_OF_PINS] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-		0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0xFF, 0xFF, 0xFF };
+uint8_t ADCLookup[NUMBER_OF_PINS] =
+			{ 0xFF, //Interrupt line 0
+			  0xFF, //Interrupt line 1
+			  0xFF, //Interrupt line 2
+			  0xFF, //Interrupt line 3
+			  0xFF, //Interrupt line 4
+			  0xFF, //Interrupt line 5
+			  0xFF, //Interrupt line 6
+			  0xFF, //Interrupt line 7
+			  0xFF, //Interrupt line 8
+			  0xFF, //Interrupt line 9
+			  0xFF, //Interrupt line 10
+			  0xFF, //Interrupt line 11
+			  0x00, //Interrupt line 12
+			  0xFF, //Interrupt line 13
+			  0xFF, //Interrupt line 14
+			  0xFF  //Interrupt line 15
+			};
 
 /**
  * ADC bitmap
  * default value: 0xFFFFFFFF
  */
-uint32_t ADCBitMap = 0xFFFFFFFF;
+uint32_t ADCBitMap = ADCBITMAPNORMAL;
 
 /**
  * Set the signal in the local config struct
@@ -142,6 +161,7 @@ void SPURun(Config_t *config) {
 			if (ADCBitMap == ADCBITMAPDMS) { //All Interrupts appeard!
 				ReadADCs(memoryregion);
 				Counter++;
+				TelCounter++;
 				ADCBitMap = ADCBITMAPNORMAL;
 			}
 			if (Counter == 10) {
@@ -149,12 +169,22 @@ void SPURun(Config_t *config) {
 				Counter = 0;
 			}
 
-			if (TelCounter == 17) {
-				// Send Telemetry frame
+			switch (TelCounter) {
+			case 16: //Prepare frame aks sec. SPU for status
+				//InterSPUSend(); Transmit uwticks to secondary SPU, sec. SPU will respond with status
+				break;
+			case 17: // Send frame
+				//TelemetrySend..
+				TelCounter = 0;
+				break;
+			default:
+				break;
 			}
 
 			if (GetSignal(SODS) == TRUE) {
 				//Set timestamp = 0
+				// SysTick_handler will call HAL_IncTick, which will increment uwTick
+				uwTick = 0;
 			}
 			if (GetSignal(SODS) == FALSE) {
 				//Shutdown

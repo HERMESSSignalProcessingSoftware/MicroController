@@ -48,6 +48,7 @@ typedef struct {
 	Bool_t LO;
 	Bool_t SODS;
 	Bool_t SOE;
+	uint32_t seconday_status; // will be filled by primary SPU after secondary SPU answers
 } Config_t;
 
 /**

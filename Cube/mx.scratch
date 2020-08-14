@@ -14,7 +14,11 @@
       <ProjectName>Cube</ProjectName>
       <ProjectNature>C</ProjectNature>
       <Secure/>
-      <filestoremove/>
+      <filestoremove>
+        <file>
+          <name>Core\Src\stm32f7xx_hal_timebase_tim.c</name>
+        </file>
+      </filestoremove>
       <sourceEntriesToRemove>
         <sourceEntry/>
       </sourceEntriesToRemove>
