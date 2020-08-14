@@ -72,4 +72,8 @@ uint32_t SendPackage(telemetry_t *package);
  */
 uint32_t PackageNumber;
 
+/**
+ * Init Telemetry
+ */
+void InitTelemetry(void);
 #endif /* INC_TELEMETRY_H_ */

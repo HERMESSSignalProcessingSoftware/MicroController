@@ -11,6 +11,9 @@
 #include "stm32f7xx_hal.h"
 #include "ADC.h"
 #include "Memory.h"
+#include "InterSPU.h"
+#include "Telemetry.h"
+#include "test.h"
 
 Config_t config = { 0 };
 
@@ -149,7 +152,15 @@ void SPURun(Config_t *config) {
 			/* Deinit huart8 (telemetry link) */
 			HAL_UART_MspDeInit(&huart8);
 		}
+		uint32_t testRes = 0;
 		InitADC();
+		InitMemory();
+		InitTelemetry();
+		InitInterSPU();
+		testRes = Test();
+		if (testRes == 0) {
+			//Test Failed Try recovery
+		}
 		void *memoryregion = malloc(256);
 		uint32_t Counter = 0;
 		uint32_t TelCounter = 0; //Saves the current value of the passed
