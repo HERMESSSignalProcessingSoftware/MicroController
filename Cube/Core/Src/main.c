@@ -22,6 +22,7 @@
 #include "main.h"
 #include "crc.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -98,6 +99,7 @@ int main(void)
   MX_UART5_Init();
   MX_CRC_Init();
   MX_SPI4_Init();
+  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
 
 	uint32_t ret = Test();
