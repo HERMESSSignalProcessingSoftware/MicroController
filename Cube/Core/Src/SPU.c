@@ -20,24 +20,23 @@ Config_t config = { 0 };
 /**
  * ADC Look Up Table
  */
-uint8_t ADCLookup[NUMBER_OF_PINS] =
-			{ 0xFF, //Interrupt line 0
-			  0xFF, //Interrupt line 1
-			  0xFF, //Interrupt line 2
-			  0xFF, //Interrupt line 3
-			  0xFF, //Interrupt line 4
-			  0xFF, //Interrupt line 5
-			  0xFF, //Interrupt line 6
-			  0xFF, //Interrupt line 7
-			  0xFF, //Interrupt line 8
-			  0xFF, //Interrupt line 9
-			  0xFF, //Interrupt line 10
-			  0xFF, //Interrupt line 11
-			  0x00, //Interrupt line 12
-			  0xFF, //Interrupt line 13
-			  0xFF, //Interrupt line 14
-			  0xFF  //Interrupt line 15
-			};
+uint8_t ADCLookup[NUMBER_OF_PINS] = { 4, //Interrupt line 0
+		0xFF, //Interrupt line 1
+		0xFF, //Interrupt line 2
+		0xFF, //Interrupt line 3
+		0xFF, //Interrupt line 4
+		0xFF, //Interrupt line 5
+		0xFF, //Interrupt line 6
+		0xFF, //Interrupt line 7
+		0xFF, //Interrupt line 8
+		0xFF, //Interrupt line 9
+		0xFF, //Interrupt line 10
+		0xFF, //Interrupt line 11
+		0x00, //Interrupt line 12
+		0xFF, //Interrupt line 13
+		0xFF, //Interrupt line 14
+		0xFF  //Interrupt line 15
+		};
 
 /**
  * ADC bitmap
@@ -153,6 +152,9 @@ void SPURun(Config_t *config) {
 			HAL_UART_MspDeInit(&huart8);
 		}
 		uint32_t testRes = 0;
+		uint16_t value = 0;
+		uint32_t calCnt = 0;
+		uint16_t cal[12] = {0};
 		InitADC();
 		InitMemory();
 		InitTelemetry();
@@ -164,46 +166,68 @@ void SPURun(Config_t *config) {
 		void *memoryregion = malloc(256);
 		uint32_t Counter = 0;
 		uint32_t TelCounter = 0; //Saves the current value of the passed
-		while (GetSignal(SOE) == FALSE) { //Stay at state init as long as no signal SOE was set
-			//Do nothing
-		}
+//		while (GetSignal(SOE) == FALSE) { //Stay at state init as long as no signal SOE was set
+//			//Do nothing
+//		}
 		StartADC(); //Interrups will be coming state changes to data handling
-		while (GetSignal(SOE) == TRUE) {
-			if (ADCBitMap == ADCBITMAPDMS) { //All Interrupts appeard!
-				ReadADCs(memoryregion);
-				Counter++;
-				TelCounter++;
+		while (1) {
+			if (ADCBitMap == IPR_BITMAP) {
+				/* Read data from ADC */
+				value = ReadADC4();
 				ADCBitMap = ADCBITMAPNORMAL;
 			}
-			if (Counter == 10) {
-				WriteToMemory(memoryregion);
-				Counter = 0;
+			if(calCnt < 12) {
+				cal[calCnt++] = value;
+				if (calCnt == 12) {
+					int32_t s = 0;
+					for (uint32_t i = 0; i < 12; i++) {
+						s += cal[i];
+					}
+					cal[0] = s / 12;
+				}
 			}
-
-			switch (TelCounter) {
-			case 16: //Prepare frame aks sec. SPU for status
-				//InterSPUSend(); Transmit uwticks to secondary SPU, sec. SPU will respond with status
-				break;
-			case 17: // Send frame
-				//TelemetrySend..
-				TelCounter = 0;
-				break;
-			default:
-				break;
-			}
-
-			if (GetSignal(SODS) == TRUE) {
-				//Set timestamp = 0
-				// SysTick_handler will call HAL_IncTick, which will increment uwTick
-				uwTick = 0;
-			}
-			if (GetSignal(SODS) == FALSE) {
-				//Shutdown
-				WriteToMemory(memoryregion);
-				//WriteMetadata
-				ClearSignal(SOE); // To break the while
+			if (value != 0) {
+				value = value - cal[0];
+				HAL_UART_Transmit(&huart4, (uint8_t*)&value, 2, 10);
 			}
 		}
+
+//		while (GetSignal(SOE) == TRUE) {
+//			if (ADCBitMap == ADCBITMAPDMS) { //All Interrupts appeard!
+//				ReadADCs(memoryregion);
+//				Counter++;
+//				TelCounter++;
+//				ADCBitMap = ADCBITMAPNORMAL;
+//			}
+//			if (Counter == 10) {
+//				WriteToMemory(memoryregion);
+//				Counter = 0;
+//			}
+//
+//			switch (TelCounter) {
+//			case 16: //Prepare frame aks sec. SPU for status
+//				//InterSPUSend(); Transmit uwticks to secondary SPU, sec. SPU will respond with status
+//				break;
+//			case 17: // Send frame
+//				//TelemetrySend..
+//				TelCounter = 0;
+//				break;
+//			default:
+//				break;
+//			}
+//
+//			if (GetSignal(SODS) == TRUE) {
+//				//Set timestamp = 0
+//				// SysTick_handler will call HAL_IncTick, which will increment uwTick
+//				uwTick = 0;
+//			}
+//			if (GetSignal(SODS) == FALSE) {
+//				//Shutdown
+//				WriteToMemory(memoryregion);
+//				//WriteMetadata
+//				ClearSignal(SOE); // To break the while
+//			}
+//		}
 		if (memoryregion)
 			free(memoryregion);
 	}

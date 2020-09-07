@@ -11,6 +11,19 @@
 #include "main.h"
 
 
+
+#define CMD_RESET 0x07
+#define CMD_SDATAC 0x17
+#define CMD_RDATAC 0x14
+#define CMD_SYNC 0x04
+#define CMD_SELFOCAL 0x62
+#define CMD_SYSOCAL 0x60
+#define CMD_SYSGCAL 0x61
+
+/* IPR Added Functions */
+uint16_t ReadADC4(void);
+
+/* END OF IPR ADDED FUNCTIONS */
 /**
  * Performes initalisation of the ADC
  *

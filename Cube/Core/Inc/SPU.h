@@ -30,6 +30,7 @@ typedef enum {SODS, SOE, LO} Signal_t;
 
 #define NUMBER_OF_PINBLOCKS 11
 #define NUMBER_OF_PINS 16
+#define IPR_BITMAP 0xFFFFFFEF
 #define ADCBITMAPNORMAL 0xFFFFFFFF
 #define ADCBITMAPDMS 	0xFFFFFFC0
 /*Lookup table*/

@@ -14,6 +14,6 @@ void InitMemory(void) {
 
 void WriteToMemory(void * memoryregion) {
 	if (memoryregion) {
-
+		__NOP();
 	}
 }
