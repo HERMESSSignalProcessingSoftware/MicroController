@@ -50,14 +50,14 @@ void InitADC(void) {
 	sendCommand(&cmd, 1);
 	sendCommand(wregCmd, 4);
 	HAL_SPI_TransmitReceive(&hspi4, rregCmd, rregBuf, 2, 10);
-	uint16_t checkVal = ((uint16_t) rregBuf[0] << 8) | rregBuf[1];
-	if (checkVal != 0x3072) {
-		//Unknown error
-		for (;;) {
-			HAL_SPI_TransmitReceive(&hspi4, rregCmd, rregBuf, 2, 20);
-		}
-
-	}
+//	uint16_t checkVal = ((uint16_t) rregBuf[0] << 8) | rregBuf[1];
+//	if (checkVal != 0x3072) {
+//		//Unknown error
+//		for (;;) {
+//			HAL_SPI_TransmitReceive(&hspi4, rregCmd, rregBuf, 2, 20);
+//		}
+//
+//	}
 	cmd = CMD_SYSOCAL;
 	sendCommand(&cmd, 1);
 	HAL_Delay(2000);

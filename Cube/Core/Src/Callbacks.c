@@ -63,6 +63,7 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi) {
 
 /* Overwrite the internal void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) function */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	/* TODO: Disable interrupts */
 	switch (GPIO_Pin) {
 	case SODS_OPT_Pin:
 		Toggle(SODS);

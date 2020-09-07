@@ -20,8 +20,7 @@ Config_t config = { 0 };
 /**
  * ADC Look Up Table
  */
-uint8_t ADCLookup[NUMBER_OF_PINS] = {
-		0xFF, //Interrupt line 0
+uint8_t ADCLookup[NUMBER_OF_PINS] = { 0xFF, //Interrupt line 0
 		0xFF, //Interrupt line 1
 		0xFF, //Interrupt line 2
 		0xFF, //Interrupt line 3
@@ -155,7 +154,8 @@ void SPURun(Config_t *config) {
 		uint32_t testRes = 0;
 		uint16_t value = 0;
 		uint32_t calCnt = 0;
-		uint16_t cal[12] = {0};
+		uint16_t cal[12] = { 0 };
+		int64_t toggle = 0;
 		InitADC();
 		InitMemory();
 		InitTelemetry();
@@ -172,12 +172,21 @@ void SPURun(Config_t *config) {
 //		}
 		StartADC(); //Interrups will be coming state changes to data handling
 		while (1) {
+			if (GetSignal(SODS) == TRUE) {
+				HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+			}
+			if (GetSignal(SOE) == TRUE) {
+				HAL_GPIO_TogglePin(LED_3_GPIO_Port, LED_3_Pin);
+			}
+			if (GetSignal(LO) == TRUE) {
+				HAL_GPIO_TogglePin(LED_4_GPIO_Port, LED_4_Pin);
+			}
 			if (ADCBitMap == IPR_BITMAP) {
 				/* Read data from ADC */
 				value = ReadADC4();
 				ADCBitMap = ADCBITMAPNORMAL;
 			}
-			if(calCnt < 12) {
+			if (calCnt < 12) {
 				cal[calCnt++] = value;
 				if (calCnt == 12) {
 					int32_t s = 0;
@@ -186,11 +195,18 @@ void SPURun(Config_t *config) {
 					}
 					cal[0] = s / 12;
 				}
+			} else {
+				if (value != 0) {
+					value = value - cal[0];
+					uint32_t prepVal = (uint32_t) (0x00FF << 16) | value;
+					HAL_UART_Transmit(&huart4, (uint8_t*) &prepVal, 3, 10);
+				}
 			}
-			if (value != 0) {
-				value = value - cal[0];
-				uint32_t prepVal = (uint32_t)(value << 16) | 0xFF00;
-				HAL_UART_Transmit(&huart4, (uint8_t*)&prepVal, 3, 10);
+			if (toggle <= 0) {
+				HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
+				toggle = 1000;
+			} else {
+				toggle--;
 			}
 		}
 

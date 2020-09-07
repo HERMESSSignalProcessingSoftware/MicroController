@@ -6547,7 +6547,7 @@ OUTPUT(STAMPTEst.elf elf32-littlearm)
  .debug_macro   0x000000000001c343      0x1f0 Src/system_stm32f3xx.o
  .debug_macro   0x000000000001c533      0x216 Src/usart.o
 
-.debug_line     0x0000000000000000    0x18249
+.debug_line     0x0000000000000000    0x1824a
  .debug_line    0x0000000000000000      0x8e6 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
  .debug_line    0x00000000000008e6      0x88b Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc.o
  .debug_line    0x0000000000001171     0x186f Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
@@ -6578,8 +6578,8 @@ OUTPUT(STAMPTEst.elf elf32-littlearm)
  .debug_line    0x00000000000162e0      0x728 Src/stm32f3xx_hal_timebase_tim.o
  .debug_line    0x0000000000016a08      0x916 Src/stm32f3xx_it.o
  .debug_line    0x000000000001731e      0x712 Src/system_stm32f3xx.o
- .debug_line    0x0000000000017a30      0x799 Src/usart.o
- .debug_line    0x00000000000181c9       0x80 Startup/startup_stm32f302r8tx.o
+ .debug_line    0x0000000000017a30      0x79a Src/usart.o
+ .debug_line    0x00000000000181ca       0x80 Startup/startup_stm32f302r8tx.o
 
 .debug_str      0x0000000000000000    0x9d931
  .debug_str     0x0000000000000000    0x8b5d3 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
