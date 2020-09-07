@@ -173,13 +173,19 @@ void SPURun(Config_t *config) {
 		StartADC(); //Interrups will be coming state changes to data handling
 		while (1) {
 			if (GetSignal(SODS) == TRUE) {
-				HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
-			}
-			if (GetSignal(SOE) == TRUE) {
-				HAL_GPIO_TogglePin(LED_3_GPIO_Port, LED_3_Pin);
+				HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, SET);
+			} else {
+				HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, RESET);
 			}
 			if (GetSignal(LO) == TRUE) {
-				HAL_GPIO_TogglePin(LED_4_GPIO_Port, LED_4_Pin);
+				HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, SET);
+			} else {
+				HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, RESET);
+			}
+			if (GetSignal(SOE) == TRUE) {
+				HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, SET);
+			} else {
+				HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, RESET);
 			}
 			if (ADCBitMap == IPR_BITMAP) {
 				/* Read data from ADC */
