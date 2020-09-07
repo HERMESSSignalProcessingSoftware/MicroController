@@ -30,7 +30,11 @@
 /* USER CODE BEGIN Includes */
 #include "Telemetry.h"
 #include "test.h"
-#include <SPU.h>
+#include "SPU.h"
+#include "ADC.h"
+#include "Memory.h"
+#include "InterSPU.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -110,6 +114,7 @@ int main(void)
 	} else {
 		config.secondary = FALSE;
 	}
+	SPURun(&config);
   /* USER CODE END 2 */
 
   /* Infinite loop */

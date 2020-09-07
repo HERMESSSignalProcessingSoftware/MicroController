@@ -8,6 +8,10 @@
 
 #include "Memory.h"
 
+void InitMemory(void) {
+	__NOP();
+}
+
 void WriteToMemory(void * memoryregion) {
 	if (memoryregion) {
 

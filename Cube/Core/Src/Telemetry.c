@@ -62,6 +62,13 @@ uint32_t SendPackage(telemetry_t *package) {
 }
 
 /**
+ * Init Telemetry
+ */
+void InitTelemetry(void) {
+	__NOP();
+}
+
+/**
  * Tests for this file
  */
 uint32_t testTelemetry(void) {

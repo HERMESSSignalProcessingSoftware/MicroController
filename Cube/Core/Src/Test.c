@@ -20,7 +20,8 @@ uint32_t Test(void) {
 /* DAPI
 	b &= testDAPI();
 */
+/* Telemetry
 	b &= testTelemetry();
-	/*TODO: Was macht assert auf dem MCU*/
+*/
 	return b;
 }

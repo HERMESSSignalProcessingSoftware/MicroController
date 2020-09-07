@@ -4,8 +4,8 @@
  *  Created on: Aug 7, 2020
  *      Author: Robin Grimsmann
  */
-
-#include <SPU.h>
+#include "main.h"
+#include "SPU.h"
 #include "usart.h"
 #include <stdlib.h>
 #include "stm32f7xx_hal.h"

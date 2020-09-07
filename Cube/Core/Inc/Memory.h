@@ -34,6 +34,10 @@ typedef struct {
 	int16_t Temp_Data[3];
 }Datensatz;
 
+/**
+ * Init the memory
+ */
+void InitMemory(void);
 
 /**
  * Writes a page to memory
@@ -42,5 +46,6 @@ typedef struct {
  * @param the ptr to the page
  */
 void WriteToMemory(void * memoryregion);
+
 
 #endif /* INC_MEMORY_H_ */
