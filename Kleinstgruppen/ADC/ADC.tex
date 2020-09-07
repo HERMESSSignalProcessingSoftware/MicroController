@@ -46,7 +46,7 @@ Given the Common-Mode Voltage $V\textsubscript{CM} = \frac{3.3V}{2} = 1.15V$, th
 \begin{equation}
 \begin{split}
 V\textsubscript{CM (MIN)} &\geq \mbox{AVSS} + 100mV + \frac{1}{2} \mbox{Gain} \times V\textsubscript{IN, max} \\
-V\textsubscript{CM (MAX)} &\leq \mbox{AVSS} - 100mV - \frac{1}{2} \mbox{Gain} \times V\textsubscript{IN, max}
+V\textsubscript{CM (MAX)} &\leq \mbox{AVDD} - 100mV - \frac{1}{2} \mbox{Gain} \times V\textsubscript{IN, max}
 \end{split}
 \end{equation}
 
@@ -54,7 +54,7 @@ As shown in attachment !!!, a simple analog RC lowpass filter is used for $3dB$ 
 
 
 \subsection{Software}
-After the Device was powered up, it is held in a reset state for $2^16$ clock cycles. During that time, it resets all registers and cannot be controlled via SPI. After that time, it needs additional $0.6ms$ to enable communication and filtering. The Reset can be triggered by pulling the RESET-pin low or via an SPI command.
+After the Device was powered up, it is held in a reset state for $2^{16}$ clock cycles. During that time, it resets all registers and cannot be controlled via SPI. After that time, it needs additional $0.6ms$ to enable communication and filtering. The Reset can be triggered by pulling the RESET-pin low or via an SPI command.
 
 The device will continuously convert and not enter sleep mode, when the start pin is constantly pulled high. This also enables the configuration of the registers. For our experiment, we need to signal the exact timings of the conversion, thus the SYNC command has to be sent to all devices at the same time. This will stop the current conversion and immediately begin a new one. Once converted, the DRDY pin is being pulled low by the ADC.
 
