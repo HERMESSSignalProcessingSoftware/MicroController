@@ -20,7 +20,8 @@ Config_t config = { 0 };
 /**
  * ADC Look Up Table
  */
-uint8_t ADCLookup[NUMBER_OF_PINS] = { 4, //Interrupt line 0
+uint8_t ADCLookup[NUMBER_OF_PINS] = {
+		0xFF, //Interrupt line 0
 		0xFF, //Interrupt line 1
 		0xFF, //Interrupt line 2
 		0xFF, //Interrupt line 3
@@ -30,7 +31,7 @@ uint8_t ADCLookup[NUMBER_OF_PINS] = { 4, //Interrupt line 0
 		0xFF, //Interrupt line 7
 		0xFF, //Interrupt line 8
 		0xFF, //Interrupt line 9
-		0xFF, //Interrupt line 10
+		4, //Interrupt line 10
 		0xFF, //Interrupt line 11
 		0x00, //Interrupt line 12
 		0xFF, //Interrupt line 13
@@ -188,7 +189,8 @@ void SPURun(Config_t *config) {
 			}
 			if (value != 0) {
 				value = value - cal[0];
-				HAL_UART_Transmit(&huart4, (uint8_t*)&value, 2, 10);
+				uint32_t prepVal = (uint32_t)(value << 16) | 0xFF00;
+				HAL_UART_Transmit(&huart4, (uint8_t*)&prepVal, 3, 10);
 			}
 		}
 
