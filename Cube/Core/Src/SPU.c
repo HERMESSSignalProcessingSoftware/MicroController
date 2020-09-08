@@ -215,9 +215,9 @@ void SPURun(Config_t *config) {
 //				}
 //			} else {
 			if (value != 0) {
-				value = value - cal[0];
+//				value = value - cal[0];
 				uint32_t prepVal = (uint32_t) (0x00FF << 16) | value;
-				HAL_UART_Transmit(&huart4, (uint8_t*) &value, 2, 10);
+				HAL_UART_Transmit(&huart4, (uint8_t*) &prepVal, 3, 10);
 			}
 //			}
 			/* Toggle led */
