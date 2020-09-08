@@ -60,6 +60,12 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi) {
 
 }
 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	if (StartStop == 0)
+		StartStop  = 1;
+	else
+		StartStop = 0;
+}
 
 /* Overwrite the internal void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) function */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {

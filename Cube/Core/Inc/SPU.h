@@ -39,6 +39,7 @@ extern uint8_t ADCLookup[NUMBER_OF_PINS];
 /* ADC bit map */
 extern uint32_t ADCBitMap;
 
+extern uint32_t StartStop;
 /**
  * Stores any information about the SPU in one typedef struct Config_t
  * We may need to provid more information about the SPU, for the software

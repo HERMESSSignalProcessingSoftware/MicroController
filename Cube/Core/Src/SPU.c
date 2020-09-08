@@ -16,7 +16,7 @@
 #include "test.h"
 
 Config_t config = { 0 };
-
+uint32_t StartStop = 0;
 /**
  * ADC Look Up Table
  */
@@ -152,6 +152,8 @@ void SPURun(Config_t *config) {
 			HAL_UART_MspDeInit(&huart8);
 		}
 		uint32_t testRes = 0;
+		uint8_t cmd = 0;
+		uint32_t run = 1;
 		uint16_t value = 0;
 		uint32_t calCnt = 0;
 		uint16_t cal[12] = { 0 };
@@ -170,8 +172,15 @@ void SPURun(Config_t *config) {
 //		while (GetSignal(SOE) == FALSE) { //Stay at state init as long as no signal SOE was set
 //			//Do nothing
 //		}
+		start: HAL_UART_Receive_IT(&huart4, &cmd, 1);
+		while (StartStop == 0)
+			;
+		HAL_UART_Receive_IT(&huart4, &cmd, 1);
 		StartADC(); //Interrups will be coming state changes to data handling
-		while (1) {
+		while (run == 1) {
+			if (StartStop == 0) {
+				run = 0;
+			}
 			if (GetSignal(SODS) == TRUE) {
 				HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, SET);
 			} else {
@@ -192,22 +201,26 @@ void SPURun(Config_t *config) {
 				value = ReadADC4();
 				ADCBitMap = ADCBITMAPNORMAL;
 			}
-			if (calCnt < 12) {
-				cal[calCnt++] = value;
-				if (calCnt == 12) {
-					int32_t s = 0;
-					for (uint32_t i = 0; i < 12; i++) {
-						s += cal[i];
-					}
-					cal[0] = s / 12;
-				}
-			} else {
-				if (value != 0) {
-					value = value - cal[0];
-					uint32_t prepVal = (uint32_t) (0x00FF << 16) | value;
-					HAL_UART_Transmit(&huart4, (uint8_t*) &prepVal, 3, 10);
-				}
+//			if (calCnt < 12) {
+//				cal[calCnt++] = value;
+//				if (cal[0] == 0) {
+//					calCnt = 0;
+//				}
+//				if (calCnt == 12) {
+//					int32_t s = 0;
+//					for (uint32_t i = 0; i < 12; i++) {
+//						s += cal[i];
+//					}
+//					cal[0] = s / 12;
+//				}
+//			} else {
+			if (value != 0) {
+				value = value - cal[0];
+				uint32_t prepVal = (uint32_t) (0x00FF << 16) | value;
+				HAL_UART_Transmit(&huart4, (uint8_t*) &value, 2, 10);
 			}
+//			}
+			/* Toggle led */
 			if (toggle <= 0) {
 				HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
 				toggle = 1000;
@@ -215,6 +228,8 @@ void SPURun(Config_t *config) {
 				toggle--;
 			}
 		}
+		HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, RESET);
+		goto start;
 
 //		while (GetSignal(SOE) == TRUE) {
 //			if (ADCBitMap == ADCBITMAPDMS) { //All Interrupts appeard!
