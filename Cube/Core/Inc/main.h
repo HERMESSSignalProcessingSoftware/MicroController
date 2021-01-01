@@ -58,6 +58,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LWL_IN_Pin GPIO_PIN_8
+#define LWL_IN_GPIO_Port GPIOI
 #define DAPI_RX_Pin GPIO_PIN_9
 #define DAPI_RX_GPIO_Port GPIOI
 #define LED_4_Pin GPIO_PIN_14
@@ -130,6 +132,8 @@ void Error_Handler(void);
 #define nDRDY_DMS6_Pin GPIO_PIN_12
 #define nDRDY_DMS6_GPIO_Port GPIOA
 #define nDRDY_DMS6_EXTI_IRQn EXTI15_10_IRQn
+#define LWL_OUT_Pin GPIO_PIN_3
+#define LWL_OUT_GPIO_Port GPIOI
 #define INTERSPU_TX_Pin GPIO_PIN_12
 #define INTERSPU_TX_GPIO_Port GPIOC
 #define INTERSPU_RX_Pin GPIO_PIN_2
