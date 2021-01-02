@@ -69,7 +69,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOG, nCS_DMS4_Pin|nCS_DMS5_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(nCS_DMS7_GPIO_Port, nCS_DMS7_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(nCS_DMS6_GPIO_Port, nCS_DMS6_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOH, FL1_HLD_Pin|FL1_WP_Pin|FL1_RES_Pin, GPIO_PIN_RESET);
@@ -191,11 +191,11 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = nCS_DMS7_Pin;
+  GPIO_InitStruct.Pin = nCS_DMS6_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(nCS_DMS7_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(nCS_DMS6_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PHPin PHPin PHPin PHPin */
   GPIO_InitStruct.Pin = FL1_HLD_Pin|FL1_WP_Pin|FL1_RES_Pin|FL1_CS2_Pin;

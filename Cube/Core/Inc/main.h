@@ -47,6 +47,8 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
+void main_master(void);
+void main_slave(void);
 
 /* USER CODE END EM */
 
@@ -84,8 +86,8 @@ void Error_Handler(void);
 #define nCS_DMS4_GPIO_Port GPIOG
 #define nCS_DMS5_Pin GPIO_PIN_1
 #define nCS_DMS5_GPIO_Port GPIOG
-#define nCS_DMS7_Pin GPIO_PIN_7
-#define nCS_DMS7_GPIO_Port GPIOE
+#define nCS_DMS6_Pin GPIO_PIN_7
+#define nCS_DMS6_GPIO_Port GPIOE
 #define FL1_HLD_Pin GPIO_PIN_9
 #define FL1_HLD_GPIO_Port GPIOH
 #define FL1_WP_Pin GPIO_PIN_10
