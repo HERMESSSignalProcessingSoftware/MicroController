@@ -87,14 +87,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_SPI4_Init();
-  MX_UART4_Init();
   MX_SPI2_Init();
   MX_SPI3_Init();
   MX_SPI6_Init();
+  MX_UART4_Init();
   MX_UART8_Init();
   MX_UART5_Init();
   MX_CRC_Init();
+  MX_SPI4_Init();
   MX_SPI5_Init();
   /* USER CODE BEGIN 2 */
   HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_RESET);  //clear all LEDs
@@ -190,15 +190,22 @@ void main_master(void) {
   //uint8_t bufferOff[3] = {0x01, 0x03, 0x05};
   //uint8_t bufferOn[3] = {0x02, 0x04, 0x06};
 
-  adc_scan_start(3, 160, 1, 0);
+  int DMS = 4;
+  adc_scan_start(DMS - 1, 20, 1, 1000); //0 50 100 250 500 750 1000 1500
   HAL_Delay(1000);
+
+  HAL_UART_Transmit(&huart4, 66, 2, 1000000);
 
 
   while (1) { //Master loop
 
-	  while(HAL_GPIO_ReadPin(nDRDY_DMS4_GPIO_Port, nDRDY_DMS4_Pin) == GPIO_PIN_SET);
-	  data = adc_scan(3, 0x01);
-	  HAL_UART_Transmit(&huart4, data, sizeof(&data), 5);
+
+	  data = adc_scan(DMS - 1, 0x01);
+	  uint8_t dout = data /2UL;
+	  HAL_UART_Transmit(&huart4, (uint8_t *)&dout, sizeof(dout), 1000000);
+	  //uint16_t tdata = 99;
+	  //HAL_UART_Transmit(&huart4, (uint8_t *)&tdata, sizeof(tdata), 100);
+
 
 	  HAL_Delay(100);
 	/*
@@ -211,6 +218,7 @@ void main_master(void) {
     */
   }
 }
+
 void main_slave(void) {
   uint8_t buffer[1] = {0x00};
   while (1) {
@@ -257,6 +265,9 @@ uint16_t adc_scan(int8_t id, uint8_t chn){
 	      wr_reg(id, REG_MUX0, MUX0_SP0 | MUX0_SN1);
 	      data = rd_data(id);
 	      wr_reg(id, REG_IDAC1, IDAC1_I1DIROFF | IDAC1_I2DIROFF);
+	    //	wr_cmd(id, 0xFF);
+	    	//data = rd_data(id);
+
 	      break;
 	    case 0x23:
 	      wr_reg(id, REG_IDAC1, IDAC1_I1DIR2 | IDAC1_I2DIR3);
@@ -310,7 +321,7 @@ uint16_t adc_scan(int8_t id, uint8_t chn){
 }
 
 int16_t adc_scan_start(int8_t id, uint_least16_t drate, uint_least8_t gain, uint_least16_t current){
-	int16_t r;
+	int16_t r = 0;
 	switch(drate)
 	  {
 	    case    5: drate = SYS0_DOR5;    break;
@@ -352,6 +363,7 @@ int16_t adc_scan_start(int8_t id, uint_least16_t drate, uint_least8_t gain, uint
 	    case 1500: current = IDAC0_MAG1500UA; break;
 	  }
 
+	  /*
 	  wr_cmd(id, CMD_RESET);
 	  wr_cmd(id, CMD_SELFOCAL);
 	  r = (rd_reg(id, REG_IDAC0)&0xF0)>>4; //read revision
@@ -361,31 +373,61 @@ int16_t adc_scan_start(int8_t id, uint_least16_t drate, uint_least8_t gain, uint
 	  wr_reg(id, REG_SYS0, gain | drate);
 	  wr_reg(id, REG_IDAC0, IDAC0_DOUTDRDY | current);
 	  wr_reg(id, REG_IDAC1, IDAC1_I1DIROFF | IDAC1_I2DIROFF);
+	  */
+
+	  wr_cmd(id, CMD_RESET);
+	  wr_cmd(id, CMD_SELFOCAL);
+	  r = (rd_reg(id, REG_IDAC0)&0xF0)>>4; //read revision
+
+	  wr_reg(id, REG_MUX0, 0x01);
+	  wr_reg(id, REG_VBIAS, 0x00);
+	  wr_reg(id, REG_MUX1, 0x30);
+	  wr_reg(id, REG_SYS0, gain | drate);
+	  wr_reg(id, REG_IDAC0, IDAC0_DOUTDRDY | current);
+	  wr_reg(id, REG_IDAC1, 0x89);
+	  wr_reg(id, REG_GPIOCFG, 0x00);
+	  wr_reg(id, REG_GPIODIR, 0x00);
+	  wr_reg(id, REG_GPIODAT, 0x00);
 
 	  return r;
 
 }
 
 uint16_t rd_data(int8_t id){
-	uint8_t d1, d2;
-	wr_cmd(id, CMD_SYNC);
+	uint8_t d1, d2, d3, d4;
+	wr_cmd(id, CMD_SYNC); //CMD_SYNC
 	cs_enable(id);
-	HAL_Delay(1);
+
+
+	//wait dRDY
+	while(HAL_GPIO_ReadPin(port_drdy_from_id(id), pin_drdy_from_id(id)) == GPIO_PIN_SET);
+	wr_spi(id, CMD_RDATA);
 	HAL_SPI_Receive(get_hspi_from_id(id), &d1, sizeof(d1), HAL_MAX_DELAY);
-	//HAL_SPI_Receive(get_hspi_from_id(id), &d2, sizeof(d1), HAL_MAX_DELAY);
-	HAL_Delay(1);
+	d1 <<= 8;
+	HAL_SPI_Receive(get_hspi_from_id(id), &d3, sizeof(d3), HAL_MAX_DELAY);
+	d1 |= d3;
+	//wr_cmd(id, 0xFF);
+
+	//wait dRDY
+	while(HAL_GPIO_ReadPin(port_drdy_from_id(id), pin_drdy_from_id(id)) == GPIO_PIN_SET);
+	wr_spi(id, CMD_RDATA);
+	HAL_SPI_Receive(get_hspi_from_id(id), &d2, sizeof(d2), HAL_MAX_DELAY);
+	d2 <<= 8;
+	HAL_SPI_Receive(get_hspi_from_id(id), &d4, sizeof(d4), HAL_MAX_DELAY);
+	d2 |= d4;
+	//wr_cmd(id, 0xFF);
+
+
 	cs_disable(id);
-	return d1;
-	//int16_t out = (d1+d2)/2UL;
-	//return out;
+	//return d1;
+	int16_t out = (d1+d2)/2UL;
+	return out;
 }
 
 int rd_spi(int8_t id){
 	uint8_t d1;
 	cs_enable(id);
-	HAL_Delay(1);
 	HAL_SPI_Receive(get_hspi_from_id(id), &d1, sizeof(d1), HAL_MAX_DELAY);
-	HAL_Delay(1);
 	cs_disable(id);
 	return d1;
 }
@@ -440,6 +482,56 @@ GPIO_TypeDef* port_from_id(int8_t id){
 	}
 }
 
+uint16_t pin_drdy_from_id(int8_t id){
+	switch(id){
+			case 0: //DMS 1
+				return nDRDY_DMS1_Pin;
+			case 1: //DMS 2
+				return nDRDY_DMS2_Pin;
+			case 2: //DMS 3
+				return nDRDY_DMS3_Pin;
+			case 3: //DMS 4
+				return nDRDY_DMS4_Pin;
+			case 4: //DMS 5
+				return nDRDY_DMS5_Pin;
+			case 5: //DMS 6
+				return nDRDY_DMS6_Pin;
+			case 6: //PT 1
+				return nDRDY_PT1_Pin;
+			case 7: //PT 2
+				return nDRDY_PT2_Pin;
+			case 8: //PT 3
+				return nDRDY_PT3_Pin;
+			default: //DMS 1
+				return nDRDY_DMS1_Pin;
+		}
+}
+
+GPIO_TypeDef* port_drdy_from_id(int8_t id){
+	switch(id){
+		case 0: //DMS 1
+			return nDRDY_DMS1_GPIO_Port;
+		case 1: //DMS 2
+			return nDRDY_DMS2_GPIO_Port;
+		case 2: //DMS 3
+			return nDRDY_DMS3_GPIO_Port;
+		case 3: //DMS 4
+			return nDRDY_DMS4_GPIO_Port;
+		case 4: //DMS 5
+			return nDRDY_DMS5_GPIO_Port;
+		case 5: //DMS 6
+			return nDRDY_DMS6_GPIO_Port;
+		case 6: //PT 1
+			return nDRDY_PT1_GPIO_Port;
+		case 7: //PT 2
+			return nDRDY_PT2_GPIO_Port;
+		case 8: //PT 3
+			return nDRDY_PT3_GPIO_Port;
+		default: //DMS 1
+			return nDRDY_DMS1_GPIO_Port;
+	}
+}
+
 SPI_HandleTypeDef *get_hspi_from_id(int8_t id){
 	switch(id){
 		case 0: //DMS 1
@@ -470,7 +562,6 @@ SPI_HandleTypeDef *get_hspi_from_id(int8_t id){
 int wr_cmd(int8_t id, uint8_t cmd){
 	int8_t status = 0;
 	status+= cs_enable(id);
-	HAL_Delay(1);
 	status+= wr_spi(id, cmd);
 	if(cmd == CMD_SYNC)
 	{
@@ -491,11 +582,9 @@ int wr_cmd(int8_t id, uint8_t cmd){
 int wr_reg(int8_t id, uint8_t reg, uint8_t data){
 	int8_t status = 0;
 	status += cs_enable(id);
-	HAL_Delay(1);
 	status += wr_spi(id, CMD_WREG | reg);
 	status += wr_spi(id, 0);
 	status += wr_spi(id, data);
-	HAL_Delay(1);
 	status += cs_disable(id);
 	return 0;
 }
@@ -504,11 +593,9 @@ int rd_reg(int8_t id, uint8_t reg){
 	int8_t status = 0;
 	uint8_t data;
 	status += cs_enable(id);
-	HAL_Delay(1);
 	status += wr_spi(id, CMD_RREG | reg);
 	status += wr_spi(id, 0);
 	data = rd_spi(id);
-	HAL_Delay(1);
 	status += cs_disable(id);
 	return data;
 }

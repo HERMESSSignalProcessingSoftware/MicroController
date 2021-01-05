@@ -166,6 +166,8 @@ void main_slave(void);
 SPI_HandleTypeDef *get_hspi_from_id(int8_t id);
 uint16_t pin_from_id(int8_t id);
 GPIO_TypeDef* port_from_id(int8_t id);
+uint16_t pin_drdy_from_id(int8_t id);
+GPIO_TypeDef* port_drdy_from_id(int8_t id);
 int wr_cmd(int8_t id, uint8_t cmd);
 
 //int rd_spi(int8_t id);
