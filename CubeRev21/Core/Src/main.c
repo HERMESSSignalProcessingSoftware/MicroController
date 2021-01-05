@@ -190,21 +190,49 @@ void main_master(void) {
   //uint8_t bufferOff[3] = {0x01, 0x03, 0x05};
   //uint8_t bufferOn[3] = {0x02, 0x04, 0x06};
 
-  int Sensor = 4;
-  adc_scan_start(Sensor - 1, 2000, 128, 0); //0 50 100 250 500 750 1000 1500
+  uint32_t lastInit = 0;
+  uint32_t lastBlinky = 0;
+  uint8_t DMS = 4;
+  for(int sensors = 0; sensors <=8 ; sensors++){
+	  if(sensors <= 5)
+		  adc_scan_start(sensors, 2000, 128, 0);
+	  else
+		  adc_scan_start(sensors, 20, 1, 50);
+  }
+
   HAL_Delay(1000);
 
   uint8_t softgain = 1;
   uint8_t offset = 0;
-  uint8_t dout = 32;
+  uint8_t dout = 0;
   HAL_UART_Transmit(&huart4, (uint8_t *)&dout, sizeof(dout), HAL_MAX_DELAY);
 
   while (1) { //Master loop
 
 
-	  data = adc_scan(Sensor - 1, 0x01);
+	  data = adc_scan(DMS - 1, 0x01);
 	  dout = data * softgain + offset;
 	  HAL_UART_Transmit(&huart4, (uint16_t *)&dout, sizeof(dout), HAL_MAX_DELAY);
+
+
+
+	  if(lastInit + 5000 < HAL_GetTick()){
+		  lastInit = HAL_GetTick();
+
+		  for(int sensors = 0; sensors <=8 ; sensors++){
+		  	  if(sensors <= 5)
+		  		  adc_scan_start(sensors, 2000, 128, 0);
+		  	  else
+		  		  adc_scan_start(sensors, 20, 1, 50);
+		    }
+
+	   }
+
+	  if(lastBlinky + 1000 < HAL_GetTick()){
+	  		  lastBlinky = HAL_GetTick();
+	  		  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+	  }
+
 
 	/*
     HAL_GPIO_TogglePin(LED_3_GPIO_Port, LED_3_Pin);
@@ -302,19 +330,30 @@ int16_t adc_scan_start(int8_t id, uint_least16_t drate, uint_least8_t gain, uint
 	    case 1500: current = IDAC0_MAG1500UA; break;
 	  }
 
+
 	  cs_enable(id);
-	  wr_cmd(id, CMD_RESET);
-	  wr_cmd(id, CMD_SDATAC);
 
-	  wr_reg(id, REG_MUX0, 0b00000001);
-	  wr_reg(id, REG_VBIAS, 0x00);
-	  wr_reg(id, REG_MUX1, 0b00110000);
-	  wr_reg(id, REG_SYS0, gain | drate);
-	  //wr_reg(id, REG_SYS0, 0b00000010);
-	  wr_reg(id, REG_IDAC0, 0x00);
-	  wr_reg(id, REG_IDAC1, 0b11001100);
+	  if(id <= 5){	//DMS
 
-	  wr_cmd(id, CMD_SYNC);
+		  wr_cmd(id, CMD_RESET);
+		  wr_cmd(id, CMD_SDATAC);
+		  wr_reg(id, REG_MUX0, 0b00000001);
+		  wr_reg(id, REG_VBIAS, 0x00);
+		  wr_reg(id, REG_MUX1, 0b00110000);
+		  wr_reg(id, REG_SYS0, gain | drate);
+		  wr_reg(id, REG_IDAC0, 0x00);
+		  wr_reg(id, REG_IDAC1, 0b11001100);
+		  wr_cmd(id, CMD_SYNC);
+		  //uint8_t rdata = CMD_RDATA;
+		  //HAL_SPI_Transmit(get_hspi_from_id(id), &rdata, 2, HAL_MAX_DELAY);
+
+	  } else {	//PT100
+
+
+
+	  }
+
+
 	  cs_disable(id);
 
 	  return r;
