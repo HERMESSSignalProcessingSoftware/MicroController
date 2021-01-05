@@ -192,7 +192,9 @@ void main_master(void) {
 
   uint32_t lastInit = 0;
   uint32_t lastBlinky = 0;
-  uint8_t DMS = 4;
+
+  uint8_t readSensor = 5; //DMS: 0-5, PT100: 6-8
+
   for(int sensors = 0; sensors <=8 ; sensors++){
 	  if(sensors <= 5)
 		  adc_scan_start(sensors, 2000, 128, 0);
@@ -210,7 +212,7 @@ void main_master(void) {
   while (1) { //Master loop
 
 
-	  data = adc_scan(DMS - 1, 0x01);
+	  data = adc_scan(readSensor, 0x01);
 	  dout = data * softgain + offset;
 	  HAL_UART_Transmit(&huart4, (uint16_t *)&dout, sizeof(dout), HAL_MAX_DELAY);
 
@@ -219,12 +221,14 @@ void main_master(void) {
 	  if(lastInit + 5000 < HAL_GetTick()){
 		  lastInit = HAL_GetTick();
 
+		  /*
 		  for(int sensors = 0; sensors <=8 ; sensors++){
 		  	  if(sensors <= 5)
 		  		  adc_scan_start(sensors, 2000, 128, 0);
 		  	  else
 		  		  adc_scan_start(sensors, 20, 1, 50);
 		    }
+		   */
 
 	   }
 
@@ -344,13 +348,24 @@ int16_t adc_scan_start(int8_t id, uint_least16_t drate, uint_least8_t gain, uint
 		  wr_reg(id, REG_IDAC0, 0x00);
 		  wr_reg(id, REG_IDAC1, 0b11001100);
 		  wr_cmd(id, CMD_SYNC);
-		  //uint8_t rdata = CMD_RDATA;
+		  //uint8_t rdata = CMD_RDATAC;
 		  //HAL_SPI_Transmit(get_hspi_from_id(id), &rdata, 2, HAL_MAX_DELAY);
 
 	  } else {	//PT100
 
-
-
+		  wr_cmd(id, CMD_RESET);
+		  wr_cmd(id, CMD_SDATAC);
+		  wr_reg(id, REG_VBIAS, 0x00);
+		  wr_reg(id, REG_MUX0, 0x01); //?
+		  wr_reg(id, REG_MUX1, 0b00100000); //int ref on, REFP0/REFN0 ref inp selected
+		  //wr_reg(id, REG_VBIAS, 0x00);
+		  //wr_reg(id, REG_MUX1, 0b00110000);
+		  wr_reg(id, REG_SYS0, 0b00100010); //Gain 4, SPS 20
+		  wr_reg(id, REG_IDAC0, 0b00000110); //1mA;
+		  wr_reg(id, REG_IDAC1, 0b00000010); //IDAC1 = AIN0, IDAC2 = AIN3
+		  wr_cmd(id, CMD_SYNC);
+		  //uint8_t rdata = CMD_RDATAC;
+		  //HAL_SPI_Transmit(get_hspi_from_id(id), &rdata, 2, HAL_MAX_DELAY);
 	  }
 
 
