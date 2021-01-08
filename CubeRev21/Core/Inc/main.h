@@ -181,6 +181,7 @@ int rd_reg(int8_t id, uint8_t reg);
 uint16_t adc_scan(int8_t id, uint8_t chn);
 int16_t adc_scan_start(int8_t id, uint_least16_t drate, uint_least8_t gain, uint_least16_t current);
 
+int write_EXP(uint8_t *data);
 
 /* USER CODE END EM */
 
