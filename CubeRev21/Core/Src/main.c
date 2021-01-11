@@ -186,14 +186,14 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void main_master(void) {
-  HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_SET);  //ON = MS set to Master
+  //HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_SET);  //ON = MS set to Master
   //uint8_t bufferOff[3] = {0x01, 0x03, 0x05};
   //uint8_t bufferOn[3] = {0x02, 0x04, 0x06};
 
   uint32_t lastInit = 0;
   uint32_t lastBlinky = 0;
 
-  uint8_t readSensor = 8; //DMS: 0-5, PT100: 6-8
+  uint8_t readSensor = 3; //DMS: 0-5, PT100: 6-8
 
   for(int sensors = 0; sensors <=8 ; sensors++){
 	  if(sensors <= 5)
@@ -218,6 +218,11 @@ void main_master(void) {
 	  write_EXP(&dout);
 
 
+	  HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, HAL_GPIO_ReadPin(SODS_OPT_GPIO_Port, SODS_OPT_Pin));
+	  HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, HAL_GPIO_ReadPin(LO_OPT_GPIO_Port, LO_OPT_Pin));
+	  HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, HAL_GPIO_ReadPin(SOE_OPT_GPIO_Port, SOE_OPT_Pin));
+
+
 
 
 	  if(lastInit + 5000 < HAL_GetTick()){
@@ -236,7 +241,7 @@ void main_master(void) {
 
 	  if(lastBlinky + 1000 < HAL_GetTick()){
 	  		  lastBlinky = HAL_GetTick();
-	  		  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+	  		  HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
 	  }
 
 
