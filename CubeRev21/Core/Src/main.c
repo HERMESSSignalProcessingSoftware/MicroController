@@ -214,8 +214,8 @@ void main_master(void) {
 
 	  data = adc_scan(readSensor, 0x01);
 	  dout = data * softgain + offset;
-	  HAL_UART_Transmit(&huart4, (uint16_t *)&dout, sizeof(dout), HAL_MAX_DELAY);
-	  HAL_UART_Transmit(&huart8, (uint16_t *)&dout, sizeof(dout), HAL_MAX_DELAY);
+	  write_DAPI(&dout);
+	  write_EXP(&dout);
 
 
 
@@ -582,9 +582,20 @@ int rd_reg(int8_t id, uint8_t reg){
 	return data;
 }
 
-int write_EXP(uint8_t *data){
-	HAL_UART_Transmit(&huart8, data, sizeof(&data), 1000);
+int write_EXP(uint8_t *dout){
+	HAL_UART_Transmit(&huart8, &dout, sizeof(dout), HAL_MAX_DELAY);
 	return 0;
+}
+
+int write_DAPI(uint8_t *dout){
+	HAL_UART_Transmit(&huart4, &dout, sizeof(dout), HAL_MAX_DELAY);
+	return 0;
+}
+
+uint8_t* read_DAPI(){
+	uint8_t* din;
+	HAL_UART_Receive(&huart4, din, 1, HAL_MAX_DELAY);
+	return din;
 }
 
 /* USER CODE END 4 */
