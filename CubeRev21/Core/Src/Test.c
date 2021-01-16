@@ -19,9 +19,11 @@
  */
 uint32_t MemoryTest(void) {
 	SPI_Values DUT;
-	DUT.CS_Pin = GPIO_PIN_3;
-	DUT.CS_Port = GPIOE;
-	DUT.spihandle = &hspi5;
+	DUT.CS_Pin = FL2_CS1_Pin;
+	DUT.CS_Port = FL2_CS1_GPIO_Port;
+	DUT.spihandle = &hspi2;
+
+	/*TODO: all other memory dies */
 
 	uint8_t writeBuffer[256];
 	uint8_t readBuffer[256] = { 0 };
