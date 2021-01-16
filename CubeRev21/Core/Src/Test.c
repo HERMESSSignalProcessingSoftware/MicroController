@@ -39,7 +39,7 @@ uint32_t MemoryTest(void) {
 	DUT1.CS_Port = FL1_CS2_GPIO_Port;
 	DUT1.spihandle = &hspi6;
 
-	uint32_t result = 1;
+ 	uint32_t result = 1;
 	result &= MemoryTestDUT(DUT0);
 	result &= MemoryTestDUT(DUT1);
 	result &= MemoryTestDUT(DUT2);
@@ -54,13 +54,13 @@ uint32_t MemoryTest(void) {
 uint32_t MemoryTestDUT(SPI_Values dut) {
 	uint8_t writeBuffer[256] = { 0 };
 	uint8_t readBuffer[256] = { 0 };
+	volatile uint8_t SR1;
 	uint32_t adresse = 0;
 
 	//Testdaten initialisieren
 	for (int i = 0; i < 256; i++) {
 		writeBuffer[i] = i;
 	}
-
 	//CHIP löschen
 	chipErase(dut);
 	//evtl Zusätzliche Schleife für die verschiedenen Chips und CS pins
@@ -76,7 +76,7 @@ uint32_t MemoryTestDUT(SPI_Values dut) {
 		for (int y = 0; y < 256; y++) {
 			//Wenn inhalt nicht gleich
 			if (writeBuffer[y] != readBuffer[y]) {
-				uint8_t SR1 = readStatus(dut);
+				 SR1 = readStatus(dut);
 				return 0;
 			}
 		}
