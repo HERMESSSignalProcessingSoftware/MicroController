@@ -188,6 +188,7 @@ void main_master(void) {
 	uint8_t readSensor = 3; //DMS: 0-5, PT100: 6-8
 
 	/* Performing the memory test */
+	InitMemory();
 	uint32_t memoryTest = MemoryTest();
 	sprintf(writeBuffer, " \n\rMemory test: %s\n\r\0",
 			(memoryTest == 0 ? "Passed" : "Failed"));

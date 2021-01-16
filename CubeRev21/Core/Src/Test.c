@@ -12,6 +12,7 @@
 
 #define PAGE_COUNT 125000
 
+
 /**
  * @brief: tests the memory
  * TEST: Write to memory, wait, read form memory.
@@ -74,12 +75,10 @@ uint32_t MemoryTestDUT(SPI_Values dut) {
 		//Inhalt vergleichen
 		for (int y = 0; y < 256; y++) {
 			//Wenn inhalt nicht gleich
-			if (writeBuffer[y] != readBuffer[y])
+			if (writeBuffer[y] != readBuffer[y]) {
+				uint8_t SR1 = readStatus(dut);
 				return 0;
-		}
-		//readBuffer auf null initialisieren
-		for (int z = 0; z < 256; z++) {
-			readBuffer[z] = 0;
+			}
 		}
 	}
 	return 1;

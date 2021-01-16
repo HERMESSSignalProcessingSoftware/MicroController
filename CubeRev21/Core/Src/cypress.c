@@ -9,11 +9,29 @@
 #include "main.h"
 #include "spi.h"
 #include "cypress.h"
-#include <stdbool.h>
 
 //Write ready sperrt sich wenn WIP nicht 0 wird
 
 uint8_t tmp_add;
+
+/**
+ * Sets the pin to the right state
+ * @returns 0: ok
+ */
+int32_t InitMemory(void) {
+	HAL_GPIO_WritePin(FL1_HLD_GPIO_Port, FL1_HLD_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL2_HLD_GPIO_Port, FL2_HLD_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL1_WP_GPIO_Port, FL1_WP_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL2_WP_GPIO_Port, FL2_WP_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL1_RES_GPIO_Port, FL1_RES_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL2_RES_GPIO_Port, FL2_RES_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL1_RES_GPIO_Port, FL1_RES_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(FL2_RES_GPIO_Port, FL2_RES_Pin, GPIO_PIN_RESET);
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(FL1_RES_GPIO_Port, FL1_RES_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL2_RES_GPIO_Port, FL2_RES_Pin, GPIO_PIN_SET);
+
+}
 
 /**
  * Function Read Status

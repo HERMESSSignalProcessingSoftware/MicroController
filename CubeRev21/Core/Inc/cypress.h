@@ -15,12 +15,18 @@
 
 #define c_WRDI 0x04
 #define c_READSTATUSREG1 0x05
+#define c_READSTATUSREG2 0x07
+#define c_READCONFIGREG1 0x35
+#define c_CLEARSTATUSREG1 0x30
 #define c_WREN 0x06
 #define c_READSTATUSREG2 0x07
 #define c_WRITEPAGE 0x12
 #define c_READ 0x13
 #define c_READID 0x9F
+
+/*Warining: Chip Erease below!*/
 #define c_CE 0xC7
+
 
 /**
  * spihandle = hspin where n E {1,2,...,m}
@@ -41,6 +47,13 @@ typedef struct {
 	int16_t DMS_Data[6];
 	int16_t Temp_Data[3];
 } Datensatz;
+
+
+/**
+ * Sets the pin to the right state
+ * @returns 0: ok
+ */
+int32_t InitMemory(void);
 
 /**
  * Function Read Status
