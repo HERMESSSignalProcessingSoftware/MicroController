@@ -189,7 +189,7 @@ void main_master(void) {
 
 	/* Performing the memory test */
 	InitMemory();
-	uint32_t memoryTest = MemoryTest();
+	uint32_t memoryTest = FastMemoryTest();
 	sprintf(writeBuffer, " \n\rMemory test: %s\n\r\0",
 			(memoryTest == 0 ? "Passed" : "Failed"));
 	HAL_UART_Transmit(&huart4, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
