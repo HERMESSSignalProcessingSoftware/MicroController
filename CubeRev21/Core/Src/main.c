@@ -23,6 +23,7 @@
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
+#include "string.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -192,9 +193,16 @@ void main_master(void) {
 
   uint32_t lastInit = 0;
   uint32_t lastBlinky = 0;
+  uint8_t writeBuffer[256] =  {0};
 
   uint8_t readSensor = 3; //DMS: 0-5, PT100: 6-8
 
+  /* Performing the memory test */
+  uint32_t memoryTest = MemoryTest();
+  sprintf( writeBuffer, " \n\rMemory test: %s\n\r\0",  (memoryTest == 0 ? "Passed" : "Failed"));
+  HAL_UART_Transmit(&huart4, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+  /*For Framerate*/
+  HAL_Delay(5000);
   for(int sensors = 0; sensors <=8 ; sensors++){
 	  if(sensors <= 5)
 		  adc_scan_start(sensors, 2000, 128, 0);
