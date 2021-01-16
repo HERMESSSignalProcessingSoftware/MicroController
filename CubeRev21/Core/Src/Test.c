@@ -42,7 +42,6 @@ uint32_t FastMemoryTest(void) {
 	result &= FastTest(DUT2);
 	result &= FastTest(DUT3);
 	return !result; //to create the 0 if the test passed!
-
 }
 
 uint32_t FastTest(SPI_Values DUT) {
