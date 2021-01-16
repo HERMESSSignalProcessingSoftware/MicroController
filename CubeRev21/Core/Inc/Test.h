@@ -11,6 +11,12 @@
 #include "cypress.h"
 
 /**
+ * Performes a fast memory test, just writes one page and reads it
+ *
+ */
+uint32_t FastMemoryTest(void);
+
+/**
  * @brief: tests the memory
  * TEST: Write to memory, wait, read form memory.
  * @return 0: Passed.
