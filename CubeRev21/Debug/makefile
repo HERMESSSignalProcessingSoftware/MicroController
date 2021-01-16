@@ -46,8 +46,8 @@ CubeRev21.bin \
 all: CubeRev21.elf secondary-outputs
 
 # Tool invocations
-CubeRev21.elf: $(OBJS) $(USER_OBJS) C:\Users\opul\Documents\GitHub\MicroController\CubeRev21\STM32F779BITX_FLASH.ld
-	arm-none-eabi-gcc -o "CubeRev21.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\opul\Documents\GitHub\MicroController\CubeRev21\STM32F779BITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeRev21.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+CubeRev21.elf: $(OBJS) $(USER_OBJS) C:\Users\lupo\Documents\GitHub\MicroController\CubeRev21\STM32F779BITX_FLASH.ld
+	arm-none-eabi-gcc -o "CubeRev21.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\lupo\Documents\GitHub\MicroController\CubeRev21\STM32F779BITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeRev21.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
