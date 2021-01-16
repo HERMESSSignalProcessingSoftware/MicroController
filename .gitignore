@@ -39,7 +39,13 @@
 *.auxlock
 *.bak_000f
 *.bak_001d
-*.bak_002d
+*.bak_*
+.metadata/
+.metadata/*
+*.o 
+*.xml
+*.elf
+makefile
 Kleinstgruppen.zip
 *.DS_Store
 STAMPTest/.metadata/.lock
