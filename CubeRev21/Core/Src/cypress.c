@@ -19,6 +19,10 @@ uint8_t tmp_add;
  * @returns 0: ok
  */
 int32_t InitMemory(void) {
+	HAL_GPIO_WritePin(FL1_CS1_GPIO_Port, FL1_CS1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL1_CS2_GPIO_Port, FL2_CS2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL2_CS1_GPIO_Port, FL2_CS1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL2_CS2_GPIO_Port, FL2_CS2_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(FL1_HLD_GPIO_Port, FL1_HLD_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(FL2_HLD_GPIO_Port, FL2_HLD_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(FL1_WP_GPIO_Port, FL1_WP_Pin, GPIO_PIN_SET);
@@ -30,6 +34,7 @@ int32_t InitMemory(void) {
 	HAL_Delay(1);
 	HAL_GPIO_WritePin(FL1_RES_GPIO_Port, FL1_RES_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(FL2_RES_GPIO_Port, FL2_RES_Pin, GPIO_PIN_SET);
+	return 0;
 
 }
 
@@ -113,10 +118,11 @@ int writePage(uint8_t *data, uint32_t address, SPI_Values SPI_val) {
 	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
 
 	//Daten schicken
-//	HAL_SPI_Transmit(SPI_val.spihandle, data, 256, HAL_MAX_DELAY);
-	for (int i = 0; i < 256; i++) {
+	HAL_SPI_Transmit(SPI_val.spihandle, data, 256, 2560);
+/*	for (int i = 0; i < 256; i++) {
 		HAL_SPI_Transmit(SPI_val.spihandle, &data[i], 1, 10);
 	}
+*/
 
 	//CS1 high
 	HAL_GPIO_WritePin(SPI_val.CS_Port, SPI_val.CS_Pin, GPIO_PIN_SET);
@@ -168,10 +174,10 @@ int readPage(uint8_t *data, uint32_t address, SPI_Values SPI_val) {
 	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
 
 //Daten lesen
-//	HAL_SPI_Receive(SPI_val.spihandle, data, 256, 2560);
-	for (int i = 0; i < 256; i++) {
-		HAL_SPI_Receive(SPI_val.spihandle, &data[i], 1, 10);
-	}
+	HAL_SPI_Receive(SPI_val.spihandle, data, 256, 2560);
+//	for (int i = 0; i < 256; i++) {
+//		HAL_SPI_Receive(SPI_val.spihandle, &data[i], 1, 10);
+//	}
 
 //CS1 high
 	HAL_GPIO_WritePin(SPI_val.CS_Port, SPI_val.CS_Pin, GPIO_PIN_SET);

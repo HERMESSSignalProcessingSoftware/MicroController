@@ -33,14 +33,15 @@ uint32_t FastMemoryTest(void) {
 	DUT2.spihandle = &hspi6;
 	//
 	SPI_Values DUT3;
-	DUT1.CS_Pin = FL1_CS2_Pin;
-	DUT1.CS_Port = FL1_CS2_GPIO_Port;
-	DUT1.spihandle = &hspi6;
+	DUT3.CS_Pin = FL1_CS2_Pin;
+	DUT3.CS_Port = FL1_CS2_GPIO_Port;
+	DUT3.spihandle = &hspi6;
 	uint32_t result = 1;
-	result &= FastTest(DUT0);
-	result &= FastTest(DUT1);
-	result &= FastTest(DUT2);
-	result &= FastTest(DUT3);
+	result += FastTest(DUT1);
+	result += FastTest(DUT0);
+	InitMemory();
+	result += FastTest(DUT2);
+	result += FastTest(DUT3);
 	return !result; //to create the 0 if the test passed!
 }
 
@@ -102,7 +103,7 @@ uint32_t MemoryTest(void) {
 	DUT1.CS_Port = FL1_CS2_GPIO_Port;
 	DUT1.spihandle = &hspi6;
 
- 	uint32_t result = 1;
+	uint32_t result = 1;
 	result &= MemoryTestDUT(DUT0);
 	result &= MemoryTestDUT(DUT1);
 	result &= MemoryTestDUT(DUT2);
@@ -139,7 +140,7 @@ uint32_t MemoryTestDUT(SPI_Values dut) {
 		for (int y = 0; y < 256; y++) {
 			//Wenn inhalt nicht gleich
 			if (writeBuffer[y] != readBuffer[y]) {
-				 SR1 = readStatus(dut);
+				SR1 = readStatus(dut);
 				return 0;
 			}
 		}

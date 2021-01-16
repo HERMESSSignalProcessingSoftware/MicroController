@@ -12,10 +12,14 @@
 
 /**
  * Performes a fast memory test, just writes one page and reads it
- *
+ * Defines the DUTS
  */
 uint32_t FastMemoryTest(void);
 
+/**
+ * The actual test
+ */
+uint32_t FastTest(SPI_Values DUT);
 /**
  * @brief: tests the memory
  * TEST: Write to memory, wait, read form memory.
