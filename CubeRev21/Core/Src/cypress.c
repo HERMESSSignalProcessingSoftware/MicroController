@@ -5,7 +5,7 @@
  *      Author: Robin Grimsmann, Tobias Hausmann
  */
 
-#import "cypress.h"
+#include "cypress.h"
 #include "main.h"
 #include "spi.h"
 #include "cypress.h"
@@ -70,8 +70,8 @@ int writeByte(uint8_t data, SPI_Values SPI_val) {
  */
 int writePage(uint8_t *data, uint32_t address, SPI_Values SPI_val) {
 
-//	uint8_t command = c_WRITEPAGE;
-//	uint8_t tmp_add;
+	uint8_t command = c_WRITEPAGE;
+	uint8_t tmp_add;
 
 //Write enable
 	writeByte(c_WREN, SPI_val);
@@ -80,7 +80,7 @@ int writePage(uint8_t *data, uint32_t address, SPI_Values SPI_val) {
 	HAL_GPIO_WritePin(SPI_val.CS_Port, SPI_val.CS_Pin, GPIO_PIN_RESET);
 
 	//commando schicken
-	writeByte(c_WRITEPAGE, SPI_val);
+	HAL_SPI_Transmit(SPI_val.spihandle, &command, 1, 10);
 	HAL_Delay(10);
 	//Addressse schicken MSB to LSB
 //	HAL_SPI_Transmit(SPI_val.spihandle, (uint8_t*) (&address), 4, 40);
