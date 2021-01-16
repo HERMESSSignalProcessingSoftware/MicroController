@@ -12,6 +12,70 @@
 
 #define PAGE_COUNT 125000
 
+/**
+ * Performes a fast memory test, just writes one page and reads it
+ *
+ */
+uint32_t FastMemoryTest(void) {
+	SPI_Values DUT0;
+	DUT0.CS_Pin = FL2_CS1_Pin;
+	DUT0.CS_Port = FL2_CS1_GPIO_Port;
+	DUT0.spihandle = &hspi2;
+	//
+	SPI_Values DUT1;
+	DUT1.CS_Pin = FL2_CS2_Pin;
+	DUT1.CS_Port = FL2_CS2_GPIO_Port;
+	DUT1.spihandle = &hspi2;
+	//
+	SPI_Values DUT2;
+	DUT2.CS_Pin = FL1_CS1_Pin;
+	DUT2.CS_Port = FL1_CS1_GPIO_Port;
+	DUT2.spihandle = &hspi6;
+	//
+	SPI_Values DUT3;
+	DUT1.CS_Pin = FL1_CS2_Pin;
+	DUT1.CS_Port = FL1_CS2_GPIO_Port;
+	DUT1.spihandle = &hspi6;
+	uint32_t result = 1;
+	result &= FastTest(DUT0);
+	result &= FastTest(DUT1);
+	result &= FastTest(DUT2);
+	result &= FastTest(DUT3);
+	return !result; //to create the 0 if the test passed!
+
+}
+
+uint32_t FastTest(SPI_Values DUT) {
+	uint8_t writeBuffer[256] = { 0 };
+	uint8_t readBuffer[256] = { 0 };
+	uint32_t adresse = 0;
+	volatile uint8_t SR1;
+	//Testdaten initialisieren
+	for (int i = 0; i < 256; i++) {
+		writeBuffer[i] = i;
+	}
+
+	//CHIP löschen
+	chipErase(DUT);
+	//evtl Zusätzliche Schleife für die verschiedenen Chips und CS pins
+
+	adresse = 0x0;
+	//Daten für eine Page schicken
+	writePage(writeBuffer, adresse, DUT);
+	//Warten bis fertig geschrieben wurde
+	writeReady(DUT);
+	//Selbe page auslesen
+	readPage(readBuffer, adresse, DUT);
+	//Inhalt vergleichen
+	for (int y = 0; y < 256; y++) {
+		//Wenn inhalt nicht gleich
+		if (writeBuffer[y] != readBuffer[y]) {
+			SR1 = readStatus(DUT);
+			return 0;
+		}
+	}
+	return 1;
+}
 
 /**
  * @brief: tests the memory
@@ -20,7 +84,7 @@
  */
 uint32_t MemoryTest(void) {
 	SPI_Values DUT0;
- 	DUT0.CS_Pin = FL2_CS1_Pin;
+	DUT0.CS_Pin = FL2_CS1_Pin;
 	DUT0.CS_Port = FL2_CS1_GPIO_Port;
 	DUT0.spihandle = &hspi2;
 	//
