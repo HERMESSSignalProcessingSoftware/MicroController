@@ -49,6 +49,15 @@ makefile
 *.xmi
 *.list
 *.mk
+.cproject
+.cproject_org
+.mxproject
+.project
+.project_org
+.prefs
+*/.settings/*
+/.settings/
+/.settings/*
 Kleinstgruppen.zip
 *.DS_Store
 STAMPTest/.metadata/.lock
@@ -68,3 +77,16 @@ STAMPTest/STAMPTEst/.cproject
 STAMPTest/STAMPTEst/.mxproject
 STAMPTest/STAMPTEst/.project
 /.metadata/
+/.metadata/*
+*/.metadata/*
+#Ignore html files
+*.html
+*.js
+*.css
+#ignore tex files
+*.tex
+*.dot
+*.pdf
+/Kleinstgruppen/
+/Docu/
+*.map
