@@ -53,7 +53,6 @@ int writeByte(uint8_t data, SPI_Values SPI_val) {
 	return 0;
 }
 
-
 /**
  * Function Write Page
  * @brief Transmits command C_WREN (write enable) to the SPI
@@ -84,24 +83,22 @@ int writePage(uint8_t *data, uint32_t address, SPI_Values SPI_val) {
 	writeByte(c_WRITEPAGE, SPI_val);
 	HAL_Delay(10);
 	//Addressse schicken MSB to LSB
-	HAL_SPI_Transmit(SPI_val.spihandle, (uint8_t*) (&address), 4, 40);
-	/*
-	 tmp_add = (uint8_t)((address >> 24) & 0x000000FF);
-	 HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
-	 tmp_add = (uint8_t)((address >> 16) & 0x000000FF);
-	 HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
-	 tmp_add = (uint8_t)((address >> 8)  & 0x000000FF);
-	 HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
-	 tmp_add = (uint8_t)( address        & 0x000000FF);
-	 HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
-	 */
+//	HAL_SPI_Transmit(SPI_val.spihandle, (uint8_t*) (&address), 4, 40);
+
+	tmp_add = (uint8_t) ((address >> 24) & 0x000000FF);
+	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
+	tmp_add = (uint8_t) ((address >> 16) & 0x000000FF);
+	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
+	tmp_add = (uint8_t) ((address >> 8) & 0x000000FF);
+	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
+	tmp_add = (uint8_t) (address & 0x000000FF);
+	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
+
 	//Daten schicken
-	HAL_SPI_Transmit(SPI_val.spihandle, data, 256, HAL_MAX_DELAY);
-	/*
-	 for (int i = 0; i < 256; i++)
-	 {
-	 HAL_SPI_Transmit(SPI_val.spihandle, &data[i], 1, 10);
-	 }*/
+//	HAL_SPI_Transmit(SPI_val.spihandle, data, 256, HAL_MAX_DELAY);
+	for (int i = 0; i < 256; i++) {
+		HAL_SPI_Transmit(SPI_val.spihandle, &data[i], 1, 10);
+	}
 
 	//CS1 high
 	HAL_GPIO_WritePin(SPI_val.CS_Port, SPI_val.CS_Pin, GPIO_PIN_SET);
@@ -138,26 +135,25 @@ int readPage(uint8_t *data, uint32_t address, SPI_Values SPI_val) {
 	HAL_GPIO_WritePin(SPI_val.CS_Port, SPI_val.CS_Pin, GPIO_PIN_RESET);
 
 	//commando schicken
-	writeByte(c_READ, SPI_val);
-//	HAL_SPI_Transmit(SPI_val.spihandle, &command, 1, 10);
+//	writeByte(c_READ, SPI_val);
+	HAL_SPI_Transmit(SPI_val.spihandle, &command, 1, 10);
 
 //4 Byte Addressse schicken MSB to LSB
-	HAL_SPI_Transmit(SPI_val.spihandle, (uint8_t*) (&address), 4, 40);
-//	tmp_add = (uint8_t)((address >> 24) & 0x000000FF);
-//	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
-//	tmp_add = (uint8_t)((address >> 16) & 0x000000FF);
-//	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
-//	tmp_add = (uint8_t)((address >> 8)  & 0x000000FF);
-//	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
-//	tmp_add = (uint8_t)( address        & 0x000000FF);
-//	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
+//	HAL_SPI_Transmit(SPI_val.spihandle, (uint8_t*) (&address), 4, 40);
+	tmp_add = (uint8_t) ((address >> 24) & 0x000000FF);
+	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
+	tmp_add = (uint8_t) ((address >> 16) & 0x000000FF);
+	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
+	tmp_add = (uint8_t) ((address >> 8) & 0x000000FF);
+	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
+	tmp_add = (uint8_t) (address & 0x000000FF);
+	HAL_SPI_Transmit(SPI_val.spihandle, &tmp_add, 1, 10);
 
 //Daten lesen
-	HAL_SPI_Receive(SPI_val.spihandle, data, 256, 2560);
-//	for (int i = 0; i < 256; i++)
-//	{
-//		HAL_SPI_Receive(SPI_val.spihandle, &data[i], 1, 10);
-//	}
+//	HAL_SPI_Receive(SPI_val.spihandle, data, 256, 2560);
+	for (int i = 0; i < 256; i++) {
+		HAL_SPI_Receive(SPI_val.spihandle, &data[i], 1, 10);
+	}
 
 //CS1 high
 	HAL_GPIO_WritePin(SPI_val.CS_Port, SPI_val.CS_Pin, GPIO_PIN_SET);
@@ -221,18 +217,17 @@ int readBytes(uint8_t *data, uint32_t address, int count, SPI_Values SPI_val) {
 	return 0;
 }
 
-
 /**
  * Waits for the bit WIP (Write in Progress) bit to toggle
  * Reads SR1 register from memory
  */
 void writeReady(SPI_Values SPI_val) {
-	bool status = false;
+	uint32_t status = 0;
 	uint8_t SR1 = 0xF;
-	while (status == false) {
+	while (status == 0) {
 		SR1 = readStatus(SPI_val);
 		if ((SR1 & 0x1) == 0)
-			status = true;
+			status = 1;
 	}
 }
 
