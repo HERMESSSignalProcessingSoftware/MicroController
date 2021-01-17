@@ -47,6 +47,8 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
+void main_master(void);
+void main_slave(void);
 
 /* USER CODE END EM */
 
@@ -58,6 +60,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LWL_IN_Pin GPIO_PIN_8
+#define LWL_IN_GPIO_Port GPIOI
 #define DAPI_RX_Pin GPIO_PIN_9
 #define DAPI_RX_GPIO_Port GPIOI
 #define LED_4_Pin GPIO_PIN_14
@@ -68,6 +72,8 @@ void Error_Handler(void);
 #define LED_2_GPIO_Port GPIOF
 #define LED_1_Pin GPIO_PIN_5
 #define LED_1_GPIO_Port GPIOF
+#define SD_CS_Pin GPIO_PIN_10
+#define SD_CS_GPIO_Port GPIOF
 #define DAPI_TX_Pin GPIO_PIN_0
 #define DAPI_TX_GPIO_Port GPIOA
 #define nCS_DMS1_Pin GPIO_PIN_13
@@ -80,8 +86,8 @@ void Error_Handler(void);
 #define nCS_DMS4_GPIO_Port GPIOG
 #define nCS_DMS5_Pin GPIO_PIN_1
 #define nCS_DMS5_GPIO_Port GPIOG
-#define nCS_DMS7_Pin GPIO_PIN_7
-#define nCS_DMS7_GPIO_Port GPIOE
+#define nCS_DMS6_Pin GPIO_PIN_7
+#define nCS_DMS6_GPIO_Port GPIOE
 #define FL1_HLD_Pin GPIO_PIN_9
 #define FL1_HLD_GPIO_Port GPIOH
 #define FL1_WP_Pin GPIO_PIN_10
@@ -128,6 +134,8 @@ void Error_Handler(void);
 #define nDRDY_DMS6_Pin GPIO_PIN_12
 #define nDRDY_DMS6_GPIO_Port GPIOA
 #define nDRDY_DMS6_EXTI_IRQn EXTI15_10_IRQn
+#define LWL_OUT_Pin GPIO_PIN_3
+#define LWL_OUT_GPIO_Port GPIOI
 #define INTERSPU_TX_Pin GPIO_PIN_12
 #define INTERSPU_TX_GPIO_Port GPIOC
 #define INTERSPU_RX_Pin GPIO_PIN_2

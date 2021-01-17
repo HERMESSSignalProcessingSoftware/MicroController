@@ -1,12 +1,12 @@
 /**
   ******************************************************************************
-  * File Name          : USART.c
-  * Description        : This file provides code for the configuration
-  *                      of the USART instances.
+  * @file    usart.c
+  * @brief   This file provides code for the configuration
+  *          of the USART instances.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -100,12 +100,12 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
   /* USER CODE END UART4_MspInit 0 */
     /* UART4 clock enable */
     __HAL_RCC_UART4_CLK_ENABLE();
-  
+
     __HAL_RCC_GPIOI_CLK_ENABLE();
     __HAL_RCC_GPIOA_CLK_ENABLE();
-    /**UART4 GPIO Configuration    
+    /**UART4 GPIO Configuration
     PI9     ------> UART4_RX
-    PA0/WKUP     ------> UART4_TX 
+    PA0/WKUP     ------> UART4_TX
     */
     GPIO_InitStruct.Pin = DAPI_RX_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -135,12 +135,12 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
   /* USER CODE END UART5_MspInit 0 */
     /* UART5 clock enable */
     __HAL_RCC_UART5_CLK_ENABLE();
-  
+
     __HAL_RCC_GPIOC_CLK_ENABLE();
     __HAL_RCC_GPIOD_CLK_ENABLE();
-    /**UART5 GPIO Configuration    
+    /**UART5 GPIO Configuration
     PC12     ------> UART5_TX
-    PD2     ------> UART5_RX 
+    PD2     ------> UART5_RX
     */
     GPIO_InitStruct.Pin = INTERSPU_TX_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -170,11 +170,11 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
   /* USER CODE END UART8_MspInit 0 */
     /* UART8 clock enable */
     __HAL_RCC_UART8_CLK_ENABLE();
-  
+
     __HAL_RCC_GPIOE_CLK_ENABLE();
-    /**UART8 GPIO Configuration    
+    /**UART8 GPIO Configuration
     PE0     ------> UART8_RX
-    PE1     ------> UART8_TX 
+    PE1     ------> UART8_TX
     */
     GPIO_InitStruct.Pin = EXP_IN_Pin|EXP_OUT_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -202,10 +202,10 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
   /* USER CODE END UART4_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_UART4_CLK_DISABLE();
-  
-    /**UART4 GPIO Configuration    
+
+    /**UART4 GPIO Configuration
     PI9     ------> UART4_RX
-    PA0/WKUP     ------> UART4_TX 
+    PA0/WKUP     ------> UART4_TX
     */
     HAL_GPIO_DeInit(DAPI_RX_GPIO_Port, DAPI_RX_Pin);
 
@@ -224,10 +224,10 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
   /* USER CODE END UART5_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_UART5_CLK_DISABLE();
-  
-    /**UART5 GPIO Configuration    
+
+    /**UART5 GPIO Configuration
     PC12     ------> UART5_TX
-    PD2     ------> UART5_RX 
+    PD2     ------> UART5_RX
     */
     HAL_GPIO_DeInit(INTERSPU_TX_GPIO_Port, INTERSPU_TX_Pin);
 
@@ -246,10 +246,10 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
   /* USER CODE END UART8_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_UART8_CLK_DISABLE();
-  
-    /**UART8 GPIO Configuration    
+
+    /**UART8 GPIO Configuration
     PE0     ------> UART8_RX
-    PE1     ------> UART8_TX 
+    PE1     ------> UART8_TX
     */
     HAL_GPIO_DeInit(GPIOE, EXP_IN_Pin|EXP_OUT_Pin);
 
@@ -259,7 +259,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 
   /* USER CODE END UART8_MspDeInit 1 */
   }
-} 
+}
 
 /* USER CODE BEGIN 1 */
 void Huart4_send(uint8_t* toSend, uint16_t size){
