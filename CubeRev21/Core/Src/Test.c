@@ -16,7 +16,11 @@
  * Performes a fast memory test, just writes one page and reads it
  *
  */
-uint32_t FastMemoryTest(void) {
+uint32_t FastMemoryTest(UART_HandleTypeDef huart) {
+
+	char writeBuffer[256] = "Starting FLASH Test...\r\n";
+	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+
 	SPI_Values DUT0;
 	DUT0.CS_Pin = FL2_CS1_Pin;
 	DUT0.CS_Port = FL2_CS1_GPIO_Port;
@@ -36,13 +40,55 @@ uint32_t FastMemoryTest(void) {
 	DUT3.CS_Pin = FL1_CS2_Pin;
 	DUT3.CS_Port = FL1_CS2_GPIO_Port;
 	DUT3.spihandle = &hspi6;
-	uint32_t result = 1;
-	result += FastTest(DUT1);
-	result += FastTest(DUT0);
-	InitMemory();
-	result += FastTest(DUT2);
-	result += FastTest(DUT3);
-	return !result; //to create the 0 if the test passed!
+
+
+	uint32_t result = 0;
+	uint32_t startTime = 0;
+	uint32_t endTime = 0;
+
+	sprintf(writeBuffer, "\t%s\n\r\0", "Checking FL2/1");
+	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+	startTime = HAL_GetTick();
+	result = FastTest(DUT0);
+	endTime = HAL_GetTick() - startTime;
+	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\0", result == 1 ? "Passed" : "Failed", endTime);
+	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+	HAL_Delay(50);
+
+
+	sprintf(writeBuffer, "\t%s\n\r\0", "Checking FL2/2");
+	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+	startTime = HAL_GetTick();
+	result = FastTest(DUT1);
+	endTime = HAL_GetTick() - startTime;
+	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\0", result == 1 ? "Passed" : "Failed", endTime);
+	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+	HAL_Delay(50);
+
+
+	sprintf(writeBuffer, "\t%s\n\r\0", "Checking FL1/1");
+	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+	startTime = HAL_GetTick();
+	result = FastTest(DUT2);
+	endTime = HAL_GetTick() - startTime;
+	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\0", result == 1 ? "Passed" : "Failed", endTime);
+	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+	HAL_Delay(50);
+
+
+	sprintf(writeBuffer, "\t%s\n\r\0", "Checking FL1/2");
+	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+	startTime = HAL_GetTick();
+	result = FastTest(DUT3);
+	endTime = HAL_GetTick() - startTime;
+	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\0", result == 1 ? "Passed" : "Failed", endTime);
+	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
+	HAL_Delay(50);
+
+
+
+
+	return 0;
 }
 
 uint32_t FastTest(SPI_Values DUT) {
@@ -56,7 +102,7 @@ uint32_t FastTest(SPI_Values DUT) {
 	}
 
 	//CHIP löschen
-	chipErase(DUT);
+	//chipErase(DUT);
 	//evtl Zusätzliche Schleife für die verschiedenen Chips und CS pins
 
 	adresse = 0x0;

@@ -20,18 +20,23 @@ uint8_t tmp_add;
  */
 int32_t InitMemory(void) {
 	HAL_GPIO_WritePin(FL1_CS1_GPIO_Port, FL1_CS1_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(FL1_CS2_GPIO_Port, FL2_CS2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(FL1_CS2_GPIO_Port, FL1_CS2_Pin, GPIO_PIN_SET);
+
 	HAL_GPIO_WritePin(FL2_CS1_GPIO_Port, FL2_CS1_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(FL2_CS2_GPIO_Port, FL2_CS2_Pin, GPIO_PIN_SET);
+
 	HAL_GPIO_WritePin(FL1_HLD_GPIO_Port, FL1_HLD_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(FL2_HLD_GPIO_Port, FL2_HLD_Pin, GPIO_PIN_SET);
+
 	HAL_GPIO_WritePin(FL1_WP_GPIO_Port, FL1_WP_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(FL2_WP_GPIO_Port, FL2_WP_Pin, GPIO_PIN_SET);
+
 	HAL_GPIO_WritePin(FL1_RES_GPIO_Port, FL1_RES_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(FL2_RES_GPIO_Port, FL2_RES_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
 	HAL_GPIO_WritePin(FL1_RES_GPIO_Port, FL1_RES_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(FL2_RES_GPIO_Port, FL2_RES_Pin, GPIO_PIN_RESET);
-	HAL_Delay(1);
+	HAL_Delay(10);
 	HAL_GPIO_WritePin(FL1_RES_GPIO_Port, FL1_RES_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(FL2_RES_GPIO_Port, FL2_RES_Pin, GPIO_PIN_SET);
 	return 0;
@@ -49,6 +54,9 @@ uint8_t readStatus(SPI_Values SPI_val) {
 	uint8_t command = c_READSTATUSREG1;
 	//CS1 low
 	HAL_GPIO_WritePin(SPI_val.CS_Port, SPI_val.CS_Pin, GPIO_PIN_RESET);
+
+	HAL_Delay(1); //test
+
 	//send command
 	HAL_SPI_Transmit(SPI_val.spihandle, &command, 1, 10);
 	//read data from status register

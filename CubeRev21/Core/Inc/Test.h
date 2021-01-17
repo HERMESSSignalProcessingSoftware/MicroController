@@ -14,7 +14,7 @@
  * Performes a fast memory test, just writes one page and reads it
  * Defines the DUTS
  */
-uint32_t FastMemoryTest(void);
+uint32_t FastMemoryTest(UART_HandleTypeDef huart);
 
 /**
  * The actual test
