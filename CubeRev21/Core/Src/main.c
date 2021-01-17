@@ -210,7 +210,7 @@ void main_master(void) {
 	/* Performing the memory test */
 	InitMemory();
 	uint32_t memoryTest = FastMemoryTest(huart4);
-	while(1);
+	//while(1);
 
 
 
