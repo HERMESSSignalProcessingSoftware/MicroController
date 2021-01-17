@@ -45,13 +45,15 @@ uint32_t FastMemoryTest(UART_HandleTypeDef huart) {
 	uint32_t result = 0;
 	uint32_t startTime = 0;
 	uint32_t endTime = 0;
+	uint32_t kbits = 0;
 
 	sprintf(writeBuffer, "\t%s\n\r\0", "Checking FL2/1");
 	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
 	startTime = HAL_GetTick();
 	result = FastTest(DUT0);
 	endTime = HAL_GetTick() - startTime;
-	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\0", result == 1 ? "Passed" : "Failed", endTime);
+	kbits = ((256*8) / endTime);
+	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\t\t%d kbit/s\r\n\0", result == 1 ? "Passed" : "Failed", endTime, kbits);
 	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
 	HAL_Delay(50);
 
@@ -61,7 +63,8 @@ uint32_t FastMemoryTest(UART_HandleTypeDef huart) {
 	startTime = HAL_GetTick();
 	result = FastTest(DUT1);
 	endTime = HAL_GetTick() - startTime;
-	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\0", result == 1 ? "Passed" : "Failed", endTime);
+	kbits = ((256*8) / endTime);
+	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\t\t%d kbit/s\r\n\0", result == 1 ? "Passed" : "Failed", endTime, kbits);
 	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
 	HAL_Delay(50);
 
@@ -71,7 +74,8 @@ uint32_t FastMemoryTest(UART_HandleTypeDef huart) {
 	startTime = HAL_GetTick();
 	result = FastTest(DUT2);
 	endTime = HAL_GetTick() - startTime;
-	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\0", result == 1 ? "Passed" : "Failed", endTime);
+	kbits = ((256*8) / endTime);
+	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\t\t%d kbit/s\r\n\0", result == 1 ? "Passed" : "Failed", endTime, kbits);
 	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
 	HAL_Delay(50);
 
@@ -81,7 +85,8 @@ uint32_t FastMemoryTest(UART_HandleTypeDef huart) {
 	startTime = HAL_GetTick();
 	result = FastTest(DUT3);
 	endTime = HAL_GetTick() - startTime;
-	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\0", result == 1 ? "Passed" : "Failed", endTime);
+	kbits = ((256*8) / endTime);
+	sprintf(writeBuffer, "\t\tResult: %s, took %dms\r\n\t\t%d kbit/s\r\n\0", result == 1 ? "Passed" : "Failed", endTime, kbits);
 	HAL_UART_Transmit(&huart, writeBuffer, strlen(writeBuffer), HAL_MAX_DELAY);
 	HAL_Delay(50);
 
@@ -159,7 +164,7 @@ uint32_t MemoryTest(void) {
 }
 
 /**
- * @retun: 1: passed
+ * @return: 1: passed
  */
 uint32_t MemoryTestDUT(SPI_Values dut) {
 	uint8_t writeBuffer[256] = { 0 };
