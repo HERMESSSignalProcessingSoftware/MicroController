@@ -1,0 +1,396 @@
+# Sat Feb 13 10:00:04 2021
+
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03M-SP1
+Install: J:\LiberoSoC\SynplifyPro
+OS: Windows 6.2
+
+Hostname: LUS210
+
+Implementation : synthesis
+Synopsys Generic Technology Mapper, Version map202003act, Build 160R, Built Oct 22 2020 12:05:41, @
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 117MB peak: 117MB)
+
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 120MB peak: 129MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 120MB peak: 129MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 122MB peak: 129MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 123MB peak: 129MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 162MB peak: 162MB)
+
+@W: BN114 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\work\sb_sb\sb_sb.vhd":791:0:791:11|Removing instance SYSRESET_POR (in view: work.sb_sb(rtl)) of black box view:ACG4.SYSRESET(PRIM) because it does not drive other instances.
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+@W: FA239 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
+@W: FA239 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
+@N: MO106 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 6 bits.
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 166MB peak: 166MB)
+
+
+Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 166MB peak: 166MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 166MB peak: 166MB)
+
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 167MB peak: 167MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 167MB peak: 167MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 167MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 167MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 167MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 167MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:01s		     0.01ns		  44 /         0
+   2		0h:00m:01s		     0.01ns		  44 /         0
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 168MB peak: 168MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 168MB peak: 168MB)
+
+
+
+@S |Clock Optimization Summary
+
+
+#### START OF CLOCK OPTIMIZATION REPORT #####[
+
+Clock optimization not enabled
+0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+1 gated/generated clock tree(s) driving 1 clock pin(s) of sequential element(s)
+0 instances converted, 1 sequential instance remains driven by gated/generated clocks
+
+============================================================================ Gated/Generated Clocks =============================================================================
+Clock Tree ID     Driving Element            Drive Element Type     Fanout     Sample Instance                        Explanation                                                
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@K:CKID0001       sb_sb_0.CCC_0.CCC_INST     CCC                    1          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     No gated clock conversion method for cell cell:work.MSS_010
+=================================================================================================================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######]
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 138MB peak: 168MB)
+
+Writing Analyst data base C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\synthesis\synwork\sb_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 168MB)
+
+Writing Verilog Simulation files
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
+
+@W: MT246 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\work\sb_sb\ccc_0\sb_sb_ccc_0_fccc.vhd":106:4:106:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
+@W: MT420 |Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on net sb_sb_0.CCC_0.GL0_net.
+
+
+##### START OF TIMING REPORT #####[
+# Timing report written on Sat Feb 13 10:00:06 2021
+#
+
+
+Top view:               sb
+Requested Frequency:    100.0 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\designer\sb\synthesis.fdc
+                       
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
+
+
+
+Performance Summary
+*******************
+
+
+Worst slack in design: 0.865
+
+                                            Requested     Estimated     Requested     Estimated               Clock        Clock              
+Starting Clock                              Frequency     Frequency     Period        Period        Slack     Type         Group              
+----------------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     109.5 MHz     10.000        9.135         0.865     inferred     Inferred_clkgroup_0
+System                                      100.0 MHz     895.2 MHz     10.000        1.117         8.883     system       system_clkgroup    
+==============================================================================================================================================
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks                                                                            |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                 Ending                                   |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                   System                                   |  10.000      8.883  |  No paths    -      |  No paths    -      |  No paths    -    
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      0.865  |  No paths    -      |  No paths    -      |  No paths    -    
+========================================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: sb_sb_CCC_0_FCCC|GL0_net_inferred_clock
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                       Starting                                                                                                               Arrival          
+Instance                               Reference                                   Type        Pin                 Net                                        Time        Slack
+                                       Clock                                                                                                                                   
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[15]      STAMP_PADDRS[15]                           3.580       0.865
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_SEL           sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx     3.488       0.900
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[13]      STAMP_PADDRS[13]                           3.647       0.965
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[14]      STAMP_PADDRS[14]                           3.652       1.177
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[12]      STAMP_PADDRS[12]                           3.677       1.346
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[3]      sb_sb_0_STAMP_PRDATA[3]                    3.838       4.107
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[17]     sb_sb_0_STAMP_PRDATA[17]                   3.878       4.292
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[13]     sb_sb_0_STAMP_PRDATA[13]                   3.782       4.347
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[19]     sb_sb_0_STAMP_PRDATA[19]                   3.811       4.375
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[30]     sb_sb_0_STAMP_PRDATA[30]                   3.735       4.381
+===============================================================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                       Starting                                                                                                                    Required          
+Instance                               Reference                                   Type        Pin                 Net                                             Time         Slack
+                                       Clock                                                                                                                                         
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_READY         iPRDATA_0_sqmuxa_i                              8.486        0.865
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[3]      sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[3]      9.475        1.340
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[4]      sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[4]      9.541        1.406
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[9]      sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[9]      9.604        1.469
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[23]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[23]     9.616        1.481
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[0]      sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[0]      9.633        1.498
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[29]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[29]     9.642        1.507
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[30]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[30]     9.646        1.511
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[13]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[13]     9.659        1.524
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[16]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[16]     9.667        1.532
+=====================================================================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            1.514
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         8.486
+
+    - Propagation time:                      7.621
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     0.865
+
+    Number of logic level(s):                3
+    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[15]
+    Ending point:                            sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_READY
+    The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+
+Instance / Net                                                             Pin                Pin               Arrival     No. of    
+Name                                                           Type        Name               Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                             MSS_010     F_HM0_ADDR[15]     Out     3.580     3.580 f     -         
+STAMP_PADDRS[15]                                               Net         -                  -       0.248     -           1         
+sb_sb_0.CoreAPB3_0.u_mux_p_to_b3.g0_0                          CFG2        A                  In      -         3.829 f     -         
+sb_sb_0.CoreAPB3_0.u_mux_p_to_b3.g0_0                          CFG2        Y                  Out     0.087     3.916 f     -         
+N_8                                                            Net         -                  -       0.815     -           4         
+sb_sb_0.CoreAPB3_0.iPSELS_raw_0_a2[0]                          CFG4        B                  In      -         4.730 f     -         
+sb_sb_0.CoreAPB3_0.iPSELS_raw_0_a2[0]                          CFG4        Y                  Out     0.148     4.879 r     -         
+iPSELS_raw[0]                                                  Net         -                  -       1.299     -           33        
+sb_sb_0.CoreAPB3_0.u_mux_p_to_b3.PSELSBUS_0_a2_RNIUIPA1[1]     CFG4        D                  In      -         6.178 r     -         
+sb_sb_0.CoreAPB3_0.u_mux_p_to_b3.PSELSBUS_0_a2_RNIUIPA1[1]     CFG4        Y                  Out     0.326     6.504 f     -         
+iPRDATA_0_sqmuxa_i                                             Net         -                  -       1.117     -           1         
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                             MSS_010     F_HM0_READY        In      -         7.621 f     -         
+======================================================================================================================================
+Total path delay (propagation time + setup) of 9.135 is 5.656(61.9%) logic and 3.479(38.1%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+
+====================================
+Detailed Report for Clock: System
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                      Starting                                                                                           Arrival          
+Instance                              Reference     Type               Pin        Net                                                    Time        Slack
+                                      Clock                                                                                                               
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.FABOSC_0.I_RCOSC_25_50MHZ     System        RCOSC_25_50MHZ     CLKOUT     FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC     0.000       8.883
+==========================================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                           Starting                                                                                         Required          
+Instance                   Reference     Type     Pin                Net                                                    Time         Slack
+                           Clock                                                                                                              
+----------------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.CCC_0.CCC_INST     System        CCC      RCOSC_25_50MHZ     FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC     10.000       8.883
+==============================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.000
+    + Clock delay at ending point:           0.000 (ideal)
+    + Estimated clock delay at ending point: 0.000
+    = Required time:                         10.000
+
+    - Propagation time:                      1.117
+    - Clock delay at starting point:         0.000 (ideal)
+    - Estimated clock delay at start point:  -0.000
+    = Slack (non-critical) :                 8.883
+
+    Number of logic level(s):                0
+    Starting point:                          sb_sb_0.FABOSC_0.I_RCOSC_25_50MHZ / CLKOUT
+    Ending point:                            sb_sb_0.CCC_0.CCC_INST / RCOSC_25_50MHZ
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            System [rising]
+
+Instance / Net                                                            Pin                Pin               Arrival     No. of    
+Name                                                   Type               Name               Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.FABOSC_0.I_RCOSC_25_50MHZ                      RCOSC_25_50MHZ     CLKOUT             Out     0.000     0.000 r     -         
+FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC     Net                -                  -       1.117     -           1         
+sb_sb_0.CCC_0.CCC_INST                                 CCC                RCOSC_25_50MHZ     In      -         1.117 r     -         
+=====================================================================================================================================
+Total path delay (propagation time + setup) of 1.117 is 0.000(0.0%) logic and 1.117(100.0%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+
+Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
+
+---------------------------------------
+Resource Usage Report for sb 
+
+Mapping to part: m2s010vf400std
+Cell usage:
+CCC             1 use
+CLKINT          1 use
+MSS_010         1 use
+RCOSC_25_50MHZ  1 use
+CFG2           2 uses
+CFG3           2 uses
+CFG4           35 uses
+
+
+Sequential Cells: 
+SLE            0 uses
+
+DSP Blocks:    0 of 22 (0%)
+
+I/O ports: 21
+I/O primitives: 16
+BIBUF          2 uses
+INBUF          4 uses
+OUTBUF         7 uses
+TRIBUFF        3 uses
+
+
+Global Clock Buffers: 1
+
+Total LUTs:    39
+
+Extra resources required for RAM and MACC interface logic during P&R:
+
+RAM64x18 Interface Logic : SLEs = 0; LUTs = 0;
+RAM1K18  Interface Logic : SLEs = 0; LUTs = 0;
+MACC     Interface Logic : SLEs = 0; LUTs = 0;
+
+Total number of SLEs after P&R:  0 + 0 + 0 + 0 = 0;
+Total number of LUTs after P&R:  39 + 0 + 0 + 0 = 39;
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 60MB peak: 168MB)
+
+Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+# Sat Feb 13 10:00:07 2021
+
+###########################################################]

@@ -1,0 +1,51 @@
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03M-SP1
+Install: J:\LiberoSoC\SynplifyPro
+OS: Windows 6.2
+
+Hostname: LUS210
+
+Implementation : synthesis
+
+# Written on Sat Feb 13 10:00:03 2021
+
+##### FILES SYNTAX CHECKED ##############################################
+Constraint File(s):      "C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\designer\sb\synthesis.fdc"
+
+#Run constraint checker to find more issues with constraints.
+#########################################################################
+
+
+
+No issues found in constraint syntax.
+
+
+
+Clock Summary
+*************
+
+          Start                                       Requested     Requested     Clock        Clock                   Clock
+Level     Clock                                       Frequency     Period        Type         Group                   Load 
+----------------------------------------------------------------------------------------------------------------------------
+0 -       System                                      100.0 MHz     10.000        system       system_clkgroup         0    
+                                                                                                                            
+0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     1    
+============================================================================================================================
+
+
+Clock Load Summary
+******************
+
+                                            Clock     Source                              Clock Pin                                       Non-clock Pin     Non-clock Pin                 
+Clock                                       Load      Pin                                 Seq Example                                     Seq Example       Comb Example                  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                      0         -                                   -                                               -                 -                             
+                                                                                                                                                                                          
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     1         sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST.CLK_BASE     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
+==========================================================================================================================================================================================

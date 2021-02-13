@@ -1,0 +1,21 @@
+----------------------------------------------------------------
+-Pin Report - Date: Fri Feb 12 10:14:49 2021 Pinchecksum: NOT-AVAILABLE
+-Product: Designer
+-Release: v12.6
+-Version: 12.900.20.24
+-Design Name: sb
+-Family: SmartFusion2
+-Die: M2S010
+-Package: 400 VF
+-----------------------------------------------------------------
+
+Port          |Pin |Fixed |Function                                     |Bank     |I/O Std   |Direction                      |I/O state in Flash*Freeze mode |Resistor Pull                      |I/O available in Flash*Freeze mode |Schmitt Trigger |Odt_Static    |Odt Imp (Ohm)  |Low Power Exit |Input Delay |Slew         |Pre-Emphasis      |Output Drive (mA) |Output Load (pF) |
+--------------|----|------|---------------------------------------------|---------|----------|-------------------------------|-------------------------------|-----------------------------------|-----------------------------------|----------------|--------------|---------------|---------------|------------|-------------|------------------|------------------|-----------------|
+DAPI_RX        C19  Yes    MSIO27PB1/MMUART_0_RXD/GPIO_28_B/USB_STP_C    Bank1     LVCMOS33   Input                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          ---           ---                ---                ---               
+DAPI_TX        D18  Yes    MSI26NB1/MMUART_0_TXD/GPIO_27_B/USB_DIR_C     Bank1     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
+DEVRST_N       U17  Fixed  DEVRST_N                                      ---       
+LED_HEARTBEAT  D2   Yes    MSIO68PB7                                     Bank7     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
+LED_RECORDING  E1   Yes    MSIO70PB7                                     Bank7     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
+SODS           B19  Yes    MSIO27NB1/MMUART_0_CLK/GPIO_29_B/USB_NXT_C    Bank1     LVCMOS33   Input                           TRISTATE                        Up                                  No                                  Off              ---            ---             Off             Off          ---           ---                ---                ---               
+TM_RX          F18  Yes    MSIO22NB1/MMUART_1_RXD/GPIO_26_B/USB_DATA3_C  Bank1     LVCMOS33   Input                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          ---           ---                ---                ---               
+TM_TX          G16  Yes    MSIO21NB1/MMUART_1_TXD/GPIO_24_B/USB_DATA2_C  Bank1     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 

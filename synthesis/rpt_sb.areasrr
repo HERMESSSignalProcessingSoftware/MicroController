@@ -1,0 +1,155 @@
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03M-SP1
+Install: J:\LiberoSoC\SynplifyPro
+OS: Windows 6.2
+
+Hostname: LUS210
+
+Implementation : synthesis
+
+#### START OF AREA REPORT #####[
+
+Part:			M2S010VF400STD (Microchip)
+
+------------------------------------------------------------------
+########   Utilization report for  Top level view:   sb   ########
+==================================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+CFG           39                 100 %                
+BLACK BOX     3                  100 %                
+======================================================
+Total COMBINATIONAL LOGIC in the block sb:	42 (56.76 % Utilization)
+
+
+GLOBAL BUFFERS
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+GLOBAL     1                  100 %                
+===================================================
+Total GLOBAL BUFFERS in the block sb:	1 (1.35 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+IO       16                 100 %                
+=================================================
+Total IO PADS in the block sb:	16 (21.62 % Utilization)
+
+-----------------------------------------------------------
+########   Utilization report for  cell:   sb_sb   ########
+Instance path:   sb.sb_sb                                  
+===========================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+CFG           39                 100 %                
+BLACK BOX     3                  100 %                
+======================================================
+Total COMBINATIONAL LOGIC in the block sb.sb_sb:	42 (56.76 % Utilization)
+
+
+GLOBAL BUFFERS
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+GLOBAL     1                  100 %                
+===================================================
+Total GLOBAL BUFFERS in the block sb.sb_sb:	1 (1.35 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+IO       8                  50 %                 
+=================================================
+Total IO PADS in the block sb.sb_sb:	8 (10.81 % Utilization)
+
+--------------------------------------------------------------
+########   Utilization report for  cell:   CoreAPB3   ########
+Instance path:   sb_sb.CoreAPB3                               
+==============================================================
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      39                 100 %                
+=================================================
+Total COMBINATIONAL LOGIC in the block sb_sb.CoreAPB3:	39 (52.70 % Utilization)
+
+-----------------------------------------------------------------------
+########   Utilization report for  cell:   COREAPB3_MUXPTOB3   ########
+Instance path:   CoreAPB3.COREAPB3_MUXPTOB3                            
+=======================================================================
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      38                 97.4 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block CoreAPB3.COREAPB3_MUXPTOB3:	38 (51.35 % Utilization)
+
+----------------------------------------------------------------------
+########   Utilization report for  cell:   sb_sb_CCC_0_FCCC   ########
+Instance path:   sb_sb.sb_sb_CCC_0_FCCC                               
+======================================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+BLACK BOX     1                  33.3 %               
+======================================================
+Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_CCC_0_FCCC:	1 (1.35 % Utilization)
+
+
+GLOBAL BUFFERS
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+GLOBAL     1                  100 %                
+===================================================
+Total GLOBAL BUFFERS in the block sb_sb.sb_sb_CCC_0_FCCC:	1 (1.35 % Utilization)
+
+------------------------------------------------------------------------
+########   Utilization report for  cell:   sb_sb_FABOSC_0_OSC   ########
+Instance path:   sb_sb.sb_sb_FABOSC_0_OSC                               
+========================================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+BLACK BOX     1                  33.3 %               
+======================================================
+Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_FABOSC_0_OSC:	1 (1.35 % Utilization)
+
+---------------------------------------------------------------
+########   Utilization report for  cell:   sb_sb_MSS   ########
+Instance path:   sb_sb.sb_sb_MSS                               
+===============================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+BLACK BOX     1                  33.3 %               
+======================================================
+Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_MSS:	1 (1.35 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+IO       8                  50 %                 
+=================================================
+Total IO PADS in the block sb_sb.sb_sb_MSS:	8 (10.81 % Utilization)
+
+
+##### END OF AREA REPORT #####]
+

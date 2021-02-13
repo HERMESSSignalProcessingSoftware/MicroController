@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="drcss.xsl"?>
+<drcreport>
+  <header>sb</header>
+  <drc>
+    <status>J:\LiberoSoC\Designer/data/drcreport\warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Unconnected Bus Interface</message>
+    <detail>Unconnected bus interface pin CoreAPB3_C0_0:APB3mmaster</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/sb/pins/CoreAPB3_C0_0:APB3mmaster</crossprobe>
+  </drc>
+  <drc>
+    <status>J:\LiberoSoC\Designer/data/drcreport\warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Unconnected Bus Interface</message>
+    <detail>Unconnected bus interface pin sb_sb_0:AMBA_SLAVE_0</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/sb/pins/sb_sb_0:AMBA_SLAVE_0</crossprobe>
+  </drc>
+</drcreport>

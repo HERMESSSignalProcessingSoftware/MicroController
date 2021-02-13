@@ -1,0 +1,150 @@
+# Microsemi Physical design constraints file
+
+# Version: v12.6 12.900.20.24
+
+# Design Name: sb 
+
+# Input Netlist Format: EDIF 
+
+# Family: SmartFusion2 , Die: M2S010 , Package: 400 VF , Speed grade: STD 
+
+# Date generated: Fri Feb 12 10:14:47 2021 
+
+
+#
+# I/O constraints
+#
+
+set_io DAPI_RX -DIRECTION INPUT -pinname C19 -fixed no
+set_io DAPI_TX -DIRECTION OUTPUT -pinname D18 -fixed no
+set_io LED_HEARTBEAT -DIRECTION OUTPUT -pinname D2 -fixed no
+set_io LED_RECORDING -DIRECTION OUTPUT -pinname E1 -fixed no
+set_io SODS -DIRECTION INPUT -pinname B19 -fixed no
+set_io TM_RX -DIRECTION INPUT -pinname F18 -fixed no
+set_io TM_TX -DIRECTION OUTPUT -pinname G16 -fixed no
+
+#
+# Core cell constraints
+#
+
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_0 -fixed no 407 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/default_slave_sm/defSlaveSMNextState_i_a2_8 -fixed no 384 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/PREGATEDHADDR_RNIA5S25\[27\] -fixed no 381 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[1\] -fixed no 394 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_a2_14 -fixed no 393 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2_1\[13\] -fixed no 380 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/regHTRANS -fixed no 390 37
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_a2_1 -fixed no 400 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[7\] -fixed no 374 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/d_masterRegAddrSel_0_a2_3_0 -fixed no 391 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt_RNIGTOE\[1\] -fixed no 385 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[5\] -fixed no 386 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[4\] -fixed no 392 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[8\] -fixed no 390 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/regHADDR\[26\] -fixed no 387 37
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[10\] -fixed no 384 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[12\] -fixed no 387 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[2\] -fixed no 386 39
+set_location sb_sb_0/AMBA_SLAVE_0_0_intr_or_0 -fixed no 393 42
+set_location sb_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNI7O99 -fixed no 219 54
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[13\] -fixed no 385 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[0\] -fixed no 390 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[6\] -fixed no 392 40
+set_location sb_sb_0/CORERESETP_0/MSS_HPMS_READY_int_3 -fixed no 372 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/d_masterRegAddrSel_0 -fixed no 380 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[14\] -fixed no 388 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[9\] -fixed no 384 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2_0\[0\] -fixed no 385 39
+set_location sb_sb_0/CORERESETP_0/mss_ready_select -fixed no 374 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_2_RNII46N2 -fixed no 393 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[1\] -fixed no 394 39
+set_location sb_sb_0/FABOSC_0/I_RCOSC_25_50MHZ -fixed no 396 92
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/slavestage_0/masterDataInProg_RNIG5FC\[0\] -fixed no 386 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_0_1 -fixed no 404 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_o2_0 -fixed no 403 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[2\] -fixed no 386 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt_RNIJ0PE\[2\] -fixed no 392 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[10\] -fixed no 384 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/slavestage_0/slave_arbiter/arbRegSMCurrentState\[2\] -fixed no 379 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/PREGATEDHADDR\[25\] -fixed no 376 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/slavestage_0/slave_arbiter/arbRegSMCurrentState_ns_i_a2_i_a2\[1\] -fixed no 377 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[6\] -fixed no 392 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/default_slave_sm/defSlaveSMNextState_i_a2_7 -fixed no 391 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2_0\[14\] -fixed no 391 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/PREGATEDHADDR_RNIODKQ1\[24\] -fixed no 372 39
+set_location sb_sb_0/CORERESETP_0/un6_fic_2_apb_m_preset_n_clk_base -fixed no 375 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_o2 -fixed no 387 45
+set_location sb_sb_0/CCC_0/GL0_INST/U0_RGB1 -fixed no 218 102
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt_RNII2MJ\[4\] -fixed no 402 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/PREGATEDHADDR\[27\] -fixed no 378 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_2_RNIT0541 -fixed no 395 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/hready_m_xhdl339_0_a2_RNIM4SJ -fixed no 383 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[13\] -fixed no 385 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[3\] -fixed no 395 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[8\] -fixed no 390 43
+set_location sb_sb_0/CORERESETP_0/POWER_ON_RESET_N_clk_base -fixed no 388 37
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[9\] -fixed no 384 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/PREGATEDHADDR\[24\] -fixed no 382 39
+set_location ip_interface_inst -fixed no 191 0
+set_location sb_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_clk_base -fixed no 380 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2_1\[12\] -fixed no 391 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[4\] -fixed no 392 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/default_slave_sm/defSlaveSMCurrentState_RNO -fixed no 384 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_a2_11 -fixed no 401 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/regHADDR\[24\] -fixed no 382 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2_1\[0\] -fixed no 387 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/masterRegAddrSel -fixed no 380 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[15\] -fixed no 389 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/slavestage_0/masterDataInProg\[0\] -fixed no 383 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_o2_2 -fixed no 398 45
+set_location sb_sb_0/CORERESETP_0/MSS_HPMS_READY_int -fixed no 372 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/hready_m_xhdl339_0_a2 -fixed no 386 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/default_slave_sm/defSlaveSMCurrentState -fixed no 384 37
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_a2_12 -fixed no 390 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[5\] -fixed no 386 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/masterRegAddrSel_RNIA2LK -fixed no 373 39
+set_location sb_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNI7O99/U0_RGB1 -fixed no 219 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_2 -fixed no 394 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_a2_2_2 -fixed no 397 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_0_0_tz -fixed no 405 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[3\] -fixed no 395 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_2_RNIDRLN_0 -fixed no 388 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/default_slave_sm/defSlaveSMNextState_i_a2_10 -fixed no 394 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt_RNI6CUS1\[1\] -fixed no 393 45
+set_location sb_sb_0/CCC_0/GL0_INST -fixed no 220 54
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/regHADDR\[25\] -fixed no 376 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_0_0_0 -fixed no 406 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/GATEDHTRANS_i_m2 -fixed no 390 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[0\] -fixed no 390 39
+set_location sb_sb_0/CORERESETP_0/POWER_ON_RESET_N_q1 -fixed no 394 37
+set_location sb_sb_0/CORERESETP_0/mss_ready_state -fixed no 375 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_a2_13 -fixed no 399 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/slavestage_0/slave_arbiter/MASTERADDRINPROG_i_i_a2\[0\] -fixed no 375 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/default_slave_sm/defSlaveSMNextState_i_a2 -fixed no 389 45
+set_location CFG0_GND_INST -fixed no 379 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_2_RNIDRLN -fixed no 389 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/slavestage_0/slave_arbiter/arbRegSMCurrentState\[14\] -fixed no 375 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/d_masterRegAddrSel_0_tz_0 -fixed no 385 36
+set_location sb_sb_0/CORERESETP_0/RESET_N_M2F_clk_base -fixed no 373 40
+set_location sb_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_q1 -fixed no 373 43
+set_location sb_sb_0/CORERESETP_0/RESET_N_M2F_q1 -fixed no 377 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/un1_hready_m_xhdl339_1_0_o2_1 -fixed no 388 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/regHADDR\[27\] -fixed no 378 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[11\] -fixed no 388 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[11\] -fixed no 388 42
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[15\] -fixed no 389 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SADDRSEL_0_a2\[7\] -fixed no 374 39
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/d_masterRegAddrSel_0_tz -fixed no 392 36
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[12\] -fixed no 387 43
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt_RNIHBMB\[3\] -fixed no 395 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/SDATASELInt\[14\] -fixed no 388 40
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/default_slave_sm/defSlaveSMNextState_i_a2_9 -fixed no 396 45
+set_location sb_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/PREGATEDHADDR\[26\] -fixed no 387 36
+set_location sb_sb_0/CCC_0/CCC_INST -fixed no 390 92
+set_location sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST -fixed no 300 104
+set_location sb_sb_0/SYSRESET_POR -fixed no 396 8
+set_location sb_sb_0/CCC_0/GL0_INST/U0_RGB1_RGB0 -fixed no 218 42
+set_location sb_sb_0/CCC_0/GL0_INST/U0_RGB1_RGB1 -fixed no 218 39
+set_location sb_sb_0/CCC_0/GL0_INST/U0_RGB1_RGB2 -fixed no 218 36
+set_location sb_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNI7O99/U0_RGB1_RGB0 -fixed no 219 39
+set_location sb_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNI7O99/U0_RGB1_RGB1 -fixed no 219 36

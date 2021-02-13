@@ -1,0 +1,66 @@
+# Microsemi I/O Physical Design Constraints file
+
+# User I/O Constraints file 
+
+# Version: v12.6 12.900.20.24
+
+# Family: SmartFusion2 , Die: M2S010 , Package: 400 VF
+
+# Date generated: Fri Feb 12 10:13:46 2021 
+
+# 
+# User Locked I/O Bank Settings
+# 
+
+# 
+# Unlocked I/O Bank Settings
+# The I/O Bank Settings can be locked by directly editing this file
+# or by making changes in the I/O Attribute Editor
+# 
+
+# 
+# User Locked I/O settings
+# 
+
+set_io LED_HEARTBEAT   \
+    -pinname D2        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io LED_RECORDING   \
+    -pinname E1        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io SODS           \
+    -pinname B19      \
+    -fixed yes        \
+    -RES_PULL Up      \
+    -DIRECTION INPUT
+
+
+
+# 
+# Dedicated Peripheral I/O Settings
+# 
+
+
+# 
+# Unlocked I/O settings
+# The I/Os in this section are unplaced or placed but are not locked
+# the other listed attributes have been applied
+# 
+
+
+#
+#Ports using Dedicated Pins
+
+#
+
+set_io DEVRST_N       \
+    -pinname U17      \
+    -DIRECTION INPUT
+
+

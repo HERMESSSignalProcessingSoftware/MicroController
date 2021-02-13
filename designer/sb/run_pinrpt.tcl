@@ -1,0 +1,10 @@
+DESIGN=sb
+DESDIR=C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\designer\sb
+TARGET_DIR=C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\designer\sb
+FAM=SmartFusion2
+DIE=PA4M1000_N
+PACKAGE=vf400
+PINRPT_BY_NAME=1
+PINRPT_BY_NUMBER=1
+BANK_REPORT=1
+IOREG_REPORT=1

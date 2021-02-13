@@ -1,0 +1,33 @@
+<Actel_Data_File>
+    <format name="NVM File" version="01.00.00"/>
+    <header>
+        <die>
+            M2S010
+        </die>
+        <family>
+            SmartFusion2
+        </family>
+        <module>
+            
+        </module>
+        <package>
+            400 VF
+        </package>
+        <version>
+            12.900.20.24
+        </version>
+    </header>
+    <nvm>
+        <region name="SPU_Conf" address="0x000000" retrieveAddressFromFile="false" size="120" format="HEX" type="Data Storage" wordSize="32" numberWords="30" memFile="C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess" memType="" memFileTimeStamp="1613121319" clientType="public" program="false">
+            <fabric_accessible/>
+            <mss_accessible/>
+            000000000000000000000000000000000000000000000000000000000000
+            000000000000000000000000000000000000000000000000000000000000
+            000000000000000000000000000000000000000000000000000000000000
+            000000000000000000000000000000000000000000000000000000000000
+            <crc>
+                0000
+            </crc>
+        </region>
+    </nvm>
+</Actel_Data_File>
