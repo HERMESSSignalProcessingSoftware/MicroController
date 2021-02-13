@@ -11,7 +11,6 @@
 #include "test.h"
 
 extern CRC_HandleTypeDef hcrc;
-extern osSemaphoreId_t TelemetrySememphoreHandle;
 
 /**
  * CreateHeader
@@ -60,6 +59,13 @@ uint32_t SendPackage(telemetry_t *package) {
 		PackageNumber++;
 	}
 	return 0;
+}
+
+/**
+ * Init Telemetry
+ */
+void InitTelemetry(void) {
+	__NOP();
 }
 
 /**

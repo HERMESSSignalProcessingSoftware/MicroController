@@ -10,7 +10,6 @@
 
 #include <stdlib.h>
 #include "main.h"
-#include "cmsis_os.h"
 
 /**
  * there are 9 times 16 bit ADCs
@@ -73,4 +72,8 @@ uint32_t SendPackage(telemetry_t *package);
  */
 uint32_t PackageNumber;
 
+/**
+ * Init Telemetry
+ */
+void InitTelemetry(void);
 #endif /* INC_TELEMETRY_H_ */
