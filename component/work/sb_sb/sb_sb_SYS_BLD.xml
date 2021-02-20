@@ -3221,11 +3221,11 @@
 </row>
 <row>
  <cell>GPIO1_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICA</cell>
 </row>
 <row>
  <cell>GPIO1_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_INPUT</cell>
 </row>
 <row>
  <cell>GPIO2_FAB_CAPT</cell>
@@ -3237,7 +3237,7 @@
 </row>
 <row>
  <cell>GPIO2_USAGE</cell>
- <cell>USAGE_OUTPUT</cell>
+ <cell>USAGE_INPUT</cell>
 </row>
 <row>
  <cell>GPIO3_FAB_CAPT</cell>
@@ -3245,11 +3245,11 @@
 </row>
 <row>
  <cell>GPIO3_TYPE</cell>
- <cell>CONNECTION_FABRICA</cell>
+ <cell>CONNECTION_IOA</cell>
 </row>
 <row>
  <cell>GPIO3_USAGE</cell>
- <cell>USAGE_OUTPUT</cell>
+ <cell>NOT_USED</cell>
 </row>
 <row>
  <cell>GPIO4_FAB_CAPT</cell>
@@ -3569,11 +3569,11 @@
 </row>
 <row>
  <cell>GPIO30_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICB</cell>
 </row>
 <row>
  <cell>GPIO30_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO31_FAB_CAPT</cell>
@@ -3581,11 +3581,11 @@
 </row>
 <row>
  <cell>GPIO31_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICB</cell>
 </row>
 <row>
  <cell>GPIO31_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO_7_0_SET_RESET_SRC</cell>
@@ -3893,12 +3893,22 @@
  <cell>-</cell>
 </row>
 <row>
- <cell>GPIO_2_M2F</cell>
+ <cell>GPIO_1_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>GPIO_2_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>GPIO_30_M2F</cell>
  <cell>OUT</cell>
  <cell>-</cell>
 </row>
 <row>
- <cell>GPIO_3_M2F</cell>
+ <cell>GPIO_31_M2F</cell>
  <cell>OUT</cell>
  <cell>-</cell>
 </row>
@@ -3925,18 +3935,6 @@
  <cell>Task</cell>
  <cell>Description</cell>
 </header>
-<row>
- <cell>Connect Generic User Slave Peripheral</cell>
- <cell>STAMPS is a slave on FIC0_Master_Subsystem subsystem.
-Connect your peripheral to STAMPS bus interface pin in the top design.</cell>
-</row>
-<separator/>
-<row>
- <cell>Connect Generic User Slave Peripheral</cell>
- <cell>STAMPS is a slave on FIC0_Master_Subsystem subsystem.
-Connect your peripheral to STAMPS_5 bus interface pin in the top design.</cell>
-</row>
-<separator/>
 <row>
  <cell>Connect Generic User Slave Peripheral</cell>
  <cell>STAMP is a slave on FIC0_Master_Subsystem subsystem.

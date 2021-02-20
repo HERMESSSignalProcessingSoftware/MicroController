@@ -43,12 +43,20 @@ END STAMP;
 
 
 ARCHITECTURE architecture_STAMP of STAMP IS
-	signal measurement_dms1 : STD_LOGIC_VECTOR(15 downto 0);
-	signal measurement_dms2 : STD_LOGIC_VECTOR(15 downto 0);
-	signal measurement_temp : STD_LOGIC_VECTOR(15 downto 0);
+    -- contains all status bits
+    signal status_register : STD_LOGIC_VECTOR(0 to 15) := (others => '0');
+    signal status_dms1_newVal : STD_LOGIC := '0';
+    signal status_dms2_newVal : STD_LOGIC := '0';
+    signal status_temp_newVal : STD_LOGIC := '0';
+	-- contains the last measured 
+    signal measurement_dms1 : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+	signal measurement_dms2 : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+	signal measurement_temp : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
 
 BEGIN
-    PRDATA <= PWDATA;
+    status_register(0) <= status_dms1_newVal;
+    status_register(1) <= status_dms2_newVal;
+    status_register(2) <= status_temp_newVal;
 
    
 END architecture_STAMP;
