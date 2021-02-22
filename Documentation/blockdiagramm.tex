@@ -1,0 +1,346 @@
+\tikzset{
+	sensor/.style={rectangle, draw, minimum size=1cm},
+	component/.style={rectangle, draw, minimum size=4cm},
+	vhdlc/.style={rectangle, draw, minimum size = 1cm},
+	state/.style={circle, draw, minimum size=1cm},
+	bigSensor/.style={rectangle, draw, minimum height = 3cm,  minimum width = 3cm}
+}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\begin{landscape}
+\begin{figure}[h]
+\begin{tikzpicture}[very thick, black, node distance=2cm]
+%\draw[step=1cm, gray, very thin] (0,0) grid (15,15);
+
+\node[gray!50] (S1name) {\small{STAMP \# 1}};
+\node[sensor, black, below of = S1name, node distance = 1cm] (S1SGR1) {\tiny{SGR 1}};
+\node[sensor, black, below of = S1SGR1, node distance = 1.1cm] (S1pt100) {\tiny{PT100}};
+\node[sensor, black, below of = S1pt100, node distance = 1.1cm] (S1SGR2) {\tiny{SGR 2}};
+
+\node[rectangle, draw, gray!50, very thick, fit  = (S1name) (S1SGR2), inner sep=1mm, outer sep = 2mm] (S1all) {};
+
+\coordinate[right of = S1SGR1] (hS1SGR1);
+\coordinate[right of = S1pt100] (hS1pt100);
+\coordinate[right of = S1SGR2] (hS1SGR2);
+
+\node[gray!50, below of = S1SGR2, node distance = 1.5cm] (S2name) {\small{STAMP \# 2}};
+\node[sensor, black, below of = S2name, node distance = 1cm] (S2SGR1) {\tiny{SGR 1}};
+\node[sensor, black, below of = S2SGR1, node distance = 1.1cm] (S2pt100) {\tiny{PT100}};
+\node[sensor, black, below of = S2pt100, node distance = 1.1cm] (S2SGR2) {\tiny{SGR 2}};
+
+\node[rectangle, draw, gray!50, very thick, fit  = (S2name) (S2SGR2), inner sep=1mm, outer sep = 2mm] (S1all) {};
+
+\coordinate[right of = S2SGR1] (hS2SGR1);
+\coordinate[right of = S2pt100] (hS2pt100);
+\coordinate[right of = S2SGR2] (hS2SGR2);
+
+\node[gray!50, below of = S2SGR2, node distance = 1.5cm] (S3name) {\small{STAMP \# 3}};
+\node[sensor, black, below of = S3name, node distance = 1cm] (S3SGR1) {\tiny{SGR 1}};
+\node[sensor, black, below of = S3SGR1, node distance = 1.1cm] (S3pt100) {\tiny{PT100}};
+\node[sensor, black, below of = S3pt100, node distance = 1.1cm] (S3SGR2) {\tiny{SGR 2}};
+
+\node[rectangle, draw, gray!50, very thick, fit  = (S3name) (S3SGR2), inner sep=1mm, outer sep = 2mm] (S1all) {};
+
+\coordinate[right of = S3SGR1] (hS3SGR1);
+\coordinate[right of = S3pt100] (hS3pt100);
+\coordinate[right of = S3SGR2] (hS3SGR2);
+
+
+%SPU
+\node[sensor, right of = S1SGR1, node distance = 2cm] (S1SGR1adc) {\tiny{ADS1147}}; 
+\node[sensor, right of = S1pt100, node distance = 2cm] (S1pt100adc) {\tiny{ADS1147}};
+\node[sensor, right of = S1SGR2, node distance = 2cm] (S1SGR2adc) {\tiny{ADS1147}};
+\node[gray!50, above of = S1SGR1adc, node distance = 2cm] (S1fabName) {SPU}; 
+
+\node[sensor, right of = S2SGR1, node distance = 2cm] (S2SGR1adc) {\tiny{ADS1147}}; 
+\node[sensor, right of = S2pt100, node distance = 2cm] (S2pt100adc) {\tiny{ADS1147}};
+\node[sensor, right of = S2SGR2, node distance = 2cm] (S2SGR2adc) {\tiny{ADS1147}};
+
+\node[sensor, right of = S3SGR1, node distance = 2cm] (S3SGR1adc) {\tiny{ADS1147}}; 
+\node[sensor, right of = S3pt100, node distance = 2cm] (S3pt100adc) {\tiny{ADS1147}};
+\node[sensor, right of = S3SGR2, node distance = 2cm] (S3SGR2adc) {\tiny{ADS1147}};
+
+%FPGA
+%STAMP left
+\node[black, right of = S1SGR1adc, node distance = 3cm] (F1S1name) {\small{c STAMP \#1}};
+\node[vhdlc, below of = F1S1name, node distance = 1cm, xshift = -.4cm] (F1S1spi) {SPI};
+\node[vhdlc, right of = F1S1spi, node distance = 1.5cm] (F1S1cu) {CU};
+\node[rectangle, draw, below of = F1S1spi, black, node distance = 1cm, minimum width = 2.5cm, minimum height = .5cm] (F1S1rl) at ($(F1S1spi)!0.5!(F1S1cu)$) {ResetLogic};
+\node[rectangle, draw, below of = F1S1rl, node distance = .75cm, minimum width = 2.5cm, minimum height = .5cm] (F1S1amba) {AMBA Conn. };
+\node[rectangle, draw, black, very thick, fit  = (F1S1name) (F1S1rl)(F1S1amba), inner sep=2mm, outer sep = 2mm] (compStamp1) {};
+
+\node[black, below = of F1S1name, yshift=-2.0cm] (F1S2name) {\small{c STAMP \#2}};
+\node[vhdlc, below of = F1S2name, node distance = 1cm, xshift = -.4cm] (F1S2spi) {SPI};
+\node[vhdlc, right of = F1S2spi, node distance = 1.5cm] (F1S2cu) {CU};
+\node[rectangle, draw, below of = F1S2spi, black, node distance = 1cm, minimum width = 2.5cm, minimum height = .5cm] (F1S2rl) at ($(F1S2spi)!0.5!(F1S2cu)$) {ResetLogic};
+\node[rectangle, draw, below of = F1S2rl, node distance = .75cm, minimum width = 2.5cm, minimum height = .5cm] (F1S2amba) {AMBA Conn. };
+\node[rectangle, draw, black, very thick, fit  = (F1S2name) (F1S2rl) (F1S2amba), inner sep=2mm, outer sep = 2mm] (compStamp2) {};
+
+\node[black, below  = of F1S2name, yshift=-2.0cm] (F1S3name) {\small{c STAMP \#3}};
+\node[vhdlc, below of = F1S3name, node distance = 1cm, xshift = -.4cm] (F1S3spi) {SPI};
+\node[vhdlc, right of = F1S3spi, node distance = 1.5cm] (F1S3cu) {CU};
+\node[rectangle, draw, below of = F1S3spi, black, node distance = 1cm, minimum width = 2.5cm, minimum height = .5cm] (F1S3rl) at ($(F1S3spi)!0.5!(F1S3cu)$) {ResetLogic};
+\node[rectangle, draw, below of = F1S3rl, node distance = .75cm, minimum width = 2.5cm, minimum height = .5cm] (F1S3amba) {AMBA Conn. };
+\node[rectangle, draw, black, very thick, fit  = (F1S3name) (F1S3rl) (F1S3amba), inner sep=2mm, outer sep = 2mm] (compStamp3) {};
+
+%Memory unit
+\node[right  = of F1S1name] (F1MemName) {c Memory};
+\node[vhdlc, below of =  F1MemName, node distance = 1.0cm, xshift=-.4cm] (F1MemSpi) {2x SPI};
+\node[rectangle, draw, black, minimum height = 1cm, minimum width = 3cm, right of = F1MemSpi, node distance = 2.5cm] (F1MemCu){Controll Unit};
+\node[rectangle, draw, black, minimum height = 1cm, minimum width = 4.6 cm, below of = F1MemSpi, node distance = 1.5cm, xshift = .5cm] (F1MemTG) at ($(F1MemSpi)!0.5!(F1MemCu)$) {Timestamp Generator};
+\node[rectangle, draw, black, minimum height = 1cm, minimum width = 4.6cm, below of = F1MemTG, node distance = 1.5cm] (F1MemAmber) {AMBA Connector};
+
+
+\node[rectangle, draw, black, very thick, fit=(F1MemName)(F1MemAmber), inner sep = 2mm, outer sep = 2mm] (compMemory){};
+
+%SoC Controllunit
+\node[rectangle, draw, black, very thick, minimum height = 1cm, minimum width = 4.6cm, below of = F1MemAmber , node distance = 3cm] (F1SoCControll) {AMBA Connector};
+\node[above  = of F1SoCControll, xshift=-.4cm, yshift=-1.7cm] (F1SoCcuName) {c Global Control Unit};
+\node[rectangle, draw, black, very thick, fit = (F1SoCcuName)(F1SoCControll), inner sep = 2mm, outer sep = 2mm] (compSoCCu) {};
+
+%Watchdog
+\node[rectangle, draw, black, very thick, minimum height = 1cm, minimum width = 4.6cm, below of = compSoCCu , node distance = 3.5cm] (F1Watchdog) {Watchdog CU};
+\node[rectangle, draw, black, very thick, minimum height = 1cm, minimum width = 4.6cm, below of = F1Watchdog, node distance = 1.5cm] (F1WtdTimer) {Watchdog Timer};
+\node[above of = F1Watchdog, xshift = -1.2cm, node distance = 1cm] (F1WdtName) {c Watchdog};
+\node[rectangle, draw, black, very thick, fit = (F1WdtName)(F1WtdTimer), inner sep = 2mm, outer sep = 2mm] (compWatchdog) {};
+
+%STAMP rechts
+\node[black, right of = F1MemName, node distance = 6cm] (F1S4name) {\small{c STAMP \#4}};
+\node[vhdlc, below of = F1S4name, node distance = 1cm, xshift = -.4cm] (F1S4cu) {CU};
+\node[vhdlc, right of = F1S4cu, node distance = 1.5cm] (F1S4spi) {SPI};
+\node[rectangle, draw, below of = F1S4spi, black, node distance = 1cm, minimum width = 2.5cm, minimum height = .5cm] (F1S4rl) at ($(F1S4spi)!0.5!(F1S4cu)$) {ResetLogic};
+\node[rectangle, draw, below of = F1S4rl, node distance = .75cm, minimum width = 2.5cm, minimum height = .5cm] (F1S4amba) {AMBA Conn. };
+\node[rectangle, draw, black, very thick, fit  = (F1S4name) (F1S4rl)(F1S4amba), inner sep=2mm, outer sep = 2mm] (compStamp4) {};
+
+\node[black, below = of F1S4name, yshift = -2.0cm] (F1S5name) {\small{c STAMP \#5}};
+\node[vhdlc, below of = F1S5name, node distance = 1cm, xshift = -.4cm] (F1S5cu) {CU};
+\node[vhdlc, right of = F1S5cu, node distance = 1.5cm] (F1S5spi) {SPI};
+\node[rectangle, draw, below of = F1S4spi, black, node distance = 1cm, minimum width = 2.5cm, minimum height = .5cm] (F1S5rl) at ($(F1S5spi)!0.5!(F1S5cu)$) {ResetLogic};
+\node[rectangle, draw, below of = F1S5rl, node distance = .75cm, minimum width = 2.5cm, minimum height = .5cm] (F1S5amba) {AMBA Conn. };
+\node[rectangle, draw, black, very thick, fit  = (F1S5name) (F1S5rl)(F1S5amba), inner sep=2mm, outer sep = 2mm] (compStamp5) {};
+
+\node[black, below = of F1S5name, yshift=-2cm] (F1S6name) {\small{c STAMP \#6}};
+\node[vhdlc, below of = F1S6name, node distance = 1cm, xshift = -.4cm] (F1S6cu) {CU};
+\node[vhdlc, right of = F1S6cu, node distance = 1.5cm] (F1S6spi) {SPI};
+\node[rectangle, draw, below of = F1S6spi, black, node distance = 1cm, minimum width = 2.5cm, minimum height = .5cm] (F1S6rl) at ($(F1S6spi)!0.5!(F1S6cu)$) {ResetLogic};
+\node[rectangle, draw, below of = F1S6rl, node distance = .75cm, minimum width = 2.5cm, minimum height = .5cm] (F1S6amba) {AMBA Conn. };
+\node[rectangle, draw, black, very thick, fit  = (F1S6name) (F1S6rl)(F1S6amba), inner sep=2mm, outer sep = 2mm] (compStamp6) {};
+
+%Componente FPGA
+\node[above of = F1S1name, node distance = 1cm, xshift=-0.8cm] (F1) {FPGA};
+\node[rectangle, draw, black, very thick, fit  = (F1) (compStamp3) (compMemory)(compStamp4), inner sep=2mm, outer sep = 2mm] (F1all) {};
+
+%SPU ADC rechts STAMP 4
+\node[sensor, right  = of F1S4name] (S4SGR1adc) {\tiny{ADS1147}}; 
+\node[sensor, below of = S4SGR1adc, node distance = 1.1cm] (S4pt100adc) {\tiny{ADS1147}};
+\node[sensor, below of = S4pt100adc, node distance = 1.1cm] (S4SGR2adc) {\tiny{ADS1147}};
+
+%SPU ADC rechts Sensoren Stamp 4
+\node[sensor, black, right of = S4SGR1adc, node distance = 2.1cm] (S4SGR1) {\tiny{SGR 1}};
+\node[sensor, black, below of = S4SGR1, node distance = 1.1cm] (S4pt100) {\tiny{PT100}};
+\node[sensor, black, below of = S4pt100, node distance = 1.1cm] (S4SGR2) {\tiny{SGR 2}};
+\node[gray!50, above of = S4SGR1, node distance = 1cm] (S4name) {\small{STAMP \# 4}};
+
+\node[rectangle, draw, gray!50, very thick, fit  = (S4name) (S4SGR2), inner sep=1mm, outer sep = 2mm] (S4all) {};
+
+\node[gray!50, below of = S4SGR2, node distance = 1.5cm] (S5name) {\small{STAMP \# 5}};
+\node[sensor, black, below of = S5name, node distance = 1cm] (S5SGR1) {\tiny{SGR 1}};
+\node[sensor, black, below of = S5SGR1, node distance = 1.1cm] (S5pt100) {\tiny{PT100}};
+\node[sensor, black, below of = S5pt100, node distance = 1.1cm] (S5SGR2) {\tiny{SGR 2}};
+
+\node[rectangle, draw, gray!50, very thick, fit  = (S5name) (S5SGR2), inner sep=1mm, outer sep = 2mm] (S5all) {};
+
+\node[gray!50, below of = S5SGR2, node distance = 1.5cm] (S6name) {\small{STAMP \# 6}};
+\node[sensor, black, below of = S6name, node distance = 1cm] (S6SGR1) {\tiny{SGR 1}};
+\node[sensor, black, below of = S6SGR1, node distance = 1.1cm] (S6pt100) {\tiny{PT100}};
+\node[sensor, black, below of = S6pt100, node distance = 1.1cm] (S6SGR2) {\tiny{SGR 2}};
+
+\node[rectangle, draw, gray!50, very thick, fit  = (S6name) (S6SGR2), inner sep=1mm, outer sep = 2mm] (S6all) {};
+
+% Restlichen ADCS
+\node[sensor, left of = S5SGR1, node distance = 2.1cm] (S5SGR1adc) {\tiny{ADS1147}}; 
+\node[sensor, left of = S5pt100, node distance = 2.1cm] (S5pt100adc) {\tiny{ADS1147}};
+\node[sensor, left of = S5SGR2, node distance = 2.1cm] (S5SGR2adc) {\tiny{ADS1147}};
+
+\node[sensor, left of = S6SGR1, node distance = 2.1cm] (S6SGR1adc) {\tiny{ADS1147}}; 
+\node[sensor, left of = S6pt100, node distance = 2.1cm] (S6pt100adc) {\tiny{ADS1147}};
+\node[sensor, left of = S6SGR2, node distance = 2.1cm] (S6SGR2adc) {\tiny{ADS1147}};
+
+%SPU all
+\node[rectangle, draw, gray!50, very thick, fit  = (S1fabName) (F1all) (S6SGR2adc), inner sep=2mm, outer sep = 2mm] (SPUall) {};
+
+\path[black, draw, thick] (S1SGR1) -- (S1SGR1adc);
+\path[black, draw, thick] (S1pt100) -- (S1pt100adc);
+\path[black, draw, thick] (S1SGR2) -- (S1SGR2adc);
+
+\path[black, draw, thick] (S2SGR1) -- (S2SGR1adc);
+\path[black, draw, thick] (S2pt100) -- (S2pt100adc);
+\path[black, draw, thick] (S2SGR2) -- (S2SGR2adc);
+
+\path[black, draw, thick] (S3SGR1) -- (S3SGR1adc);
+\path[black, draw, thick] (S3pt100) -- (S3pt100adc);
+\path[black, draw, thick] (S3SGR2) -- (S3SGR2adc);
+
+\path[black, draw, thick] (S4SGR1) -- (S4SGR1adc);
+\path[black, draw, thick] (S4pt100) -- (S4pt100adc);
+\path[black, draw, thick] (S4SGR2) -- (S4SGR2adc);
+
+\path[black, draw, thick] (S5SGR1) -- (S5SGR1adc);
+\path[black, draw, thick] (S5pt100) -- (S5pt100adc);
+\path[black, draw, thick] (S5SGR2) -- (S5SGR2adc);
+
+\path[black, draw, thick] (S6SGR1) -- (S6SGR1adc);
+\path[black, draw, thick] (S6pt100) -- (S6pt100adc);
+\path[black, draw, thick] (S6SGR2) -- (S6SGR2adc);
+
+%SPI Path
+\coordinate (tmpS1pt100adc) at ($(S1pt100adc)+(1cm,0cm)$);
+\coordinate (tmpS1SGR2) at ($(S1SGR2adc)+(1cm,0cm)$);
+\coordinate (tmpCS1) at ($(compStamp1)-(2.25cm,0cm)$);
+
+\path[black, draw, line width = 3pt]  (S1SGR1adc) -- +(1cm, 0cm) -- (tmpS1pt100adc) -- (tmpS1SGR2) -- (S1SGR2adc);
+\path[black, draw, line width = 3pt] (S1pt100adc) -- (tmpS1pt100adc);
+\path[black, draw, line width = 3pt] (tmpCS1) -- +(.7cm,0cm);
+
+%Stamp 2
+\coordinate (tmpS2pt100adc) at ($(S2pt100adc)+(1cm,0cm)$);
+\coordinate (tmpS2SGR2) at ($(S2SGR2adc)+(1cm,0cm)$);
+\coordinate (tmpCS2) at ($(compStamp2)-(2.25cm,0cm)$);
+
+\path[black, draw, line width = 3pt]  (S2SGR1adc) -- +(1cm, 0cm) -- (tmpS2pt100adc) -- (tmpS2SGR2) -- (S2SGR2adc);
+\path[black, draw, line width = 3pt] (S2pt100adc) -- (tmpS2pt100adc);
+\path[black, draw, line width = 3pt] (tmpCS2) -- +(.7cm, 0cm);
+
+%Stamp 3
+\coordinate (tmpS3pt100adc) at ($(S3pt100adc)+(1cm,0cm)$);
+\coordinate (tmpS3SGR2) at ($(S3SGR2adc)+(1cm,0cm)$);
+\coordinate (tmpCS3) at ($(compStamp3)-(2.25cm,0cm)$);
+
+\path[black, draw, line width = 3pt]  (S3SGR1adc) -- +(1cm, 0cm) -- (tmpS3pt100adc) -- (tmpS3SGR2) -- (S3SGR2adc);
+\path[black, draw, line width = 3pt] (S3pt100adc) -- (tmpS3pt100adc);
+\path[black, draw, line width = 3pt] (tmpCS3) -- +(.7cm, 0cm);
+
+
+%Stamp 4
+\coordinate (tmpS4pt100adc) at ($(S4pt100adc)-(1cm,0cm)$);
+\coordinate (tmpS4SGR2) at ($(S4SGR2adc)-(1cm,0cm)$);
+\coordinate (tmpCS4) at ($(compStamp4)+(2.4cm,0cm)$);
+
+\path[black, draw, line width = 3pt]  (S4SGR1adc) -- +(-1cm, 0cm) -- (tmpS4pt100adc) -- (tmpS4SGR2) -- (S4SGR2adc);
+\path[black, draw, line width = 3pt] (S4pt100adc) -- (tmpS4pt100adc);
+\path[black, draw, line width = 3pt] (tmpCS4) -- +(-.85cm, 0cm);
+
+%Stamp 5
+\coordinate (tmpS5pt100adc) at ($(S5pt100adc)-(1cm,0cm)$);
+\coordinate (tmpS5SGR2) at ($(S5SGR2adc)-(1cm,0cm)$);
+\coordinate (tmpCS5) at ($(compStamp5)+(2.4cm,0cm)$);
+
+\path[black, draw, line width = 3pt]  (S5SGR1adc) -- +(-1cm, 0cm) -- (tmpS5pt100adc) -- (tmpS5SGR2) -- (S5SGR2adc);
+\path[black, draw, line width = 3pt] (S5pt100adc) -- (tmpS5pt100adc);
+\path[black, draw, line width = 3pt] (tmpCS5) -- +(-.85cm, 0cm);
+
+%Stamp 6
+\coordinate (tmpS6pt100adc) at ($(S6pt100adc)-(1cm,0cm)$);
+\coordinate (tmpS6SGR2) at ($(S6SGR2adc)-(1cm,0cm)$);
+\coordinate (tmpCS6) at ($(compStamp6)+(2.4cm,0cm)$);
+
+\path[black, draw, line width = 3pt]  (S6SGR1adc) -- +(-1cm, 0cm) -- (tmpS6pt100adc) -- (tmpS6SGR2) -- (S6SGR2adc);
+\path[black, draw, line width = 3pt] (S6pt100adc) -- (tmpS6pt100adc);
+\path[black, draw, line width = 3pt] (tmpCS6) -- +(-.85cm, 0cm);
+
+%Interne Busse
+
+%AMBA BUS
+\coordinate (AB1) at ($(compMemory) - (1.5cm, 2.65cm)$);
+\coordinate (AB2) at ($(compSoCCu) - (1cm, 1.19cm)$);
+\coordinate (AB3) at ($(compWatchdog) - (1.5cm, 1.9cm)$);
+\coordinate (ABS1) at ($(F1S1amba) - (0cm, 0.5cm)$);
+\coordinate (ABS2) at ($(F1S2amba) - (0cm, 0.5cm)$);
+\coordinate (ABS3) at ($(F1S3amba) - (0cm, 0.5cm)$);
+\coordinate (ABS4) at ($(F1S4amba) - (0cm, 0.5cm)$);
+\coordinate (ABS5) at ($(F1S5amba) - (0cm, 0.5cm)$);
+\coordinate (ABS6) at ($(F1S6amba) - (0cm, 0.5cm)$);
+
+\path[red!50, draw, line width = 2pt] (AB1) -- +(0cm, -.23cm);
+\path[red!50, draw, line width = 2pt] (AB2) -- +(0cm, -.35cm) ;
+\path[red!50, draw, line width = 2pt] (AB3) -- + (0cm, -1cm);
+\path[red!50, draw, line width = 2pt] (ABS1) -- +(0cm, -0.3cm) -- +(2.3cm, -0.3cm) -- + (2.3cm, -1.7cm) --+(3.6cm, -1.7cm); 
+\path[red!50, draw, line width = 2pt] ($(ABS1) + (2.3cm, -1.7cm)$) -- +(0cm, -7.7cm); 
+\path[red!50, draw, line width = 2pt] (ABS2) -- +(0cm, -0.3cm) -- +(4.15cm, -0.3cm); 
+\path[red!50, draw, line width = 2pt] (ABS3) -- +(0cm, -0.3cm) -- +(3.6cm, -0.3cm); 
+\path[red!50, draw, line width = 2pt] (ABS4) -- +(0cm, -0.3cm) -- +(-2.3cm, -0.3cm) -- +(-2.3cm, -1.7cm);
+\path[red!50, draw, line width = 2pt] (ABS5) -- +(0cm, -0.3cm) -- +(-2.3cm, -0.3cm);
+\path[red!50, draw, line width = 2pt] (ABS6) -- +(0cm, -0.3cm) -- +(-2.3cm, -0.3cm);
+\path[red!50, draw, line width = 2pt] ($(ABS6) + (-2.3cm, -0.3cm)$) -- +(-5cm, 0cm); 
+\path[red!50, draw, line width = 2pt] ($(ABS4) + (-2.3cm, -1.7cm)$) -- +(0cm, -7.7cm); 
+
+% Reset Logic
+\coordinate (rl6) at ($(compStamp6) - (1.78, 1cm)$);
+\coordinate (rl5) at ($(compStamp5) - (1.78, 1cm)$);
+\coordinate (rl4) at ($(compStamp4) - (1.78, 1cm)$);
+\path[gray!70, draw, line width = 1.5pt] (rl6) -- +(0cm, -0.025cm) -- (rl4) -- +(0cm, 0.025cm);
+\path[gray!70, draw, line width = 1.5pt] (rl6) -- + (.2cm, 0cm);
+\path[gray!70, draw, line width = 1.5pt] (rl5) -- + (.2cm, 0cm);
+\path[gray!70, draw, line width = 1.5pt] (rl4) -- + (.2cm, 0cm);
+
+\coordinate (rl1) at ($(compStamp1) + (1.78, -1cm)$);
+\coordinate (rl2) at ($(compStamp2) + (1.78, -1cm)$);
+\coordinate (rl3) at ($(compStamp3) + (1.78, -1cm)$);
+\path[gray!70, draw, line width = 1.5pt] (rl1) -- +(0cm, 0.025cm) -- (rl3) -- +(0cm,-0.025cm);
+\path[gray!70, draw, line width = 1.5pt] (rl1) -- + (-.2cm, 0cm);
+\path[gray!70, draw, line width = 1.5pt] (rl2) -- + (-.2cm, 0cm);
+\path[gray!70, draw, line width = 1.5pt] (rl3) -- + (-.2cm, 0cm);
+
+\coordinate (rlC1) at ($(rl3) + (0cm, 3.3cm)$);
+\coordinate (rlC2) at ($(rl6) + (0cm, 3.3cm)$);
+\coordinate (rlC3) at ($(compWatchdog) + (0cm, 2.2cm)$);
+\path[gray!70, draw, line width = 1.5pt] (rlC1) -- (rlC2);
+\path[gray!70, draw, line width = 1.5pt] (rlC3) -- + (0cm, -.3cm);
+
+
+%Internet Datenbus
+\coordinate (intCS6) at ($(compStamp6)-(1.55cm,0cm)$);
+\coordinate (intCS66) at ($(intCS6)-(0.5cm,0cm)$);
+\path[black, draw, line width = 3pt] (intCS6) -- +(-.5cm, 0cm);
+
+\coordinate (intCS5) at ($(compStamp5)-(1.55cm,0cm)$);
+\path[black, draw, line width = 3pt] (intCS5) -- +(-.5cm, 0cm);
+
+\coordinate (intCS4) at ($(compStamp4)-(1.55cm,0cm)$);
+\coordinate (intCS44) at ($(intCS4)-(.5cm,0cm)$);
+\path[black, draw, line width = 3pt] (intCS4) -- +(-.5cm, 0cm);
+\path[black, draw, line width = 3pt] (intCS44) -- +(0cm,.05cm) -- (intCS66) -- +(0cm, -0.05cm);
+
+\coordinate (intCS1) at ($(compStamp1)+(1.55cm,0cm)$);
+\coordinate (intCS11) at ($(intCS1)+(0.5cm,0cm)$);
+\path[black, draw, line width = 3pt] (intCS1) -- +(.5cm, 0cm);
+
+\coordinate (intCS2) at ($(compStamp2)+(1.55cm,0cm)$);
+\path[black, draw, line width = 3pt] (intCS2) -- +(.5cm, 0cm);
+
+\coordinate (intCS3) at ($(compStamp3)+(1.55cm,0cm)$);
+\coordinate (intCS33) at ($(intCS3)+(.5cm,0cm)$);
+\path[black, draw, line width = 3pt] (intCS3) -- +(.5cm, 0cm);
+\path[black, draw, line width = 3pt] (intCS11) -- +(0cm,.05cm) -- (intCS33) -- +(0cm, -0.05cm);
+\coordinate (memLeft) at ($(compMemory) - (2.55cm, 0cm)$);
+\coordinate (memRight) at ($(compMemory) + (2.55cm, 0cm)$);
+\path[black, draw, line width = 9pt] (memLeft) --+(-0.55cm,0cm);
+\path[black, draw, line width = 9pt] (memRight) --+(0.4cm,0cm);
+%Legende
+\node[below of = S6SGR2adc, node distance = 1.4cm] (legende) {Legende}; 
+\coordinate (l1) at ($(legende) -  (0cm, .5cm)$);
+\coordinate (l2) at ($(legende) -  (0cm, 1cm)$);
+\coordinate (l3) at ($(legende) -  (0cm, 1.5cm)$);
+\path[red!70, draw, line width = 2pt] (l1) -- +(1cm, 0cm) node[right]{AMBA};
+\path[gray!70, draw, line width = 1.5pt] (l2) -- +(1cm, 0cm) node[right]{Reset};
+\path[black, draw, line width = 3pt] (l3) -- +(1cm, 0cm) node[right](intDB){Int. Datenbus};
+\begin{pgfonlayer}{background}
+	\node[rectangle, draw, black, fill=white, fit=(legende) (intDB), inner sep = 1mm, outer sep = 1mm, rounded corners = .5cm] (legendeall){};
+\end{pgfonlayer}
+\end{tikzpicture}
+\caption{Systemübersicht}
+\label{fig:blockGes}
+\end{figure}
+\end{landscape}

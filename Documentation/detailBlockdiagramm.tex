@@ -1,0 +1,185 @@
+%Detailiertes blockdiagramm
+\begin{landscape}
+\begin{figure}[h]
+\begin{tikzpicture}[very thick, black, node distance=6cm]
+\node[gray!50] (S1name) {\small{STAMP \# 1}};
+\node[bigSensor, black, below of = S1name, node distance = 2cm] (S1SGR1) {SGR 1};
+\node[bigSensor, black, below of = S1SGR1, node distance = 3cm] (S1pt100) {PT100};
+\node[bigSensor, black, below of = S1pt100, node distance = 3cm] (S1SGR2) {SGR 2};
+
+\node[rectangle, draw, gray!50, very thick, fit  = (S1name) (S1SGR2), inner sep= 2mm, outer sep = 2mm] (S1all) {};
+
+\node[bigSensor, right of = S1SGR1] (S1SGR1adc) {ADS1147}; 
+\node[bigSensor, right of = S1pt100] (S1pt100adc) {ADS1147};
+\node[bigSensor, right of = S1SGR2] (S1SGR2adc) {ADS1147};
+
+\coordinate (data11) at ($(S1SGR1) + (1.5cm, 1cm)$);
+\coordinate (data12) at ($(S1SGR1) + (1.5cm, -1cm)$);
+\coordinate (data21) at ($(S1pt100) + (1.5cm, 1cm)$);
+\coordinate (data22) at ($(S1pt100) + (1.5cm, -1cm)$);
+\coordinate (data31) at ($(S1SGR2) + (1.5cm, 1cm)$);
+\coordinate (data32) at ($(S1SGR2) + (1.5cm, -1cm)$);
+
+\coordinate (data13) at ($(S1SGR1adc) - (1.5cm, 1cm)$);
+\coordinate (data14) at ($(S1SGR1adc) - (1.5cm, -1cm)$);
+\coordinate (data23) at ($(S1pt100adc) - (1.5cm, 1cm)$);
+\coordinate (data24) at ($(S1pt100adc) - (1.5cm, -1cm)$);
+\coordinate (data33) at ($(S1SGR2adc) - (1.5cm, 1cm)$);
+\coordinate (data34) at ($(S1SGR2adc) - (1.5cm, -1cm)$);
+
+\path[black, very thick, draw] (data11)--(data14);
+\path[black, very thick, draw] (data12)--(data13);
+
+\path[black, very thick, draw] (data21)--(data24);
+\path[black, very thick, draw] (data22)--(data23);
+
+\path[black, very thick, draw] (data31)--(data34);
+\path[black, very thick, draw] (data32)--(data33);
+
+\node[black, right of = S1SGR1adc, node distance = 8cm] (F1S1name) {\small{c STAMP \#1}};
+\node[bigSensor, below of = F1S1name, node distance = 2cm] (F1S1spi) {SPI};
+\node[bigSensor, right of = F1S1spi, node distance =3.5cm] (F1S1cu) {CU};
+\node[rectangle, draw, below of = F1S1spi, black, node distance = 2.5cm, minimum width = 6.5cm, minimum height = 1cm] (F1S1rl) at ($(F1S1spi)!0.5!(F1S1cu)$) {ResetLogic};
+\node[rectangle, draw, below of = F1S1rl, node distance = 1.5cm, minimum width = 6.5cm, minimum height = 1cm] (F1S1amba) {AMBA Connector};
+\node[rectangle, draw, black, very thick, fit  = (F1S1name) (F1S1spi) (F1S1cu)(F1S1rl) (F1S1amba), inner sep=2mm, outer sep = 2mm] (compStamp1) {};
+
+\coordinate (spirl1) at ($(F1S1spi) + (0cm, -1.5cm)$);
+\coordinate (spirl2) at ($(F1S1rl) + (-1.5cm, 1cm)$);
+\path[black, draw, ultra thick] (spirl1) -- (spirl2);
+
+\coordinate (curl1) at ($(F1S1cu) + (0cm, -1.5cm)$);
+\coordinate (curl2) at ($(F1S1rl) + (1.5cm, 1cm)$);
+\path[black, draw, ultra thick] (curl1) -- (curl2);
+
+\coordinate (pocADC11) at ($(S1SGR1adc) + (1.5cm, 1cm)$);
+\coordinate (pocADC12) at ($(S1SGR1adc) + (1.5cm, -1cm)$);
+\coordinate (pocADC13) at ($(S1SGR1adc) + (1.5cm, 0cm)$);
+
+\coordinate (pocADC21) at ($(S1pt100adc) + (1.5cm, 1cm)$);
+\coordinate (pocADC22) at ($(S1pt100adc) + (1.5cm, -1cm)$);
+\coordinate (pocADC23) at ($(S1pt100adc) + (1.5cm, 0cm)$);
+
+\coordinate (pocADC31) at ($(S1SGR2adc) + (1.5cm, 1cm)$);
+\coordinate (pocADC32) at ($(S1SGR2adc) + (1.5cm, -1cm)$);
+\coordinate (pocADC33) at ($(S1SGR2adc) + (1.5cm, 0cm)$);
+
+\coordinate (pocSpi) at ($(F1S1spi) - (1.5cm, 0cm)$);
+\coordinate (pocrl) at ($(F1S1rl) - (3cm, 0cm)$);
+\coordinate (pocADC32) at ($(S1SGR2adc) + (1.5cm, -1cm)$);
+
+\coordinate (pocCU) at ($(F1S1cu) + (0cm, 1.5cm)$);
+%SPI 
+\path[black, draw, line width = 3pt] (pocADC11) -- + (2cm, 0cm);
+\path[black, draw, line width = 3pt] (pocADC21) -- + (2cm, 0cm);
+\path[black, draw, line width = 3pt] (pocADC31) -- + (2cm, 0cm);
+\path[black, draw, line width = 3pt] (pocADC11) -- + (2cm, 0cm) -- ($(pocADC31) + (2cm, -0.05cm)$); 
+\path[black, draw, line width = 3pt] (pocSpi) -- + (-3cm, 0cm);
+
+%DRDY 
+\path[gray!70, draw, line width = 2pt] (pocADC13) -- +(2.5cm,0cm) ;
+\path[gray!70, draw, line width = 2pt] (pocADC23) -- +(2.5cm,0cm);
+\path[gray!70, draw, line width = 2pt] (pocADC33) -- +(2.5cm,0cm);
+\path[gray!70, draw, line width = 2pt] (pocADC13) -- +(2.5cm,0cm) --  ($(pocADC33) + (2.5cm, -0.04cm)$);
+\path[gray!70, draw, line width = 2pt] ($(pocADC13) +(2.5cm,0cm)$) -- ($(pocADC13) + (2.5cm, 2cm)$) -- ($(pocCU) + (0cm, 2.5cm)$) -- (pocCU); 
+%Interner Datenbus
+\coordinate (compDB) at ($(F1S1cu) + (1.5cm,0cm)$);
+\path[blue, draw, line width = 5pt] (compDB) -- +(1.5cm,0cm) node[right]{48bit Datenbus};
+%Write enable
+%\coordinate (WEcomp) at ($(F1S1cu) + (1.5cm, -1cm)$);
+%\path[blue, draw, line width = 2pt] (WEcomp) --+(1.5cm, 0cm) node[right]{Write Enable};
+%Enable
+\coordinate (Ecomp) at ($(compStamp1) + (3.45cm, -1cm)$);
+\path[blue, draw, line width = 2pt] (Ecomp) -- +(1.3cm, 0cm) node[right]{Enable};
+%clk
+\coordinate (clkcomp) at ($(compStamp1) + (3.45cm, -2cm)$);
+\path[blue, draw, line width = 2pt] (clkcomp) -- +(1.3cm, 0cm) node[right]{clk};
+%clk
+\coordinate (rstcomp) at ($(compStamp1) + (3.45cm, -3cm)$);
+\path[blue, draw, line width = 2pt] (rstcomp) -- +(1.3cm, 0cm) node[right]{$\overline{reset}$};
+%DataReady
+\coordinate (drdycomp) at ($(compStamp1) + (3.45cm, 2cm)$);
+\path[blue, draw, line width = 2pt] (drdycomp) -- +(1.3cm, 0cm) node[right]{$\overline{Data Ready}$};
+%Amba bus
+\coordinate (ambaC) at ($(compStamp1) + (3.45cm, 0cm)$);
+\path[blue, draw, line width = 3pt] (ambaC) -- +(1.3cm, 0cm) node[right]{AMBA};
+%legende
+\coordinate (l) at ($(F1S1cu) + (2.5cm, 4.5cm)$);
+\coordinate (l2) at ($(F1S1cu) + (2cm, 4cm)$);
+\coordinate (l3) at ($(F1S1cu) + (2cm, 3.5cm)$);
+\coordinate (l4) at ($(F1S1cu) + (2cm, 2.5cm)$);
+\node at (l) (legende) {Legende};
+\path[gray!70, draw, line width = 2pt] (l2)-- + (1cm,0cm) node[right](drdy){$\overline{DRDYn}$};
+\path[black, draw, line width = 3pt] (l3) -- +(1cm, 0cm) node[right](intDB){SPI};
+\node[below of = intDB, node distance = .5cm] (intSPI) {Din, Dout, Sclk, $\overline{CSn}$};
+%\path[blue, draw, line width = 5pt] (l4) --+(1cm,0cm) node[right](databus){48bit Datenbus};
+\begin{pgfonlayer}{background}
+	\node[rectangle, draw, black, fill=white, fit=(legende)(drdy) (intDB) (intSPI), inner sep = 1mm, outer sep = 1mm, rounded corners = .5cm] (legendeall){};
+\end{pgfonlayer}
+\end{tikzpicture}
+\caption{Messstelle, Digitalisierung, Datenverarbeitung}
+\end{figure}
+
+%Weiteres Bild
+\begin{figure}[h]
+\begin{tikzpicture}[very thick, black, node distance=6cm]
+\node[black] (F1S1name) {\small{c STAMP \#1}};
+\node[bigSensor, below of = F1S1name, node distance = 2cm] (F1S1spi) {SPI};
+\node[bigSensor, right of = F1S1spi, node distance =3.5cm] (F1S1cu) {CU};
+\node[rectangle, draw, below of = F1S1spi, black, node distance = 2.5cm, minimum width = 6.5cm, minimum height = 1cm] (F1S1rl) at ($(F1S1spi)!0.5!(F1S1cu)$) {ResetLogic};
+\node[rectangle, draw, below of = F1S1rl, node distance = 1.5cm, minimum width = 6.5cm, minimum height = 1cm] (F1S1amba) {AMBA Connector};
+\node[rectangle, draw, black, very thick, fit  = (F1S1name) (F1S1rl) (F1S1cu) (F1S1spi)(F1S1amba), inner sep=2mm, outer sep = 2mm] (compStamp1) {};
+
+%Interner Datenbus
+\coordinate (compDB) at ($(F1S1cu) + (1.5cm,0cm)$);
+\path[blue, draw, line width = 5pt] (compDB) --node[above]{\small{48bit Datenbus}} +(4.75cm,0cm);
+%DataReady
+\coordinate (drdycomp) at ($(compStamp1) + (3.45cm, 2cm)$);
+\path[blue, draw, line width = 2pt] (drdycomp) -- node[above]{\small{Data Ready}} +(4.55cm, 0cm);
+
+%Write enable
+%\coordinate (WEcomp) at ($(F1S1cu) + (1.5cm, -1cm)$);
+%\path[blue, draw, line width = 2pt] (WEcomp) --  +(2.3cm, 0cm) --  node[above, rotate = 90]{\small{Write Enable}} +(2.3cm, -5cm);
+%Enable
+\coordinate (Ecomp) at ($(compStamp1) + (3.45cm, -1cm)$);
+\path[blue, draw, line width = 2pt] (Ecomp) -- +(1.5cm, 0cm)  -- node[above, rotate = 90]{\small{Enable}} +(1.5cm, -4cm);
+%clk
+\coordinate (clkcomp) at ($(compStamp1) + (3.45cm, -2cm)$);
+\path[blue, draw, line width = 2pt] (clkcomp) --  +(1.0cm, 0cm)  -- node[above, rotate = 90]{\small{clk}} +(1cm, -3cm);
+%reset
+\coordinate (rstcomp) at ($(compStamp1) + (3.45cm, -3cm)$);
+\path[blue, draw, line width = 2pt] (rstcomp) -- +(0.5cm, 0cm)  -- node[above, rotate = 90]{\small{$\overline{reset}$}} +(0.5cm, -2cm);
+%AMBA Stamp
+\coordinate (S1amba) at ($(F1S1amba) -(0cm, .5cm)$);
+\path[red!70, draw, line width = 3pt] (S1amba) --  node[above, rotate = 90]{AMBA} + (0cm, -2.3cm); 
+\node[right  of = F1S1name, node distance = 11cm] (F1MemName) {c Memory};
+\node[bigSensor, right of =  F1S1cu, node distance = 8.0cm] (F1MemSpi) {2x SPI};
+\node[rectangle, draw, black, minimum height = 3cm, minimum width = 5cm, right of = F1MemSpi, node distance = 4cm] (F1MemCu){Controll Unit};
+\node[rectangle, draw, black, minimum height = 1.5cm, minimum width = 8cm, below of = F1MemSpi, node distance = 2.5cm, xshift=.5cm] (F1MemTG) at ($(F1MemSpi)!0.5!(F1MemCu)$) {Timestamp Generator};
+\node[rectangle, draw, black, minimum height = 1.5cm, minimum width = 8cm, below of = F1MemTG, node distance = 2cm] (F1MemAmber) {AMBA Connector};
+\node[rectangle, draw, black, very thick, fit=(F1MemName)(F1MemAmber), inner sep = 2mm, outer sep = 2mm] (compMemory){};
+\coordinate (amberbus) at ($(F1MemAmber) - (3cm, 0.75cm)$);
+\path[red!70, draw, line width = 3pt] (amberbus) -- node[above, rotate = 90]{AMBA} +(0cm, -2cm);
+%Signale zum Speicher
+\coordinate (pocM1) at ($(F1MemSpi) + (-1cm, 2.5cm)$);
+\path[black, draw, line width = 3pt] (pocM1) -- node[above, rotate = 90]{SPI \#1} + (0cm,1.75cm) ;
+\coordinate (pocM11) at ($(F1MemSpi) + (0cm, 2.5cm)$);
+\path[black, draw, line width = 3pt] (pocM11) -- node[above, rotate = 90]{SPI \#2} + (0cm,1.75cm) ;
+\coordinate (pocM2) at ($(compMemory) + (0cm, 4.0cm)$);
+\path[black, draw] (pocM2) -- node[above, rotate = 90]{$\overline{CS11}$} + (0cm,1.75cm) ;
+\coordinate (pocM3) at ($(compMemory) + (1cm, 4.0cm)$);
+\path[black, draw] (pocM3) -- node[above, rotate = 90]{$\overline{CS12}$} + (0cm,1.75cm) ;
+\coordinate (pocM4) at ($(compMemory) + (2cm, 4.0cm)$);
+\path[black, draw] (pocM4) -- node[above, rotate = 90]{$\overline{CS21}$} + (0cm,1.75cm) ;
+\coordinate (pocM41) at ($(compMemory) + (3cm, 4.0cm)$);
+\path[black, draw] (pocM41) -- node[above, rotate = 90]{$\overline{CS22}$} + (0cm,1.75cm) ;
+%Allgemeine signale
+\coordinate (poc1) at ($(compMemory) - (2cm, 4.0cm)$);
+\path[black, draw] (poc1) -- node[above, rotate = 90]{clk} + (0cm,-1.75cm) ;
+\coordinate (poc2) at ($(compMemory) - (1cm, 4.0cm)$);
+\path[black, draw] (poc2) -- node[above, rotate = 90]{$\overline{reset}$} + (0cm,-1.75cm) ;
+\coordinate (poc3) at ($(compMemory) - (0cm, 4.0cm)$);
+\path[black, draw] (poc3) -- node[above, rotate = 90]{Enable} + (0cm,-1.75cm) ;
+\end{tikzpicture}
+\caption{Interface c Stamp zu c Memory}
+\end{figure}
+\end{landscape}

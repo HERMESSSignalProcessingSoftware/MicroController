@@ -1,0 +1,112 @@
+%\documentclass[
+%	11pt,			% Standardschrtift
+%	a4paper,		% Seitengroesse
+%	oneside,		% einseitiger Druck
+%	parskip=half,		% Standard Paragraphformatierung
+%	DIV=4,			% führt die Satzspiegelberechnung neu aus
+%	captions=nooneline,	%
+%	tablecaptionabove,	% Tabellenüberschriften aktivieren
+%	bibliography=totoc,	% Stil fuer Literaturangaben
+%	bibtotocnumbered,	% Literaturverzeichnis ins Inhaltsverzeichnis
+%	liststotocnumbered,	% Alle Listen ins Inhaltsverzeichnis
+%	headinclude,
+%	headsepline,		% 
+%	1.6headlines,		%
+%	]
+%	{book}
+\documentclass{scrreprt}
+\title{HERMESS Measurment System Specification (MESS) II }
+\subtitle{Documentation}
+\author{Kai Robin Grimsmann, M.Eng.}
+
+
+\input{pakete.tex} 
+\usepackage{acronym}
+
+\begin{document}
+\input{titlepage.tex}
+\thispagestyle{empty}
+\tableofcontents 
+\pagebreak
+%\section{Zweck dieses Dokumentes}
+\chapter{Blockdiagramm}
+\input{blockdiagramm.tex}
+\input{detailBlockdiagramm.tex}
+\chapter{Beschreibung}
+\section{Komponente: STAMP}
+Die STAMP Systemkomponente beschreibt einen Logikblock, der für die Kommunikation mit dem ADC 1147 zuständig ist. Um diese Kommunikation zu gewährleisten wird in jeder STAMP - Komponente ein SPI Core mit einer 8 - 16 Bit breiten  Busanbindung implementiert. Im vergleich zum bisherigen System würde die Anzahl der genutzten SPI - Systeme nicht erhöht werden. Die Systeme bedienen sich der FPGA inne liegenden Parallelität. 
+\subsection{Beschreibung} 
+\subsubsection{In- / Outputs}
+\begin{itemize}
+\item SPI [3]: Der klassische SPI Bus bestehend aus DIN, DOUT, SCLK.
+\end{itemize}
+\subsubsection{Input}
+\begin{itemize}
+\item $\overline{DRDY1,2,3}$ Interrupt vom ADC1147, fallende Flanke. Löst internen Process aus.  
+\end{itemize}
+\subsubsection{Outputs}
+\begin{itemize}
+\item $\overline{CS1,2,3} $ Chip Select der ADC 1147
+\item $\overline{RESET1,2,3}$ Asynchroner Reset der ADC 1147
+\item Data [48] Bus zur Memory Unit. 
+\item Finished, steigende Flanke. Alle Daten wurden über SPI geholt und liegen an dem Data - Bus an. 
+\end{itemize}
+\subsection{Beschreibung STAMP.Cu ControllUnit} 
+Die ControllUnit, kurz CU, steuert das Finished Signal. Ebenso erfolgt die Steuerung des SPI Cores über die ControllUnit.  Die CU registriert die fallende Flanke der ADC1147, auf Basis der fallenden Flanke des Interrupts wird der SPI Process gestartet. Hierbei wird der entsprechende Befehl an den ADC1147 gesendet und auf die empfangenden Daten gewartet. Ebenfalls stellt die CU sicher, dass der PT100 Sensor des STMAPs min. mit einer Frequenz von 20 Hz gelesen wird. Die Daten der DMS ADCs plus das Datum des PT100 ADCs werden in einem 48 bit breiten Bus parallel zur Verfügung gestellt. Bei dem deutlich langsamerem PT100 Datum wird das bestehenden Datum weiterverwendet. Nach dem alle drei Datums ermittelt wurden wechselt das Signal Finished auf High. \\\\
+Ingesamt wird diese Konstruktion drei mal, für drei STAMP - Messstellen implementiert. 
+\subsubsection{Datenformant auf data[48]}
+Bit 47 - 24: PT 100 \\
+Bit 23 - 16: DMS 2 \\
+Bit 15 - 0: DMS 1 
+\subsection{ResetLogic}
+Wird durch den Watchdog eine Unregelmäßigkeit festgestellt wird das asynchrone Signal, IntReset ausgelöst. Dieses Signal wird durch den STAMP Core an den ADC1147 weitergeleitet. 
+\section{Komponente: Watchdog}
+\subsection{Beschreibung}
+Der Watchdog implementiert einen internen Timer, wird dieser Timer ausgelöst, wird ein internes Reset - Signal generiert. Die Logik des Watchdogs lässt sich wie folgt beschreiben: \\\\
+Wird durch einen STAMP binnen von 500ms kein Signal, Finished wechselt auf high, generiert, so wird der Reset für das Teilsystem ausgelöst. 
+\\\\
+Der Timer für das System muss entsprechend hoch dimensioniert werden. Eine entsprechend implementierter Prescaler ist vom Vorteil, aber nicht zwigend nötig.
+\section{Komponente: Memory}
+\subsection{Beschreibung}
+Die Komponente hält 512 Byte Speicher vor, dieser Speicher entspricht der Größe zweier Speicher - Pages des Flashspeichers. \\\\
+Ein Datemframe besteht aus 20 Bytes. Bytes 0 - 17: Daten der drei Messstellen. Bytes 18-19: 16 Bit CRC. \\\\
+Ingesamt passen auf eine 256 Byte große Speicherseite 12 Datensätze. Ingesamt 16 Byte bleiben für Metadaten über. Die Metadaten halten mindestens den verweis auf den folgenden Datensatz in dem Format, insgesamt vier Byte: 2 Byte: Speichereinheits ID, Addresse auf der Einheit. \\\\
+Des Weiteren können auf in den verbleibenden 12 Byte der Timestamp des ersten Datensatzes sowie der Timestamp des letzten Datensatzes gespeichert werden. \\\\
+Timestamp, siehe Abschnitt \ref{timestamp}.
+\subsubsection{Inputs}
+\begin{itemize}
+\item 3 x data [48] 
+\item 3 x Finished 
+\end{itemize}
+\subsubsection{Output}
+\begin{itemize}
+\item 2 x SPI (DIN, DOUT, SCLK) je Flash double Die IC. 
+\item 4 x $\overline{CS1.1, 1.2,  2.1, 2.2}$   
+\end{itemize}
+\section{Komponente: Timestampgenerator} 
+\label{timestamp}
+\subsection{Beschreibung}
+Hauptaufgabe ist es das erstellen eines 32 bit langen Timestamps. 0 = SOE. Auflösung: 100$\mu s$. \\\\
+$$\frac{Timestamps}{s} = \frac{1 s}{100 \mu s} = 10000$$
+$$T = \frac{Aufl"osung}{\frac{Timestamps}{s}} = \frac{2^{32} - 1}{10\frac{k}{s}} = 423496s \approx 119h$$
+Entsprechend der Auflösung sind ca. 119 Stunden Aufnahme mit dem System möglich. Zudem ermöglicht es die Auflösung von 100 $\mu s$ der Unterscheidun, von wann der Eintag mit Referenz zu T = 0.
+\subsubsection{Output}
+\begin{itemize}
+\item Timestamp [32] Der ermittelte Timestamp.
+\end{itemize}
+\section{Resoucesbedarf, geschätzt}
+\begin{table}[H]
+\caption{Geschätze Anzahl der LogicElemente LEs}
+\begin{tabular}{| l | l | l | l |}  \hline 
+\textbf{Name} & \textbf{LEs} & \textbf{Anzahl} &\textbf{Gesamt} \\ \hline
+SPI & 300 & 4 & 1200 \\ \hline
+CU & 400 & 3 & 1200 \\ \hline 
+WDT & 300 & 1 & 300 \\ \hline
+RESET & 200 & 1 & 200 \\ \hline
+Memory & 1500 & 1 & 1500 \\ \hline
+APB & 400 & 1 & 400 \\ \hline 
+\textbf{Gesamt} & & &  \textbf{4800} \\ \hline
+\end{tabular}
+\end{table}
+Ingesamt wird mit dem Design 48 \% des FPGAs ausgenutzt. Grundlage für die Zahl ist die Anzahl der Logikeinheiten des FPGAs. In diesem Fall ist diese mit 10k angenommen. 
+\end{document}
