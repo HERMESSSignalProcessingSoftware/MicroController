@@ -3,17 +3,10 @@
 <drcreport>
   <header>sb</header>
   <drc>
-    <status>J:\LiberoSoC\Designer/data/drcreport\warn.png</status>
-    <StatusMessage>Warning</StatusMessage>
-    <message>Unconnected Bus Interface</message>
-    <detail>Unconnected bus interface pin CoreAPB3_C0_0:APB3mmaster</detail>
-    <crossprobe>liberoaction://cross_probe/smartdesign/sb/pins/CoreAPB3_C0_0:APB3mmaster</crossprobe>
-  </drc>
-  <drc>
-    <status>J:\LiberoSoC\Designer/data/drcreport\warn.png</status>
-    <StatusMessage>Warning</StatusMessage>
-    <message>Unconnected Bus Interface</message>
-    <detail>Unconnected bus interface pin sb_sb_0:AMBA_SLAVE_0</detail>
-    <crossprobe>liberoaction://cross_probe/smartdesign/sb/pins/sb_sb_0:AMBA_SLAVE_0</crossprobe>
+    <status>J:\LiberoSoC\Designer/data/drcreport\error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin STAMP_0:continuous</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/sb/pins/STAMP_0:continuous</crossprobe>
   </drc>
 </drcreport>

@@ -1,6 +1,6 @@
 set_component sb_sb_CCC_0_FCCC
 # Microsemi Corp.
-# Date: 2021-Feb-14 13:54:09
+# Date: 2021-Feb-27 16:52:41
 #
 
 create_clock -period 20 [ get_pins { CCC_INST/RCOSC_25_50MHZ } ]

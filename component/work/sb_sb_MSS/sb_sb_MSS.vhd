@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Sun Feb 14 13:54:06 2021
+-- Created by SmartDesign Sat Feb 27 16:52:38 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -27,6 +27,7 @@ entity sb_sb_MSS is
         GPIO_0_F2M             : in    std_logic;
         GPIO_1_F2M             : in    std_logic;
         GPIO_2_F2M             : in    std_logic;
+        GPIO_5_F2M             : in    std_logic;
         MCCC_CLK_BASE          : in    std_logic;
         MCCC_CLK_BASE_PLL_LOCK : in    std_logic;
         MMUART_0_RXD           : in    std_logic;
@@ -49,6 +50,8 @@ entity sb_sb_MSS is
         FIC_2_APB_M_PWRITE     : out   std_logic;
         GPIO_30_M2F            : out   std_logic;
         GPIO_31_M2F            : out   std_logic;
+        GPIO_3_M2F             : out   std_logic;
+        GPIO_4_M2F             : out   std_logic;
         MMUART_0_TXD           : out   std_logic;
         MMUART_1_TXD           : out   std_logic;
         MSS_RESET_N_M2F        : out   std_logic;
@@ -628,6 +631,8 @@ signal FIC_2_APB_MASTER_0_PENABLE                         : std_logic;
 signal FIC_2_APB_MASTER_0_PSELx                           : std_logic;
 signal FIC_2_APB_MASTER_0_PWDATA                          : std_logic_vector(31 downto 0);
 signal FIC_2_APB_MASTER_0_PWRITE                          : std_logic;
+signal GPIO_3_M2F_net_0                                   : std_logic;
+signal GPIO_4_M2F_net_0                                   : std_logic;
 signal GPIO_30_M2F_net_0                                  : std_logic;
 signal GPIO_31_M2F_net_0                                  : std_logic;
 signal MMUART_0_RXD_PAD_Y                                 : std_logic;
@@ -653,6 +658,8 @@ signal SPI_0_DO_net_1                                     : std_logic;
 signal MMUART_1_TXD_net_1                                 : std_logic;
 signal MMUART_0_TXD_net_1                                 : std_logic;
 signal MSS_RESET_N_M2F_net_1                              : std_logic;
+signal GPIO_3_M2F_net_1                                   : std_logic;
+signal GPIO_4_M2F_net_1                                   : std_logic;
 signal GPIO_30_M2F_net_1                                  : std_logic;
 signal GPIO_31_M2F_net_1                                  : std_logic;
 signal FIC_0_APB_MASTER_PSELx_net_0                       : std_logic;
@@ -752,6 +759,10 @@ begin
  MMUART_0_TXD                     <= MMUART_0_TXD_net_1;
  MSS_RESET_N_M2F_net_1            <= MSS_RESET_N_M2F_net_0;
  MSS_RESET_N_M2F                  <= MSS_RESET_N_M2F_net_1;
+ GPIO_3_M2F_net_1                 <= GPIO_3_M2F_net_0;
+ GPIO_3_M2F                       <= GPIO_3_M2F_net_1;
+ GPIO_4_M2F_net_1                 <= GPIO_4_M2F_net_0;
+ GPIO_4_M2F                       <= GPIO_4_M2F_net_1;
  GPIO_30_M2F_net_1                <= GPIO_30_M2F_net_0;
  GPIO_30_M2F                      <= GPIO_30_M2F_net_1;
  GPIO_31_M2F_net_1                <= GPIO_31_M2F_net_0;
@@ -900,7 +911,7 @@ MSS_ADLIB_INST : MSS_010
         MGPIO31B_F2H_GPIN                       => VCC_net, -- tied to '1' from definition
         MGPIO3A_F2H_GPIN                        => VCC_net, -- tied to '1' from definition
         MGPIO4A_F2H_GPIN                        => VCC_net, -- tied to '1' from definition
-        MGPIO5A_F2H_GPIN                        => VCC_net, -- tied to '1' from definition
+        MGPIO5A_F2H_GPIN                        => GPIO_5_F2M,
         MGPIO6A_F2H_GPIN                        => VCC_net, -- tied to '1' from definition
         MGPIO7A_F2H_GPIN                        => VCC_net, -- tied to '1' from definition
         MGPIO8A_F2H_GPIN                        => VCC_net, -- tied to '1' from definition
@@ -1044,9 +1055,9 @@ MSS_ADLIB_INST : MSS_010
         USBC_XCLK_IN                            => GND_net,
         -- Outputs
         CAN_RXBUS_MGPIO3A_H2F_A                 => OPEN,
-        CAN_RXBUS_MGPIO3A_H2F_B                 => OPEN,
+        CAN_RXBUS_MGPIO3A_H2F_B                 => GPIO_3_M2F_net_0,
         CAN_TX_EBL_MGPIO4A_H2F_A                => OPEN,
-        CAN_TX_EBL_MGPIO4A_H2F_B                => OPEN,
+        CAN_TX_EBL_MGPIO4A_H2F_B                => GPIO_4_M2F_net_0,
         CAN_TXBUS_MGPIO2A_H2F_A                 => OPEN,
         CAN_TXBUS_MGPIO2A_H2F_B                 => OPEN,
         CLK_CONFIG_APB                          => FIC_2_APB_M_PCLK_0,

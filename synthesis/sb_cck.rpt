@@ -13,12 +13,12 @@ Hostname: LUS210
 
 Implementation : synthesis
 
-# Written on Sat Feb 13 10:00:04 2021
+# Written on Sun Feb 28 21:39:53 2021
 
 ##### DESIGN INFO #######################################################
 
 Top View:                "sb"
-Constraint File(s):      "C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\designer\sb\synthesis.fdc"
+Constraint File(s):      "C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\synthesis.fdc"
 
 
 
@@ -52,7 +52,9 @@ p:DAPI_TX
 p:DEVRST_N
 p:LED_HEARTBEAT
 p:LED_RECORDING
-p:SODS
+p:RXSM_LO
+p:RXSM_SODS
+p:RXSM_SOE
 p:SPI_DATASTORAGE_CLK (bidir end point)
 p:SPI_DATASTORAGE_CLK (bidir start point)
 p:SPI_DATASTORAGE_DI
@@ -61,15 +63,17 @@ p:SPI_DATASTORAGE_SS0 (bidir end point)
 p:SPI_DATASTORAGE_SS0 (bidir start point)
 p:TM_RX
 p:TM_TX
-p:ready_dms1
-p:ready_dms2
-p:ready_temp
-p:spi_clock
-p:spi_dms1_cs
-p:spi_dms2_cs
-p:spi_miso
-p:spi_mosi
-p:spi_temp_cs
+p:adc_resetn
+p:adc_start
+p:stamp0_ready_dms1
+p:stamp0_ready_dms2
+p:stamp0_ready_temp
+p:stamp0_spi_clock
+p:stamp0_spi_dms1_cs
+p:stamp0_spi_dms2_cs
+p:stamp0_spi_miso
+p:stamp0_spi_mosi
+p:stamp0_spi_temp_cs
 
 
 Inapplicable constraints

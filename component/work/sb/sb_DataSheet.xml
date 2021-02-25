@@ -11,9 +11,9 @@
     <hdl-type>VHDL</hdl-type>
     <project-description>
     </project-description>
-    <location>C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/work/sb</location>
-    <state>GENERATED ( Sat Feb 13 09:19:30 2021 )</state>
-    <swide-toolchain>SoftConsole workspace generated to C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\SoftConsole</swide-toolchain>
+    <location>C:/Users/jl/source/repos/hermess/hermess-MicroController/component/work/sb</location>
+    <state>GENERATED ( Sun Feb 28 21:40:26 2021 )</state>
+    <swide-toolchain>SoftConsole workspace has not been generated</swide-toolchain>
   </project-settings>
   <site-map>
   </site-map>
@@ -86,12 +86,20 @@
           <range>0x0004_0000</range>
         </slave>
         <slave>
-          <name>ENVM-SPU_Conf</name>
+          <name>ENVM-SPU_Program</name>
           <fullPinName>
           </fullPinName>
           <remapAddress>0x6000_0000</remapAddress>
-          <fullAddressSpace>0x6000_0000 - 0x6000_007F</fullAddressSpace>
-          <range>0x80</range>
+          <fullAddressSpace>0x6000_0000 - 0x6001_F3FF</fullAddressSpace>
+          <range>0x1_F400</range>
+        </slave>
+        <slave>
+          <name>ENVM-SPU_Conf</name>
+          <fullPinName>
+          </fullPinName>
+          <remapAddress>0x6001_F400</remapAddress>
+          <fullAddressSpace>0x6001_F400 - 0x6001_F57F</fullAddressSpace>
+          <range>0x180</range>
         </slave>
         <slave>
           <name>STAMP_0</name>

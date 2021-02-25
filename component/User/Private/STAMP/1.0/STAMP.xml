@@ -39,6 +39,10 @@
         <spirit:direction>out</spirit:direction>
       </spirit:signal>
       <spirit:signal>
+        <spirit:name>request_resync</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
         <spirit:name>PCLK</spirit:name>
         <spirit:direction>in</spirit:direction>
       </spirit:signal>
@@ -49,7 +53,7 @@
       <spirit:signal>
         <spirit:name>PADDR</spirit:name>
         <spirit:direction>in</spirit:direction>
-        <spirit:left>5</spirit:left>
+        <spirit:left>7</spirit:left>
         <spirit:right>0</spirit:right>
       </spirit:signal>
       <spirit:signal>
@@ -122,7 +126,8 @@
       </spirit:signal>
     </spirit:signals>
     <spirit:hwParameters>
-      <spirit:hwParameter spirit:id="async_threshold" spirit:name="async_threshold" spirit:prompt="async_threshold:" spirit:dataType="int" spirit:resolve="user">5</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="async_threshold" spirit:name="async_threshold" spirit:prompt="async_threshold:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="0" spirit:maximum="63">63</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="stamp_id" spirit:name="stamp_id" spirit:prompt="stamp_id:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="0" spirit:maximum="7">0</spirit:hwParameter>
     </spirit:hwParameters>
     <spirit:deletedhwParameters>
     </spirit:deletedhwParameters>

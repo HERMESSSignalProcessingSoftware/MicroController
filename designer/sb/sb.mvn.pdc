@@ -8,7 +8,7 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 400 VF , Speed grade: STD 
 
-# Date generated: Sat Feb 13 10:00:13 2021 
+# Date generated: Sun Feb 28 21:40:04 2021 
 
 
 #
@@ -34,6 +34,7 @@ set_iobank Bank2 -vcci 3.30 -fixed no
 
 set_io DAPI_RX -DIRECTION INPUT -pinname C19 -fixed yes
 set_io DAPI_TX -DIRECTION OUTPUT -pinname D18 -fixed yes
+set_io DEVRST_N -DIRECTION INPUT -pinname U17
 set_io SPI_DATASTORAGE_CLK -DIRECTION INOUT -pinname P15 -fixed yes
 set_io SPI_DATASTORAGE_DI -DIRECTION INPUT -pinname N15 -fixed yes
 set_io SPI_DATASTORAGE_DO -DIRECTION OUTPUT -pinname L20 -fixed yes

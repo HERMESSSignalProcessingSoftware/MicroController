@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Sun Feb 14 13:54:11 2021
+-- Created by SmartDesign Sat Feb 27 16:52:43 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -26,6 +26,7 @@ entity sb_sb is
         GPIO_0_F2M         : in    std_logic;
         GPIO_1_F2M         : in    std_logic;
         GPIO_2_F2M         : in    std_logic;
+        GPIO_5_F2M         : in    std_logic;
         MMUART_0_RXD       : in    std_logic;
         MMUART_1_RXD       : in    std_logic;
         SPI_0_DI           : in    std_logic;
@@ -58,6 +59,8 @@ entity sb_sb is
         FIC_0_LOCK         : out   std_logic;
         GPIO_30_M2F        : out   std_logic;
         GPIO_31_M2F        : out   std_logic;
+        GPIO_3_M2F         : out   std_logic;
+        GPIO_4_M2F         : out   std_logic;
         INIT_DONE          : out   std_logic;
         MMUART_0_TXD       : out   std_logic;
         MMUART_1_TXD       : out   std_logic;
@@ -246,6 +249,7 @@ component sb_sb_MSS
         GPIO_0_F2M             : in    std_logic;
         GPIO_1_F2M             : in    std_logic;
         GPIO_2_F2M             : in    std_logic;
+        GPIO_5_F2M             : in    std_logic;
         MCCC_CLK_BASE          : in    std_logic;
         MCCC_CLK_BASE_PLL_LOCK : in    std_logic;
         MMUART_0_RXD           : in    std_logic;
@@ -268,6 +272,8 @@ component sb_sb_MSS
         FIC_2_APB_M_PWRITE     : out   std_logic;
         GPIO_30_M2F            : out   std_logic;
         GPIO_31_M2F            : out   std_logic;
+        GPIO_3_M2F             : out   std_logic;
+        GPIO_4_M2F             : out   std_logic;
         MMUART_0_TXD           : out   std_logic;
         MMUART_1_TXD           : out   std_logic;
         MSS_RESET_N_M2F        : out   std_logic;
@@ -305,6 +311,8 @@ signal FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC : std_logic;
 signal FABOSC_0_RCOSC_25_50MHZ_O2F                        : std_logic;
 signal FIC_0_CLK_net_0                                    : std_logic;
 signal FIC_0_LOCK_net_0                                   : std_logic;
+signal GPIO_3_M2F_net_0                                   : std_logic;
+signal GPIO_4_M2F_net_0                                   : std_logic;
 signal GPIO_30_M2F_net_0                                  : std_logic;
 signal GPIO_31_M2F_net_0                                  : std_logic;
 signal INIT_DONE_net_0                                    : std_logic;
@@ -361,6 +369,8 @@ signal APBmslave0_6_PWDATA_net_5                          : std_logic_vector(31 
 signal FIC_0_CLK_net_1                                    : std_logic;
 signal FIC_0_LOCK_net_1                                   : std_logic;
 signal MSS_READY_net_1                                    : std_logic;
+signal GPIO_3_M2F_net_1                                   : std_logic;
+signal GPIO_4_M2F_net_1                                   : std_logic;
 signal GPIO_30_M2F_net_1                                  : std_logic;
 signal GPIO_31_M2F_net_1                                  : std_logic;
 signal MSS_INT_F2M_net_0                                  : std_logic_vector(15 downto 0);
@@ -493,6 +503,10 @@ begin
  FIC_0_LOCK                   <= FIC_0_LOCK_net_1;
  MSS_READY_net_1              <= MSS_READY_net_0;
  MSS_READY                    <= MSS_READY_net_1;
+ GPIO_3_M2F_net_1             <= GPIO_3_M2F_net_0;
+ GPIO_3_M2F                   <= GPIO_3_M2F_net_1;
+ GPIO_4_M2F_net_1             <= GPIO_4_M2F_net_0;
+ GPIO_4_M2F                   <= GPIO_4_M2F_net_1;
  GPIO_30_M2F_net_1            <= GPIO_30_M2F_net_0;
  GPIO_30_M2F                  <= GPIO_30_M2F_net_1;
  GPIO_31_M2F_net_1            <= GPIO_31_M2F_net_0;
@@ -763,6 +777,7 @@ sb_sb_MSS_0 : sb_sb_MSS
         GPIO_0_F2M             => GPIO_0_F2M,
         GPIO_1_F2M             => GPIO_1_F2M,
         GPIO_2_F2M             => GPIO_2_F2M,
+        GPIO_5_F2M             => GPIO_5_F2M,
         FIC_0_APB_M_PREADY     => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PREADY,
         FIC_0_APB_M_PSLVERR    => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSLVERR,
         FIC_2_APB_M_PREADY     => VCC_net, -- tied to '1' from definition
@@ -775,6 +790,8 @@ sb_sb_MSS_0 : sb_sb_MSS
         MMUART_1_TXD           => MMUART_1_TXD_net_0,
         MMUART_0_TXD           => MMUART_0_TXD_net_0,
         MSS_RESET_N_M2F        => sb_sb_MSS_TMP_0_MSS_RESET_N_M2F,
+        GPIO_3_M2F             => GPIO_3_M2F_net_0,
+        GPIO_4_M2F             => GPIO_4_M2F_net_0,
         GPIO_30_M2F            => GPIO_30_M2F_net_0,
         GPIO_31_M2F            => GPIO_31_M2F_net_0,
         FIC_0_APB_M_PSEL       => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx,

@@ -1,5 +1,5 @@
 /*=============================================================*/
-/* Created by Microsemi SmartDesign Fri Feb 12 10:06:04 2021   */
+/* Created by Microsemi SmartDesign Fri Feb 26 14:41:34 2021   */
 /*                                                             */
 /* Warning: Do not modify this file, it may lead to unexpected */
 /*          functional failures in your design.                */
@@ -14,7 +14,7 @@
 #define MSS_SYS_APB_0_CLK_FREQ          100000000u
 #define MSS_SYS_APB_1_CLK_FREQ          100000000u
 #define MSS_SYS_APB_2_CLK_FREQ          25000000u
-#define MSS_SYS_FIC_0_CLK_FREQ          100000000u
+#define MSS_SYS_FIC_0_CLK_FREQ          50000000u
 #define MSS_SYS_FIC_1_CLK_FREQ          100000000u
 #define MSS_SYS_FIC64_CLK_FREQ          100000000u
 
