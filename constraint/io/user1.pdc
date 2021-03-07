@@ -6,7 +6,7 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 400 VF
 
-# Date generated: Fri Feb 26 10:14:30 2021 
+# Date generated: Mon Mar  1 12:01:46 2021 
 
 
 # 
@@ -58,14 +58,20 @@ set_io RXSM_SOE       \
     -DIRECTION INPUT
 
 
-set_io adc_resetn      \
-    -pinname P20       \
+set_io adc_start       \
+    -pinname R15       \
     -fixed yes         \
     -DIRECTION OUTPUT
 
 
-set_io adc_start       \
-    -pinname R15       \
+set_io debug_led       \
+    -pinname D2        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io resetn          \
+    -pinname P20       \
     -fixed yes         \
     -DIRECTION OUTPUT
 

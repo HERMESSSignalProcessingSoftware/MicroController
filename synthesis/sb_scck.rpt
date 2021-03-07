@@ -13,7 +13,7 @@ Hostname: LUS210
 
 Implementation : synthesis
 
-# Written on Sun Feb 28 21:39:52 2021
+# Written on Fri Mar  5 23:24:36 2021
 
 ##### FILES SYNTAX CHECKED ##############################################
 Constraint File(s):      "C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\synthesis.fdc"
@@ -35,7 +35,7 @@ Level     Clock                                       Frequency     Period      
 ----------------------------------------------------------------------------------------------------------------------------
 0 -       System                                      100.0 MHz     10.000        system       system_clkgroup         0    
                                                                                                                             
-0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     294  
+0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     304  
 ============================================================================================================================
 
 
@@ -47,5 +47,5 @@ Clock                                       Load      Pin                       
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 System                                      0         -                                   -                           -                 -                             
                                                                                                                                                                       
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     294       sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_0.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     304       sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_0.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
 ======================================================================================================================================================================

@@ -2,7 +2,7 @@
 #define sb_HW_PLATFORM_H_
 /*****************************************************************************
 *
-*Created by Microsemi SmartDesign  Sat Feb 27 17:05:21 2021
+*Created by Microsemi SmartDesign  Mon Mar  1 10:58:25 2021
 *
 *Memory map specification for peripherals in sb
 */

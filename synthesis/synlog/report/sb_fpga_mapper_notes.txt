@@ -2,13 +2,12 @@
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 @N: MO106 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 6 bits.
+@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\stamp.vhd":168:8:168:9|Found counter in view:work.STAMP(architecture_stamp) instance status_async_cycles[5:0] 
 @N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance clk_toggles[5:0] 
 @N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance count[31:0] 
-@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance ss_n_buffer[1] (in view: work.spi_master(logic)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance ss_n_buffer[2] (in view: work.spi_master(logic)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_0.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
-@N: FP130 |Promoting Net STAMP_0.un1_presetn_arst on CLKINT  I_275 
-@N: FP130 |Promoting Net AND2_0_Y_arst on CLKINT  I_276 
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\stamp.vhd":317:27:317:55|Replicating instance STAMP_0.un1_spi_rx_data_sn_m3 (in view: work.sb(rtl)) with 58 loads 3 times to improve timing.
+@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_380 
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.

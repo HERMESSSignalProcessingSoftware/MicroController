@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Sun Feb 28 21:34:49 2021
+-- Created by SmartDesign Fri Mar  5 14:38:21 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -35,8 +35,9 @@ entity sb is
         LED_RECORDING       : out   std_logic;
         SPI_DATASTORAGE_DO  : out   std_logic;
         TM_TX               : out   std_logic;
-        adc_resetn          : out   std_logic;
         adc_start           : out   std_logic;
+        debug_led           : out   std_logic;
+        resetn              : out   std_logic;
         stamp0_spi_clock    : out   std_logic;
         stamp0_spi_dms1_cs  : out   std_logic;
         stamp0_spi_dms2_cs  : out   std_logic;
@@ -61,16 +62,6 @@ component AND2
         -- Inputs
         A : in  std_logic;
         B : in  std_logic;
-        -- Outputs
-        Y : out std_logic
-        );
-end component;
--- INV
-component INV
-    -- Port list
-    port(
-        -- Inputs
-        A : in  std_logic;
         -- Outputs
         Y : out std_logic
         );
@@ -168,16 +159,17 @@ end component;
 ----------------------------------------------------------------------
 -- Signal declarations
 ----------------------------------------------------------------------
-signal adc_resetn_net_0                 : std_logic;
 signal adc_start_net_0                  : std_logic;
-signal AND2_0_Y                         : std_logic;
 signal DAPI_TX_net_0                    : std_logic;
-signal INV_0_Y                          : std_logic;
+signal debug_led_net_0                  : std_logic;
+signal debug_led_0                      : std_logic;
+signal debug_led_1                      : std_logic;
 signal LED_HEARTBEAT_net_0              : std_logic;
 signal LED_RECORDING_net_0              : std_logic;
+signal resetn_net_0                     : std_logic;
 signal sb_sb_0_FIC_0_CLK                : std_logic;
 signal sb_sb_0_GPIO_3_M2F               : std_logic;
-signal sb_sb_0_MSS_READY                : std_logic;
+signal sb_sb_0_GPIO_4_M2F               : std_logic;
 signal sb_sb_0_POWER_ON_RESET_N         : std_logic;
 signal sb_sb_0_STAMP_PENABLE            : std_logic;
 signal sb_sb_0_STAMP_PRDATA             : std_logic_vector(31 downto 0);
@@ -192,7 +184,6 @@ signal stamp0_spi_dms1_cs_net_0         : std_logic;
 signal stamp0_spi_dms2_cs_net_0         : std_logic;
 signal stamp0_spi_mosi_net_0            : std_logic;
 signal stamp0_spi_temp_cs_net_0         : std_logic;
-signal STAMP_0_new_avail                : std_logic;
 signal STAMP_0_request_resync           : std_logic;
 signal Synchronizer_0_adc_start         : std_logic;
 signal Synchronizer_0_components_resetn : std_logic;
@@ -208,7 +199,8 @@ signal stamp0_spi_dms1_cs_net_1         : std_logic;
 signal stamp0_spi_temp_cs_net_1         : std_logic;
 signal stamp0_spi_dms2_cs_net_1         : std_logic;
 signal adc_start_net_1                  : std_logic;
-signal adc_resetn_net_1                 : std_logic;
+signal resetn_net_1                     : std_logic;
+signal debug_led_1_net_0                : std_logic;
 signal new_avail_net_0                  : std_logic_vector(5 downto 0);
 signal request_resync_net_0             : std_logic_vector(5 downto 0);
 ----------------------------------------------------------------------
@@ -224,9 +216,9 @@ signal STAMP_5_PRDATAS5_const_net_0     : std_logic_vector(31 downto 0);
 ----------------------------------------------------------------------
 -- Bus Interface Nets Declarations - Unequal Pin Widths
 ----------------------------------------------------------------------
+signal sb_sb_0_STAMP_PADDR              : std_logic_vector(31 downto 0);
 signal sb_sb_0_STAMP_PADDR_0_7to0       : std_logic_vector(7 downto 0);
 signal sb_sb_0_STAMP_PADDR_0            : std_logic_vector(7 downto 0);
-signal sb_sb_0_STAMP_PADDR              : std_logic_vector(31 downto 0);
 
 
 begin
@@ -265,12 +257,14 @@ begin
  stamp0_spi_dms2_cs       <= stamp0_spi_dms2_cs_net_1;
  adc_start_net_1          <= adc_start_net_0;
  adc_start                <= adc_start_net_1;
- adc_resetn_net_1         <= adc_resetn_net_0;
- adc_resetn               <= adc_resetn_net_1;
+ resetn_net_1             <= resetn_net_0;
+ resetn                   <= resetn_net_1;
+ debug_led_1_net_0        <= debug_led_1;
+ debug_led                <= debug_led_1_net_0;
 ----------------------------------------------------------------------
 -- Concatenation assignments
 ----------------------------------------------------------------------
- new_avail_net_0      <= ( '0' & '0' & '0' & '0' & '0' & STAMP_0_new_avail );
+ new_avail_net_0      <= ( '0' & '0' & '0' & '0' & '0' & debug_led_0 );
  request_resync_net_0 <= ( '0' & '0' & '0' & '0' & '0' & STAMP_0_request_resync );
 ----------------------------------------------------------------------
 -- Bus Interface Nets Assignments - Unequal Pin Widths
@@ -285,19 +279,19 @@ begin
 AND2_0 : AND2
     port map( 
         -- Inputs
-        A => adc_resetn_net_0,
+        A => resetn_net_0,
         B => Synchronizer_0_components_resetn,
         -- Outputs
-        Y => AND2_0_Y 
+        Y => debug_led_net_0 
         );
 -- AND2_1
 AND2_1 : AND2
     port map( 
         -- Inputs
         A => sb_sb_0_POWER_ON_RESET_N,
-        B => INV_0_Y,
+        B => sb_sb_0_GPIO_4_M2F,
         -- Outputs
-        Y => adc_resetn_net_0 
+        Y => resetn_net_0 
         );
 -- AND2_2
 AND2_2 : AND2
@@ -307,14 +301,6 @@ AND2_2 : AND2
         B => Synchronizer_0_adc_start,
         -- Outputs
         Y => adc_start_net_0 
-        );
--- INV_0
-INV_0 : INV
-    port map( 
-        -- Inputs
-        A => sb_sb_0_MSS_READY,
-        -- Outputs
-        Y => INV_0_Y 
         );
 -- sb_sb_0
 sb_sb_0 : sb_sb
@@ -329,7 +315,7 @@ sb_sb_0 : sb_sb
         STAMP_3_INTR_0_top => GND_net,
         STAMP_2_INTR_0_top => GND_net,
         STAMP_1_INTR_0_top => GND_net,
-        STAMP_0_INTR_0_top => STAMP_0_new_avail,
+        STAMP_0_INTR_0_top => debug_led_0,
         STAMP_PREADYS0     => sb_sb_0_STAMP_PREADY,
         STAMP_PSLVERRS0    => sb_sb_0_STAMP_PSLVERR,
         STAMP_1_PREADYS1   => VCC_net, -- tied to '1' from definition
@@ -379,9 +365,9 @@ sb_sb_0 : sb_sb
         STAMP_5_PWRITES    => OPEN,
         FIC_0_CLK          => sb_sb_0_FIC_0_CLK,
         FIC_0_LOCK         => OPEN,
-        MSS_READY          => sb_sb_0_MSS_READY,
+        MSS_READY          => OPEN,
         GPIO_3_M2F         => sb_sb_0_GPIO_3_M2F,
-        GPIO_4_M2F         => OPEN,
+        GPIO_4_M2F         => sb_sb_0_GPIO_4_M2F,
         GPIO_30_M2F        => LED_RECORDING_net_0,
         GPIO_31_M2F        => LED_HEARTBEAT_net_0,
         STAMP_PADDRS       => sb_sb_0_STAMP_PADDR,
@@ -403,33 +389,33 @@ sb_sb_0 : sb_sb
 -- STAMP_0
 STAMP_0 : entity work.STAMP
     generic map( 
-        async_threshold => ( 5 ),
-        stamp_id        => ( 0 )
+        async_prescaler => ( 2500 )
         )
     port map( 
         -- Inputs
         PCLK           => sb_sb_0_FIC_0_CLK,
-        PRESETN        => AND2_0_Y,
+        PRESETN        => debug_led_net_0,
+        PADDR          => sb_sb_0_STAMP_PADDR_0,
         PSEL           => sb_sb_0_STAMP_PSELx,
         PENABLE        => sb_sb_0_STAMP_PENABLE,
         PWRITE         => sb_sb_0_STAMP_PWRITE,
+        PWDATA         => sb_sb_0_STAMP_PWDATA,
         spi_miso       => stamp0_spi_miso,
         ready_dms1     => stamp0_ready_dms1,
         ready_dms2     => stamp0_ready_dms2,
         ready_temp     => stamp0_ready_temp,
-        PADDR          => sb_sb_0_STAMP_PADDR_0,
-        PWDATA         => sb_sb_0_STAMP_PWDATA,
         -- Outputs
-        new_avail      => STAMP_0_new_avail,
+        debug          => debug_led_1,
+        new_avail      => debug_led_0,
         request_resync => STAMP_0_request_resync,
+        PRDATA         => sb_sb_0_STAMP_PRDATA,
         PREADY         => sb_sb_0_STAMP_PREADY,
         PSLVERR        => sb_sb_0_STAMP_PSLVERR,
         spi_clock      => stamp0_spi_clock_net_0,
         spi_mosi       => stamp0_spi_mosi_net_0,
         spi_dms1_cs    => stamp0_spi_dms1_cs_net_0,
         spi_dms2_cs    => stamp0_spi_dms2_cs_net_0,
-        spi_temp_cs    => stamp0_spi_temp_cs_net_0,
-        PRDATA         => sb_sb_0_STAMP_PRDATA 
+        spi_temp_cs    => stamp0_spi_temp_cs_net_0 
         );
 -- Synchronizer_0
 Synchronizer_0 : entity work.Synchronizer
@@ -440,7 +426,7 @@ Synchronizer_0 : entity work.Synchronizer
         )
     port map( 
         -- Inputs
-        resetn            => adc_resetn_net_0,
+        resetn            => resetn_net_0,
         clk               => sb_sb_0_FIC_0_CLK,
         new_avail         => new_avail_net_0,
         request_resync    => request_resync_net_0,

@@ -13,7 +13,7 @@ Hostname: LUS210
 
 Implementation : synthesis
 
-# Written on Sun Feb 28 21:39:53 2021
+# Written on Fri Mar  5 23:24:37 2021
 
 ##### DESIGN INFO #######################################################
 
@@ -63,8 +63,9 @@ p:SPI_DATASTORAGE_SS0 (bidir end point)
 p:SPI_DATASTORAGE_SS0 (bidir start point)
 p:TM_RX
 p:TM_TX
-p:adc_resetn
 p:adc_start
+p:debug_led
+p:resetn
 p:stamp0_ready_dms1
 p:stamp0_ready_dms2
 p:stamp0_ready_temp

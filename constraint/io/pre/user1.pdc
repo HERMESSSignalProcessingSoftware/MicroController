@@ -6,7 +6,7 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 400 VF
 
-# Date generated: Sun Feb 28 21:31:03 2021 
+# Date generated: Tue Mar  2 10:55:45 2021 
 
 
 # 
@@ -58,16 +58,40 @@ set_io RXSM_SOE       \
     -DIRECTION INPUT
 
 
-set_io adc_resetn      \
+set_io adc_start       \
+    -pinname R15       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io debug_led       \
+    -pinname D2        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io resetn          \
     -pinname P20       \
     -fixed yes         \
     -DIRECTION OUTPUT
 
 
-set_io adc_start       \
-    -pinname R15       \
-    -fixed yes         \
-    -DIRECTION OUTPUT
+set_io stamp0_ready_dms1  \
+    -pinname V20          \
+    -fixed yes            \
+    -DIRECTION INPUT
+
+
+set_io stamp0_ready_dms2  \
+    -pinname V19          \
+    -fixed yes            \
+    -DIRECTION INPUT
+
+
+set_io stamp0_ready_temp  \
+    -pinname T19          \
+    -fixed yes            \
+    -DIRECTION INPUT
 
 
 set_io stamp0_spi_clock  \
@@ -86,6 +110,12 @@ set_io stamp0_spi_dms2_cs  \
     -pinname A20           \
     -fixed yes             \
     -DIRECTION OUTPUT
+
+
+set_io stamp0_spi_miso  \
+    -pinname N20        \
+    -fixed yes          \
+    -DIRECTION INPUT
 
 
 set_io stamp0_spi_mosi  \

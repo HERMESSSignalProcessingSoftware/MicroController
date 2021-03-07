@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
--Pin Report - Date: Sun Feb 28 21:40:22 2021 Pinchecksum: NOT-AVAILABLE
+-Pin Report - Date: Fri Mar  5 23:25:07 2021 Pinchecksum: NOT-AVAILABLE
 -Product: Designer
 -Release: v12.6
 -Version: 12.900.20.24
@@ -72,7 +72,7 @@ C18                          VSS                                                
 C19     DAPI_RX              MSIO27PB1/MMUART_0_RXD/GPIO_28_B/USB_STP_C              Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
 C20                          MSIO25NB1/MMUART_0_DCD/GPIO_22_B                        Unassigned  
 D1                           VSS                                                     Reserved    
-D2                           MSIO68PB7                                               Unassigned  
+D2      debug_led            MSIO68PB7                                               Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
 D3                           DDRIO60NB0/CCC_NE1_CLKI3                                Special     
 D4                           DDRIO57PB0/MDDR_TMATCH_ECC_IN                           Unassigned  
 D5                           DDRIO55NB0                                              Unassigned  
@@ -290,7 +290,7 @@ P16                          VDDI2                                              
 P17                          SC_SPI_SS                                               Reserved    
 P18                          MSIO6PB2/USB_DATA6_B                                    Unassigned  
 P19                          MSIO6NB2                                                Unassigned  
-P20     adc_resetn           MSIO4PB2/USB_DATA2_B                                    Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+P20     resetn               MSIO4PB2/USB_DATA2_B                                    Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
 R1                           MSIOD100PB5                                             Unassigned  
 R2                           MSIOD100NB5                                             Unassigned  
 R3                           VDDI5                                                   Reserved    

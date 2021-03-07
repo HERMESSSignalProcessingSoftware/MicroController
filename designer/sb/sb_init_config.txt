@@ -1,6 +1,6 @@
 Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)
 Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
-Date: Sun Feb 28 21:40:34 2021
+Date: Fri Mar  5 23:25:11 2021
 
 sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 +-------------------+--------------------+---------------+-------+
@@ -21,11 +21,11 @@ sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 | FCCC_GPMUX3_CR    | SEL_GPMUX3[4:0]    | INIT[81:77]   | 5'h18 |
 | FCCC_NGMUX0_CR0   | SELGL[4:0]         | INIT[86:82]   | 5'h18 |
 | FCCC_NGMUX0_CR1   | SELGL[9:5]         | INIT[91:87]   | 5'h18 |
-| FCCC_NGMUX1_CR0   | SELGL[14:10]       | INIT[96:92]   | 5'h18 |
+| FCCC_NGMUX1_CR0   | SELGL[14:10]       | INIT[96:92]   | 5'h7  |
 | FCCC_NGMUX1_CR1   | SELGL[19:15]       | INIT[101:97]  | 5'h18 |
 | FCCC_NGMUX2_CR0   | SELGL[24:20]       | INIT[106:102] | 5'h18 |
 | FCCC_NGMUX2_CR1   | SELGL[29:25]       | INIT[111:107] | 5'h18 |
-| FCCC_NGMUX3_CR0   | SELGL[34:30]       | INIT[116:112] | 5'h7  |
+| FCCC_NGMUX3_CR0   | SELGL[34:30]       | INIT[116:112] | 5'h18 |
 | FCCC_NGMUX3_CR1   | SELGL[39:35]       | INIT[121:117] | 5'h18 |
 | FCCC_GPD0_SYNC_CR | RESET_GENEN[0]     | INIT[122:122] | 1'h0  |
 | FCCC_GPD1_SYNC_CR | RESET_GENEN[1]     | INIT[123:123] | 1'h0  |
@@ -328,7 +328,7 @@ sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | PLL_DELAY_LINE_SEL      | PLL_REF_DEL_SEL             | INIT[637:636]   | 2'h0         | INIT[88]  | 1             |
 | PLL_DELAY_LINE_SEL      | PLL_FB_DEL_SEL              | INIT[639:638]   | 2'h0         | INIT[88]  | 1             |
 | MAC_STAT_CLRONRD        | MAC_STAT_CLRONRD            | INIT[640:640]   | 1'h1         | INIT[89]  | 1             |
-| WDOGLOAD                | G4_TESTWDOGLOAD             | INIT[666:641]   | 26'h1800000  | N/A       | N/A           |
+| WDOGLOAD                | G4_TESTWDOGLOAD             | INIT[666:641]   | 26'h017D784  | N/A       | N/A           |
 | WDOGMVRP                | G4_TESTWDOGMVRP             | INIT[698:667]   | 32'hFFFFFFFF | N/A       | N/A           |
 | USERCONFIG0             | CONFIG_REG0                 | INIT[730:699]   | 32'h00000000 | N/A       | N/A           |
 | USERCONFIG1             | CONFIG_REG1                 | INIT[762:731]   | 32'h00000000 | N/A       | N/A           |

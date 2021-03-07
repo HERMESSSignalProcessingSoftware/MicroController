@@ -11,7 +11,7 @@
  * 1. Initialize GPIO connected to ADC start with high
  * 2. Create a callback function which will be called by the interrupt
  *      service routine, when new measurements are available. Make
- *      sure to keep it short (no further IO operations). Name the function
+ *      sure to keep it short. Name the function
  *      "void FabricIrq<N>_IRQHandler ();"
  *      and replace <N> with the appropriate interrupt pin number.
  * 3. Create an empty apb_stamp_t
@@ -29,9 +29,10 @@
  * bitwise or.
  * 1. STAMP_MOD_ATOMIC: An atomic operation does not permit STAMP component
  *      to read another value in continuous mode from the ADCs, even when
- *      the ADC signals that there are new data available. This is therefore
- *      only really useful when calling both functions returning measurements
- *      after one another. Also note, that it is important to not assert this
+ *      the ADC signals that there are new data available. Furthermore when
+ *      asserting this modifier, it will keep the chip select in its state
+ *      even after finishing the write.
+ *      Also note, that it is important to not assert this
  *      modifier on the last call of functions accessing this STAMP, as it
  *      will practically freeze the component until it finishes the next
  *      transaction.
@@ -106,47 +107,51 @@ typedef struct apb_stamp {
  * Use this union to evaluate the status bits
  * Make sure to generate using "stamp_status_t name = {0}"
  */
-typedef union stamp_status {
-    uint16_t bits;
-    struct {
-        // indicates, if the ADC read a new value since last acquisition
-        uint8_t dms1NewVal : 1;
-        uint8_t dms2NewVal : 1;
-        uint8_t tempNewVal : 1;
-        // indicates, if a an ADC reading was overwritten, since the last acquisition
-        uint8_t dms1OverwrittenVal : 1;
-        uint8_t dms2OverwrittenVal : 1;
-        uint8_t tempOverwrittenVal : 1;
-        // indicates, if this stamp component currently requests a resync
-        uint8_t requestResync : 1;
-        // the number of clock cycles one dms adc was ahead of the other one
-        uint8_t asyncCycles : 6;
-        // the generic HDL identifier of this component
-        uint8_t stampId : 3;
-    } values;
+typedef struct stamp_status {
+    // indicates, if the ADC read a new value since last acquisition
+    uint8_t dms1NewVal : 1;
+    uint8_t dms2NewVal : 1;
+    uint8_t tempNewVal : 1;
+    // indicates, if a an ADC reading was overwritten, since the last acquisition
+    uint8_t dms1OverwrittenVal : 1;
+    uint8_t dms2OverwrittenVal : 1;
+    uint8_t tempOverwrittenVal : 1;
+    // indicates, if this stamp component currently requests a resync
+    uint8_t requestResync : 1;
+    // the number of clock cycles one dms adc was ahead of the other one
+    uint8_t asyncCycles : 6;
+    // the generic HDL identifier of this component
+    uint8_t stampId : 3;
 } stamp_status_t;
+uint32_t APB_STAMP_generateStatusBitfield (stamp_status_t *status);
+void APB_STAMP_generateStatusStruct (uint32_t bits, stamp_status_t *status);
 
 
 /**
  * Use this union to generate and evaluate the configuration register
  * Make sure to generate using "stamp_config_t name = {0}"
  */
-typedef union stamp_config {
-    uint32_t bits;
-    struct {
-        // setting this bit will reset the stamp module (not adcs)
-        uint8_t reset : 1;
-        // enable/disable continuous mode
-        uint8_t continuous : 1;
-        // just a dummy to fill word
-        uint32_t empty : 30;
-    } values;
+typedef struct stamp_config {
+    // setting this bit will reset the stamp module (not adcs)
+    uint8_t reset : 1;
+    // enable/disable continuous mode
+    uint8_t continuous : 1;
+    // the number of (HDL prescaled) clock cycles between two dms data
+    // acquisitions, before a resync is requested by the component
+    // to the synchronizer unit
+    uint8_t asyncThreshold : 6;
+    // just a dummy to fill word
+    uint32_t empty : 21;
+    // a unique id for better recognition of stored data, that are included
+    // into the status register
+    uint8_t stampId : 3;
 } stamp_config_t;
+uint32_t APB_STAMP_generateConfigBitfield (stamp_config_t* conf);
+void APB_STAMP_generateConfigStruct (uint32_t bits, stamp_config_t* config);
 
 
 /**
- * Initializes a STAMP driver instance. Run MSS_GPIO_init() before initializing
- * a STAMP component.
+ * Initializes a STAMP driver instance.
  *
  * @param instance
  * an empty, non null pointer to an apb_stamp_t instance
@@ -295,7 +300,7 @@ uint32_t APB_STAMP_readTempStatusRegister (apb_stamp_t *instance, uint8_t mod);
  * Enables the interrupt service routine for the associated pin. The ISR is
  * defined as "void FabricIrq<N>_IRQHandler ()" and must be implemented
  * by user. To prevent multiple interrupts from the same event, call
- * APB_STAMP_clearInterrupt first.
+ * APB_STAMP_clearInterrupt first during the ISR.
  *
  * The Fabric Interface Interrupt Controller (FIIC) only allows
  * F2M interrupts to be active high and require fabric user logic to

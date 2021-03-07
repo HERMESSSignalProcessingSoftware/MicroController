@@ -1,6 +1,6 @@
 --
 -- Synopsys
--- Vhdl wrapper for top level design, written on Sun Feb 28 21:39:50 2021
+-- Vhdl wrapper for top level design, written on Fri Mar  5 23:24:34 2021
 --
 library ieee;
 use ieee.std_logic_1164.all;
@@ -23,8 +23,9 @@ entity wrapper_for_sb is
       LED_RECORDING : out std_logic;
       SPI_DATASTORAGE_DO : out std_logic;
       TM_TX : out std_logic;
-      adc_resetn : out std_logic;
       adc_start : out std_logic;
+      debug_led : out std_logic;
+      resetn : out std_logic;
       stamp0_spi_clock : out std_logic;
       stamp0_spi_dms1_cs : out std_logic;
       stamp0_spi_dms2_cs : out std_logic;
@@ -55,8 +56,9 @@ component sb
    LED_RECORDING : out std_logic;
    SPI_DATASTORAGE_DO : out std_logic;
    TM_TX : out std_logic;
-   adc_resetn : out std_logic;
    adc_start : out std_logic;
+   debug_led : out std_logic;
+   resetn : out std_logic;
    stamp0_spi_clock : out std_logic;
    stamp0_spi_dms1_cs : out std_logic;
    stamp0_spi_dms2_cs : out std_logic;
@@ -83,8 +85,9 @@ signal tmp_LED_HEARTBEAT : std_logic;
 signal tmp_LED_RECORDING : std_logic;
 signal tmp_SPI_DATASTORAGE_DO : std_logic;
 signal tmp_TM_TX : std_logic;
-signal tmp_adc_resetn : std_logic;
 signal tmp_adc_start : std_logic;
+signal tmp_debug_led : std_logic;
+signal tmp_resetn : std_logic;
 signal tmp_stamp0_spi_clock : std_logic;
 signal tmp_stamp0_spi_dms1_cs : std_logic;
 signal tmp_stamp0_spi_dms2_cs : std_logic;
@@ -127,9 +130,11 @@ SPI_DATASTORAGE_DO <= tmp_SPI_DATASTORAGE_DO;
 
 TM_TX <= tmp_TM_TX;
 
-adc_resetn <= tmp_adc_resetn;
-
 adc_start <= tmp_adc_start;
+
+debug_led <= tmp_debug_led;
+
+resetn <= tmp_resetn;
 
 stamp0_spi_clock <= tmp_stamp0_spi_clock;
 
@@ -164,8 +169,9 @@ u1:   sb port map (
 		LED_RECORDING => tmp_LED_RECORDING,
 		SPI_DATASTORAGE_DO => tmp_SPI_DATASTORAGE_DO,
 		TM_TX => tmp_TM_TX,
-		adc_resetn => tmp_adc_resetn,
 		adc_start => tmp_adc_start,
+		debug_led => tmp_debug_led,
+		resetn => tmp_resetn,
 		stamp0_spi_clock => tmp_stamp0_spi_clock,
 		stamp0_spi_dms1_cs => tmp_stamp0_spi_dms1_cs,
 		stamp0_spi_dms2_cs => tmp_stamp0_spi_dms2_cs,

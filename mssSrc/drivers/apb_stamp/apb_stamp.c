@@ -8,7 +8,7 @@ extern "C" {
 
 // this mask allows to remove data ready address modifier, when
 // it is not allowed to prevent undefined behavior
-#define NO_DR_MASK 0xF7
+#define NO_DR_MASK 0xF7U
 
 
 static const IRQn_Type g_irqnLut[] = {
@@ -30,6 +30,45 @@ static const IRQn_Type g_irqnLut[] = {
 };
 
 
+uint32_t APB_STAMP_generateStatusBitfield (stamp_status_t *status) {
+    return ((uint32_t) status->dms1NewVal << 15) |
+            ((uint32_t) status->dms2NewVal << 14) |
+            ((uint32_t) status->tempNewVal << 13) |
+            ((uint32_t) status->dms1OverwrittenVal << 12) |
+            ((uint32_t) status->dms2OverwrittenVal << 11) |
+            ((uint32_t) status->tempOverwrittenVal << 10) |
+            ((uint32_t) status->requestResync << 9) |
+            ((uint32_t) status->asyncCycles << 3) |
+            (uint32_t) status->stampId;
+}
+void APB_STAMP_generateStatusStruct (uint32_t bits, stamp_status_t *status) {
+    status->dms1NewVal = (bits >> 15) & 0x1U;
+    status->dms2NewVal = (bits >> 14) & 0x1U;
+    status->tempNewVal = (bits >> 13) & 0x1U;
+    status->dms1OverwrittenVal = (bits >> 12) & 0x1U;
+    status->dms2OverwrittenVal = (bits >> 11) & 0x1U;
+    status->tempOverwrittenVal = (bits >> 10) & 0x1U;
+    status->requestResync = (bits >> 9) & 0x1U;
+    status->asyncCycles = (bits >> 3) & 0x3FU;
+    status->stampId = bits & 0x7U;
+}
+
+uint32_t APB_STAMP_generateConfigBitfield (stamp_config_t* conf) {
+    return ((uint32_t) conf->reset << 31) |
+            ((uint32_t) conf->continuous << 30) |
+            ((uint32_t) conf->asyncThreshold << 24) |
+            ((uint32_t) conf->empty << 3) |
+            (uint32_t) conf->stampId;
+}
+void APB_STAMP_generateConfigStruct (uint32_t bits, stamp_config_t* config) {
+    config->reset = (bits >> 31) & 0x1U;
+    config->continuous = (bits >> 30) & 0x1U;
+    config->asyncThreshold = (bits >> 24) & 0x3FU;
+    config->empty = (bits >> 3) & 0x1FFFFFU;
+    config->stampId = bits & 0x7U;
+}
+
+
 void APB_STAMP_init (
         apb_stamp_t *instance,
         addr_t baseAddr,
@@ -40,8 +79,7 @@ void APB_STAMP_init (
     instance->interruptPin = interruptPin;
 
     // reset the entire component
-    stamp_config_t conf = {0};
-    conf.values.reset = 1;
+    stamp_config_t conf = {.reset = 1};
     APB_STAMP_writeConfig(instance, &conf, STAMP_MOD_STATUS_RESET);
 
     // make sure the interrupt is disabled for the beginning
@@ -55,7 +93,7 @@ void APB_STAMP_writeConfig (
         uint8_t mod
 ) {
     addr_t addr = instance->baseAddr | STAMP_REG_CONF | (mod & NO_DR_MASK);
-    HW_set_32bit_reg(addr, conf->bits);
+    HW_set_32bit_reg(addr, APB_STAMP_generateConfigBitfield(conf));
 }
 
 
@@ -65,7 +103,7 @@ void APB_STAMP_readConfig (
         uint8_t mod
 ) {
     addr_t addr = instance->baseAddr | STAMP_REG_CONF | (mod & NO_DR_MASK);
-    conf->bits = HW_get_32bit_reg(addr);
+    APB_STAMP_generateConfigStruct(HW_get_32bit_reg(addr), conf);
 }
 
 
@@ -82,7 +120,7 @@ void APB_STAMP_writeAdc (
 uint16_t APB_STAMP_readAdc (apb_stamp_t *instance, uint8_t mod) {
     addr_t addr = instance->baseAddr |
             STAMP_REG_READ_SPI_IN | (mod & NO_DR_MASK);
-    return HW_get_32bit_reg(addr);
+    return HW_get_32bit_reg(addr) & 0xFFFF;
 }
 
 

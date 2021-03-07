@@ -10,13 +10,19 @@
 /*-----------------------------------------------------------------------------
 * GPIO PORTS
 *---------------------------------------------------------------------------*/
-#define PIN_RXSM_LO                     MSS_GPIO_0
-#define PIN_RXSM_SOE                    MSS_GPIO_1
-#define PIN_RXSM_SODS                   MSS_GPIO_2
-#define PIN_ADC_START                   MSS_GPIO_3
-#define PIN_SYNC_START                  MSS_GPIO_5
-#define LED_RECORDING                   MSS_GPIO_30
-#define LED_HEARTBEAT                   MSS_GPIO_31
+#define _GPIO_PORT(num)                 MSS_GPIO_##num
+#define GPIO_PORT(num)                  _GPIO_PORT(num)
+#define _GPIO_HANDLER(num)              GPIO##num##_IRQHandler
+#define GPIO_HANDLER(num)               _GPIO_HANDLER(num)
+
+#define IN_RXSM_LO                      0
+#define IN_RXSM_SOE                     1
+#define IN_RXSM_SODS                    2
+#define OUT_ADC_START                   3
+#define OUT_RESET_N                     4
+#define IN_SYNC_START                   5
+#define LED_RECORDING                   30
+#define LED_HEARTBEAT                   31
 
 
 /*-----------------------------------------------------------------------------
@@ -31,7 +37,7 @@
 
 
 /*-----------------------------------------------------------------------------
-* F2M Interrupts (MSS_INT_F2M[x])
+* F2M INTERRUPTS (MSS_INT_F2M[x])
 *---------------------------------------------------------------------------*/
 #define F2M_INT_STAMP_0                 0
 #define F2M_INT_STAMP_1                 1

@@ -3,7 +3,7 @@
 <doc>
 <title>Global Net Report</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</text>
-<text>Date: Sun Feb 28 21:40:13 2021
+<text>Date: Fri Mar  5 23:24:58 2021
 </text>
 <section>
 <name>Global Nets Information</name>
@@ -17,24 +17,17 @@
 </header>
 <row>
  <cell>1</cell>
- <cell>GB[3] </cell>
- <cell>(221, 54)</cell>
+ <cell>GB[1] </cell>
+ <cell>(219, 54)</cell>
  <cell>sb_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
- <cell>291</cell>
+ <cell>299</cell>
 </row>
 <row>
  <cell>2</cell>
- <cell>GB[1] </cell>
- <cell>(219, 54)</cell>
- <cell>STAMP_0/un1_presetn_inv_0_o2_0_o4_RNI22C4/U0_YNn_GSouth</cell>
- <cell>87</cell>
-</row>
-<row>
- <cell>3</cell>
  <cell>GB[2] </cell>
  <cell>(220, 54)</cell>
  <cell>AND2_0_RNIKOS1/U0_YNn_GSouth</cell>
- <cell>21</cell>
+ <cell>125</cell>
 </row>
 </table>
 <text></text>
@@ -57,21 +50,12 @@
 </header>
 <row>
  <cell>1</cell>
- <cell>STAMP_0/un1_presetn_inv_0_o2_0_o4:Y</cell>
- <cell>(343, 36)</cell>
- <cell>GB[1] </cell>
- <cell>STAMP_0/un1_presetn</cell>
- <cell>ROUTED</cell>
- <cell>10</cell>
-</row>
-<row>
- <cell>2</cell>
  <cell>AND2_0:Y</cell>
- <cell>(325, 33)</cell>
+ <cell>(373, 30)</cell>
  <cell>GB[2] </cell>
- <cell>AND2_0_Y</cell>
+ <cell>debug_led_net_0</cell>
  <cell>ROUTED</cell>
- <cell>10</cell>
+ <cell>20</cell>
 </row>
 </table>
 <text></text>
@@ -93,8 +77,8 @@
  <cell>1</cell>
  <cell>sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
  <cell>CCC-NE1 (390, 92)</cell>
- <cell>GL0 =&gt; GL3</cell>
- <cell>GB[3] </cell>
+ <cell>GL0 =&gt; GL1</cell>
+ <cell>GB[1] </cell>
  <cell>sb_sb_0/CCC_0/GL0_net</cell>
  <cell>HARDWIRED</cell>
  <cell>1</cell>
@@ -147,23 +131,23 @@
 </header>
 <row>
  <cell>1</cell>
- <cell>GB[3] </cell>
- <cell>(221, 54)</cell>
+ <cell>GB[1] </cell>
+ <cell>(219, 54)</cell>
  <cell>sb_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
- <cell>291</cell>
+ <cell>299</cell>
  <cell> </cell>
  <cell>(218, 102)</cell>
  <cell>1</cell>
 </row>
 <row>
  <cell>2</cell>
- <cell>GB[1] </cell>
- <cell>(219, 54)</cell>
- <cell>STAMP_0/un1_presetn_inv_0_o2_0_o4_RNI22C4/U0_YNn_GSouth</cell>
- <cell>87</cell>
+ <cell>GB[2] </cell>
+ <cell>(220, 54)</cell>
+ <cell>AND2_0_RNIKOS1/U0_YNn_GSouth</cell>
+ <cell>125</cell>
  <cell>1</cell>
  <cell>(219, 33)</cell>
- <cell>3</cell>
+ <cell>11</cell>
 </row>
 <row>
  <cell> </cell>
@@ -173,7 +157,7 @@
  <cell></cell>
  <cell>2</cell>
  <cell>(219, 36)</cell>
- <cell>10</cell>
+ <cell>8</cell>
 </row>
 <row>
  <cell> </cell>
@@ -183,7 +167,7 @@
  <cell></cell>
  <cell>3</cell>
  <cell>(219, 39)</cell>
- <cell>6</cell>
+ <cell>25</cell>
 </row>
 <row>
  <cell> </cell>
@@ -193,7 +177,7 @@
  <cell></cell>
  <cell>4</cell>
  <cell>(219, 42)</cell>
- <cell>10</cell>
+ <cell>33</cell>
 </row>
 <row>
  <cell> </cell>
@@ -203,7 +187,7 @@
  <cell></cell>
  <cell>5</cell>
  <cell>(219, 45)</cell>
- <cell>50</cell>
+ <cell>32</cell>
 </row>
 <row>
  <cell> </cell>
@@ -213,27 +197,7 @@
  <cell></cell>
  <cell>6</cell>
  <cell>(219, 48)</cell>
- <cell>8</cell>
-</row>
-<row>
- <cell>3</cell>
- <cell>GB[2] </cell>
- <cell>(220, 54)</cell>
- <cell>AND2_0_RNIKOS1/U0_YNn_GSouth</cell>
- <cell>21</cell>
- <cell>1</cell>
- <cell>(220, 33)</cell>
- <cell>15</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>2</cell>
- <cell>(220, 36)</cell>
- <cell>6</cell>
+ <cell>16</cell>
 </row>
 </table>
 <text></text>

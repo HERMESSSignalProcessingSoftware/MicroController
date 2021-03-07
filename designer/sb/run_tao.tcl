@@ -1,7 +1,7 @@
 set_device -family {SmartFusion2} -die {M2S010} -speed {STD}
-read_vhdl -mode vhdl_2008 {C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Synchronizer.vhd}
 read_vhdl -mode vhdl_2008 {C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd}
 read_vhdl -mode vhdl_2008 {C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd}
+read_vhdl -mode vhdl_2008 {C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Synchronizer.vhd}
 read_vhdl -mode vhdl_2008 -lib COREAPB3_LIB {C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3_muxptob3.vhd}
 read_vhdl -mode vhdl_2008 -lib COREAPB3_LIB {C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3_iaddr_reg.vhd}
 read_vhdl -mode vhdl_2008 -lib COREAPB3_LIB {C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd}

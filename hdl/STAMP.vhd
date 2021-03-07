@@ -24,17 +24,16 @@
 
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
-USE ieee.std_logic_arith.all;
 USE ieee.numeric_std.all;
 
 
 
 ENTITY STAMP IS
     GENERIC(
-        async_threshold : INTEGER RANGE 0 TO 63 := 63;
-        stamp_id : INTEGER RANGE 0 TO 7 := 0
+        async_prescaler : INTEGER RANGE 0 TO 65535 := 2500 -- 16 bit; default 0.05ms @ 50MHz
     );
     PORT(
+        debug : OUT STD_LOGIC; -- !!!
         new_avail : OUT STD_LOGIC; -- goes high, when new data of both DMS are available
         request_resync : OUT STD_LOGIC; -- goes high, when there is an offset
         -- apb3 ports
@@ -66,21 +65,30 @@ END STAMP;
 
 ARCHITECTURE architecture_STAMP of STAMP IS
     -- state machines
-    type component_state_t is (fsm_idle, fsm_apb_setup, fsm_apb_access, fsm_spi_setup, fsm_spi_access);
+    type component_state_t is (fsm_idle, fsm_apb_setup, fsm_apb_access,
+            fsm_apb_teardown, fsm_spi_setup, fsm_spi_access);
     signal component_state : component_state_t;
     type spi_request_for_t is (srf_dms1, srf_dms2, srf_temp, srf_apb);
     signal spi_request_for : spi_request_for_t;
+    signal async_state : INTEGER RANGE 0 TO 2; -- 0=normal; 1=first DMS read; 2=async
+    -- global variable signals
     signal apb_is_atomic : STD_LOGIC;
     signal apb_is_reset : STD_LOGIC;
     signal apb_spi_finished : STD_LOGIC;
-    signal async_state : INTEGER RANGE 0 TO 2;
+    signal async_prescaler_count : INTEGER RANGE 0 TO 65535;
     -- contains internal spi signals
     signal spi_enable : STD_LOGIC;
     signal spi_busy : STD_LOGIC;
     signal spi_tx_data : STD_LOGIC_VECTOR(15 downto 0);
     signal spi_rx_data : STD_LOGIC_VECTOR(15 downto 0);
+    -- configuration register
+    signal config : STD_LOGIC_VECTOR(31 downto 0);
+    signal conf_reset : STD_LOGIC; -- resets this module
+    signal conf_continuous : STD_LOGIC; -- enables the automatic reading of data on drdy
+    signal conf_async_threshold : INTEGER;
+    signal conf_stamp_id : STD_LOGIC_VECTOR(2 downto 0);
     -- contains all status bits
-    signal status_register : STD_LOGIC_VECTOR(0 to 15);
+    signal status_register : STD_LOGIC_VECTOR(15 downto 0);
     signal status_dms1_newVal : STD_LOGIC; -- indicates, if there has been a new reading since last pulling
     signal status_dms2_newVal : STD_LOGIC;
     signal status_temp_newVal : STD_LOGIC;
@@ -92,10 +100,6 @@ ARCHITECTURE architecture_STAMP of STAMP IS
     signal measurement_dms1 : STD_LOGIC_VECTOR(15 downto 0);
 	signal measurement_dms2 : STD_LOGIC_VECTOR(15 downto 0);
 	signal measurement_temp : STD_LOGIC_VECTOR(15 downto 0);
-    -- configuration register
-    signal config : STD_LOGIC_VECTOR(0 TO 31);
-    signal conf_reset : STD_LOGIC; -- resets this module
-    signal conf_continuous : STD_LOGIC; -- enables the automatic reading of data on drdy
     -- the dummy register for apb testing
     signal dummy : STD_LOGIC_VECTOR(31 downto 0);
 
@@ -104,36 +108,38 @@ BEGIN
     -- initialize the SPI master module
     -- we do not use their chip select though, but our own
     spi : ENTITY work.spi_master
-        GENERIC MAP(3, 16)
-        PORT MAP(PCLK, PRESETN, spi_enable, '0', '1', '0', 1, 0, spi_tx_data,
+        GENERIC MAP(1, 16)
+        PORT MAP(PCLK, PRESETN, spi_enable, '0', '1', '0', 15, 0, spi_tx_data,
             spi_miso, spi_clock, open, spi_mosi, spi_busy, spi_rx_data);
     
     -- define constants
     PSLVERR <= '0';
 
-    -- define the status register
-    status_register(0) <= status_dms1_newVal;
-    status_register(1) <= status_dms2_newVal;
-    status_register(2) <= status_temp_newVal;
-    status_register(3) <= status_dms1_overwrittenVal;
-    status_register(4) <= status_dms2_overwrittenVal;
-    status_register(5) <= status_temp_overwrittenVal;
-    status_register(6) <= request_resync;
-    status_register(7 to 12) <= STD_LOGIC_VECTOR(to_unsigned(status_async_cycles, 6));
-    status_register(13 to 15) <= STD_LOGIC_VECTOR(to_unsigned(stamp_id, 3));
     -- define the configuration register
-    conf_reset <= config(0);
-    conf_continuous <= config(1);
+    conf_reset <= config(31);
+    conf_continuous <= config(30);
+    conf_async_threshold <= to_integer(unsigned(config(29 downto 24)));
+    conf_stamp_id <= config(2 downto 0);
+    -- define the status register
+    status_register(15) <= status_dms1_newVal;
+    status_register(14) <= status_dms2_newVal;
+    status_register(13) <= status_temp_newVal;
+    status_register(12) <= status_dms1_overwrittenVal;
+    status_register(11) <= status_dms2_overwrittenVal;
+    status_register(10) <= status_temp_overwrittenVal;
+    status_register(9) <= request_resync;
+    status_register(8 downto 3) <= STD_LOGIC_VECTOR(to_unsigned(status_async_cycles, 6));
+    status_register(2 downto 0) <= conf_stamp_id;
     
     
-    PROCESS (PRESETN, PCLK, conf_reset)
+    PROCESS (PRESETN, PCLK)
         variable next_state : component_state_t;
-    BEGIN
-        -- trigger component reset
-        IF (PRESETN = '0' OR conf_reset = '1') THEN
+        
+        PROCEDURE proc_reset_stamp (constant hardreset : in BOOLEAN) IS BEGIN
             new_avail <= '0';
             request_resync <= '0';
             PREADY <= '0';
+            async_prescaler_count <= 0;
             spi_dms1_cs <= '1';
             spi_dms2_cs <= '1';
             spi_temp_cs <= '1';
@@ -147,15 +153,30 @@ BEGIN
             status_dms2_overwrittenVal <= '0';
             status_temp_overwrittenVal <= '0';
             status_async_cycles <= 0;
-            dummy <= x"FFFFFFFF";
-            -- do not reset because of keeping the state accross resync
-            config <= x"00000000";
+            dummy <= x"00000000";
+            debug <= '0'; -- !!!
+            -- do not reset config for of keeping the state accross resync
+            IF (hardreset) THEN
+                config <= (others => '0');
+            ELSE
+                config(31) <= '0'; -- conf_reset
+            END IF;
+        END PROCEDURE;
+    BEGIN
+        -- trigger component reset
+        IF (PRESETN = '0') THEN
+            proc_reset_stamp(true);
         
         
         ELSIF (rising_edge(PCLK)) THEN
             next_state := component_state;
             CASE component_state IS
                 WHEN fsm_idle =>
+                    debug <= PSEL; --!!!
+                    IF (conf_reset = '1') THEN
+                        proc_reset_stamp(false);
+                    END IF;
+                    
                     -- read the incoming data from the adcs
                     IF (conf_continuous = '1') THEN
                         spi_tx_data <= x"FFFF";
@@ -165,7 +186,7 @@ BEGIN
                         ELSE
                             new_avail <= '0';
                         END IF;
-                        -- initialize spi communication if there are new data
+                        --  initialize spi communication if there are new data
                         IF (ready_dms1 = '0') THEN
                             spi_dms1_cs <= '0';
                             spi_enable <= '1';
@@ -197,6 +218,7 @@ BEGIN
                 
                 -- just wait for the spi master to start working
                 WHEN fsm_spi_setup =>
+                    debug <= '0'; --!!!
                     IF (spi_busy = '1') THEN
                         spi_enable <= '0';
                         next_state := fsm_spi_access;
@@ -205,12 +227,8 @@ BEGIN
                 
                 -- wait for the spi master to complete operation
                 WHEN fsm_spi_access =>
-                    IF (spi_busy = '0') THEN
-                        -- reset the chip select
-                        spi_dms1_cs <= '1';
-                        spi_dms2_cs <= '1';
-                        spi_temp_cs <= '1';
-                        
+                    debug <= '0'; --!!!
+                    IF (spi_busy = '0') THEN                        
                         -- in case DMS1 was the requested adc
                         IF (spi_request_for = srf_dms1) THEN
                             status_dms1_overwrittenVal <= status_dms1_newVal;
@@ -220,7 +238,8 @@ BEGIN
                                 async_state <= async_state + 1;
                             END IF;
                             next_state := fsm_idle;
-                        -- in case DMS1 was the requested adc
+                            spi_dms1_cs <= '1';
+                        -- in case DMS2 was the requested adc
                         ELSIF (spi_request_for = srf_dms2) THEN
                             status_dms2_overwrittenVal <= status_dms2_newVal;
                             status_dms2_newVal <= '1';
@@ -229,12 +248,14 @@ BEGIN
                                 async_state <= async_state + 1;
                             END IF;
                             next_state := fsm_idle;
+                            spi_dms2_cs <= '1';
                         -- in case temp was the requested adc
                         ELSIF (spi_request_for = srf_temp) THEN
                             status_temp_overwrittenVal <= status_temp_newVal;
                             status_temp_newVal <= '1';
                             measurement_temp <= spi_rx_data;
                             next_state := fsm_idle;
+                            spi_temp_cs <= '1';
                         -- in case the request was triggered by apb
                         ELSIF (spi_request_for = srf_apb) THEN
                             next_state := fsm_apb_access;
@@ -245,6 +266,7 @@ BEGIN
                 
                 -- the apb setup phase
                 WHEN fsm_apb_setup =>
+                    debug <= '0'; --!!!
                     PREADY <= '0';
                     IF (PENABLE = '1') THEN
                         apb_is_atomic <= PADDR(7);
@@ -256,6 +278,83 @@ BEGIN
                 
                 -- is in access phase
                 WHEN fsm_apb_access =>
+                    debug <= '0'; --!!!
+                    -- Addr: NOP
+                    IF (PADDR(5 downto 0) = "000000") THEN
+                        PREADY <= '1';
+                        next_state := fsm_apb_teardown;
+                    
+                    -- Addr: Write to ADC
+                    ELSIF ((PADDR(0) = '1' OR PADDR(1) = '1' OR PADDR(2) = '1') AND PWRITE = '1') THEN
+                        -- initialize spi transfer
+                        IF (apb_spi_finished = '0') THEN
+                            spi_dms1_cs <= NOT(PADDR(0));
+                            spi_dms2_cs <= NOT(PADDR(1));
+                            spi_temp_cs <= NOT(PADDR(2));
+                            spi_tx_data <= PWDATA(15 downto 0);
+                            spi_enable <= '1';
+                            spi_request_for <= srf_apb;
+                            next_state := fsm_spi_setup;
+                        -- signal the finishing of spi transfer, but wait until drdy has
+                        -- gone low, if address modifier demands it
+                        ELSIF (PADDR(3) = '0'
+                        OR (PADDR(3) = '1' AND ready_dms1 = '0' AND PADDR(0) = '1')
+                        OR (PADDR(3) = '1' AND ready_dms2 = '0' AND PADDR(1) = '1')
+                        OR (PADDR(3) = '1' AND ready_temp = '0' AND PADDR(2) = '1')) THEN
+                            PREADY <= '1';
+                            next_state := fsm_apb_teardown;
+                        END IF;
+                    
+                    -- Addr: Last ADC reading
+                    ELSIF (PADDR(5 downto 0) = "001000" AND PWRITE = '0') THEN
+                        PRDATA(31 downto 16) <= x"0000";
+                        PRDATA(15 downto 0) <= spi_rx_data;
+                        PREADY <= '1';
+                        next_state := fsm_apb_teardown;
+                    
+                    -- Addr: DMS1 and DMS2 measurement
+                    ELSIF (PADDR(5 downto 0) = "010000" AND PWRITE = '0') THEN
+                        PRDATA(31 downto 16) <= measurement_dms1;
+                        PRDATA(15 downto 0) <= measurement_dms2;
+                        PREADY <= '1';
+                        next_state := fsm_apb_teardown;
+                        
+                    -- Addr: temp measurement and status register
+                    ELSIF (PADDR(5 downto 0) = "011000" AND PWRITE = '0') THEN
+                        PRDATA(31 downto 16) <= measurement_temp;
+                        PRDATA(15 downto 0) <= status_register;
+                        PREADY <= '1';
+                        next_state := fsm_apb_teardown;
+                        
+                    -- Addr: Access configuration register
+                    ELSIF (PADDR(5 downto 0) = "100000") THEN
+                        PREADY <= '1';
+                        next_state := fsm_apb_teardown;
+                        IF (PWRITE = '0') THEN
+                            PRDATA <= config;
+                        ELSE
+                            config <= PWDATA;
+                        END IF;
+                    
+                    -- Addr: Access dummy register
+                    ELSIF (PADDR(5 downto 0) = "111000") THEN
+                        PREADY <= '1';
+                        next_state := fsm_apb_teardown;
+                        IF (PWRITE = '0') THEN
+                            PRDATA <= dummy;
+                        ELSE
+                            dummy <= PWDATA;
+                        END IF;
+                    
+                    -- Ignore all non defined actions
+                    ELSE
+                        PREADY <= '1';
+                        next_state := fsm_apb_teardown;
+                    END IF;
+                    
+                    
+                WHEN fsm_apb_teardown =>
+                    debug <= '0'; --!!!
                     -- return to another state, if enable is 0
                     IF (PENABLE = '0') THEN
                         PREADY <= '0';
@@ -273,91 +372,32 @@ BEGIN
                         END IF;
                         IF (apb_is_atomic = '0') THEN
                             next_state := fsm_idle;
+                            spi_dms1_cs <= '1';
+                            spi_dms2_cs <= '1';
+                            spi_temp_cs <= '1';
                         ELSE
                             next_state := fsm_apb_setup;
                         END IF;
-                    
-                    -- Addr: NOP
-                    ELSIF (PADDR(5 downto 0) = "000000") THEN
-                        PREADY <= '1';
-                    
-                    -- Addr: Write to ADC
-                    ELSIF (PADDR(5 downto 3) = "000" AND PWRITE = '1') THEN
-                        -- write via spi
-                        IF (apb_spi_finished = '0') THEN
-                            IF (PADDR(0) = '1') THEN
-                                spi_dms1_cs <= '0';
-                            END IF;
-                            IF (PADDR(1) = '1') THEN
-                                spi_dms2_cs <= '0';
-                            END IF;
-                            IF (PADDR(2) = '1') THEN
-                                spi_temp_cs <= '0';
-                            END IF;
-                            spi_tx_data <= PWDATA(15 downto 0);
-                            spi_enable <= '1';
-                            spi_request_for <= srf_apb;
-                            next_state := fsm_spi_setup;
-                        -- signal the finishing of spi transfer
-                        ELSIF (PADDR(3) = '0'
-                        OR (PADDR(3) = '1' AND ready_dms1 = '0' AND PADDR(0) = '1')
-                        OR (PADDR(3) = '1' AND ready_dms2 = '0' AND PADDR(1) = '1')
-                        OR (PADDR(3) = '1' AND ready_temp = '0' AND PADDR(2) = '1')) THEN
-                            PREADY <= '1';
-                        END IF;
-                    
-                    -- Addr: Last ADC reading
-                    ELSIF (PADDR(5 downto 0) = "001000" AND PWRITE = '0') THEN
-                        PRDATA(31 downto 16) <= x"0000";
-                        PRDATA(15 downto 0) <= spi_rx_data;
-                        PREADY <= '1';
-                    
-                    -- Addr: DMS1 and DMS2 measurement
-                    ELSIF (PADDR(5 downto 0) = "010000" AND PWRITE = '0') THEN
-                        PRDATA(31 downto 16) <= measurement_dms1;
-                        PRDATA(15 downto 0) <= measurement_dms2;
-                        PREADY <= '1';
-                        
-                    -- Addr: temp measurement and status register
-                    ELSIF (PADDR(5 downto 0) = "011000" AND PWRITE = '0') THEN
-                        PRDATA(31 downto 16) <= measurement_temp;
-                        PRDATA(15 downto 0) <= status_register;
-                        PREADY <= '1';
-                        
-                    -- Addr: Access configuration register
-                    ELSIF (PADDR(5 downto 0) = "100000") THEN
-                        PREADY <= '1';
-                        IF (PWRITE = '0') THEN
-                            PRDATA <= config;
-                        ELSE
-                            config <= PWDATA;
-                        END IF;
-                    
-                    -- Addr: Access dummy register
-                    ELSIF (PADDR(5 downto 0) = "111000") THEN
-                        PREADY <= '1';
-                        IF (PWRITE = '0') THEN
-                            PRDATA <= dummy;
-                        ELSE
-                            dummy <= PWDATA;
-                        END IF;
-                    
-                    -- Ignore all non defined actions
-                    ELSE
-                        PREADY <= '1';
                     END IF;
+                    
             END CASE;
             component_state <= next_state;
             
             
-            -- update the async_cycles counter
-            IF (async_state = 0) THEN
-                status_async_cycles <= 0;
-            ELSIF (async_state = 1) THEN
-                status_async_cycles <= status_async_cycles + 1;
-                IF (status_async_cycles >= async_threshold) THEN
-                    async_state <= 2;
-                    request_resync <= '1';
+            -- use prescaler for async counting
+            async_prescaler_count <= async_prescaler_count + 1;
+            IF (async_prescaler_count >= async_prescaler) THEN
+                async_prescaler_count <= 0;
+                
+                -- update the status_async_cycles counter
+                IF (async_state = 0) THEN
+                    status_async_cycles <= 0;
+                ELSIF (async_state = 1) THEN
+                    status_async_cycles <= status_async_cycles + 1;
+                    IF (status_async_cycles >= conf_async_threshold) THEN
+                        async_state <= 2;
+                        request_resync <= '1';
+                    END IF;
                 END IF;
             END IF;
         END IF;

@@ -1,4 +1,4 @@
-# Sun Feb 28 21:39:53 2021
+# Fri Mar  5 23:24:38 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -46,61 +46,73 @@ Available hyper_sources - for debug and ip models
 @W: FA239 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
 @N: MO106 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 6 bits.
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 167MB peak: 167MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 166MB peak: 166MB)
 
-Encoding state machine component_state[0:4] (in view: work.STAMP(architecture_stamp))
+Encoding state machine component_state[0:5] (in view: work.STAMP(architecture_stamp))
 original code -> new code
-   00001 -> 00001
-   00010 -> 00010
-   00100 -> 00100
-   01000 -> 01000
-   10000 -> 10000
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\stamp.vhd":168:8:168:9|Found counter in view:work.STAMP(architecture_stamp) instance status_async_cycles[5:0] 
 @N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance clk_toggles[5:0] 
 @N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance count[31:0] 
-@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance ss_n_buffer[1] (in view: work.spi_master(logic)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance ss_n_buffer[2] (in view: work.spi_master(logic)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
+@W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[3] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[2] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[1] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[0] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
 
 Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 168MB peak: 168MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 174MB peak: 174MB)
+Finished factoring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 175MB peak: 175MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 174MB peak: 174MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 173MB peak: 175MB)
 
 @N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_0.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 174MB peak: 175MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 173MB peak: 175MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 175MB peak: 175MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 173MB peak: 175MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 175MB peak: 175MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 173MB peak: 175MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 175MB peak: 175MB)
+Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 173MB peak: 175MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 181MB peak: 181MB)
+Finished technology mapping (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 179MB peak: 179MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:01s		    -0.19ns		 361 /       290
-   2		0h:00m:01s		    -0.19ns		 360 /       290
-   3		0h:00m:01s		    -0.19ns		 360 /       290
-@N: FP130 |Promoting Net STAMP_0.un1_presetn_arst on CLKINT  I_275 
-@N: FP130 |Promoting Net AND2_0_Y_arst on CLKINT  I_276 
+   1		0h:00m:02s		    -0.21ns		 439 /       298
+   2		0h:00m:02s		    -0.21ns		 429 /       298
+   3		0h:00m:02s		    -0.21ns		 429 /       298
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\stamp.vhd":317:27:317:55|Replicating instance STAMP_0.un1_spi_rx_data_sn_m3 (in view: work.sb(rtl)) with 58 loads 3 times to improve timing.
+Timing driven replication report
+Added 0 Registers via timing driven replication
+Added 3 LUTs via timing driven replication
+
+   4		0h:00m:02s		    -0.21ns		 432 /       298
+   5		0h:00m:02s		    -0.05ns		 433 /       298
+   6		0h:00m:02s		     0.42ns		 433 /       298
+   7		0h:00m:02s		     0.91ns		 433 /       298
+@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_380 
 
 Added 0 Buffers
 Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 182MB peak: 182MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 179MB peak: 179MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 182MB peak: 182MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 179MB peak: 180MB)
 
 
 
@@ -111,40 +123,40 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:
 
 Clock optimization not enabled
 0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
-1 gated/generated clock tree(s) driving 291 clock pin(s) of sequential element(s)
-0 instances converted, 291 sequential instances remain driven by gated/generated clocks
+1 gated/generated clock tree(s) driving 299 clock pin(s) of sequential element(s)
+0 instances converted, 299 sequential instances remain driven by gated/generated clocks
 
 ============================================================================ Gated/Generated Clocks =============================================================================
 Clock Tree ID     Driving Element            Drive Element Type     Fanout     Sample Instance                        Explanation                                                
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       sb_sb_0.CCC_0.CCC_INST     CCC                    291        sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     No gated clock conversion method for cell cell:work.MSS_010
+@K:CKID0001       sb_sb_0.CCC_0.CCC_INST     CCC                    299        sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     No gated clock conversion method for cell cell:work.MSS_010
 =================================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 149MB peak: 182MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 148MB peak: 180MB)
 
 Writing Analyst data base C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\sb_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 179MB peak: 182MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 178MB peak: 180MB)
 
 Writing Verilog Simulation files
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 
-Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 180MB peak: 182MB)
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 179MB peak: 180MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 178MB peak: 182MB)
+Start final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 177MB peak: 180MB)
 
 @W: MT246 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\work\sb_sb\ccc_0\sb_sb_ccc_0_fccc.vhd":106:4:106:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
 @W: MT420 |Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on net sb_sb_0.CCC_0.GL0_net.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sun Feb 28 21:39:57 2021
+# Timing report written on Fri Mar  5 23:24:41 2021
 #
 
 
@@ -164,12 +176,12 @@ Performance Summary
 *******************
 
 
-Worst slack in design: 1.063
+Worst slack in design: 0.246
 
                                             Requested     Estimated     Requested     Estimated               Clock        Clock              
 Starting Clock                              Frequency     Frequency     Period        Period        Slack     Type         Group              
 ----------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     111.9 MHz     10.000        8.937         1.063     inferred     Inferred_clkgroup_0
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     102.5 MHz     10.000        9.754         0.246     inferred     Inferred_clkgroup_0
 System                                      100.0 MHz     895.2 MHz     10.000        1.117         8.883     system       system_clkgroup    
 ==============================================================================================================================================
 
@@ -185,7 +197,7 @@ Clocks                                                                          
 Starting                                 Ending                                   |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 System                                   System                                   |  10.000      8.883  |  No paths    -      |  No paths    -      |  No paths    -    
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      1.063  |  No paths    -      |  No paths    -      |  No paths    -    
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      0.246  |  No paths    -      |  No paths    -      |  No paths    -    
 ========================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -208,41 +220,41 @@ Detailed Report for Clock: sb_sb_CCC_0_FCCC|GL0_net_inferred_clock
 Starting Points with Worst Slack
 ********************************
 
-                                            Starting                                                                                              Arrival          
-Instance                                    Reference                                   Type        Pin                Net                        Time        Slack
-                                            Clock                                                                                                                  
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST          sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[2]      sb_sb_0_STAMP_PADDR[2]     3.576       1.063
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST          sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[1]      sb_sb_0_STAMP_PADDR[1]     3.597       1.119
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST          sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[5]      sb_sb_0_STAMP_PADDR[5]     3.657       1.254
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST          sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[13]     STAMP_PADDRS[13]           3.647       1.375
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST          sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[3]      sb_sb_0_STAMP_PADDR[3]     3.576       1.399
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST          sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[14]     STAMP_PADDRS[14]           3.652       1.413
-sb_sb_0.CORERESETP_0.MSS_HPMS_READY_int     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE         Q                  sb_sb_0_MSS_READY          0.087       1.419
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST          sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WRITE        sb_sb_0_STAMP_PWRITE       3.682       1.460
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST          sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[4]      sb_sb_0_STAMP_PADDR[4]     3.560       1.502
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST          sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ENABLE       sb_sb_0_STAMP_PENABLE      3.736       1.663
-===================================================================================================================================================================
+                                       Starting                                                                                                                        Arrival          
+Instance                               Reference                                   Type        Pin                          Net                                        Time        Slack
+                                       Clock                                                                                                                                            
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     CAN_TX_EBL_MGPIO4A_H2F_B     sb_sb_0_GPIO_4_M2F                         3.278       0.246
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[0]                sb_sb_0_STAMP_PADDR[0]                     3.660       1.135
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[1]                sb_sb_0_STAMP_PADDR[1]                     3.597       1.280
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[2]                sb_sb_0_STAMP_PADDR[2]                     3.576       1.344
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[5]                sb_sb_0_STAMP_PADDR[5]                     3.657       1.415
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[12]               STAMP_PADDRS[12]                           3.677       1.565
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[4]                sb_sb_0_STAMP_PADDR[4]                     3.560       1.611
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[15]               STAMP_PADDRS[15]                           3.580       1.737
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[3]                sb_sb_0_STAMP_PADDR[3]                     3.576       1.827
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_SEL                    sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx     3.488       1.899
+========================================================================================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                     Starting                                                                        Required          
-Instance             Reference                                   Type     Pin     Net                Time         Slack
-                     Clock                                                                                             
------------------------------------------------------------------------------------------------------------------------
-STAMP_0.dummy[0]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-STAMP_0.dummy[1]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-STAMP_0.dummy[2]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-STAMP_0.dummy[3]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-STAMP_0.dummy[4]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-STAMP_0.dummy[5]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-STAMP_0.dummy[6]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-STAMP_0.dummy[7]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-STAMP_0.dummy[8]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-STAMP_0.dummy[9]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      dummy_1_sqmuxa     9.662        1.063
-=======================================================================================================================
+                       Starting                                                                               Required          
+Instance               Reference                                   Type     Pin     Net                       Time         Slack
+                       Clock                                                                                                    
+--------------------------------------------------------------------------------------------------------------------------------
+STAMP_0.PRDATA[16]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+STAMP_0.PRDATA[17]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+STAMP_0.PRDATA[18]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+STAMP_0.PRDATA[19]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+STAMP_0.PRDATA[20]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+STAMP_0.PRDATA[21]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+STAMP_0.PRDATA[22]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+STAMP_0.PRDATA[23]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+STAMP_0.PRDATA[24]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+STAMP_0.PRDATA[25]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un83_paddr_0_RNIUENH1     9.662        0.246
+================================================================================================================================
 
 
 
@@ -256,33 +268,36 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         9.662
 
-    - Propagation time:                      8.599
+    - Propagation time:                      9.417
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     1.063
+    = Slack (critical) :                     0.246
 
-    Number of logic level(s):                3
-    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[2]
-    Ending point:                            STAMP_0.dummy[0] / EN
+    Number of logic level(s):                4
+    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / CAN_TX_EBL_MGPIO4A_H2F_B
+    Ending point:                            STAMP_0.PRDATA[16] / EN
     The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
     The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
 
-Instance / Net                                     Pin               Pin               Arrival     No. of    
-Name                                   Type        Name              Dir     Delay     Time        Fan Out(s)
--------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     MSS_010     F_HM0_ADDR[2]     Out     3.576     3.576 f     -         
-sb_sb_0_STAMP_PADDR[2]                 Net         -                 -       0.815     -           4         
-STAMP_0.g0_6                           CFG2        B                 In      -         4.391 f     -         
-STAMP_0.g0_6                           CFG2        Y                 Out     0.164     4.555 f     -         
-config_1_sqmuxa_0_a3_0_o2_0            Net         -                 -       0.896     -           6         
-STAMP_0.g0_5                           CFG4        B                 In      -         5.450 f     -         
-STAMP_0.g0_5                           CFG4        Y                 Out     0.148     5.599 r     -         
-un1_paddr_inv_1_i                      Net         -                 -       1.319     -           35        
-STAMP_0.dummy_1_sqmuxa_0_a3_0_a4       CFG4        D                 In      -         6.918 r     -         
-STAMP_0.dummy_1_sqmuxa_0_a3_0_a4       CFG4        Y                 Out     0.326     7.244 f     -         
-dummy_1_sqmuxa                         Net         -                 -       1.355     -           32        
-STAMP_0.dummy[0]                       SLE         EN                In      -         8.599 f     -         
-=============================================================================================================
-Total path delay (propagation time + setup) of 8.937 is 4.553(50.9%) logic and 4.384(49.1%) route.
+Instance / Net                                     Pin                          Pin               Arrival     No. of    
+Name                                   Type        Name                         Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     MSS_010     CAN_TX_EBL_MGPIO4A_H2F_B     Out     3.278     3.278 f     -         
+sb_sb_0_GPIO_4_M2F                     Net         -                            -       1.117     -           1         
+AND2_1                                 AND2        B                            In      -         4.395 f     -         
+AND2_1                                 AND2        Y                            Out     0.164     4.559 f     -         
+resetn_c                               Net         -                            -       1.123     -           2         
+AND2_0                                 AND2        A                            In      -         5.682 f     -         
+AND2_0                                 AND2        Y                            Out     0.087     5.769 f     -         
+debug_led_net_0                        Net         -                            -       1.144     -           20        
+STAMP_0.un83_paddr_0_RNI6VQI           CFG4        B                            In      -         6.913 f     -         
+STAMP_0.un83_paddr_0_RNI6VQI           CFG4        Y                            Out     0.164     7.077 f     -         
+un1_presetn_inv_i                      Net         -                            -       1.126     -           17        
+STAMP_0.un83_paddr_0_RNIUENH1          CFG2        A                            In      -         8.204 f     -         
+STAMP_0.un83_paddr_0_RNIUENH1          CFG2        Y                            Out     0.087     8.291 f     -         
+un83_paddr_0_RNIUENH1                  Net         -                            -       1.126     -           16        
+STAMP_0.PRDATA[16]                     SLE         EN                           In      -         9.417 f     -         
+========================================================================================================================
+Total path delay (propagation time + setup) of 9.754 is 4.118(42.2%) logic and 5.636(57.8%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -355,10 +370,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 179MB peak: 182MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 177MB peak: 180MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 179MB peak: 182MB)
+Finished timing report (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 177MB peak: 180MB)
 
 ---------------------------------------
 Resource Usage Report for sb 
@@ -367,36 +382,35 @@ Mapping to part: m2s010vf400std
 Cell usage:
 AND2            3 uses
 CCC             1 use
-CLKINT          3 uses
-INV             1 use
+CLKINT          2 uses
 MSS_010         1 use
 RCOSC_25_50MHZ  1 use
 SYSRESET        1 use
-CFG1           2 uses
-CFG2           87 uses
-CFG3           91 uses
-CFG4           134 uses
+CFG1           3 uses
+CFG2           33 uses
+CFG3           89 uses
+CFG4           209 uses
 
 Carry cells:
-ARI1            39 uses - used for arithmetic functions
+ARI1            62 uses - used for arithmetic functions
 
 
 Sequential Cells: 
-SLE            290 uses
+SLE            298 uses
 
 DSP Blocks:    0 of 22 (0%)
 
-I/O ports: 25
-I/O primitives: 24
+I/O ports: 26
+I/O primitives: 25
 BIBUF          2 uses
 INBUF          10 uses
-OUTBUF         8 uses
+OUTBUF         9 uses
 TRIBUFF        4 uses
 
 
-Global Clock Buffers: 3
+Global Clock Buffers: 2
 
-Total LUTs:    353
+Total LUTs:    396
 
 Extra resources required for RAM and MACC interface logic during P&R:
 
@@ -404,14 +418,14 @@ RAM64x18 Interface Logic : SLEs = 0; LUTs = 0;
 RAM1K18  Interface Logic : SLEs = 0; LUTs = 0;
 MACC     Interface Logic : SLEs = 0; LUTs = 0;
 
-Total number of SLEs after P&R:  290 + 0 + 0 + 0 = 290;
-Total number of LUTs after P&R:  353 + 0 + 0 + 0 = 353;
+Total number of SLEs after P&R:  298 + 0 + 0 + 0 = 298;
+Total number of LUTs after P&R:  396 + 0 + 0 + 0 = 396;
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 61MB peak: 182MB)
+At Mapper Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 63MB peak: 180MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:04s cputime
-# Sun Feb 28 21:39:57 2021
+Process took 0h:00m:03s realtime, 0h:00m:03s cputime
+# Fri Mar  5 23:24:42 2021
 
 ###########################################################]

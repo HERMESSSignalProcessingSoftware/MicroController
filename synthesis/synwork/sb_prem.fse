@@ -1,14 +1,16 @@
 
-fsm_encoding {1913381336} onehot
+fsm_encoding {1916881686} onehot
 
-fsm_state_encoding {1913381336} fsm_idle {00001}
+fsm_state_encoding {1916881686} fsm_idle {000001}
 
-fsm_state_encoding {1913381336} fsm_apb_setup {00010}
+fsm_state_encoding {1916881686} fsm_apb_setup {000010}
 
-fsm_state_encoding {1913381336} fsm_apb_access {00100}
+fsm_state_encoding {1916881686} fsm_apb_access {000100}
 
-fsm_state_encoding {1913381336} fsm_spi_setup {01000}
+fsm_state_encoding {1916881686} fsm_apb_teardown {001000}
 
-fsm_state_encoding {1913381336} fsm_spi_access {10000}
+fsm_state_encoding {1916881686} fsm_spi_setup {010000}
 
-fsm_registers {1913381336} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]} 
+fsm_state_encoding {1916881686} fsm_spi_access {100000}
+
+fsm_registers {1916881686} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 

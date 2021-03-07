@@ -5,9 +5,8 @@ CLOCK GLOBAL THRESHOLD - 2
 ASYNC GLOBAL THRESHOLD - 12
 GLOBAL THRESHOLD - 5000
 
-NET NAME                     CLOCK LOADS     ASYNC RST LOADS     DATA LOADS     TOTAL FANOUT     GLOBAL BUFFER PRESENT
-----------------------------------------------------------------------------------------------------------------------
-sb_sb_0_FIC_0_CLK            291             0                   0              291              YES                  
-STAMP_0.un1_presetn_arst     0               87                  0              87               YES                  
-AND2_0_Y_arst                0               21                  0              21               YES                  
-======================================================================================================================
+NET NAME                 CLOCK LOADS     ASYNC RST LOADS     DATA LOADS     TOTAL FANOUT     GLOBAL BUFFER PRESENT
+------------------------------------------------------------------------------------------------------------------
+sb_sb_0_FIC_0_CLK        299             0                   0              299              YES                  
+debug_led_net_0_arst     0               125                 0              125              YES                  
+==================================================================================================================
