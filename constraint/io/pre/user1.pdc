@@ -6,7 +6,7 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 400 VF
 
-# Date generated: Tue Mar  2 10:55:45 2021 
+# Date generated: Fri Mar 12 13:03:03 2021 
 
 
 # 
@@ -56,6 +56,12 @@ set_io RXSM_SOE       \
     -fixed yes        \
     -RES_PULL Up      \
     -DIRECTION INPUT
+
+
+set_io adc_clk         \
+    -pinname U19       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
 
 
 set_io adc_start       \
@@ -147,4 +153,9 @@ set_io stamp0_spi_temp_cs  \
 #Ports using Dedicated Pins
 
 #
+
+set_io DEVRST_N       \
+    -pinname U17      \
+    -DIRECTION INPUT
+
 

@@ -16,7 +16,7 @@
 # vmap COREUART_LIB COREUART_LIB 
 # Modifying modelsim.ini
 # Model Technology ModelSim Microsemi Pro vcom 2020.3 Compiler 2020.07 Jul 13 2020
-# Start time: 07:32:43 on Mar 06,2021
+# Start time: 22:39:53 on Mar 11,2021
 # vcom -reportprogress 300 -2008 -explicit -work presynth C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/spi_master.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -25,10 +25,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity spi_master
 # -- Compiling architecture logic of spi_master
-# End time: 07:32:43 on Mar 06,2021, Elapsed time: 0:00:00
+# End time: 22:39:54 on Mar 11,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim Microsemi Pro vcom 2020.3 Compiler 2020.07 Jul 13 2020
-# Start time: 07:32:43 on Mar 06,2021
+# Start time: 22:39:54 on Mar 11,2021
 # vcom -reportprogress 300 -2008 -explicit -work presynth C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/STAMP.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -39,29 +39,29 @@
 # -- Loading package std_logic_arith
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Loading entity spi_master
-# End time: 07:32:43 on Mar 06,2021, Elapsed time: 0:00:00
+# End time: 22:39:54 on Mar 11,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim Microsemi Pro vcom 2020.3 Compiler 2020.07 Jul 13 2020
-# Start time: 07:32:43 on Mar 06,2021
+# Start time: 22:39:54 on Mar 11,2021
 # vcom -reportprogress 300 -2008 -explicit -work COREAPB3_LIB C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/components.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package components
-# End time: 07:32:43 on Mar 06,2021, Elapsed time: 0:00:00
+# End time: 22:39:54 on Mar 11,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim Microsemi Pro vcom 2020.3 Compiler 2020.07 Jul 13 2020
-# Start time: 07:32:43 on Mar 06,2021
+# Start time: 22:39:54 on Mar 11,2021
 # vcom -reportprogress 300 -2008 -explicit -work presynth C:/Users/jl/source/repos/hermess/hermess-MicroController/stimulus/tes.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity tes
 # -- Compiling architecture behavioral of tes
-# End time: 07:32:43 on Mar 06,2021, Elapsed time: 0:00:00
+# End time: 22:39:54 on Mar 11,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -L SmartFusion2 -L presynth -L COREAPB3_LIB -L COREUART_LIB -t 1fs presynth.tes 
-# Start time: 07:32:43 on Mar 06,2021
+# Start time: 22:39:54 on Mar 11,2021
 # //  ModelSim Microsemi Pro 2020.3 Jul 13 2020
 # //
 # //  Copyright 1991-2020 Mentor Graphics Corporation
@@ -87,26 +87,17 @@
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 fs  Iteration: 0  Instance: /tes/STAMP_0
 add wave -position insertpoint  \
-sim:/tes/STAMP_0/component_state
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
-# 
-# 
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 fs  Iteration: 0  Instance: /tes/STAMP_0
-run
-run
-add wave -position insertpoint  \
+sim:/tes/STAMP_0/debug \
+sim:/tes/STAMP_0/PADDR \
+sim:/tes/STAMP_0/PREADY \
+sim:/tes/STAMP_0/spi_clock \
+sim:/tes/STAMP_0/spi_miso \
+sim:/tes/STAMP_0/spi_mosi \
+sim:/tes/STAMP_0/spi_dms1_cs \
+sim:/tes/STAMP_0/spi_dms2_cs \
+sim:/tes/STAMP_0/component_state \
 sim:/tes/STAMP_0/apb_spi_finished
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
-# 
-# 
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 fs  Iteration: 0  Instance: /tes/STAMP_0
-# End time: 01:08:51 on Mar 07,2021, Elapsed time: 17:36:08
-# Errors: 0, Warnings: 1
+# End time: 01:51:19 on Mar 12,2021, Elapsed time: 3:11:25
+# Errors: 0, Warnings: 0

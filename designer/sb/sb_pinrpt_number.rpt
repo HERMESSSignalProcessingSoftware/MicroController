@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
--Pin Report - Date: Fri Mar  5 23:25:07 2021 Pinchecksum: NOT-AVAILABLE
+-Pin Report - Date: Sun Mar 14 09:30:10 2021 Pinchecksum: NOT-AVAILABLE
 -Product: Designer
 -Release: v12.6
 -Version: 12.900.20.24
@@ -349,7 +349,7 @@ U15                          VDDI4                                              
 U16                          JTAGSEL                                                 Reserved    
 U17     DEVRST_N             DEVRST_N                                                Dedicated   
 U18                          MSIO1PB2/USB_XCLK_B                                     Unassigned  
-U19                          MSIO1NB2/USB_DIR_B                                      Unassigned  
+U19     adc_clk              MSIO1NB2/USB_DIR_B                                      Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
 U20                          VSS                                                     Reserved    
 V1                           VSS                                                     Reserved    
 V2                           VSS                                                     Reserved    

@@ -90,7 +90,7 @@ void APB_STAMP_init (
 void APB_STAMP_writeConfig (
         apb_stamp_t *instance,
         stamp_config_t *conf,
-        uint8_t mod
+        uint16_t mod
 ) {
     addr_t addr = instance->baseAddr | STAMP_REG_CONF | (mod & NO_DR_MASK);
     HW_set_32bit_reg(addr, APB_STAMP_generateConfigBitfield(conf));
@@ -100,7 +100,7 @@ void APB_STAMP_writeConfig (
 void APB_STAMP_readConfig (
         apb_stamp_t *instance,
         stamp_config_t *conf,
-        uint8_t mod
+        uint16_t mod
 ) {
     addr_t addr = instance->baseAddr | STAMP_REG_CONF | (mod & NO_DR_MASK);
     APB_STAMP_generateConfigStruct(HW_get_32bit_reg(addr), conf);
@@ -111,27 +111,27 @@ void APB_STAMP_writeAdc (
         apb_stamp_t *instance,
         uint8_t adcs,
         uint16_t val,
-        uint8_t mod
+        uint16_t mod
 ) {
     HW_set_32bit_reg(instance->baseAddr | adcs | mod, val);
 }
 
 
-uint16_t APB_STAMP_readAdc (apb_stamp_t *instance, uint8_t mod) {
+uint16_t APB_STAMP_readAdc (apb_stamp_t *instance, uint16_t mod) {
     addr_t addr = instance->baseAddr |
             STAMP_REG_READ_SPI_IN | (mod & NO_DR_MASK);
-    return HW_get_32bit_reg(addr) & 0xFFFF;
+    return HW_get_32bit_reg(addr);
 }
 
 
-uint32_t APB_STAMP_readDms12 (apb_stamp_t *instance, uint8_t mod) {
+uint32_t APB_STAMP_readDms12 (apb_stamp_t *instance, uint16_t mod) {
     addr_t addr = instance->baseAddr | STAMP_REG_READ_DMS12 |
             (mod & NO_DR_MASK);
     return HW_get_32bit_reg(addr);
 }
 
 
-uint32_t APB_STAMP_readTempStatusRegister (apb_stamp_t *instance, uint8_t mod) {
+uint32_t APB_STAMP_readTempStatusRegister (apb_stamp_t *instance, uint16_t mod) {
     addr_t addr = instance->baseAddr |
             STAMP_REG_READ_TMPSR | (mod & NO_DR_MASK);
     return HW_get_32bit_reg(addr);
@@ -157,14 +157,14 @@ void APB_STAMP_clearInterrupt (uint8_t interruptPin) {
 void APB_STAMP_writeDummy (
         apb_stamp_t *instance,
         uint32_t val,
-        uint8_t mod
+        uint16_t mod
 ) {
     addr_t addr = instance->baseAddr | STAMP_REG_DUMMY | (mod & NO_DR_MASK);
     HW_set_32bit_reg(addr, val);
 }
 
 
-uint32_t APB_STAMP_readDummy (apb_stamp_t *instance, uint8_t mod) {
+uint32_t APB_STAMP_readDummy (apb_stamp_t *instance, uint16_t mod) {
     addr_t addr = instance->baseAddr | STAMP_REG_DUMMY | (mod & NO_DR_MASK);
     return HW_get_32bit_reg(addr);
 }

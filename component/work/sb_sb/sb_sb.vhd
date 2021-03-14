@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Fri Mar  5 12:45:56 2021
+-- Created by SmartDesign Fri Mar 12 12:53:08 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -55,6 +55,8 @@ entity sb_sb is
         STAMP_PREADYS0     : in    std_logic;
         STAMP_PSLVERRS0    : in    std_logic;
         -- Outputs
+        FAB_CCC_GL1        : out   std_logic;
+        FAB_CCC_LOCK       : out   std_logic;
         FIC_0_CLK          : out   std_logic;
         FIC_0_LOCK         : out   std_logic;
         GPIO_30_M2F        : out   std_logic;
@@ -117,6 +119,7 @@ component sb_sb_CCC_0_FCCC
         RCOSC_25_50MHZ : in  std_logic;
         -- Outputs
         GL0            : out std_logic;
+        GL1            : out std_logic;
         LOCK           : out std_logic
         );
 end component;
@@ -307,6 +310,7 @@ signal APBmslave3_0_PSELx                                 : std_logic;
 signal APBmslave4_0_PSELx                                 : std_logic;
 signal APBmslave5_0_PSELx                                 : std_logic;
 signal CORERESETP_0_RESET_N_F2M                           : std_logic;
+signal FAB_CCC_GL1_net_0                                  : std_logic;
 signal FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC : std_logic;
 signal FABOSC_0_RCOSC_25_50MHZ_O2F                        : std_logic;
 signal FIC_0_CLK_net_0                                    : std_logic;
@@ -368,6 +372,8 @@ signal APBmslave0_6_PWRITE_net_5                          : std_logic;
 signal APBmslave0_6_PWDATA_net_5                          : std_logic_vector(31 downto 0);
 signal FIC_0_CLK_net_1                                    : std_logic;
 signal FIC_0_LOCK_net_1                                   : std_logic;
+signal FAB_CCC_GL1_net_1                                  : std_logic;
+signal FIC_0_LOCK_net_2                                   : std_logic;
 signal MSS_READY_net_1                                    : std_logic;
 signal GPIO_3_M2F_net_1                                   : std_logic;
 signal GPIO_4_M2F_net_1                                   : std_logic;
@@ -501,6 +507,10 @@ begin
  FIC_0_CLK                    <= FIC_0_CLK_net_1;
  FIC_0_LOCK_net_1             <= FIC_0_LOCK_net_0;
  FIC_0_LOCK                   <= FIC_0_LOCK_net_1;
+ FAB_CCC_GL1_net_1            <= FAB_CCC_GL1_net_0;
+ FAB_CCC_GL1                  <= FAB_CCC_GL1_net_1;
+ FIC_0_LOCK_net_2             <= FIC_0_LOCK_net_0;
+ FAB_CCC_LOCK                 <= FIC_0_LOCK_net_2;
  MSS_READY_net_1              <= MSS_READY_net_0;
  MSS_READY                    <= MSS_READY_net_1;
  GPIO_3_M2F_net_1             <= GPIO_3_M2F_net_0;
@@ -525,6 +535,7 @@ CCC_0 : sb_sb_CCC_0_FCCC
         RCOSC_25_50MHZ => FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC,
         -- Outputs
         GL0            => FIC_0_CLK_net_0,
+        GL1            => FAB_CCC_GL1_net_0,
         LOCK           => FIC_0_LOCK_net_0 
         );
 -- CoreAPB3_0   -   Actel:DirectCore:CoreAPB3:4.1.100

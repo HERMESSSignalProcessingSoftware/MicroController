@@ -11,13 +11,13 @@ Incremental              : OFF
 INFO: Reading User PDC file C:\Users\jl\source\repos\hermess\hermess-MicroController\constraint\io\user1.pdc. 0 error(s) and 0 warning(s)
 
 Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 25 fixed I/O macros, 0 unfixed I/O macros
+Info:  I/O Bank and Globals Assigner identified 26 fixed I/O macros, 0 unfixed I/O macros
 
 I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 0 seconds
 
 Placer V5.0 - 12.900.20 
-Design: sb                              Started: Fri Mar  5 23:24:53 2021
+Design: sb                              Started: Sun Mar 14 09:29:56 2021
 
 Initializing Normal-Effort Standard Placement ...
 Clustering ...
@@ -33,39 +33,39 @@ Improvement              : 0 seconds
 Placer completed successfully.
 
 Design: sb                              
-Finished: Fri Mar  5 23:24:57 2021
+Finished: Sun Mar 14 09:30:00 2021
 Total CPU Time:     00:00:03            Total Elapsed Time: 00:00:04
-Total Memory Usage: 110.5 Mbytes
+Total Memory Usage: 110.2 Mbytes
                         o - o - o - o - o - o
 
 
 Router 
-Design: C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sbStarted: Fri Mar  5 23:25:01 2021
+Design: C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sbStarted: Sun Mar 14 09:30:04 2021
 
 
 Router completed successfully.
 
 Design: C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb
-Finished: Fri Mar  5 23:25:05 2021
+Finished: Sun Mar 14 09:30:08 2021
 Total CPU Time:     00:00:04            Total Elapsed Time: 00:00:04
-Total Memory Usage: 446.1 Mbytes
+Total Memory Usage: 445.7 Mbytes
                         o - o - o - o - o - o
 
 Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 397  | 12084 | 3.29       |
-| DFF           | 298  | 12084 | 2.47       |
+| 4LUT          | 488  | 12084 | 4.04       |
+| DFF           | 328  | 12084 | 2.71       |
 | I/O Register  | 0    | 585   | 0.00       |
-| Logic Element | 490  | 12084 | 4.05       |
+| Logic Element | 547  | 12084 | 4.53       |
 +---------------+------+-------+------------+
 
 I/O Placement
 +--------+-------+------------+
 | Type   | Count | Percentage |
 +--------+-------+------------+
-| Locked |  25   | 100.00%    |
+| Locked |  26   | 100.00%    |
 | Placed |  0    | 0.00%      |
 +--------+-------+------------+
 

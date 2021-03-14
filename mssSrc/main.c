@@ -16,12 +16,15 @@
 
 static void dreadyCb (uint8_t num, uint32_t dms12, uint32_t tempReg) {
     uint8_t buf[] = {
+            0xAA,
             (dms12 >> 24) & 0xFF,
             (dms12 >> 16) & 0xFF,
             (dms12 >> 8) & 0xFF,
-            dms12 & 0xFF
+            dms12 & 0xFF,
+            (tempReg >> 24) & 0xFF,
+            (tempReg >> 16) & 0xFF
     };
-    //MSS_UART_polled_tx(&g_mss_uart0, buf, 4);
+    MSS_UART_polled_tx(&g_mss_uart0, buf, sizeof(buf));
 }
 
 
@@ -32,7 +35,7 @@ int main (void) {
     MSS_GPIO_init();
 
     // !!! move to DAPI file
-    MSS_UART_init(&g_mss_uart0, MSS_UART_38400_BAUD,
+    MSS_UART_init(&g_mss_uart0, MSS_UART_115200_BAUD,
             MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
     MSS_UART_set_tx_endian(&g_mss_uart0, MSS_UART_LITTLEEND);
 
@@ -42,10 +45,14 @@ int main (void) {
         spuLog("Watchdog timed out");
 
     // configure the GPIOs
+    MSS_GPIO_set_outputs(0);
     MSS_GPIO_config(OUT_RESET_N, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(LED_RECORDING, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(LED_HEARTBEAT, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_set_outputs(0);
+
+    // reset the peripherals
+    MSS_GPIO_set_output(OUT_RESET_N, 0);
+    delay(1);
     MSS_GPIO_set_output(OUT_RESET_N, 1);
 
     // initialize the stamps

@@ -80,7 +80,7 @@ void stampsInit (void) {
             STAMP_MOD_NONE);
 
     // write to registers (MUX1 and SOS0) and check if correct
-    const uint16_t dmsConf = 0x3078U; // PGA 128; SPS 1000
+    const uint16_t dmsConf = 0xB078U; // PGA 128; SPS 1000
     uint16_t readConf = 0;
     uint8_t confTrials = 0;
     APB_STAMP_writeAdc(&stamps[0],
@@ -123,31 +123,103 @@ void stampsInit (void) {
             spuLog("DMS2 configuration mismatch!");
     } while (readConf != dmsConf && confTrials < 3);
 
+    // configure temperature sensor
+    APB_STAMP_writeAdc(&stamps[0],
+            STAMP_REG_WRITE_TEMP,
+            ADS_CMD_WREG(ADS_REG_MUX0, 4),
+            STAMP_MOD_ATOMIC);
+    APB_STAMP_writeAdc(&stamps[0],
+            STAMP_REG_WRITE_TEMP,
+            0x0A00U, // ADC Pos: AIN1, ADC Neg: AIN2
+            STAMP_MOD_ATOMIC);
+    APB_STAMP_writeAdc(&stamps[0],
+            STAMP_REG_WRITE_TEMP,
+            0x2032U, // PGA 4; SPS 20
+            STAMP_MOD_NONE);
+    // configure temperature IDACs
+    APB_STAMP_writeAdc(&stamps[0],
+            STAMP_REG_WRITE_TEMP,
+            ADS_CMD_WREG(ADS_REG_IDAC0, 2),
+            STAMP_MOD_ATOMIC);
+    APB_STAMP_writeAdc(&stamps[0],
+            STAMP_REG_WRITE_TEMP,
+            0x0603U, // IDAC 1mA; IDAC0: AIN0, IDAC1: AIN3
+            STAMP_MOD_NONE);
+    // check the configuration
+    confTrials = 0;
+    uint32_t readTempConf = 0;
+    do {
+        readTempConf = 0;
+        APB_STAMP_writeAdc(&stamps[0],
+                STAMP_REG_WRITE_TEMP,
+                ADS_CMD_RREG(ADS_REG_MUX0, 2),
+                STAMP_MOD_ATOMIC);
+        APB_STAMP_writeAdc(&stamps[0],
+                STAMP_REG_WRITE_TEMP,
+                ADS_CMD_NOP,
+                STAMP_MOD_NONE);
+        readTempConf = APB_STAMP_readAdc(&stamps[0], STAMP_MOD_NONE) ^ 0x0A00U;
+        if (readTempConf) {
+            spuLog("TEMP configuration mismatch!");
+            continue;
+        }
+        APB_STAMP_writeAdc(&stamps[0],
+                STAMP_REG_WRITE_TEMP,
+                ADS_CMD_RREG(ADS_REG_MUX1, 2),
+                STAMP_MOD_ATOMIC);
+        APB_STAMP_writeAdc(&stamps[0],
+                STAMP_REG_WRITE_TEMP,
+                ADS_CMD_NOP,
+                STAMP_MOD_NONE);
+        readTempConf = ((APB_STAMP_readAdc(&stamps[0], STAMP_MOD_NONE) & 0x7FFFU) ^ 0x2032U) << 16;
+        APB_STAMP_writeAdc(&stamps[0],
+                STAMP_REG_WRITE_TEMP,
+                ADS_CMD_RREG(ADS_REG_IDAC0, 2),
+                STAMP_MOD_ATOMIC);
+        APB_STAMP_writeAdc(&stamps[0],
+                STAMP_REG_WRITE_TEMP,
+                ADS_CMD_NOP,
+                STAMP_MOD_NONE);
+        readTempConf |= ((APB_STAMP_readAdc(&stamps[0], STAMP_MOD_NONE) & 0x0FFFU) ^ 0x0603U);
+        if (readTempConf)
+            spuLog("TEMP configuration mismatch!");
+        confTrials++;
+    } while (readTempConf && confTrials < 3);
+
+    // run offset cal
+    APB_STAMP_writeAdc(&stamps[0],
+            STAMP_REG_WRITE_DMS1,
+            ADS_CMD_SYSOCAL,
+            STAMP_MOD_DATA_READY);
+    APB_STAMP_writeAdc(&stamps[0],
+            STAMP_REG_WRITE_DMS2,
+            ADS_CMD_SYSOCAL,
+            STAMP_MOD_DATA_READY);
+    APB_STAMP_writeAdc(&stamps[0],
+                STAMP_REG_WRITE_TEMP,
+                ADS_CMD_SYSOCAL,
+                STAMP_MOD_DATA_READY);
+
     // start continuous data conversion by ADC
     APB_STAMP_writeAdc(&stamps[0],
             STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
             ADS_CMD_RDATAC,
             STAMP_MOD_NONE);
 
-    // !!! Add Config temperature
-
-    // configure ADC start signal from the synchronizer
-    MSS_GPIO_config(IN_SYNC_START,
-            MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_NEGATIVE);
-    MSS_GPIO_enable_irq(IN_SYNC_START);
-
-    // enable interrupts from the
+    // enable interrupts from the ADC !DRDY signal
     APB_STAMP_enableInterrupt(&stamps[0]);
 
     // enable continuous mode (on APB_STAMP) and set configuration parameters
-    // also resync all adcs
     MSS_GPIO_set_output(OUT_ADC_START, 0);
     stamp_config_t conf = {.reset = 0, .continuous = 1, .asyncThreshold = 16,
             .empty = 0, .stampId = 0};
-    APB_STAMP_writeConfig(&stamps[0],
-            &conf,
-            STAMP_MOD_NONE);
+    APB_STAMP_writeConfig(&stamps[0], &conf, STAMP_MOD_NONE);
     MSS_GPIO_set_output(OUT_ADC_START, 1);
+
+    // configure ADC start signal from the synchronizer (triggered when async)
+    MSS_GPIO_config(IN_SYNC_START,
+            MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_NEGATIVE);
+    MSS_GPIO_enable_irq(IN_SYNC_START);
 }
 
 

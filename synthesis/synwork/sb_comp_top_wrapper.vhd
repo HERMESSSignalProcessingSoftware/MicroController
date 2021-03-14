@@ -1,6 +1,6 @@
 --
 -- Synopsys
--- Vhdl wrapper for top level design, written on Fri Mar  5 23:24:34 2021
+-- Vhdl wrapper for top level design, written on Sun Mar 14 09:29:33 2021
 --
 library ieee;
 use ieee.std_logic_1164.all;
@@ -23,6 +23,7 @@ entity wrapper_for_sb is
       LED_RECORDING : out std_logic;
       SPI_DATASTORAGE_DO : out std_logic;
       TM_TX : out std_logic;
+      adc_clk : out std_logic;
       adc_start : out std_logic;
       debug_led : out std_logic;
       resetn : out std_logic;
@@ -56,6 +57,7 @@ component sb
    LED_RECORDING : out std_logic;
    SPI_DATASTORAGE_DO : out std_logic;
    TM_TX : out std_logic;
+   adc_clk : out std_logic;
    adc_start : out std_logic;
    debug_led : out std_logic;
    resetn : out std_logic;
@@ -85,6 +87,7 @@ signal tmp_LED_HEARTBEAT : std_logic;
 signal tmp_LED_RECORDING : std_logic;
 signal tmp_SPI_DATASTORAGE_DO : std_logic;
 signal tmp_TM_TX : std_logic;
+signal tmp_adc_clk : std_logic;
 signal tmp_adc_start : std_logic;
 signal tmp_debug_led : std_logic;
 signal tmp_resetn : std_logic;
@@ -130,6 +133,8 @@ SPI_DATASTORAGE_DO <= tmp_SPI_DATASTORAGE_DO;
 
 TM_TX <= tmp_TM_TX;
 
+adc_clk <= tmp_adc_clk;
+
 adc_start <= tmp_adc_start;
 
 debug_led <= tmp_debug_led;
@@ -169,6 +174,7 @@ u1:   sb port map (
 		LED_RECORDING => tmp_LED_RECORDING,
 		SPI_DATASTORAGE_DO => tmp_SPI_DATASTORAGE_DO,
 		TM_TX => tmp_TM_TX,
+		adc_clk => tmp_adc_clk,
 		adc_start => tmp_adc_start,
 		debug_led => tmp_debug_led,
 		resetn => tmp_resetn,

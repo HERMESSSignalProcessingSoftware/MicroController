@@ -2099,11 +2099,11 @@
 </row>
 <row>
  <cell>GL1_IS_USED</cell>
- <cell>0</cell>
+ <cell>1</cell>
 </row>
 <row>
  <cell>GL1_OUT_0_FREQ</cell>
- <cell></cell>
+ <cell>4.096</cell>
 </row>
 <row>
  <cell>GL2_IS_USED</cell>
@@ -3876,6 +3876,16 @@
  <cell>FIC_0_LOCK</cell>
  <cell>OUT</cell>
  <cell>Use this clock to drive peripherals in the FIC0_Slave_Subsystem or FIC0_Master_Subsystem</cell>
+</row>
+<row>
+ <cell>FAB_CCC_GL1</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>FAB_CCC_LOCK</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
 </row>
 <row>
  <cell>MSS_READY</cell>

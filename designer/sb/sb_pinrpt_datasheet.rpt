@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
--Pin Report - Date: Fri Mar  5 23:25:07 2021 Pinchecksum: NOT-AVAILABLE
+-Pin Report - Date: Sun Mar 14 09:30:10 2021 Pinchecksum: NOT-AVAILABLE
 -Product: Designer
 -Release: v12.6
 -Version: 12.900.20.24
@@ -11,6 +11,7 @@
 
 Port                |Pin |Fixed |Function                                               |Bank     |I/O Std   |Direction                      |I/O state in Flash*Freeze mode |Resistor Pull                      |I/O available in Flash*Freeze mode |Schmitt Trigger |Odt_Static    |Odt Imp (Ohm)  |Low Power Exit |Input Delay |Slew         |Pre-Emphasis      |Output Drive (mA) |Output Load (pF) |
 --------------------|----|------|-------------------------------------------------------|---------|----------|-------------------------------|-------------------------------|-----------------------------------|-----------------------------------|----------------|--------------|---------------|---------------|------------|-------------|------------------|------------------|-----------------|
+adc_clk              U19  Yes    MSIO1NB2/USB_DIR_B                                      Bank2     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
 adc_start            R15  Yes    MSIO7NB2/CAN_TX/GPIO_2_A/USB_DATA0_A                    Bank2     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
 DAPI_RX              C19  Yes    MSIO27PB1/MMUART_0_RXD/GPIO_28_B/USB_STP_C              Bank1     LVCMOS33   Input                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          ---           ---                ---                ---               
 DAPI_TX              D18  Yes    MSI26NB1/MMUART_0_TXD/GPIO_27_B/USB_DIR_C               Bank1     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 

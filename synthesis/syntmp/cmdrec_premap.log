@@ -1,15 +1,15 @@
 J:\LiberoSoC\SynplifyPro\bin64\m_generic.exe  -mp  4  -prjfile  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\scratchproject.prs  -prodtype  synplify_pro  -encrypt  -pro  -rundir  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis   -part M2S010  -package VF400  -grade STD    -continue_on_error -min_cdc_sync_flops 2 -unsafe_cdc_netlist_property 0 -maxfan 10000 -infer_seqShift -clock_globalthreshold 2 -async_globalthreshold 12 -globalthreshold 5000 -low_power_ram_decomp 0 -seqshift_to_uram 0 -opcond COMTC -report_path 4000 -disable_ramindex 0 -rep_clkint_driver 1 -microsemi_enhanced_flow 1 -ternary_adder_decomp 66 -pack_uram_addr_reg 1 -RWCheckOnRam 0 -local_tmr_rename -summaryfile C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synlog\report\sb_premap.xml -merge_inferred_clocks 0  -top_level_module  work.sb  -implementation  synthesis  -ovm  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\sb.vm  -conchk_prepass  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\sb_cck.rpt   -freq 100.000   -tcl  C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\synthesis.fdc  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\sb_mult.srs  -flow prepass  -gcc_prepass  -osrd  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\sb_prem.srd  -qsap  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\sb.sap  -devicelib  J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.v  -ologparam  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\syntmp\sb.plg  -osyn  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\sb_prem.srd  -prjdir  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\  -prjname  sb_syn  -log  C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synlog\sb_premap.srr  -sn  2020.03  -jobname  "premap" 
 relcom:J:\LiberoSoC\SynplifyPro\bin64\m_generic.exe -mp 4 -prjfile ..\scratchproject.prs -prodtype synplify_pro -encrypt -pro -rundir ..\..\synthesis -part M2S010 -package VF400 -grade STD -continue_on_error -min_cdc_sync_flops 2 -unsafe_cdc_netlist_property 0 -maxfan 10000 -infer_seqShift -clock_globalthreshold 2 -async_globalthreshold 12 -globalthreshold 5000 -low_power_ram_decomp 0 -seqshift_to_uram 0 -opcond COMTC -report_path 4000 -disable_ramindex 0 -rep_clkint_driver 1 -microsemi_enhanced_flow 1 -ternary_adder_decomp 66 -pack_uram_addr_reg 1 -RWCheckOnRam 0 -local_tmr_rename -summaryfile ..\synlog\report\sb_premap.xml -merge_inferred_clocks 0 -top_level_module work.sb -implementation synthesis -ovm ..\sb.vm -conchk_prepass ..\sb_cck.rpt -freq 100.000 -tcl ..\..\designer\sb\synthesis.fdc ..\synwork\sb_mult.srs -flow prepass -gcc_prepass -osrd ..\synwork\sb_prem.srd -qsap ..\sb.sap -devicelib J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.v -ologparam sb.plg -osyn ..\synwork\sb_prem.srd -prjdir ..\ -prjname sb_syn -log ..\synlog\sb_premap.srr -sn 2020.03 -jobname "premap"
-rc:1 success:1 runtime:2
-file:..\scratchproject.prs|io:o|time:1614550967|size:4461|exec:0|csum:
-file:..\sb.vm|io:o|time:1614981644|size:211129|exec:0|csum:
-file:..\sb_cck.rpt|io:o|time:1614983077|size:3216|exec:0|csum:
-file:..\..\designer\sb\synthesis.fdc|io:i|time:1614983067|size:54|exec:0|csum:F3CA46D4F9CBD45CB2968C4617481326
-file:..\synwork\sb_mult.srs|io:i|time:1614983076|size:9365|exec:0|csum:04F008F4EEB9ACB50F5435259E8642FC
-file:..\synwork\sb_prem.srd|io:o|time:1614983077|size:116832|exec:0|csum:
-file:..\sb.sap|io:o|time:1614983077|size:1704|exec:0|csum:
+rc:1 success:1 runtime:3
+file:..\scratchproject.prs|io:o|time:1615410569|size:4461|exec:0|csum:
+file:..\sb.vm|io:o|time:1615709189|size:241554|exec:0|csum:
+file:..\sb_cck.rpt|io:o|time:1615710579|size:3227|exec:0|csum:
+file:..\..\designer\sb\synthesis.fdc|io:i|time:1615710568|size:54|exec:0|csum:AE705333FAEAFD36BD7244C03DBD3428
+file:..\synwork\sb_mult.srs|io:i|time:1615710575|size:9410|exec:0|csum:07620805593507463319E58636F202A8
+file:..\synwork\sb_prem.srd|io:o|time:1615710577|size:122283|exec:0|csum:
+file:..\sb.sap|io:o|time:1615710579|size:1873|exec:0|csum:
 file:J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.v|io:i|time:1604390290|size:16417|exec:0|csum:F0ABD26EB97073243CF73065BE40E390
-file:sb.plg|io:o|time:1614983076|size:0|exec:0|csum:
-file:..\synwork\sb_prem.srd|io:o|time:1614983077|size:116832|exec:0|csum:
-file:..\synlog\sb_premap.srr|io:o|time:1614983078|size:32572|exec:0|csum:
+file:sb.plg|io:o|time:1615710576|size:0|exec:0|csum:
+file:..\synwork\sb_prem.srd|io:o|time:1615710577|size:122283|exec:0|csum:
+file:..\synlog\sb_premap.srr|io:o|time:1615710579|size:32572|exec:0|csum:
 file:J:\LiberoSoC\SynplifyPro\bin64\m_generic.exe|io:i|time:1604390270|size:42820608|exec:1|csum:39CFAC34BBF814CB465BAE1969F6836F

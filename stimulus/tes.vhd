@@ -40,7 +40,7 @@ architecture behavioral of tes is
     signal NSYSRESET : std_logic := '0';
     signal s_psel : STD_LOGIC := '0';
     signal s_penable : STD_LOGIC := '0';
-    signal s_paddr : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal s_paddr : STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
     signal s_pwrite : STD_LOGIC := '0';
     signal s_pwdata : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
     
@@ -49,7 +49,7 @@ architecture behavioral of tes is
         PORT (-- Inputs
             PCLK : in std_logic;
             PRESETN : in std_logic;
-            PADDR : in std_logic_vector(7 downto 0);
+            PADDR : in std_logic_vector(11 downto 0);
             PSEL : in std_logic;
             PENABLE : in std_logic;
             PWRITE : in std_logic;
@@ -94,7 +94,7 @@ begin
             s_pwdata <= "10101010101010101010101010101010";
             wait for ( SYSCLK_PERIOD * 1 );
             s_penable <= '1';
-            s_paddr <= "00000011";
+            s_paddr <= "000000110000";
             wait;
         end if;
     end process;
@@ -112,7 +112,7 @@ begin
             PADDR => s_paddr,
             PSEL => s_psel,
             PENABLE => s_penable,
-            PWRITE => '0',
+            PWRITE => s_pwrite,
             PWDATA => (others=> '0'),
             spi_miso => SYSCLK,
             ready_dms1 => '0',

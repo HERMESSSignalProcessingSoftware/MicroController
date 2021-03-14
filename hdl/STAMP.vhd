@@ -5,20 +5,20 @@
 -- 
 -- ADDRESS:
 -- Always usable Modifiers:
--- 1XXX XXXX        Atomic operation
--- X1XX XXXX        Reset status register after finishing operation
+-- 1XXX XXXX 0000       Atomic operation
+-- X1XX XXXX 0000       Reset status register after finishing operation
 -- Writing to ADCs:
--- XX00 1XXX        Polling request: Only exits once the drdy line goes down again.
--- XX00 XXX1        ADC for DMS1 (write only the least significant 16 bits)
--- XX00 XX1X        ADC for DMS2 (write only the least significant 16 bits)
--- XX00 X1XX        ADC for PT100 (write only the least significant 16 bits)
+-- XX00 1XXX 0000       Polling request: Only exits once the drdy line goes down again.
+-- XX00 XXX1 0000       ADC for DMS1 (write only the least significant 16 bits)
+-- XX00 XX1X 0000       ADC for DMS2 (write only the least significant 16 bits)
+-- XX00 X1XX 0000       ADC for PT100 (write only the least significant 16 bits)
 -- Other registers and commands:
--- XX00 0000        NOP
--- XX00 1000        Last ADC reading (read only the least significant 16 bits)
--- XX01 0000        DMS1 & DMS2 (read only)
--- XX01 1000        Temp & Status register (read only)
--- XX10 0000        Access 32 bit configuration register
--- XX11 1000        Access 32 bit dummy register
+-- XX00 0000 0000       NOP
+-- XX00 1000 0000       Last ADC reading (read only the least significant 16 bits)
+-- XX01 0000 0000       DMS1 & DMS2 (read only)
+-- XX01 1000 0000       Temp & Status register (read only)
+-- XX10 0000 0000       Access 32 bit configuration register
+-- XX11 1000 0000       Access 32 bit dummy register
 -- All others are undefined and enable FLOMESS legacy mode (unpredictable behavior)
 --------------------------------------------------------------------------------
 
@@ -39,7 +39,7 @@ ENTITY STAMP IS
         -- apb3 ports
         PCLK : IN STD_LOGIC;
         PRESETN : IN STD_LOGIC; -- does only reset the block, not the ADCs
-        PADDR : IN STD_LOGIC_VECTOR(7 downto 0);
+        PADDR : IN STD_LOGIC_VECTOR(11 downto 0);
         PSEL : IN STD_LOGIC;
         PENABLE : IN STD_LOGIC;
         PWRITE : IN STD_LOGIC;
@@ -71,11 +71,16 @@ ARCHITECTURE architecture_STAMP of STAMP IS
     type spi_request_for_t is (srf_dms1, srf_dms2, srf_temp, srf_apb);
     signal spi_request_for : spi_request_for_t;
     signal async_state : INTEGER RANGE 0 TO 2; -- 0=normal; 1=first DMS read; 2=async
+    -- signal containing information about whether a drdy flank occured
+    signal drdy_flank_detected_dms1 : STD_LOGIC;
+    signal drdy_flank_detected_dms2 : STD_LOGIC;
+    signal drdy_flank_detected_temp : STD_LOGIC;
     -- global variable signals
     signal apb_is_atomic : STD_LOGIC;
     signal apb_is_reset : STD_LOGIC;
     signal apb_spi_finished : STD_LOGIC;
     signal async_prescaler_count : INTEGER RANGE 0 TO 65535;
+    signal delay_counter : INTEGER;
     -- contains internal spi signals
     signal spi_enable : STD_LOGIC;
     signal spi_busy : STD_LOGIC;
@@ -140,11 +145,15 @@ BEGIN
             request_resync <= '0';
             PREADY <= '0';
             async_prescaler_count <= 0;
+            delay_counter <= 0;
             spi_dms1_cs <= '1';
             spi_dms2_cs <= '1';
             spi_temp_cs <= '1';
             component_state <= fsm_idle;
             async_state <= 0;
+            drdy_flank_detected_dms1 <= '0';
+            drdy_flank_detected_dms2 <= '0';
+            drdy_flank_detected_temp <= '0';
             spi_enable <= '0';
             status_dms1_newVal <= '0';
             status_dms2_newVal <= '0';
@@ -155,7 +164,7 @@ BEGIN
             status_async_cycles <= 0;
             dummy <= x"00000000";
             debug <= '0'; -- !!!
-            -- do not reset config for of keeping the state accross resync
+            -- do not reset config for keeping the state accross resync
             IF (hardreset) THEN
                 config <= (others => '0');
             ELSE
@@ -172,44 +181,50 @@ BEGIN
             next_state := component_state;
             CASE component_state IS
                 WHEN fsm_idle =>
-                    debug <= PSEL; --!!!
                     IF (conf_reset = '1') THEN
                         proc_reset_stamp(false);
                     END IF;
                     
-                    -- read the incoming data from the adcs
-                    IF (conf_continuous = '1') THEN
-                        spi_tx_data <= x"FFFF";
-                        -- inform uC, that there are new data available
-                        IF (status_dms1_newVal = '1' AND status_dms2_newVal = '1') THEN
-                            new_avail <= '1';
+                    -- this delay will be > 0, whenever spi has finished and a chip select must settle
+                    -- for at least tcspw (~1.25us)
+                    IF (delay_counter = 0) THEN
+                        -- read the incoming data from the adcs
+                        IF (conf_continuous = '1') THEN
+                            spi_tx_data <= x"FFFF";
+                            -- inform uC, that there are new data available
+                            IF (status_dms1_newVal = '1' AND status_dms2_newVal = '1') THEN
+                                new_avail <= '1';
+                            ELSE
+                                new_avail <= '0';
+                            END IF;
+                            
+                            --  initialize spi communication if there are new data
+                            IF (drdy_flank_detected_dms1 = '1') THEN
+                                spi_dms1_cs <= '0';
+                                spi_enable <= '1';
+                                spi_request_for <= srf_dms1;
+                                next_state := fsm_spi_setup;
+                            ELSIF (drdy_flank_detected_dms2 = '1') THEN
+                                spi_dms2_cs <= '0';
+                                spi_enable <= '1';
+                                spi_request_for <= srf_dms2;
+                                next_state := fsm_spi_setup;
+                            ELSIF (drdy_flank_detected_temp = '1') THEN
+                                spi_temp_cs <= '0';
+                                spi_enable <= '1';
+                                spi_request_for <= srf_temp;
+                                next_state := fsm_spi_setup;
+                            END IF;
                         ELSE
                             new_avail <= '0';
                         END IF;
-                        --  initialize spi communication if there are new data
-                        IF (ready_dms1 = '0') THEN
-                            spi_dms1_cs <= '0';
-                            spi_enable <= '1';
-                            spi_request_for <= srf_dms1;
-                            next_state := fsm_spi_setup;
-                        ELSIF (ready_dms2 = '0') THEN
-                            spi_dms2_cs <= '0';
-                            spi_enable <= '1';
-                            spi_request_for <= srf_dms2;
-                            next_state := fsm_spi_setup;
-                        ELSIF (ready_temp = '0') THEN
-                            spi_temp_cs <= '0';
-                            spi_enable <= '1';
-                            spi_request_for <= srf_temp;
-                            next_state := fsm_spi_setup;
+                        
+                        -- if no adc will be read, listen on the APB3, if there is a request pending
+                        IF (PSEL = '1' AND next_state = fsm_idle) THEN
+                            next_state := fsm_apb_setup;
                         END IF;
                     ELSE
-                        new_avail <= '0';
-                    END IF;
-                    
-                    -- if no adc will be read, listen on the APB3, if there is a request pending
-                    IF (PSEL = '1' AND next_state = fsm_idle) THEN
-                        next_state := fsm_apb_setup;
+                        delay_counter <= delay_counter - 1;
                     END IF;
                     
                     -- make sure not to accidentally skip an apb transfer
@@ -218,59 +233,67 @@ BEGIN
                 
                 -- just wait for the spi master to start working
                 WHEN fsm_spi_setup =>
-                    debug <= '0'; --!!!
                     IF (spi_busy = '1') THEN
                         spi_enable <= '0';
                         next_state := fsm_spi_access;
+                        delay_counter <= 90;
                     END IF;
                 
                 
                 -- wait for the spi master to complete operation
                 WHEN fsm_spi_access =>
-                    debug <= '0'; --!!!
-                    IF (spi_busy = '0') THEN                        
-                        -- in case DMS1 was the requested adc
-                        IF (spi_request_for = srf_dms1) THEN
-                            status_dms1_overwrittenVal <= status_dms1_newVal;
-                            status_dms1_newVal <= '1';
-                            measurement_dms1 <= spi_rx_data;
-                            IF (async_state < 2) THEN
-                                async_state <= async_state + 1;
+                    IF (spi_busy = '0') THEN
+                        -- wait for minimum 1,75us (~90clk) to fulfill adc tsccs
+                        IF (delay_counter = 0) THEN
+                            -- in case DMS1 was the requested adc
+                            IF (spi_request_for = srf_dms1) THEN
+                                status_dms1_overwrittenVal <= status_dms1_newVal;
+                                status_dms1_newVal <= '1';
+                                measurement_dms1 <= spi_rx_data;
+                                IF (async_state < 2) THEN
+                                    async_state <= async_state + 1;
+                                END IF;
+                                next_state := fsm_idle;
+                                spi_dms1_cs <= '1';
+                                drdy_flank_detected_dms1 <= '0';
+                            -- in case DMS2 was the requested adc
+                            ELSIF (spi_request_for = srf_dms2) THEN
+                                status_dms2_overwrittenVal <= status_dms2_newVal;
+                                status_dms2_newVal <= '1';
+                                measurement_dms2 <= spi_rx_data;
+                                IF (async_state < 2) THEN
+                                    async_state <= async_state + 1;
+                                END IF;
+                                next_state := fsm_idle;
+                                spi_dms2_cs <= '1';
+                                drdy_flank_detected_dms2 <= '0';
+                            -- in case temp was the requested adc
+                            ELSIF (spi_request_for = srf_temp) THEN
+                                status_temp_overwrittenVal <= status_temp_newVal;
+                                status_temp_newVal <= '1';
+                                measurement_temp <= spi_rx_data;
+                                next_state := fsm_idle;
+                                spi_temp_cs <= '1';
+                                drdy_flank_detected_temp <= '0';
+                            -- in case the request was triggered by apb
+                            ELSIF (spi_request_for = srf_apb) THEN
+                                next_state := fsm_apb_access;
+                                apb_spi_finished <= '1';
                             END IF;
-                            next_state := fsm_idle;
-                            spi_dms1_cs <= '1';
-                        -- in case DMS2 was the requested adc
-                        ELSIF (spi_request_for = srf_dms2) THEN
-                            status_dms2_overwrittenVal <= status_dms2_newVal;
-                            status_dms2_newVal <= '1';
-                            measurement_dms2 <= spi_rx_data;
-                            IF (async_state < 2) THEN
-                                async_state <= async_state + 1;
-                            END IF;
-                            next_state := fsm_idle;
-                            spi_dms2_cs <= '1';
-                        -- in case temp was the requested adc
-                        ELSIF (spi_request_for = srf_temp) THEN
-                            status_temp_overwrittenVal <= status_temp_newVal;
-                            status_temp_newVal <= '1';
-                            measurement_temp <= spi_rx_data;
-                            next_state := fsm_idle;
-                            spi_temp_cs <= '1';
-                        -- in case the request was triggered by apb
-                        ELSIF (spi_request_for = srf_apb) THEN
-                            next_state := fsm_apb_access;
-                            apb_spi_finished <= '1';
+                            -- in fsm_idle wait for at least 65clk (>1.25us) for tcspw
+                            delay_counter <= 65;
+                        ELSE
+                            delay_counter <= delay_counter - 1;
                         END IF;
                     END IF;
                 
                 
                 -- the apb setup phase
                 WHEN fsm_apb_setup =>
-                    debug <= '0'; --!!!
                     PREADY <= '0';
                     IF (PENABLE = '1') THEN
-                        apb_is_atomic <= PADDR(7);
-                        apb_is_reset <= PADDR(6);
+                        apb_is_atomic <= PADDR(11);
+                        apb_is_reset <= PADDR(10);
                         apb_spi_finished <= '0';
                         next_state := fsm_apb_access;
                     END IF;
@@ -278,56 +301,55 @@ BEGIN
                 
                 -- is in access phase
                 WHEN fsm_apb_access =>
-                    debug <= '0'; --!!!
                     -- Addr: NOP
-                    IF (PADDR(5 downto 0) = "000000") THEN
+                    IF (PADDR(9 downto 0) = "0000000000") THEN
                         PREADY <= '1';
                         next_state := fsm_apb_teardown;
                     
                     -- Addr: Write to ADC
-                    ELSIF ((PADDR(0) = '1' OR PADDR(1) = '1' OR PADDR(2) = '1') AND PWRITE = '1') THEN
+                    ELSIF ((PADDR(4) = '1' OR PADDR(5) = '1' OR PADDR(6) = '1') AND PWRITE = '1') THEN
                         -- initialize spi transfer
                         IF (apb_spi_finished = '0') THEN
-                            spi_dms1_cs <= NOT(PADDR(0));
-                            spi_dms2_cs <= NOT(PADDR(1));
-                            spi_temp_cs <= NOT(PADDR(2));
+                            spi_dms1_cs <= NOT(PADDR(4));
+                            spi_dms2_cs <= NOT(PADDR(5));
+                            spi_temp_cs <= NOT(PADDR(6));
                             spi_tx_data <= PWDATA(15 downto 0);
                             spi_enable <= '1';
                             spi_request_for <= srf_apb;
                             next_state := fsm_spi_setup;
                         -- signal the finishing of spi transfer, but wait until drdy has
                         -- gone low, if address modifier demands it
-                        ELSIF (PADDR(3) = '0'
-                        OR (PADDR(3) = '1' AND ready_dms1 = '0' AND PADDR(0) = '1')
-                        OR (PADDR(3) = '1' AND ready_dms2 = '0' AND PADDR(1) = '1')
-                        OR (PADDR(3) = '1' AND ready_temp = '0' AND PADDR(2) = '1')) THEN
+                        ELSIF (PADDR(7) = '0'
+                        OR (PADDR(7) = '1' AND ready_dms1 = '0' AND PADDR(4) = '1')
+                        OR (PADDR(7) = '1' AND ready_dms2 = '0' AND PADDR(5) = '1')
+                        OR (PADDR(7) = '1' AND ready_temp = '0' AND PADDR(6) = '1')) THEN
                             PREADY <= '1';
                             next_state := fsm_apb_teardown;
                         END IF;
                     
                     -- Addr: Last ADC reading
-                    ELSIF (PADDR(5 downto 0) = "001000" AND PWRITE = '0') THEN
+                    ELSIF (PADDR(9 downto 0) = "0010000000" AND PWRITE = '0') THEN
                         PRDATA(31 downto 16) <= x"0000";
                         PRDATA(15 downto 0) <= spi_rx_data;
                         PREADY <= '1';
                         next_state := fsm_apb_teardown;
                     
                     -- Addr: DMS1 and DMS2 measurement
-                    ELSIF (PADDR(5 downto 0) = "010000" AND PWRITE = '0') THEN
+                    ELSIF (PADDR(9 downto 0) = "0100000000" AND PWRITE = '0') THEN
                         PRDATA(31 downto 16) <= measurement_dms1;
                         PRDATA(15 downto 0) <= measurement_dms2;
                         PREADY <= '1';
                         next_state := fsm_apb_teardown;
                         
                     -- Addr: temp measurement and status register
-                    ELSIF (PADDR(5 downto 0) = "011000" AND PWRITE = '0') THEN
+                    ELSIF (PADDR(9 downto 0) = "0110000000" AND PWRITE = '0') THEN
                         PRDATA(31 downto 16) <= measurement_temp;
                         PRDATA(15 downto 0) <= status_register;
                         PREADY <= '1';
                         next_state := fsm_apb_teardown;
                         
                     -- Addr: Access configuration register
-                    ELSIF (PADDR(5 downto 0) = "100000") THEN
+                    ELSIF (PADDR(9 downto 0) = "1000000000") THEN
                         PREADY <= '1';
                         next_state := fsm_apb_teardown;
                         IF (PWRITE = '0') THEN
@@ -337,7 +359,7 @@ BEGIN
                         END IF;
                     
                     -- Addr: Access dummy register
-                    ELSIF (PADDR(5 downto 0) = "111000") THEN
+                    ELSIF (PADDR(9 downto 0) = "1110000000") THEN
                         PREADY <= '1';
                         next_state := fsm_apb_teardown;
                         IF (PWRITE = '0') THEN
@@ -354,7 +376,6 @@ BEGIN
                     
                     
                 WHEN fsm_apb_teardown =>
-                    debug <= '0'; --!!!
                     -- return to another state, if enable is 0
                     IF (PENABLE = '0') THEN
                         PREADY <= '0';
@@ -380,6 +401,10 @@ BEGIN
                         END IF;
                     END IF;
                     
+                
+                WHEN others =>
+                    next_state := fsm_idle;
+                    
             END CASE;
             component_state <= next_state;
             
@@ -399,6 +424,18 @@ BEGIN
                         request_resync <= '1';
                     END IF;
                 END IF;
+            END IF;
+            
+            
+            -- find drdy signals and store them until the component has time to process it
+            IF (ready_dms1 = '0') THEN
+                drdy_flank_detected_dms1 <= '1';
+            END IF;
+            IF (ready_dms2 = '0') THEN
+                drdy_flank_detected_dms2 <= '1';
+            END IF;
+            IF (ready_temp = '0') THEN
+                drdy_flank_detected_temp <= '1';
             END IF;
         END IF;
     END PROCESS;

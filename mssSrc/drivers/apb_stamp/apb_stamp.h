@@ -75,23 +75,23 @@ extern "C" {
 
 
 // always usable address modifier
-#define STAMP_MOD_NONE              0x00U
-#define STAMP_MOD_ATOMIC            0x80U
-#define STAMP_MOD_STATUS_RESET      0x40U
+#define STAMP_MOD_NONE              0x000U
+#define STAMP_MOD_ATOMIC            0x800U
+#define STAMP_MOD_STATUS_RESET      0x400U
 // address modifier only for use with writeAdc
-#define STAMP_MOD_DATA_READY        0x08U
+#define STAMP_MOD_DATA_READY        0x080U
 
 
 // usable addresses
-#define STAMP_REG_NOP               0x00U
-#define STAMP_REG_WRITE_DMS1        0x01U
-#define STAMP_REG_WRITE_DMS2        0x02U
-#define STAMP_REG_WRITE_TEMP        0x04U
-#define STAMP_REG_READ_SPI_IN       0x08U
-#define STAMP_REG_READ_DMS12        0x10U
-#define STAMP_REG_READ_TMPSR        0x18U
-#define STAMP_REG_CONF              0x20U
-#define STAMP_REG_DUMMY             0x38U
+#define STAMP_REG_NOP               0x000U
+#define STAMP_REG_WRITE_DMS1        0x010U
+#define STAMP_REG_WRITE_DMS2        0x020U
+#define STAMP_REG_WRITE_TEMP        0x040U
+#define STAMP_REG_READ_SPI_IN       0x080U
+#define STAMP_REG_READ_DMS12        0x100U
+#define STAMP_REG_READ_TMPSR        0x180U
+#define STAMP_REG_CONF              0x200U
+#define STAMP_REG_DUMMY             0x380U
 
 
 /**
@@ -186,7 +186,7 @@ void APB_STAMP_init (
 void APB_STAMP_writeConfig (
         apb_stamp_t *instance,
         stamp_config_t *conf,
-        uint8_t mod
+        uint16_t mod
 );
 
 
@@ -206,7 +206,7 @@ void APB_STAMP_writeConfig (
 void APB_STAMP_readConfig (
         apb_stamp_t *instance,
         stamp_config_t *conf,
-        uint8_t mod
+        uint16_t mod
 );
 
 
@@ -237,7 +237,7 @@ void APB_STAMP_writeAdc (
         apb_stamp_t *instance,
         uint8_t adcs,
         uint16_t val,
-        uint8_t mod
+        uint16_t mod
 );
 
 
@@ -256,7 +256,7 @@ void APB_STAMP_writeAdc (
  * @return The ADC out of the last two sent commands. Most significant byte
  * is the first transaction, least significant byte is second transaction.
  */
-uint16_t APB_STAMP_readAdc (apb_stamp_t *instance, uint8_t mod);
+uint16_t APB_STAMP_readAdc (apb_stamp_t *instance, uint16_t mod);
 
 
 /**
@@ -274,7 +274,7 @@ uint16_t APB_STAMP_readAdc (apb_stamp_t *instance, uint8_t mod);
  * @return Most significant 16 bits are for DMS1. The other ones are for DMS2.
  * Both values are signed.
  */
-uint32_t APB_STAMP_readDms12 (apb_stamp_t *instance, uint8_t mod);
+uint32_t APB_STAMP_readDms12 (apb_stamp_t *instance, uint16_t mod);
 
 
 /**
@@ -293,7 +293,7 @@ uint32_t APB_STAMP_readDms12 (apb_stamp_t *instance, uint8_t mod);
  * The other ones are for the status register and can be evaluated using
  * stamp_status_t.
  */
-uint32_t APB_STAMP_readTempStatusRegister (apb_stamp_t *instance, uint8_t mod);
+uint32_t APB_STAMP_readTempStatusRegister (apb_stamp_t *instance, uint16_t mod);
 
 
 /**
@@ -349,7 +349,7 @@ void APB_STAMP_clearInterrupt (uint8_t interruptPin);
 void APB_STAMP_writeDummy (
         apb_stamp_t *instance,
         uint32_t val,
-        uint8_t mod
+        uint16_t mod
 );
 
 
@@ -365,7 +365,7 @@ void APB_STAMP_writeDummy (
  *
  * @return The register value.
  */
-uint32_t APB_STAMP_readDummy (apb_stamp_t *instance, uint8_t mod);
+uint32_t APB_STAMP_readDummy (apb_stamp_t *instance, uint16_t mod);
 
 
 

@@ -7,6 +7,7 @@
 @N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":31:7:31:11|Synthesizing work.stamp.architecture_stamp.
 @N: CD231 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":68:27:68:28|Using onehot encoding for type component_state_t. For example, enumeration fsm_idle is mapped to "100000".
 @N: CD233 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":71:27:71:28|Using sequential encoding for type spi_request_for_t.
+@N: CD604 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":405:16:405:29|OTHERS clause is not synthesized.
 @N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":30:7:30:16|Synthesizing work.spi_master.logic.
 @N: CD233 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":53:15:53:16|Using sequential encoding for type machine.
 @N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd":20:7:20:11|Synthesizing work.sb_sb.rtl.
@@ -101,7 +102,7 @@
 @N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":190:4:190:26|Input SOFT_SDIF0_0_CORE_RESET is unused.
 @N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":191:4:191:26|Input SOFT_SDIF0_1_CORE_RESET is unused.
 @N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":10:10:10:12|Input XTL is unused.
-@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":168:8:168:9|Trying to extract state machine for register component_state.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Trying to extract state machine for register component_state.
 @N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Synchronizer.vhd":17:8:17:13|Input resetn is unused.
 @N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Synchronizer.vhd":18:8:18:10|Input clk is unused.
 @N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Synchronizer.vhd":19:8:19:16|Input new_avail is unused.
