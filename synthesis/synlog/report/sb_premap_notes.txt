@@ -1,7 +1,7 @@
 @N: MF916 |Option synthesis_strategy=base is enabled. 
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: BN115 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\work\sb\sb.vhd":430:24:430:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
+@N: BN115 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\work\sb\sb.vhd":431:24:431:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
 @N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance DDR_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_RELEASED_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.

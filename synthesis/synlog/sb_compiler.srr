@@ -52,6 +52,7 @@ File C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_
 File C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd changed - recompiling
 VHDL syntax check successful!
 File C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd changed - recompiling
+File C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd changed - recompiling
 @N: CD231 :"J:\LiberoSoC\SynplifyPro\lib\vhd2008\std1164.vhd":888:16:888:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd":17:7:17:8|Synthesizing work.sb.rtl.
 @N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Synchronizer.vhd":10:7:10:18|Synthesizing work.synchronizer.architecture_synchronizer.
@@ -59,9 +60,9 @@ File C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd chan
 Post processing for work.synchronizer.architecture_synchronizer
 Running optimization stage 1 on Synchronizer .......
 @N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":31:7:31:11|Synthesizing work.stamp.architecture_stamp.
-@N: CD231 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":68:27:68:28|Using onehot encoding for type component_state_t. For example, enumeration fsm_idle is mapped to "100000".
-@N: CD233 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":71:27:71:28|Using sequential encoding for type spi_request_for_t.
-@N: CD604 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":405:16:405:29|OTHERS clause is not synthesized.
+@N: CD231 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":72:27:72:28|Using onehot encoding for type component_state_t. For example, enumeration fsm_idle is mapped to "100000".
+@N: CD233 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":75:27:75:28|Using sequential encoding for type spi_request_for_t.
+@N: CD604 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":426:16:426:29|OTHERS clause is not synthesized.
 @N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":30:7:30:16|Synthesizing work.spi_master.logic.
 @N: CD233 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":53:15:53:16|Using sequential encoding for type machine.
 Post processing for work.spi_master.logic
@@ -79,17 +80,15 @@ Running optimization stage 1 on spi_master .......
 @A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal assert_data. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
 Post processing for work.stamp.architecture_stamp
 Running optimization stage 1 on STAMP .......
-@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Feedback mux created for signal PRDATA[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Feedback mux created for signal apb_spi_finished. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Feedback mux created for signal measurement_temp[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Feedback mux created for signal spi_request_for[1:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Feedback mux created for signal measurement_dms2[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Feedback mux created for signal measurement_dms1[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Feedback mux created for signal spi_tx_data[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Feedback mux created for signal apb_is_reset. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Feedback mux created for signal apb_is_atomic. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Optimizing register bit debug to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Pruning unused register debug. Make sure that there are no unused intermediate registers.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal PRDATA[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal apb_spi_finished. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal measurement_temp[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal spi_request_for[1:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal measurement_dms2[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal measurement_dms1[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal spi_tx_data[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal apb_is_reset. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal apb_is_atomic. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
 @N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd":20:7:20:11|Synthesizing work.sb_sb.rtl.
 @N: CD630 :"J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.vhd":790:10:790:17|Synthesizing smartfusion2.sysreset.syn_black_box.
 Post processing for smartfusion2.sysreset.syn_black_box
@@ -309,18 +308,18 @@ Running optimization stage 2 on sb_sb .......
 Running optimization stage 2 on spi_master .......
 @W: CL279 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Pruning register bits 4 to 1 of last_bit_rx(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 Running optimization stage 2 on STAMP .......
-@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Optimizing register bit async_prescaler_count(12) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Optimizing register bit async_prescaler_count(13) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Optimizing register bit async_prescaler_count(14) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Optimizing register bit async_prescaler_count(15) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Optimizing register bit delay_counter(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Pruning register bit 31 of delay_counter(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL279 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Pruning register bits 15 to 12 of async_prescaler_count(15 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Optimizing register bit delay_counter(30) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Pruning register bit 30 of delay_counter(30 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Optimizing register bit delay_counter(29) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Pruning register bit 29 of delay_counter(29 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Trying to extract state machine for register component_state.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit async_prescaler_count(12) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit async_prescaler_count(13) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit async_prescaler_count(14) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit async_prescaler_count(15) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit delay_counter(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Pruning register bit 31 of delay_counter(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Pruning register bits 15 to 12 of async_prescaler_count(15 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit delay_counter(30) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Pruning register bit 30 of delay_counter(30 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit delay_counter(29) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Pruning register bit 29 of delay_counter(29 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Trying to extract state machine for register component_state.
 Extracted state machine for register component_state
 State machine has 6 reachable states with original encodings of:
    000001
@@ -329,8 +328,8 @@ State machine has 6 reachable states with original encodings of:
    001000
    010000
    100000
-@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Optimizing register bit delay_counter(28) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":176:8:176:9|Pruning register bit 28 of delay_counter(28 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit delay_counter(28) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":201:8:201:9|Pruning register bit 28 of delay_counter(28 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
 Running optimization stage 2 on Synchronizer .......
 @N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Synchronizer.vhd":17:8:17:13|Input resetn is unused.
 @N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Synchronizer.vhd":18:8:18:10|Input clk is unused.
@@ -343,12 +342,12 @@ For a summary of runtime and memory usage per design unit, please see file:
 @L: C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\layer0.rt.csv
 
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 114MB peak: 134MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 114MB peak: 134MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:04s cputime
+Process took 0h:00m:04s realtime, 0h:00m:03s cputime
 
 Process completed successfully.
-# Sun Mar 14 09:29:33 2021
+# Wed Apr 14 23:03:54 2021
 
 ###########################################################]
 ###########################################################[
@@ -371,12 +370,12 @@ Synopsys Synopsys Netlist Linker, Version comp202003synp2, Build 166R, Built Oct
 @N|Running in 64-bit mode
 File C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\layer0.srs changed - recompiling
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 94MB peak: 95MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 95MB peak: 95MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sun Mar 14 09:29:34 2021
+# Wed Apr 14 23:03:54 2021
 
 ###########################################################]
 
@@ -386,11 +385,11 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 23MB peak: 23MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 22MB peak: 23MB)
 
 Process took 0h:00m:04s realtime, 0h:00m:04s cputime
 
 Process completed successfully.
-# Sun Mar 14 09:29:34 2021
+# Wed Apr 14 23:03:54 2021
 
 ###########################################################]

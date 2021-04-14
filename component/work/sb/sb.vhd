@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Fri Mar 12 12:54:18 2021
+-- Created by SmartDesign Wed Apr 14 22:44:37 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -167,7 +167,6 @@ signal adc_start_net_0                  : std_logic;
 signal DAPI_TX_net_0                    : std_logic;
 signal debug_led_net_0                  : std_logic;
 signal debug_led_0                      : std_logic;
-signal debug_led_1                      : std_logic;
 signal LED_HEARTBEAT_net_0              : std_logic;
 signal LED_RECORDING_net_0              : std_logic;
 signal resetn_net_0                     : std_logic;
@@ -204,15 +203,14 @@ signal stamp0_spi_temp_cs_net_1         : std_logic;
 signal stamp0_spi_dms2_cs_net_1         : std_logic;
 signal adc_start_net_1                  : std_logic;
 signal resetn_net_1                     : std_logic;
-signal debug_led_1_net_0                : std_logic;
 signal adc_clk_net_1                    : std_logic;
 signal new_avail_net_0                  : std_logic_vector(5 downto 0);
 signal request_resync_net_0             : std_logic_vector(5 downto 0);
 ----------------------------------------------------------------------
 -- TiedOff Signals
 ----------------------------------------------------------------------
-signal VCC_net                          : std_logic;
 signal GND_net                          : std_logic;
+signal VCC_net                          : std_logic;
 signal STAMP_1_PRDATAS1_const_net_0     : std_logic_vector(31 downto 0);
 signal STAMP_2_PRDATAS2_const_net_0     : std_logic_vector(31 downto 0);
 signal STAMP_3_PRDATAS3_const_net_0     : std_logic_vector(31 downto 0);
@@ -221,22 +219,26 @@ signal STAMP_5_PRDATAS5_const_net_0     : std_logic_vector(31 downto 0);
 ----------------------------------------------------------------------
 -- Bus Interface Nets Declarations - Unequal Pin Widths
 ----------------------------------------------------------------------
+signal sb_sb_0_STAMP_PADDR              : std_logic_vector(31 downto 0);
 signal sb_sb_0_STAMP_PADDR_0_11to0      : std_logic_vector(11 downto 0);
 signal sb_sb_0_STAMP_PADDR_0            : std_logic_vector(11 downto 0);
-signal sb_sb_0_STAMP_PADDR              : std_logic_vector(31 downto 0);
 
 
 begin
 ----------------------------------------------------------------------
 -- Constant assignments
 ----------------------------------------------------------------------
- VCC_net                      <= '1';
  GND_net                      <= '0';
+ VCC_net                      <= '1';
  STAMP_1_PRDATAS1_const_net_0 <= B"00000000000000000000000000000000";
  STAMP_2_PRDATAS2_const_net_0 <= B"00000000000000000000000000000000";
  STAMP_3_PRDATAS3_const_net_0 <= B"00000000000000000000000000000000";
  STAMP_4_PRDATAS4_const_net_0 <= B"00000000000000000000000000000000";
  STAMP_5_PRDATAS5_const_net_0 <= B"00000000000000000000000000000000";
+----------------------------------------------------------------------
+-- TieOff assignments
+----------------------------------------------------------------------
+ debug_led                <= '0';
 ----------------------------------------------------------------------
 -- Top level output port assignments
 ----------------------------------------------------------------------
@@ -264,8 +266,6 @@ begin
  adc_start                <= adc_start_net_1;
  resetn_net_1             <= resetn_net_0;
  resetn                   <= resetn_net_1;
- debug_led_1_net_0        <= debug_led_1;
- debug_led                <= debug_led_1_net_0;
  adc_clk_net_1            <= adc_clk_net_0;
  adc_clk                  <= adc_clk_net_1;
 ----------------------------------------------------------------------
@@ -323,22 +323,16 @@ sb_sb_0 : sb_sb
         STAMP_2_INTR_0_top => GND_net,
         STAMP_1_INTR_0_top => GND_net,
         STAMP_0_INTR_0_top => debug_led_0,
-        STAMP_PRDATAS0     => sb_sb_0_STAMP_PRDATA,
         STAMP_PREADYS0     => sb_sb_0_STAMP_PREADY,
         STAMP_PSLVERRS0    => sb_sb_0_STAMP_PSLVERR,
-        STAMP_1_PRDATAS1   => STAMP_1_PRDATAS1_const_net_0, -- tied to X"0" from definition
         STAMP_1_PREADYS1   => VCC_net, -- tied to '1' from definition
         STAMP_1_PSLVERRS1  => GND_net, -- tied to '0' from definition
-        STAMP_2_PRDATAS2   => STAMP_2_PRDATAS2_const_net_0, -- tied to X"0" from definition
         STAMP_2_PREADYS2   => VCC_net, -- tied to '1' from definition
         STAMP_2_PSLVERRS2  => GND_net, -- tied to '0' from definition
-        STAMP_3_PRDATAS3   => STAMP_3_PRDATAS3_const_net_0, -- tied to X"0" from definition
         STAMP_3_PREADYS3   => VCC_net, -- tied to '1' from definition
         STAMP_3_PSLVERRS3  => GND_net, -- tied to '0' from definition
-        STAMP_4_PRDATAS4   => STAMP_4_PRDATAS4_const_net_0, -- tied to X"0" from definition
         STAMP_4_PREADYS4   => VCC_net, -- tied to '1' from definition
         STAMP_4_PSLVERRS4  => GND_net, -- tied to '0' from definition
-        STAMP_5_PRDATAS5   => STAMP_5_PRDATAS5_const_net_0, -- tied to X"0" from definition
         STAMP_5_PREADYS5   => VCC_net, -- tied to '1' from definition
         STAMP_5_PSLVERRS5  => GND_net, -- tied to '0' from definition
         DEVRST_N           => DEVRST_N,
@@ -346,42 +340,36 @@ sb_sb_0 : sb_sb
         GPIO_1_F2M         => RXSM_SOE,
         GPIO_2_F2M         => RXSM_SODS,
         GPIO_5_F2M         => Synchronizer_0_adc_start,
+        STAMP_PRDATAS0     => sb_sb_0_STAMP_PRDATA,
+        STAMP_1_PRDATAS1   => STAMP_1_PRDATAS1_const_net_0, -- tied to X"0" from definition
+        STAMP_2_PRDATAS2   => STAMP_2_PRDATAS2_const_net_0, -- tied to X"0" from definition
+        STAMP_3_PRDATAS3   => STAMP_3_PRDATAS3_const_net_0, -- tied to X"0" from definition
+        STAMP_4_PRDATAS4   => STAMP_4_PRDATAS4_const_net_0, -- tied to X"0" from definition
+        STAMP_5_PRDATAS5   => STAMP_5_PRDATAS5_const_net_0, -- tied to X"0" from definition
         -- Outputs
         SPI_0_DO           => SPI_DATASTORAGE_DO_net_0,
         MMUART_1_TXD       => TM_TX_net_0,
         MMUART_0_TXD       => DAPI_TX_net_0,
         POWER_ON_RESET_N   => sb_sb_0_POWER_ON_RESET_N,
         INIT_DONE          => OPEN,
-        STAMP_PADDRS       => sb_sb_0_STAMP_PADDR,
         STAMP_PSELS0       => sb_sb_0_STAMP_PSELx,
         STAMP_PENABLES     => sb_sb_0_STAMP_PENABLE,
         STAMP_PWRITES      => sb_sb_0_STAMP_PWRITE,
-        STAMP_PWDATAS      => sb_sb_0_STAMP_PWDATA,
-        STAMP_1_PADDRS     => OPEN,
         STAMP_1_PSELS1     => OPEN,
         STAMP_1_PENABLES   => OPEN,
         STAMP_1_PWRITES    => OPEN,
-        STAMP_1_PWDATAS    => OPEN,
-        STAMP_2_PADDRS     => OPEN,
         STAMP_2_PSELS2     => OPEN,
         STAMP_2_PENABLES   => OPEN,
         STAMP_2_PWRITES    => OPEN,
-        STAMP_2_PWDATAS    => OPEN,
-        STAMP_3_PADDRS     => OPEN,
         STAMP_3_PSELS3     => OPEN,
         STAMP_3_PENABLES   => OPEN,
         STAMP_3_PWRITES    => OPEN,
-        STAMP_3_PWDATAS    => OPEN,
-        STAMP_4_PADDRS     => OPEN,
         STAMP_4_PSELS4     => OPEN,
         STAMP_4_PENABLES   => OPEN,
         STAMP_4_PWRITES    => OPEN,
-        STAMP_4_PWDATAS    => OPEN,
-        STAMP_5_PADDRS     => OPEN,
         STAMP_5_PSELS5     => OPEN,
         STAMP_5_PENABLES   => OPEN,
         STAMP_5_PWRITES    => OPEN,
-        STAMP_5_PWDATAS    => OPEN,
         FIC_0_CLK          => sb_sb_0_FIC_0_CLK,
         FIC_0_LOCK         => OPEN,
         FAB_CCC_GL1        => adc_clk_net_0,
@@ -391,6 +379,18 @@ sb_sb_0 : sb_sb
         GPIO_4_M2F         => sb_sb_0_GPIO_4_M2F,
         GPIO_30_M2F        => LED_RECORDING_net_0,
         GPIO_31_M2F        => LED_HEARTBEAT_net_0,
+        STAMP_PADDRS       => sb_sb_0_STAMP_PADDR,
+        STAMP_PWDATAS      => sb_sb_0_STAMP_PWDATA,
+        STAMP_1_PADDRS     => OPEN,
+        STAMP_1_PWDATAS    => OPEN,
+        STAMP_2_PADDRS     => OPEN,
+        STAMP_2_PWDATAS    => OPEN,
+        STAMP_3_PADDRS     => OPEN,
+        STAMP_3_PWDATAS    => OPEN,
+        STAMP_4_PADDRS     => OPEN,
+        STAMP_4_PWDATAS    => OPEN,
+        STAMP_5_PADDRS     => OPEN,
+        STAMP_5_PWDATAS    => OPEN,
         -- Inouts
         SPI_0_CLK          => SPI_DATASTORAGE_CLK,
         SPI_0_SS0          => SPI_DATASTORAGE_SS0 
@@ -402,29 +402,30 @@ STAMP_0 : entity work.STAMP
         )
     port map( 
         -- Inputs
+        reset_status   => GND_net,
         PCLK           => sb_sb_0_FIC_0_CLK,
         PRESETN        => debug_led_net_0,
+        PADDR          => sb_sb_0_STAMP_PADDR_0,
         PSEL           => sb_sb_0_STAMP_PSELx,
         PENABLE        => sb_sb_0_STAMP_PENABLE,
         PWRITE         => sb_sb_0_STAMP_PWRITE,
+        PWDATA         => sb_sb_0_STAMP_PWDATA,
         spi_miso       => stamp0_spi_miso,
         ready_dms1     => stamp0_ready_dms1,
         ready_dms2     => stamp0_ready_dms2,
         ready_temp     => stamp0_ready_temp,
-        PADDR          => sb_sb_0_STAMP_PADDR_0,
-        PWDATA         => sb_sb_0_STAMP_PWDATA,
         -- Outputs
-        debug          => debug_led_1,
         new_avail      => debug_led_0,
         request_resync => STAMP_0_request_resync,
+        data_frame     => OPEN,
+        PRDATA         => sb_sb_0_STAMP_PRDATA,
         PREADY         => sb_sb_0_STAMP_PREADY,
         PSLVERR        => sb_sb_0_STAMP_PSLVERR,
         spi_clock      => stamp0_spi_clock_net_0,
         spi_mosi       => stamp0_spi_mosi_net_0,
         spi_dms1_cs    => stamp0_spi_dms1_cs_net_0,
         spi_dms2_cs    => stamp0_spi_dms2_cs_net_0,
-        spi_temp_cs    => stamp0_spi_temp_cs_net_0,
-        PRDATA         => sb_sb_0_STAMP_PRDATA 
+        spi_temp_cs    => stamp0_spi_temp_cs_net_0 
         );
 -- Synchronizer_0
 Synchronizer_0 : entity work.Synchronizer

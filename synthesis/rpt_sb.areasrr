@@ -26,17 +26,17 @@ Name     Total elements     Utilization     Notes
 -------------------------------------------------
 SLE      328                100 %                
 =================================================
-Total SEQUENTIAL ELEMENTS in the block sb:	328 (37.74 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block sb:	328 (36.24 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           394                100 %                
-ARI1          92                 100 %                
+CFG           432                100 %                
+ARI1          90                 100 %                
 BLACK BOX     7                  100 %                
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb:	493 (56.73 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb:	529 (58.45 % Utilization)
 
 
 GLOBAL BUFFERS
@@ -44,7 +44,7 @@ Name       Total elements     Utilization     Notes
 ---------------------------------------------------
 GLOBAL     3                  100 %                
 ===================================================
-Total GLOBAL BUFFERS in the block sb:	3 (0.35 % Utilization)
+Total GLOBAL BUFFERS in the block sb:	3 (0.33 % Utilization)
 
 
 IO PADS
@@ -52,7 +52,7 @@ Name     Total elements     Utilization     Notes
 -------------------------------------------------
 IO       26                 100 %                
 =================================================
-Total IO PADS in the block sb:	26 (2.99 % Utilization)
+Total IO PADS in the block sb:	26 (2.87 % Utilization)
 
 -----------------------------------------------------------
 ########   Utilization report for  cell:   STAMP   ########
@@ -64,16 +64,16 @@ Name     Total elements     Utilization     Notes
 -------------------------------------------------
 SLE      328                100 %                
 =================================================
-Total SEQUENTIAL ELEMENTS in the block sb.STAMP:	328 (37.74 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block sb.STAMP:	328 (36.24 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      359                91.1 %               
-ARI1     92                 100 %                
+CFG      396                91.7 %               
+ARI1     90                 100 %                
 =================================================
-Total COMBINATIONAL LOGIC in the block sb.STAMP:	451 (51.90 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb.STAMP:	486 (53.70 % Utilization)
 
 ----------------------------------------------------------------
 ########   Utilization report for  cell:   spi_master   ########
@@ -85,16 +85,16 @@ Name     Total elements     Utilization     Notes
 -------------------------------------------------
 SLE      93                 28.4 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block STAMP.spi_master:	93 (10.70 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block STAMP.spi_master:	93 (10.28 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      87                 22.1 %               
-ARI1     38                 41.3 %               
+CFG      86                 19.9 %               
+ARI1     38                 42.2 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block STAMP.spi_master:	125 (14.38 % Utilization)
+Total COMBINATIONAL LOGIC in the block STAMP.spi_master:	124 (13.70 % Utilization)
 
 -----------------------------------------------------------
 ########   Utilization report for  cell:   sb_sb   ########
@@ -104,10 +104,10 @@ Instance path:   sb.sb_sb
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           35                 8.88 %               
+CFG           36                 8.33 %               
 BLACK BOX     4                  57.1 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb.sb_sb:	39 (4.49 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb.sb_sb:	40 (4.42 % Utilization)
 
 
 GLOBAL BUFFERS
@@ -115,7 +115,7 @@ Name       Total elements     Utilization     Notes
 ---------------------------------------------------
 GLOBAL     2                  66.7 %               
 ===================================================
-Total GLOBAL BUFFERS in the block sb.sb_sb:	2 (0.23 % Utilization)
+Total GLOBAL BUFFERS in the block sb.sb_sb:	2 (0.22 % Utilization)
 
 
 IO PADS
@@ -123,7 +123,7 @@ Name     Total elements     Utilization     Notes
 -------------------------------------------------
 IO       8                  30.8 %               
 =================================================
-Total IO PADS in the block sb.sb_sb:	8 (0.92 % Utilization)
+Total IO PADS in the block sb.sb_sb:	8 (0.88 % Utilization)
 
 --------------------------------------------------------------
 ########   Utilization report for  cell:   CoreAPB3   ########
@@ -133,9 +133,9 @@ Instance path:   sb_sb.CoreAPB3
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      35                 8.88 %               
+CFG      36                 8.33 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block sb_sb.CoreAPB3:	35 (4.03 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb_sb.CoreAPB3:	36 (3.98 % Utilization)
 
 -----------------------------------------------------------------------
 ########   Utilization report for  cell:   COREAPB3_MUXPTOB3   ########
@@ -145,9 +145,9 @@ Instance path:   CoreAPB3.COREAPB3_MUXPTOB3
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      33                 8.38 %               
+CFG      34                 7.87 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block CoreAPB3.COREAPB3_MUXPTOB3:	33 (3.80 % Utilization)
+Total COMBINATIONAL LOGIC in the block CoreAPB3.COREAPB3_MUXPTOB3:	34 (3.76 % Utilization)
 
 ----------------------------------------------------------------------
 ########   Utilization report for  cell:   sb_sb_CCC_0_FCCC   ########
@@ -159,7 +159,7 @@ Name          Total elements     Utilization     Notes
 ------------------------------------------------------
 BLACK BOX     1                  14.3 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_CCC_0_FCCC:	1 (0.12 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_CCC_0_FCCC:	1 (0.11 % Utilization)
 
 
 GLOBAL BUFFERS
@@ -167,7 +167,7 @@ Name       Total elements     Utilization     Notes
 ---------------------------------------------------
 GLOBAL     2                  66.7 %               
 ===================================================
-Total GLOBAL BUFFERS in the block sb_sb.sb_sb_CCC_0_FCCC:	2 (0.23 % Utilization)
+Total GLOBAL BUFFERS in the block sb_sb.sb_sb_CCC_0_FCCC:	2 (0.22 % Utilization)
 
 ------------------------------------------------------------------------
 ########   Utilization report for  cell:   sb_sb_FABOSC_0_OSC   ########
@@ -179,7 +179,7 @@ Name          Total elements     Utilization     Notes
 ------------------------------------------------------
 BLACK BOX     1                  14.3 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_FABOSC_0_OSC:	1 (0.12 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_FABOSC_0_OSC:	1 (0.11 % Utilization)
 
 ---------------------------------------------------------------
 ########   Utilization report for  cell:   sb_sb_MSS   ########
@@ -191,7 +191,7 @@ Name          Total elements     Utilization     Notes
 ------------------------------------------------------
 BLACK BOX     1                  14.3 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_MSS:	1 (0.12 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_MSS:	1 (0.11 % Utilization)
 
 
 IO PADS
@@ -199,7 +199,7 @@ Name     Total elements     Utilization     Notes
 -------------------------------------------------
 IO       8                  30.8 %               
 =================================================
-Total IO PADS in the block sb_sb.sb_sb_MSS:	8 (0.92 % Utilization)
+Total IO PADS in the block sb_sb.sb_sb_MSS:	8 (0.88 % Utilization)
 
 
 ##### END OF AREA REPORT #####]

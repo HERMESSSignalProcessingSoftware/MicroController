@@ -1,6 +1,6 @@
 Resource Report
 Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
-Date: Sun Mar 14 09:29:52 2021
+Date: Wed Apr 14 23:04:06 2021
 
 Device Selection
 +--------------------------------+----------------+
@@ -37,7 +37,7 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 488  | 12084 | 4.04       |
+| 4LUT                      | 524  | 12084 | 4.34       |
 | DFF                       | 328  | 12084 | 2.71       |
 | I/O Register              | 0    | 585   | 0.00       |
 | User I/O                  | 26   | 195   | 13.33      |
@@ -58,11 +58,11 @@ Detailed Logic Resource Usage
 +--------------------------+------+-----+
 | Type                     | 4LUT | DFF |
 +--------------------------+------+-----+
-| Fabric Logic             | 488  | 328 |
+| Fabric Logic             | 524  | 328 |
 | RAM64x18 Interface Logic | 0    | 0   |
 | RAM1K18 Interface Logic  | 0    | 0   |
 | MACC Interface Logic     | 0    | 0   |
-| Total Used               | 488  | 328 |
+| Total Used               | 524  | 328 |
 +--------------------------+------+-----+
 
 MSS Resource Usage
@@ -89,13 +89,12 @@ MSS Resource Usage
 Detailed Carry Chains Resource Usage
 +--------+------+
 | Length | Used |
-| 2      | 1    |
 | 6      | 2    |
 | 7      | 1    |
 | 12     | 1    |
 | 28     | 1    |
 | 32     | 1    |
-| Total  | 7    |
+| Total  | 6    |
 +--------+------+
 
 I/O Function
@@ -138,54 +137,54 @@ Nets assigned to row global resources
 +--------+------+------+
 
 High fanout nets
-+--------+---------+-----------------------------------------------+
-| Fanout | Type    | Name                                          |
-+--------+---------+-----------------------------------------------+
-| 64     | INT_NET | Net   : STAMP_0/component_state_Z[5]          |
-|        |         | Driver: STAMP_0/component_state[5]            |
-| 59     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST    |
-| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                |
-|        |         | Driver: STAMP_0/spi/state[0]                  |
-| 37     | INT_NET | Net   : STAMP_0/spi/un7_count_NE_i            |
-|        |         | Driver: STAMP_0/spi/un7_count_NE_20_RNIK2531  |
-| 35     | INT_NET | Net   : sb_sb_0_STAMP_PSELx                   |
-|        |         | Driver: sb_sb_0/CoreAPB3_0/iPSELS_raw_0_a2[0] |
-| 32     | INT_NET | Net   : STAMP_0/un1_debug_0_sqmuxa_4_Z        |
-|        |         | Driver: STAMP_0/un1_debug_0_sqmuxa_4          |
-| 32     | INT_NET | Net   : STAMP_0/spi/N_93_i                    |
-|        |         | Driver: STAMP_0/spi/state_RNIDMJE[0]          |
-| 31     | INT_NET | Net   : STAMP_0/config_141                    |
-|        |         | Driver: STAMP_0/config_141_0_a0               |
-| 28     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST    |
-| 28     | INT_NET | Net   : STAMP_0/N_83_i                        |
-|        |         | Driver: STAMP_0/component_state_RNIDIDJ6[0]   |
-+--------+---------+-----------------------------------------------+
++--------+---------+----------------------------------------------------+
+| Fanout | Type    | Name                                               |
++--------+---------+----------------------------------------------------+
+| 83     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                     |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST         |
+| 68     | INT_NET | Net   : STAMP_0/component_state_Z[5]               |
+|        |         | Driver: STAMP_0/component_state[5]                 |
+| 59     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                     |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST         |
+| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                     |
+|        |         | Driver: STAMP_0/spi/state[0]                       |
+| 42     | INT_NET | Net   : STAMP_0/spi/un7_count_NE_i                 |
+|        |         | Driver: STAMP_0/spi/un7_count_NE_20_RNIK2531       |
+| 34     | INT_NET | Net   : sb_sb_0_STAMP_PSELx                        |
+|        |         | Driver: sb_sb_0/CoreAPB3_0/iPSELS_raw_0_a2[0]      |
+| 32     | INT_NET | Net   : STAMP_0/un1_request_resync_0_sqmuxa_1_0_Z  |
+|        |         | Driver: STAMP_0/un1_request_resync_0_sqmuxa_1_0    |
+| 32     | INT_NET | Net   : STAMP_0/spi/N_63_i                         |
+|        |         | Driver: STAMP_0/spi/state_RNIDMJE[0]               |
+| 31     | INT_NET | Net   : STAMP_0/config_143                         |
+|        |         | Driver: STAMP_0/config_143_0_0_a2                  |
+| 28     | INT_NET | Net   : STAMP_0/delay_countere                     |
+|        |         | Driver: STAMP_0/delay_counter_1_sqmuxa_1_0_RNI88DD |
++--------+---------+----------------------------------------------------+
 
 High fanout nets (through buffer trees)
-+--------+---------+-----------------------------------------------+
-| Fanout | Type    | Name                                          |
-+--------+---------+-----------------------------------------------+
-| 64     | INT_NET | Net   : STAMP_0/component_state_Z[5]          |
-|        |         | Driver: STAMP_0/component_state[5]            |
-| 59     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST    |
-| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                |
-|        |         | Driver: STAMP_0/spi/state[0]                  |
-| 37     | INT_NET | Net   : STAMP_0/spi/un7_count_NE_i            |
-|        |         | Driver: STAMP_0/spi/un7_count_NE_20_RNIK2531  |
-| 35     | INT_NET | Net   : sb_sb_0_STAMP_PSELx                   |
-|        |         | Driver: sb_sb_0/CoreAPB3_0/iPSELS_raw_0_a2[0] |
-| 32     | INT_NET | Net   : STAMP_0/un1_debug_0_sqmuxa_4_Z        |
-|        |         | Driver: STAMP_0/un1_debug_0_sqmuxa_4          |
-| 32     | INT_NET | Net   : STAMP_0/spi/N_93_i                    |
-|        |         | Driver: STAMP_0/spi/state_RNIDMJE[0]          |
-| 31     | INT_NET | Net   : STAMP_0/config_141                    |
-|        |         | Driver: STAMP_0/config_141_0_a0               |
-| 28     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST    |
-| 28     | INT_NET | Net   : STAMP_0/N_83_i                        |
-|        |         | Driver: STAMP_0/component_state_RNIDIDJ6[0]   |
-+--------+---------+-----------------------------------------------+
++--------+---------+----------------------------------------------------+
+| Fanout | Type    | Name                                               |
++--------+---------+----------------------------------------------------+
+| 83     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                     |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST         |
+| 68     | INT_NET | Net   : STAMP_0/component_state_Z[5]               |
+|        |         | Driver: STAMP_0/component_state[5]                 |
+| 59     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                     |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST         |
+| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                     |
+|        |         | Driver: STAMP_0/spi/state[0]                       |
+| 42     | INT_NET | Net   : STAMP_0/spi/un7_count_NE_i                 |
+|        |         | Driver: STAMP_0/spi/un7_count_NE_20_RNIK2531       |
+| 34     | INT_NET | Net   : sb_sb_0_STAMP_PSELx                        |
+|        |         | Driver: sb_sb_0/CoreAPB3_0/iPSELS_raw_0_a2[0]      |
+| 32     | INT_NET | Net   : STAMP_0/un1_request_resync_0_sqmuxa_1_0_Z  |
+|        |         | Driver: STAMP_0/un1_request_resync_0_sqmuxa_1_0    |
+| 32     | INT_NET | Net   : STAMP_0/spi/N_63_i                         |
+|        |         | Driver: STAMP_0/spi/state_RNIDMJE[0]               |
+| 31     | INT_NET | Net   : STAMP_0/config_143                         |
+|        |         | Driver: STAMP_0/config_143_0_0_a2                  |
+| 28     | INT_NET | Net   : STAMP_0/delay_countere                     |
+|        |         | Driver: STAMP_0/delay_counter_1_sqmuxa_1_0_RNI88DD |
++--------+---------+----------------------------------------------------+
 

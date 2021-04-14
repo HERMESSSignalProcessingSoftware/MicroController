@@ -3,7 +3,7 @@
 <doc>
 <title>Resource Report</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</text>
-<text>Date: Sun Mar 14 09:29:52 2021
+<text>Date: Wed Apr 14 23:04:06 2021
 </text>
 <section><name>Device Selection</name></section>
 <table>
@@ -106,9 +106,9 @@
 </header>
 <row>
  <cell>4LUT</cell>
- <cell>488</cell>
+ <cell>524</cell>
  <cell>12084</cell>
- <cell>4.04</cell>
+ <cell>4.34</cell>
 </row>
 <row>
  <cell>DFF</cell>
@@ -204,7 +204,7 @@
 </header>
 <row>
  <cell>Fabric Logic</cell>
- <cell>488</cell>
+ <cell>524</cell>
  <cell>328</cell>
 </row>
 <row>
@@ -224,7 +224,7 @@
 </row>
 <row>
  <cell>Total Used</cell>
- <cell>488</cell>
+ <cell>524</cell>
  <cell>328</cell>
 </row>
 </table>
@@ -312,10 +312,6 @@
  <cell>Used</cell>
 </row>
 <row>
- <cell>2</cell>
- <cell>1</cell>
-</row>
-<row>
  <cell>6</cell>
  <cell>2</cell>
 </row>
@@ -337,7 +333,7 @@
 </row>
 <row>
  <cell>Total</cell>
- <cell>7</cell>
+ <cell>6</cell>
 </row>
 </table>
 <section><name>I/O Function</name></section>
@@ -467,7 +463,17 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>64</cell>
+ <cell>83</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
+</row>
+<row>
+ <cell>68</cell>
  <cell>INT_NET</cell>
  <cell>Net   : STAMP_0/component_state_Z[5]</cell>
 </row>
@@ -497,7 +503,7 @@
  <cell>Driver: STAMP_0/spi/state[0]</cell>
 </row>
 <row>
- <cell>37</cell>
+ <cell>42</cell>
  <cell>INT_NET</cell>
  <cell>Net   : STAMP_0/spi/un7_count_NE_i</cell>
 </row>
@@ -507,7 +513,7 @@
  <cell>Driver: STAMP_0/spi/un7_count_NE_20_RNIK2531</cell>
 </row>
 <row>
- <cell>35</cell>
+ <cell>34</cell>
  <cell>INT_NET</cell>
  <cell>Net   : sb_sb_0_STAMP_PSELx</cell>
 </row>
@@ -519,17 +525,17 @@
 <row>
  <cell>32</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/un1_debug_0_sqmuxa_4_Z</cell>
+ <cell>Net   : STAMP_0/un1_request_resync_0_sqmuxa_1_0_Z</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: STAMP_0/un1_debug_0_sqmuxa_4</cell>
+ <cell>Driver: STAMP_0/un1_request_resync_0_sqmuxa_1_0</cell>
 </row>
 <row>
  <cell>32</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/spi/N_93_i</cell>
+ <cell>Net   : STAMP_0/spi/N_63_i</cell>
 </row>
 <row>
  <cell></cell>
@@ -539,32 +545,22 @@
 <row>
  <cell>31</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/config_141</cell>
+ <cell>Net   : STAMP_0/config_143</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: STAMP_0/config_141_0_a0</cell>
-</row>
-<row>
- <cell>28</cell>
- <cell>INT_NET</cell>
- <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
+ <cell>Driver: STAMP_0/config_143_0_0_a2</cell>
 </row>
 <row>
  <cell>28</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/N_83_i</cell>
+ <cell>Net   : STAMP_0/delay_countere</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: STAMP_0/component_state_RNIDIDJ6[0]</cell>
+ <cell>Driver: STAMP_0/delay_counter_1_sqmuxa_1_0_RNI88DD</cell>
 </row>
 </table>
 <section><name>High fanout nets (through buffer trees)</name></section>
@@ -575,7 +571,17 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>64</cell>
+ <cell>83</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
+</row>
+<row>
+ <cell>68</cell>
  <cell>INT_NET</cell>
  <cell>Net   : STAMP_0/component_state_Z[5]</cell>
 </row>
@@ -605,7 +611,7 @@
  <cell>Driver: STAMP_0/spi/state[0]</cell>
 </row>
 <row>
- <cell>37</cell>
+ <cell>42</cell>
  <cell>INT_NET</cell>
  <cell>Net   : STAMP_0/spi/un7_count_NE_i</cell>
 </row>
@@ -615,7 +621,7 @@
  <cell>Driver: STAMP_0/spi/un7_count_NE_20_RNIK2531</cell>
 </row>
 <row>
- <cell>35</cell>
+ <cell>34</cell>
  <cell>INT_NET</cell>
  <cell>Net   : sb_sb_0_STAMP_PSELx</cell>
 </row>
@@ -627,17 +633,17 @@
 <row>
  <cell>32</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/un1_debug_0_sqmuxa_4_Z</cell>
+ <cell>Net   : STAMP_0/un1_request_resync_0_sqmuxa_1_0_Z</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: STAMP_0/un1_debug_0_sqmuxa_4</cell>
+ <cell>Driver: STAMP_0/un1_request_resync_0_sqmuxa_1_0</cell>
 </row>
 <row>
  <cell>32</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/spi/N_93_i</cell>
+ <cell>Net   : STAMP_0/spi/N_63_i</cell>
 </row>
 <row>
  <cell></cell>
@@ -647,32 +653,22 @@
 <row>
  <cell>31</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/config_141</cell>
+ <cell>Net   : STAMP_0/config_143</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: STAMP_0/config_141_0_a0</cell>
-</row>
-<row>
- <cell>28</cell>
- <cell>INT_NET</cell>
- <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
+ <cell>Driver: STAMP_0/config_143_0_0_a2</cell>
 </row>
 <row>
  <cell>28</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/N_83_i</cell>
+ <cell>Net   : STAMP_0/delay_countere</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: STAMP_0/component_state_RNIDIDJ6[0]</cell>
+ <cell>Driver: STAMP_0/delay_counter_1_sqmuxa_1_0_RNI88DD</cell>
 </row>
 </table>
 </doc>

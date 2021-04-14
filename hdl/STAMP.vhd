@@ -33,9 +33,13 @@ ENTITY STAMP IS
         async_prescaler : INTEGER RANGE 0 TO 65535 := 2500 -- 16 bit; default 0.05ms @ 50MHz
     );
     PORT(
-        debug : OUT STD_LOGIC; -- !!!
+        -- general IO for interfacing with other FPGA components
         new_avail : OUT STD_LOGIC; -- goes high, when new data of both DMS are available
         request_resync : OUT STD_LOGIC; -- goes high, when there is an offset
+        data_frame : OUT STD_LOGIC_VECTOR(63 downto 0); -- [DMS1, DMS2, TEMP, STATUS]
+        reset_status : IN STD_LOGIC; -- will reset status register (including new_avail) when
+                -- high. Note, that it should be kept high, until new_avail went low again,
+                -- as ongoing SPI communications blocks this feature to prevent racing conditions
         -- apb3 ports
         PCLK : IN STD_LOGIC;
         PRESETN : IN STD_LOGIC; -- does only reset the block, not the ADCs
@@ -47,7 +51,7 @@ ENTITY STAMP IS
         PRDATA : OUT STD_LOGIC_VECTOR(31 downto 0);
         PREADY : OUT STD_LOGIC;
         PSLVERR : OUT STD_LOGIC; -- not supported by this component
-        -- the SPI ports
+        -- the adc SPI ports
         spi_clock : OUT STD_LOGIC; -- period: <= 520ns
         spi_miso : IN STD_LOGIC;
         spi_mosi : OUT STD_LOGIC;
@@ -70,7 +74,7 @@ ARCHITECTURE architecture_STAMP of STAMP IS
     signal component_state : component_state_t;
     type spi_request_for_t is (srf_dms1, srf_dms2, srf_temp, srf_apb);
     signal spi_request_for : spi_request_for_t;
-    signal async_state : INTEGER RANGE 0 TO 2; -- 0=normal; 1=first DMS read; 2=async
+    signal async_state : INTEGER RANGE 0 TO 2; -- 0=normal; 1=first DMS read; 2=async, when conf_async_threshold exceeded
     -- signal containing information about whether a drdy flank occured
     signal drdy_flank_detected_dms1 : STD_LOGIC;
     signal drdy_flank_detected_dms2 : STD_LOGIC;
@@ -100,7 +104,7 @@ ARCHITECTURE architecture_STAMP of STAMP IS
     signal status_dms1_overwrittenVal : STD_LOGIC; -- indicates, this value was overwritten before it was read
     signal status_dms2_overwrittenVal : STD_LOGIC;
     signal status_temp_overwrittenVal : STD_LOGIC;
-    signal status_async_cycles : INTEGER RANGE 0 TO 63;
+    signal status_async_cycles : INTEGER RANGE 0 TO 63; -- signed int of prescaled cylces, DMS1 - DMS2 offset
 	-- contains the last measured values
     signal measurement_dms1 : STD_LOGIC_VECTOR(15 downto 0);
 	signal measurement_dms2 : STD_LOGIC_VECTOR(15 downto 0);
@@ -120,6 +124,12 @@ BEGIN
     -- define constants
     PSLVERR <= '0';
 
+    -- define the data frame
+    data_frame(63 downto 48) <= measurement_dms1;
+    data_frame(47 downto 32) <= measurement_dms2;
+    data_frame(31 downto 16) <= measurement_temp;
+    data_frame(15 downto 0) <= status_register;
+    
     -- define the configuration register
     conf_reset <= config(31);
     conf_continuous <= config(30);
@@ -140,6 +150,8 @@ BEGIN
     PROCESS (PRESETN, PCLK)
         variable next_state : component_state_t;
         
+        -- resets the the inter STAMP (not the ADCs).
+        -- hardreset addtionally resets the internal configuration.
         PROCEDURE proc_reset_stamp (constant hardreset : in BOOLEAN) IS BEGIN
             new_avail <= '0';
             request_resync <= '0';
@@ -163,12 +175,25 @@ BEGIN
             status_temp_overwrittenVal <= '0';
             status_async_cycles <= 0;
             dummy <= x"00000000";
-            debug <= '0'; -- !!!
             -- do not reset config for keeping the state accross resync
             IF (hardreset) THEN
                 config <= (others => '0');
             ELSE
                 config(31) <= '0'; -- conf_reset
+            END IF;
+        END PROCEDURE;
+        
+        -- resets only the status register
+        PROCEDURE proc_reset_status IS BEGIN
+            new_avail <= '0';
+            status_dms1_newVal <= '0';
+            status_dms2_newVal <= '0';
+            status_temp_newVal <= '0';
+            status_dms1_overwrittenVal <= '0';
+            status_dms2_overwrittenVal <= '0';
+            status_temp_overwrittenVal <= '0';
+            IF (async_state = 1) THEN
+                async_state <= 0;
             END IF;
         END PROCEDURE;
     BEGIN
@@ -183,6 +208,9 @@ BEGIN
                 WHEN fsm_idle =>
                     IF (conf_reset = '1') THEN
                         proc_reset_stamp(false);
+                    END IF;
+                    IF (reset_status = '1') THEN
+                        proc_reset_status;
                     END IF;
                     
                     -- this delay will be > 0, whenever spi has finished and a chip select must settle
@@ -227,7 +255,7 @@ BEGIN
                         delay_counter <= delay_counter - 1;
                     END IF;
                     
-                    -- make sure not to accidentally skip an apb transfer
+                    -- make sure not to accidentially skip an apb transfer
                     PREADY <= '0';
                 
                 
@@ -252,6 +280,7 @@ BEGIN
                                 measurement_dms1 <= spi_rx_data;
                                 IF (async_state < 2) THEN
                                     async_state <= async_state + 1;
+                                    status_async_cycles <= 1;
                                 END IF;
                                 next_state := fsm_idle;
                                 spi_dms1_cs <= '1';
@@ -263,6 +292,7 @@ BEGIN
                                 measurement_dms2 <= spi_rx_data;
                                 IF (async_state < 2) THEN
                                     async_state <= async_state + 1;
+                                    status_async_cycles <= -1;
                                 END IF;
                                 next_state := fsm_idle;
                                 spi_dms2_cs <= '1';
@@ -380,16 +410,7 @@ BEGIN
                     IF (PENABLE = '0') THEN
                         PREADY <= '0';
                         IF (apb_is_reset = '1') THEN
-                            new_avail <= '0';
-                            status_dms1_newVal <= '0';
-                            status_dms2_newVal <= '0';
-                            status_temp_newVal <= '0';
-                            status_dms1_overwrittenVal <= '0';
-                            status_dms2_overwrittenVal <= '0';
-                            status_temp_overwrittenVal <= '0';
-                            IF (async_state = 1) THEN
-                                async_state <= 0;
-                            END IF;
+                            proc_reset_status;
                         END IF;
                         IF (apb_is_atomic = '0') THEN
                             next_state := fsm_idle;
@@ -418,7 +439,11 @@ BEGIN
                 IF (async_state = 0) THEN
                     status_async_cycles <= 0;
                 ELSIF (async_state = 1) THEN
-                    status_async_cycles <= status_async_cycles + 1;
+                    IF (status_async_cycles < 0) THEN
+                        status_async_cycles <= status_async_cycles - 1;
+                    ELSE
+                        status_async_cycles <= status_async_cycles + 1;
+                    END IF;
                     IF (status_async_cycles >= conf_async_threshold) THEN
                         async_state <= 2;
                         request_resync <= '1';
