@@ -2,20 +2,21 @@
 ===============================================================================.
 
 Info: Global design data: 
-      Total globals:                       3 
+      Total globals:                       4 
       Globals that cannot be demoted:      2 
-      Globals considered for demotion:     1 
+      Globals considered for demotion:     2 
 
 
 Info: List of globals that cannot be demoted: 
     CLK    ASYN   DATA   Instance Name 
     ---    ----   ----   ------------- 
-    329    0      0      'sb_sb_0/CCC_0/GL0_INST' 
+    1508   0      0      'sb_sb_0/CCC_0/GL0_INST' 
     0      0      1      'sb_sb_0/CCC_0/GL1_INST' 
 
 Info: List of globals considered for demotion: 
     CLK    ASYN   DATA   Instance Name 
     ---    ----   ----   ------------- 
+    0      1036   0      'ResetAND_RNIMHJB' 
     0      155    0      'AND2_0_RNIKOS1' 
 
 Info: Demotion information: 

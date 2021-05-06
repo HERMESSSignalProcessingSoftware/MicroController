@@ -8,16 +8,16 @@ High-effort              : OFF
 Repair min-delay         : OFF
 Incremental              : OFF
 
-INFO: Reading User PDC file C:\Users\jl\source\repos\hermess\hermess-MicroController\constraint\io\user1.pdc. 0 error(s) and 0 warning(s)
+INFO: Reading User PDC file D:\HERMESS_SPSoftware\Microcontroller\constraint\io\user1.pdc. 0 error(s) and 0 warning(s)
 
 Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 26 fixed I/O macros, 0 unfixed I/O macros
+Info:  I/O Bank and Globals Assigner identified 27 fixed I/O macros, 0 unfixed I/O macros
 
 I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 0 seconds
 
 Placer V5.0 - 12.900.20 
-Design: sb                              Started: Wed Apr 14 23:06:42 2021
+Design: sb                              Started: Thu May  6 20:44:35 2021
 
 Initializing Normal-Effort Standard Placement ...
 Clustering ...
@@ -26,46 +26,46 @@ Improving placement ...
 End of placement.
 
 Placer Runtime Summary   :
-Clustering (1 pass)      : 0 seconds
+Clustering (1 pass)      : 1 seconds
 Placement                : 0 seconds
-Improvement              : 0 seconds
+Improvement              : 2 seconds
 
 Placer completed successfully.
 
 Design: sb                              
-Finished: Wed Apr 14 23:06:47 2021
-Total CPU Time:     00:00:03            Total Elapsed Time: 00:00:05
-Total Memory Usage: 110.2 Mbytes
+Finished: Thu May  6 20:44:45 2021
+Total CPU Time:     00:00:11            Total Elapsed Time: 00:00:10
+Total Memory Usage: 129.4 Mbytes
                         o - o - o - o - o - o
 
 
 Router 
-Design: C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sbStarted: Wed Apr 14 23:06:51 2021
+Design: D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sbStarted: Thu May  6 20:44:50 2021
 
 
 Router completed successfully.
 
-Design: C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb
-Finished: Wed Apr 14 23:06:55 2021
-Total CPU Time:     00:00:04            Total Elapsed Time: 00:00:04
-Total Memory Usage: 445.9 Mbytes
+Design: D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb
+Finished: Thu May  6 20:45:06 2021
+Total CPU Time:     00:00:15            Total Elapsed Time: 00:00:16
+Total Memory Usage: 447.0 Mbytes
                         o - o - o - o - o - o
 
 Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 524  | 12084 | 4.34       |
-| DFF           | 328  | 12084 | 2.71       |
+| 4LUT          | 3194 | 12084 | 26.43      |
+| DFF           | 1541 | 12084 | 12.75      |
 | I/O Register  | 0    | 585   | 0.00       |
-| Logic Element | 566  | 12084 | 4.68       |
+| Logic Element | 3405 | 12084 | 28.18      |
 +---------------+------+-------+------------+
 
 I/O Placement
 +--------+-------+------------+
 | Type   | Count | Percentage |
 +--------+-------+------------+
-| Locked |  26   | 100.00%    |
+| Locked |  27   | 100.00%    |
 | Placed |  0    | 0.00%      |
 +--------+-------+------------+
 

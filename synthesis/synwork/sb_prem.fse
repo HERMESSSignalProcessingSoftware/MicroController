@@ -1,16 +1,114 @@
 
-fsm_encoding {1920182016} onehot
+fsm_encoding {2125582551} sequential
 
-fsm_state_encoding {1920182016} fsm_idle {000001}
+fsm_state_encoding {2125582551} transmitting {00}
 
-fsm_state_encoding {1920182016} fsm_apb_setup {000010}
+fsm_state_encoding {2125582551} ready {01}
 
-fsm_state_encoding {1920182016} fsm_apb_access {000100}
+fsm_state_encoding {2125582551} done {10}
 
-fsm_state_encoding {1920182016} fsm_apb_teardown {001000}
+fsm_registers {2125582551} {SPIState[1]}  {SPIState[0]} 
 
-fsm_state_encoding {1920182016} fsm_spi_setup {010000}
+fsm_encoding {2125582556} onehot
 
-fsm_state_encoding {1920182016} fsm_spi_access {100000}
+fsm_state_encoding {2125582556} init {000001}
 
-fsm_registers {1920182016} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 
+fsm_state_encoding {2125582556} waiting {000010}
+
+fsm_state_encoding {2125582556} s1 {000100}
+
+fsm_state_encoding {2125582556} signalend {001000}
+
+fsm_state_encoding {2125582556} e1 {010000}
+
+fsm_state_encoding {2125582556} e2 {100000}
+
+fsm_registers {2125582556} {APB3ReadMemoryLimitedState[0]}  {APB3ReadMemoryLimitedState[1]}  {APB3ReadMemoryLimitedState[2]}  {APB3ReadMemoryLimitedState[3]}  {APB3ReadMemoryLimitedState[4]}  {APB3ReadMemoryLimitedState[5]} 
+
+fsm_encoding {2125582552} sequential
+
+fsm_state_encoding {2125582552} prepare {00}
+
+fsm_state_encoding {2125582552} working {01}
+
+fsm_state_encoding {2125582552} working1 {10}
+
+fsm_registers {2125582552} {ControllUnitSubState[1]}  {ControllUnitSubState[0]} 
+
+fsm_encoding {2125582555} onehot
+
+fsm_state_encoding {2125582555} waiting {000000000000001}
+
+fsm_state_encoding {2125582555} preparing {000000000000010}
+
+fsm_state_encoding {2125582555} copyshadow {000000000000100}
+
+fsm_state_encoding {2125582555} init {000000000001000}
+
+fsm_state_encoding {2125582555} init1 {000000000010000}
+
+fsm_state_encoding {2125582555} stamp1 {000000000100000}
+
+fsm_state_encoding {2125582555} stamp2 {000000001000000}
+
+fsm_state_encoding {2125582555} stamp3 {000000010000000}
+
+fsm_state_encoding {2125582555} stamp4 {000000100000000}
+
+fsm_state_encoding {2125582555} stamp5 {000001000000000}
+
+fsm_state_encoding {2125582555} stamp6 {000010000000000}
+
+fsm_state_encoding {2125582555} end1 {000100000000000}
+
+fsm_state_encoding {2125582555} end2 {001000000000000}
+
+fsm_state_encoding {2125582555} end3 {010000000000000}
+
+fsm_state_encoding {2125582555} locked {100000000000000}
+
+fsm_registers {2125582555} {ControllUnitState[0]}  {ControllUnitState[1]}  {ControllUnitState[2]}  {ControllUnitState[3]}  {ControllUnitState[4]}  {ControllUnitState[5]}  {ControllUnitState[6]}  {ControllUnitState[7]}  {ControllUnitState[8]}  {ControllUnitState[9]}  {ControllUnitState[10]}  {ControllUnitState[11]}  {ControllUnitState[12]}  {ControllUnitState[13]}  {ControllUnitState[14]} 
+
+fsm_encoding {2125582554} onehot
+
+fsm_state_encoding {2125582554} cmd {0000001}
+
+fsm_state_encoding {2125582554} addr {0000010}
+
+fsm_state_encoding {2125582554} waiting {0000100}
+
+fsm_state_encoding {2125582554} daten {0001000}
+
+fsm_state_encoding {2125582554} saving {0010000}
+
+fsm_state_encoding {2125582554} e1 {0100000}
+
+fsm_state_encoding {2125582554} e2 {1000000}
+
+fsm_registers {2125582554} {ReadMemoryState[0]}  {ReadMemoryState[1]}  {ReadMemoryState[2]}  {ReadMemoryState[3]}  {ReadMemoryState[4]}  {ReadMemoryState[5]}  {ReadMemoryState[6]} 
+
+fsm_encoding {2125582553} sequential
+
+fsm_state_encoding {2125582553} apbwaiting {00}
+
+fsm_state_encoding {2125582553} apbreading {01}
+
+fsm_state_encoding {2125582553} apbwriting {10}
+
+fsm_registers {2125582553} {APBState[1]}  {APBState[0]} 
+
+fsm_encoding {22201820112} onehot
+
+fsm_state_encoding {22201820112} fsm_idle {000001}
+
+fsm_state_encoding {22201820112} fsm_apb_setup {000010}
+
+fsm_state_encoding {22201820112} fsm_apb_access {000100}
+
+fsm_state_encoding {22201820112} fsm_apb_teardown {001000}
+
+fsm_state_encoding {22201820112} fsm_spi_setup {010000}
+
+fsm_state_encoding {22201820112} fsm_spi_access {100000}
+
+fsm_registers {22201820112} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 

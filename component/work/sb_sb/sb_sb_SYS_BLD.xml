@@ -3281,11 +3281,11 @@
 </row>
 <row>
  <cell>GPIO6_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICA</cell>
 </row>
 <row>
  <cell>GPIO6_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO7_FAB_CAPT</cell>
@@ -3632,7 +3632,7 @@
 </data>
 <separator/>
 <data>
-<name>MSS_SPI_0</name>
+<name>Memory</name>
 <table>
 <header>
  <cell>Name</cell>
@@ -3641,10 +3641,10 @@
  <cell>Version</cell>
 </header>
 <row>
- <cell>SF2_MSS_SPI</cell>
- <cell>MSS Peripherals</cell>
+ <cell>AMBA_SLAVE</cell>
+ <cell>MSS FIC_0 - MSS Master Subsystem</cell>
  <cell>Actel</cell>
- <cell>0.0.100</cell>
+ <cell>0.0.102</cell>
 </row>
 </table>
 <cdata>
@@ -3655,12 +3655,12 @@
  <cell>Value</cell>
 </header>
 <row>
- <cell>NB_SLAVES</cell>
- <cell>1</cell>
+ <cell>AMBA_INTERFACE_TYPE</cell>
+ <cell>APB3</cell>
 </row>
 <row>
- <cell>SPI_MUX</cell>
- <cell>MUX_IO</cell>
+ <cell>NUM_OF_INTERRUPTS</cell>
+ <cell>0</cell>
 </row>
 </table>
 </cdata>
@@ -3753,26 +3753,6 @@
  <cell>Description</cell>
 </header>
 <row>
- <cell>SPI_0_DI</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_DO</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_CLK</cell>
- <cell>INOUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_SS0</cell>
- <cell>INOUT</cell>
- <cell>-</cell>
-</row>
-<row>
  <cell>MMUART_1_TXD</cell>
  <cell>OUT</cell>
  <cell>-</cell>
@@ -3836,6 +3816,11 @@
  <cell>STAMP_0_INTR_0_top</cell>
  <cell>IN</cell>
  <cell>-</cell>
+</row>
+<row>
+ <cell>Memory</cell>
+ <cell>MIRROREDSLAVE</cell>
+ <cell>Slave bus interface pin on  FIC0_Master_Subsystem</cell>
 </row>
 <row>
  <cell>STAMP</cell>
@@ -3928,6 +3913,11 @@
  <cell>-</cell>
 </row>
 <row>
+ <cell>GPIO_6_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
  <cell>GPIO_30_M2F</cell>
  <cell>OUT</cell>
  <cell>-</cell>
@@ -3960,6 +3950,12 @@
  <cell>Task</cell>
  <cell>Description</cell>
 </header>
+<row>
+ <cell>Connect Generic User Slave Peripheral</cell>
+ <cell>Memory is a slave on FIC0_Master_Subsystem subsystem.
+Connect your peripheral to Memory bus interface pin in the top design.</cell>
+</row>
+<separator/>
 <row>
  <cell>Connect Generic User Slave Peripheral</cell>
  <cell>STAMP is a slave on FIC0_Master_Subsystem subsystem.

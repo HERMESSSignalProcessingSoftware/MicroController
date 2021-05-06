@@ -1,6 +1,6 @@
 <project name="sb" version="1.2">
     <ProjectDirectory>
-        C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb_fp
+        D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb_fp
     </ProjectDirectory>
     <View>
         ChainView
@@ -9,7 +9,7 @@
         M2S010
     </LiberoTargetDevice>
     <LogFile>
-        C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb_fp\sb.log
+        D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb_fp\sb.log
     </LogFile>
     <SerializationOption>
         Skip
@@ -17,12 +17,12 @@
     <ProgrammingInterface>
         JTAGMode
     </ProgrammingInterface>
-    <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="UndefConn">
+    <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="usb1.1">
         <name>
-            E2002BYK6C
+            E2006LUMSO
         </name>
         <id>
-            E2002BYK6C
+            E2006LUMSO
         </id>
     </programmer>
     <Server>

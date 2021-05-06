@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Fri Mar 12 12:53:08 2021
+-- Created by SmartDesign Thu May  6 11:47:42 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -21,87 +21,91 @@ entity sb_sb is
     -- Port list
     port(
         -- Inputs
-        DEVRST_N           : in    std_logic;
-        FAB_RESET_N        : in    std_logic;
-        GPIO_0_F2M         : in    std_logic;
-        GPIO_1_F2M         : in    std_logic;
-        GPIO_2_F2M         : in    std_logic;
-        GPIO_5_F2M         : in    std_logic;
-        MMUART_0_RXD       : in    std_logic;
-        MMUART_1_RXD       : in    std_logic;
-        SPI_0_DI           : in    std_logic;
-        STAMP_0_INTR_0_top : in    std_logic;
-        STAMP_1_INTR_0_top : in    std_logic;
-        STAMP_1_PRDATAS1   : in    std_logic_vector(31 downto 0);
-        STAMP_1_PREADYS1   : in    std_logic;
-        STAMP_1_PSLVERRS1  : in    std_logic;
-        STAMP_2_INTR_0_top : in    std_logic;
-        STAMP_2_PRDATAS2   : in    std_logic_vector(31 downto 0);
-        STAMP_2_PREADYS2   : in    std_logic;
-        STAMP_2_PSLVERRS2  : in    std_logic;
-        STAMP_3_INTR_0_top : in    std_logic;
-        STAMP_3_PRDATAS3   : in    std_logic_vector(31 downto 0);
-        STAMP_3_PREADYS3   : in    std_logic;
-        STAMP_3_PSLVERRS3  : in    std_logic;
-        STAMP_4_INTR_0_top : in    std_logic;
-        STAMP_4_PRDATAS4   : in    std_logic_vector(31 downto 0);
-        STAMP_4_PREADYS4   : in    std_logic;
-        STAMP_4_PSLVERRS4  : in    std_logic;
-        STAMP_5_INTR_0_top : in    std_logic;
-        STAMP_5_PRDATAS5   : in    std_logic_vector(31 downto 0);
-        STAMP_5_PREADYS5   : in    std_logic;
-        STAMP_5_PSLVERRS5  : in    std_logic;
-        STAMP_PRDATAS0     : in    std_logic_vector(31 downto 0);
-        STAMP_PREADYS0     : in    std_logic;
-        STAMP_PSLVERRS0    : in    std_logic;
+        DEVRST_N           : in  std_logic;
+        FAB_RESET_N        : in  std_logic;
+        GPIO_0_F2M         : in  std_logic;
+        GPIO_1_F2M         : in  std_logic;
+        GPIO_2_F2M         : in  std_logic;
+        GPIO_5_F2M         : in  std_logic;
+        MMUART_0_RXD       : in  std_logic;
+        MMUART_1_RXD       : in  std_logic;
+        Memory_PRDATAS0    : in  std_logic_vector(31 downto 0);
+        Memory_PREADYS0    : in  std_logic;
+        Memory_PSLVERRS0   : in  std_logic;
+        STAMP_0_INTR_0_top : in  std_logic;
+        STAMP_1_INTR_0_top : in  std_logic;
+        STAMP_1_PRDATAS2   : in  std_logic_vector(31 downto 0);
+        STAMP_1_PREADYS2   : in  std_logic;
+        STAMP_1_PSLVERRS2  : in  std_logic;
+        STAMP_2_INTR_0_top : in  std_logic;
+        STAMP_2_PRDATAS3   : in  std_logic_vector(31 downto 0);
+        STAMP_2_PREADYS3   : in  std_logic;
+        STAMP_2_PSLVERRS3  : in  std_logic;
+        STAMP_3_INTR_0_top : in  std_logic;
+        STAMP_3_PRDATAS4   : in  std_logic_vector(31 downto 0);
+        STAMP_3_PREADYS4   : in  std_logic;
+        STAMP_3_PSLVERRS4  : in  std_logic;
+        STAMP_4_INTR_0_top : in  std_logic;
+        STAMP_4_PRDATAS5   : in  std_logic_vector(31 downto 0);
+        STAMP_4_PREADYS5   : in  std_logic;
+        STAMP_4_PSLVERRS5  : in  std_logic;
+        STAMP_5_INTR_0_top : in  std_logic;
+        STAMP_5_PRDATAS6   : in  std_logic_vector(31 downto 0);
+        STAMP_5_PREADYS6   : in  std_logic;
+        STAMP_5_PSLVERRS6  : in  std_logic;
+        STAMP_PRDATAS1     : in  std_logic_vector(31 downto 0);
+        STAMP_PREADYS1     : in  std_logic;
+        STAMP_PSLVERRS1    : in  std_logic;
         -- Outputs
-        FAB_CCC_GL1        : out   std_logic;
-        FAB_CCC_LOCK       : out   std_logic;
-        FIC_0_CLK          : out   std_logic;
-        FIC_0_LOCK         : out   std_logic;
-        GPIO_30_M2F        : out   std_logic;
-        GPIO_31_M2F        : out   std_logic;
-        GPIO_3_M2F         : out   std_logic;
-        GPIO_4_M2F         : out   std_logic;
-        INIT_DONE          : out   std_logic;
-        MMUART_0_TXD       : out   std_logic;
-        MMUART_1_TXD       : out   std_logic;
-        MSS_READY          : out   std_logic;
-        POWER_ON_RESET_N   : out   std_logic;
-        SPI_0_DO           : out   std_logic;
-        STAMP_1_PADDRS     : out   std_logic_vector(31 downto 0);
-        STAMP_1_PENABLES   : out   std_logic;
-        STAMP_1_PSELS1     : out   std_logic;
-        STAMP_1_PWDATAS    : out   std_logic_vector(31 downto 0);
-        STAMP_1_PWRITES    : out   std_logic;
-        STAMP_2_PADDRS     : out   std_logic_vector(31 downto 0);
-        STAMP_2_PENABLES   : out   std_logic;
-        STAMP_2_PSELS2     : out   std_logic;
-        STAMP_2_PWDATAS    : out   std_logic_vector(31 downto 0);
-        STAMP_2_PWRITES    : out   std_logic;
-        STAMP_3_PADDRS     : out   std_logic_vector(31 downto 0);
-        STAMP_3_PENABLES   : out   std_logic;
-        STAMP_3_PSELS3     : out   std_logic;
-        STAMP_3_PWDATAS    : out   std_logic_vector(31 downto 0);
-        STAMP_3_PWRITES    : out   std_logic;
-        STAMP_4_PADDRS     : out   std_logic_vector(31 downto 0);
-        STAMP_4_PENABLES   : out   std_logic;
-        STAMP_4_PSELS4     : out   std_logic;
-        STAMP_4_PWDATAS    : out   std_logic_vector(31 downto 0);
-        STAMP_4_PWRITES    : out   std_logic;
-        STAMP_5_PADDRS     : out   std_logic_vector(31 downto 0);
-        STAMP_5_PENABLES   : out   std_logic;
-        STAMP_5_PSELS5     : out   std_logic;
-        STAMP_5_PWDATAS    : out   std_logic_vector(31 downto 0);
-        STAMP_5_PWRITES    : out   std_logic;
-        STAMP_PADDRS       : out   std_logic_vector(31 downto 0);
-        STAMP_PENABLES     : out   std_logic;
-        STAMP_PSELS0       : out   std_logic;
-        STAMP_PWDATAS      : out   std_logic_vector(31 downto 0);
-        STAMP_PWRITES      : out   std_logic;
-        -- Inouts
-        SPI_0_CLK          : inout std_logic;
-        SPI_0_SS0          : inout std_logic
+        FAB_CCC_GL1        : out std_logic;
+        FAB_CCC_LOCK       : out std_logic;
+        FIC_0_CLK          : out std_logic;
+        FIC_0_LOCK         : out std_logic;
+        GPIO_30_M2F        : out std_logic;
+        GPIO_31_M2F        : out std_logic;
+        GPIO_3_M2F         : out std_logic;
+        GPIO_4_M2F         : out std_logic;
+        GPIO_6_M2F         : out std_logic;
+        INIT_DONE          : out std_logic;
+        MMUART_0_TXD       : out std_logic;
+        MMUART_1_TXD       : out std_logic;
+        MSS_READY          : out std_logic;
+        Memory_PADDRS      : out std_logic_vector(31 downto 0);
+        Memory_PENABLES    : out std_logic;
+        Memory_PSELS0      : out std_logic;
+        Memory_PWDATAS     : out std_logic_vector(31 downto 0);
+        Memory_PWRITES     : out std_logic;
+        POWER_ON_RESET_N   : out std_logic;
+        STAMP_1_PADDRS     : out std_logic_vector(31 downto 0);
+        STAMP_1_PENABLES   : out std_logic;
+        STAMP_1_PSELS2     : out std_logic;
+        STAMP_1_PWDATAS    : out std_logic_vector(31 downto 0);
+        STAMP_1_PWRITES    : out std_logic;
+        STAMP_2_PADDRS     : out std_logic_vector(31 downto 0);
+        STAMP_2_PENABLES   : out std_logic;
+        STAMP_2_PSELS3     : out std_logic;
+        STAMP_2_PWDATAS    : out std_logic_vector(31 downto 0);
+        STAMP_2_PWRITES    : out std_logic;
+        STAMP_3_PADDRS     : out std_logic_vector(31 downto 0);
+        STAMP_3_PENABLES   : out std_logic;
+        STAMP_3_PSELS4     : out std_logic;
+        STAMP_3_PWDATAS    : out std_logic_vector(31 downto 0);
+        STAMP_3_PWRITES    : out std_logic;
+        STAMP_4_PADDRS     : out std_logic_vector(31 downto 0);
+        STAMP_4_PENABLES   : out std_logic;
+        STAMP_4_PSELS5     : out std_logic;
+        STAMP_4_PWDATAS    : out std_logic_vector(31 downto 0);
+        STAMP_4_PWRITES    : out std_logic;
+        STAMP_5_PADDRS     : out std_logic_vector(31 downto 0);
+        STAMP_5_PENABLES   : out std_logic;
+        STAMP_5_PSELS6     : out std_logic;
+        STAMP_5_PWDATAS    : out std_logic_vector(31 downto 0);
+        STAMP_5_PWRITES    : out std_logic;
+        STAMP_PADDRS       : out std_logic_vector(31 downto 0);
+        STAMP_PENABLES     : out std_logic;
+        STAMP_PSELS1       : out std_logic;
+        STAMP_PWDATAS      : out std_logic_vector(31 downto 0);
+        STAMP_PWRITES      : out std_logic
         );
 end sb_sb;
 ----------------------------------------------------------------------
@@ -243,47 +247,43 @@ component sb_sb_MSS
     -- Port list
     port(
         -- Inputs
-        FIC_0_APB_M_PRDATA     : in    std_logic_vector(31 downto 0);
-        FIC_0_APB_M_PREADY     : in    std_logic;
-        FIC_0_APB_M_PSLVERR    : in    std_logic;
-        FIC_2_APB_M_PRDATA     : in    std_logic_vector(31 downto 0);
-        FIC_2_APB_M_PREADY     : in    std_logic;
-        FIC_2_APB_M_PSLVERR    : in    std_logic;
-        GPIO_0_F2M             : in    std_logic;
-        GPIO_1_F2M             : in    std_logic;
-        GPIO_2_F2M             : in    std_logic;
-        GPIO_5_F2M             : in    std_logic;
-        MCCC_CLK_BASE          : in    std_logic;
-        MCCC_CLK_BASE_PLL_LOCK : in    std_logic;
-        MMUART_0_RXD           : in    std_logic;
-        MMUART_1_RXD           : in    std_logic;
-        MSS_INT_F2M            : in    std_logic_vector(15 downto 0);
-        MSS_RESET_N_F2M        : in    std_logic;
-        SPI_0_DI               : in    std_logic;
+        FIC_0_APB_M_PRDATA     : in  std_logic_vector(31 downto 0);
+        FIC_0_APB_M_PREADY     : in  std_logic;
+        FIC_0_APB_M_PSLVERR    : in  std_logic;
+        FIC_2_APB_M_PRDATA     : in  std_logic_vector(31 downto 0);
+        FIC_2_APB_M_PREADY     : in  std_logic;
+        FIC_2_APB_M_PSLVERR    : in  std_logic;
+        GPIO_0_F2M             : in  std_logic;
+        GPIO_1_F2M             : in  std_logic;
+        GPIO_2_F2M             : in  std_logic;
+        GPIO_5_F2M             : in  std_logic;
+        MCCC_CLK_BASE          : in  std_logic;
+        MCCC_CLK_BASE_PLL_LOCK : in  std_logic;
+        MMUART_0_RXD           : in  std_logic;
+        MMUART_1_RXD           : in  std_logic;
+        MSS_INT_F2M            : in  std_logic_vector(15 downto 0);
+        MSS_RESET_N_F2M        : in  std_logic;
         -- Outputs
-        FIC_0_APB_M_PADDR      : out   std_logic_vector(31 downto 0);
-        FIC_0_APB_M_PENABLE    : out   std_logic;
-        FIC_0_APB_M_PSEL       : out   std_logic;
-        FIC_0_APB_M_PWDATA     : out   std_logic_vector(31 downto 0);
-        FIC_0_APB_M_PWRITE     : out   std_logic;
-        FIC_2_APB_M_PADDR      : out   std_logic_vector(15 downto 2);
-        FIC_2_APB_M_PCLK       : out   std_logic;
-        FIC_2_APB_M_PENABLE    : out   std_logic;
-        FIC_2_APB_M_PRESET_N   : out   std_logic;
-        FIC_2_APB_M_PSEL       : out   std_logic;
-        FIC_2_APB_M_PWDATA     : out   std_logic_vector(31 downto 0);
-        FIC_2_APB_M_PWRITE     : out   std_logic;
-        GPIO_30_M2F            : out   std_logic;
-        GPIO_31_M2F            : out   std_logic;
-        GPIO_3_M2F             : out   std_logic;
-        GPIO_4_M2F             : out   std_logic;
-        MMUART_0_TXD           : out   std_logic;
-        MMUART_1_TXD           : out   std_logic;
-        MSS_RESET_N_M2F        : out   std_logic;
-        SPI_0_DO               : out   std_logic;
-        -- Inouts
-        SPI_0_CLK              : inout std_logic;
-        SPI_0_SS0              : inout std_logic
+        FIC_0_APB_M_PADDR      : out std_logic_vector(31 downto 0);
+        FIC_0_APB_M_PENABLE    : out std_logic;
+        FIC_0_APB_M_PSEL       : out std_logic;
+        FIC_0_APB_M_PWDATA     : out std_logic_vector(31 downto 0);
+        FIC_0_APB_M_PWRITE     : out std_logic;
+        FIC_2_APB_M_PADDR      : out std_logic_vector(15 downto 2);
+        FIC_2_APB_M_PCLK       : out std_logic;
+        FIC_2_APB_M_PENABLE    : out std_logic;
+        FIC_2_APB_M_PRESET_N   : out std_logic;
+        FIC_2_APB_M_PSEL       : out std_logic;
+        FIC_2_APB_M_PWDATA     : out std_logic_vector(31 downto 0);
+        FIC_2_APB_M_PWRITE     : out std_logic;
+        GPIO_30_M2F            : out std_logic;
+        GPIO_31_M2F            : out std_logic;
+        GPIO_3_M2F             : out std_logic;
+        GPIO_4_M2F             : out std_logic;
+        GPIO_6_M2F             : out std_logic;
+        MMUART_0_TXD           : out std_logic;
+        MMUART_1_TXD           : out std_logic;
+        MSS_RESET_N_M2F        : out std_logic
         );
 end component;
 -- SYSRESET
@@ -299,16 +299,17 @@ end component;
 ----------------------------------------------------------------------
 -- Signal declarations
 ----------------------------------------------------------------------
-signal APBmslave0_6_PADDR                                 : std_logic_vector(31 downto 0);
-signal APBmslave0_6_PENABLE                               : std_logic;
-signal APBmslave0_6_PSELx                                 : std_logic;
-signal APBmslave0_6_PWDATA                                : std_logic_vector(31 downto 0);
-signal APBmslave0_6_PWRITE                                : std_logic;
+signal APBmslave0_7_PADDR                                 : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PENABLE                               : std_logic;
+signal APBmslave0_7_PSELx                                 : std_logic;
+signal APBmslave0_7_PWDATA                                : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PWRITE                                : std_logic;
 signal APBmslave1_0_PSELx                                 : std_logic;
 signal APBmslave2_0_PSELx                                 : std_logic;
 signal APBmslave3_0_PSELx                                 : std_logic;
 signal APBmslave4_0_PSELx                                 : std_logic;
 signal APBmslave5_0_PSELx                                 : std_logic;
+signal APBmslave6_0_PSELx                                 : std_logic;
 signal CORERESETP_0_RESET_N_F2M                           : std_logic;
 signal FAB_CCC_GL1_net_0                                  : std_logic;
 signal FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC : std_logic;
@@ -317,6 +318,7 @@ signal FIC_0_CLK_net_0                                    : std_logic;
 signal FIC_0_LOCK_net_0                                   : std_logic;
 signal GPIO_3_M2F_net_0                                   : std_logic;
 signal GPIO_4_M2F_net_0                                   : std_logic;
+signal GPIO_6_M2F_net_0                                   : std_logic;
 signal GPIO_30_M2F_net_0                                  : std_logic;
 signal GPIO_31_M2F_net_0                                  : std_logic;
 signal INIT_DONE_net_0                                    : std_logic;
@@ -334,42 +336,45 @@ signal sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PWDATA            : std_logic_vector(31 
 signal sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PWRITE            : std_logic;
 signal sb_sb_MSS_TMP_0_FIC_2_APB_M_PRESET_N               : std_logic;
 signal sb_sb_MSS_TMP_0_MSS_RESET_N_M2F                    : std_logic;
-signal SPI_0_DO_net_0                                     : std_logic;
-signal SPI_0_DO_net_1                                     : std_logic;
 signal MMUART_1_TXD_net_1                                 : std_logic;
 signal MMUART_0_TXD_net_1                                 : std_logic;
 signal POWER_ON_RESET_N_net_1                             : std_logic;
 signal INIT_DONE_net_1                                    : std_logic;
-signal APBmslave0_6_PADDR_net_0                           : std_logic_vector(31 downto 0);
-signal APBmslave0_6_PSELx_net_0                           : std_logic;
-signal APBmslave0_6_PENABLE_net_0                         : std_logic;
-signal APBmslave0_6_PWRITE_net_0                          : std_logic;
-signal APBmslave0_6_PWDATA_net_0                          : std_logic_vector(31 downto 0);
-signal APBmslave0_6_PADDR_net_1                           : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PADDR_net_0                           : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PSELx_net_0                           : std_logic;
+signal APBmslave0_7_PENABLE_net_0                         : std_logic;
+signal APBmslave0_7_PWRITE_net_0                          : std_logic;
+signal APBmslave0_7_PWDATA_net_0                          : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PADDR_net_1                           : std_logic_vector(31 downto 0);
 signal APBmslave1_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_6_PENABLE_net_1                         : std_logic;
-signal APBmslave0_6_PWRITE_net_1                          : std_logic;
-signal APBmslave0_6_PWDATA_net_1                          : std_logic_vector(31 downto 0);
-signal APBmslave0_6_PADDR_net_2                           : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PENABLE_net_1                         : std_logic;
+signal APBmslave0_7_PWRITE_net_1                          : std_logic;
+signal APBmslave0_7_PWDATA_net_1                          : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PADDR_net_2                           : std_logic_vector(31 downto 0);
 signal APBmslave2_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_6_PENABLE_net_2                         : std_logic;
-signal APBmslave0_6_PWRITE_net_2                          : std_logic;
-signal APBmslave0_6_PWDATA_net_2                          : std_logic_vector(31 downto 0);
-signal APBmslave0_6_PADDR_net_3                           : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PENABLE_net_2                         : std_logic;
+signal APBmslave0_7_PWRITE_net_2                          : std_logic;
+signal APBmslave0_7_PWDATA_net_2                          : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PADDR_net_3                           : std_logic_vector(31 downto 0);
 signal APBmslave3_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_6_PENABLE_net_3                         : std_logic;
-signal APBmslave0_6_PWRITE_net_3                          : std_logic;
-signal APBmslave0_6_PWDATA_net_3                          : std_logic_vector(31 downto 0);
-signal APBmslave0_6_PADDR_net_4                           : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PENABLE_net_3                         : std_logic;
+signal APBmslave0_7_PWRITE_net_3                          : std_logic;
+signal APBmslave0_7_PWDATA_net_3                          : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PADDR_net_4                           : std_logic_vector(31 downto 0);
 signal APBmslave4_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_6_PENABLE_net_4                         : std_logic;
-signal APBmslave0_6_PWRITE_net_4                          : std_logic;
-signal APBmslave0_6_PWDATA_net_4                          : std_logic_vector(31 downto 0);
-signal APBmslave0_6_PADDR_net_5                           : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PENABLE_net_4                         : std_logic;
+signal APBmslave0_7_PWRITE_net_4                          : std_logic;
+signal APBmslave0_7_PWDATA_net_4                          : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PADDR_net_5                           : std_logic_vector(31 downto 0);
 signal APBmslave5_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_6_PENABLE_net_5                         : std_logic;
-signal APBmslave0_6_PWRITE_net_5                          : std_logic;
-signal APBmslave0_6_PWDATA_net_5                          : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PENABLE_net_5                         : std_logic;
+signal APBmslave0_7_PWRITE_net_5                          : std_logic;
+signal APBmslave0_7_PWDATA_net_5                          : std_logic_vector(31 downto 0);
+signal APBmslave0_7_PADDR_net_6                           : std_logic_vector(31 downto 0);
+signal APBmslave6_0_PSELx_net_0                           : std_logic;
+signal APBmslave0_7_PENABLE_net_6                         : std_logic;
+signal APBmslave0_7_PWRITE_net_6                          : std_logic;
+signal APBmslave0_7_PWDATA_net_6                          : std_logic_vector(31 downto 0);
 signal FIC_0_CLK_net_1                                    : std_logic;
 signal FIC_0_LOCK_net_1                                   : std_logic;
 signal FAB_CCC_GL1_net_1                                  : std_logic;
@@ -377,6 +382,7 @@ signal FIC_0_LOCK_net_2                                   : std_logic;
 signal MSS_READY_net_1                                    : std_logic;
 signal GPIO_3_M2F_net_1                                   : std_logic;
 signal GPIO_4_M2F_net_1                                   : std_logic;
+signal GPIO_6_M2F_net_1                                   : std_logic;
 signal GPIO_30_M2F_net_1                                  : std_logic;
 signal GPIO_31_M2F_net_1                                  : std_logic;
 signal MSS_INT_F2M_net_0                                  : std_logic_vector(15 downto 0);
@@ -392,7 +398,6 @@ signal SDIF0_PRDATA_const_net_0                           : std_logic_vector(31 
 signal SDIF1_PRDATA_const_net_0                           : std_logic_vector(31 downto 0);
 signal SDIF2_PRDATA_const_net_0                           : std_logic_vector(31 downto 0);
 signal SDIF3_PRDATA_const_net_0                           : std_logic_vector(31 downto 0);
-signal PRDATAS6_const_net_0                               : std_logic_vector(31 downto 0);
 signal PRDATAS7_const_net_0                               : std_logic_vector(31 downto 0);
 signal PRDATAS8_const_net_0                               : std_logic_vector(31 downto 0);
 signal PRDATAS9_const_net_0                               : std_logic_vector(31 downto 0);
@@ -418,7 +423,6 @@ begin
  SDIF1_PRDATA_const_net_0       <= B"00000000000000000000000000000000";
  SDIF2_PRDATA_const_net_0       <= B"00000000000000000000000000000000";
  SDIF3_PRDATA_const_net_0       <= B"00000000000000000000000000000000";
- PRDATAS6_const_net_0           <= B"00000000000000000000000000000000";
  PRDATAS7_const_net_0           <= B"00000000000000000000000000000000";
  PRDATAS8_const_net_0           <= B"00000000000000000000000000000000";
  PRDATAS9_const_net_0           <= B"00000000000000000000000000000000";
@@ -433,8 +437,6 @@ begin
 ----------------------------------------------------------------------
 -- Top level output port assignments
 ----------------------------------------------------------------------
- SPI_0_DO_net_1               <= SPI_0_DO_net_0;
- SPI_0_DO                     <= SPI_0_DO_net_1;
  MMUART_1_TXD_net_1           <= MMUART_1_TXD_net_0;
  MMUART_1_TXD                 <= MMUART_1_TXD_net_1;
  MMUART_0_TXD_net_1           <= MMUART_0_TXD_net_0;
@@ -443,66 +445,76 @@ begin
  POWER_ON_RESET_N             <= POWER_ON_RESET_N_net_1;
  INIT_DONE_net_1              <= INIT_DONE_net_0;
  INIT_DONE                    <= INIT_DONE_net_1;
- APBmslave0_6_PADDR_net_0     <= APBmslave0_6_PADDR;
- STAMP_PADDRS(31 downto 0)    <= APBmslave0_6_PADDR_net_0;
- APBmslave0_6_PSELx_net_0     <= APBmslave0_6_PSELx;
- STAMP_PSELS0                 <= APBmslave0_6_PSELx_net_0;
- APBmslave0_6_PENABLE_net_0   <= APBmslave0_6_PENABLE;
- STAMP_PENABLES               <= APBmslave0_6_PENABLE_net_0;
- APBmslave0_6_PWRITE_net_0    <= APBmslave0_6_PWRITE;
- STAMP_PWRITES                <= APBmslave0_6_PWRITE_net_0;
- APBmslave0_6_PWDATA_net_0    <= APBmslave0_6_PWDATA;
- STAMP_PWDATAS(31 downto 0)   <= APBmslave0_6_PWDATA_net_0;
- APBmslave0_6_PADDR_net_1     <= APBmslave0_6_PADDR;
- STAMP_1_PADDRS(31 downto 0)  <= APBmslave0_6_PADDR_net_1;
+ APBmslave0_7_PADDR_net_0     <= APBmslave0_7_PADDR;
+ Memory_PADDRS(31 downto 0)   <= APBmslave0_7_PADDR_net_0;
+ APBmslave0_7_PSELx_net_0     <= APBmslave0_7_PSELx;
+ Memory_PSELS0                <= APBmslave0_7_PSELx_net_0;
+ APBmslave0_7_PENABLE_net_0   <= APBmslave0_7_PENABLE;
+ Memory_PENABLES              <= APBmslave0_7_PENABLE_net_0;
+ APBmslave0_7_PWRITE_net_0    <= APBmslave0_7_PWRITE;
+ Memory_PWRITES               <= APBmslave0_7_PWRITE_net_0;
+ APBmslave0_7_PWDATA_net_0    <= APBmslave0_7_PWDATA;
+ Memory_PWDATAS(31 downto 0)  <= APBmslave0_7_PWDATA_net_0;
+ APBmslave0_7_PADDR_net_1     <= APBmslave0_7_PADDR;
+ STAMP_PADDRS(31 downto 0)    <= APBmslave0_7_PADDR_net_1;
  APBmslave1_0_PSELx_net_0     <= APBmslave1_0_PSELx;
- STAMP_1_PSELS1               <= APBmslave1_0_PSELx_net_0;
- APBmslave0_6_PENABLE_net_1   <= APBmslave0_6_PENABLE;
- STAMP_1_PENABLES             <= APBmslave0_6_PENABLE_net_1;
- APBmslave0_6_PWRITE_net_1    <= APBmslave0_6_PWRITE;
- STAMP_1_PWRITES              <= APBmslave0_6_PWRITE_net_1;
- APBmslave0_6_PWDATA_net_1    <= APBmslave0_6_PWDATA;
- STAMP_1_PWDATAS(31 downto 0) <= APBmslave0_6_PWDATA_net_1;
- APBmslave0_6_PADDR_net_2     <= APBmslave0_6_PADDR;
- STAMP_2_PADDRS(31 downto 0)  <= APBmslave0_6_PADDR_net_2;
+ STAMP_PSELS1                 <= APBmslave1_0_PSELx_net_0;
+ APBmslave0_7_PENABLE_net_1   <= APBmslave0_7_PENABLE;
+ STAMP_PENABLES               <= APBmslave0_7_PENABLE_net_1;
+ APBmslave0_7_PWRITE_net_1    <= APBmslave0_7_PWRITE;
+ STAMP_PWRITES                <= APBmslave0_7_PWRITE_net_1;
+ APBmslave0_7_PWDATA_net_1    <= APBmslave0_7_PWDATA;
+ STAMP_PWDATAS(31 downto 0)   <= APBmslave0_7_PWDATA_net_1;
+ APBmslave0_7_PADDR_net_2     <= APBmslave0_7_PADDR;
+ STAMP_1_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_2;
  APBmslave2_0_PSELx_net_0     <= APBmslave2_0_PSELx;
- STAMP_2_PSELS2               <= APBmslave2_0_PSELx_net_0;
- APBmslave0_6_PENABLE_net_2   <= APBmslave0_6_PENABLE;
- STAMP_2_PENABLES             <= APBmslave0_6_PENABLE_net_2;
- APBmslave0_6_PWRITE_net_2    <= APBmslave0_6_PWRITE;
- STAMP_2_PWRITES              <= APBmslave0_6_PWRITE_net_2;
- APBmslave0_6_PWDATA_net_2    <= APBmslave0_6_PWDATA;
- STAMP_2_PWDATAS(31 downto 0) <= APBmslave0_6_PWDATA_net_2;
- APBmslave0_6_PADDR_net_3     <= APBmslave0_6_PADDR;
- STAMP_3_PADDRS(31 downto 0)  <= APBmslave0_6_PADDR_net_3;
+ STAMP_1_PSELS2               <= APBmslave2_0_PSELx_net_0;
+ APBmslave0_7_PENABLE_net_2   <= APBmslave0_7_PENABLE;
+ STAMP_1_PENABLES             <= APBmslave0_7_PENABLE_net_2;
+ APBmslave0_7_PWRITE_net_2    <= APBmslave0_7_PWRITE;
+ STAMP_1_PWRITES              <= APBmslave0_7_PWRITE_net_2;
+ APBmslave0_7_PWDATA_net_2    <= APBmslave0_7_PWDATA;
+ STAMP_1_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_2;
+ APBmslave0_7_PADDR_net_3     <= APBmslave0_7_PADDR;
+ STAMP_2_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_3;
  APBmslave3_0_PSELx_net_0     <= APBmslave3_0_PSELx;
- STAMP_3_PSELS3               <= APBmslave3_0_PSELx_net_0;
- APBmslave0_6_PENABLE_net_3   <= APBmslave0_6_PENABLE;
- STAMP_3_PENABLES             <= APBmslave0_6_PENABLE_net_3;
- APBmslave0_6_PWRITE_net_3    <= APBmslave0_6_PWRITE;
- STAMP_3_PWRITES              <= APBmslave0_6_PWRITE_net_3;
- APBmslave0_6_PWDATA_net_3    <= APBmslave0_6_PWDATA;
- STAMP_3_PWDATAS(31 downto 0) <= APBmslave0_6_PWDATA_net_3;
- APBmslave0_6_PADDR_net_4     <= APBmslave0_6_PADDR;
- STAMP_4_PADDRS(31 downto 0)  <= APBmslave0_6_PADDR_net_4;
+ STAMP_2_PSELS3               <= APBmslave3_0_PSELx_net_0;
+ APBmslave0_7_PENABLE_net_3   <= APBmslave0_7_PENABLE;
+ STAMP_2_PENABLES             <= APBmslave0_7_PENABLE_net_3;
+ APBmslave0_7_PWRITE_net_3    <= APBmslave0_7_PWRITE;
+ STAMP_2_PWRITES              <= APBmslave0_7_PWRITE_net_3;
+ APBmslave0_7_PWDATA_net_3    <= APBmslave0_7_PWDATA;
+ STAMP_2_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_3;
+ APBmslave0_7_PADDR_net_4     <= APBmslave0_7_PADDR;
+ STAMP_3_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_4;
  APBmslave4_0_PSELx_net_0     <= APBmslave4_0_PSELx;
- STAMP_4_PSELS4               <= APBmslave4_0_PSELx_net_0;
- APBmslave0_6_PENABLE_net_4   <= APBmslave0_6_PENABLE;
- STAMP_4_PENABLES             <= APBmslave0_6_PENABLE_net_4;
- APBmslave0_6_PWRITE_net_4    <= APBmslave0_6_PWRITE;
- STAMP_4_PWRITES              <= APBmslave0_6_PWRITE_net_4;
- APBmslave0_6_PWDATA_net_4    <= APBmslave0_6_PWDATA;
- STAMP_4_PWDATAS(31 downto 0) <= APBmslave0_6_PWDATA_net_4;
- APBmslave0_6_PADDR_net_5     <= APBmslave0_6_PADDR;
- STAMP_5_PADDRS(31 downto 0)  <= APBmslave0_6_PADDR_net_5;
+ STAMP_3_PSELS4               <= APBmslave4_0_PSELx_net_0;
+ APBmslave0_7_PENABLE_net_4   <= APBmslave0_7_PENABLE;
+ STAMP_3_PENABLES             <= APBmslave0_7_PENABLE_net_4;
+ APBmslave0_7_PWRITE_net_4    <= APBmslave0_7_PWRITE;
+ STAMP_3_PWRITES              <= APBmslave0_7_PWRITE_net_4;
+ APBmslave0_7_PWDATA_net_4    <= APBmslave0_7_PWDATA;
+ STAMP_3_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_4;
+ APBmslave0_7_PADDR_net_5     <= APBmslave0_7_PADDR;
+ STAMP_4_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_5;
  APBmslave5_0_PSELx_net_0     <= APBmslave5_0_PSELx;
- STAMP_5_PSELS5               <= APBmslave5_0_PSELx_net_0;
- APBmslave0_6_PENABLE_net_5   <= APBmslave0_6_PENABLE;
- STAMP_5_PENABLES             <= APBmslave0_6_PENABLE_net_5;
- APBmslave0_6_PWRITE_net_5    <= APBmslave0_6_PWRITE;
- STAMP_5_PWRITES              <= APBmslave0_6_PWRITE_net_5;
- APBmslave0_6_PWDATA_net_5    <= APBmslave0_6_PWDATA;
- STAMP_5_PWDATAS(31 downto 0) <= APBmslave0_6_PWDATA_net_5;
+ STAMP_4_PSELS5               <= APBmslave5_0_PSELx_net_0;
+ APBmslave0_7_PENABLE_net_5   <= APBmslave0_7_PENABLE;
+ STAMP_4_PENABLES             <= APBmslave0_7_PENABLE_net_5;
+ APBmslave0_7_PWRITE_net_5    <= APBmslave0_7_PWRITE;
+ STAMP_4_PWRITES              <= APBmslave0_7_PWRITE_net_5;
+ APBmslave0_7_PWDATA_net_5    <= APBmslave0_7_PWDATA;
+ STAMP_4_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_5;
+ APBmslave0_7_PADDR_net_6     <= APBmslave0_7_PADDR;
+ STAMP_5_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_6;
+ APBmslave6_0_PSELx_net_0     <= APBmslave6_0_PSELx;
+ STAMP_5_PSELS6               <= APBmslave6_0_PSELx_net_0;
+ APBmslave0_7_PENABLE_net_6   <= APBmslave0_7_PENABLE;
+ STAMP_5_PENABLES             <= APBmslave0_7_PENABLE_net_6;
+ APBmslave0_7_PWRITE_net_6    <= APBmslave0_7_PWRITE;
+ STAMP_5_PWRITES              <= APBmslave0_7_PWRITE_net_6;
+ APBmslave0_7_PWDATA_net_6    <= APBmslave0_7_PWDATA;
+ STAMP_5_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_6;
  FIC_0_CLK_net_1              <= FIC_0_CLK_net_0;
  FIC_0_CLK                    <= FIC_0_CLK_net_1;
  FIC_0_LOCK_net_1             <= FIC_0_LOCK_net_0;
@@ -517,6 +529,8 @@ begin
  GPIO_3_M2F                   <= GPIO_3_M2F_net_1;
  GPIO_4_M2F_net_1             <= GPIO_4_M2F_net_0;
  GPIO_4_M2F                   <= GPIO_4_M2F_net_1;
+ GPIO_6_M2F_net_1             <= GPIO_6_M2F_net_0;
+ GPIO_6_M2F                   <= GPIO_6_M2F_net_1;
  GPIO_30_M2F_net_1            <= GPIO_30_M2F_net_0;
  GPIO_30_M2F                  <= GPIO_30_M2F_net_1;
  GPIO_31_M2F_net_1            <= GPIO_31_M2F_net_0;
@@ -548,7 +562,7 @@ CoreAPB3_0 : entity COREAPB3_LIB.CoreAPB3
         APBSLOT3ENABLE  => ( 1 ),
         APBSLOT4ENABLE  => ( 1 ),
         APBSLOT5ENABLE  => ( 1 ),
-        APBSLOT6ENABLE  => ( 0 ),
+        APBSLOT6ENABLE  => ( 1 ),
         APBSLOT7ENABLE  => ( 0 ),
         APBSLOT8ENABLE  => ( 0 ),
         APBSLOT9ENABLE  => ( 0 ),
@@ -588,27 +602,27 @@ CoreAPB3_0 : entity COREAPB3_LIB.CoreAPB3
         PENABLE    => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PENABLE,
         PWDATA     => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PWDATA,
         PSEL       => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx,
-        PRDATAS0   => STAMP_PRDATAS0,
-        PREADYS0   => STAMP_PREADYS0,
-        PSLVERRS0  => STAMP_PSLVERRS0,
-        PRDATAS1   => STAMP_1_PRDATAS1,
-        PREADYS1   => STAMP_1_PREADYS1,
-        PSLVERRS1  => STAMP_1_PSLVERRS1,
-        PRDATAS2   => STAMP_2_PRDATAS2,
-        PREADYS2   => STAMP_2_PREADYS2,
-        PSLVERRS2  => STAMP_2_PSLVERRS2,
-        PRDATAS3   => STAMP_3_PRDATAS3,
-        PREADYS3   => STAMP_3_PREADYS3,
-        PSLVERRS3  => STAMP_3_PSLVERRS3,
-        PRDATAS4   => STAMP_4_PRDATAS4,
-        PREADYS4   => STAMP_4_PREADYS4,
-        PSLVERRS4  => STAMP_4_PSLVERRS4,
-        PRDATAS5   => STAMP_5_PRDATAS5,
-        PREADYS5   => STAMP_5_PREADYS5,
-        PSLVERRS5  => STAMP_5_PSLVERRS5,
-        PRDATAS6   => PRDATAS6_const_net_0, -- tied to X"0" from definition
-        PREADYS6   => VCC_net, -- tied to '1' from definition
-        PSLVERRS6  => GND_net, -- tied to '0' from definition
+        PRDATAS0   => Memory_PRDATAS0,
+        PREADYS0   => Memory_PREADYS0,
+        PSLVERRS0  => Memory_PSLVERRS0,
+        PRDATAS1   => STAMP_PRDATAS1,
+        PREADYS1   => STAMP_PREADYS1,
+        PSLVERRS1  => STAMP_PSLVERRS1,
+        PRDATAS2   => STAMP_1_PRDATAS2,
+        PREADYS2   => STAMP_1_PREADYS2,
+        PSLVERRS2  => STAMP_1_PSLVERRS2,
+        PRDATAS3   => STAMP_2_PRDATAS3,
+        PREADYS3   => STAMP_2_PREADYS3,
+        PSLVERRS3  => STAMP_2_PSLVERRS3,
+        PRDATAS4   => STAMP_3_PRDATAS4,
+        PREADYS4   => STAMP_3_PREADYS4,
+        PSLVERRS4  => STAMP_3_PSLVERRS4,
+        PRDATAS5   => STAMP_4_PRDATAS5,
+        PREADYS5   => STAMP_4_PREADYS5,
+        PSLVERRS5  => STAMP_4_PSLVERRS5,
+        PRDATAS6   => STAMP_5_PRDATAS6,
+        PREADYS6   => STAMP_5_PREADYS6,
+        PSLVERRS6  => STAMP_5_PSLVERRS6,
         PRDATAS7   => PRDATAS7_const_net_0, -- tied to X"0" from definition
         PREADYS7   => VCC_net, -- tied to '1' from definition
         PSLVERRS7  => GND_net, -- tied to '0' from definition
@@ -644,17 +658,17 @@ CoreAPB3_0 : entity COREAPB3_LIB.CoreAPB3
         PRDATA     => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA,
         PREADY     => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PREADY,
         PSLVERR    => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSLVERR,
-        PADDRS     => APBmslave0_6_PADDR,
-        PWRITES    => APBmslave0_6_PWRITE,
-        PENABLES   => APBmslave0_6_PENABLE,
-        PWDATAS    => APBmslave0_6_PWDATA,
-        PSELS0     => APBmslave0_6_PSELx,
+        PADDRS     => APBmslave0_7_PADDR,
+        PWRITES    => APBmslave0_7_PWRITE,
+        PENABLES   => APBmslave0_7_PENABLE,
+        PWDATAS    => APBmslave0_7_PWDATA,
+        PSELS0     => APBmslave0_7_PSELx,
         PSELS1     => APBmslave1_0_PSELx,
         PSELS2     => APBmslave2_0_PSELx,
         PSELS3     => APBmslave3_0_PSELx,
         PSELS4     => APBmslave4_0_PSELx,
         PSELS5     => APBmslave5_0_PSELx,
-        PSELS6     => OPEN,
+        PSELS6     => APBmslave6_0_PSELx,
         PSELS7     => OPEN,
         PSELS8     => OPEN,
         PSELS9     => OPEN,
@@ -779,7 +793,6 @@ FABOSC_0 : sb_sb_FABOSC_0_OSC
 sb_sb_MSS_0 : sb_sb_MSS
     port map( 
         -- Inputs
-        SPI_0_DI               => SPI_0_DI,
         MCCC_CLK_BASE          => FIC_0_CLK_net_0,
         MMUART_1_RXD           => MMUART_1_RXD,
         MMUART_0_RXD           => MMUART_0_RXD,
@@ -797,12 +810,12 @@ sb_sb_MSS_0 : sb_sb_MSS
         FIC_0_APB_M_PRDATA     => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA,
         FIC_2_APB_M_PRDATA     => FIC_2_APB_M_PRDATA_const_net_0, -- tied to X"0" from definition
         -- Outputs
-        SPI_0_DO               => SPI_0_DO_net_0,
         MMUART_1_TXD           => MMUART_1_TXD_net_0,
         MMUART_0_TXD           => MMUART_0_TXD_net_0,
         MSS_RESET_N_M2F        => sb_sb_MSS_TMP_0_MSS_RESET_N_M2F,
         GPIO_3_M2F             => GPIO_3_M2F_net_0,
         GPIO_4_M2F             => GPIO_4_M2F_net_0,
+        GPIO_6_M2F             => GPIO_6_M2F_net_0,
         GPIO_30_M2F            => GPIO_30_M2F_net_0,
         GPIO_31_M2F            => GPIO_31_M2F_net_0,
         FIC_0_APB_M_PSEL       => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx,
@@ -816,10 +829,7 @@ sb_sb_MSS_0 : sb_sb_MSS
         FIC_0_APB_M_PADDR      => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PADDR,
         FIC_0_APB_M_PWDATA     => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PWDATA,
         FIC_2_APB_M_PADDR      => OPEN,
-        FIC_2_APB_M_PWDATA     => OPEN,
-        -- Inouts
-        SPI_0_CLK              => SPI_0_CLK,
-        SPI_0_SS0              => SPI_0_SS0 
+        FIC_2_APB_M_PWDATA     => OPEN 
         );
 -- SYSRESET_POR
 SYSRESET_POR : SYSRESET

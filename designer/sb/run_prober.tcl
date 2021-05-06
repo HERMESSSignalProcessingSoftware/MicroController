@@ -1,5 +1,5 @@
 probe \
-    -desdir {C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb} \
+    -desdir {D:\HERMESS_SPSoftware\Microcontroller\designer\sb} \
     -design sb \
     -fam SmartFusion2 \
     -die PA4M1000_N \

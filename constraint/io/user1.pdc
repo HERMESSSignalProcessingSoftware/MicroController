@@ -6,7 +6,7 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 400 VF
 
-# Date generated: Fri Mar 12 13:03:03 2021 
+# Date generated: Thu May  6 11:57:49 2021 
 
 
 # 
@@ -37,6 +37,18 @@ set_io LED_RECORDING   \
     -DIRECTION OUTPUT
 
 
+set_io MISO           \
+    -pinname L15      \
+    -fixed yes        \
+    -DIRECTION INPUT
+
+
+set_io MOSI            \
+    -pinname J17       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
 set_io RXSM_LO        \
     -pinname M17      \
     -fixed yes        \
@@ -58,6 +70,12 @@ set_io RXSM_SOE       \
     -DIRECTION INPUT
 
 
+set_io SCLK            \
+    -pinname K20       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
 set_io adc_clk         \
     -pinname U19       \
     -fixed yes         \
@@ -72,6 +90,18 @@ set_io adc_start       \
 
 set_io debug_led       \
     -pinname D2        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io nCS1            \
+    -pinname L16       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io nCS2            \
+    -pinname F20       \
     -fixed yes         \
     -DIRECTION OUTPUT
 

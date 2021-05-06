@@ -1,6 +1,6 @@
 Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)
 Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
-Date: Wed Apr 14 23:07:02 2021
+Date: Thu May  6 20:45:17 2021
 
 sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 +-------------------+--------------------+---------------+-------+
@@ -19,13 +19,13 @@ sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 | FCCC_GPMUX1_CR    | SEL_GPMUX1[4:0]    | INIT[71:67]   | 5'h7  |
 | FCCC_GPMUX2_CR    | SEL_GPMUX2[4:0]    | INIT[76:72]   | 5'h18 |
 | FCCC_GPMUX3_CR    | SEL_GPMUX3[4:0]    | INIT[81:77]   | 5'h18 |
-| FCCC_NGMUX0_CR0   | SELGL[4:0]         | INIT[86:82]   | 5'h18 |
+| FCCC_NGMUX0_CR0   | SELGL[4:0]         | INIT[86:82]   | 5'h8  |
 | FCCC_NGMUX0_CR1   | SELGL[9:5]         | INIT[91:87]   | 5'h18 |
 | FCCC_NGMUX1_CR0   | SELGL[14:10]       | INIT[96:92]   | 5'h18 |
 | FCCC_NGMUX1_CR1   | SELGL[19:15]       | INIT[101:97]  | 5'h18 |
-| FCCC_NGMUX2_CR0   | SELGL[24:20]       | INIT[106:102] | 5'h8  |
+| FCCC_NGMUX2_CR0   | SELGL[24:20]       | INIT[106:102] | 5'h9  |
 | FCCC_NGMUX2_CR1   | SELGL[29:25]       | INIT[111:107] | 5'h18 |
-| FCCC_NGMUX3_CR0   | SELGL[34:30]       | INIT[116:112] | 5'h9  |
+| FCCC_NGMUX3_CR0   | SELGL[34:30]       | INIT[116:112] | 5'h18 |
 | FCCC_NGMUX3_CR1   | SELGL[39:35]       | INIT[121:117] | 5'h18 |
 | FCCC_GPD0_SYNC_CR | RESET_GENEN[0]     | INIT[122:122] | 1'h1  |
 | FCCC_GPD1_SYNC_CR | RESET_GENEN[1]     | INIT[123:123] | 1'h1  |
@@ -208,7 +208,7 @@ sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | SOFTRESET               | TIMER_SOFTRESET             | INIT[356:356]   | 1'h0         | INIT[24]  | 1             |
 | SOFTRESET               | MMUART0_SOFTRESET           | INIT[357:357]   | 1'h0         | INIT[25]  | 1             |
 | SOFTRESET               | MMUART1_SOFTRESET           | INIT[358:358]   | 1'h0         | INIT[26]  | 1             |
-| SOFTRESET               | G4SPI0_SOFTRESET            | INIT[359:359]   | 1'h0         | INIT[27]  | 1             |
+| SOFTRESET               | G4SPI0_SOFTRESET            | INIT[359:359]   | 1'h1         | INIT[27]  | 1             |
 | SOFTRESET               | G4SPI1_SOFTRESET            | INIT[360:360]   | 1'h1         | INIT[28]  | 1             |
 | SOFTRESET               | I2C0_SOFTRESET              | INIT[361:361]   | 1'h1         | INIT[29]  | 1             |
 | SOFTRESET               | I2C1_SOFTRESET              | INIT[362:362]   | 1'h1         | INIT[30]  | 1             |
@@ -500,16 +500,16 @@ sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | IOMUXCELL_15_CONFIG     | MSS_IOMUXSEL5UPPER          | INIT[1025:1025] | 1'h0         | INIT[105] | 1             |
 | IOMUXCELL_15_CONFIG     | MSS_IOMUXSEL5MID            | INIT[1026:1026] | 1'h0         | INIT[105] | 1             |
 | IOMUXCELL_15_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1027:1027] | 1'h0         | INIT[105] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL0               | INIT[1028:1028] | 1'h1         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL0               | INIT[1028:1028] | 1'h0         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL1               | INIT[1029:1029] | 1'h0         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL2               | INIT[1030:1030] | 1'h0         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL3               | INIT[1031:1031] | 1'h0         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4UPPER          | INIT[1032:1032] | 1'h0         | INIT[106] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1033:1033] | 1'h1         | INIT[106] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1034:1034] | 1'h1         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1033:1033] | 1'h0         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1034:1034] | 1'h0         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5UPPER          | INIT[1035:1035] | 1'h0         | INIT[106] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5MID            | INIT[1036:1036] | 1'h1         | INIT[106] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1037:1037] | 1'h1         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5MID            | INIT[1036:1036] | 1'h0         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1037:1037] | 1'h0         | INIT[106] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL0               | INIT[1038:1038] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL1               | INIT[1039:1039] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL2               | INIT[1040:1040] | 1'h0         | INIT[107] | 1             |
@@ -517,10 +517,10 @@ sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL4UPPER          | INIT[1042:1042] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1043:1043] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1044:1044] | 1'h0         | INIT[107] | 1             |
-| IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL5UPPER          | INIT[1045:1045] | 1'h1         | INIT[107] | 1             |
+| IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL5UPPER          | INIT[1045:1045] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL5MID            | INIT[1046:1046] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1047:1047] | 1'h0         | INIT[107] | 1             |
-| IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL0               | INIT[1048:1048] | 1'h1         | INIT[108] | 1             |
+| IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL0               | INIT[1048:1048] | 1'h0         | INIT[108] | 1             |
 | IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL1               | INIT[1049:1049] | 1'h0         | INIT[108] | 1             |
 | IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL2               | INIT[1050:1050] | 1'h0         | INIT[108] | 1             |
 | IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL3               | INIT[1051:1051] | 1'h0         | INIT[108] | 1             |

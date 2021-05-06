@@ -1,6 +1,6 @@
 Resource Report
 Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
-Date: Wed Apr 14 23:04:06 2021
+Date: Thu May  6 20:44:28 2021
 
 Device Selection
 +--------------------------------+----------------+
@@ -20,11 +20,11 @@ Device Selection
 +--------------------------------+----------------+
 
 Source Files
-+---------+--------------------------------------------------------------------------+
-| Topcell | sb                                                                       |
-| Format  | Verilog                                                                  |
-| Source  | C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\sb.vm |
-+---------+--------------------------------------------------------------------------+
++---------+-------------------------------------------------------+
+| Topcell | sb                                                    |
+| Format  | Verilog                                               |
+| Source  | D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.vm |
++---------+-------------------------------------------------------+
 
 Options
 +----------------------------------------------------+-------+
@@ -37,16 +37,16 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 524  | 12084 | 4.34       |
-| DFF                       | 328  | 12084 | 2.71       |
+| 4LUT                      | 3194 | 12084 | 26.43      |
+| DFF                       | 1541 | 12084 | 12.75      |
 | I/O Register              | 0    | 585   | 0.00       |
-| User I/O                  | 26   | 195   | 13.33      |
-| -- Single-ended I/O       | 26   | 195   | 13.33      |
+| User I/O                  | 27   | 195   | 13.85      |
+| -- Single-ended I/O       | 27   | 195   | 13.85      |
 | -- Differential I/O Pairs | 0    | 97    | 0.00       |
 | RAM64x18                  | 0    | 22    | 0.00       |
-| RAM1K18                   | 0    | 21    | 0.00       |
+| RAM1K18                   | 1    | 21    | 4.76       |
 | MACC                      | 0    | 22    | 0.00       |
-| Chip Globals              | 3    | 8     | 37.50      |
+| Chip Globals              | 4    | 8     | 50.00      |
 | CCC                       | 1    | 2     | 50.00      |
 | RCOSC_25_50MHZ            | 1    | 1     | 100.00     |
 | RCOSC_1MHZ                | 0    | 1     | 0.00       |
@@ -55,15 +55,15 @@ Resource Usage
 +---------------------------+------+-------+------------+
 
 Detailed Logic Resource Usage
-+--------------------------+------+-----+
-| Type                     | 4LUT | DFF |
-+--------------------------+------+-----+
-| Fabric Logic             | 524  | 328 |
-| RAM64x18 Interface Logic | 0    | 0   |
-| RAM1K18 Interface Logic  | 0    | 0   |
-| MACC Interface Logic     | 0    | 0   |
-| Total Used               | 524  | 328 |
-+--------------------------+------+-----+
++--------------------------+------+------+
+| Type                     | 4LUT | DFF  |
++--------------------------+------+------+
+| Fabric Logic             | 3158 | 1505 |
+| RAM64x18 Interface Logic | 0    | 0    |
+| RAM1K18 Interface Logic  | 36   | 36   |
+| MACC Interface Logic     | 0    | 0    |
+| Total Used               | 3194 | 1541 |
++--------------------------+------+------+
 
 MSS Resource Usage
 +---------------+------+-------+
@@ -74,7 +74,7 @@ MSS Resource Usage
 | eSRAM*        | 2    | 2     |
 | TIMER*        | 2    | 2     |
 | CAN           | 0    | 1     |
-| SPI           | 1    | 2     |
+| SPI           | 0    | 2     |
 | I2C           | 0    | 2     |
 | UART          | 2    | 2     |
 | USB           | 0    | 1     |
@@ -89,12 +89,15 @@ MSS Resource Usage
 Detailed Carry Chains Resource Usage
 +--------+------+
 | Length | Used |
-| 6      | 2    |
-| 7      | 1    |
+| 6      | 1    |
+| 7      | 2    |
+| 8      | 3    |
+| 9      | 1    |
+| 10     | 2    |
 | 12     | 1    |
 | 28     | 1    |
-| 32     | 1    |
-| Total  | 6    |
+| 32     | 4    |
+| Total  | 15   |
 +--------+------+
 
 I/O Function
@@ -102,8 +105,8 @@ I/O Function
 | Type                          | w/o register | w/ register | w/ DDR register |
 +-------------------------------+--------------+-------------+-----------------+
 | Input I/O                     | 10           | 0           | 0               |
-| Output I/O                    | 14           | 0           | 0               |
-| Bidirectional I/O             | 2            | 0           | 0               |
+| Output I/O                    | 17           | 0           | 0               |
+| Bidirectional I/O             | 0            | 0           | 0               |
 | Differential Input I/O Pairs  | 0            | 0           | 0               |
 | Differential Output I/O Pairs | 0            | 0           | 0               |
 +-------------------------------+--------------+-------------+-----------------+
@@ -112,15 +115,18 @@ I/O Technology
 +--------------+--------+------+-------+--------+---------------+
 | I/O Standard | Vddi   | Vref | Input | Output | Bidirectional |
 +--------------+--------+------+-------+--------+---------------+
-| LVCMOS33     |  3.30v |  N/A |  10   |  14    |  2            |
+| LVCMOS33     |  3.30v |  N/A |  10   |  17    |  0            |
 +--------------+--------+------+-------+--------+---------------+
 
 Nets assigned to chip global resources
 +--------+---------+----------------------------------------+
 | Fanout | Type    | Name                                   |
 +--------+---------+----------------------------------------+
-| 329    | INT_NET | Net   : sb_sb_0_FIC_0_CLK              |
+| 1508   | INT_NET | Net   : sb_sb_0_FIC_0_CLK              |
 |        |         | Driver: sb_sb_0/CCC_0/GL0_INST/U0_RGB1 |
+|        |         | Source: NETLIST                        |
+| 1036   | INT_NET | Net   : resetn_arst                    |
+|        |         | Driver: ResetAND_RNIMHJB/U0_RGB1       |
 |        |         | Source: NETLIST                        |
 | 155    | INT_NET | Net   : debug_led_net_0_arst           |
 |        |         | Driver: AND2_0_RNIKOS1/U0_RGB1         |
@@ -137,54 +143,54 @@ Nets assigned to row global resources
 +--------+------+------+
 
 High fanout nets
-+--------+---------+----------------------------------------------------+
-| Fanout | Type    | Name                                               |
-+--------+---------+----------------------------------------------------+
-| 83     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                     |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST         |
-| 68     | INT_NET | Net   : STAMP_0/component_state_Z[5]               |
-|        |         | Driver: STAMP_0/component_state[5]                 |
-| 59     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                     |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST         |
-| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                     |
-|        |         | Driver: STAMP_0/spi/state[0]                       |
-| 42     | INT_NET | Net   : STAMP_0/spi/un7_count_NE_i                 |
-|        |         | Driver: STAMP_0/spi/un7_count_NE_20_RNIK2531       |
-| 34     | INT_NET | Net   : sb_sb_0_STAMP_PSELx                        |
-|        |         | Driver: sb_sb_0/CoreAPB3_0/iPSELS_raw_0_a2[0]      |
-| 32     | INT_NET | Net   : STAMP_0/un1_request_resync_0_sqmuxa_1_0_Z  |
-|        |         | Driver: STAMP_0/un1_request_resync_0_sqmuxa_1_0    |
-| 32     | INT_NET | Net   : STAMP_0/spi/N_63_i                         |
-|        |         | Driver: STAMP_0/spi/state_RNIDMJE[0]               |
-| 31     | INT_NET | Net   : STAMP_0/config_143                         |
-|        |         | Driver: STAMP_0/config_143_0_0_a2                  |
-| 28     | INT_NET | Net   : STAMP_0/delay_countere                     |
-|        |         | Driver: STAMP_0/delay_counter_1_sqmuxa_1_0_RNI88DD |
-+--------+---------+----------------------------------------------------+
++--------+---------+--------------------------------------------------+
+| Fanout | Type    | Name                                             |
++--------+---------+--------------------------------------------------+
+| 516    | INT_NET | Net   : Memory_0/WriteEnable_Z                   |
+|        |         | Driver: Memory_0/WriteEnable                     |
+| 206    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[8]        |
+|        |         | Driver: Memory_0/InternalAddr2Memory[8]          |
+| 140    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[7]        |
+|        |         | Driver: Memory_0/InternalAddr2Memory[7]          |
+| 108    | INT_NET | Net   : Memory_0/APB3ReadMemoryLimitedState_Z[3] |
+|        |         | Driver: Memory_0/APB3ReadMemoryLimitedState[3]   |
+| 95     | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[6]        |
+|        |         | Driver: Memory_0/InternalAddr2Memory[6]          |
+| 79     | INT_NET | Net   : Memory_0/ReadMemoryState_Z[2]            |
+|        |         | Driver: Memory_0/ReadMemoryState[2]              |
+| 76     | INT_NET | Net   : Memory_0/SPI/state_Z[0]                  |
+|        |         | Driver: Memory_0/SPI/state[0]                    |
+| 69     | INT_NET | Net   : STAMP_0/component_state_Z[5]             |
+|        |         | Driver: STAMP_0/component_state[5]               |
+| 68     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                   |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST       |
+| 68     | INT_NET | Net   : Memory_0/ControllUnitState_Z[12]         |
+|        |         | Driver: Memory_0/ControllUnitState[12]           |
++--------+---------+--------------------------------------------------+
 
 High fanout nets (through buffer trees)
-+--------+---------+----------------------------------------------------+
-| Fanout | Type    | Name                                               |
-+--------+---------+----------------------------------------------------+
-| 83     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                     |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST         |
-| 68     | INT_NET | Net   : STAMP_0/component_state_Z[5]               |
-|        |         | Driver: STAMP_0/component_state[5]                 |
-| 59     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                     |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST         |
-| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                     |
-|        |         | Driver: STAMP_0/spi/state[0]                       |
-| 42     | INT_NET | Net   : STAMP_0/spi/un7_count_NE_i                 |
-|        |         | Driver: STAMP_0/spi/un7_count_NE_20_RNIK2531       |
-| 34     | INT_NET | Net   : sb_sb_0_STAMP_PSELx                        |
-|        |         | Driver: sb_sb_0/CoreAPB3_0/iPSELS_raw_0_a2[0]      |
-| 32     | INT_NET | Net   : STAMP_0/un1_request_resync_0_sqmuxa_1_0_Z  |
-|        |         | Driver: STAMP_0/un1_request_resync_0_sqmuxa_1_0    |
-| 32     | INT_NET | Net   : STAMP_0/spi/N_63_i                         |
-|        |         | Driver: STAMP_0/spi/state_RNIDMJE[0]               |
-| 31     | INT_NET | Net   : STAMP_0/config_143                         |
-|        |         | Driver: STAMP_0/config_143_0_0_a2                  |
-| 28     | INT_NET | Net   : STAMP_0/delay_countere                     |
-|        |         | Driver: STAMP_0/delay_counter_1_sqmuxa_1_0_RNI88DD |
-+--------+---------+----------------------------------------------------+
++--------+---------+--------------------------------------------------+
+| Fanout | Type    | Name                                             |
++--------+---------+--------------------------------------------------+
+| 516    | INT_NET | Net   : Memory_0/WriteEnable_Z                   |
+|        |         | Driver: Memory_0/WriteEnable                     |
+| 206    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[8]        |
+|        |         | Driver: Memory_0/InternalAddr2Memory[8]          |
+| 140    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[7]        |
+|        |         | Driver: Memory_0/InternalAddr2Memory[7]          |
+| 108    | INT_NET | Net   : Memory_0/APB3ReadMemoryLimitedState_Z[3] |
+|        |         | Driver: Memory_0/APB3ReadMemoryLimitedState[3]   |
+| 95     | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[6]        |
+|        |         | Driver: Memory_0/InternalAddr2Memory[6]          |
+| 79     | INT_NET | Net   : Memory_0/ReadMemoryState_Z[2]            |
+|        |         | Driver: Memory_0/ReadMemoryState[2]              |
+| 76     | INT_NET | Net   : Memory_0/SPI/state_Z[0]                  |
+|        |         | Driver: Memory_0/SPI/state[0]                    |
+| 69     | INT_NET | Net   : STAMP_0/component_state_Z[5]             |
+|        |         | Driver: STAMP_0/component_state[5]               |
+| 68     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                   |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST       |
+| 68     | INT_NET | Net   : Memory_0/ControllUnitState_Z[12]         |
+|        |         | Driver: Memory_0/ControllUnitState[12]           |
++--------+---------+--------------------------------------------------+
 

@@ -1,13 +1,21 @@
 @N: MF916 |Option synthesis_strategy=base is enabled. 
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: MO106 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 6 bits.
-@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\stamp.vhd":201:8:201:9|Found counter in view:work.STAMP(architecture_stamp) instance delay_counter[27:0] 
-@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\stamp.vhd":201:8:201:9|Found counter in view:work.STAMP(architecture_stamp) instance status_async_cycles[5:0] 
-@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance clk_toggles[5:0] 
-@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance count[31:0] 
-@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_0.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
-@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_330 
+@N: MO106 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 7 bits.
+@N: MF135 :"d:\hermess_spsoftware\microcontroller\hdl\ram.vhd":47:2:47:3|RAM intRam.memory[31:0] (in view: work.Memory(arch)) is 512 words by 32 bits.
+@N: FX403 :"d:\hermess_spsoftware\microcontroller\hdl\ram.vhd":47:2:47:3|Property "block_ram" or "no_rw_check" found for RAM intRam.memory[31:0] with specified coding style. Inferring block RAM.
+@N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found counter in view:work.Memory(arch) instance TimeStampGen.counter[31:0] 
+@N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_2_32(logic) instance clk_toggles[6:0] 
+@N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_2_32(logic) instance count[31:0] 
+@N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\stamp.vhd":201:8:201:9|Found counter in view:work.STAMP(architecture_stamp) instance delay_counter[27:0] 
+@N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\stamp.vhd":201:8:201:9|Found counter in view:work.STAMP(architecture_stamp) instance status_async_cycles[5:0] 
+@N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_1_16(logic) instance clk_toggles[5:0] 
+@N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_1_16(logic) instance count[31:0] 
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing sequential instance Memory_0.memorycnt[0] (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance Memory_0.SPI.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_0.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: FP130 |Promoting Net resetn_arst on CLKINT  I_890 
+@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_891 
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
