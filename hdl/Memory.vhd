@@ -186,17 +186,16 @@ architecture arch of Memory is
     -- The page size of the memory in case there will be an memory update
     signal MemoryPageSize           : integer range 0 to (2**16) -1;
     --
-    type SPIStateType      is (Transmitting, Ready, Done);
+    type SPIStateType      is (READY, STARTTRANSMIT, TRANSMIT, DONE, WAITING);
     signal SPIState                 : SPIStateType;
     -- 
-    type ReadMemoryStateMachineType is (CMD, ADDR, WAITING, DATEN, SAVING, E1, E2);
+    type ReadMemoryStateMachineType is (CMD, ADDR, WAITING, DATEN, SAVING, E1, CopyShadow1, CopyShadow2, E2);
     signal ReadMemoryState : ReadMemoryStateMachineType;
     
     type APB3ReadMemoryLimitedType is (Init, Waiting, S1, SignalEnd, E1, E2);
     signal APB3ReadMemoryLimitedState : APB3ReadMemoryLimitedType;
     -- Save State Machine state for locking
-    signal FormerCUFSMState       : typeCUState;
-    signal FormerCUFSMSubstate    : typeStampSubstate;
+    signal ReadMemoryShadowReg    : std_logic_vector((wortbreite - 1) downto 0);
     begin
         
         TimeStampGen : Timestamp 
@@ -226,7 +225,7 @@ architecture arch of Memory is
                                 cpol => '1',
                                 cpha => '1',
                                 cont => ContiniousSPI,
-                                clk_div => 2,
+                                clk_div => 4,
                                 addr => SPIaddr,
                                 tx_data => SPITransmitReg,
                                 miso => MISO,
@@ -250,7 +249,7 @@ architecture arch of Memory is
     variable ReadMemoryCounter      : integer range 0 to 15;
     variable PageAddrNonShifted     : std_logic_vector(23 downto 0);
     variable ReadMemoryAddrCounter  : integer range 0 to (2**9) - 1;
-    
+
     begin
         if (nReset = '0') then
             -- Init PRDATA 
@@ -260,8 +259,8 @@ architecture arch of Memory is
             -- Do the main init
             ControllUnitState       <= Waiting;
             ControllUnitSubState    <= Prepare;
-            FormerCUFSMSubstate     <= Prepare;
-            FormerCUFSMState        <= Waiting;
+            --FormerCUFSMSubstate     <= Prepare;
+            --FormerCUFSMState        <= Waiting;
 
             -- dataReady Reset
             dataReadyReset          <= '0';
@@ -317,12 +316,13 @@ architecture arch of Memory is
             CommandReg              <= (others => '0');    
             Command                 <= (others => '0');
             --
-            SPIState                <= Done;
+            SPIState                <= WAITING;
             ReadMemoryState         <= E2;
             ReadMemoryCounter       := 0;
             ReadMemoryAddrCounter   := 16#82#;
             --
             APB3ReadMemoryLimitedState <= E2;
+            ReadMemoryShadowReg     <= (others => '0');
         elsif (rising_edge(clk)) then
             -- Functions of the main Memory part
             if (enable = '1') then
@@ -370,6 +370,7 @@ architecture arch of Memory is
                         if (ConfigStatusReg(1) /= ConfigStatusReg(0)) then 
                             CurrentAddrReg      <= std_logic_vector(to_unsigned(PageAddr + MemoryPageSize, CurrentAddrReg'length)); -- Add 512 byte to the address to start at the next page
                         end if ;
+                        InternalAddr2Memory <= (others => '0'); -- addr bus stall 
                         ControllUnitState <= Init;
                     when Init => 
                         -- Write spi command and addr to memory
@@ -533,13 +534,13 @@ architecture arch of Memory is
                             -- Check if page is full if full -> End 2 else Waiting for Stamp 1 with drdy = X"3f" -> Stamp 1 
                             -- if change to Stamp1 set ControllUnitSubstate to Prepare
                     when End2 => 
-                        -- TODO: APB3 Interface implementieren
                         case ControllUnitSubstate is 
                             when Prepare => 
                                 -- Get value from memory
                                 --TempCounter := TO_INTEGER(UNSIGNED(StampFSMPC));
                                 --TempCounter := TempCounter + TXCounter;
                                 InternalAddr2Memory <= StampFSMPC((addrbreite - 1) downto 0);--std_logic_vector(to_unsigned(TempCounter, InternalAddr2Memory'length));
+                                ConfigStatusReg(29) <= '1'; -- Mark SPI busy
                                 ControllUnitSubstate <= Working;
                             when Working => 
                                 -- 128 + 1 to include the 0x00000000 at the end of the last dataset
@@ -570,6 +571,7 @@ architecture arch of Memory is
                     when End3 => 
                         TempCounter := 0; -- Reset the Counter for the next spi transmit op
                         enableSPI <= '0';
+                        ConfigStatusReg(29) <= '0'; -- Mark SPI free
                         -- toggle left right
                         if  (SPIaddr = 1) then
                             SPIaddr <= 0;
@@ -613,15 +615,13 @@ architecture arch of Memory is
                             PREADY <= '1';
                         when X"03C" => 
                             SPITransmitReg <= PWDATA;
-                            SPIState <= Ready;
+                            SPIState <= READY;
                             PREADY <= '1';
-                        
-                            --TODO: may enable spi here to tansmit new written data
                         when X"044" =>
                             -- Just write the bits that are defined to be written
                             ConfigStatusReg(0) <= PWDATA(0);
                             ConfigStatusReg(2) <= PWDATA(2);
-                            ConfigStatusReg(19 downto 8) <= PWDATA(19 downto 8);
+                            ConfigStatusReg(23 downto 8) <= PWDATA(23 downto 8);
                             MemoryPageSize  <= to_integer(unsigned(PWDATA(23 downto 8))); 
                             PREADY <= '1';
                         when X"048" => 
@@ -665,6 +665,7 @@ architecture arch of Memory is
                             PREADY <= '1';
                         when X"028" =>
                             PRDATA <= Stamp5ShadowReg2;
+                            PREADY <= '1';
                         when X"02C" => 
                             PRDATA <= Stamp6ShadowReg1;
                             PREADY <= '1';
@@ -692,6 +693,8 @@ architecture arch of Memory is
                         when X"04C" => -- read memory line by line starting at 0x82 bis 0x82 + 128 
                             -- Make sure that the driver will read always 128 byte of date otherwise it will be reading old data 
                             APB3ReadMemoryLimitedState <= Init;
+                            PRDATA <= ReadMemoryShadowReg;
+                            PREADY <= '1';
                         when others => 
                             PREADY <= '1';
                             -- Error addr unknown 
@@ -702,7 +705,7 @@ architecture arch of Memory is
                 APBState <= APBWaiting;
             end case;
 
-            case APB3ReadMemoryLimitedState is 
+             case APB3ReadMemoryLimitedState is 
                 when Init => 
                     if (ConfigStatusReg(4) = '1') then -- Memory is loaded
                         InternalAddr2Memory <= std_logic_vector(to_unsigned(ReadMemoryLimitedCnt, InternalAddr2Memory'length));
@@ -714,20 +717,20 @@ architecture arch of Memory is
                 when Waiting => -- Give him some time to fetch the content of the memory
                     APB3ReadMemoryLimitedState <= S1;
                 when S1   => 
-                    PRDATA <= InternalDataFromMem;
+                    ReadMemoryShadowReg <= InternalDataFromMem;
                     if (ReadMemoryLimitedCnt = 258) then
                         APB3ReadMemoryLimitedState    <= E1;
                     else 
                         APB3ReadMemoryLimitedState    <= SignalEnd;
                     end if;
-                    PREADY <= '1'; -- signal the MCU that the data is ready
+                    --PREADY <= '1'; -- signal the MCU that the data is ready
                 when SignalEnd => 
-                    PREADY <= '0'; -- Stay here until Someone writes to 0x4c again to trigger the next read
+                    --PREADY <= '0'; -- Stay here until Someone writes to 0x4c again to trigger the next read
                 when E1   => 
-                    ReadMemoryLimitedCnt := 16#82#; -- Reset to basis value if everything is read
+                    ReadMemoryLimitedCnt := 16#83#; -- Reset to basis value if everything is read
                     APB3ReadMemoryLimitedState <= E2;
                     ConfigStatusReg(4) <= '0'; -- Signal: Memory Reading done load memory first to use this part again
-                    PREADY <= '0'; -- Reset Preday becasue we are outside of the APB Statemachine, the controller is waiting for this to toggle
+                    --PREADY <= '0'; -- Reset Preday becasue we are outside of the APB Statemachine, the controller is waiting for this to toggle
                 when E2 => -- Waiting state is initial set, will be set if all data was read
             end case;
 
@@ -746,34 +749,52 @@ architecture arch of Memory is
                     end if;
                     Command <= (others => '0');
                     
-                when X"02" | X"12" => 
-                    case SPIState is 
-                        when Transmitting =>
-                            if (InternalBusy = '0') then
-                                enableSPI <= '0';
-                                ConfigStatusReg(2) <= '0'; -- release lock CU FSM
-                                SPIState <= Done;
-                                SPIaddr <= to_integer(unsigned(ConfigStatusReg(31 downto 31))); -- Reset  SPI Addr for writing 
-                            end if;
-                        when Ready => 
-                            if (Command = X"12") then 
-                                SPIaddr <= 1;
-                            else 
-                                SPIaddr <= 0;
-                            end if;
-                            enableSPI <= '1';
-                            -- TODO: define statemachine and InternalBusy for change of state
-                            -- The release lock here will be there forever if someone has written to SPITransmitreg
-                            SPIState <= Transmitting;
-                        when Done => 
-                            Command <= (others => '0');
-                    end case;
+                when X"02" => 
+                    if (SPIState = READY) then
+                        SPIaddr <= 0;
+                        SPIState <= STARTTRANSMIT;
+                    end if;
+                    Command <= (others => '0');
+                when X"12" => 
+                    if (SPIState = READY) then
+                        SPIaddr <= 1;
+                        SPIState <= STARTTRANSMIT;
+                    end if;
+                    Command <= (others => '0');
                 when X"03" => 
-                    SPIState <= Ready;
+                    SPIState <= READY;
+                    Command <= (others => '0');
                 when others => 
                     --enableSPI       <= '0';
                     dataReadyReset  <= '0';
+                    --Command <= (others => '0');
             end case;
+            case SPIState is 
+                when READY =>
+                    -- Waiting to rec cmd 0x02 | 0x12
+                when STARTTRANSMIT => 
+                    enableSPI <= '1';
+                    ConfigStatusReg(29) <= '1';
+                    SPIState <= TRANSMIT;
+                when TRANSMIT =>
+                    if (Counter > 2 and InternalBusy = '0') then
+                        Counter     := 0;
+                        --ConfigStatusReg(2) <= '0'; -- release lock CU FSM
+                        ConfigStatusReg(29) <= '0'; -- Mark SPI busy
+                        SPIState    <= DONE;
+                        SPIaddr     <= to_integer(unsigned(ConfigStatusReg(31 downto 31))); -- Reset  SPI Addr for writing 
+                    elsif (Counter > 2 and InternalBusy = '1') then
+                        enableSPI <= '0'; -- Just enable SPI for a few moments, the data will be coming after that 
+                    else
+                        Counter := Counter + 1;
+                    end if;
+                when DONE => 
+                    ConfigStatusReg(29) <= '0'; -- mark SPI Free
+                    Command <= (others => '0');
+                    SPIState <= WAITING;
+                when WAITING => 
+                    -- Do nothing
+                end case;
             case ReadMemoryState is 
                 when CMD => 
                     if (ReadMemoryCounter = 2) then
@@ -783,7 +804,7 @@ architecture arch of Memory is
                         end if;
                         enableSPI <= '0';
                     else 
-                        SPITransmitReg <= X"00000012";
+                        SPITransmitReg <= X"00000013";
                         enableSPI <= '1';
                         ReadMemoryCounter := ReadMemoryCounter + 1;
                     end if;
@@ -837,6 +858,7 @@ architecture arch of Memory is
                         ReadMemoryAddrCounter := 16#82#;
                         ReadMemoryState <= E1;
                         WriteEnable <= '0'; -- Turn of WriteEnable to not block the CU
+                        -- Extention to fix 4C Read Problem:
                     end if;
                 when E1 => 
                     ConfigStatusReg(2) <= '0';  -- Release lock
@@ -844,7 +866,14 @@ architecture arch of Memory is
                     SPIaddr <= to_integer(unsigned(ConfigStatusReg(31 downto 31))); -- Reset  SPI Addr for writing 
                     --APB3ReadMemoryLimitedState <= Init; -- Enables the state machine if the data is loaded to memory
                     ConfigStatusReg(4) <= '1';
-                    ReadMemoryState <= E2;
+                    ReadMemoryState <= CopyShadow1;
+                    -- Extention to fix 4C Read Problem
+                    InternalAddr2Memory <= '0' & X"82"; 
+                when CopyShadow1 =>  -- Wait until the memory presents its data
+                    ReadMemoryState     <= CopyShadow2;
+                when CopyShadow2 => 
+                    ReadMemoryShadowReg <= InternalDataFromMem;
+                    ReadMemoryState     <= E2; 
                 when E2 => -- Waiting state, do nothing
                 when others => 
                     -- Well CHange to e1

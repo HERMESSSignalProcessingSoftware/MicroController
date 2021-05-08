@@ -21,6 +21,7 @@
 #define OUT_ADC_START                   3
 #define OUT_RESET_N                     4
 #define IN_SYNC_START                   5
+#define OUT_ENA_MEMORY_CU               6
 #define LED_RECORDING                   30
 #define LED_HEARTBEAT                   31
 
@@ -28,12 +29,13 @@
 /*-----------------------------------------------------------------------------
 * APB SLAVES
 *---------------------------------------------------------------------------*/
-#define ADDR_STAMP_0                    0x50000000U
-#define ADDR_STAMP_1                    0x50001000U
-#define ADDR_STAMP_2                    0x50002000U
-#define ADDR_STAMP_3                    0x50003000U
-#define ADDR_STAMP_4                    0x50004000U
-#define ADDR_STAMP_5                    0x50005000U
+#define ADDR_MEMORY                     0x50000000U
+#define ADDR_STAMP_0                    0x50001000U
+#define ADDR_STAMP_1                    0x50002000U
+#define ADDR_STAMP_2                    0x50003000U
+#define ADDR_STAMP_3                    0x50004000U
+#define ADDR_STAMP_4                    0x50005000U
+#define ADDR_STAMP_5                    0x50006000U
 
 
 /*-----------------------------------------------------------------------------
