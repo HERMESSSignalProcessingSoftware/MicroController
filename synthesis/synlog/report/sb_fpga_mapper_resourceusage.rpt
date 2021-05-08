@@ -8,17 +8,17 @@ CLKINT          4 uses
 MSS_010         1 use
 RCOSC_25_50MHZ  1 use
 SYSRESET        1 use
-CFG1           7 uses
-CFG2           851 uses
-CFG3           549 uses
-CFG4           1508 uses
+CFG1           9 uses
+CFG2           833 uses
+CFG3           512 uses
+CFG4           1525 uses
 
 Carry cells:
-ARI1            239 uses - used for arithmetic functions
+ARI1            238 uses - used for arithmetic functions
 
 
 Sequential Cells: 
-SLE            1505 uses
+SLE            1545 uses
 
 DSP Blocks:    0 of 22 (0%)
 
@@ -31,7 +31,7 @@ TRIBUFF        4 uses
 
 Global Clock Buffers: 4
 
-Total LUTs:    3154
+Total LUTs:    3117
 
 Extra resources required for RAM and MACC interface logic during P&R:
 
@@ -39,6 +39,6 @@ RAM64x18 Interface Logic : SLEs = 0; LUTs = 0;
 RAM1K18  Interface Logic : SLEs = 36; LUTs = 36;
 MACC     Interface Logic : SLEs = 0; LUTs = 0;
 
-Total number of SLEs after P&R:  1505 + 0 + 36 + 0 = 1541;
-Total number of LUTs after P&R:  3154 + 0 + 36 + 0 = 3190;
+Total number of SLEs after P&R:  1545 + 0 + 36 + 0 = 1581;
+Total number of LUTs after P&R:  3117 + 0 + 36 + 0 = 3153;
 

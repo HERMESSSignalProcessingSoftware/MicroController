@@ -3,7 +3,7 @@
 <doc>
 <title>Global Net Report</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</text>
-<text>Date: Thu May  6 20:44:46 2021
+<text>Date: Sat May  8 20:38:34 2021
 </text>
 <section>
 <name>Global Nets Information</name>
@@ -20,20 +20,20 @@
  <cell>GB[0] </cell>
  <cell>(218, 54)</cell>
  <cell>sb_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
- <cell>1508</cell>
+ <cell>1548</cell>
 </row>
 <row>
  <cell>2</cell>
  <cell>GB[1] </cell>
  <cell>(219, 54)</cell>
  <cell>ResetAND_RNIMHJB/U0_YNn_GSouth</cell>
- <cell>1036</cell>
+ <cell>1076</cell>
 </row>
 <row>
  <cell>3</cell>
  <cell>GB[3] </cell>
  <cell>(221, 54)</cell>
- <cell>AND2_0_RNIKOS1/U0_YNn_GSouth</cell>
+ <cell>AND2_0_RNIKOS1/U0_YNn</cell>
  <cell>155</cell>
 </row>
 <row>
@@ -65,20 +65,20 @@
 <row>
  <cell>1</cell>
  <cell>ResetAND:Y</cell>
- <cell>(395, 27)</cell>
+ <cell>(397, 57)</cell>
  <cell>GB[1] </cell>
  <cell>NN_1</cell>
  <cell>ROUTED</cell>
- <cell>13</cell>
+ <cell>14</cell>
 </row>
 <row>
  <cell>2</cell>
  <cell>AND2_0:Y</cell>
- <cell>(368, 12)</cell>
+ <cell>(359, 24)</cell>
  <cell>GB[3] </cell>
  <cell>debug_led_net_0</cell>
  <cell>ROUTED</cell>
- <cell>15</cell>
+ <cell>18</cell>
 </row>
 </table>
 <text></text>
@@ -167,20 +167,10 @@
  <cell>GB[0] </cell>
  <cell>(218, 54)</cell>
  <cell>sb_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
- <cell>1508</cell>
- <cell> </cell>
- <cell>(218, 102)</cell>
+ <cell>1548</cell>
  <cell>1</cell>
-</row>
-<row>
- <cell>2</cell>
- <cell>GB[1] </cell>
- <cell>(219, 54)</cell>
- <cell>ResetAND_RNIMHJB/U0_YNn_GSouth</cell>
- <cell>1036</cell>
- <cell>1</cell>
- <cell>(218, 15)</cell>
- <cell>42</cell>
+ <cell>(218, 60)</cell>
+ <cell>28</cell>
 </row>
 <row>
  <cell> </cell>
@@ -189,8 +179,8 @@
  <cell></cell>
  <cell></cell>
  <cell>2</cell>
- <cell>(218, 51)</cell>
- <cell>9</cell>
+ <cell>(218, 63)</cell>
+ <cell>4</cell>
 </row>
 <row>
  <cell> </cell>
@@ -199,8 +189,8 @@
  <cell></cell>
  <cell></cell>
  <cell>3</cell>
- <cell>(219, 12)</cell>
- <cell>32</cell>
+ <cell>(218, 102)</cell>
+ <cell>1</cell>
 </row>
 <row>
  <cell> </cell>
@@ -209,8 +199,48 @@
  <cell></cell>
  <cell></cell>
  <cell>4</cell>
- <cell>(219, 18)</cell>
- <cell>42</cell>
+ <cell>(219, 57)</cell>
+ <cell>12</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>GB[1] </cell>
+ <cell>(219, 54)</cell>
+ <cell>ResetAND_RNIMHJB/U0_YNn_GSouth</cell>
+ <cell>1076</cell>
+ <cell>1</cell>
+ <cell>(218, 12)</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(218, 15)</cell>
+ <cell>20</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(218, 18)</cell>
+ <cell>38</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>4</cell>
+ <cell>(218, 21)</cell>
+ <cell>50</cell>
 </row>
 <row>
  <cell> </cell>
@@ -219,8 +249,8 @@
  <cell></cell>
  <cell></cell>
  <cell>5</cell>
- <cell>(219, 21)</cell>
- <cell>48</cell>
+ <cell>(219, 24)</cell>
+ <cell>68</cell>
 </row>
 <row>
  <cell> </cell>
@@ -229,8 +259,8 @@
  <cell></cell>
  <cell></cell>
  <cell>6</cell>
- <cell>(219, 24)</cell>
- <cell>70</cell>
+ <cell>(219, 27)</cell>
+ <cell>106</cell>
 </row>
 <row>
  <cell> </cell>
@@ -239,8 +269,8 @@
  <cell></cell>
  <cell></cell>
  <cell>7</cell>
- <cell>(219, 27)</cell>
- <cell>111</cell>
+ <cell>(219, 30)</cell>
+ <cell>142</cell>
 </row>
 <row>
  <cell> </cell>
@@ -249,7 +279,37 @@
  <cell></cell>
  <cell></cell>
  <cell>8</cell>
- <cell>(219, 30)</cell>
+ <cell>(219, 33)</cell>
+ <cell>142</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>9</cell>
+ <cell>(219, 36)</cell>
+ <cell>158</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>10</cell>
+ <cell>(219, 39)</cell>
+ <cell>132</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>11</cell>
+ <cell>(219, 42)</cell>
  <cell>112</cell>
 </row>
 <row>
@@ -258,39 +318,9 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>9</cell>
- <cell>(219, 33)</cell>
- <cell>137</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>10</cell>
- <cell>(219, 36)</cell>
- <cell>130</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>11</cell>
- <cell>(219, 39)</cell>
- <cell>113</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
  <cell>12</cell>
- <cell>(219, 42)</cell>
- <cell>107</cell>
+ <cell>(219, 45)</cell>
+ <cell>66</cell>
 </row>
 <row>
  <cell> </cell>
@@ -299,8 +329,8 @@
  <cell></cell>
  <cell></cell>
  <cell>13</cell>
- <cell>(219, 45)</cell>
- <cell>57</cell>
+ <cell>(219, 48)</cell>
+ <cell>29</cell>
 </row>
 <row>
  <cell> </cell>
@@ -309,128 +339,18 @@
  <cell></cell>
  <cell></cell>
  <cell>14</cell>
- <cell>(219, 48)</cell>
- <cell>26</cell>
+ <cell>(219, 51)</cell>
+ <cell>11</cell>
 </row>
 <row>
  <cell>3</cell>
  <cell>GB[3] </cell>
  <cell>(221, 54)</cell>
- <cell>AND2_0_RNIKOS1/U0_YNn_GSouth</cell>
+ <cell>AND2_0_RNIKOS1/U0_YNn</cell>
  <cell>155</cell>
- <cell>1</cell>
- <cell>(218, 12)</cell>
- <cell>4</cell>
-</row>
-<row>
  <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>2</cell>
- <cell>(218, 18)</cell>
- <cell>5</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>3</cell>
- <cell>(218, 21)</cell>
- <cell>19</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>4</cell>
- <cell>(218, 24)</cell>
+ <cell>(218, 57)</cell>
  <cell>12</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>5</cell>
- <cell>(218, 27)</cell>
- <cell>16</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>6</cell>
- <cell>(218, 30)</cell>
- <cell>7</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>7</cell>
- <cell>(218, 33)</cell>
- <cell>12</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>8</cell>
- <cell>(218, 36)</cell>
- <cell>17</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>9</cell>
- <cell>(218, 39)</cell>
- <cell>12</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>10</cell>
- <cell>(218, 42)</cell>
- <cell>16</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>11</cell>
- <cell>(218, 45)</cell>
- <cell>24</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>12</cell>
- <cell>(218, 48)</cell>
- <cell>11</cell>
 </row>
 <row>
  <cell>4</cell>

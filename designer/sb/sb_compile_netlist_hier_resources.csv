@@ -1,14 +1,14 @@
 Detailed Resource Usage
-Module Name,Fabric 4LUT,Fabric DFF,Interface 4LUT,Interface DFF,Single-Ended I/O,LSRAM 18K,PLLs and CCCs,Chip Globals,MSS,10/100/1000 Ethernet,RCOSC_50MHZ
-Memory_0/Primitives,158,416,0,0,0,0,0,0,0,0,0
-Memory_0/SPI/Primitives,822,144,0,0,0,0,0,0,0,0,0
-Memory_0/TimeStampGen/Primitives,46,71,0,0,0,0,0,0,0,0,0
-Memory_0/intRam/Primitives,1618,546,36,36,0,1,0,0,0,0,0
-Primitives/Primitives,3,0,0,0,23,0,0,2,0,0,0
-STAMP_0/Primitives,348,235,0,0,0,0,0,0,0,0,0
-STAMP_0/spi/Primitives,121,93,0,0,0,0,0,0,0,0,0
-sb_sb_0/CCC_0/Primitives,0,0,0,0,0,0,1,2,0,0,0
-sb_sb_0/CoreAPB3_0/Primitives,3,0,0,0,0,0,0,0,0,0,0
-sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/Primitives,39,0,0,0,0,0,0,0,0,0,0
-sb_sb_0/FABOSC_0/Primitives,0,0,0,0,0,0,0,0,0,0,1
-sb_sb_0/sb_sb_MSS_0/Primitives,0,0,0,0,4,0,0,0,1,0,0
+Module Name,Fabric 4LUT,Fabric DFF,Interface 4LUT,Interface DFF,Single-Ended I/O,LSRAM 18K,PLLs and CCCs,Chip Globals,MSS,10/100/1000 Ethernet,Multi-Mode UART,RCOSC_50MHZ
+Memory_0/Primitives,280,456,0,0,0,0,0,0,0,0,0,0
+Memory_0/SPI/Primitives,651,144,0,0,0,0,0,0,0,0,0,0
+Memory_0/TimeStampGen/Primitives,46,71,0,0,0,0,0,0,0,0,0,0
+Memory_0/intRam/Primitives,1617,546,36,36,0,1,0,0,0,0,0,0
+Primitives/Primitives,3,0,0,0,23,0,0,2,0,0,0,0
+STAMP_0/Primitives,358,235,0,0,0,0,0,0,0,0,0,0
+STAMP_0/spi/Primitives,122,93,0,0,0,0,0,0,0,0,0,0
+sb_sb_0/CCC_0/Primitives,0,0,0,0,0,0,1,2,0,0,0,0
+sb_sb_0/CoreAPB3_0/Primitives,3,0,0,0,0,0,0,0,0,0,0,0
+sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/Primitives,40,0,0,0,0,0,0,0,0,0,0,0
+sb_sb_0/FABOSC_0/Primitives,0,0,0,0,0,0,0,0,0,0,0,1
+sb_sb_0/sb_sb_MSS_0/Primitives,0,0,0,0,4,0,0,0,1,0,0,0

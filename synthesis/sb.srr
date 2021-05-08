@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: BND01
 
-# Thu May  6 20:43:23 2021
+# Sat May  8 20:37:25 2021
 
 #Implementation: synthesis
 
@@ -61,7 +61,7 @@ File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vh
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\sb_sb.vhd changed - recompiling
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd changed - recompiling
 VHDL syntax check successful!
-File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd changed - recompiling
 @N: CD231 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\vhd2008\std1164.vhd":888:16:888:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd":17:7:17:8|Synthesizing work.sb.rtl.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Synchronizer.vhd":10:7:10:18|Synthesizing work.synchronizer.architecture_synchronizer.
@@ -198,12 +198,12 @@ Post processing for smartfusion2.and2.syn_black_box
 @N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":178:21:178:22|Using onehot encoding for type typecustate. For example, enumeration waiting is mapped to "100000000000000".
 @N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":180:27:180:28|Using sequential encoding for type typestampsubstate.
 @N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":183:22:183:23|Using sequential encoding for type apbstatetype.
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":189:27:189:28|Using sequential encoding for type spistatetype.
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":192:36:192:37|Using onehot encoding for type readmemorystatemachinetype. For example, enumeration cmd is mapped to "1000000".
+@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":189:27:189:28|Using onehot encoding for type spistatetype. For example, enumeration ready is mapped to "10000".
+@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":192:36:192:37|Using onehot encoding for type readmemorystatemachinetype. For example, enumeration cmd is mapped to "100000000".
 @N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":195:35:195:36|Using onehot encoding for type apb3readmemorylimitedtype. For example, enumeration init is mapped to "100000".
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":585:20:585:33|OTHERS clause is not synthesized.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":701:16:701:29|OTHERS clause is not synthesized.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":849:16:849:29|OTHERS clause is not synthesized.
+@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":587:20:587:33|OTHERS clause is not synthesized.
+@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":704:16:704:29|OTHERS clause is not synthesized.
+@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":878:16:878:29|OTHERS clause is not synthesized.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":30:7:30:16|Synthesizing work.spi_master.logic.
 @N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":53:15:53:16|Using sequential encoding for type machine.
 Post processing for work.spi_master.logic
@@ -230,30 +230,22 @@ Post processing for work.timestamp.behaviour
 Running optimization stage 1 on Timestamp .......
 Post processing for work.memory.arch
 Running optimization stage 1 on Memory .......
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Pruning unused register StampFSMR3_7(31 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Pruning unused register StampFSMR2_5(31 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Pruning unused register FormerCUFSMState_1(0 to 14). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Pruning unused register FormerCUFSMSubstate_1(1 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL271 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Pruning unused bits 31 to 9 of StampFSMPC_7(31 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Feedback mux created for signal PREADY. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(5) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(6) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(7) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(20) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(21) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(22) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(23) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(24) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(25) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(26) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(27) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(28) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ConfigStatusReg(29) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|All reachable assignments to ContiniousSPI are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Optimizing register bit StampFSMR1(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Optimizing register bit pageaddr(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Pruning register bit 31 of StampFSMR1(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Pruning register bit 31 of pageaddr(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning unused register StampFSMR3_7(31 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning unused register StampFSMR2_5(31 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL271 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning unused bits 31 to 9 of StampFSMPC_7(31 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(5) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(6) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(7) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(24) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(25) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(26) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(27) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(28) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ContiniousSPI are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit StampFSMR1(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit pageaddr(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning register bit 31 of StampFSMR1(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning register bit 31 of pageaddr(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
 Post processing for work.sb.rtl
 Running optimization stage 1 on sb .......
 Running optimization stage 2 on Timestamp .......
@@ -262,35 +254,47 @@ Running optimization stage 2 on ram .......
 Running optimization stage 2 on spi_master_2_32 .......
 @W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Pruning register bits 5 to 1 of last_bit_rx(6 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 Running optimization stage 2 on Memory .......
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Trying to extract state machine for register SPIState.
-Extracted state machine for register SPIState
-State machine has 3 reachable states with original encodings of:
-   00
-   01
-   10
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Trying to extract state machine for register ControllUnitSubState.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(2) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(3) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(4) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(5) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(6) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(7) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning register bits 7 to 2 of counter(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register Command.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register ControllUnitSubState.
 Extracted state machine for register ControllUnitSubState
 State machine has 3 reachable states with original encodings of:
    00
    01
    10
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Trying to extract state machine for register APBState.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register APBState.
 Extracted state machine for register APBState
 State machine has 3 reachable states with original encodings of:
    00
    01
    10
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Trying to extract state machine for register ReadMemoryState.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register SPIState.
+Extracted state machine for register SPIState
+State machine has 5 reachable states with original encodings of:
+   00001
+   00010
+   00100
+   01000
+   10000
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register ReadMemoryState.
 Extracted state machine for register ReadMemoryState
-State machine has 7 reachable states with original encodings of:
-   0000001
-   0000010
-   0000100
-   0001000
-   0010000
-   0100000
-   1000000
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Trying to extract state machine for register ControllUnitState.
+State machine has 9 reachable states with original encodings of:
+   000000001
+   000000010
+   000000100
+   000001000
+   000010000
+   000100000
+   001000000
+   010000000
+   100000000
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register ControllUnitState.
 Extracted state machine for register ControllUnitState
 State machine has 15 reachable states with original encodings of:
    000000000000001
@@ -308,7 +312,7 @@ State machine has 15 reachable states with original encodings of:
    001000000000000
    010000000000000
    100000000000000
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":255:8:255:9|Trying to extract state machine for register APB3ReadMemoryLimitedState.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register APB3ReadMemoryLimitedState.
 Extracted state machine for register APB3ReadMemoryLimitedState
 State machine has 6 reachable states with original encodings of:
    000001
@@ -467,12 +471,12 @@ For a summary of runtime and memory usage per design unit, please see file:
 @L: D:\HERMESS_SPSoftware\Microcontroller\synthesis\synwork\layer0.rt.csv
 
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 141MB peak: 170MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:14s; Memory used current: 141MB peak: 170MB)
 
-Process took 0h:00m:17s realtime, 0h:00m:17s cputime
+Process took 0h:00m:15s realtime, 0h:00m:14s cputime
 
 Process completed successfully.
-# Thu May  6 20:43:42 2021
+# Sat May  8 20:37:40 2021
 
 ###########################################################]
 ###########################################################[
@@ -495,12 +499,12 @@ Synopsys Synopsys Netlist Linker, Version comp202003synp2, Build 166R, Built Oct
 @N|Running in 64-bit mode
 File D:\HERMESS_SPSoftware\Microcontroller\synthesis\synwork\layer0.srs changed - recompiling
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 98MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 97MB peak: 98MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu May  6 20:43:42 2021
+# Sat May  8 20:37:41 2021
 
 ###########################################################]
 
@@ -510,12 +514,12 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 24MB peak: 24MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 24MB peak: 24MB)
 
-Process took 0h:00m:18s realtime, 0h:00m:18s cputime
+Process took 0h:00m:15s realtime, 0h:00m:15s cputime
 
 Process completed successfully.
-# Thu May  6 20:43:42 2021
+# Sat May  8 20:37:41 2021
 
 ###########################################################]
 ###########################################################[
@@ -543,12 +547,12 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu May  6 20:43:44 2021
+# Sat May  8 20:37:42 2021
 
 ###########################################################]
 Premap Report
 
-# Thu May  6 20:43:44 2021
+# Sat May  8 20:37:42 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -587,7 +591,7 @@ Start loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00
 
 Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 139MB)
 
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing sequential instance Memory_0.pageaddr[30:0] because it is equivalent to instance Memory_0.StampFSMR1[30:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing sequential instance Memory_0.pageaddr[30:0] because it is equivalent to instance Memory_0.StampFSMR1[30:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sb_sb_0.CORERESETP_0.MDDR_DDR_AXI_S_CORE_RESET_N_int because it is equivalent to instance sb_sb_0.CORERESETP_0.FDDR_CORE_RESET_N_int. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q1 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q1 is reduced to a combinational gate by constant propagation.
@@ -596,7 +600,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance Memory_0.SPI.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_0.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":781:8:781:9|Sequential instance sb_sb_0.CORERESETP_0.sm1_areset_n_q1 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance Memory_0.SPI.clk_ratio[1] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance Memory_0.SPI.clk_ratio[2] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q2 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q2 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q2 is reduced to a combinational gate by constant propagation.
@@ -607,7 +611,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q3 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q3 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1331:8:1331:9|Sequential instance sb_sb_0.CORERESETP_0.RESET_N_F2M_int is reduced to a combinational gate by constant propagation.
-@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb\sb.vhd":510:24:510:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
+@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb\sb.vhd":511:24:511:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance DDR_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_RELEASED_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
@@ -620,7 +624,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance SDIF2_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing sequential instance dataReadyReset (in view: work.Memory(arch)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing sequential instance dataReadyReset (in view: work.Memory(arch)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb_sb\sb_sb.vhd":684:0:684:11|Removing instance CORERESETP_0 (in view: work.sb_sb(rtl)) of type view:work.CoreResetP(rtl) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance INIT_DONE_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance sdif0_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
@@ -692,7 +696,7 @@ Level     Clock                                       Frequency     Period      
 ----------------------------------------------------------------------------------------------------------------------------
 0 -       System                                      100.0 MHz     10.000        system       system_clkgroup         0    
                                                                                                                             
-0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     1046 
+0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     1089 
 ============================================================================================================================
 
 
@@ -705,10 +709,10 @@ Clock                                       Load      Pin                       
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 System                                      0         -                                   -                           -                 -                             
                                                                                                                                                                       
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     1046      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_0.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     1089      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_0.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
 ======================================================================================================================================================================
 
-@W: MT530 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock which controls 1046 sequential elements including Memory_0.TimeStampGen.timestamp[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock which controls 1089 sequential elements including Memory_0.TimeStampGen.timestamp[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
 Finished Pre Mapping Phase.
@@ -716,11 +720,13 @@ Finished Pre Mapping Phase.
 
 Starting constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 171MB peak: 173MB)
 
-Encoding state machine SPIState[0:2] (in view: work.Memory(arch))
+Encoding state machine SPIState[0:4] (in view: work.Memory(arch))
 original code -> new code
-   00 -> 00
-   01 -> 01
-   10 -> 10
+   00001 -> 00001
+   00010 -> 00010
+   00100 -> 00100
+   01000 -> 01000
+   10000 -> 10000
 Encoding state machine APB3ReadMemoryLimitedState[0:5] (in view: work.Memory(arch))
 original code -> new code
    000001 -> 000001
@@ -751,15 +757,17 @@ original code -> new code
    001000000000000 -> 001000000000000
    010000000000000 -> 010000000000000
    100000000000000 -> 100000000000000
-Encoding state machine ReadMemoryState[0:6] (in view: work.Memory(arch))
+Encoding state machine ReadMemoryState[0:8] (in view: work.Memory(arch))
 original code -> new code
-   0000001 -> 0000001
-   0000010 -> 0000010
-   0000100 -> 0000100
-   0001000 -> 0001000
-   0010000 -> 0010000
-   0100000 -> 0100000
-   1000000 -> 1000000
+   000000001 -> 000000001
+   000000010 -> 000000010
+   000000100 -> 000000100
+   000001000 -> 000001000
+   000010000 -> 000010000
+   000100000 -> 000100000
+   001000000 -> 001000000
+   010000000 -> 010000000
+   100000000 -> 100000000
 Encoding state machine APBState[0:2] (in view: work.Memory(arch))
 original code -> new code
    00 -> 00
@@ -777,19 +785,19 @@ original code -> new code
 Finished constraint checker preprocessing (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 175MB peak: 175MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 176MB peak: 176MB)
+Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 176MB peak: 176MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 89MB peak: 177MB)
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 90MB peak: 177MB)
 
 Process took 0h:00m:03s realtime, 0h:00m:03s cputime
-# Thu May  6 20:43:48 2021
+# Sat May  8 20:37:46 2021
 
 ###########################################################]
 Map & Optimize Report
 
-# Thu May  6 20:43:49 2021
+# Sat May  8 20:37:46 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -814,20 +822,20 @@ Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:0
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 129MB)
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 130MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 129MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 130MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 122MB peak: 129MB)
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 122MB peak: 130MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 124MB peak: 129MB)
+Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 124MB peak: 130MB)
 
 
 
-Starting Optimization and Mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 164MB peak: 164MB)
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 165MB peak: 165MB)
 
 
 Available hyper_sources - for debug and ip models
@@ -837,13 +845,15 @@ Available hyper_sources - for debug and ip models
 @W: FA239 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
 @N: MO106 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 7 bits.
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 170MB peak: 170MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 170MB peak: 170MB)
 
-Encoding state machine SPIState[0:2] (in view: work.Memory(arch))
+Encoding state machine SPIState[0:4] (in view: work.Memory(arch))
 original code -> new code
-   00 -> 00
-   01 -> 01
-   10 -> 10
+   00001 -> 00001
+   00010 -> 00010
+   00100 -> 00100
+   01000 -> 01000
+   10000 -> 10000
 Encoding state machine APB3ReadMemoryLimitedState[0:5] (in view: work.Memory(arch))
 original code -> new code
    000001 -> 000001
@@ -874,15 +884,17 @@ original code -> new code
    001000000000000 -> 001000000000000
    010000000000000 -> 010000000000000
    100000000000000 -> 100000000000000
-Encoding state machine ReadMemoryState[0:6] (in view: work.Memory(arch))
+Encoding state machine ReadMemoryState[0:8] (in view: work.Memory(arch))
 original code -> new code
-   0000001 -> 0000001
-   0000010 -> 0000010
-   0000100 -> 0000100
-   0001000 -> 0001000
-   0010000 -> 0010000
-   0100000 -> 0100000
-   1000000 -> 1000000
+   000000001 -> 000000001
+   000000010 -> 000000010
+   000000100 -> 000000100
+   000001000 -> 000001000
+   000010000 -> 000010000
+   000100000 -> 000100000
+   001000000 -> 001000000
+   010000000 -> 010000000
+   100000000 -> 100000000
 Encoding state machine APBState[0:2] (in view: work.Memory(arch))
 original code -> new code
    00 -> 00
@@ -892,18 +904,22 @@ original code -> new code
 @N: FX403 :"d:\hermess_spsoftware\microcontroller\hdl\ram.vhd":47:2:47:3|Property "block_ram" or "no_rw_check" found for RAM intRam.memory[31:0] with specified coding style. Inferring block RAM.
 @W: FX107 :"d:\hermess_spsoftware\microcontroller\hdl\ram.vhd":47:2:47:3|RAM intRam.memory[31:0] (in view: work.Memory(arch)) does not have a read/write conflict check. Possible simulation mismatch. To resolve a read/write conflict, either set syn_ramstyle = rw_check, or enable the "Read Write Check on RAM" Implementation Option. For more information, search for "read/write conflict check" in Online Help.
 @N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found counter in view:work.Memory(arch) instance TimeStampGen.counter[31:0] 
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[22] because it is equivalent to instance Memory_0.MemoryPageSize[4]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[23] because it is equivalent to instance Memory_0.MemoryPageSize[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[24] because it is equivalent to instance Memory_0.MemoryPageSize[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[25] because it is equivalent to instance Memory_0.MemoryPageSize[7]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[26] because it is equivalent to instance Memory_0.MemoryPageSize[8]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[28] because it is equivalent to instance Memory_0.MemoryPageSize[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[29] because it is equivalent to instance Memory_0.MemoryPageSize[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[18] because it is equivalent to instance Memory_0.MemoryPageSize[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[19] because it is equivalent to instance Memory_0.MemoryPageSize[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[20] because it is equivalent to instance Memory_0.MemoryPageSize[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[21] because it is equivalent to instance Memory_0.MemoryPageSize[3]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing instance Memory_0.ConfigStatusReg[31] because it is equivalent to instance Memory_0.ConfigStatusReg[14]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[23] because it is equivalent to instance Memory_0.MemoryPageSize[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[24] because it is equivalent to instance Memory_0.MemoryPageSize[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[25] because it is equivalent to instance Memory_0.MemoryPageSize[12]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[26] because it is equivalent to instance Memory_0.MemoryPageSize[13]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[27] because it is equivalent to instance Memory_0.MemoryPageSize[14]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[28] because it is equivalent to instance Memory_0.MemoryPageSize[15]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[13] because it is equivalent to instance Memory_0.MemoryPageSize[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[14] because it is equivalent to instance Memory_0.MemoryPageSize[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[16] because it is equivalent to instance Memory_0.MemoryPageSize[3]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[17] because it is equivalent to instance Memory_0.MemoryPageSize[4]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[18] because it is equivalent to instance Memory_0.MemoryPageSize[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[19] because it is equivalent to instance Memory_0.MemoryPageSize[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[20] because it is equivalent to instance Memory_0.MemoryPageSize[7]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[21] because it is equivalent to instance Memory_0.MemoryPageSize[8]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.ConfigStatusReg[31] because it is equivalent to instance Memory_0.ConfigStatusReg[9]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.MemoryPageSize[2] because it is equivalent to instance Memory_0.ConfigStatusReg[15]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_2_32(logic) instance clk_toggles[6:0] 
 @N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_2_32(logic) instance count[31:0] 
 Encoding state machine component_state[0:5] (in view: work.STAMP(architecture_stamp))
@@ -923,58 +939,57 @@ original code -> new code
 @W: MO161 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[1] (in view view:work.spi_master_1_16(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
 @W: MO161 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[0] (in view view:work.spi_master_1_16(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
 
-Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 187MB peak: 187MB)
+Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 187MB peak: 187MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 196MB peak: 196MB)
+Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 201MB peak: 201MB)
 
-@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing sequential instance Memory_0.memorycnt[0] (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing sequential instance Memory_0.memorycnt[0] (in view: work.sb(rtl)) because it does not drive other instances.
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 203MB peak: 216MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 212MB peak: 234MB)
 
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance Memory_0.SPI.continue (in view: work.sb(rtl)) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_0.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 204MB peak: 216MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 213MB peak: 234MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 210MB peak: 216MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:08s; Memory used current: 213MB peak: 234MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 210MB peak: 216MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:08s; Memory used current: 214MB peak: 234MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 210MB peak: 216MB)
+Finished preparing to map (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:09s; Memory used current: 208MB peak: 234MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 234MB peak: 287MB)
+Finished technology mapping (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 264MB peak: 264MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:15s		    -1.61ns		3165 /      1471
-   2		0h:00m:15s		    -1.57ns		3137 /      1471
+   1		0h:00m:11s		    -1.67ns		3156 /      1511
+   2		0h:00m:11s		    -1.63ns		3111 /      1511
 
-   3		0h:00m:17s		    -1.33ns		3153 /      1471
-   4		0h:00m:17s		    -1.03ns		3154 /      1471
-   5		0h:00m:18s		    -0.93ns		3155 /      1471
+   3		0h:00m:13s		    -1.15ns		3116 /      1511
+   4		0h:00m:13s		    -0.85ns		3117 /      1511
+   5		0h:00m:14s		    -0.51ns		3118 /      1511
+   6		0h:00m:14s		    -0.31ns		3119 /      1511
+   7		0h:00m:14s		    -0.31ns		3119 /      1511
 
 
-   6		0h:00m:19s		    -0.65ns		3159 /      1471
-   7		0h:00m:19s		    -0.38ns		3159 /      1471
-   8		0h:00m:20s		    -0.36ns		3159 /      1471
-   9		0h:00m:21s		    -0.37ns		3160 /      1471
-@N: FP130 |Promoting Net resetn_arst on CLKINT  I_890 
-@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_891 
+   8		0h:00m:14s		    -0.31ns		3122 /      1511
+@N: FP130 |Promoting Net resetn_arst on CLKINT  I_939 
+@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_940 
 
 Added 0 Buffers
 Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 236MB peak: 287MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 264MB peak: 264MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:23s; Memory used current: 236MB peak: 287MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 265MB peak: 265MB)
 
 
 
@@ -985,40 +1000,40 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:
 
 Clock optimization not enabled
 0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
-1 gated/generated clock tree(s) driving 1508 clock pin(s) of sequential element(s)
-0 instances converted, 1508 sequential instances remain driven by gated/generated clocks
+1 gated/generated clock tree(s) driving 1548 clock pin(s) of sequential element(s)
+0 instances converted, 1548 sequential instances remain driven by gated/generated clocks
 
 ============================================================================ Gated/Generated Clocks =============================================================================
 Clock Tree ID     Driving Element            Drive Element Type     Fanout     Sample Instance                        Explanation                                                
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       sb_sb_0.CCC_0.CCC_INST     CCC                    1508       sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     No gated clock conversion method for cell cell:work.MSS_010
+@K:CKID0001       sb_sb_0.CCC_0.CCC_INST     CCC                    1548       sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     No gated clock conversion method for cell cell:work.MSS_010
 =================================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:23s; Memory used current: 195MB peak: 287MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 222MB peak: 266MB)
 
 Writing Analyst data base D:\HERMESS_SPSoftware\Microcontroller\synthesis\synwork\sb_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:24s; CPU Time elapsed 0h:00m:24s; Memory used current: 229MB peak: 287MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 258MB peak: 266MB)
 
 Writing Verilog Simulation files
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 
-Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:26s; CPU Time elapsed 0h:00m:26s; Memory used current: 230MB peak: 287MB)
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 259MB peak: 266MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:26s; CPU Time elapsed 0h:00m:26s; Memory used current: 224MB peak: 287MB)
+Start final timing analysis (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 255MB peak: 266MB)
 
 @W: MT246 :"d:\hermess_spsoftware\microcontroller\component\work\sb_sb\ccc_0\sb_sb_ccc_0_fccc.vhd":110:4:110:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
 @W: MT420 |Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on net sb_sb_0.CCC_0.GL0_net.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Thu May  6 20:44:16 2021
+# Timing report written on Sat May  8 20:38:05 2021
 #
 
 
@@ -1038,14 +1053,14 @@ Performance Summary
 *******************
 
 
-Worst slack in design: -0.009
+Worst slack in design: 0.259
 
-                                            Requested     Estimated     Requested     Estimated                Clock        Clock              
-Starting Clock                              Frequency     Frequency     Period        Period        Slack      Type         Group              
------------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     99.9 MHz      10.000        10.009        -0.009     inferred     Inferred_clkgroup_0
-System                                      100.0 MHz     895.2 MHz     10.000        1.117         8.883      system       system_clkgroup    
-===============================================================================================================================================
+                                            Requested     Estimated     Requested     Estimated               Clock        Clock              
+Starting Clock                              Frequency     Frequency     Period        Period        Slack     Type         Group              
+----------------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     102.7 MHz     10.000        9.741         0.259     inferred     Inferred_clkgroup_0
+System                                      100.0 MHz     895.2 MHz     10.000        1.117         8.883     system       system_clkgroup    
+==============================================================================================================================================
 
 
 
@@ -1054,13 +1069,13 @@ System                                      100.0 MHz     895.2 MHz     10.000  
 Clock Relationships
 *******************
 
-Clocks                                                                            |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Starting                                 Ending                                   |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-System                                   System                                   |  10.000      8.883   |  No paths    -      |  No paths    -      |  No paths    -    
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      -0.009  |  No paths    -      |  No paths    -      |  No paths    -    
-=========================================================================================================================================================================
+Clocks                                                                            |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                 Ending                                   |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                   System                                   |  10.000      8.883  |  No paths    -      |  No paths    -      |  No paths    -    
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      0.259  |  No paths    -      |  No paths    -      |  No paths    -    
+========================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
 
@@ -1082,41 +1097,41 @@ Detailed Report for Clock: sb_sb_CCC_0_FCCC|GL0_net_inferred_clock
 Starting Points with Worst Slack
 ********************************
 
-                                       Starting                                                                                                                        Arrival           
-Instance                               Reference                                   Type        Pin                          Net                                        Time        Slack 
-                                       Clock                                                                                                                                             
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[8]                sb_sb_0_STAMP_PADDR[8]                     3.945       -0.009
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[9]                sb_sb_0_STAMP_PADDR[9]                     3.735       0.353 
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     CAN_TX_EBL_MGPIO4A_H2F_B     sb_sb_0_GPIO_4_M2F                         3.278       0.377 
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[7]                sb_sb_0_STAMP_PADDR[7]                     3.593       0.663 
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[5]                sb_sb_0_STAMP_PADDR[5]                     3.657       0.682 
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[15]               STAMP_PADDRS[15]                           3.580       0.722 
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_SEL                    sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx     3.488       0.750 
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[6]                sb_sb_0_STAMP_PADDR[6]                     3.746       0.851 
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[12]               STAMP_PADDRS[12]                           3.677       0.860 
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[10]               sb_sb_0_STAMP_PADDR[10]                    3.949       0.863 
-=========================================================================================================================================================================================
+                                       Starting                                                                                                                        Arrival          
+Instance                               Reference                                   Type        Pin                          Net                                        Time        Slack
+                                       Clock                                                                                                                                            
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     CAN_TX_EBL_MGPIO4A_H2F_B     sb_sb_0_GPIO_4_M2F                         3.278       0.259
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[15]               STAMP_PADDRS[15]                           3.580       0.729
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[9]                sb_sb_0_STAMP_PADDR[9]                     3.735       0.744
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_SEL                    sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx     3.488       0.756
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[8]                sb_sb_0_STAMP_PADDR[8]                     3.945       0.797
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[12]               STAMP_PADDRS[12]                           3.677       0.866
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[13]               STAMP_PADDRS[13]                           3.647       1.049
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[10]               sb_sb_0_STAMP_PADDR[10]                    3.949       1.082
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[14]               STAMP_PADDRS[14]                           3.652       1.108
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[4]                sb_sb_0_STAMP_PADDR[4]                     3.560       1.214
+========================================================================================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                        Starting                                                                      Required           
-Instance                Reference                                   Type     Pin     Net              Time         Slack 
-                        Clock                                                                                            
--------------------------------------------------------------------------------------------------------------------------
-Memory_0.PRDATA[30]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[30]     9.745        -0.009
-Memory_0.PRDATA[0]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[0]      9.745        0.059 
-Memory_0.PRDATA[2]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[2]      9.745        0.059 
-Memory_0.PRDATA[3]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[3]      9.745        0.059 
-Memory_0.PRDATA[4]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[4]      9.745        0.059 
-Memory_0.PRDATA[8]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[8]      9.745        0.059 
-Memory_0.PRDATA[9]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[9]      9.745        0.059 
-Memory_0.PRDATA[10]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[10]     9.745        0.059 
-Memory_0.PRDATA[11]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[11]     9.745        0.059 
-Memory_0.PRDATA[13]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       PRDATA_8[13]     9.745        0.059 
-=========================================================================================================================
+                       Starting                                                                                            Required          
+Instance               Reference                                   Type     Pin     Net                                    Time         Slack
+                       Clock                                                                                                                 
+---------------------------------------------------------------------------------------------------------------------------------------------
+STAMP_0.PRDATA[16]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+STAMP_0.PRDATA[17]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+STAMP_0.PRDATA[18]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+STAMP_0.PRDATA[19]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+STAMP_0.PRDATA[20]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+STAMP_0.PRDATA[21]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+STAMP_0.PRDATA[22]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+STAMP_0.PRDATA[23]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+STAMP_0.PRDATA[24]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+STAMP_0.PRDATA[25]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIDDKP1     9.662        0.259
+=============================================================================================================================================
 
 
 
@@ -1126,196 +1141,40 @@ Worst Path Information
 
 Path information for path number 1: 
       Requested Period:                      10.000
-    - Setup time:                            0.255
+    - Setup time:                            0.338
     + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.745
+    = Required time:                         9.662
 
-    - Propagation time:                      9.754
+    - Propagation time:                      9.403
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.009
+    = Slack (critical) :                     0.259
 
     Number of logic level(s):                4
-    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
-    Ending point:                            Memory_0.PRDATA[30] / D
+    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / CAN_TX_EBL_MGPIO4A_H2F_B
+    Ending point:                            STAMP_0.PRDATA[16] / EN
     The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
     The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
 
-Instance / Net                                                Pin               Pin               Arrival     No. of    
-Name                                              Type        Name              Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                MSS_010     F_HM0_ADDR[8]     Out     3.945     3.945 f     -         
-sb_sb_0_STAMP_PADDR[8]                            Net         -                 -       1.689     -           68        
-Memory_0.SPI.un1_APBState_2_2_0                   CFG4        D                 In      -         5.634 f     -         
-Memory_0.SPI.un1_APBState_2_2_0                   CFG4        Y                 Out     0.288     5.921 f     -         
-un1_APBState_2_2_0                                Net         -                 -       1.280     -           31        
-Memory_0.SPI.PRDATA_17_sqmuxa                     CFG3        C                 In      -         7.202 f     -         
-Memory_0.SPI.PRDATA_17_sqmuxa                     CFG3        Y                 Out     0.223     7.425 r     -         
-PRDATA_17_sqmuxa                                  Net         -                 -       1.290     -           32        
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[30]     CFG4        D                 In      -         8.714 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[30]     CFG4        Y                 Out     0.271     8.986 r     -         
-PRDATA_8_0_iv_5[30]                               Net         -                 -       0.248     -           1         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[30]       CFG4        D                 In      -         9.234 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[30]       CFG4        Y                 Out     0.271     9.505 r     -         
-PRDATA_8[30]                                      Net         -                 -       0.248     -           1         
-Memory_0.PRDATA[30]                               SLE         D                 In      -         9.754 r     -         
-========================================================================================================================
-Total path delay (propagation time + setup) of 10.009 is 5.254(52.5%) logic and 4.755(47.5%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 2: 
-      Requested Period:                      10.000
-    - Setup time:                            0.255
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.745
-
-    - Propagation time:                      9.686
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 0.059
-
-    Number of logic level(s):                4
-    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
-    Ending point:                            Memory_0.PRDATA[11] / D
-    The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
-    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
-
-Instance / Net                                                Pin               Pin               Arrival     No. of    
-Name                                              Type        Name              Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                MSS_010     F_HM0_ADDR[8]     Out     3.945     3.945 f     -         
-sb_sb_0_STAMP_PADDR[8]                            Net         -                 -       1.689     -           68        
-Memory_0.SPI.un1_APBState_2_2_0                   CFG4        D                 In      -         5.634 f     -         
-Memory_0.SPI.un1_APBState_2_2_0                   CFG4        Y                 Out     0.288     5.921 f     -         
-un1_APBState_2_2_0                                Net         -                 -       1.280     -           31        
-Memory_0.SPI.PRDATA_17_sqmuxa                     CFG3        C                 In      -         7.202 f     -         
-Memory_0.SPI.PRDATA_17_sqmuxa                     CFG3        Y                 Out     0.223     7.425 r     -         
-PRDATA_17_sqmuxa                                  Net         -                 -       1.290     -           32        
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[11]     CFG4        C                 In      -         8.714 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[11]     CFG4        Y                 Out     0.203     8.917 r     -         
-PRDATA_8_0_iv_5[11]                               Net         -                 -       0.248     -           1         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[11]       CFG4        D                 In      -         9.166 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[11]       CFG4        Y                 Out     0.271     9.437 r     -         
-PRDATA_8[11]                                      Net         -                 -       0.248     -           1         
-Memory_0.PRDATA[11]                               SLE         D                 In      -         9.686 r     -         
-========================================================================================================================
-Total path delay (propagation time + setup) of 9.941 is 5.185(52.2%) logic and 4.755(47.8%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 3: 
-      Requested Period:                      10.000
-    - Setup time:                            0.255
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.745
-
-    - Propagation time:                      9.686
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 0.059
-
-    Number of logic level(s):                4
-    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
-    Ending point:                            Memory_0.PRDATA[8] / D
-    The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
-    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
-
-Instance / Net                                               Pin               Pin               Arrival     No. of    
-Name                                             Type        Name              Dir     Delay     Time        Fan Out(s)
------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST               MSS_010     F_HM0_ADDR[8]     Out     3.945     3.945 f     -         
-sb_sb_0_STAMP_PADDR[8]                           Net         -                 -       1.689     -           68        
-Memory_0.SPI.un1_APBState_2_2_0                  CFG4        D                 In      -         5.634 f     -         
-Memory_0.SPI.un1_APBState_2_2_0                  CFG4        Y                 Out     0.288     5.921 f     -         
-un1_APBState_2_2_0                               Net         -                 -       1.280     -           31        
-Memory_0.SPI.PRDATA_17_sqmuxa                    CFG3        C                 In      -         7.202 f     -         
-Memory_0.SPI.PRDATA_17_sqmuxa                    CFG3        Y                 Out     0.223     7.425 r     -         
-PRDATA_17_sqmuxa                                 Net         -                 -       1.290     -           32        
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[8]     CFG4        C                 In      -         8.714 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[8]     CFG4        Y                 Out     0.203     8.917 r     -         
-PRDATA_8_0_iv_5[8]                               Net         -                 -       0.248     -           1         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[8]       CFG4        D                 In      -         9.166 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[8]       CFG4        Y                 Out     0.271     9.437 r     -         
-PRDATA_8[8]                                      Net         -                 -       0.248     -           1         
-Memory_0.PRDATA[8]                               SLE         D                 In      -         9.686 r     -         
-=======================================================================================================================
-Total path delay (propagation time + setup) of 9.941 is 5.185(52.2%) logic and 4.755(47.8%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 4: 
-      Requested Period:                      10.000
-    - Setup time:                            0.255
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.745
-
-    - Propagation time:                      9.686
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 0.059
-
-    Number of logic level(s):                4
-    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
-    Ending point:                            Memory_0.PRDATA[13] / D
-    The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
-    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
-
-Instance / Net                                                Pin               Pin               Arrival     No. of    
-Name                                              Type        Name              Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                MSS_010     F_HM0_ADDR[8]     Out     3.945     3.945 f     -         
-sb_sb_0_STAMP_PADDR[8]                            Net         -                 -       1.689     -           68        
-Memory_0.SPI.un1_APBState_2_2_0                   CFG4        D                 In      -         5.634 f     -         
-Memory_0.SPI.un1_APBState_2_2_0                   CFG4        Y                 Out     0.288     5.921 f     -         
-un1_APBState_2_2_0                                Net         -                 -       1.280     -           31        
-Memory_0.SPI.PRDATA_17_sqmuxa                     CFG3        C                 In      -         7.202 f     -         
-Memory_0.SPI.PRDATA_17_sqmuxa                     CFG3        Y                 Out     0.223     7.425 r     -         
-PRDATA_17_sqmuxa                                  Net         -                 -       1.290     -           32        
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[13]     CFG4        C                 In      -         8.714 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[13]     CFG4        Y                 Out     0.203     8.917 r     -         
-PRDATA_8_0_iv_5[13]                               Net         -                 -       0.248     -           1         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[13]       CFG4        D                 In      -         9.166 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[13]       CFG4        Y                 Out     0.271     9.437 r     -         
-PRDATA_8[13]                                      Net         -                 -       0.248     -           1         
-Memory_0.PRDATA[13]                               SLE         D                 In      -         9.686 r     -         
-========================================================================================================================
-Total path delay (propagation time + setup) of 9.941 is 5.185(52.2%) logic and 4.755(47.8%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 5: 
-      Requested Period:                      10.000
-    - Setup time:                            0.255
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.745
-
-    - Propagation time:                      9.686
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 0.059
-
-    Number of logic level(s):                4
-    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
-    Ending point:                            Memory_0.PRDATA[4] / D
-    The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
-    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
-
-Instance / Net                                               Pin               Pin               Arrival     No. of    
-Name                                             Type        Name              Dir     Delay     Time        Fan Out(s)
------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST               MSS_010     F_HM0_ADDR[8]     Out     3.945     3.945 f     -         
-sb_sb_0_STAMP_PADDR[8]                           Net         -                 -       1.689     -           68        
-Memory_0.SPI.un1_APBState_2_2_0                  CFG4        D                 In      -         5.634 f     -         
-Memory_0.SPI.un1_APBState_2_2_0                  CFG4        Y                 Out     0.288     5.921 f     -         
-un1_APBState_2_2_0                               Net         -                 -       1.280     -           31        
-Memory_0.SPI.PRDATA_17_sqmuxa                    CFG3        C                 In      -         7.202 f     -         
-Memory_0.SPI.PRDATA_17_sqmuxa                    CFG3        Y                 Out     0.223     7.425 r     -         
-PRDATA_17_sqmuxa                                 Net         -                 -       1.290     -           32        
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[4]     CFG4        D                 In      -         8.714 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv_5[4]     CFG4        Y                 Out     0.271     8.986 r     -         
-PRDATA_8_0_iv_5[4]                               Net         -                 -       0.248     -           1         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[4]       CFG4        C                 In      -         9.234 r     -         
-Memory_0.SPI.mainProcess\.PRDATA_8_0_iv[4]       CFG4        Y                 Out     0.203     9.437 r     -         
-PRDATA_8[4]                                      Net         -                 -       0.248     -           1         
-Memory_0.PRDATA[4]                               SLE         D                 In      -         9.686 r     -         
-=======================================================================================================================
-Total path delay (propagation time + setup) of 9.941 is 5.185(52.2%) logic and 4.755(47.8%) route.
+Instance / Net                                             Pin                          Pin               Arrival     No. of    
+Name                                           Type        Name                         Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST             MSS_010     CAN_TX_EBL_MGPIO4A_H2F_B     Out     3.278     3.278 f     -         
+sb_sb_0_GPIO_4_M2F                             Net         -                            -       1.117     -           1         
+ResetAND                                       AND2        B                            In      -         4.395 f     -         
+ResetAND                                       AND2        Y                            Out     0.164     4.559 f     -         
+resetn                                         Net         -                            -       1.126     -           14        
+AND2_0                                         AND2        A                            In      -         5.686 f     -         
+AND2_0                                         AND2        Y                            Out     0.087     5.773 f     -         
+debug_led_net_0                                Net         -                            -       1.127     -           18        
+STAMP_0.un1_presetn_inv_i_a3_0_a3              CFG4        B                            In      -         6.900 f     -         
+STAMP_0.un1_presetn_inv_i_a3_0_a3              CFG4        Y                            Out     0.164     7.064 f     -         
+un1_presetn_inv_i_a3_0_a3                      Net         -                            -       1.126     -           17        
+STAMP_0.un1_presetn_inv_i_a3_0_a3_RNIDDKP1     CFG2        A                            In      -         8.190 f     -         
+STAMP_0.un1_presetn_inv_i_a3_0_a3_RNIDDKP1     CFG2        Y                            Out     0.087     8.277 f     -         
+un1_presetn_inv_i_a3_0_a3_RNIDDKP1             Net         -                            -       1.126     -           16        
+STAMP_0.PRDATA[16]                             SLE         EN                           In      -         9.403 f     -         
+================================================================================================================================
+Total path delay (propagation time + setup) of 9.741 is 4.118(42.3%) logic and 5.623(57.7%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -1388,10 +1247,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:27s; CPU Time elapsed 0h:00m:26s; Memory used current: 225MB peak: 287MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 255MB peak: 266MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:27s; CPU Time elapsed 0h:00m:27s; Memory used current: 225MB peak: 287MB)
+Finished timing report (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 255MB peak: 266MB)
 
 ---------------------------------------
 Resource Usage Report for sb 
@@ -1404,17 +1263,17 @@ CLKINT          4 uses
 MSS_010         1 use
 RCOSC_25_50MHZ  1 use
 SYSRESET        1 use
-CFG1           7 uses
-CFG2           851 uses
-CFG3           549 uses
-CFG4           1508 uses
+CFG1           9 uses
+CFG2           833 uses
+CFG3           512 uses
+CFG4           1525 uses
 
 Carry cells:
-ARI1            239 uses - used for arithmetic functions
+ARI1            238 uses - used for arithmetic functions
 
 
 Sequential Cells: 
-SLE            1505 uses
+SLE            1545 uses
 
 DSP Blocks:    0 of 22 (0%)
 
@@ -1430,7 +1289,7 @@ Global Clock Buffers: 4
 RAM/ROM usage summary
 Total Block RAMs (RAM1K18) : 1 of 21 (4%)
 
-Total LUTs:    3154
+Total LUTs:    3117
 
 Extra resources required for RAM and MACC interface logic during P&R:
 
@@ -1438,14 +1297,14 @@ RAM64x18 Interface Logic : SLEs = 0; LUTs = 0;
 RAM1K18  Interface Logic : SLEs = 36; LUTs = 36;
 MACC     Interface Logic : SLEs = 0; LUTs = 0;
 
-Total number of SLEs after P&R:  1505 + 0 + 36 + 0 = 1541;
-Total number of LUTs after P&R:  3154 + 0 + 36 + 0 = 3190;
+Total number of SLEs after P&R:  1545 + 0 + 36 + 0 = 1581;
+Total number of LUTs after P&R:  3117 + 0 + 36 + 0 = 3153;
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:27s; CPU Time elapsed 0h:00m:27s; Memory used current: 82MB peak: 287MB)
+At Mapper Exit (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 76MB peak: 266MB)
 
-Process took 0h:00m:28s realtime, 0h:00m:27s cputime
-# Thu May  6 20:44:17 2021
+Process took 0h:00m:19s realtime, 0h:00m:19s cputime
+# Sat May  8 20:38:06 2021
 
 ###########################################################]

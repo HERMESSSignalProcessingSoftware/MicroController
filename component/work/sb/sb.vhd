@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Thu May  6 20:42:52 2021
+-- Created by SmartDesign Sat May  8 16:03:56 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -181,6 +181,7 @@ signal resetn_net_0                     : std_logic;
 signal sb_sb_0_FIC_0_CLK                : std_logic;
 signal sb_sb_0_GPIO_3_M2F               : std_logic;
 signal sb_sb_0_GPIO_4_M2F               : std_logic;
+signal sb_sb_0_GPIO_6_M2F               : std_logic;
 signal sb_sb_0_Memory_PENABLE           : std_logic;
 signal sb_sb_0_Memory_PRDATA            : std_logic_vector(31 downto 0);
 signal sb_sb_0_Memory_PREADY            : std_logic;
@@ -231,12 +232,12 @@ signal request_resync_net_0             : std_logic_vector(5 downto 0);
 -- TiedOff Signals
 ----------------------------------------------------------------------
 signal GND_net                          : std_logic;
-signal VCC_net                          : std_logic;
 signal databus_const_net_0              : std_logic_vector(127 downto 64);
 signal databus_const_net_1              : std_logic_vector(191 downto 128);
 signal databus_const_net_2              : std_logic_vector(255 downto 192);
 signal databus_const_net_3              : std_logic_vector(319 downto 256);
 signal databus_const_net_4              : std_logic_vector(63 downto 0);
+signal VCC_net                          : std_logic;
 signal STAMP_1_PRDATAS2_const_net_0     : std_logic_vector(31 downto 0);
 signal STAMP_2_PRDATAS3_const_net_0     : std_logic_vector(31 downto 0);
 signal STAMP_3_PRDATAS4_const_net_0     : std_logic_vector(31 downto 0);
@@ -245,13 +246,13 @@ signal STAMP_5_PRDATAS6_const_net_0     : std_logic_vector(31 downto 0);
 ----------------------------------------------------------------------
 -- Bus Interface Nets Declarations - Unequal Pin Widths
 ----------------------------------------------------------------------
+signal sb_sb_0_Memory_PADDR             : std_logic_vector(31 downto 0);
 signal sb_sb_0_Memory_PADDR_0_11to0     : std_logic_vector(11 downto 0);
 signal sb_sb_0_Memory_PADDR_0           : std_logic_vector(11 downto 0);
-signal sb_sb_0_Memory_PADDR             : std_logic_vector(31 downto 0);
 
+signal sb_sb_0_STAMP_PADDR              : std_logic_vector(31 downto 0);
 signal sb_sb_0_STAMP_PADDR_0_11to0      : std_logic_vector(11 downto 0);
 signal sb_sb_0_STAMP_PADDR_0            : std_logic_vector(11 downto 0);
-signal sb_sb_0_STAMP_PADDR              : std_logic_vector(31 downto 0);
 
 
 begin
@@ -259,12 +260,12 @@ begin
 -- Constant assignments
 ----------------------------------------------------------------------
  GND_net                      <= '0';
- VCC_net                      <= '1';
  databus_const_net_0          <= B"0000000000000000000000000000000000000000000000000000000000000000";
  databus_const_net_1          <= B"0000000000000000000000000000000000000000000000000000000000000000";
  databus_const_net_2          <= B"0000000000000000000000000000000000000000000000000000000000000000";
  databus_const_net_3          <= B"0000000000000000000000000000000000000000000000000000000000000000";
  databus_const_net_4          <= B"0000000000000000000000000000000000000000000000000000000000000000";
+ VCC_net                      <= '1';
  STAMP_1_PRDATAS2_const_net_0 <= B"00000000000000000000000000000000";
  STAMP_2_PRDATAS3_const_net_0 <= B"00000000000000000000000000000000";
  STAMP_3_PRDATAS4_const_net_0 <= B"00000000000000000000000000000000";
@@ -356,24 +357,24 @@ Memory_0 : entity work.Memory
         -- Inputs
         clk            => sb_sb_0_FIC_0_CLK,
         nReset         => resetn_net_0,
-        enable         => VCC_net,
-        databus        => databus_net_0,
-        dataReady      => dataReady_net_0,
+        enable         => sb_sb_0_GPIO_6_M2F,
         WatchdogGo     => GND_net,
-        PADDR          => sb_sb_0_Memory_PADDR_0,
         PSEL           => sb_sb_0_Memory_PSELx,
         PENABLE        => sb_sb_0_Memory_PENABLE,
         PWRITE         => sb_sb_0_Memory_PWRITE,
-        PWDATA         => sb_sb_0_Memory_PWDATA,
         MISO           => MISO,
+        databus        => databus_net_0,
+        dataReady      => dataReady_net_0,
+        PADDR          => sb_sb_0_Memory_PADDR_0,
+        PWDATA         => sb_sb_0_Memory_PWDATA,
         -- Outputs
         dataReadyReset => OPEN,
         PREADY         => sb_sb_0_Memory_PREADY,
-        PRDATA         => sb_sb_0_Memory_PRDATA,
         MOSI           => MOSI_net_0,
         SCLK           => SCLK_net_0,
         nCS1           => nCS1_net_0,
-        nCS2           => nCS2_net_0 
+        nCS2           => nCS2_net_0,
+        PRDATA         => sb_sb_0_Memory_PRDATA 
         );
 -- ResetAND
 ResetAND : AND2
@@ -397,25 +398,18 @@ sb_sb_0 : sb_sb
         STAMP_2_INTR_0_top => GND_net,
         STAMP_1_INTR_0_top => GND_net,
         STAMP_0_INTR_0_top => STAMP_0_new_avail,
-        Memory_PRDATAS0    => sb_sb_0_Memory_PRDATA,
         Memory_PREADYS0    => sb_sb_0_Memory_PREADY,
         Memory_PSLVERRS0   => GND_net, -- tied to '0' from definition
-        STAMP_PRDATAS1     => sb_sb_0_STAMP_PRDATA,
         STAMP_PREADYS1     => sb_sb_0_STAMP_PREADY,
         STAMP_PSLVERRS1    => sb_sb_0_STAMP_PSLVERR,
-        STAMP_1_PRDATAS2   => STAMP_1_PRDATAS2_const_net_0, -- tied to X"0" from definition
         STAMP_1_PREADYS2   => VCC_net, -- tied to '1' from definition
         STAMP_1_PSLVERRS2  => GND_net, -- tied to '0' from definition
-        STAMP_2_PRDATAS3   => STAMP_2_PRDATAS3_const_net_0, -- tied to X"0" from definition
         STAMP_2_PREADYS3   => VCC_net, -- tied to '1' from definition
         STAMP_2_PSLVERRS3  => GND_net, -- tied to '0' from definition
-        STAMP_3_PRDATAS4   => STAMP_3_PRDATAS4_const_net_0, -- tied to X"0" from definition
         STAMP_3_PREADYS4   => VCC_net, -- tied to '1' from definition
         STAMP_3_PSLVERRS4  => GND_net, -- tied to '0' from definition
-        STAMP_4_PRDATAS5   => STAMP_4_PRDATAS5_const_net_0, -- tied to X"0" from definition
         STAMP_4_PREADYS5   => VCC_net, -- tied to '1' from definition
         STAMP_4_PSLVERRS5  => GND_net, -- tied to '0' from definition
-        STAMP_5_PRDATAS6   => STAMP_5_PRDATAS6_const_net_0, -- tied to X"0" from definition
         STAMP_5_PREADYS6   => VCC_net, -- tied to '1' from definition
         STAMP_5_PSLVERRS6  => GND_net, -- tied to '0' from definition
         DEVRST_N           => DEVRST_N,
@@ -423,46 +417,39 @@ sb_sb_0 : sb_sb
         GPIO_1_F2M         => RXSM_SOE,
         GPIO_2_F2M         => RXSM_SODS,
         GPIO_5_F2M         => Synchronizer_0_adc_start,
+        Memory_PRDATAS0    => sb_sb_0_Memory_PRDATA,
+        STAMP_PRDATAS1     => sb_sb_0_STAMP_PRDATA,
+        STAMP_1_PRDATAS2   => STAMP_1_PRDATAS2_const_net_0, -- tied to X"0" from definition
+        STAMP_2_PRDATAS3   => STAMP_2_PRDATAS3_const_net_0, -- tied to X"0" from definition
+        STAMP_3_PRDATAS4   => STAMP_3_PRDATAS4_const_net_0, -- tied to X"0" from definition
+        STAMP_4_PRDATAS5   => STAMP_4_PRDATAS5_const_net_0, -- tied to X"0" from definition
+        STAMP_5_PRDATAS6   => STAMP_5_PRDATAS6_const_net_0, -- tied to X"0" from definition
         -- Outputs
         MMUART_1_TXD       => TM_TX_net_0,
         MMUART_0_TXD       => DAPI_TX_net_0,
         POWER_ON_RESET_N   => sb_sb_0_POWER_ON_RESET_N,
         INIT_DONE          => OPEN,
-        Memory_PADDRS      => sb_sb_0_Memory_PADDR,
         Memory_PSELS0      => sb_sb_0_Memory_PSELx,
         Memory_PENABLES    => sb_sb_0_Memory_PENABLE,
         Memory_PWRITES     => sb_sb_0_Memory_PWRITE,
-        Memory_PWDATAS     => sb_sb_0_Memory_PWDATA,
-        STAMP_PADDRS       => sb_sb_0_STAMP_PADDR,
         STAMP_PSELS1       => sb_sb_0_STAMP_PSELx,
         STAMP_PENABLES     => sb_sb_0_STAMP_PENABLE,
         STAMP_PWRITES      => sb_sb_0_STAMP_PWRITE,
-        STAMP_PWDATAS      => sb_sb_0_STAMP_PWDATA,
-        STAMP_1_PADDRS     => OPEN,
         STAMP_1_PSELS2     => OPEN,
         STAMP_1_PENABLES   => OPEN,
         STAMP_1_PWRITES    => OPEN,
-        STAMP_1_PWDATAS    => OPEN,
-        STAMP_2_PADDRS     => OPEN,
         STAMP_2_PSELS3     => OPEN,
         STAMP_2_PENABLES   => OPEN,
         STAMP_2_PWRITES    => OPEN,
-        STAMP_2_PWDATAS    => OPEN,
-        STAMP_3_PADDRS     => OPEN,
         STAMP_3_PSELS4     => OPEN,
         STAMP_3_PENABLES   => OPEN,
         STAMP_3_PWRITES    => OPEN,
-        STAMP_3_PWDATAS    => OPEN,
-        STAMP_4_PADDRS     => OPEN,
         STAMP_4_PSELS5     => OPEN,
         STAMP_4_PENABLES   => OPEN,
         STAMP_4_PWRITES    => OPEN,
-        STAMP_4_PWDATAS    => OPEN,
-        STAMP_5_PADDRS     => OPEN,
         STAMP_5_PSELS6     => OPEN,
         STAMP_5_PENABLES   => OPEN,
         STAMP_5_PWRITES    => OPEN,
-        STAMP_5_PWDATAS    => OPEN,
         FIC_0_CLK          => sb_sb_0_FIC_0_CLK,
         FIC_0_LOCK         => OPEN,
         FAB_CCC_GL1        => adc_clk_net_0,
@@ -470,9 +457,23 @@ sb_sb_0 : sb_sb
         MSS_READY          => OPEN,
         GPIO_3_M2F         => sb_sb_0_GPIO_3_M2F,
         GPIO_4_M2F         => sb_sb_0_GPIO_4_M2F,
-        GPIO_6_M2F         => OPEN,
+        GPIO_6_M2F         => sb_sb_0_GPIO_6_M2F,
         GPIO_30_M2F        => LED_RECORDING_net_0,
-        GPIO_31_M2F        => LED_HEARTBEAT_net_0 
+        GPIO_31_M2F        => LED_HEARTBEAT_net_0,
+        Memory_PADDRS      => sb_sb_0_Memory_PADDR,
+        Memory_PWDATAS     => sb_sb_0_Memory_PWDATA,
+        STAMP_PADDRS       => sb_sb_0_STAMP_PADDR,
+        STAMP_PWDATAS      => sb_sb_0_STAMP_PWDATA,
+        STAMP_1_PADDRS     => OPEN,
+        STAMP_1_PWDATAS    => OPEN,
+        STAMP_2_PADDRS     => OPEN,
+        STAMP_2_PWDATAS    => OPEN,
+        STAMP_3_PADDRS     => OPEN,
+        STAMP_3_PWDATAS    => OPEN,
+        STAMP_4_PADDRS     => OPEN,
+        STAMP_4_PWDATAS    => OPEN,
+        STAMP_5_PADDRS     => OPEN,
+        STAMP_5_PWDATAS    => OPEN 
         );
 -- STAMP_0
 STAMP_0 : entity work.STAMP

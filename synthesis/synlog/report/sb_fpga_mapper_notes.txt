@@ -11,11 +11,11 @@
 @N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\stamp.vhd":201:8:201:9|Found counter in view:work.STAMP(architecture_stamp) instance status_async_cycles[5:0] 
 @N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_1_16(logic) instance clk_toggles[5:0] 
 @N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_1_16(logic) instance count[31:0] 
-@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":255:8:255:9|Removing sequential instance Memory_0.memorycnt[0] (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing sequential instance Memory_0.memorycnt[0] (in view: work.sb(rtl)) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance Memory_0.SPI.continue (in view: work.sb(rtl)) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_0.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
-@N: FP130 |Promoting Net resetn_arst on CLKINT  I_890 
-@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_891 
+@N: FP130 |Promoting Net resetn_arst on CLKINT  I_939 
+@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_940 
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.

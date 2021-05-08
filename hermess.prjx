@@ -1030,8 +1030,8 @@ SIZE="1254"
 ENDFILE
 VALUE "<project>\simulation\subsystem.bfm,sim"
 STATE="utd"
-TIME="1620292468"
-SIZE="934"
+TIME="1620326573"
+SIZE="993"
 PARENT="<project>\component\work\sb\sb.cxf"
 PARENT="<project>\component\work\sb_sb\sb_sb.cxf"
 ENDFILE
@@ -1059,23 +1059,23 @@ SIZE="3987"
 ENDFILE
 VALUE "<project>\synthesis\sb.so,so"
 STATE="utd"
-TIME="1620292468"
-SIZE="229"
+TIME="1620326656"
+SIZE="216"
 ENDFILE
 VALUE "<project>\synthesis\sb.vm,syn_vm"
 STATE="utd"
-TIME="1620292468"
-SIZE="236632"
+TIME="1620326655"
+SIZE="1086503"
 ENDFILE
 VALUE "<project>\synthesis\sb_syn.prj,prj"
 STATE="utd"
-TIME="1620292468"
-SIZE="4274"
+TIME="1620326657"
+SIZE="4276"
 ENDFILE
 VALUE "<project>\synthesis\sb_vm.sdc,syn_sdc"
 STATE="utd"
-TIME="1620292468"
-SIZE="896"
+TIME="1620326655"
+SIZE="947"
 ENDFILE
 VALUE "<project>\synthesis\synwork\layer0.so,so"
 STATE="utd"
@@ -1498,8 +1498,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="D:\Programme\LiberoSoCv12.6\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -1648,16 +1648,8 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Generate Memory Map:sb_DataSheet.xml
-HDL;hdl\STAMP.vhd;0
 StartPage;StartPage;0
-HDL;hdl\Memory.vhd;0
-HDL;hdl\ram.vhd;0
-HDL;hdl\Timestamp.vhd;0
-Constraint Manager;Constraint Manager;0
-SmartDesign;sb;0
-ACTIVEVIEW;hdl\Memory.vhd
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "CORE16550_C0::work","component\work\CORE16550_C0\CORE16550_C0.vhd","TRUE","FALSE"
@@ -1670,16 +1662,6 @@ SUBBLOCK "COREUART_C0_COREUART_C0_0_COREUART::coreuart_lib","component\work\CORE
 ENDLIST
 LIST "CoreUARTapb_C0::work","component\work\CoreUARTapb_C0\CoreUARTapb_C0.vhd","TRUE","FALSE"
 SUBBLOCK "CoreUARTapb_C0_CoreUARTapb_C0_0_COREUARTapb::coreuartapb_lib","component\work\CoreUARTapb_C0\CoreUARTapb_C0_0\rtl\vhdl\core_obfuscated\CoreUARTapb.vhd","FALSE","FALSE"
-ENDLIST
-LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
-SUBBLOCK "SmartFusion2_CMSIS::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_GPIO_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_MMUART_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_SPI_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_Watchdog_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "CoreResetP::work","component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd","FALSE","FALSE"
 SUBBLOCK "coreresetp_pcie_hotreset::work","component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp_pcie_hotreset.vhd","FALSE","FALSE"
@@ -1726,22 +1708,6 @@ SUBBLOCK "RCOSC_25_50MHZ::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.vh
 ENDLIST
 LIST "sb_sb_MSS::work","component\work\sb_sb_MSS\sb_sb_MSS.vhd","TRUE","FALSE"
 SUBBLOCK "MSS_010::work","component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_CMSIS::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_GPIO_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_MMUART_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_SPI_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_Watchdog_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "STAMP::work","hdl\STAMP.vhd","FALSE","FALSE"
 SUBBLOCK "spi_master::work","hdl\spi_master.vhd","FALSE","FALSE"
