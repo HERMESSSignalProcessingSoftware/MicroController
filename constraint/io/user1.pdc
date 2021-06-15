@@ -6,7 +6,7 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 400 VF
 
-# Date generated: Thu May  6 11:57:49 2021 
+# Date generated: Tue Jun 15 22:47:10 2021 
 
 
 # 
@@ -24,6 +24,12 @@
 # 
 # User Locked I/O settings
 # 
+
+set_io GPIO_6_M2F      \
+    -pinname E2        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
 
 set_io LED_HEARTBEAT   \
     -pinname E18       \

@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Sat May  8 16:03:56 2021
+-- Created by SmartDesign Tue Jun 15 22:42:11 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -31,6 +31,7 @@ entity sb is
         stamp0_spi_miso    : in  std_logic;
         -- Outputs
         DAPI_TX            : out std_logic;
+        GPIO_6_M2F         : out std_logic;
         LED_HEARTBEAT      : out std_logic;
         LED_RECORDING      : out std_logic;
         MOSI               : out std_logic;
@@ -172,6 +173,7 @@ signal adc_clk_net_0                    : std_logic;
 signal adc_start_net_0                  : std_logic;
 signal DAPI_TX_net_0                    : std_logic;
 signal debug_led_net_0                  : std_logic;
+signal GPIO_6_M2F_net_0                 : std_logic;
 signal LED_HEARTBEAT_net_0              : std_logic;
 signal LED_RECORDING_net_0              : std_logic;
 signal MOSI_net_0                       : std_logic;
@@ -181,7 +183,6 @@ signal resetn_net_0                     : std_logic;
 signal sb_sb_0_FIC_0_CLK                : std_logic;
 signal sb_sb_0_GPIO_3_M2F               : std_logic;
 signal sb_sb_0_GPIO_4_M2F               : std_logic;
-signal sb_sb_0_GPIO_6_M2F               : std_logic;
 signal sb_sb_0_Memory_PENABLE           : std_logic;
 signal sb_sb_0_Memory_PRDATA            : std_logic_vector(31 downto 0);
 signal sb_sb_0_Memory_PREADY            : std_logic;
@@ -224,6 +225,7 @@ signal nCS1_net_1                       : std_logic;
 signal nCS2_net_1                       : std_logic;
 signal MOSI_net_1                       : std_logic;
 signal SCLK_net_1                       : std_logic;
+signal GPIO_6_M2F_net_1                 : std_logic;
 signal databus_net_0                    : std_logic_vector(383 downto 0);
 signal dataReady_net_0                  : std_logic_vector(5 downto 0);
 signal new_avail_net_0                  : std_logic_vector(5 downto 0);
@@ -246,13 +248,13 @@ signal STAMP_5_PRDATAS6_const_net_0     : std_logic_vector(31 downto 0);
 ----------------------------------------------------------------------
 -- Bus Interface Nets Declarations - Unequal Pin Widths
 ----------------------------------------------------------------------
-signal sb_sb_0_Memory_PADDR             : std_logic_vector(31 downto 0);
 signal sb_sb_0_Memory_PADDR_0_11to0     : std_logic_vector(11 downto 0);
 signal sb_sb_0_Memory_PADDR_0           : std_logic_vector(11 downto 0);
+signal sb_sb_0_Memory_PADDR             : std_logic_vector(31 downto 0);
 
-signal sb_sb_0_STAMP_PADDR              : std_logic_vector(31 downto 0);
 signal sb_sb_0_STAMP_PADDR_0_11to0      : std_logic_vector(11 downto 0);
 signal sb_sb_0_STAMP_PADDR_0            : std_logic_vector(11 downto 0);
+signal sb_sb_0_STAMP_PADDR              : std_logic_vector(31 downto 0);
 
 
 begin
@@ -310,6 +312,8 @@ begin
  MOSI                     <= MOSI_net_1;
  SCLK_net_1               <= SCLK_net_0;
  SCLK                     <= SCLK_net_1;
+ GPIO_6_M2F_net_1         <= GPIO_6_M2F_net_0;
+ GPIO_6_M2F               <= GPIO_6_M2F_net_1;
 ----------------------------------------------------------------------
 -- Concatenation assignments
 ----------------------------------------------------------------------
@@ -357,7 +361,7 @@ Memory_0 : entity work.Memory
         -- Inputs
         clk            => sb_sb_0_FIC_0_CLK,
         nReset         => resetn_net_0,
-        enable         => sb_sb_0_GPIO_6_M2F,
+        enable         => GPIO_6_M2F_net_0,
         WatchdogGo     => GND_net,
         PSEL           => sb_sb_0_Memory_PSELx,
         PENABLE        => sb_sb_0_Memory_PENABLE,
@@ -457,7 +461,7 @@ sb_sb_0 : sb_sb
         MSS_READY          => OPEN,
         GPIO_3_M2F         => sb_sb_0_GPIO_3_M2F,
         GPIO_4_M2F         => sb_sb_0_GPIO_4_M2F,
-        GPIO_6_M2F         => sb_sb_0_GPIO_6_M2F,
+        GPIO_6_M2F         => GPIO_6_M2F_net_0,
         GPIO_30_M2F        => LED_RECORDING_net_0,
         GPIO_31_M2F        => LED_HEARTBEAT_net_0,
         Memory_PADDRS      => sb_sb_0_Memory_PADDR,

@@ -1,6 +1,6 @@
 --
 -- Synopsys
--- Vhdl wrapper for top level design, written on Sat May  8 20:37:40 2021
+-- Vhdl wrapper for top level design, written on Tue Jun 15 22:42:49 2021
 --
 library ieee;
 use ieee.std_logic_1164.all;
@@ -19,6 +19,7 @@ entity wrapper_for_sb is
       stamp0_ready_temp : in std_logic;
       stamp0_spi_miso : in std_logic;
       DAPI_TX : out std_logic;
+      GPIO_6_M2F : out std_logic;
       LED_HEARTBEAT : out std_logic;
       LED_RECORDING : out std_logic;
       MOSI : out std_logic;
@@ -54,6 +55,7 @@ component sb
    stamp0_ready_temp : in std_logic;
    stamp0_spi_miso : in std_logic;
    DAPI_TX : out std_logic;
+   GPIO_6_M2F : out std_logic;
    LED_HEARTBEAT : out std_logic;
    LED_RECORDING : out std_logic;
    MOSI : out std_logic;
@@ -85,6 +87,7 @@ signal tmp_stamp0_ready_dms2 : std_logic;
 signal tmp_stamp0_ready_temp : std_logic;
 signal tmp_stamp0_spi_miso : std_logic;
 signal tmp_DAPI_TX : std_logic;
+signal tmp_GPIO_6_M2F : std_logic;
 signal tmp_LED_HEARTBEAT : std_logic;
 signal tmp_LED_RECORDING : std_logic;
 signal tmp_MOSI : std_logic;
@@ -127,6 +130,8 @@ tmp_stamp0_ready_temp <= stamp0_ready_temp;
 tmp_stamp0_spi_miso <= stamp0_spi_miso;
 
 DAPI_TX <= tmp_DAPI_TX;
+
+GPIO_6_M2F <= tmp_GPIO_6_M2F;
 
 LED_HEARTBEAT <= tmp_LED_HEARTBEAT;
 
@@ -175,6 +180,7 @@ u1:   sb port map (
 		stamp0_ready_temp => tmp_stamp0_ready_temp,
 		stamp0_spi_miso => tmp_stamp0_spi_miso,
 		DAPI_TX => tmp_DAPI_TX,
+		GPIO_6_M2F => tmp_GPIO_6_M2F,
 		LED_HEARTBEAT => tmp_LED_HEARTBEAT,
 		LED_RECORDING => tmp_LED_RECORDING,
 		MOSI => tmp_MOSI,

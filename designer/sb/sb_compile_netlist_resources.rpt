@@ -1,6 +1,6 @@
 Resource Report
 Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
-Date: Sat May  8 20:38:17 2021
+Date: Tue Jun 15 22:43:23 2021
 
 Device Selection
 +--------------------------------+----------------+
@@ -37,11 +37,11 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 3156 | 12084 | 26.12      |
-| DFF                       | 1581 | 12084 | 13.08      |
+| 4LUT                      | 3212 | 12084 | 26.58      |
+| DFF                       | 1590 | 12084 | 13.16      |
 | I/O Register              | 0    | 585   | 0.00       |
-| User I/O                  | 27   | 195   | 13.85      |
-| -- Single-ended I/O       | 27   | 195   | 13.85      |
+| User I/O                  | 28   | 195   | 14.36      |
+| -- Single-ended I/O       | 28   | 195   | 14.36      |
 | -- Differential I/O Pairs | 0    | 97    | 0.00       |
 | RAM64x18                  | 0    | 22    | 0.00       |
 | RAM1K18                   | 1    | 21    | 4.76       |
@@ -58,11 +58,11 @@ Detailed Logic Resource Usage
 +--------------------------+------+------+
 | Type                     | 4LUT | DFF  |
 +--------------------------+------+------+
-| Fabric Logic             | 3120 | 1545 |
+| Fabric Logic             | 3176 | 1554 |
 | RAM64x18 Interface Logic | 0    | 0    |
 | RAM1K18 Interface Logic  | 36   | 36   |
 | MACC Interface Logic     | 0    | 0    |
-| Total Used               | 3156 | 1581 |
+| Total Used               | 3212 | 1590 |
 +--------------------------+------+------+
 
 MSS Resource Usage
@@ -89,9 +89,9 @@ MSS Resource Usage
 Detailed Carry Chains Resource Usage
 +--------+------+
 | Length | Used |
-| 6      | 1    |
-| 7      | 3    |
-| 8      | 2    |
+| 6      | 2    |
+| 7      | 1    |
+| 8      | 3    |
 | 9      | 1    |
 | 10     | 2    |
 | 12     | 1    |
@@ -105,7 +105,7 @@ I/O Function
 | Type                          | w/o register | w/ register | w/ DDR register |
 +-------------------------------+--------------+-------------+-----------------+
 | Input I/O                     | 10           | 0           | 0               |
-| Output I/O                    | 17           | 0           | 0               |
+| Output I/O                    | 18           | 0           | 0               |
 | Bidirectional I/O             | 0            | 0           | 0               |
 | Differential Input I/O Pairs  | 0            | 0           | 0               |
 | Differential Output I/O Pairs | 0            | 0           | 0               |
@@ -115,17 +115,17 @@ I/O Technology
 +--------------+--------+------+-------+--------+---------------+
 | I/O Standard | Vddi   | Vref | Input | Output | Bidirectional |
 +--------------+--------+------+-------+--------+---------------+
-| LVCMOS33     |  3.30v |  N/A |  10   |  17    |  0            |
+| LVCMOS33     |  3.30v |  N/A |  10   |  18    |  0            |
 +--------------+--------+------+-------+--------+---------------+
 
 Nets assigned to chip global resources
 +--------+---------+----------------------------------------+
 | Fanout | Type    | Name                                   |
 +--------+---------+----------------------------------------+
-| 1548   | INT_NET | Net   : sb_sb_0_FIC_0_CLK              |
+| 1557   | INT_NET | Net   : sb_sb_0_FIC_0_CLK              |
 |        |         | Driver: sb_sb_0/CCC_0/GL0_INST/U0_RGB1 |
 |        |         | Source: NETLIST                        |
-| 1076   | INT_NET | Net   : resetn_arst                    |
+| 1085   | INT_NET | Net   : resetn_arst                    |
 |        |         | Driver: ResetAND_RNIMHJB/U0_RGB1       |
 |        |         | Source: NETLIST                        |
 | 155    | INT_NET | Net   : debug_led_net_0_arst           |
@@ -143,54 +143,54 @@ Nets assigned to row global resources
 +--------+------+------+
 
 High fanout nets
-+--------+---------+--------------------------------------------+
-| Fanout | Type    | Name                                       |
-+--------+---------+--------------------------------------------+
-| 516    | INT_NET | Net   : Memory_0/WriteEnable_Z             |
-|        |         | Driver: Memory_0/WriteEnable               |
-| 206    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[8]  |
-|        |         | Driver: Memory_0/InternalAddr2Memory[8]    |
-| 127    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[7]  |
-|        |         | Driver: Memory_0/InternalAddr2Memory[7]    |
-| 91     | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[6]  |
-|        |         | Driver: Memory_0/InternalAddr2Memory[6]    |
-| 81     | INT_NET | Net   : Memory_0/SPI/state_Z[0]            |
-|        |         | Driver: Memory_0/SPI/state[0]              |
-| 70     | INT_NET | Net   : Memory_0/ReadMemoryState_Z[4]      |
-|        |         | Driver: Memory_0/ReadMemoryState[4]        |
-| 70     | INT_NET | Net   : STAMP_0/component_state_Z[5]       |
-|        |         | Driver: STAMP_0/component_state[5]         |
-| 65     | INT_NET | Net   : Memory_0/intRam/memorya238_3_Z     |
-|        |         | Driver: Memory_0/intRam/memorya238_3       |
-| 64     | INT_NET | Net   : Memory_0/N_1082_i                  |
-|        |         | Driver: Memory_0/SPI/N_1082_i              |
-| 61     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]             |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST |
-+--------+---------+--------------------------------------------+
++--------+---------+------------------------------------------------+
+| Fanout | Type    | Name                                           |
++--------+---------+------------------------------------------------+
+| 516    | INT_NET | Net   : Memory_0/WriteEnable_Z                 |
+|        |         | Driver: Memory_0/WriteEnable                   |
+| 200    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[8]      |
+|        |         | Driver: Memory_0/InternalAddr2Memory[8]        |
+| 138    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[7]      |
+|        |         | Driver: Memory_0/InternalAddr2Memory[7]        |
+| 89     | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[6]      |
+|        |         | Driver: Memory_0/InternalAddr2Memory[6]        |
+| 78     | INT_NET | Net   : Memory_0/ReadMemoryState_Z[4]          |
+|        |         | Driver: Memory_0/ReadMemoryState[4]            |
+| 76     | INT_NET | Net   : Memory_0/SPI/state_Z[0]                |
+|        |         | Driver: Memory_0/SPI/state[0]                  |
+| 72     | INT_NET | Net   : STAMP_0/component_state_Z[5]           |
+|        |         | Driver: STAMP_0/component_state[5]             |
+| 64     | INT_NET | Net   : Memory_0/N_1080_i                      |
+|        |         | Driver: Memory_0/ControllUnitState_RNI8UAF[12] |
+| 64     | INT_NET | Net   : Memory_0/intRam/memorya482_2_Z         |
+|        |         | Driver: Memory_0/intRam/memorya482_2           |
+| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                 |
+|        |         | Driver: STAMP_0/spi/state[0]                   |
++--------+---------+------------------------------------------------+
 
 High fanout nets (through buffer trees)
-+--------+---------+--------------------------------------------+
-| Fanout | Type    | Name                                       |
-+--------+---------+--------------------------------------------+
-| 516    | INT_NET | Net   : Memory_0/WriteEnable_Z             |
-|        |         | Driver: Memory_0/WriteEnable               |
-| 206    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[8]  |
-|        |         | Driver: Memory_0/InternalAddr2Memory[8]    |
-| 127    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[7]  |
-|        |         | Driver: Memory_0/InternalAddr2Memory[7]    |
-| 91     | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[6]  |
-|        |         | Driver: Memory_0/InternalAddr2Memory[6]    |
-| 81     | INT_NET | Net   : Memory_0/SPI/state_Z[0]            |
-|        |         | Driver: Memory_0/SPI/state[0]              |
-| 70     | INT_NET | Net   : Memory_0/ReadMemoryState_Z[4]      |
-|        |         | Driver: Memory_0/ReadMemoryState[4]        |
-| 70     | INT_NET | Net   : STAMP_0/component_state_Z[5]       |
-|        |         | Driver: STAMP_0/component_state[5]         |
-| 65     | INT_NET | Net   : Memory_0/intRam/memorya238_3_Z     |
-|        |         | Driver: Memory_0/intRam/memorya238_3       |
-| 64     | INT_NET | Net   : Memory_0/N_1082_i                  |
-|        |         | Driver: Memory_0/SPI/N_1082_i              |
-| 61     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]             |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST |
-+--------+---------+--------------------------------------------+
++--------+---------+------------------------------------------------+
+| Fanout | Type    | Name                                           |
++--------+---------+------------------------------------------------+
+| 516    | INT_NET | Net   : Memory_0/WriteEnable_Z                 |
+|        |         | Driver: Memory_0/WriteEnable                   |
+| 200    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[8]      |
+|        |         | Driver: Memory_0/InternalAddr2Memory[8]        |
+| 138    | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[7]      |
+|        |         | Driver: Memory_0/InternalAddr2Memory[7]        |
+| 89     | INT_NET | Net   : Memory_0/InternalAddr2Memory_Z[6]      |
+|        |         | Driver: Memory_0/InternalAddr2Memory[6]        |
+| 78     | INT_NET | Net   : Memory_0/ReadMemoryState_Z[4]          |
+|        |         | Driver: Memory_0/ReadMemoryState[4]            |
+| 76     | INT_NET | Net   : Memory_0/SPI/state_Z[0]                |
+|        |         | Driver: Memory_0/SPI/state[0]                  |
+| 72     | INT_NET | Net   : STAMP_0/component_state_Z[5]           |
+|        |         | Driver: STAMP_0/component_state[5]             |
+| 64     | INT_NET | Net   : Memory_0/N_1080_i                      |
+|        |         | Driver: Memory_0/ControllUnitState_RNI8UAF[12] |
+| 64     | INT_NET | Net   : Memory_0/intRam/memorya482_2_Z         |
+|        |         | Driver: Memory_0/intRam/memorya482_2           |
+| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                 |
+|        |         | Driver: STAMP_0/spi/state[0]                   |
++--------+---------+------------------------------------------------+
 

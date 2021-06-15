@@ -52,7 +52,7 @@ File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vh
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\sb_sb.vhd changed - recompiling
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd changed - recompiling
 VHDL syntax check successful!
-File D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd changed - recompiling
 @N: CD231 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\vhd2008\std1164.vhd":888:16:888:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd":17:7:17:8|Synthesizing work.sb.rtl.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Synchronizer.vhd":10:7:10:18|Synthesizing work.synchronizer.architecture_synchronizer.
@@ -193,8 +193,8 @@ Post processing for smartfusion2.and2.syn_black_box
 @N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":192:36:192:37|Using onehot encoding for type readmemorystatemachinetype. For example, enumeration cmd is mapped to "100000000".
 @N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":195:35:195:36|Using onehot encoding for type apb3readmemorylimitedtype. For example, enumeration init is mapped to "100000".
 @N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":587:20:587:33|OTHERS clause is not synthesized.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":704:16:704:29|OTHERS clause is not synthesized.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":878:16:878:29|OTHERS clause is not synthesized.
+@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":705:16:705:29|OTHERS clause is not synthesized.
+@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":879:16:879:29|OTHERS clause is not synthesized.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":30:7:30:16|Synthesizing work.spi_master.logic.
 @N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":53:15:53:16|Using sequential encoding for type machine.
 Post processing for work.spi_master.logic
@@ -224,14 +224,6 @@ Running optimization stage 1 on Memory .......
 @W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning unused register StampFSMR3_7(31 downto 0). Make sure that there are no unused intermediate registers.
 @W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning unused register StampFSMR2_5(31 downto 0). Make sure that there are no unused intermediate registers.
 @W: CL271 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning unused bits 31 to 9 of StampFSMPC_7(31 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(5) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(6) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(7) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(24) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(25) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(26) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(27) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ConfigStatusReg(28) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ContiniousSPI are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit StampFSMR1(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit pageaddr(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -467,7 +459,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:14s; Memor
 Process took 0h:00m:15s realtime, 0h:00m:14s cputime
 
 Process completed successfully.
-# Sat May  8 20:37:40 2021
+# Tue Jun 15 22:42:49 2021
 
 ###########################################################]
 ###########################################################[
@@ -495,7 +487,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat May  8 20:37:41 2021
+# Tue Jun 15 22:42:49 2021
 
 ###########################################################]
 
@@ -510,6 +502,6 @@ At c_hdl Exit (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory
 Process took 0h:00m:15s realtime, 0h:00m:15s cputime
 
 Process completed successfully.
-# Sat May  8 20:37:41 2021
+# Tue Jun 15 22:42:49 2021
 
 ###########################################################]
