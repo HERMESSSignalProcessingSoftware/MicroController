@@ -619,9 +619,10 @@ architecture arch of Memory is
                             PREADY <= '1';
                         when X"044" =>
                             -- Just write the bits that are defined to be written
-                            ConfigStatusReg(0) <= PWDATA(0);
-                            ConfigStatusReg(2) <= PWDATA(2);
-                            ConfigStatusReg(23 downto 8) <= PWDATA(23 downto 8);
+                            ConfigStatusReg <= PWDATA;
+                            --ConfigStatusReg(0) <= PWDATA(0);
+                            --ConfigStatusReg(2) <= PWDATA(2);
+                            --ConfigStatusReg(23 downto 8) <= PWDATA(23 downto 8);
                             MemoryPageSize  <= to_integer(unsigned(PWDATA(23 downto 8))); 
                             PREADY <= '1';
                         when X"048" => 
