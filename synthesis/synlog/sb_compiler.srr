@@ -52,6 +52,11 @@ File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vh
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\sb_sb.vhd changed - recompiling
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd changed - recompiling
 VHDL syntax check successful!
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\sb_sb.vhd changed - recompiling
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd changed - recompiling
 @N: CD231 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\vhd2008\std1164.vhd":888:16:888:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd":17:7:17:8|Synthesizing work.sb.rtl.
@@ -93,10 +98,6 @@ Running optimization stage 1 on STAMP .......
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":790:10:790:17|Synthesizing smartfusion2.sysreset.syn_black_box.
 Post processing for smartfusion2.sysreset.syn_black_box
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vhd":17:7:17:15|Synthesizing work.sb_sb_mss.rtl.
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":403:10:403:14|Synthesizing smartfusion2.inbuf.syn_black_box.
-Post processing for smartfusion2.inbuf.syn_black_box
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":423:10:423:16|Synthesizing smartfusion2.tribuff.syn_black_box.
-Post processing for smartfusion2.tribuff.syn_black_box
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd":10:7:10:13|Synthesizing work.mss_010.def_arch.
 Post processing for work.mss_010.def_arch
 Post processing for work.sb_sb_mss.rtl
@@ -454,12 +455,12 @@ For a summary of runtime and memory usage per design unit, please see file:
 @L: D:\HERMESS_SPSoftware\Microcontroller\synthesis\synwork\layer0.rt.csv
 
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:14s; Memory used current: 141MB peak: 170MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 137MB peak: 170MB)
 
-Process took 0h:00m:15s realtime, 0h:00m:14s cputime
+Process took 0h:00m:11s realtime, 0h:00m:11s cputime
 
 Process completed successfully.
-# Tue Jun 15 22:42:49 2021
+# Fri Jun 18 13:56:24 2021
 
 ###########################################################]
 ###########################################################[
@@ -487,7 +488,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Tue Jun 15 22:42:49 2021
+# Fri Jun 18 13:56:24 2021
 
 ###########################################################]
 
@@ -497,11 +498,11 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 24MB peak: 24MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 24MB peak: 24MB)
 
-Process took 0h:00m:15s realtime, 0h:00m:15s cputime
+Process took 0h:00m:12s realtime, 0h:00m:12s cputime
 
 Process completed successfully.
-# Tue Jun 15 22:42:49 2021
+# Fri Jun 18 13:56:24 2021
 
 ###########################################################]

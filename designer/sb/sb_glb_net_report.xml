@@ -3,7 +3,7 @@
 <doc>
 <title>Global Net Report</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</text>
-<text>Date: Tue Jun 15 22:47:33 2021
+<text>Date: Fri Jun 18 13:57:34 2021
 </text>
 <section>
 <name>Global Nets Information</name>
@@ -20,14 +20,14 @@
  <cell>GB[0] </cell>
  <cell>(218, 54)</cell>
  <cell>sb_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
- <cell>1557</cell>
+ <cell>1454</cell>
 </row>
 <row>
  <cell>2</cell>
  <cell>GB[1] </cell>
  <cell>(219, 54)</cell>
  <cell>ResetAND_RNIMHJB/U0_YNn_GSouth</cell>
- <cell>1085</cell>
+ <cell>1049</cell>
 </row>
 <row>
  <cell>3</cell>
@@ -65,20 +65,20 @@
 <row>
  <cell>1</cell>
  <cell>ResetAND:Y</cell>
- <cell>(388, 33)</cell>
+ <cell>(390, 36)</cell>
  <cell>GB[1] </cell>
  <cell>NN_1</cell>
  <cell>ROUTED</cell>
- <cell>13</cell>
+ <cell>14</cell>
 </row>
 <row>
  <cell>2</cell>
  <cell>AND2_0:Y</cell>
- <cell>(362, 24)</cell>
+ <cell>(367, 45)</cell>
  <cell>GB[3] </cell>
  <cell>debug_led_net_0</cell>
  <cell>ROUTED</cell>
- <cell>18</cell>
+ <cell>19</cell>
 </row>
 </table>
 <text></text>
@@ -167,20 +167,10 @@
  <cell>GB[0] </cell>
  <cell>(218, 54)</cell>
  <cell>sb_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
- <cell>1557</cell>
- <cell> </cell>
- <cell>(218, 102)</cell>
+ <cell>1454</cell>
  <cell>1</cell>
-</row>
-<row>
- <cell>2</cell>
- <cell>GB[1] </cell>
- <cell>(219, 54)</cell>
- <cell>ResetAND_RNIMHJB/U0_YNn_GSouth</cell>
- <cell>1085</cell>
- <cell>1</cell>
- <cell>(218, 6)</cell>
- <cell>36</cell>
+ <cell>(218, 57)</cell>
+ <cell>4</cell>
 </row>
 <row>
  <cell> </cell>
@@ -189,8 +179,8 @@
  <cell></cell>
  <cell></cell>
  <cell>2</cell>
- <cell>(218, 9)</cell>
- <cell>42</cell>
+ <cell>(218, 60)</cell>
+ <cell>25</cell>
 </row>
 <row>
  <cell> </cell>
@@ -199,8 +189,38 @@
  <cell></cell>
  <cell></cell>
  <cell>3</cell>
- <cell>(218, 12)</cell>
- <cell>48</cell>
+ <cell>(218, 102)</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>GB[1] </cell>
+ <cell>(219, 54)</cell>
+ <cell>ResetAND_RNIMHJB/U0_YNn_GSouth</cell>
+ <cell>1049</cell>
+ <cell>1</cell>
+ <cell>(218, 18)</cell>
+ <cell>34</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(218, 51)</cell>
+ <cell>16</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(219, 15)</cell>
+ <cell>4</cell>
 </row>
 <row>
  <cell> </cell>
@@ -209,7 +229,7 @@
  <cell></cell>
  <cell></cell>
  <cell>4</cell>
- <cell>(218, 15)</cell>
+ <cell>(219, 21)</cell>
  <cell>48</cell>
 </row>
 <row>
@@ -219,8 +239,8 @@
  <cell></cell>
  <cell></cell>
  <cell>5</cell>
- <cell>(218, 48)</cell>
- <cell>22</cell>
+ <cell>(219, 24)</cell>
+ <cell>77</cell>
 </row>
 <row>
  <cell> </cell>
@@ -229,8 +249,8 @@
  <cell></cell>
  <cell></cell>
  <cell>6</cell>
- <cell>(218, 51)</cell>
- <cell>2</cell>
+ <cell>(219, 27)</cell>
+ <cell>117</cell>
 </row>
 <row>
  <cell> </cell>
@@ -239,8 +259,8 @@
  <cell></cell>
  <cell></cell>
  <cell>7</cell>
- <cell>(219, 18)</cell>
- <cell>44</cell>
+ <cell>(219, 30)</cell>
+ <cell>138</cell>
 </row>
 <row>
  <cell> </cell>
@@ -249,8 +269,8 @@
  <cell></cell>
  <cell></cell>
  <cell>8</cell>
- <cell>(219, 21)</cell>
- <cell>54</cell>
+ <cell>(219, 33)</cell>
+ <cell>136</cell>
 </row>
 <row>
  <cell> </cell>
@@ -259,8 +279,8 @@
  <cell></cell>
  <cell></cell>
  <cell>9</cell>
- <cell>(219, 24)</cell>
- <cell>108</cell>
+ <cell>(219, 36)</cell>
+ <cell>137</cell>
 </row>
 <row>
  <cell> </cell>
@@ -269,8 +289,8 @@
  <cell></cell>
  <cell></cell>
  <cell>10</cell>
- <cell>(219, 27)</cell>
- <cell>126</cell>
+ <cell>(219, 39)</cell>
+ <cell>132</cell>
 </row>
 <row>
  <cell> </cell>
@@ -279,8 +299,8 @@
  <cell></cell>
  <cell></cell>
  <cell>11</cell>
- <cell>(219, 30)</cell>
- <cell>110</cell>
+ <cell>(219, 42)</cell>
+ <cell>99</cell>
 </row>
 <row>
  <cell> </cell>
@@ -289,8 +309,8 @@
  <cell></cell>
  <cell></cell>
  <cell>12</cell>
- <cell>(219, 33)</cell>
- <cell>129</cell>
+ <cell>(219, 45)</cell>
+ <cell>77</cell>
 </row>
 <row>
  <cell> </cell>
@@ -299,38 +319,8 @@
  <cell></cell>
  <cell></cell>
  <cell>13</cell>
- <cell>(219, 36)</cell>
- <cell>126</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>14</cell>
- <cell>(219, 39)</cell>
- <cell>114</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>15</cell>
- <cell>(219, 42)</cell>
- <cell>53</cell>
-</row>
-<row>
- <cell> </cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell></cell>
- <cell>16</cell>
- <cell>(219, 45)</cell>
- <cell>23</cell>
+ <cell>(219, 48)</cell>
+ <cell>34</cell>
 </row>
 <row>
  <cell>3</cell>
@@ -339,8 +329,8 @@
  <cell>AND2_0_RNIKOS1/U0_YNn_GSouth</cell>
  <cell>155</cell>
  <cell>1</cell>
- <cell>(218, 18)</cell>
- <cell>18</cell>
+ <cell>(218, 15)</cell>
+ <cell>12</cell>
 </row>
 <row>
  <cell> </cell>
@@ -350,7 +340,7 @@
  <cell></cell>
  <cell>2</cell>
  <cell>(218, 21)</cell>
- <cell>27</cell>
+ <cell>19</cell>
 </row>
 <row>
  <cell> </cell>
@@ -360,7 +350,7 @@
  <cell></cell>
  <cell>3</cell>
  <cell>(218, 24)</cell>
- <cell>18</cell>
+ <cell>16</cell>
 </row>
 <row>
  <cell> </cell>
@@ -370,7 +360,7 @@
  <cell></cell>
  <cell>4</cell>
  <cell>(218, 27)</cell>
- <cell>9</cell>
+ <cell>25</cell>
 </row>
 <row>
  <cell> </cell>
@@ -380,7 +370,7 @@
  <cell></cell>
  <cell>5</cell>
  <cell>(218, 30)</cell>
- <cell>22</cell>
+ <cell>12</cell>
 </row>
 <row>
  <cell> </cell>
@@ -390,7 +380,7 @@
  <cell></cell>
  <cell>6</cell>
  <cell>(218, 33)</cell>
- <cell>18</cell>
+ <cell>20</cell>
 </row>
 <row>
  <cell> </cell>
@@ -400,7 +390,7 @@
  <cell></cell>
  <cell>7</cell>
  <cell>(218, 36)</cell>
- <cell>9</cell>
+ <cell>13</cell>
 </row>
 <row>
  <cell> </cell>
@@ -410,7 +400,7 @@
  <cell></cell>
  <cell>8</cell>
  <cell>(218, 39)</cell>
- <cell>10</cell>
+ <cell>5</cell>
 </row>
 <row>
  <cell> </cell>
@@ -420,7 +410,7 @@
  <cell></cell>
  <cell>9</cell>
  <cell>(218, 42)</cell>
- <cell>13</cell>
+ <cell>21</cell>
 </row>
 <row>
  <cell> </cell>
@@ -430,7 +420,17 @@
  <cell></cell>
  <cell>10</cell>
  <cell>(218, 45)</cell>
+ <cell>7</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
  <cell>11</cell>
+ <cell>(218, 48)</cell>
+ <cell>5</cell>
 </row>
 <row>
  <cell>4</cell>

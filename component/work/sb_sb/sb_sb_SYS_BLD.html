@@ -3763,6 +3763,37 @@
                     </tr>
                 </table>
                 <br/>
+                <div class="label">MSS_SPI_0</div>
+                <table class="sect2">
+                    <tr>
+                        <th>Name</th>
+                        <th>Subsystem</th>
+                        <th>Vendor</th>
+                        <th>Version</th>
+                    </tr>
+                    <tr>
+                        <td>SF2_MSS_SPI</td>
+                        <td>MSS Peripherals</td>
+                        <td>Actel</td>
+                        <td>0.0.100</td>
+                    </tr>
+                </table>
+                <div class="sublabel">Configuration</div>
+                <table class="sect2">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>NB_SLAVES</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_MUX</td>
+                        <td>MUX_IO</td>
+                    </tr>
+                </table>
+                <br/>
                 <div class="label">Memory</div>
                 <table class="sect2">
                     <tr>
@@ -3919,6 +3950,26 @@ Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
                         <th>Description</th>
                     </tr>
                     <tr>
+                        <td>SPI_0_DI</td>
+                        <td>IN</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_DO</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_CLK</td>
+                        <td>INOUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_SS0</td>
+                        <td>INOUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
                         <td>MMUART_1_TXD</td>
                         <td>OUT</td>
                         <td>-</td>
@@ -3950,6 +4001,11 @@ Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
                     </tr>
                     <tr>
                         <td>INIT_DONE</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_SS1</td>
                         <td>OUT</td>
                         <td>-</td>
                     </tr>

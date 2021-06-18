@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: BND01
 
-# Tue Jun 15 22:42:34 2021
+# Fri Jun 18 13:56:12 2021
 
 #Implementation: synthesis
 
@@ -61,6 +61,11 @@ File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vh
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\sb_sb.vhd changed - recompiling
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd changed - recompiling
 VHDL syntax check successful!
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vhd changed - recompiling
+File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\sb_sb.vhd changed - recompiling
 File D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd changed - recompiling
 @N: CD231 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\vhd2008\std1164.vhd":888:16:888:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd":17:7:17:8|Synthesizing work.sb.rtl.
@@ -102,10 +107,6 @@ Running optimization stage 1 on STAMP .......
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":790:10:790:17|Synthesizing smartfusion2.sysreset.syn_black_box.
 Post processing for smartfusion2.sysreset.syn_black_box
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vhd":17:7:17:15|Synthesizing work.sb_sb_mss.rtl.
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":403:10:403:14|Synthesizing smartfusion2.inbuf.syn_black_box.
-Post processing for smartfusion2.inbuf.syn_black_box
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":423:10:423:16|Synthesizing smartfusion2.tribuff.syn_black_box.
-Post processing for smartfusion2.tribuff.syn_black_box
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd":10:7:10:13|Synthesizing work.mss_010.def_arch.
 Post processing for work.mss_010.def_arch
 Post processing for work.sb_sb_mss.rtl
@@ -463,12 +464,12 @@ For a summary of runtime and memory usage per design unit, please see file:
 @L: D:\HERMESS_SPSoftware\Microcontroller\synthesis\synwork\layer0.rt.csv
 
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:14s; Memory used current: 141MB peak: 170MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 137MB peak: 170MB)
 
-Process took 0h:00m:15s realtime, 0h:00m:14s cputime
+Process took 0h:00m:11s realtime, 0h:00m:11s cputime
 
 Process completed successfully.
-# Tue Jun 15 22:42:49 2021
+# Fri Jun 18 13:56:24 2021
 
 ###########################################################]
 ###########################################################[
@@ -496,7 +497,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Tue Jun 15 22:42:49 2021
+# Fri Jun 18 13:56:24 2021
 
 ###########################################################]
 
@@ -506,12 +507,12 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 24MB peak: 24MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 24MB peak: 24MB)
 
-Process took 0h:00m:15s realtime, 0h:00m:15s cputime
+Process took 0h:00m:12s realtime, 0h:00m:12s cputime
 
 Process completed successfully.
-# Tue Jun 15 22:42:49 2021
+# Fri Jun 18 13:56:24 2021
 
 ###########################################################]
 ###########################################################[
@@ -539,12 +540,12 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Tue Jun 15 22:42:51 2021
+# Fri Jun 18 13:56:26 2021
 
 ###########################################################]
 Premap Report
 
-# Tue Jun 15 22:42:51 2021
+# Fri Jun 18 13:56:26 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -578,10 +579,10 @@ Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s
 Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 136MB peak: 137MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 137MB)
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 137MB peak: 137MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 139MB)
+Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 137MB peak: 139MB)
 
 @W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing sequential instance Memory_0.pageaddr[30:0] because it is equivalent to instance Memory_0.StampFSMR1[30:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sb_sb_0.CORERESETP_0.MDDR_DDR_AXI_S_CORE_RESET_N_int because it is equivalent to instance sb_sb_0.CORERESETP_0.FDDR_CORE_RESET_N_int. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -603,7 +604,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q3 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q3 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1331:8:1331:9|Sequential instance sb_sb_0.CORERESETP_0.RESET_N_F2M_int is reduced to a combinational gate by constant propagation.
-@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb\sb.vhd":515:24:515:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
+@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb\sb.vhd":527:24:527:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance DDR_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_RELEASED_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
@@ -617,12 +618,13 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing sequential instance dataReadyReset (in view: work.Memory(arch)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb_sb\sb_sb.vhd":684:0:684:11|Removing instance CORERESETP_0 (in view: work.sb_sb(rtl)) of type view:work.CoreResetP(rtl) because it does not drive other instances.
+@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb_sb\sb_sb.vhd":726:0:726:11|Removing instance CORERESETP_0 (in view: work.sb_sb(rtl)) of type view:work.CoreResetP(rtl) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance INIT_DONE_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance sdif0_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Removing sequential instance sdif1_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance sdif2_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance sdif3_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance mosi_1 (in view: work.spi_master_2_32(logic)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sm0_state[0:6] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":922:8:922:9|Removing sequential instance CONFIG2_DONE_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":803:8:803:9|Removing sequential instance sdif0_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
@@ -631,6 +633,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":836:8:836:9|Removing sequential instance sdif3_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Removing sequential instance sdif3_spll_lock_q2 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":908:8:908:9|Removing sequential instance CONFIG1_DONE_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance tx_buffer[31:0] (in view: work.spi_master_2_32(logic)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif3_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif2_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif1_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
@@ -688,7 +691,7 @@ Level     Clock                                       Frequency     Period      
 ----------------------------------------------------------------------------------------------------------------------------
 0 -       System                                      100.0 MHz     10.000        system       system_clkgroup         0    
                                                                                                                             
-0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     1097 
+0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     1064 
 ============================================================================================================================
 
 
@@ -701,16 +704,16 @@ Clock                                       Load      Pin                       
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 System                                      0         -                                   -                           -                 -                             
                                                                                                                                                                       
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     1097      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_0.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     1064      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_0.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
 ======================================================================================================================================================================
 
-@W: MT530 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock which controls 1097 sequential elements including Memory_0.TimeStampGen.timestamp[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock which controls 1064 sequential elements including Memory_0.TimeStampGen.timestamp[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 171MB peak: 173MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 171MB peak: 173MB)
 
 Encoding state machine SPIState[0:4] (in view: work.Memory(arch))
 original code -> new code
@@ -774,7 +777,7 @@ original code -> new code
    010000 -> 010000
    100000 -> 100000
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 175MB peak: 175MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 175MB peak: 175MB)
 
 
 Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 176MB peak: 176MB)
@@ -783,13 +786,13 @@ Pre-mapping successful!
 
 At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 89MB peak: 177MB)
 
-Process took 0h:00m:03s realtime, 0h:00m:03s cputime
-# Tue Jun 15 22:42:54 2021
+Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+# Fri Jun 18 13:56:29 2021
 
 ###########################################################]
 Map & Optimize Report
 
-# Tue Jun 15 22:42:55 2021
+# Fri Jun 18 13:56:29 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -823,7 +826,7 @@ Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0
 Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 122MB peak: 130MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 124MB peak: 130MB)
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 124MB peak: 130MB)
 
 
 
@@ -836,6 +839,8 @@ Available hyper_sources - for debug and ip models
 @W: FA239 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
 @W: FA239 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
 @N: MO106 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 7 bits.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance sclk_buffer (in view: work.spi_master_2_32(logic)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance mosi_cl (in view: work.spi_master_2_32(logic)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 
 Finished RTL optimizations (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 170MB peak: 170MB)
 
@@ -913,6 +918,70 @@ original code -> new code
 @W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing instance Memory_0.MemoryPageSize[1] because it is equivalent to instance Memory_0.ConfigStatusReg[9]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_2_32(logic) instance clk_toggles[6:0] 
 @N: MO231 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master_2_32(logic) instance count[31:0] 
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[0] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[1] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[0] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[2] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[1] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[3] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[2] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[4] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[3] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[5] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[4] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[6] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[5] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[7] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[6] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[8] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[7] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[9] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[8] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[10] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[9] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[11] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[10] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[12] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[11] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[13] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[12] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[14] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[13] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[15] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[14] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[16] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[15] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[17] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[16] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[18] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[17] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[19] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[18] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[20] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[19] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[21] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[20] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[22] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[21] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[23] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[22] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[24] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[23] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[25] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[24] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[26] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[25] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[27] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[26] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[28] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[27] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[29] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[28] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[30] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[29] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_buffer[31] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[30] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit rx_data[31] (in view view:work.spi_master_2_32(logic)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
 Encoding state machine component_state[0:5] (in view: work.STAMP(architecture_stamp))
 original code -> new code
    000001 -> 000001
@@ -933,53 +1002,58 @@ original code -> new code
 Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 187MB peak: 187MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 205MB peak: 205MB)
+Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 200MB peak: 200MB)
 
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing sequential instance Memory_0.memorycnt[0] (in view: work.sb(rtl)) because it does not drive other instances.
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 213MB peak: 236MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 209MB peak: 228MB)
 
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance Memory_0.SPI.continue (in view: work.sb(rtl)) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_0.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 214MB peak: 236MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 211MB peak: 228MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:08s; Memory used current: 215MB peak: 236MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 212MB peak: 228MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:09s; Memory used current: 215MB peak: 236MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 212MB peak: 228MB)
+
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance Memory_0.SPI.slave[0] (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance Memory_0.SPI.assert_data (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance Memory_0.SPI.ss_n_buffer[1] (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance Memory_0.SPI.ss_n_buffer[0] (in view: work.sb(rtl)) because it does not drive other instances.
+
+Finished preparing to map (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:08s; Memory used current: 205MB peak: 228MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 209MB peak: 236MB)
-
-
-Finished technology mapping (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 257MB peak: 257MB)
+Finished technology mapping (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:09s; Memory used current: 258MB peak: 258MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:12s		    -1.33ns		3195 /      1520
-   2		0h:00m:12s		    -1.30ns		3148 /      1520
+   1		0h:00m:09s		    -1.15ns		3115 /      1417
+   2		0h:00m:10s		    -1.15ns		3084 /      1417
+   3		0h:00m:10s		    -0.82ns		3084 /      1417
 
-   3		0h:00m:13s		    -0.64ns		3175 /      1520
-   4		0h:00m:13s		    -0.44ns		3177 /      1520
-   5		0h:00m:14s		    -0.31ns		3178 /      1520
-   6		0h:00m:14s		    -0.31ns		3179 /      1520
+   4		0h:00m:11s		    -0.82ns		3085 /      1417
+   5		0h:00m:11s		    -0.65ns		3086 /      1417
+   6		0h:00m:12s		    -0.31ns		3088 /      1417
+   7		0h:00m:12s		    -0.31ns		3089 /      1417
 
 
-   7		0h:00m:14s		    -0.31ns		3180 /      1520
-@N: FP130 |Promoting Net resetn_arst on CLKINT  I_870 
-@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_871 
+   8		0h:00m:12s		    -0.31ns		3090 /      1417
+@N: FP130 |Promoting Net resetn_arst on CLKINT  I_873 
+@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_874 
 
 Added 0 Buffers
 Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 258MB peak: 258MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 258MB peak: 259MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 259MB peak: 259MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 258MB peak: 259MB)
 
 
 
@@ -990,40 +1064,40 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:
 
 Clock optimization not enabled
 0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
-1 gated/generated clock tree(s) driving 1557 clock pin(s) of sequential element(s)
-0 instances converted, 1557 sequential instances remain driven by gated/generated clocks
+1 gated/generated clock tree(s) driving 1454 clock pin(s) of sequential element(s)
+0 instances converted, 1454 sequential instances remain driven by gated/generated clocks
 
 ============================================================================ Gated/Generated Clocks =============================================================================
 Clock Tree ID     Driving Element            Drive Element Type     Fanout     Sample Instance                        Explanation                                                
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       sb_sb_0.CCC_0.CCC_INST     CCC                    1557       sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     No gated clock conversion method for cell cell:work.MSS_010
+@K:CKID0001       sb_sb_0.CCC_0.CCC_INST     CCC                    1454       sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     No gated clock conversion method for cell cell:work.MSS_010
 =================================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 217MB peak: 259MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 217MB peak: 259MB)
 
 Writing Analyst data base D:\HERMESS_SPSoftware\Microcontroller\synthesis\synwork\sb_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 253MB peak: 259MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 252MB peak: 259MB)
 
 Writing Verilog Simulation files
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 
-Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 254MB peak: 259MB)
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 252MB peak: 259MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 249MB peak: 259MB)
+Start final timing analysis (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 249MB peak: 259MB)
 
 @W: MT246 :"d:\hermess_spsoftware\microcontroller\component\work\sb_sb\ccc_0\sb_sb_ccc_0_fccc.vhd":110:4:110:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
 @W: MT420 |Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on net sb_sb_0.CCC_0.GL0_net.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Tue Jun 15 22:43:14 2021
+# Timing report written on Fri Jun 18 13:56:45 2021
 #
 
 
@@ -1043,12 +1117,12 @@ Performance Summary
 *******************
 
 
-Worst slack in design: 0.259
+Worst slack in design: 0.251
 
                                             Requested     Estimated     Requested     Estimated               Clock        Clock              
 Starting Clock                              Frequency     Frequency     Period        Period        Slack     Type         Group              
 ----------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     102.7 MHz     10.000        9.741         0.259     inferred     Inferred_clkgroup_0
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     102.6 MHz     10.000        9.749         0.251     inferred     Inferred_clkgroup_0
 System                                      100.0 MHz     895.2 MHz     10.000        1.117         8.883     system       system_clkgroup    
 ==============================================================================================================================================
 
@@ -1064,7 +1138,7 @@ Clocks                                                                          
 Starting                                 Ending                                   |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 System                                   System                                   |  10.000      8.883  |  No paths    -      |  No paths    -      |  No paths    -    
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      0.259  |  No paths    -      |  No paths    -      |  No paths    -    
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      0.251  |  No paths    -      |  No paths    -      |  No paths    -    
 ========================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -1091,16 +1165,16 @@ Starting Points with Worst Slack
 Instance                               Reference                                   Type        Pin                          Net                                        Time        Slack
                                        Clock                                                                                                                                            
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     CAN_TX_EBL_MGPIO4A_H2F_B     sb_sb_0_GPIO_4_M2F                         3.278       0.259
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[8]                sb_sb_0_STAMP_PADDR[8]                     3.945       0.422
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[9]                sb_sb_0_STAMP_PADDR[9]                     3.735       0.586
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     CAN_TX_EBL_MGPIO4A_H2F_B     sb_sb_0_GPIO_4_M2F                         3.278       0.251
 sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[15]               STAMP_PADDRS[15]                           3.580       0.729
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[4]                sb_sb_0_STAMP_PADDR[4]                     3.560       0.739
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[6]                sb_sb_0_STAMP_PADDR[6]                     3.746       0.748
 sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_SEL                    sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx     3.488       0.756
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[5]                sb_sb_0_STAMP_PADDR[5]                     3.657       0.760
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[2]                sb_sb_0_STAMP_PADDR[2]                     3.576       0.857
 sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[12]               STAMP_PADDRS[12]                           3.677       0.866
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[1]                sb_sb_0_STAMP_PADDR[1]                     3.597       0.903
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[0]                sb_sb_0_STAMP_PADDR[0]                     3.660       0.927
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[4]                sb_sb_0_STAMP_PADDR[4]                     3.560       0.949
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[6]                sb_sb_0_STAMP_PADDR[6]                     3.746       0.996
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[9]                sb_sb_0_STAMP_PADDR[9]                     3.735       0.904
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[8]                sb_sb_0_STAMP_PADDR[8]                     3.945       0.914
 ========================================================================================================================================================================================
 
 
@@ -1111,16 +1185,16 @@ Ending Points with Worst Slack
 Instance               Reference                                   Type     Pin     Net                                    Time         Slack
                        Clock                                                                                                                 
 ---------------------------------------------------------------------------------------------------------------------------------------------
-STAMP_0.PRDATA[16]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
-STAMP_0.PRDATA[17]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
-STAMP_0.PRDATA[18]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
-STAMP_0.PRDATA[19]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
-STAMP_0.PRDATA[20]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
-STAMP_0.PRDATA[21]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
-STAMP_0.PRDATA[22]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
-STAMP_0.PRDATA[23]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
-STAMP_0.PRDATA[24]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
-STAMP_0.PRDATA[25]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.259
+STAMP_0.PRDATA[16]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
+STAMP_0.PRDATA[17]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
+STAMP_0.PRDATA[18]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
+STAMP_0.PRDATA[19]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
+STAMP_0.PRDATA[20]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
+STAMP_0.PRDATA[21]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
+STAMP_0.PRDATA[22]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
+STAMP_0.PRDATA[23]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
+STAMP_0.PRDATA[24]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
+STAMP_0.PRDATA[25]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      EN      un1_presetn_inv_i_a3_0_a3_RNIM5LV1     9.662        0.251
 =============================================================================================================================================
 
 
@@ -1135,9 +1209,9 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         9.662
 
-    - Propagation time:                      9.403
+    - Propagation time:                      9.412
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     0.259
+    = Slack (critical) :                     0.251
 
     Number of logic level(s):                4
     Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / CAN_TX_EBL_MGPIO4A_H2F_B
@@ -1152,19 +1226,19 @@ sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST             MSS_010     CAN_TX_EBL_MGPIO4A_H2
 sb_sb_0_GPIO_4_M2F                             Net         -                            -       1.117     -           1         
 ResetAND                                       AND2        B                            In      -         4.395 f     -         
 ResetAND                                       AND2        Y                            Out     0.164     4.559 f     -         
-resetn                                         Net         -                            -       1.126     -           13        
+resetn                                         Net         -                            -       1.126     -           14        
 AND2_0                                         AND2        A                            In      -         5.686 f     -         
 AND2_0                                         AND2        Y                            Out     0.087     5.773 f     -         
-debug_led_net_0                                Net         -                            -       1.127     -           18        
-STAMP_0.un1_presetn_inv_i_a3_0_a3              CFG4        B                            In      -         6.900 f     -         
-STAMP_0.un1_presetn_inv_i_a3_0_a3              CFG4        Y                            Out     0.164     7.064 f     -         
+debug_led_net_0                                Net         -                            -       1.135     -           19        
+STAMP_0.un1_presetn_inv_i_a3_0_a3              CFG4        B                            In      -         6.908 f     -         
+STAMP_0.un1_presetn_inv_i_a3_0_a3              CFG4        Y                            Out     0.164     7.072 f     -         
 un1_presetn_inv_i_a3_0_a3                      Net         -                            -       1.126     -           17        
-STAMP_0.un1_presetn_inv_i_a3_0_a3_RNIM5LV1     CFG2        A                            In      -         8.190 f     -         
-STAMP_0.un1_presetn_inv_i_a3_0_a3_RNIM5LV1     CFG2        Y                            Out     0.087     8.277 f     -         
+STAMP_0.un1_presetn_inv_i_a3_0_a3_RNIM5LV1     CFG2        A                            In      -         8.198 f     -         
+STAMP_0.un1_presetn_inv_i_a3_0_a3_RNIM5LV1     CFG2        Y                            Out     0.087     8.286 f     -         
 un1_presetn_inv_i_a3_0_a3_RNIM5LV1             Net         -                            -       1.126     -           16        
-STAMP_0.PRDATA[16]                             SLE         EN                           In      -         9.403 f     -         
+STAMP_0.PRDATA[16]                             SLE         EN                           In      -         9.412 f     -         
 ================================================================================================================================
-Total path delay (propagation time + setup) of 9.741 is 4.118(42.3%) logic and 5.623(57.7%) route.
+Total path delay (propagation time + setup) of 9.749 is 4.118(42.2%) logic and 5.631(57.8%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -1237,10 +1311,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:18s; Memory used current: 250MB peak: 259MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 250MB peak: 259MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 250MB peak: 259MB)
+Finished timing report (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 250MB peak: 259MB)
 
 ---------------------------------------
 Resource Usage Report for sb 
@@ -1254,24 +1328,24 @@ MSS_010         1 use
 RCOSC_25_50MHZ  1 use
 SYSRESET        1 use
 CFG1           7 uses
-CFG2           880 uses
-CFG3           572 uses
-CFG4           1476 uses
+CFG2           892 uses
+CFG3           524 uses
+CFG4           1418 uses
 
 Carry cells:
-ARI1            238 uses - used for arithmetic functions
+ARI1            239 uses - used for arithmetic functions
 
 
 Sequential Cells: 
-SLE            1554 uses
+SLE            1451 uses
 
 DSP Blocks:    0 of 22 (0%)
 
-I/O ports: 29
-I/O primitives: 28
-INBUF          10 uses
-OUTBUF         14 uses
-TRIBUFF        4 uses
+I/O ports: 27
+I/O primitives: 26
+INBUF          9 uses
+OUTBUF         16 uses
+TRIBUFF        1 use
 
 
 Global Clock Buffers: 4
@@ -1279,7 +1353,7 @@ Global Clock Buffers: 4
 RAM/ROM usage summary
 Total Block RAMs (RAM1K18) : 1 of 21 (4%)
 
-Total LUTs:    3173
+Total LUTs:    3080
 
 Extra resources required for RAM and MACC interface logic during P&R:
 
@@ -1287,14 +1361,14 @@ RAM64x18 Interface Logic : SLEs = 0; LUTs = 0;
 RAM1K18  Interface Logic : SLEs = 36; LUTs = 36;
 MACC     Interface Logic : SLEs = 0; LUTs = 0;
 
-Total number of SLEs after P&R:  1554 + 0 + 36 + 0 = 1590;
-Total number of LUTs after P&R:  3173 + 0 + 36 + 0 = 3209;
+Total number of SLEs after P&R:  1451 + 0 + 36 + 0 = 1487;
+Total number of LUTs after P&R:  3080 + 0 + 36 + 0 = 3116;
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 79MB peak: 259MB)
+At Mapper Exit (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 76MB peak: 259MB)
 
-Process took 0h:00m:19s realtime, 0h:00m:19s cputime
-# Tue Jun 15 22:43:14 2021
+Process took 0h:00m:16s realtime, 0h:00m:16s cputime
+# Fri Jun 18 13:56:46 2021
 
 ###########################################################]

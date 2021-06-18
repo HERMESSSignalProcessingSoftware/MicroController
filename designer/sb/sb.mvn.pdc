@@ -8,14 +8,13 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 400 VF , Speed grade: STD 
 
-# Date generated: Tue Jun 15 22:43:23 2021 
+# Date generated: Fri Jun 18 13:56:55 2021 
 
 
 #
 # IO banks setting
 #
 
-set_iobank Bank1 -vcci 3.30 -fixed no
 
 #
 # Local clock constraints
@@ -31,11 +30,7 @@ set_iobank Bank1 -vcci 3.30 -fixed no
 # I/O constraints
 #
 
-set_io DAPI_RX -DIRECTION INPUT -pinname C19 -fixed yes
-set_io DAPI_TX -DIRECTION OUTPUT -pinname D18 -fixed yes
 set_io DEVRST_N -DIRECTION INPUT -pinname U17
-set_io TM_RX -DIRECTION INPUT -pinname F18 -fixed yes
-set_io TM_TX -DIRECTION OUTPUT -pinname G16 -fixed yes
 
 #
 # Core cell constraints

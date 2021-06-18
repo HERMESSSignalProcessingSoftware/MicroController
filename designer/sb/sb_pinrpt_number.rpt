@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
--Pin Report - Date: Tue Jun 15 22:47:55 2021 Pinchecksum: NOT-AVAILABLE
+-Pin Report - Date: Fri Jun 18 13:57:54 2021 Pinchecksum: NOT-AVAILABLE
 -Product: Designer
 -Release: v12.6
 -Version: 12.900.20.24
@@ -49,7 +49,7 @@ B15                         VSS                                                 
 B16                         DDRIO33PB0/MDDR_ODT                                     Unassigned  
 B17                         DDRIO32NB0/MDDR_ADDR9                                   Unassigned  
 B18                         DDRIO29NB0/MDDR_ADDR15                                  Unassigned  
-B19                         MSIO27NB1/MMUART_0_CLK/GPIO_29_B/USB_NXT_C              Unassigned  
+B19     MMUART_0_TXD_M2F    MSIO27NB1/MMUART_0_CLK/GPIO_29_B/USB_NXT_C              Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
 B20                         VDDI1                                                   Reserved    
 C1                          MSIO64PB7                                               Unassigned  
 C2                          MSIO64NB7                                               Unassigned  
@@ -69,7 +69,7 @@ C15                         DDRIO35NB0/MDDR_ADDR4                               
 C16                         DDRIO33NB0/MDDR_ADDR7                                   Unassigned  
 C17                         DDRIO30NB0/MDDR_ADDR13                                  Unassigned  
 C18                         VSS                                                     Reserved    
-C19     DAPI_RX             MSIO27PB1/MMUART_0_RXD/GPIO_28_B/USB_STP_C              Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+C19     MMUART_0_RXD_F2M    MSIO27PB1/MMUART_0_RXD/GPIO_28_B/USB_STP_C              Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
 C20                         MSIO25NB1/MMUART_0_DCD/GPIO_22_B                        Unassigned  
 D1                          VSS                                                     Reserved    
 D2      debug_led           MSIO68PB7                                               Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
@@ -88,11 +88,11 @@ D14                         DDRIO37NB0/MDDR_ADDR0                               
 D15                         DDRIO31PB0/MDDR_ADDR10                                  Unassigned  
 D16                         VDDI0                                                   Reserved    
 D17                         DDRIO30PB0/MDDR_ADDR12                                  Unassigned  
-D18     DAPI_TX             MSI26NB1/MMUART_0_TXD/GPIO_27_B/USB_DIR_C               Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+D18                         MSI26NB1/MMUART_0_TXD/GPIO_27_B/USB_DIR_C               Unassigned  
 D19                         FLASH_GOLDEN_N                                          Reserved    
 D20                         MSIO25PB1/MMUART_0_RI/GPIO_21_B                         Unassigned  
-E1                          MSIO70PB7                                               Unassigned  
-E2      GPIO_6_M2F          MSIO70NB7                                               Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+E1      ENABLE_MEMORY_LED   MSIO70PB7                                               Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+E2                          MSIO70NB7                                               Unassigned  
 E3                          MSIO68NB7                                               Unassigned  
 E4                          VSS                                                     Reserved    
 E5                          MSIO67NB7                                               Unassigned  
@@ -128,7 +128,7 @@ F14                         NC                                                  
 F15                         MSIO23PB1/MMUART_0_RTS/GPIO_17_B/USB_DATA5_C            Unassigned  
 F16                         MSIO23NB1/MMUART_0_DTR/GPIO_18_B/USB_DATA6_C            Unassigned  
 F17                         VSS                                                     Reserved    
-F18     TM_RX               MSIO22NB1/MMUART_1_RXD/GPIO_26_B/USB_DATA3_C            Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+F18                         MSIO22NB1/MMUART_1_RXD/GPIO_26_B/USB_DATA3_C            Unassigned  
 F19                         NC                                                      Reserved    
 F20     nCS2                MSIO20NB2/SPI_1_SS3/GPIO_16_A                           Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
 G1                          MSIO79PB7/GB1                                           Special     
@@ -146,7 +146,7 @@ G12                         VDDI0                                               
 G13                         CCC_NE0_NE1_MSS_MDDR_PLL_VSSA                           Reserved    
 G14                         NC                                                      Reserved    
 G15                         VDDI1                                                   Reserved    
-G16     TM_TX               MSIO21NB1/MMUART_1_TXD/GPIO_24_B/USB_DATA2_C            Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+G16                         MSIO21NB1/MMUART_1_TXD/GPIO_24_B/USB_DATA2_C            Unassigned  
 G17                         MSIO21PB1/GB5/USB_XCLK_C                                Special     
 G18     RXSM_SOE            MSIO18NB2/SPI_0_SS2/GPIO_9_A/USB_DATA6_A                Fixed       LVCMOS33  Input      TRISTATE                        Up             No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
 G19                         MSIO20PB2/SPI_1_SS2/GPIO_15_A                           Unassigned  

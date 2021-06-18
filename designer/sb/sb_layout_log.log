@@ -11,13 +11,13 @@ Incremental              : OFF
 INFO: Reading User PDC file D:\HERMESS_SPSoftware\Microcontroller\constraint\io\user1.pdc. 0 error(s) and 0 warning(s)
 
 Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 28 fixed I/O macros, 0 unfixed I/O macros
+Info:  I/O Bank and Globals Assigner identified 26 fixed I/O macros, 0 unfixed I/O macros
 
 I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 0 seconds
 
 Placer V5.0 - 12.900.20 
-Design: sb                              Started: Tue Jun 15 22:47:23 2021
+Design: sb                              Started: Fri Jun 18 13:57:25 2021
 
 Initializing Normal-Effort Standard Placement ...
 Clustering ...
@@ -26,28 +26,28 @@ Improving placement ...
 End of placement.
 
 Placer Runtime Summary   :
-Clustering (1 pass)      : 1 seconds
+Clustering (1 pass)      : 0 seconds
 Placement                : 0 seconds
-Improvement              : 3 seconds
+Improvement              : 2 seconds
 
 Placer completed successfully.
 
 Design: sb                              
-Finished: Tue Jun 15 22:47:33 2021
-Total CPU Time:     00:00:11            Total Elapsed Time: 00:00:10
-Total Memory Usage: 129.4 Mbytes
+Finished: Fri Jun 18 13:57:33 2021
+Total CPU Time:     00:00:10            Total Elapsed Time: 00:00:08
+Total Memory Usage: 128.6 Mbytes
                         o - o - o - o - o - o
 
 
 Router 
-Design: D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sbStarted: Tue Jun 15 22:47:37 2021
+Design: D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sbStarted: Fri Jun 18 13:57:37 2021
 
 
 Router completed successfully.
 
 Design: D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb
-Finished: Tue Jun 15 22:47:51 2021
-Total CPU Time:     00:00:13            Total Elapsed Time: 00:00:14
+Finished: Fri Jun 18 13:57:50 2021
+Total CPU Time:     00:00:12            Total Elapsed Time: 00:00:13
 Total Memory Usage: 446.7 Mbytes
                         o - o - o - o - o - o
 
@@ -55,17 +55,17 @@ Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 3212 | 12084 | 26.58      |
-| DFF           | 1590 | 12084 | 13.16      |
+| 4LUT          | 3119 | 12084 | 25.81      |
+| DFF           | 1487 | 12084 | 12.31      |
 | I/O Register  | 0    | 585   | 0.00       |
-| Logic Element | 3423 | 12084 | 28.33      |
+| Logic Element | 3272 | 12084 | 27.08      |
 +---------------+------+-------+------------+
 
 I/O Placement
 +--------+-------+------------+
 | Type   | Count | Percentage |
 +--------+-------+------------+
-| Locked |  28   | 100.00%    |
+| Locked |  26   | 100.00%    |
 | Placed |  0    | 0.00%      |
 +--------+-------+------------+
 

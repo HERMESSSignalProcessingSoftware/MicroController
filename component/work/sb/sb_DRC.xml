@@ -5,15 +5,8 @@
   <drc>
     <status>D:\Programme\LiberoSoCv12.6\Designer/data/drcreport\warn.png</status>
     <StatusMessage>Warning</StatusMessage>
-    <message>Unconnected Bus Interface</message>
-    <detail>Unconnected bus interface pin sb_sb_0:STAMP</detail>
-    <crossprobe>liberoaction://cross_probe/smartdesign/sb/pins/sb_sb_0:STAMP</crossprobe>
-  </drc>
-  <drc>
-    <status>D:\Programme\LiberoSoCv12.6\Designer/data/drcreport\warn.png</status>
-    <StatusMessage>Warning</StatusMessage>
-    <message>Unconnected Bus Interface</message>
-    <detail>Unconnected bus interface pin STAMP_0:AMBA</detail>
-    <crossprobe>liberoaction://cross_probe/smartdesign/sb/pins/STAMP_0:AMBA</crossprobe>
+    <message>Floating Driver</message>
+    <detail>Floating output pin Memory_0:nCS1</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/sb/pins/Memory_0:nCS1</crossprobe>
   </drc>
 </drcreport>

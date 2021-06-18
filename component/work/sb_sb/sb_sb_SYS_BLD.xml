@@ -3115,7 +3115,7 @@
 </row>
 <row>
  <cell>TX_RX_MUX</cell>
- <cell>MUX_IO</cell>
+ <cell>MUX_FABRIC</cell>
 </row>
 <row>
  <cell>USE_MODEM</cell>
@@ -3162,7 +3162,7 @@
 </row>
 <row>
  <cell>TX_RX_MUX</cell>
- <cell>MUX_IO</cell>
+ <cell>MUX_FABRIC</cell>
 </row>
 <row>
  <cell>USE_MODEM</cell>
@@ -3281,11 +3281,11 @@
 </row>
 <row>
  <cell>GPIO6_TYPE</cell>
- <cell>CONNECTION_FABRICA</cell>
+ <cell>CONNECTION_IOA</cell>
 </row>
 <row>
  <cell>GPIO6_USAGE</cell>
- <cell>USAGE_OUTPUT</cell>
+ <cell>NOT_USED</cell>
 </row>
 <row>
  <cell>GPIO7_FAB_CAPT</cell>
@@ -3449,11 +3449,11 @@
 </row>
 <row>
  <cell>GPIO20_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICB</cell>
 </row>
 <row>
  <cell>GPIO20_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO21_FAB_CAPT</cell>
@@ -3461,11 +3461,11 @@
 </row>
 <row>
  <cell>GPIO21_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICB</cell>
 </row>
 <row>
  <cell>GPIO21_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO22_FAB_CAPT</cell>
@@ -3473,11 +3473,11 @@
 </row>
 <row>
  <cell>GPIO22_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICB</cell>
 </row>
 <row>
  <cell>GPIO22_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO23_FAB_CAPT</cell>
@@ -3632,6 +3632,41 @@
 </data>
 <separator/>
 <data>
+<name>MSS_SPI_0</name>
+<table>
+<header>
+ <cell>Name</cell>
+ <cell>Subsystem</cell>
+ <cell>Vendor</cell>
+ <cell>Version</cell>
+</header>
+<row>
+ <cell>SF2_MSS_SPI</cell>
+ <cell>MSS Peripherals</cell>
+ <cell>Actel</cell>
+ <cell>0.0.100</cell>
+</row>
+</table>
+<cdata>
+<name>Configuration</name>
+<table>
+<header>
+ <cell>Parameter</cell>
+ <cell>Value</cell>
+</header>
+<row>
+ <cell>NB_SLAVES</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>SPI_MUX</cell>
+ <cell>MUX_FABRIC</cell>
+</row>
+</table>
+</cdata>
+</data>
+<separator/>
+<data>
 <name>Memory</name>
 <table>
 <header>
@@ -3753,26 +3788,6 @@
  <cell>Description</cell>
 </header>
 <row>
- <cell>MMUART_1_TXD</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>MMUART_1_RXD</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>MMUART_0_TXD</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>MMUART_0_RXD</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
  <cell>POWER_ON_RESET_N</cell>
  <cell>OUT</cell>
  <cell>-</cell>
@@ -3883,6 +3898,26 @@
  <cell>-</cell>
 </row>
 <row>
+ <cell>MMUART_0_TXD_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>MMUART_0_RXD_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>MMUART_1_TXD_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>MMUART_1_RXD_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
  <cell>GPIO_0_F2M</cell>
  <cell>IN</cell>
  <cell>-</cell>
@@ -3913,7 +3948,17 @@
  <cell>-</cell>
 </row>
 <row>
- <cell>GPIO_6_M2F</cell>
+ <cell>GPIO_20_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>GPIO_21_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>GPIO_22_M2F</cell>
  <cell>OUT</cell>
  <cell>-</cell>
 </row>
@@ -3924,6 +3969,41 @@
 </row>
 <row>
  <cell>GPIO_31_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_DI_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_DO_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_CLK_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_CLK_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_SS0_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_SS0_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_SS0_M2F_OE</cell>
  <cell>OUT</cell>
  <cell>-</cell>
 </row>

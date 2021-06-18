@@ -13,7 +13,7 @@ Hostname: BND01
 
 Implementation : synthesis
 
-# Written on Tue Jun 15 22:42:54 2021
+# Written on Fri Jun 18 13:56:28 2021
 
 ##### DESIGN INFO #######################################################
 
@@ -47,20 +47,18 @@ sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     sb_sb_CCC_0_FCCC|GL0_net_inferred_cl
 Unconstrained Start/End Points
 ******************************
 
-p:DAPI_RX
-p:DAPI_TX
 p:DEVRST_N
-p:GPIO_6_M2F
+p:ENABLE_MEMORY_LED
 p:LED_HEARTBEAT
 p:LED_RECORDING
 p:MISO
+p:MMUART_0_RXD_F2M
+p:MMUART_0_TXD_M2F
 p:MOSI
 p:RXSM_LO
 p:RXSM_SODS
 p:RXSM_SOE
 p:SCLK
-p:TM_RX
-p:TM_TX
 p:adc_clk
 p:adc_start
 p:debug_led

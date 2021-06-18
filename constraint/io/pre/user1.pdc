@@ -6,7 +6,7 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 400 VF
 
-# Date generated: Tue Jun 15 22:47:10 2021 
+# Date generated: Fri Jun 18 13:57:04 2021 
 
 
 # 
@@ -25,9 +25,9 @@
 # User Locked I/O settings
 # 
 
-set_io GPIO_6_M2F      \
-    -pinname E2        \
-    -fixed yes         \
+set_io ENABLE_MEMORY_LED  \
+    -pinname E1           \
+    -fixed yes            \
     -DIRECTION OUTPUT
 
 
@@ -47,6 +47,18 @@ set_io MISO           \
     -pinname L15      \
     -fixed yes        \
     -DIRECTION INPUT
+
+
+set_io MMUART_0_RXD_F2M  \
+    -pinname C19         \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io MMUART_0_TXD_M2F  \
+    -pinname B19         \
+    -fixed yes           \
+    -DIRECTION OUTPUT
 
 
 set_io MOSI            \
@@ -189,9 +201,4 @@ set_io stamp0_spi_temp_cs  \
 #Ports using Dedicated Pins
 
 #
-
-set_io DEVRST_N       \
-    -pinname U17      \
-    -DIRECTION INPUT
-
 
