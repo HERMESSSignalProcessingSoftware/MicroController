@@ -178,13 +178,14 @@ begin
     variable S1TimeStampValue                : std_logic_vector(31 downto 0);
 
     variable Error1Counter                   : Integer Range 0 to 2;
+    variable END_ONE_COUNTER                 : Integer Range 0 to 4;
     -- Functionen
     function NUMBEROF( DIN : std_logic_vector(5 downto 0) ) 
         return INTEGER is 
         -- Variable definition
             variable k : integer := 0;
         begin
-            for i in 0 to DIN'length loop
+            for i in 0 to (DIN'length - 1) loop
                 if (DIN(i) = '1') then
                     k := k + 1;
                 end if; 
@@ -214,7 +215,7 @@ begin
             -- Set Overflow bit
                 SynchStatusReg(20) <= '1';
             end if;
-            SynchStatusReg2(5 downto 0 ) <= std_logic_vector(to_unsigned(Temp, 5));
+            SynchStatusReg2(4 downto 0 ) <= std_logic_vector(to_unsigned(Temp, 5));
         end if; -- end of StatusReg2 filling
         if (IN_newAvails(1) = '1' AND Stamp2ShadowReg1 = X"00000000") then 
             Stamp2ShadowReg1        <= data(319 downto 288);
@@ -293,8 +294,11 @@ begin
             Stamp5ShadowReg2    <= (others => '0');
             Stamp6ShadowReg1    <= (others => '0');
             Stamp6ShadowReg2    <= (others => '0');   
+            --
+            TimeStampReg        <= (others => '0');
             -- Init System Registers
             SynchStatusReg          <= (others => '0');
+            SynchStatusReg2         <= (others => '0');
             ResetTimerValueReg      <= (others => '1'); -- Start with a really high number to avoid initial system failure
             WaitingTimerValueReg    <= (others => '1'); -- Start with a really high number to avoid initial system failure
             ResyncTimerValueReg     <= (others => '1'); -- Start with a really high number to avoid initial system failure
@@ -310,6 +314,8 @@ begin
             ReadInterrupt           <= '0';
             PREADY                  <= '0';
             PRDATA                  <= (others => '0');
+            -- disable timestamp 
+            enableTimestampGen      <= '0';
             -- Init Variables
             -- Init values are the default values, they are not confirmed valid
             numberOfnewAvails              := 4;
@@ -322,13 +328,15 @@ begin
             ResyncEventPullDownCounter     := 0;
             S1TimeStampValue               := (others => '0');
             Error1Counter                  := 0;
+            --
+            getTime                        <= '0';
         elsif (rising_edge(clk)) then 
             if (IN_enable = '1') then 
+                enableTimestampGen      <= '1';
                 case MemorySyncState is 
                     when Start => 
-                        getTime <= '0';
                         ResetTimerCounter := ResetTimerCounter - 1;
-                        
+                        dataReadyReset <= '0'; -- keep it down here e
                         if (ResyncTimerCounter /= 0) then 
                             ResyncTimerCounter := ResyncTimerCounter - 1;
                         end if; -- Count down bedinnung für den ResyncTimer
@@ -338,7 +346,6 @@ begin
                         elsif (ResetTimerCounter /= 0 and NUMBEROF(IN_newAvails) > 0) then -- Most likly case
                             -- Main action bring data to mss and to memory
                             MemorySyncState <= S1;
-                            getTime <= '1';
                             -- Set GetTime = 1 to optain the value 
                         elsif (ResyncTimerCounter = 0 and NUMBEROF(IN_requestSync) >= NumberOfPendingResyncRequest) then 
                             -- Requested Resync will be done
@@ -374,7 +381,6 @@ begin
                             MemorySyncState <= Start; 
                         end if;
                     when S1 => 
-                        WaitingTimerCounter := WaitingTimerCounter -1;
                         -- Continue Counting the active counter 
                         if (ResetTimerCounter /= 0) then
                             ResetTimerCounter := ResetTimerCounter - 1;
@@ -382,27 +388,27 @@ begin
                         if (ResyncTimerCounter /= 0) then 
                             ResyncTimerCounter := ResyncTimerCounter - 1;
                         end if; -- Count down bedinnung für den ResyncTimer
+                        if (WaitingTimerCounter < TO_INTEGER(UNSIGNED(WaitingTimerValueReg)) AND 
+                            WaitingTimerCounter > 0) then -- just count if someone has done the first step
+                            WaitingTimerCounter := WaitingTimerCounter - 1;
+                        end if;
                         -- Own actions
-                        if (WaitingTimerCounter = TO_INTEGER(UNSIGNED(WaitingTimerValueReg)) - 1) then -- First time in this case
+                        if (WaitingTimerCounter = TO_INTEGER(UNSIGNED(WaitingTimerValueReg))) then -- First time in this case
                             TimeStampReg <= TimeStampValue; -- Save the timestamp
+                            WaitingTimerCounter := WaitingTimerCounter - 1; 
+                            -- Load new timestamp here
+                        elsif (WaitingTimerCounter = (TO_INTEGER(UNSIGNED(WaitingTimerValueReg)) - 2 ) -- 2 becase the if case will do -1 and the next cycle in S1 will do an other
+                                    AND NUMBEROF(IN_newAvails) /= 6) then -- Just do it to wait for one cycle to prevent reading TimeStampReg in the same cycle as writing it
                             COPY_AND_MARK_DATA(IN_newAvails, IN_databus);
-                        elsif ((WaitingtimerCounter < TO_INTEGER(UNSIGNED(WaitingTimerValueReg)) - 1)
-                                AND WaitingtimerCounter > 0) then -- Waiting case
-                            if (NUMBEROF(IN_newAvails) < 6) then 
-                                COPY_AND_MARK_DATA(IN_newAvails, IN_databus);
-                            else  -- all there
-                                MemorySyncState <= End1;
-                            end if;
-                        else -- WaitingTimerCounter = 0 
-                            COPY_AND_MARK_DATA(IN_newAvails, IN_databus);
+                        elsif (WaitingTimerCounter = 1 OR NUMBEROF(IN_newAvails) = 6) then  
                             if (NUMBEROF(IN_newAvails) >= numberOfnewAvails) then 
+                                COPY_AND_MARK_DATA(IN_newAvails, IN_databus);
                                 MemorySyncState <= End1;
                             else 
                                 MemorySyncState <= S2;
                             end if;
-                            WaitingTimerCounter := TO_INTEGER(UNSIGNED(WaitingTimerValueReg));
+                            WaitingTimerCounter := TO_INTEGER(UNSIGNED(WaitingTimerValueReg)); -- because of the last line
                         end if;
-                        
                     when S2 => -- Case for: not all available stamps returned a value
                         if (ResyncTimerCounter /= 0) then 
                             ResyncTimerCounter := ResyncTimerCounter - 1;
@@ -416,29 +422,30 @@ begin
                         SynchStatusReg(30) <= '1';
                         SynchStatusReg(26) <= '1';
                     when End1 =>
-                        if (NUMBEROF(IN_NewAvails) > numberOfnewAvails) then
+                        if (END_ONE_COUNTER < 2) then
                             dataReadyReset <= '1';
+                            END_ONE_COUNTER := END_ONE_COUNTER + 1;
                         else 
                             dataReadyReset <= '0';
+                            END_ONE_COUNTER := 0;
                             MemorySyncState <= Start;
                             ResetTimerCounter := TO_INTEGER(UNSIGNED(ResetTimerValueReg));
-                            ReadInterrupt <= '1';
+                            if (ConfigReg(31) = '1') then
+                                ReadInterrupt <= '1';
+                            end if;
                             SynchStatusReg(30) <= '1';
                         end if;
                     when Error1 =>
-                        if (Error1Counter = 0) then
-                            getTime <= '1';
-                        else 
-                            SynchronizerInterrupt <= '1';
-                            SynchStatusReg(31) <= '1';
-                            COPY_AND_MARK_DATA(IN_newAvails, IN_databus);
-                            TimeStampReg <= TimeStampValue;
-                        end if;
-                        Error1Counter := Error1Counter + 1;
+                        SynchronizerInterrupt <= '1';
+                        SynchStatusReg(31) <= '1';
+                        COPY_AND_MARK_DATA(IN_newAvails, IN_databus);
+                        TimeStampReg <= TimeStampValue;
                     when others => 
                         -- Well Ignore this case
                         MemorySyncState <= Start;
                 end case; -- END CASE MemorySyncState
+            else 
+                enableTimestampGen      <= '0';
             end if; -- End enable 
 
             case APBState is 
@@ -448,6 +455,13 @@ begin
                     elsif ((PWRITE = '0' AND PSEL = '1')) then
                         APBState <= APBReading;
                     end if;
+                    -- Reset the Clear bits 
+                    if (ConfigReg(30) = '1' ) then
+                        ConfigReg(30) <= '0'; -- automatic clear of that bit
+                    end if;
+                    if (ConfigReg(29) = '1' ) then
+                        ConfigReg(29) <= '0'; -- automatic clear of that bit
+                    end if;
                     PREADY <= '0';
                 when APBWriting => 
                     PREADY <= '1';
@@ -456,18 +470,31 @@ begin
                             ConfigReg <= PWDATA;
                             numberOfnewAvails               := TO_INTEGER(UNSIGNED(ConfigReg(2 downto 0)));
                             NumberOfPendingResyncRequest    := TO_INTEGER(UNSIGNED(ConfigReg(6 downto 4)));
+                            --    31 30 29
+                            -- +--+--+--+-
+                            -- |EI|CS|CR| 
+                            -- +--+--+--+-
+                            if (PWDATA(30) = '1') then
+                                SynchronizerInterrupt <= '0';
+                                SynchStatusReg(31) <= '0';
+                            end if;
+                            if (PWDATA(29) = '1') then 
+                                ReadInterrupt <= '0';
+                                SynchStatusReg(30) <= '0';
+                            end if;
                         when X"03C" => 
                             ResetTimerValueReg <= PWDATA;   
-                            ResetTimerCounter              := TO_INTEGER(UNSIGNED(ResetTimerValueReg)); 
+                            ResetTimerCounter              := TO_INTEGER(UNSIGNED(PWDATA)); 
                         when X"040" =>
                             WaitingTimerValueReg <= PWDATA;
-                            WaitingTimerCounter            := TO_INTEGER(UNSIGNED(WaitingTimerValueReg));
+                            WaitingTimerCounter            := TO_INTEGER(UNSIGNED(PWDATA));
                         when X"044" =>
                             ResyncTimerValueReg <= PWDATA;
-                            ResyncTimerCounter             := TO_INTEGER(UNSIGNED(ResyncTimerValueReg));
+                            ResyncTimerCounter             := TO_INTEGER(UNSIGNED(PWDATA));
                         when others => 
                             SynchStatusReg(28) <= '1';
                     end case; -- and Writing addr case 
+                    APBState <= APBWaiting;
                 when APBReading =>
                     PREADY <= '1';
                     case PADDR is 
@@ -511,6 +538,7 @@ begin
                             PRDATA <= SynchStatusReg;
                             SynchStatusReg(11 downto 0) <= (others => '0'); -- Clear bitmasks
                             SynchStatusReg(25 downto 0) <= (others => '0');
+                            SynchStatusReg(28) <= '0'; -- Reset of the APB Address ERROR bit
                         when X"038" => 
                             PRDATA <= ConfigReg;
                         when X"03C" => 
@@ -527,6 +555,7 @@ begin
                         when others => 
                             PRDATA <= X"AFFEDEAD";
                     end case; -- end Reading addr case
+                    APBState <= APBWaiting;
             end case; -- End of APB Reading FSM
         end if; -- end risign_edge
     end process;

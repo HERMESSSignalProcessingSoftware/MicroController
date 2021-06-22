@@ -58,10 +58,8 @@ begin
                         else 
                             prescaler := prescaler + 1;
                         end if;
-                        if (getTime = '1') then 
-                            state <= S2;
-                        end if;
-                    when S2 =>
+                        timestamp <=  std_logic_vector(to_unsigned(Counter, timestamp'length));
+                    when S2 => -- Ignore this case
                         timestamp <=  std_logic_vector(to_unsigned(Counter, timestamp'length));
                         state <= S1;
                     when others => 
