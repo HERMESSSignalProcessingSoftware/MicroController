@@ -303,7 +303,7 @@ begin
             WaitingTimerValueReg    <= (others => '1'); -- Start with a really high number to avoid initial system failure
             ResyncTimerValueReg     <= (others => '1'); -- Start with a really high number to avoid initial system failure
             -- Clear Config Reg
-            ConfigReg               <= (others => '0');
+            ConfigReg               <= x"00000044";
             -- init state machines
             MemorySyncState <= Start;
             APBState        <= APBWaiting;
@@ -372,7 +372,7 @@ begin
                         end if;
                     when ResyncEvent => 
                         ResyncTimerCounter := TO_INTEGER(UNSIGNED(ResyncTimerValueReg)); -- Reload the counter 
-                        if (ResyncEventPullDownCounter >= 0 and ResyncEventPullDownCounter < 14) then 
+                        if (ResyncEventPullDownCounter >= 0 and ResyncEventPullDownCounter < 7) then 
                             ResyncEventPullDownCounter := ResyncEventPullDownCounter + 1;
                             ADCResync <= '0';
                         else
@@ -490,7 +490,8 @@ begin
                             WaitingTimerCounter            := TO_INTEGER(UNSIGNED(PWDATA));
                         when X"044" =>
                             ResyncTimerValueReg <= PWDATA;
-                            ResyncTimerCounter             := TO_INTEGER(UNSIGNED(PWDATA));
+                            -- Do not reload the counter here
+                            -- ResyncTimerCounter             := TO_INTEGER(UNSIGNED(PWDATA));
                         when others => 
                             SynchStatusReg(28) <= '1';
                     end case; -- and Writing addr case 

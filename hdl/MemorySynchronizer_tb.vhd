@@ -80,13 +80,6 @@ IN_databus(127 downto 64)  <=  X"5151515152525252";
 IN_databus(63 downto 0)    <=  X"6161616162626262"; 
                                
 
-
-
-IN_requestSync <= "000000", 
-                  "111100" after 50 us, -- Just look wether he not reaches ResyncEvent
-                  "000000" after 55 us, 
-                  "111111" after 80 us; -- Let it reach the resync again
-
 -- Do the configuration of the Sync first
 --if ((PENABLE = '1') and (PWRITE = '1') and (PSEL = '1')) then 
 --APBState <= APBWriting;
@@ -247,40 +240,55 @@ process
     PSEL <= '0';
     wait until rising_edge(clk);
   end procedure READREGS;
+
+  procedure DO_RESET is
+  begin 
+    nReset <= '0';
+    PADDR   <=  X"000";
+    PWDATA  <=  X"00000000";
+    PSEL    <=  '0';
+    IN_enable <= '0';
+    IN_newAvails <= "000000";
+    IN_requestSync <= "000000";
+    wait for 30 ns;
+    nReset <= '1';
+  end procedure DO_RESET;
+
+  procedure BASIC_APB_INIT is 
+  begin
+    PSEL    <=  '1';
+    PENABLE <=  '1';
+    PWRITE  <=  '1';
+    wait until rising_edge(clk);
+    PADDR <= X"038";
+    PWDATA  <= X"80000044";
+    wait until rising_edge(PREADY);
+    PADDR <= X"03C";
+    PWDATA  <= X"000009C4";
+    wait until rising_edge(PREADY);
+    PADDR <= X"040";
+    PWDATA  <= X"00000096";
+    wait until rising_edge(PREADY);
+    PADDR <= X"044";
+    PWDATA  <=  X"000001F4";
+    wait until rising_edge(PREADY);     
+    wait until rising_edge(clk);
+    PSEL    <=  '0';
+    PENABLE <= '0';
+    PWRITE <= '0';
+  end procedure BASIC_APB_INIT;
+
+  variable StartTime : time;
+  variable EndTime : time;
+  variable Temp    : Integer;
     begin
         report "Started simulation";
-        nReset <= '1';
-        PADDR   <=  X"000";
-        PWDATA  <=  X"00000000";
-        PSEL    <=  '0';
-        IN_enable <= '0';
-        IN_newAvails <= "000000";
-        wait for 5 ns;
-        nReset <= '0';
+        DO_RESET;
         wait until rising_edge(clk);
         nREset <= '1';
         wait for 30 ns;
         -- APB action here 
-        PSEL    <=  '1';
-        PENABLE <=  '1';
-        PWRITE  <=  '1';
-        wait until rising_edge(clk);
-        PADDR <= X"038";
-        PWDATA  <= X"80000044";
-        wait until rising_edge(PREADY);
-        PADDR <= X"03C";
-        PWDATA  <= X"000009C4";
-        wait until rising_edge(PREADY);
-        PADDR <= X"040";
-        PWDATA  <= X"00000096";
-        wait until rising_edge(PREADY);
-        PADDR <= X"044";
-        PWDATA  <=  X"000001F4";
-        wait until rising_edge(PREADY);     
-        wait until rising_edge(clk);
-        PSEL    <=  '0';
-        PENABLE <= '0';
-        PWRITE <= '0';
+        BASIC_APB_INIT;
         wait for 100 ns;
         IN_enable <=  '1';
         -- Finised init 
@@ -317,9 +325,49 @@ process
         ASSERT PRDATA(5 downto 0) = "000011" report "BITMASK of SR1 (5:0) does not match";
         wait until rising_edge(clk);
         PSEL <= '0';
-        report "Fished Test of Missing stamp values, no errors? passed!"
+        report "Fished Test of Missing stamp values, no errors? passed!";
         -- continue with a reqest event, let assume at first three of them later for do want that ADCResync should be touched
+        IN_requestSync <= "001100"; -- Not enough for resyncing
+        wait for 1 us;
+        IN_requestSync <= "001101"; -- Not enough for resyncing
+        wait for 1 us;
+        IN_requestSync <= "101101"; -- Not enough for resyncing
+        wait until falling_edge(ADCResync);
+        IN_requestSync  <= "000000";
+        StartTime := now;
+        wait until rising_edge(clk);
+        ASSERT ADCResync = '0' report "Falling Edge was not provied";
+        wait until rising_edge(ADCResync);
+        EndTime := now;
+        report "Duration: " & time'image(EndTime - StartTime);
+        Temp := (EndTime - StartTime) / 20 ns;
+        report "Cycles: " & integer'image(Temp);
+        Assert (Temp * 20 ns) > 250 ns report "Estimated downtime of ADCResync signal was violated";
+        report "END OF first Resync START -> RESYNCEvent with falling level on ADCResync";
         -- continue with missing STAMPS (START -> S1 -> S2) ADCReSync signal should not be touched 
+        report "START OF ResyncTest START -> S1 -> S2 -> START";
+        wait for 2 us;
+        IN_newAvails <= "110000"; --  zuwenige Signale und timer auslaufen lassen für übergang auf s2
+        wait for 6 us;
+        for i in 0 to 10 loop
+          wait until rising_edge(clk);
+          ASSERT ADCResync = '1' report "ADC Resync was pulled down due to software malfunction";
+        end loop;
+        if (ReadInterrupt = '1') then -- Reached S2
+          IN_newAvails <= "000000";
+          HANDLE_INTERRUPT;
+          report "Cleared newAvails";
+        end if;
+        wait until rising_edge(clk);
+        READREGS("001111");
+        wait until rising_edge(clk);
+        report "END OF START -> S1 -> S2 not entering Rsync test!";
+        report "START OF TEST no stamp has ever provided data";
+        wait for 100 us;
+        ASSERT SynchronizerInterrupt = '1' report "SynchronizerInterrupt was not triggerd";
+        HANDLE_INTERRUPT;
+        DO_RESET;
+        BASIC_APB_INIT;
         -- continue with all missing stamps SyncInterrupt has to be trown 
         
         report "END OF TEST";

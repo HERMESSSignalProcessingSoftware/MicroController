@@ -6,8 +6,8 @@ add wave -noupdate -radix hexadecimal /memorysynchronizer_tb/DUT/nReset
 add wave -noupdate -divider INPUTS
 add wave -noupdate -radix hexadecimal /memorysynchronizer_tb/DUT/IN_enable
 add wave -noupdate -radix hexadecimal /memorysynchronizer_tb/DUT/IN_databus
-add wave -noupdate -radix hexadecimal -childformat {{/memorysynchronizer_tb/DUT/IN_newAvails(5) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(4) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(3) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(2) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(1) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(0) -radix hexadecimal}} -subitemconfig {/memorysynchronizer_tb/DUT/IN_newAvails(5) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(4) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(3) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(2) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(1) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(0) {-height 15 -radix hexadecimal}} /memorysynchronizer_tb/DUT/IN_newAvails
-add wave -noupdate -radix hexadecimal /memorysynchronizer_tb/DUT/IN_requestSync
+add wave -noupdate -radix binary -childformat {{/memorysynchronizer_tb/DUT/IN_newAvails(5) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(4) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(3) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(2) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(1) -radix hexadecimal} {/memorysynchronizer_tb/DUT/IN_newAvails(0) -radix hexadecimal}} -subitemconfig {/memorysynchronizer_tb/DUT/IN_newAvails(5) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(4) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(3) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(2) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(1) {-height 15 -radix hexadecimal} /memorysynchronizer_tb/DUT/IN_newAvails(0) {-height 15 -radix hexadecimal}} /memorysynchronizer_tb/DUT/IN_newAvails
+add wave -noupdate -radix binary /memorysynchronizer_tb/DUT/IN_requestSync
 add wave -noupdate -divider OUTPUTS
 add wave -noupdate -radix hexadecimal /memorysynchronizer_tb/DUT/dataReadyReset
 add wave -noupdate -radix hexadecimal /memorysynchronizer_tb/DUT/SynchronizerInterrupt
@@ -48,8 +48,13 @@ add wave -noupdate -radix hexadecimal /memorysynchronizer_tb/DUT/enableTimestamp
 add wave -noupdate -divider Statemachines
 add wave -noupdate -radix hexadecimal /memorysynchronizer_tb/DUT/MemorySyncState
 add wave -noupdate -radix hexadecimal /memorysynchronizer_tb/DUT/APBState
+add wave -noupdate -divider Locals
+add wave -noupdate /memorysynchronizer_tb/DUT/line__160/ResetTimerCounter
+add wave -noupdate /memorysynchronizer_tb/DUT/line__160/ResyncTimerCounter
+add wave -noupdate /memorysynchronizer_tb/DUT/line__160/WaitingTimerCounter
+add wave -noupdate /memorysynchronizer_tb/DUT/line__160/NumberOfPendingResyncRequest
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {10461127 ps} 0}
+WaveRestoreCursors {{Cursor 1} {12660000 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 72
@@ -65,4 +70,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits us
 update
-WaveRestoreZoom {19060317 ps} {20049458 ps}
+WaveRestoreZoom {19755101 ps} {20012890 ps}
