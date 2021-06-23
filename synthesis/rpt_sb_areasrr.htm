@@ -3,7 +3,7 @@
 Part:			M2S010VF400STD (Microchip)
 
 Click here to go to specific block report:
-<a href="rpt_sb_areasrr.htm#sb"><h5 align="center">sb</h5></a><br><a href="rpt_sb_areasrr.htm#sb.Memory"><h5 align="center">Memory</h5></a><br><a href="rpt_sb_areasrr.htm#Memory.Timestamp"><h5 align="center">Timestamp</h5></a><br><a href="rpt_sb_areasrr.htm#Memory.ram"><h5 align="center">ram</h5></a><br><a href="rpt_sb_areasrr.htm#Memory.spi_master_2_32"><h5 align="center">spi_master_2_32</h5></a><br><a href="rpt_sb_areasrr.htm#sb.sb_sb"><h5 align="center">sb_sb</h5></a><br><a href="rpt_sb_areasrr.htm#sb_sb.sb_sb_CCC_0_FCCC"><h5 align="center">sb_sb_CCC_0_FCCC</h5></a><br><a href="rpt_sb_areasrr.htm#sb_sb.CoreAPB3"><h5 align="center">CoreAPB3</h5></a><br><a href="rpt_sb_areasrr.htm#CoreAPB3.COREAPB3_MUXPTOB3"><h5 align="center">COREAPB3_MUXPTOB3</h5></a><br><a href="rpt_sb_areasrr.htm#sb_sb.sb_sb_FABOSC_0_OSC"><h5 align="center">sb_sb_FABOSC_0_OSC</h5></a><br><a href="rpt_sb_areasrr.htm#sb_sb.sb_sb_MSS"><h5 align="center">sb_sb_MSS</h5></a><br><a href="rpt_sb_areasrr.htm#sb.STAMP"><h5 align="center">STAMP</h5></a><br><a href="rpt_sb_areasrr.htm#STAMP.spi_master_1_16"><h5 align="center">spi_master_1_16</h5></a><br><a name=sb>
+<a href="rpt_sb_areasrr.htm#sb"><h5 align="center">sb</h5></a><br><a href="rpt_sb_areasrr.htm#sb.MemorySynchronizer"><h5 align="center">MemorySynchronizer</h5></a><br><a href="rpt_sb_areasrr.htm#MemorySynchronizer.Timestamp"><h5 align="center">Timestamp</h5></a><br><a href="rpt_sb_areasrr.htm#sb.sb_sb"><h5 align="center">sb_sb</h5></a><br><a href="rpt_sb_areasrr.htm#sb_sb.sb_sb_CCC_0_FCCC"><h5 align="center">sb_sb_CCC_0_FCCC</h5></a><br><a href="rpt_sb_areasrr.htm#sb_sb.CoreAPB3"><h5 align="center">CoreAPB3</h5></a><br><a href="rpt_sb_areasrr.htm#CoreAPB3.COREAPB3_MUXPTOB3"><h5 align="center">COREAPB3_MUXPTOB3</h5></a><br><a href="rpt_sb_areasrr.htm#sb_sb.sb_sb_FABOSC_0_OSC"><h5 align="center">sb_sb_FABOSC_0_OSC</h5></a><br><a href="rpt_sb_areasrr.htm#sb_sb.sb_sb_MSS"><h5 align="center">sb_sb_MSS</h5></a><br><a href="rpt_sb_areasrr.htm#sb.STAMP"><h5 align="center">STAMP</h5></a><br><a href="rpt_sb_areasrr.htm#STAMP.spi_master"><h5 align="center">spi_master</h5></a><br><a name=sb>
 ------------------------------------------------------------------
 ########   Utilization report for  Top level view:   sb   ########
 ==================================================================
@@ -11,29 +11,20 @@ Click here to go to specific block report:
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      1451               100 %                
+SLE      935                100 %                
 =================================================
-Total SEQUENTIAL ELEMENTS in the block sb:	1451 (31.57 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block sb:	935 (33.38 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           2841               100 %                
-ARI1          239                100 %                
-BLACK BOX     7                  100 %                
+CFG           1432               100 %                
+ARI1          373                100 %                
+BLACK BOX     8                  100 %                
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb:	3087 (67.17 % Utilization)
-
-<a href="#TopSummary"><h5 align="right">Top</h5></a>
-
-MEMORY ELEMENTS
-Name        Total elements     Utilization     Notes
-----------------------------------------------------
-RAM1K18     1                  100 %                
-====================================================
-Total MEMORY ELEMENTS in the block sb:	1 (0.02 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb:	1813 (64.73 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
@@ -42,7 +33,7 @@ Name       Total elements     Utilization     Notes
 ---------------------------------------------------
 GLOBAL     4                  100 %                
 ===================================================
-Total GLOBAL BUFFERS in the block sb:	4 (0.09 % Utilization)
+Total GLOBAL BUFFERS in the block sb:	4 (0.14 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
@@ -51,120 +42,55 @@ Name     Total elements     Utilization     Notes
 -------------------------------------------------
 IO       26                 100 %                
 =================================================
-Total IO PADS in the block sb:	26 (0.57 % Utilization)
+Total IO PADS in the block sb:	26 (0.93 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
-<a name=sb.Memory>
-------------------------------------------------------------
-########   Utilization report for  cell:   Memory   ########
-Instance path:   sb.Memory                                  
-============================================================
+<a name=sb.MemorySynchronizer>
+------------------------------------------------------------------------
+########   Utilization report for  cell:   MemorySynchronizer   ########
+Instance path:   sb.MemorySynchronizer                                  
+========================================================================
 
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      1123               77.4 %               
+SLE      607                64.9 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block sb.Memory:	1123 (24.43 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block sb.MemorySynchronizer:	607 (21.67 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      2410               84.8 %               
-ARI1     148                61.9 %               
+CFG      999                69.8 %               
+ARI1     283                75.9 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block sb.Memory:	2558 (55.66 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb.MemorySynchronizer:	1282 (45.77 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
-
-MEMORY ELEMENTS
-Name        Total elements     Utilization     Notes
-----------------------------------------------------
-RAM1K18     1                  100 %                
-====================================================
-Total MEMORY ELEMENTS in the block sb.Memory:	1 (0.02 % Utilization)
-
-<a href="#TopSummary"><h5 align="right">Top</h5></a>
-<a name=Memory.Timestamp>
+<a name=MemorySynchronizer.Timestamp>
 ---------------------------------------------------------------
 ########   Utilization report for  cell:   Timestamp   ########
-Instance path:   Memory.Timestamp                              
+Instance path:   MemorySynchronizer.Timestamp                  
 ===============================================================
 
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      71                 4.89 %               
+SLE      38                 4.06 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block Memory.Timestamp:	71 (1.54 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block MemorySynchronizer.Timestamp:	38 (1.36 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      14                 0.4930 %             
-ARI1     32                 13.4 %               
+CFG      11                 0.7680 %             
+ARI1     32                 8.58 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block Memory.Timestamp:	46 (1.00 % Utilization)
-
-<a href="#TopSummary"><h5 align="right">Top</h5></a>
-<a name=Memory.ram>
----------------------------------------------------------
-########   Utilization report for  cell:   ram   ########
-Instance path:   Memory.ram                              
-=========================================================
-
-SEQUENTIAL ELEMENTS
-Name     Total elements     Utilization     Notes
--------------------------------------------------
-SLE      546                37.6 %               
-=================================================
-Total SEQUENTIAL ELEMENTS in the block Memory.ram:	546 (11.88 % Utilization)
-
-<a href="#TopSummary"><h5 align="right">Top</h5></a>
-
-COMBINATIONAL LOGIC
-Name     Total elements     Utilization     Notes
--------------------------------------------------
-CFG      1619               57 %                 
-=================================================
-Total COMBINATIONAL LOGIC in the block Memory.ram:	1619 (35.23 % Utilization)
-
-<a href="#TopSummary"><h5 align="right">Top</h5></a>
-
-MEMORY ELEMENTS
-Name        Total elements     Utilization     Notes
-----------------------------------------------------
-RAM1K18     1                  100 %                
-====================================================
-Total MEMORY ELEMENTS in the block Memory.ram:	1 (0.02 % Utilization)
-
-<a href="#TopSummary"><h5 align="right">Top</h5></a>
-<a name=Memory.spi_master_2_32>
----------------------------------------------------------------------
-########   Utilization report for  cell:   spi_master_2_32   ########
-Instance path:   Memory.spi_master_2_32                              
-=====================================================================
-
-SEQUENTIAL ELEMENTS
-Name     Total elements     Utilization     Notes
--------------------------------------------------
-SLE      41                 2.83 %               
-=================================================
-Total SEQUENTIAL ELEMENTS in the block Memory.spi_master_2_32:	41 (0.89 % Utilization)
-
-<a href="#TopSummary"><h5 align="right">Top</h5></a>
-
-COMBINATIONAL LOGIC
-Name     Total elements     Utilization     Notes
--------------------------------------------------
-CFG      56                 1.97 %               
-ARI1     40                 16.7 %               
-=================================================
-Total COMBINATIONAL LOGIC in the block Memory.spi_master_2_32:	96 (2.09 % Utilization)
+Total COMBINATIONAL LOGIC in the block MemorySynchronizer.Timestamp:	43 (1.54 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 <a name=sb.STAMP>
@@ -176,43 +102,43 @@ Instance path:   sb.STAMP
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      328                22.6 %               
+SLE      328                35.1 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block sb.STAMP:	328 (7.14 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block sb.STAMP:	328 (11.71 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      388                13.7 %               
-ARI1     91                 38.1 %               
+CFG      392                27.4 %               
+ARI1     90                 24.1 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block sb.STAMP:	479 (10.42 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb.STAMP:	482 (17.21 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
-<a name=STAMP.spi_master_1_16>
----------------------------------------------------------------------
-########   Utilization report for  cell:   spi_master_1_16   ########
-Instance path:   STAMP.spi_master_1_16                               
-=====================================================================
+<a name=STAMP.spi_master>
+----------------------------------------------------------------
+########   Utilization report for  cell:   spi_master   ########
+Instance path:   STAMP.spi_master                               
+================================================================
 
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      93                 6.41 %               
+SLE      93                 9.95 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block STAMP.spi_master_1_16:	93 (2.02 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block STAMP.spi_master:	93 (3.32 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      83                 2.92 %               
-ARI1     39                 16.3 %               
+CFG      85                 5.94 %               
+ARI1     38                 10.2 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block STAMP.spi_master_1_16:	122 (2.65 % Utilization)
+Total COMBINATIONAL LOGIC in the block STAMP.spi_master:	123 (4.39 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 <a name=sb.sb_sb>
@@ -224,10 +150,10 @@ Instance path:   sb.sb_sb
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           43                 1.51 %               
-BLACK BOX     4                  57.1 %               
+CFG           41                 2.86 %               
+BLACK BOX     5                  62.5 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb.sb_sb:	47 (1.02 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb.sb_sb:	46 (1.64 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
@@ -236,7 +162,7 @@ Name       Total elements     Utilization     Notes
 ---------------------------------------------------
 GLOBAL     2                  50 %                 
 ===================================================
-Total GLOBAL BUFFERS in the block sb.sb_sb:	2 (0.04 % Utilization)
+Total GLOBAL BUFFERS in the block sb.sb_sb:	2 (0.07 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 <a name=sb_sb.CoreAPB3>
@@ -248,9 +174,9 @@ Instance path:   sb_sb.CoreAPB3
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      43                 1.51 %               
+CFG      41                 2.86 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block sb_sb.CoreAPB3:	43 (0.94 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb_sb.CoreAPB3:	41 (1.46 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 <a name=CoreAPB3.COREAPB3_MUXPTOB3>
@@ -262,9 +188,9 @@ Instance path:   CoreAPB3.COREAPB3_MUXPTOB3
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      40                 1.41 %               
+CFG      38                 2.65 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block CoreAPB3.COREAPB3_MUXPTOB3:	40 (0.87 % Utilization)
+Total COMBINATIONAL LOGIC in the block CoreAPB3.COREAPB3_MUXPTOB3:	38 (1.36 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 <a name=sb_sb.sb_sb_CCC_0_FCCC>
@@ -276,9 +202,9 @@ Instance path:   sb_sb.sb_sb_CCC_0_FCCC
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-BLACK BOX     1                  14.3 %               
+BLACK BOX     1                  12.5 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_CCC_0_FCCC:	1 (0.02 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_CCC_0_FCCC:	1 (0.04 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 
@@ -287,7 +213,7 @@ Name       Total elements     Utilization     Notes
 ---------------------------------------------------
 GLOBAL     2                  50 %                 
 ===================================================
-Total GLOBAL BUFFERS in the block sb_sb.sb_sb_CCC_0_FCCC:	2 (0.04 % Utilization)
+Total GLOBAL BUFFERS in the block sb_sb.sb_sb_CCC_0_FCCC:	2 (0.07 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 <a name=sb_sb.sb_sb_FABOSC_0_OSC>
@@ -299,9 +225,9 @@ Instance path:   sb_sb.sb_sb_FABOSC_0_OSC
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-BLACK BOX     1                  14.3 %               
+BLACK BOX     1                  12.5 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_FABOSC_0_OSC:	1 (0.02 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_FABOSC_0_OSC:	1 (0.04 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 <a name=sb_sb.sb_sb_MSS>
@@ -313,9 +239,9 @@ Instance path:   sb_sb.sb_sb_MSS
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-BLACK BOX     1                  14.3 %               
+BLACK BOX     1                  12.5 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_MSS:	1 (0.02 % Utilization)
+Total COMBINATIONAL LOGIC in the block sb_sb.sb_sb_MSS:	1 (0.04 % Utilization)
 
 <a href="#TopSummary"><h5 align="right">Top</h5></a>
 

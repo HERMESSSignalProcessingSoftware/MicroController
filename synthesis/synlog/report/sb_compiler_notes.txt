@@ -14,6 +14,7 @@
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":790:10:790:17|Synthesizing smartfusion2.sysreset.syn_black_box.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vhd":17:7:17:15|Synthesizing work.sb_sb_mss.rtl.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd":10:7:10:13|Synthesizing work.mss_010.def_arch.
+@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":249:10:249:12|Synthesizing smartfusion2.or3.syn_black_box.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":8:7:8:24|Synthesizing work.sb_sb_fabosc_0_osc.def_arch.
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":562:10:562:15|Synthesizing smartfusion2.clkint.syn_black_box.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd":19:7:19:20|Synthesizing work.rcosc_25_50mhz.def_arch.
@@ -27,30 +28,16 @@
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":576:10:576:12|Synthesizing smartfusion2.gnd.syn_black_box.
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":582:10:582:12|Synthesizing smartfusion2.vcc.syn_black_box.
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":191:10:191:13|Synthesizing smartfusion2.and2.syn_black_box.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":44:7:44:12|Synthesizing work.memory.arch.
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":178:21:178:22|Using onehot encoding for type typecustate. For example, enumeration waiting is mapped to "100000000000000".
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":180:27:180:28|Using sequential encoding for type typestampsubstate.
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":183:22:183:23|Using sequential encoding for type apbstatetype.
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":189:27:189:28|Using onehot encoding for type spistatetype. For example, enumeration ready is mapped to "10000".
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":192:36:192:37|Using onehot encoding for type readmemorystatemachinetype. For example, enumeration cmd is mapped to "100000000".
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":195:35:195:36|Using onehot encoding for type apb3readmemorylimitedtype. For example, enumeration init is mapped to "100000".
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":587:20:587:33|OTHERS clause is not synthesized.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":705:16:705:29|OTHERS clause is not synthesized.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":879:16:879:29|OTHERS clause is not synthesized.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":30:7:30:16|Synthesizing work.spi_master.logic.
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":53:15:53:16|Using sequential encoding for type machine.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\ram.vhd":25:7:25:9|Synthesizing work.ram.arch_ram.
+@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":47:7:47:24|Synthesizing work.memorysynchronizer.arch.
+@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":139:27:139:28|Using onehot encoding for type memorysyncstate_t. For example, enumeration start is mapped to "1000000".
+@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":141:22:141:23|Using sequential encoding for type apbstatetype.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":28:7:28:15|Synthesizing work.timestamp.behaviour.
 @N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":38:16:38:17|Using sequential encoding for type t_tate.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":67:20:67:33|OTHERS clause is not synthesized.
-@N: CL134 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\ram.vhd":47:2:47:3|Found RAM memory, depth=512, width=32
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register Command.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register ControllUnitSubState.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register APBState.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register SPIState.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register ReadMemoryState.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register ControllUnitState.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register APB3ReadMemoryLimitedState.
+@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":65:20:65:33|OTHERS clause is not synthesized.
+@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":33:4:33:10|Input getTime is unused.
+@N: CL189 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Register bit end_one_counter(2) is always 0.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Trying to extract state machine for register APBState.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Trying to extract state machine for register MemorySyncState.
 @N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":75:0:75:4|Input IADDR is unused.
 @N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":76:0:76:6|Input PRESETN is unused.
 @N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":77:0:77:3|Input PCLK is unused.

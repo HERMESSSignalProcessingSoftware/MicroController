@@ -12,7 +12,7 @@ set_def {VCCI_1.8_VOLTR} {COM}
 set_def {VCCI_2.5_VOLTR} {COM}
 set_def {VCCI_3.3_VOLTR} {COM}
 set_name sb
-set_workdir {C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb}
-set_filename    {C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb_ba}
+set_workdir {D:\HERMESS_SPSoftware\Microcontroller\designer\sb}
+set_filename    {D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb_ba}
 set_design_state post_layout
 set_language vhdl

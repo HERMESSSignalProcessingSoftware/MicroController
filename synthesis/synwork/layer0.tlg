@@ -42,6 +42,8 @@ Post processing for smartfusion2.sysreset.syn_black_box
 Post processing for work.mss_010.def_arch
 Post processing for work.sb_sb_mss.rtl
 Running optimization stage 1 on sb_sb_MSS .......
+@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":249:10:249:12|Synthesizing smartfusion2.or3.syn_black_box.
+Post processing for smartfusion2.or3.syn_black_box
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":8:7:8:24|Synthesizing work.sb_sb_fabosc_0_osc.def_arch.
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":562:10:562:15|Synthesizing smartfusion2.clkint.syn_black_box.
 Post processing for smartfusion2.clkint.syn_black_box
@@ -126,125 +128,63 @@ Post processing for work.sb_sb.rtl
 Running optimization stage 1 on sb_sb .......
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":191:10:191:13|Synthesizing smartfusion2.and2.syn_black_box.
 Post processing for smartfusion2.and2.syn_black_box
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":44:7:44:12|Synthesizing work.memory.arch.
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":178:21:178:22|Using onehot encoding for type typecustate. For example, enumeration waiting is mapped to "100000000000000".
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":180:27:180:28|Using sequential encoding for type typestampsubstate.
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":183:22:183:23|Using sequential encoding for type apbstatetype.
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":189:27:189:28|Using onehot encoding for type spistatetype. For example, enumeration ready is mapped to "10000".
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":192:36:192:37|Using onehot encoding for type readmemorystatemachinetype. For example, enumeration cmd is mapped to "100000000".
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":195:35:195:36|Using onehot encoding for type apb3readmemorylimitedtype. For example, enumeration init is mapped to "100000".
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":587:20:587:33|OTHERS clause is not synthesized.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":705:16:705:29|OTHERS clause is not synthesized.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":879:16:879:29|OTHERS clause is not synthesized.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":30:7:30:16|Synthesizing work.spi_master.logic.
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":53:15:53:16|Using sequential encoding for type machine.
-Post processing for work.spi_master.logic
-Running optimization stage 1 on spi_master .......
-@W: CL271 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Pruning unused bits 31 to 1 of slave_6(31 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal rx_buffer[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal clk_toggles[6:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal tx_buffer[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal continue. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal sclk_buffer. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal last_bit_rx[6:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal count[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal slave[0:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal clk_ratio[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal assert_data. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\ram.vhd":25:7:25:9|Synthesizing work.ram.arch_ram.
-Post processing for work.ram.arch_ram
-Running optimization stage 1 on ram .......
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\ram.vhd":47:2:47:3|Feedback mux created for signal dout[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":47:7:47:24|Synthesizing work.memorysynchronizer.arch.
+@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":139:27:139:28|Using onehot encoding for type memorysyncstate_t. For example, enumeration start is mapped to "1000000".
+@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":141:22:141:23|Using sequential encoding for type apbstatetype.
+@W: CD273 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":344:55:344:75|Comparison (/=) of different length arrays is always true!
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":28:7:28:15|Synthesizing work.timestamp.behaviour.
 @N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":38:16:38:17|Using sequential encoding for type t_tate.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":67:20:67:33|OTHERS clause is not synthesized.
+@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":65:20:65:33|OTHERS clause is not synthesized.
 Post processing for work.timestamp.behaviour
 Running optimization stage 1 on Timestamp .......
-Post processing for work.memory.arch
-Running optimization stage 1 on Memory .......
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning unused register StampFSMR3_7(31 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning unused register StampFSMR2_5(31 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL271 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning unused bits 31 to 9 of StampFSMPC_7(31 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|All reachable assignments to ContiniousSPI are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit StampFSMR1(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit pageaddr(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning register bit 31 of StampFSMR1(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning register bit 31 of pageaddr(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":46:8:46:9|Optimizing register bit state(s1) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":46:8:46:9|Pruning unused register state(s1). Make sure that there are no unused intermediate registers.
+Post processing for work.memorysynchronizer.arch
+Running optimization stage 1 on MemorySynchronizer .......
+@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Feedback mux created for signal end_one_counter[2:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|All reachable assignments to SynchStatusReg(27) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|All reachable assignments to SynchStatusReg(29) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|All reachable assignments to getTime are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg2(5) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg2(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Pruning register bit 31 of SynchStatusReg2(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Pruning register bit 5 of SynchStatusReg2(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
 Post processing for work.sb.rtl
 Running optimization stage 1 on sb .......
 Running optimization stage 2 on Timestamp .......
-Running optimization stage 2 on ram .......
-@N: CL134 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\ram.vhd":47:2:47:3|Found RAM memory, depth=512, width=32
-Running optimization stage 2 on spi_master_2_32 .......
-@W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Pruning register bits 5 to 1 of last_bit_rx(6 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-Running optimization stage 2 on Memory .......
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(2) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(3) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(4) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(5) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(6) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Optimizing register bit counter(7) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Pruning register bits 7 to 2 of counter(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register Command.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register ControllUnitSubState.
-Extracted state machine for register ControllUnitSubState
-State machine has 3 reachable states with original encodings of:
-   00
-   01
-   10
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register APBState.
+@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":33:4:33:10|Input getTime is unused.
+Running optimization stage 2 on MemorySynchronizer .......
+@N: CL189 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Register bit end_one_counter(2) is always 0.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit resynceventpulldowncounter(3) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit resynceventpulldowncounter(4) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit resynctimercounter(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg(14) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg(15) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg(16) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg(17) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg(18) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg(19) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg(20) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Optimizing register bit SynchStatusReg(21) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Pruning register bits 21 to 14 of SynchStatusReg(31 downto 2). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Pruning register bit 31 of resynctimercounter(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Pruning register bits 4 to 3 of resynceventpulldowncounter(4 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Pruning register bit 2 of end_one_counter(2 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Trying to extract state machine for register APBState.
 Extracted state machine for register APBState
 State machine has 3 reachable states with original encodings of:
    00
    01
    10
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register SPIState.
-Extracted state machine for register SPIState
-State machine has 5 reachable states with original encodings of:
-   00001
-   00010
-   00100
-   01000
-   10000
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register ReadMemoryState.
-Extracted state machine for register ReadMemoryState
-State machine has 9 reachable states with original encodings of:
-   000000001
-   000000010
-   000000100
-   000001000
-   000010000
-   000100000
-   001000000
-   010000000
-   100000000
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register ControllUnitState.
-Extracted state machine for register ControllUnitState
-State machine has 15 reachable states with original encodings of:
-   000000000000001
-   000000000000010
-   000000000000100
-   000000000001000
-   000000000010000
-   000000000100000
-   000000001000000
-   000000010000000
-   000000100000000
-   000001000000000
-   000010000000000
-   000100000000000
-   001000000000000
-   010000000000000
-   100000000000000
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd":254:8:254:9|Trying to extract state machine for register APB3ReadMemoryLimitedState.
-Extracted state machine for register APB3ReadMemoryLimitedState
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Trying to extract state machine for register MemorySyncState.
+Extracted state machine for register MemorySyncState
 State machine has 6 reachable states with original encodings of:
-   000001
-   000010
-   000100
-   001000
-   010000
-   100000
+   0000001
+   0000010
+   0000100
+   0001000
+   0010000
+   0100000
 Running optimization stage 2 on sb_sb_CCC_0_FCCC .......
 Running optimization stage 2 on COREAPB3_MUXPTOB3 .......
 Running optimization stage 2 on CoreAPB3 .......
@@ -358,7 +298,7 @@ Running optimization stage 2 on sb_sb_FABOSC_0_OSC .......
 @N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":10:10:10:12|Input XTL is unused.
 Running optimization stage 2 on sb_sb_MSS .......
 Running optimization stage 2 on sb_sb .......
-Running optimization stage 2 on spi_master_1_16 .......
+Running optimization stage 2 on spi_master .......
 @W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Pruning register bits 4 to 1 of last_bit_rx(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 Running optimization stage 2 on STAMP .......
 @W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit async_prescaler_count(12) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.

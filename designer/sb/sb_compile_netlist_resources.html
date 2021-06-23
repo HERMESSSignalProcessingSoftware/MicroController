@@ -31,7 +31,7 @@
     <body>
         <h1 align="center">Resource Report</h1>
         <p>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</p>
-        <p>Date: Tue Jun 15 22:43:23 2021
+        <p>Date: Wed Jun 23 22:07:10 2021
 </p>
         <h2>Device Selection</h2>
         <table cellpadding="4">
@@ -131,15 +131,15 @@
             </tr>
             <tr>
                 <td>4LUT</td>
-                <td>3212</td>
+                <td>1753</td>
                 <td>12084</td>
-                <td>26.58</td>
+                <td>14.51</td>
             </tr>
             <tr>
                 <td>DFF</td>
-                <td>1590</td>
+                <td>935</td>
                 <td>12084</td>
-                <td>13.16</td>
+                <td>7.74</td>
             </tr>
             <tr>
                 <td>I/O Register</td>
@@ -149,15 +149,15 @@
             </tr>
             <tr>
                 <td>User I/O</td>
-                <td>28</td>
+                <td>26</td>
                 <td>195</td>
-                <td>14.36</td>
+                <td>13.33</td>
             </tr>
             <tr>
                 <td>-- Single-ended I/O</td>
-                <td>28</td>
+                <td>26</td>
                 <td>195</td>
-                <td>14.36</td>
+                <td>13.33</td>
             </tr>
             <tr>
                 <td>-- Differential I/O Pairs</td>
@@ -173,9 +173,9 @@
             </tr>
             <tr>
                 <td>RAM1K18</td>
-                <td>1</td>
+                <td>0</td>
                 <td>21</td>
-                <td>4.76</td>
+                <td>0.00</td>
             </tr>
             <tr>
                 <td>MACC</td>
@@ -229,8 +229,8 @@
             </tr>
             <tr>
                 <td>Fabric Logic</td>
-                <td>3176</td>
-                <td>1554</td>
+                <td>1753</td>
+                <td>935</td>
             </tr>
             <tr>
                 <td>RAM64x18 Interface Logic</td>
@@ -239,8 +239,8 @@
             </tr>
             <tr>
                 <td>RAM1K18 Interface Logic</td>
-                <td>36</td>
-                <td>36</td>
+                <td>0</td>
+                <td>0</td>
             </tr>
             <tr>
                 <td>MACC Interface Logic</td>
@@ -249,8 +249,8 @@
             </tr>
             <tr>
                 <td>Total Used</td>
-                <td>3212</td>
-                <td>1590</td>
+                <td>1753</td>
+                <td>935</td>
             </tr>
         </table>
         <h2>MSS Resource Usage</h2>
@@ -287,7 +287,7 @@
             </tr>
             <tr>
                 <td>SPI</td>
-                <td>0</td>
+                <td>1</td>
                 <td>2</td>
             </tr>
             <tr>
@@ -344,32 +344,32 @@
                 <td>1</td>
             </tr>
             <tr>
-                <td>8</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>2</td>
-            </tr>
-            <tr>
                 <td>12</td>
                 <td>1</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>2</td>
             </tr>
             <tr>
                 <td>28</td>
                 <td>1</td>
             </tr>
             <tr>
+                <td>31</td>
+                <td>2</td>
+            </tr>
+            <tr>
                 <td>32</td>
-                <td>4</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Total</td>
-                <td>15</td>
+                <td>16</td>
             </tr>
         </table>
         <h2>I/O Function</h2>
@@ -382,13 +382,13 @@
             </tr>
             <tr>
                 <td>Input I/O</td>
-                <td>10</td>
+                <td>9</td>
                 <td>0</td>
                 <td>0</td>
             </tr>
             <tr>
                 <td>Output I/O</td>
-                <td>18</td>
+                <td>17</td>
                 <td>0</td>
                 <td>0</td>
             </tr>
@@ -425,8 +425,8 @@
                 <td>LVCMOS33</td>
                 <td> 3.30v</td>
                 <td> N/A</td>
-                <td> 10</td>
-                <td> 18</td>
+                <td> 9</td>
+                <td> 17</td>
                 <td> 0</td>
             </tr>
         </table>
@@ -438,7 +438,7 @@
                 <th>Name</th>
             </tr>
             <tr>
-                <td>1557</td>
+                <td>874</td>
                 <td>INT_NET</td>
                 <td>Net   : sb_sb_0_FIC_0_CLK</td>
             </tr>
@@ -453,7 +453,7 @@
                 <td>Source: NETLIST</td>
             </tr>
             <tr>
-                <td>1085</td>
+                <td>419</td>
                 <td>INT_NET</td>
                 <td>Net   : resetn_arst</td>
             </tr>
@@ -514,67 +514,47 @@
                 <th>Name</th>
             </tr>
             <tr>
-                <td>516</td>
+                <td>128</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/WriteEnable_Z</td>
+                <td>Net   : NN_1</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/WriteEnable</td>
+                <td>Driver: ResetAND</td>
             </tr>
             <tr>
-                <td>200</td>
+                <td>120</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/InternalAddr2Memory_Z[8]</td>
+                <td>Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/InternalAddr2Memory[8]</td>
+                <td>Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_i_1_i_a2</td>
             </tr>
             <tr>
-                <td>138</td>
+                <td>95</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/InternalAddr2Memory_Z[7]</td>
+                <td>Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/InternalAddr2Memory[7]</td>
+                <td>Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_i_0_i_a2</td>
             </tr>
             <tr>
-                <td>89</td>
+                <td>68</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/InternalAddr2Memory_Z[6]</td>
+                <td>Net   : sb_sb_0_STAMP_PADDR[8]</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/InternalAddr2Memory[6]</td>
+                <td>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</td>
             </tr>
             <tr>
-                <td>78</td>
-                <td>INT_NET</td>
-                <td>Net   : Memory_0/ReadMemoryState_Z[4]</td>
-            </tr>
-            <tr>
-                <td/>
-                <td/>
-                <td>Driver: Memory_0/ReadMemoryState[4]</td>
-            </tr>
-            <tr>
-                <td>76</td>
-                <td>INT_NET</td>
-                <td>Net   : Memory_0/SPI/state_Z[0]</td>
-            </tr>
-            <tr>
-                <td/>
-                <td/>
-                <td>Driver: Memory_0/SPI/state[0]</td>
-            </tr>
-            <tr>
-                <td>72</td>
+                <td>65</td>
                 <td>INT_NET</td>
                 <td>Net   : STAMP_0/component_state_Z[5]</td>
             </tr>
@@ -584,24 +564,14 @@
                 <td>Driver: STAMP_0/component_state[5]</td>
             </tr>
             <tr>
-                <td>64</td>
+                <td>62</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/N_1080_i</td>
+                <td>Net   : CFG0_GND_INST_NET</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/ControllUnitState_RNI8UAF[12]</td>
-            </tr>
-            <tr>
-                <td>64</td>
-                <td>INT_NET</td>
-                <td>Net   : Memory_0/intRam/memorya482_2_Z</td>
-            </tr>
-            <tr>
-                <td/>
-                <td/>
-                <td>Driver: Memory_0/intRam/memorya482_2</td>
+                <td>Driver: CFG0_GND_INST</td>
             </tr>
             <tr>
                 <td>59</td>
@@ -612,6 +582,36 @@
                 <td/>
                 <td/>
                 <td>Driver: STAMP_0/spi/state[0]</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>INT_NET</td>
+                <td>Net   : ENABLE_MEMORY_LED_c</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>INT_NET</td>
+                <td>Net   : STAMP_0_new_avail</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td>Driver: STAMP_0/new_avail</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>INT_NET</td>
+                <td>Net   : MemorySynchronizer_0/un112_in_enable_0_data_tmp[15]</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td>Driver: MemorySynchronizer_0/un112_in_enable_0_I_1</td>
             </tr>
         </table>
         <h2>High fanout nets (through buffer trees)</h2>
@@ -622,67 +622,47 @@
                 <th>Name</th>
             </tr>
             <tr>
-                <td>516</td>
+                <td>128</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/WriteEnable_Z</td>
+                <td>Net   : NN_1</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/WriteEnable</td>
+                <td>Driver: ResetAND</td>
             </tr>
             <tr>
-                <td>200</td>
+                <td>120</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/InternalAddr2Memory_Z[8]</td>
+                <td>Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/InternalAddr2Memory[8]</td>
+                <td>Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_i_1_i_a2</td>
             </tr>
             <tr>
-                <td>138</td>
+                <td>95</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/InternalAddr2Memory_Z[7]</td>
+                <td>Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/InternalAddr2Memory[7]</td>
+                <td>Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_i_0_i_a2</td>
             </tr>
             <tr>
-                <td>89</td>
+                <td>68</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/InternalAddr2Memory_Z[6]</td>
+                <td>Net   : sb_sb_0_STAMP_PADDR[8]</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/InternalAddr2Memory[6]</td>
+                <td>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</td>
             </tr>
             <tr>
-                <td>78</td>
-                <td>INT_NET</td>
-                <td>Net   : Memory_0/ReadMemoryState_Z[4]</td>
-            </tr>
-            <tr>
-                <td/>
-                <td/>
-                <td>Driver: Memory_0/ReadMemoryState[4]</td>
-            </tr>
-            <tr>
-                <td>76</td>
-                <td>INT_NET</td>
-                <td>Net   : Memory_0/SPI/state_Z[0]</td>
-            </tr>
-            <tr>
-                <td/>
-                <td/>
-                <td>Driver: Memory_0/SPI/state[0]</td>
-            </tr>
-            <tr>
-                <td>72</td>
+                <td>65</td>
                 <td>INT_NET</td>
                 <td>Net   : STAMP_0/component_state_Z[5]</td>
             </tr>
@@ -692,24 +672,14 @@
                 <td>Driver: STAMP_0/component_state[5]</td>
             </tr>
             <tr>
-                <td>64</td>
+                <td>62</td>
                 <td>INT_NET</td>
-                <td>Net   : Memory_0/N_1080_i</td>
+                <td>Net   : CFG0_GND_INST_NET</td>
             </tr>
             <tr>
                 <td/>
                 <td/>
-                <td>Driver: Memory_0/ControllUnitState_RNI8UAF[12]</td>
-            </tr>
-            <tr>
-                <td>64</td>
-                <td>INT_NET</td>
-                <td>Net   : Memory_0/intRam/memorya482_2_Z</td>
-            </tr>
-            <tr>
-                <td/>
-                <td/>
-                <td>Driver: Memory_0/intRam/memorya482_2</td>
+                <td>Driver: CFG0_GND_INST</td>
             </tr>
             <tr>
                 <td>59</td>
@@ -720,6 +690,36 @@
                 <td/>
                 <td/>
                 <td>Driver: STAMP_0/spi/state[0]</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>INT_NET</td>
+                <td>Net   : ENABLE_MEMORY_LED_c</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>INT_NET</td>
+                <td>Net   : STAMP_0_new_avail</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td>Driver: STAMP_0/new_avail</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>INT_NET</td>
+                <td>Net   : MemorySynchronizer_0/un112_in_enable_0_data_tmp[15]</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td>Driver: MemorySynchronizer_0/un112_in_enable_0_I_1</td>
             </tr>
         </table>
     </body>

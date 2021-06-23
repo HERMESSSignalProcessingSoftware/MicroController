@@ -1,4 +1,4 @@
-# Fri Jun 18 13:56:26 2021
+# Wed Jun 23 22:06:34 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -29,24 +29,22 @@ See clock summary report "D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb_scc
 Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 136MB peak: 136MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 136MB peak: 137MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 136MB peak: 136MB)
 
 
 Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 137MB peak: 137MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 137MB peak: 139MB)
+Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 139MB)
 
-@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing sequential instance Memory_0.pageaddr[30:0] because it is equivalent to instance Memory_0.StampFSMR1[30:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Removing sequential instance MemorySynchronizer_0.TimeStampGen.timestamp[31:0] because it is equivalent to instance MemorySynchronizer_0.TimeStampGen.counter[31:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sb_sb_0.CORERESETP_0.MDDR_DDR_AXI_S_CORE_RESET_N_int because it is equivalent to instance sb_sb_0.CORERESETP_0.FDDR_CORE_RESET_N_int. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q1 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q1 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q1 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q1 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance Memory_0.SPI.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_0.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":781:8:781:9|Sequential instance sb_sb_0.CORERESETP_0.sm1_areset_n_q1 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance Memory_0.SPI.clk_ratio[2] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q2 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q2 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q2 is reduced to a combinational gate by constant propagation.
@@ -57,7 +55,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q3 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q3 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1331:8:1331:9|Sequential instance sb_sb_0.CORERESETP_0.RESET_N_F2M_int is reduced to a combinational gate by constant propagation.
-@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb\sb.vhd":527:24:527:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
+@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb\sb.vhd":530:24:530:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance DDR_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_RELEASED_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
@@ -70,14 +68,13 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance SDIF2_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memory.vhd":254:8:254:9|Removing sequential instance dataReadyReset (in view: work.Memory(arch)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb_sb\sb_sb.vhd":726:0:726:11|Removing instance CORERESETP_0 (in view: work.sb_sb(rtl)) of type view:work.CoreResetP(rtl) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":283:8:283:9|Removing sequential instance ADCResync (in view: work.MemorySynchronizer(arch)) of type view:PrimLib.dffse(prim) because it does not drive other instances.
+@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb_sb\sb_sb.vhd":741:0:741:11|Removing instance CORERESETP_0 (in view: work.sb_sb(rtl)) of type view:work.CoreResetP(rtl) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance INIT_DONE_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance sdif0_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Removing sequential instance sdif1_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance sdif2_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance sdif3_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
-@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance mosi_1 (in view: work.spi_master_2_32(logic)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sm0_state[0:6] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":922:8:922:9|Removing sequential instance CONFIG2_DONE_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":803:8:803:9|Removing sequential instance sdif0_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
@@ -86,7 +83,6 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":836:8:836:9|Removing sequential instance sdif3_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Removing sequential instance sdif3_spll_lock_q2 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":908:8:908:9|Removing sequential instance CONFIG1_DONE_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance tx_buffer[31:0] (in view: work.spi_master_2_32(logic)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif3_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif2_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif1_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
@@ -132,7 +128,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":553:8:553:9|Removing sequential instance POWER_ON_RESET_N_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: FX1184 |Applying syn_allowed_resources blockrams=21 on top level netlist sb 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 173MB peak: 173MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 172MB peak: 172MB)
 
 
 
@@ -144,7 +140,7 @@ Level     Clock                                       Frequency     Period      
 ----------------------------------------------------------------------------------------------------------------------------
 0 -       System                                      100.0 MHz     10.000        system       system_clkgroup         0    
                                                                                                                             
-0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     1064 
+0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     800  
 ============================================================================================================================
 
 
@@ -157,10 +153,10 @@ Clock                                       Load      Pin                       
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 System                                      0         -                                   -                           -                 -                             
                                                                                                                                                                       
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     1064      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_0.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     800       sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_0.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
 ======================================================================================================================================================================
 
-@W: MT530 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock which controls 1064 sequential elements including Memory_0.TimeStampGen.timestamp[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock which controls 800 sequential elements including MemorySynchronizer_0.TimeStampGen.counter[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
 Finished Pre Mapping Phase.
@@ -168,55 +164,15 @@ Finished Pre Mapping Phase.
 
 Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 171MB peak: 173MB)
 
-Encoding state machine SPIState[0:4] (in view: work.Memory(arch))
+Encoding state machine MemorySyncState[0:5] (in view: work.MemorySynchronizer(arch))
 original code -> new code
-   00001 -> 00001
-   00010 -> 00010
-   00100 -> 00100
-   01000 -> 01000
-   10000 -> 10000
-Encoding state machine APB3ReadMemoryLimitedState[0:5] (in view: work.Memory(arch))
-original code -> new code
-   000001 -> 000001
-   000010 -> 000010
-   000100 -> 000100
-   001000 -> 001000
-   010000 -> 010000
-   100000 -> 100000
-Encoding state machine ControllUnitSubState[0:2] (in view: work.Memory(arch))
-original code -> new code
-   00 -> 00
-   01 -> 01
-   10 -> 10
-Encoding state machine ControllUnitState[0:14] (in view: work.Memory(arch))
-original code -> new code
-   000000000000001 -> 000000000000001
-   000000000000010 -> 000000000000010
-   000000000000100 -> 000000000000100
-   000000000001000 -> 000000000001000
-   000000000010000 -> 000000000010000
-   000000000100000 -> 000000000100000
-   000000001000000 -> 000000001000000
-   000000010000000 -> 000000010000000
-   000000100000000 -> 000000100000000
-   000001000000000 -> 000001000000000
-   000010000000000 -> 000010000000000
-   000100000000000 -> 000100000000000
-   001000000000000 -> 001000000000000
-   010000000000000 -> 010000000000000
-   100000000000000 -> 100000000000000
-Encoding state machine ReadMemoryState[0:8] (in view: work.Memory(arch))
-original code -> new code
-   000000001 -> 000000001
-   000000010 -> 000000010
-   000000100 -> 000000100
-   000001000 -> 000001000
-   000010000 -> 000010000
-   000100000 -> 000100000
-   001000000 -> 001000000
-   010000000 -> 010000000
-   100000000 -> 100000000
-Encoding state machine APBState[0:2] (in view: work.Memory(arch))
+   0000001 -> 000001
+   0000010 -> 000010
+   0000100 -> 000100
+   0001000 -> 001000
+   0010000 -> 010000
+   0100000 -> 100000
+Encoding state machine APBState[0:2] (in view: work.MemorySynchronizer(arch))
 original code -> new code
    00 -> 00
    01 -> 01
@@ -230,16 +186,16 @@ original code -> new code
    010000 -> 010000
    100000 -> 100000
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 175MB peak: 175MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 174MB peak: 174MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 176MB peak: 176MB)
+Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 175MB peak: 175MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 89MB peak: 177MB)
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 89MB peak: 176MB)
 
 Process took 0h:00m:02s realtime, 0h:00m:02s cputime
-# Fri Jun 18 13:56:29 2021
+# Wed Jun 23 22:06:37 2021
 
 ###########################################################]

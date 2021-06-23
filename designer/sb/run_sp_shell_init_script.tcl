@@ -17,6 +17,6 @@ set_def {PA4_URAM_FF_CONFIG} {SUSPEND}
 set_def {PA4_SRAM_FF_CONFIG} {SUSPEND}
 set_def {PA4_MSS_FF_CLOCK} {RCOSC_1MHZ}
 set_def USE_CONSTRAINTS_FLOW 1
-set_netlist -afl {C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb.afl} -adl {C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb.adl}
-set_placement   {C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb.loc}
-set_routing     {C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb.seg}
+set_netlist -afl {D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb.afl} -adl {D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb.adl}
+set_placement   {D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb.loc}
+set_routing     {D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb.seg}

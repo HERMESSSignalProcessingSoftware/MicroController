@@ -17,7 +17,7 @@ I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 0 seconds
 
 Placer V5.0 - 12.900.20 
-Design: sb                              Started: Fri Jun 18 13:57:25 2021
+Design: sb                              Started: Wed Jun 23 22:08:51 2021
 
 Initializing Normal-Effort Standard Placement ...
 Clustering ...
@@ -33,32 +33,220 @@ Improvement              : 2 seconds
 Placer completed successfully.
 
 Design: sb                              
-Finished: Fri Jun 18 13:57:33 2021
-Total CPU Time:     00:00:10            Total Elapsed Time: 00:00:08
-Total Memory Usage: 128.6 Mbytes
+Finished: Wed Jun 23 22:08:59 2021
+Total CPU Time:     00:00:07            Total Elapsed Time: 00:00:08
+Total Memory Usage: 117.8 Mbytes
                         o - o - o - o - o - o
 
+
+Warning:  The following clocks are routed using regular routing resources instead of dedicated global resources. Clocks using regular routing are more susceptible to noise than those using dedicated global resources. Microchip recommends promoting these signals to dedicated global resources.
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_32_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_32
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_44:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_44_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_37_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_37
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_46:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_46_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_57_i_i_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_57_i_i_a2_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_34_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_34
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_38:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_38_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_46_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_46
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_58:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_58_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_35_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_35
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_52_i_i_a2:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_52_i_i_a2_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_43_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_43
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_52_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_52
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_47_i_i_a2:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_47_i_i_a2_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_40:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_40_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_33_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_33
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_36_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_36
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_43:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_43_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_36:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_36_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_56:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_56_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_53_i_i_a2:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_53_i_i_a2_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_41:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_41_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/ResetTimerValueReg_RNI48CK[3]:Y
+       Net: MemorySynchronizer_0/N_1978_i
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_40_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_40
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_60:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_60_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_60_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_60
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_53_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_53
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_47_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_47
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_37:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_37_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_38_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_38
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_39_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_39
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_59_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_59
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_61_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_61
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_44_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_44
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_59:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_59_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/ResetTimerValueReg_RNIK8VC[12]:Y
+       Net: MemorySynchronizer_0/N_1981_i
+Clock pins: 1
+    Driver: MemorySynchronizer_0/ResetTimerValueReg_RNINBVC[15]:Y
+       Net: MemorySynchronizer_0/N_1979_i
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_48:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_48_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_42_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_42
+Clock pins: 1
+    Driver: MemorySynchronizer_0/ResetTimerValueReg_RNIJ7VC[11]:Y
+       Net: MemorySynchronizer_0/N_21_i
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_51_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_51
+Clock pins: 1
+    Driver: MemorySynchronizer_0/ResetTimerValueReg_RNIK90D[21]:Y
+       Net: MemorySynchronizer_0/N_1980_i
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_45_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_45
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_42:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_42_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_31_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_31
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_55_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_55
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_54_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_54
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_35:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_35_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_33:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_33_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_32_i_i_a2:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_32_i_i_a2_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_41_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_41
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_55:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_55_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_56_i_i_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_56_i_i_a2_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_54_i_i_a2:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_54_i_i_a2_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_58_i_i_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_58_i_i_a2_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_49_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_49
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_57:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_57_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_34:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_34_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_48_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_48
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_49:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_49_Z
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResyncTimerValueReg_50_0_a2_0_a2:Y
+       Net: MemorySynchronizer_0/un1_ResyncTimerValueReg_50
+Clock pins: 1
+    Driver: MemorySynchronizer_0/un1_ResetTimerValueReg_51:Y
+       Net: MemorySynchronizer_0/un1_ResetTimerValueReg_51_Z
+Clock pins: 1
 
 Router 
-Design: D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sbStarted: Fri Jun 18 13:57:37 2021
+Design: D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sbStarted: Wed Jun 23 22:09:07 2021
 
 
 Router completed successfully.
 
 Design: D:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb
-Finished: Fri Jun 18 13:57:50 2021
-Total CPU Time:     00:00:12            Total Elapsed Time: 00:00:13
-Total Memory Usage: 446.7 Mbytes
+Finished: Wed Jun 23 22:09:18 2021
+Total CPU Time:     00:00:10            Total Elapsed Time: 00:00:11
+Total Memory Usage: 446.5 Mbytes
                         o - o - o - o - o - o
 
 Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 3119 | 12084 | 25.81      |
-| DFF           | 1487 | 12084 | 12.31      |
+| 4LUT          | 1753 | 12084 | 14.51      |
+| DFF           | 935  | 12084 | 7.74       |
 | I/O Register  | 0    | 585   | 0.00       |
-| Logic Element | 3272 | 12084 | 27.08      |
+| Logic Element | 1874 | 12084 | 15.51      |
 +---------------+------+-------+------------+
 
 I/O Placement

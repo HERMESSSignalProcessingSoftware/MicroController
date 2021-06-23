@@ -4,27 +4,6 @@
   <spirit:name>Memory</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
-  <spirit:busInterface>
-    <spirit:name>BIF_1</spirit:name>
-    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
-    <spirit:slave></spirit:slave>
-    <spirit:signalMap>
-      <spirit:signalName>
-        <spirit:componentSignalName>PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
-      <spirit:signalName>
-        <spirit:componentSignalName>PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
-      <spirit:signalName>
-        <spirit:componentSignalName>PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
-      <spirit:signalName>
-        <spirit:componentSignalName>PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
-      <spirit:signalName>
-        <spirit:componentSignalName>PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
-      <spirit:signalName>
-        <spirit:componentSignalName>PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
-      <spirit:signalName>
-        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName></spirit:signalMap>
-    <spirit:vendorExtensions></spirit:vendorExtensions>
-  </spirit:busInterface>
   </spirit:busInterfaces>
   <spirit:memoryMaps>
   </spirit:memoryMaps>

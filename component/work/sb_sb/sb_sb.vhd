@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Fri Jun 18 13:50:29 2021
+-- Created by SmartDesign Wed Jun 23 21:59:53 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -21,100 +21,102 @@ entity sb_sb is
     -- Port list
     port(
         -- Inputs
-        DEVRST_N           : in  std_logic;
-        FAB_RESET_N        : in  std_logic;
-        GPIO_0_F2M         : in  std_logic;
-        GPIO_1_F2M         : in  std_logic;
-        GPIO_2_F2M         : in  std_logic;
-        GPIO_5_F2M         : in  std_logic;
-        MMUART_0_RXD_F2M   : in  std_logic;
-        MMUART_1_RXD_F2M   : in  std_logic;
-        Memory_PRDATAS0    : in  std_logic_vector(31 downto 0);
-        Memory_PREADYS0    : in  std_logic;
-        Memory_PSLVERRS0   : in  std_logic;
-        SPI_0_CLK_F2M      : in  std_logic;
-        SPI_0_DI_F2M       : in  std_logic;
-        SPI_0_SS0_F2M      : in  std_logic;
-        STAMP_0_INTR_0_top : in  std_logic;
-        STAMP_1_INTR_0_top : in  std_logic;
-        STAMP_1_PRDATAS2   : in  std_logic_vector(31 downto 0);
-        STAMP_1_PREADYS2   : in  std_logic;
-        STAMP_1_PSLVERRS2  : in  std_logic;
-        STAMP_2_INTR_0_top : in  std_logic;
-        STAMP_2_PRDATAS3   : in  std_logic_vector(31 downto 0);
-        STAMP_2_PREADYS3   : in  std_logic;
-        STAMP_2_PSLVERRS3  : in  std_logic;
-        STAMP_3_INTR_0_top : in  std_logic;
-        STAMP_3_PRDATAS4   : in  std_logic_vector(31 downto 0);
-        STAMP_3_PREADYS4   : in  std_logic;
-        STAMP_3_PSLVERRS4  : in  std_logic;
-        STAMP_4_INTR_0_top : in  std_logic;
-        STAMP_4_PRDATAS5   : in  std_logic_vector(31 downto 0);
-        STAMP_4_PREADYS5   : in  std_logic;
-        STAMP_4_PSLVERRS5  : in  std_logic;
-        STAMP_5_INTR_0_top : in  std_logic;
-        STAMP_5_PRDATAS6   : in  std_logic_vector(31 downto 0);
-        STAMP_5_PREADYS6   : in  std_logic;
-        STAMP_5_PSLVERRS6  : in  std_logic;
-        STAMP_PRDATAS1     : in  std_logic_vector(31 downto 0);
-        STAMP_PREADYS1     : in  std_logic;
-        STAMP_PSLVERRS1    : in  std_logic;
+        DEVRST_N            : in  std_logic;
+        FAB_RESET_N         : in  std_logic;
+        GPIO_0_F2M          : in  std_logic;
+        GPIO_1_F2M          : in  std_logic;
+        GPIO_2_F2M          : in  std_logic;
+        GPIO_5_F2M          : in  std_logic;
+        MMUART_0_RXD_F2M    : in  std_logic;
+        MMUART_1_RXD_F2M    : in  std_logic;
+        Memory_0_INTR_0_top : in  std_logic;
+        Memory_0_INTR_1_top : in  std_logic;
+        Memory_PRDATAS6     : in  std_logic_vector(31 downto 0);
+        Memory_PREADYS6     : in  std_logic;
+        Memory_PSLVERRS6    : in  std_logic;
+        SPI_0_CLK_F2M       : in  std_logic;
+        SPI_0_DI_F2M        : in  std_logic;
+        SPI_0_SS0_F2M       : in  std_logic;
+        STAMP_0_INTR_0_top  : in  std_logic;
+        STAMP_1_INTR_0_top  : in  std_logic;
+        STAMP_1_PRDATAS1    : in  std_logic_vector(31 downto 0);
+        STAMP_1_PREADYS1    : in  std_logic;
+        STAMP_1_PSLVERRS1   : in  std_logic;
+        STAMP_2_INTR_0_top  : in  std_logic;
+        STAMP_2_PRDATAS2    : in  std_logic_vector(31 downto 0);
+        STAMP_2_PREADYS2    : in  std_logic;
+        STAMP_2_PSLVERRS2   : in  std_logic;
+        STAMP_3_INTR_0_top  : in  std_logic;
+        STAMP_3_PRDATAS3    : in  std_logic_vector(31 downto 0);
+        STAMP_3_PREADYS3    : in  std_logic;
+        STAMP_3_PSLVERRS3   : in  std_logic;
+        STAMP_4_INTR_0_top  : in  std_logic;
+        STAMP_4_PRDATAS4    : in  std_logic_vector(31 downto 0);
+        STAMP_4_PREADYS4    : in  std_logic;
+        STAMP_4_PSLVERRS4   : in  std_logic;
+        STAMP_5_INTR_0_top  : in  std_logic;
+        STAMP_5_PRDATAS5    : in  std_logic_vector(31 downto 0);
+        STAMP_5_PREADYS5    : in  std_logic;
+        STAMP_5_PSLVERRS5   : in  std_logic;
+        STAMP_PRDATAS0      : in  std_logic_vector(31 downto 0);
+        STAMP_PREADYS0      : in  std_logic;
+        STAMP_PSLVERRS0     : in  std_logic;
         -- Outputs
-        FAB_CCC_GL1        : out std_logic;
-        FAB_CCC_LOCK       : out std_logic;
-        FIC_0_CLK          : out std_logic;
-        FIC_0_LOCK         : out std_logic;
-        GPIO_20_M2F        : out std_logic;
-        GPIO_21_M2F        : out std_logic;
-        GPIO_22_M2F        : out std_logic;
-        GPIO_30_M2F        : out std_logic;
-        GPIO_31_M2F        : out std_logic;
-        GPIO_3_M2F         : out std_logic;
-        GPIO_4_M2F         : out std_logic;
-        INIT_DONE          : out std_logic;
-        MMUART_0_TXD_M2F   : out std_logic;
-        MMUART_1_TXD_M2F   : out std_logic;
-        MSS_READY          : out std_logic;
-        Memory_PADDRS      : out std_logic_vector(31 downto 0);
-        Memory_PENABLES    : out std_logic;
-        Memory_PSELS0      : out std_logic;
-        Memory_PWDATAS     : out std_logic_vector(31 downto 0);
-        Memory_PWRITES     : out std_logic;
-        POWER_ON_RESET_N   : out std_logic;
-        SPI_0_CLK_M2F      : out std_logic;
-        SPI_0_DO_M2F       : out std_logic;
-        SPI_0_SS0_M2F      : out std_logic;
-        SPI_0_SS0_M2F_OE   : out std_logic;
-        STAMP_1_PADDRS     : out std_logic_vector(31 downto 0);
-        STAMP_1_PENABLES   : out std_logic;
-        STAMP_1_PSELS2     : out std_logic;
-        STAMP_1_PWDATAS    : out std_logic_vector(31 downto 0);
-        STAMP_1_PWRITES    : out std_logic;
-        STAMP_2_PADDRS     : out std_logic_vector(31 downto 0);
-        STAMP_2_PENABLES   : out std_logic;
-        STAMP_2_PSELS3     : out std_logic;
-        STAMP_2_PWDATAS    : out std_logic_vector(31 downto 0);
-        STAMP_2_PWRITES    : out std_logic;
-        STAMP_3_PADDRS     : out std_logic_vector(31 downto 0);
-        STAMP_3_PENABLES   : out std_logic;
-        STAMP_3_PSELS4     : out std_logic;
-        STAMP_3_PWDATAS    : out std_logic_vector(31 downto 0);
-        STAMP_3_PWRITES    : out std_logic;
-        STAMP_4_PADDRS     : out std_logic_vector(31 downto 0);
-        STAMP_4_PENABLES   : out std_logic;
-        STAMP_4_PSELS5     : out std_logic;
-        STAMP_4_PWDATAS    : out std_logic_vector(31 downto 0);
-        STAMP_4_PWRITES    : out std_logic;
-        STAMP_5_PADDRS     : out std_logic_vector(31 downto 0);
-        STAMP_5_PENABLES   : out std_logic;
-        STAMP_5_PSELS6     : out std_logic;
-        STAMP_5_PWDATAS    : out std_logic_vector(31 downto 0);
-        STAMP_5_PWRITES    : out std_logic;
-        STAMP_PADDRS       : out std_logic_vector(31 downto 0);
-        STAMP_PENABLES     : out std_logic;
-        STAMP_PSELS1       : out std_logic;
-        STAMP_PWDATAS      : out std_logic_vector(31 downto 0);
-        STAMP_PWRITES      : out std_logic
+        FAB_CCC_GL1         : out std_logic;
+        FAB_CCC_LOCK        : out std_logic;
+        FIC_0_CLK           : out std_logic;
+        FIC_0_LOCK          : out std_logic;
+        GPIO_20_M2F         : out std_logic;
+        GPIO_21_M2F         : out std_logic;
+        GPIO_22_M2F         : out std_logic;
+        GPIO_30_M2F         : out std_logic;
+        GPIO_31_M2F         : out std_logic;
+        GPIO_3_M2F          : out std_logic;
+        GPIO_4_M2F          : out std_logic;
+        INIT_DONE           : out std_logic;
+        MMUART_0_TXD_M2F    : out std_logic;
+        MMUART_1_TXD_M2F    : out std_logic;
+        MSS_READY           : out std_logic;
+        Memory_PADDRS       : out std_logic_vector(31 downto 0);
+        Memory_PENABLES     : out std_logic;
+        Memory_PSELS6       : out std_logic;
+        Memory_PWDATAS      : out std_logic_vector(31 downto 0);
+        Memory_PWRITES      : out std_logic;
+        POWER_ON_RESET_N    : out std_logic;
+        SPI_0_CLK_M2F       : out std_logic;
+        SPI_0_DO_M2F        : out std_logic;
+        SPI_0_SS0_M2F       : out std_logic;
+        SPI_0_SS0_M2F_OE    : out std_logic;
+        STAMP_1_PADDRS      : out std_logic_vector(31 downto 0);
+        STAMP_1_PENABLES    : out std_logic;
+        STAMP_1_PSELS1      : out std_logic;
+        STAMP_1_PWDATAS     : out std_logic_vector(31 downto 0);
+        STAMP_1_PWRITES     : out std_logic;
+        STAMP_2_PADDRS      : out std_logic_vector(31 downto 0);
+        STAMP_2_PENABLES    : out std_logic;
+        STAMP_2_PSELS2      : out std_logic;
+        STAMP_2_PWDATAS     : out std_logic_vector(31 downto 0);
+        STAMP_2_PWRITES     : out std_logic;
+        STAMP_3_PADDRS      : out std_logic_vector(31 downto 0);
+        STAMP_3_PENABLES    : out std_logic;
+        STAMP_3_PSELS3      : out std_logic;
+        STAMP_3_PWDATAS     : out std_logic_vector(31 downto 0);
+        STAMP_3_PWRITES     : out std_logic;
+        STAMP_4_PADDRS      : out std_logic_vector(31 downto 0);
+        STAMP_4_PENABLES    : out std_logic;
+        STAMP_4_PSELS4      : out std_logic;
+        STAMP_4_PWDATAS     : out std_logic_vector(31 downto 0);
+        STAMP_4_PWRITES     : out std_logic;
+        STAMP_5_PADDRS      : out std_logic_vector(31 downto 0);
+        STAMP_5_PENABLES    : out std_logic;
+        STAMP_5_PSELS5      : out std_logic;
+        STAMP_5_PWDATAS     : out std_logic_vector(31 downto 0);
+        STAMP_5_PWRITES     : out std_logic;
+        STAMP_PADDRS        : out std_logic_vector(31 downto 0);
+        STAMP_PENABLES      : out std_logic;
+        STAMP_PSELS0        : out std_logic;
+        STAMP_PWDATAS       : out std_logic_vector(31 downto 0);
+        STAMP_PWRITES       : out std_logic
         );
 end sb_sb;
 ----------------------------------------------------------------------
@@ -251,6 +253,18 @@ component sb_sb_FABOSC_0_OSC
         XTLOSC_O2F         : out std_logic
         );
 end component;
+-- OR3
+component OR3
+    -- Port list
+    port(
+        -- Inputs
+        A : in  std_logic;
+        B : in  std_logic;
+        C : in  std_logic;
+        -- Outputs
+        Y : out std_logic
+        );
+end component;
 -- sb_sb_MSS
 component sb_sb_MSS
     -- Port list
@@ -342,6 +356,7 @@ signal GPIO_22_M2F_net_0                                  : std_logic;
 signal GPIO_30_M2F_net_0                                  : std_logic;
 signal GPIO_31_M2F_net_0                                  : std_logic;
 signal INIT_DONE_net_0                                    : std_logic;
+signal Memory_0_intr_or_0_Y                               : std_logic;
 signal MMUART_0_TXD_M2F_net_0                             : std_logic;
 signal MMUART_1_TXD_M2F_net_0                             : std_logic;
 signal MSS_READY_net_0                                    : std_logic;
@@ -472,75 +487,75 @@ begin
  INIT_DONE_net_1              <= INIT_DONE_net_0;
  INIT_DONE                    <= INIT_DONE_net_1;
  APBmslave0_7_PADDR_net_0     <= APBmslave0_7_PADDR;
- Memory_PADDRS(31 downto 0)   <= APBmslave0_7_PADDR_net_0;
+ STAMP_PADDRS(31 downto 0)    <= APBmslave0_7_PADDR_net_0;
  APBmslave0_7_PSELx_net_0     <= APBmslave0_7_PSELx;
- Memory_PSELS0                <= APBmslave0_7_PSELx_net_0;
+ STAMP_PSELS0                 <= APBmslave0_7_PSELx_net_0;
  APBmslave0_7_PENABLE_net_0   <= APBmslave0_7_PENABLE;
- Memory_PENABLES              <= APBmslave0_7_PENABLE_net_0;
+ STAMP_PENABLES               <= APBmslave0_7_PENABLE_net_0;
  APBmslave0_7_PWRITE_net_0    <= APBmslave0_7_PWRITE;
- Memory_PWRITES               <= APBmslave0_7_PWRITE_net_0;
+ STAMP_PWRITES                <= APBmslave0_7_PWRITE_net_0;
  APBmslave0_7_PWDATA_net_0    <= APBmslave0_7_PWDATA;
- Memory_PWDATAS(31 downto 0)  <= APBmslave0_7_PWDATA_net_0;
+ STAMP_PWDATAS(31 downto 0)   <= APBmslave0_7_PWDATA_net_0;
  APBmslave0_7_PADDR_net_1     <= APBmslave0_7_PADDR;
- STAMP_PADDRS(31 downto 0)    <= APBmslave0_7_PADDR_net_1;
+ STAMP_1_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_1;
  APBmslave1_0_PSELx_net_0     <= APBmslave1_0_PSELx;
- STAMP_PSELS1                 <= APBmslave1_0_PSELx_net_0;
+ STAMP_1_PSELS1               <= APBmslave1_0_PSELx_net_0;
  APBmslave0_7_PENABLE_net_1   <= APBmslave0_7_PENABLE;
- STAMP_PENABLES               <= APBmslave0_7_PENABLE_net_1;
+ STAMP_1_PENABLES             <= APBmslave0_7_PENABLE_net_1;
  APBmslave0_7_PWRITE_net_1    <= APBmslave0_7_PWRITE;
- STAMP_PWRITES                <= APBmslave0_7_PWRITE_net_1;
+ STAMP_1_PWRITES              <= APBmslave0_7_PWRITE_net_1;
  APBmslave0_7_PWDATA_net_1    <= APBmslave0_7_PWDATA;
- STAMP_PWDATAS(31 downto 0)   <= APBmslave0_7_PWDATA_net_1;
+ STAMP_1_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_1;
  APBmslave0_7_PADDR_net_2     <= APBmslave0_7_PADDR;
- STAMP_1_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_2;
+ STAMP_2_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_2;
  APBmslave2_0_PSELx_net_0     <= APBmslave2_0_PSELx;
- STAMP_1_PSELS2               <= APBmslave2_0_PSELx_net_0;
+ STAMP_2_PSELS2               <= APBmslave2_0_PSELx_net_0;
  APBmslave0_7_PENABLE_net_2   <= APBmslave0_7_PENABLE;
- STAMP_1_PENABLES             <= APBmslave0_7_PENABLE_net_2;
+ STAMP_2_PENABLES             <= APBmslave0_7_PENABLE_net_2;
  APBmslave0_7_PWRITE_net_2    <= APBmslave0_7_PWRITE;
- STAMP_1_PWRITES              <= APBmslave0_7_PWRITE_net_2;
+ STAMP_2_PWRITES              <= APBmslave0_7_PWRITE_net_2;
  APBmslave0_7_PWDATA_net_2    <= APBmslave0_7_PWDATA;
- STAMP_1_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_2;
+ STAMP_2_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_2;
  APBmslave0_7_PADDR_net_3     <= APBmslave0_7_PADDR;
- STAMP_2_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_3;
+ STAMP_3_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_3;
  APBmslave3_0_PSELx_net_0     <= APBmslave3_0_PSELx;
- STAMP_2_PSELS3               <= APBmslave3_0_PSELx_net_0;
+ STAMP_3_PSELS3               <= APBmslave3_0_PSELx_net_0;
  APBmslave0_7_PENABLE_net_3   <= APBmslave0_7_PENABLE;
- STAMP_2_PENABLES             <= APBmslave0_7_PENABLE_net_3;
+ STAMP_3_PENABLES             <= APBmslave0_7_PENABLE_net_3;
  APBmslave0_7_PWRITE_net_3    <= APBmslave0_7_PWRITE;
- STAMP_2_PWRITES              <= APBmslave0_7_PWRITE_net_3;
+ STAMP_3_PWRITES              <= APBmslave0_7_PWRITE_net_3;
  APBmslave0_7_PWDATA_net_3    <= APBmslave0_7_PWDATA;
- STAMP_2_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_3;
+ STAMP_3_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_3;
  APBmslave0_7_PADDR_net_4     <= APBmslave0_7_PADDR;
- STAMP_3_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_4;
+ STAMP_4_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_4;
  APBmslave4_0_PSELx_net_0     <= APBmslave4_0_PSELx;
- STAMP_3_PSELS4               <= APBmslave4_0_PSELx_net_0;
+ STAMP_4_PSELS4               <= APBmslave4_0_PSELx_net_0;
  APBmslave0_7_PENABLE_net_4   <= APBmslave0_7_PENABLE;
- STAMP_3_PENABLES             <= APBmslave0_7_PENABLE_net_4;
+ STAMP_4_PENABLES             <= APBmslave0_7_PENABLE_net_4;
  APBmslave0_7_PWRITE_net_4    <= APBmslave0_7_PWRITE;
- STAMP_3_PWRITES              <= APBmslave0_7_PWRITE_net_4;
+ STAMP_4_PWRITES              <= APBmslave0_7_PWRITE_net_4;
  APBmslave0_7_PWDATA_net_4    <= APBmslave0_7_PWDATA;
- STAMP_3_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_4;
+ STAMP_4_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_4;
  APBmslave0_7_PADDR_net_5     <= APBmslave0_7_PADDR;
- STAMP_4_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_5;
+ STAMP_5_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_5;
  APBmslave5_0_PSELx_net_0     <= APBmslave5_0_PSELx;
- STAMP_4_PSELS5               <= APBmslave5_0_PSELx_net_0;
+ STAMP_5_PSELS5               <= APBmslave5_0_PSELx_net_0;
  APBmslave0_7_PENABLE_net_5   <= APBmslave0_7_PENABLE;
- STAMP_4_PENABLES             <= APBmslave0_7_PENABLE_net_5;
+ STAMP_5_PENABLES             <= APBmslave0_7_PENABLE_net_5;
  APBmslave0_7_PWRITE_net_5    <= APBmslave0_7_PWRITE;
- STAMP_4_PWRITES              <= APBmslave0_7_PWRITE_net_5;
+ STAMP_5_PWRITES              <= APBmslave0_7_PWRITE_net_5;
  APBmslave0_7_PWDATA_net_5    <= APBmslave0_7_PWDATA;
- STAMP_4_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_5;
+ STAMP_5_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_5;
  APBmslave0_7_PADDR_net_6     <= APBmslave0_7_PADDR;
- STAMP_5_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_6;
+ Memory_PADDRS(31 downto 0)   <= APBmslave0_7_PADDR_net_6;
  APBmslave6_0_PSELx_net_0     <= APBmslave6_0_PSELx;
- STAMP_5_PSELS6               <= APBmslave6_0_PSELx_net_0;
+ Memory_PSELS6                <= APBmslave6_0_PSELx_net_0;
  APBmslave0_7_PENABLE_net_6   <= APBmslave0_7_PENABLE;
- STAMP_5_PENABLES             <= APBmslave0_7_PENABLE_net_6;
+ Memory_PENABLES              <= APBmslave0_7_PENABLE_net_6;
  APBmslave0_7_PWRITE_net_6    <= APBmslave0_7_PWRITE;
- STAMP_5_PWRITES              <= APBmslave0_7_PWRITE_net_6;
+ Memory_PWRITES               <= APBmslave0_7_PWRITE_net_6;
  APBmslave0_7_PWDATA_net_6    <= APBmslave0_7_PWDATA;
- STAMP_5_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_6;
+ Memory_PWDATAS(31 downto 0)  <= APBmslave0_7_PWDATA_net_6;
  FIC_0_CLK_net_1              <= FIC_0_CLK_net_0;
  FIC_0_CLK                    <= FIC_0_CLK_net_1;
  FIC_0_LOCK_net_1             <= FIC_0_LOCK_net_0;
@@ -580,7 +595,7 @@ begin
 ----------------------------------------------------------------------
 -- Concatenation assignments
 ----------------------------------------------------------------------
- MSS_INT_F2M_net_0 <= ( '0' & '0' & '0' & '0' & '0' & '0' & '0' & '0' & '0' & '0' & STAMP_5_INTR_0_top & STAMP_4_INTR_0_top & STAMP_3_INTR_0_top & STAMP_2_INTR_0_top & STAMP_1_INTR_0_top & STAMP_0_INTR_0_top );
+ MSS_INT_F2M_net_0 <= ( '0' & '0' & '0' & '0' & '0' & '0' & '0' & '0' & '0' & STAMP_5_INTR_0_top & STAMP_4_INTR_0_top & STAMP_3_INTR_0_top & STAMP_2_INTR_0_top & STAMP_1_INTR_0_top & STAMP_0_INTR_0_top & Memory_0_intr_or_0_Y );
 ----------------------------------------------------------------------
 -- Component instances
 ----------------------------------------------------------------------
@@ -644,27 +659,27 @@ CoreAPB3_0 : entity COREAPB3_LIB.CoreAPB3
         PENABLE    => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PENABLE,
         PWDATA     => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PWDATA,
         PSEL       => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx,
-        PRDATAS0   => Memory_PRDATAS0,
-        PREADYS0   => Memory_PREADYS0,
-        PSLVERRS0  => Memory_PSLVERRS0,
-        PRDATAS1   => STAMP_PRDATAS1,
-        PREADYS1   => STAMP_PREADYS1,
-        PSLVERRS1  => STAMP_PSLVERRS1,
-        PRDATAS2   => STAMP_1_PRDATAS2,
-        PREADYS2   => STAMP_1_PREADYS2,
-        PSLVERRS2  => STAMP_1_PSLVERRS2,
-        PRDATAS3   => STAMP_2_PRDATAS3,
-        PREADYS3   => STAMP_2_PREADYS3,
-        PSLVERRS3  => STAMP_2_PSLVERRS3,
-        PRDATAS4   => STAMP_3_PRDATAS4,
-        PREADYS4   => STAMP_3_PREADYS4,
-        PSLVERRS4  => STAMP_3_PSLVERRS4,
-        PRDATAS5   => STAMP_4_PRDATAS5,
-        PREADYS5   => STAMP_4_PREADYS5,
-        PSLVERRS5  => STAMP_4_PSLVERRS5,
-        PRDATAS6   => STAMP_5_PRDATAS6,
-        PREADYS6   => STAMP_5_PREADYS6,
-        PSLVERRS6  => STAMP_5_PSLVERRS6,
+        PRDATAS0   => STAMP_PRDATAS0,
+        PREADYS0   => STAMP_PREADYS0,
+        PSLVERRS0  => STAMP_PSLVERRS0,
+        PRDATAS1   => STAMP_1_PRDATAS1,
+        PREADYS1   => STAMP_1_PREADYS1,
+        PSLVERRS1  => STAMP_1_PSLVERRS1,
+        PRDATAS2   => STAMP_2_PRDATAS2,
+        PREADYS2   => STAMP_2_PREADYS2,
+        PSLVERRS2  => STAMP_2_PSLVERRS2,
+        PRDATAS3   => STAMP_3_PRDATAS3,
+        PREADYS3   => STAMP_3_PREADYS3,
+        PSLVERRS3  => STAMP_3_PSLVERRS3,
+        PRDATAS4   => STAMP_4_PRDATAS4,
+        PREADYS4   => STAMP_4_PREADYS4,
+        PSLVERRS4  => STAMP_4_PSLVERRS4,
+        PRDATAS5   => STAMP_5_PRDATAS5,
+        PREADYS5   => STAMP_5_PREADYS5,
+        PSLVERRS5  => STAMP_5_PSLVERRS5,
+        PRDATAS6   => Memory_PRDATAS6,
+        PREADYS6   => Memory_PREADYS6,
+        PSLVERRS6  => Memory_PSLVERRS6,
         PRDATAS7   => PRDATAS7_const_net_0, -- tied to X"0" from definition
         PREADYS7   => VCC_net, -- tied to '1' from definition
         PSLVERRS7  => GND_net, -- tied to '0' from definition
@@ -830,6 +845,16 @@ FABOSC_0 : sb_sb_FABOSC_0_OSC
         RCOSC_1MHZ_O2F     => OPEN,
         XTLOSC_CCC         => OPEN,
         XTLOSC_O2F         => OPEN 
+        );
+-- Memory_0_intr_or_0
+Memory_0_intr_or_0 : OR3
+    port map( 
+        -- Inputs
+        A => Memory_0_INTR_1_top,
+        B => Memory_0_INTR_0_top,
+        C => GND_net,
+        -- Outputs
+        Y => Memory_0_intr_or_0_Y 
         );
 -- sb_sb_MSS_0
 sb_sb_MSS_0 : sb_sb_MSS

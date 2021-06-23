@@ -1,8 +1,7 @@
 set_device -family {SmartFusion2} -die {M2S010} -speed {STD}
 read_vhdl -mode vhdl_2008 {D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd}
-read_vhdl -mode vhdl_2008 {D:\HERMESS_SPSoftware\Microcontroller\hdl\ram.vhd}
+read_vhdl -mode vhdl_2008 {D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd}
 read_vhdl -mode vhdl_2008 {D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd}
-read_vhdl -mode vhdl_2008 {D:\HERMESS_SPSoftware\Microcontroller\hdl\Memory.vhd}
 read_vhdl -mode vhdl_2008 {D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd}
 read_vhdl -mode vhdl_2008 {D:\HERMESS_SPSoftware\Microcontroller\hdl\Synchronizer.vhd}
 read_vhdl -mode vhdl_2008 -lib COREAPB3_LIB {D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3_muxptob3.vhd}

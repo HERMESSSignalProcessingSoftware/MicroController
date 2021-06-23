@@ -1,14 +1,13 @@
 #--  Synopsys, Inc.
 #--  Version Q-2020.03M-SP1
 #--  Project file D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb_syn.prj
-#--  Written on Fri Jun 18 13:56:46 2021
+#--  Written on Wed Jun 23 22:07:03 2021
 
 
 #project files
 add_file -vhdl -lib work "D:/HERMESS_SPSoftware/Microcontroller/hdl/Timestamp.vhd"
-add_file -vhdl -lib work "D:/HERMESS_SPSoftware/Microcontroller/hdl/ram.vhd"
+add_file -vhdl -lib work "D:/HERMESS_SPSoftware/Microcontroller/hdl/MemorySynchronizer.vhd"
 add_file -vhdl -lib work "D:/HERMESS_SPSoftware/Microcontroller/hdl/spi_master.vhd"
-add_file -vhdl -lib work "D:/HERMESS_SPSoftware/Microcontroller/hdl/Memory.vhd"
 add_file -vhdl -lib work "D:/HERMESS_SPSoftware/Microcontroller/hdl/STAMP.vhd"
 add_file -vhdl -lib work "D:/HERMESS_SPSoftware/Microcontroller/hdl/Synchronizer.vhd"
 add_file -vhdl -lib COREAPB3_LIB "D:/HERMESS_SPSoftware/Microcontroller/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3_muxptob3.vhd"

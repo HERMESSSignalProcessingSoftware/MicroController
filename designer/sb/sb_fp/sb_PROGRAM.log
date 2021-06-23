@@ -6,31 +6,29 @@ The 'open_project' command succeeded.
 Warning: Programming is already enabled for device 'M2S010'.
 The 'enable_device' command succeeded.
 PPD file 'D:/HERMESS_SPSoftware/Microcontroller/designer/sb/sb.ppd' has been loaded successfully.
-DESIGN : sb;  CHECKSUM : 0942;  PDB_VERSION : 1.0
+DESIGN : sb;  CHECKSUM : 7984;  PDB_VERSION : 1.0
 The 'set_programming_file' command succeeded.
 The 'set_programming_action' command succeeded.
 programmer 'E2006LUMSO' : Scan Chain...
 Programmer: 'E2006LUMSO' : JTAG TCK / SPI SCK frequency = 1 MHz
 programmer 'E2006LUMSO' : Check Chain...
 programmer 'E2006LUMSO' : Scan and Check Chain PASSED.
+Warning: programmer 'E2006LUMSO' : device 'M2S010' : Device authentication failure: Failed to validate device certificate.
 programmer 'E2006LUMSO' : device 'M2S010' : Executing action PROGRAM
 Programmer: 'E2006LUMSO' : JTAG TCK / SPI SCK frequency = 4 MHz
-programmer 'E2006LUMSO' : device 'M2S010' : Family: Igloo2
-programmer 'E2006LUMSO' : device 'M2S010' : Product:      M2GL005
-programmer 'E2006LUMSO' : device 'M2S010' : Cortex-M3 Disabled (M3_ALLOWED = 0)
-programmer 'E2006LUMSO' : device 'M2S010' : EXPORT ISC_ENABLE_RESULT[32] = 007c6744
+programmer 'E2006LUMSO' : device 'M2S010' : EXPORT ISC_ENABLE_RESULT[32] = 007c6a44
 programmer 'E2006LUMSO' : device 'M2S010' : EXPORT CRCERR[1] = 0
 programmer 'E2006LUMSO' : device 'M2S010' : EXPORT EDCERR[1] = 0
 programmer 'E2006LUMSO' : device 'M2S010' : Programming FPGA Array and eNVM...
-programmer 'E2006LUMSO' : device 'M2S010' : EXPORT Fabric component digest[256] = 5ff774332d5ff60178198bb12bac7924fda3db08978e32a5f2d779730bae1928
+programmer 'E2006LUMSO' : device 'M2S010' : EXPORT Fabric component digest[256] = 98b401e02567c6ad618e9a9509422bda4d2a8b522a82f8d6ef9954e363ad8728
 programmer 'E2006LUMSO' : device 'M2S010' : EXPORT eNVM component digest[256] = ff704ac11501b7189267c65eeaede89c1cce5ddbed58ff5af391584086b7b358
 programmer 'E2006LUMSO' : device 'M2S010' : ===================================================================================
 programmer 'E2006LUMSO' : device 'M2S010' : EXPORT DSN[128] = 2def6b77b387403aed022579b60dd593
 programmer 'E2006LUMSO' : device 'M2S010' : ===================================================================================
-programmer 'E2006LUMSO' : device 'M2S010' : Finished: Fri Jun 18 14:00:25 2021 (Elapsed time 00:01:02)
+programmer 'E2006LUMSO' : device 'M2S010' : Finished: Wed Jun 23 22:20:11 2021 (Elapsed time 00:01:02)
 programmer 'E2006LUMSO' : device 'M2S010' : Executing action PROGRAM PASSED.
 programmer 'E2006LUMSO' : Chain programming PASSED.
-Chain Programming Finished: Fri Jun 18 14:00:25 2021 (Elapsed time 00:01:02)
+Chain Programming Finished: Wed Jun 23 22:20:11 2021 (Elapsed time 00:01:02)
 
                         o - o - o - o - o - o
 

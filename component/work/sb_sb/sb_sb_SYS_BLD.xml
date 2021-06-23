@@ -3695,7 +3695,7 @@
 </row>
 <row>
  <cell>NUM_OF_INTERRUPTS</cell>
- <cell>0</cell>
+ <cell>2</cell>
 </row>
 </table>
 </cdata>
@@ -3746,31 +3746,36 @@
 </header>
 <row>
  <cell>sb_sb_MSS_0:MSS_INT_F2M[0]</cell>
+ <cell>Memory_0</cell>
+ <cell>Memory_0_INTR_0_top, Memory_0_INTR_1_top</cell>
+</row>
+<row>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[1]</cell>
  <cell>STAMP_0</cell>
  <cell>STAMP_0_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[1]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[2]</cell>
  <cell>STAMP_1</cell>
  <cell>STAMP_1_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[2]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[3]</cell>
  <cell>STAMP_2</cell>
  <cell>STAMP_2_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[3]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[4]</cell>
  <cell>STAMP_3</cell>
  <cell>STAMP_3_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[4]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[5]</cell>
  <cell>STAMP_4</cell>
  <cell>STAMP_4_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[5]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[6]</cell>
  <cell>STAMP_5</cell>
  <cell>STAMP_5_INTR_0_top</cell>
 </row>
@@ -3833,9 +3838,14 @@
  <cell>-</cell>
 </row>
 <row>
- <cell>Memory</cell>
- <cell>MIRROREDSLAVE</cell>
- <cell>Slave bus interface pin on  FIC0_Master_Subsystem</cell>
+ <cell>Memory_0_INTR_0_top</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>Memory_0_INTR_1_top</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
 </row>
 <row>
  <cell>STAMP</cell>
@@ -3864,6 +3874,11 @@
 </row>
 <row>
  <cell>STAMP_5</cell>
+ <cell>MIRROREDSLAVE</cell>
+ <cell>Slave bus interface pin on  FIC0_Master_Subsystem</cell>
+</row>
+<row>
+ <cell>Memory</cell>
  <cell>MIRROREDSLAVE</cell>
  <cell>Slave bus interface pin on  FIC0_Master_Subsystem</cell>
 </row>
@@ -4032,14 +4047,14 @@
 </header>
 <row>
  <cell>Connect Generic User Slave Peripheral</cell>
- <cell>Memory is a slave on FIC0_Master_Subsystem subsystem.
-Connect your peripheral to Memory bus interface pin in the top design.</cell>
+ <cell>STAMP is a slave on FIC0_Master_Subsystem subsystem.
+Connect your peripheral to STAMP_5 bus interface pin in the top design.</cell>
 </row>
 <separator/>
 <row>
  <cell>Connect Generic User Slave Peripheral</cell>
- <cell>STAMP is a slave on FIC0_Master_Subsystem subsystem.
-Connect your peripheral to STAMP_5 bus interface pin in the top design.</cell>
+ <cell>Memory is a slave on FIC0_Master_Subsystem subsystem.
+Connect your peripheral to Memory bus interface pin in the top design.</cell>
 </row>
 <separator/>
 </table>
