@@ -15,6 +15,15 @@
 extern "C" {
 #endif
 
+/* Important commands of the Cypress memory*/
+#define CYPRESS_COMMAND_PageProgramm_4BYTE_ADDR        0x12
+#define CYPRESS_COMMAND_READ_4BYTE_ADDr                0x13
+#define CYPRESS_COMMAND_READ_STATUSREG_1               0x05
+#define CYPRESS_COMMAND_RESET                          0xF0
+#define CYPRESS_COMMAND_CLEAR_STATUSREG                0x30
+#define CYPRESS_COMMAND_WRITE_ENABLE                   0x06
+#define ALLIGN_ONE_BYTE_COMMAND(i) (i << 24)
+
 /**
  * Addresses of the memory component
  */
@@ -123,7 +132,7 @@ typedef struct CSR {
     uint8_t     LockCUFSM;
     uint16_t    PageSize;
     uint32_t    StartPageNumber;
-    uint32_t    CurrentPageNumber;
+    uint32_t    CurrentPageNumber; /* deprecated */
 } ConfigStatusT;
 
 #define CreateBitfield(CSR)((uint32_t)CSR.PageSize       << CSR_MASK_MEMORY_PAGESIZE | \
@@ -196,7 +205,7 @@ ConfigStatusT ResolveBitfield(uint32_t value);
 /**
  *
  */
-typedef enum {nCS1, nCS2} enumMEM;
+//typedef enum {nCS1, nCS2} enumMEM;
 
 typedef struct {
     uint32_t Stamp11;
@@ -219,25 +228,52 @@ typedef struct {
  * @param memPool an array of at least 128 elements to save the values form Memory component
  * @param page the page to be read
  */
-void ReadMemory(enumMEM mem, uint32_t *memPool, uint32_t page);
+//void ReadMemory(enumMEM mem, uint32_t *memPool, uint32_t page);
 
 /**
  *
  * @param startAddr the page to be started with
  */
-void SetStartAddress(uint32_t startAddr);
+//void SetStartAddress(uint32_t startAddr);
 
 /**
  * Initialize the memory component by writing the content of the typedef struct ConfigStatusT to the component
  * @param csr the struct to be written
  */
-void InitMemory(ConfigStatusT csr);
+//void InitMemory(ConfigStatusT csr);
+
 /**
  * Reads the shadow regs of the Memory component saves the value of the stamps to a local copy.
  * May use this for telemetry
  * @param stamp
  */
-void ReadStamps(Stamp_t *stamp);
+//void ReadStamps(Stamp_t *stamp);
+
+/**
+ * Checks the value first and programs it then
+ * @param value: the new value to be configured
+ */
+//void ReconfigureConfigStatusReg(uint32_t value);
+
+/**
+ * Transmits an array of uint32_t data via SPI the selected memory controller
+ * @param data
+ * @param size
+ * @param memoryID
+ * @return 1: if SR1 & (1 << 1) bit was set (BAD CODE)
+ */
+//int TransmitData(uint32_t *data, size_t size,  enumMEM memoryID);
+
+typedef enum {WAIT_UNTIL_DONE, DONT_WAIT} SPIWaitingMode;
+
+/**
+ * Transmits a 32 bit value to the connected device
+ * @param data
+ * @param dest
+ * @param waiting
+ */
+//void SPITransmit(uint32_t data, enumMEM dest, SPIWaitingMode waiting);
+
 #ifdef __cplusplus
 }
 #endif

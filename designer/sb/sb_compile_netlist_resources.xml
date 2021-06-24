@@ -3,7 +3,7 @@
 <doc>
 <title>Resource Report</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</text>
-<text>Date: Wed Jun 23 22:07:10 2021
+<text>Date: Thu Jun 24 09:57:37 2021
 </text>
 <section><name>Device Selection</name></section>
 <table>
@@ -106,9 +106,9 @@
 </header>
 <row>
  <cell>4LUT</cell>
- <cell>1753</cell>
+ <cell>1741</cell>
  <cell>12084</cell>
- <cell>14.51</cell>
+ <cell>14.41</cell>
 </row>
 <row>
  <cell>DFF</cell>
@@ -204,7 +204,7 @@
 </header>
 <row>
  <cell>Fabric Logic</cell>
- <cell>1753</cell>
+ <cell>1741</cell>
  <cell>935</cell>
 </row>
 <row>
@@ -224,7 +224,7 @@
 </row>
 <row>
  <cell>Total Used</cell>
- <cell>1753</cell>
+ <cell>1741</cell>
  <cell>935</cell>
 </row>
 </table>
@@ -324,8 +324,12 @@
  <cell>1</cell>
 </row>
 <row>
+ <cell>16</cell>
+ <cell>1</cell>
+</row>
+<row>
  <cell>17</cell>
- <cell>2</cell>
+ <cell>1</cell>
 </row>
 <row>
  <cell>28</cell>
@@ -431,12 +435,12 @@
 <row>
  <cell>419</cell>
  <cell>INT_NET</cell>
- <cell>Net   : resetn_arst</cell>
+ <cell>Net   : MemorySynchronizer_0/resetn_arst</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: ResetAND_RNIMHJB/U0_RGB1</cell>
+ <cell>Driver: MemorySynchronizer_0/un120_in_enable_0_I_1_613/U0_RGB1</cell>
 </row>
 <row>
  <cell></cell>
@@ -451,7 +455,7 @@
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: AND2_0_RNIKOS1/U0_RGB1</cell>
+ <cell>Driver: MemorySynchronizer_0/un120_in_enable_0_I_1_614/U0_RGB1</cell>
 </row>
 <row>
  <cell></cell>
@@ -507,30 +511,20 @@
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_i_1_i_a2</cell>
+ <cell>Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_0_a2_0_a2</cell>
 </row>
 <row>
- <cell>95</cell>
+ <cell>96</cell>
  <cell>INT_NET</cell>
  <cell>Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_i_0_i_a2</cell>
+ <cell>Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_0_a2_1_a2</cell>
 </row>
 <row>
- <cell>68</cell>
- <cell>INT_NET</cell>
- <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
-</row>
-<row>
- <cell>65</cell>
+ <cell>66</cell>
  <cell>INT_NET</cell>
  <cell>Net   : STAMP_0/component_state_Z[5]</cell>
 </row>
@@ -538,6 +532,16 @@
  <cell></cell>
  <cell></cell>
  <cell>Driver: STAMP_0/component_state[5]</cell>
+</row>
+<row>
+ <cell>65</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : STAMP_0/spi/state_Z[0]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: STAMP_0/spi/state[0]</cell>
 </row>
 <row>
  <cell>62</cell>
@@ -550,17 +554,7 @@
  <cell>Driver: CFG0_GND_INST</cell>
 </row>
 <row>
- <cell>59</cell>
- <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/spi/state_Z[0]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: STAMP_0/spi/state[0]</cell>
-</row>
-<row>
- <cell>57</cell>
+ <cell>61</cell>
  <cell>INT_NET</cell>
  <cell>Net   : ENABLE_MEMORY_LED_c</cell>
 </row>
@@ -570,9 +564,19 @@
  <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
 </row>
 <row>
- <cell>46</cell>
+ <cell>50</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0_new_avail</cell>
+ <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
+</row>
+<row>
+ <cell>44</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : MemorySynchronizer_0.k_1[1]</cell>
 </row>
 <row>
  <cell></cell>
@@ -580,14 +584,14 @@
  <cell>Driver: STAMP_0/new_avail</cell>
 </row>
 <row>
- <cell>45</cell>
+ <cell>44</cell>
  <cell>INT_NET</cell>
- <cell>Net   : MemorySynchronizer_0/un112_in_enable_0_data_tmp[15]</cell>
+ <cell>Net   : MemorySynchronizer_0/APBState_Z[0]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: MemorySynchronizer_0/un112_in_enable_0_I_1</cell>
+ <cell>Driver: MemorySynchronizer_0/APBState[0]</cell>
 </row>
 </table>
 <section><name>High fanout nets (through buffer trees)</name></section>
@@ -615,30 +619,20 @@
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_i_1_i_a2</cell>
+ <cell>Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_0_a2_0_a2</cell>
 </row>
 <row>
- <cell>95</cell>
+ <cell>96</cell>
  <cell>INT_NET</cell>
  <cell>Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_i_0_i_a2</cell>
+ <cell>Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_0_a2_1_a2</cell>
 </row>
 <row>
- <cell>68</cell>
- <cell>INT_NET</cell>
- <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
-</row>
-<row>
- <cell>65</cell>
+ <cell>66</cell>
  <cell>INT_NET</cell>
  <cell>Net   : STAMP_0/component_state_Z[5]</cell>
 </row>
@@ -646,6 +640,16 @@
  <cell></cell>
  <cell></cell>
  <cell>Driver: STAMP_0/component_state[5]</cell>
+</row>
+<row>
+ <cell>65</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : STAMP_0/spi/state_Z[0]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: STAMP_0/spi/state[0]</cell>
 </row>
 <row>
  <cell>62</cell>
@@ -658,17 +662,7 @@
  <cell>Driver: CFG0_GND_INST</cell>
 </row>
 <row>
- <cell>59</cell>
- <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/spi/state_Z[0]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: STAMP_0/spi/state[0]</cell>
-</row>
-<row>
- <cell>57</cell>
+ <cell>61</cell>
  <cell>INT_NET</cell>
  <cell>Net   : ENABLE_MEMORY_LED_c</cell>
 </row>
@@ -678,9 +672,19 @@
  <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
 </row>
 <row>
- <cell>46</cell>
+ <cell>50</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0_new_avail</cell>
+ <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
+</row>
+<row>
+ <cell>44</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : MemorySynchronizer_0.k_1[1]</cell>
 </row>
 <row>
  <cell></cell>
@@ -688,14 +692,14 @@
  <cell>Driver: STAMP_0/new_avail</cell>
 </row>
 <row>
- <cell>45</cell>
+ <cell>44</cell>
  <cell>INT_NET</cell>
- <cell>Net   : MemorySynchronizer_0/un112_in_enable_0_data_tmp[15]</cell>
+ <cell>Net   : MemorySynchronizer_0/APBState_Z[0]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: MemorySynchronizer_0/un112_in_enable_0_I_1</cell>
+ <cell>Driver: MemorySynchronizer_0/APBState[0]</cell>
 </row>
 </table>
 </doc>

@@ -1,13 +1,13 @@
 Detailed Resource Usage
-Module Name,Fabric 4LUT,Fabric DFF,Single-Ended I/O,PLLs and CCCs,Chip Globals,MSS,10/100/1000 Ethernet,HS USB,Multi-Mode UART,RCOSC_50MHZ
-MemorySynchronizer_0/Primitives,1183,569,0,0,0,0,0,0,0,0
-MemorySynchronizer_0/TimeStampGen/Primitives,43,38,0,0,0,0,0,0,0,0
-Primitives/Primitives,4,0,26,0,2,0,0,0,0,0
-STAMP_0/Primitives,358,235,0,0,0,0,0,0,0,0
-STAMP_0/spi/Primitives,123,93,0,0,0,0,0,0,0,0
-sb_sb_0/CCC_0/Primitives,0,0,0,1,2,0,0,0,0,0
-sb_sb_0/CoreAPB3_0/Primitives,3,0,0,0,0,0,0,0,0,0
-sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/Primitives,38,0,0,0,0,0,0,0,0,0
-sb_sb_0/FABOSC_0/Primitives,0,0,0,0,0,0,0,0,0,1
-sb_sb_0/Primitives,1,0,0,0,0,0,0,0,0,0
-sb_sb_0/sb_sb_MSS_0/Primitives,0,0,0,0,0,1,0,0,0,0
+Module Name,Fabric 4LUT,Fabric DFF,Single-Ended I/O,PLLs and CCCs,Chip Globals,MSS,CAN,10/100/1000 Ethernet,HS USB,Multi-Mode UART,RCOSC_50MHZ
+MemorySynchronizer_0/Primitives,1165,569,0,0,2,0,0,0,0,0,0
+MemorySynchronizer_0/TimeStampGen/Primitives,43,38,0,0,0,0,0,0,0,0,0
+Primitives/Primitives,4,0,26,0,0,0,0,0,0,0,0
+STAMP_0/Primitives,362,235,0,0,0,0,0,0,0,0,0
+STAMP_0/spi/Primitives,125,93,0,0,0,0,0,0,0,0,0
+sb_sb_0/CCC_0/Primitives,0,0,0,1,2,0,0,0,0,0,0
+sb_sb_0/CoreAPB3_0/Primitives,3,0,0,0,0,0,0,0,0,0,0
+sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/Primitives,38,0,0,0,0,0,0,0,0,0,0
+sb_sb_0/FABOSC_0/Primitives,0,0,0,0,0,0,0,0,0,0,1
+sb_sb_0/Primitives,1,0,0,0,0,0,0,0,0,0,0
+sb_sb_0/sb_sb_MSS_0/Primitives,0,0,0,0,0,1,0,0,0,0,0

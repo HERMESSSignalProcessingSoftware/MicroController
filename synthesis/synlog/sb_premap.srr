@@ -1,4 +1,4 @@
-# Wed Jun 23 22:06:34 2021
+# Thu Jun 24 09:57:02 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -128,7 +128,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":553:8:553:9|Removing sequential instance POWER_ON_RESET_N_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: FX1184 |Applying syn_allowed_resources blockrams=21 on top level netlist sb 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 172MB peak: 172MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 173MB peak: 173MB)
 
 
 
@@ -162,7 +162,7 @@ sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     800       sb_sb_0.CCC_0.CCC_INST.GL0
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 171MB peak: 173MB)
+Starting constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 171MB peak: 173MB)
 
 Encoding state machine MemorySyncState[0:5] (in view: work.MemorySynchronizer(arch))
 original code -> new code
@@ -195,7 +195,7 @@ Pre-mapping successful!
 
 At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 89MB peak: 176MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:02s cputime
-# Wed Jun 23 22:06:37 2021
+Process took 0h:00m:03s realtime, 0h:00m:02s cputime
+# Thu Jun 24 09:57:05 2021
 
 ###########################################################]

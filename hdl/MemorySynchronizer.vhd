@@ -548,9 +548,9 @@ begin
                             PRDATA <= WaitingTimerValueReg;
                         when X"044" =>
                             PRDATA <= ResyncTimerValueReg;
-                        when X"04C" => 
+                        when X"048" => 
                             PRDATA <= TimeStampReg;
-                        when X"050" => 
+                        when X"04C" => 
                             PRDATA <= SynchStatusReg2;
                             SynchStatusReg2 <= (others => '0');
                         when others => 

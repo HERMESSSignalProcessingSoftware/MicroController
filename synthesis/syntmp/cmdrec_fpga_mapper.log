@@ -1,15 +1,15 @@
 D:\Programme\LiberoSoCv12.6\SynplifyPro\bin64\m_generic.exe  -prodtype  synplify_pro  -encrypt  -pro  -rundir  D:\HERMESS_SPSoftware\Microcontroller\synthesis   -part M2S010  -package VF400  -grade STD    -continue_on_error -min_cdc_sync_flops 2 -unsafe_cdc_netlist_property 0 -maxfan 10000 -infer_seqShift -clock_globalthreshold 2 -async_globalthreshold 12 -globalthreshold 5000 -low_power_ram_decomp 0 -seqshift_to_uram 0 -opcond COMTC -report_path 4000 -disable_ramindex 0 -rep_clkint_driver 1 -microsemi_enhanced_flow 1 -ternary_adder_decomp 66 -pack_uram_addr_reg 1 -RWCheckOnRam 0 -local_tmr_rename -summaryfile D:\HERMESS_SPSoftware\Microcontroller\synthesis\synlog\report\sb_fpga_mapper.xml -merge_inferred_clocks 0  -top_level_module  work.sb  -implementation  synthesis  -licensetype  synplifypro_actel  -flow mapping  -mp  4  -prjfile  D:\HERMESS_SPSoftware\Microcontroller\synthesis\scratchproject.prs  -multisrs  -ovm  D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.vm   -freq 100.000   -tcl  D:\HERMESS_SPSoftware\Microcontroller\designer\sb\synthesis.fdc  D:\HERMESS_SPSoftware\Microcontroller\synthesis\synwork\sb_prem.srd  -sap  D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.sap  -otap  D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.tap  -omap  D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.map  -devicelib  D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.v  -ologparam  D:\HERMESS_SPSoftware\Microcontroller\synthesis\syntmp\sb.plg  -osyn  D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.srm  -prjdir  D:\HERMESS_SPSoftware\Microcontroller\synthesis\  -prjname  sb_syn  -log  D:\HERMESS_SPSoftware\Microcontroller\synthesis\synlog\sb_fpga_mapper.srr  -sn  2020.03  -jobname  "fpga_mapper" 
 relcom:..\..\..\..\Programme\LiberoSoCv12.6\SynplifyPro\bin64\m_generic.exe -prodtype synplify_pro -encrypt -pro -rundir ..\..\synthesis -part M2S010 -package VF400 -grade STD -continue_on_error -min_cdc_sync_flops 2 -unsafe_cdc_netlist_property 0 -maxfan 10000 -infer_seqShift -clock_globalthreshold 2 -async_globalthreshold 12 -globalthreshold 5000 -low_power_ram_decomp 0 -seqshift_to_uram 0 -opcond COMTC -report_path 4000 -disable_ramindex 0 -rep_clkint_driver 1 -microsemi_enhanced_flow 1 -ternary_adder_decomp 66 -pack_uram_addr_reg 1 -RWCheckOnRam 0 -local_tmr_rename -summaryfile ..\synlog\report\sb_fpga_mapper.xml -merge_inferred_clocks 0 -top_level_module work.sb -implementation synthesis -licensetype synplifypro_actel -flow mapping -mp 4 -prjfile ..\scratchproject.prs -multisrs -ovm ..\sb.vm -freq 100.000 -tcl ..\..\designer\sb\synthesis.fdc ..\synwork\sb_prem.srd -sap ..\sb.sap -otap ..\sb.tap -omap ..\sb.map -devicelib ..\..\..\..\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.v -ologparam sb.plg -osyn ..\sb.srm -prjdir ..\ -prjname sb_syn -log ..\synlog\sb_fpga_mapper.srr -sn 2020.03 -jobname "fpga_mapper"
-rc:1 success:1 runtime:25
+rc:1 success:1 runtime:22
 file:..\scratchproject.prs|io:o|time:1624478778|size:4258|exec:0|csum:
-file:..\sb.vm|io:o|time:1624478821|size:753203|exec:0|csum:
-file:..\..\designer\sb\synthesis.fdc|io:i|time:1624478773|size:54|exec:0|csum:DFAEBD958051E9CEC6F3184DC57EC03F
-file:..\synwork\sb_prem.srd|io:i|time:1624478796|size:169516|exec:0|csum:C2AE6A4CF831DCF7F52C98FB96145B82
-file:..\sb.sap|io:o|time:1624478797|size:3733|exec:0|csum:
+file:..\sb.vm|io:o|time:1624521445|size:746295|exec:0|csum:
+file:..\..\designer\sb\synthesis.fdc|io:i|time:1624521404|size:54|exec:0|csum:BFE08CBEBBD855ADA17DB7E68990DA54
+file:..\synwork\sb_prem.srd|io:i|time:1624521424|size:169497|exec:0|csum:CE299DB8DBC9317C66008D77C455257F
+file:..\sb.sap|io:o|time:1624521425|size:3733|exec:0|csum:
 file:..\sb.tap|io:o|time:0|size:-1|exec:0|csum:
-file:..\sb.map|io:o|time:1624478822|size:28|exec:0|csum:
+file:..\sb.map|io:o|time:1624521447|size:28|exec:0|csum:
 file:..\..\..\..\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.v|io:i|time:1604390290|size:16417|exec:0|csum:F0ABD26EB97073243CF73065BE40E390
-file:sb.plg|io:o|time:1624478822|size:741|exec:0|csum:
-file:..\sb.srm|io:o|time:1624478820|size:12532|exec:0|csum:
-file:..\synlog\sb_fpga_mapper.srr|io:o|time:1624478822|size:147073|exec:0|csum:
+file:sb.plg|io:o|time:1624521447|size:741|exec:0|csum:
+file:..\sb.srm|io:o|time:1624521445|size:12302|exec:0|csum:
+file:..\synlog\sb_fpga_mapper.srr|io:o|time:1624521447|size:151737|exec:0|csum:
 file:..\..\..\..\Programme\LiberoSoCv12.6\SynplifyPro\bin64\m_generic.exe|io:i|time:1604390270|size:42820608|exec:1|csum:39CFAC34BBF814CB465BAE1969F6836F

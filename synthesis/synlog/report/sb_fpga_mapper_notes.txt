@@ -34,8 +34,8 @@
 @N: FX271 :"d:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":283:8:283:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[20] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
 @N: FX271 :"d:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":283:8:283:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[21] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
 @N: FX271 :"d:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":283:8:283:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[22] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FP130 |Promoting Net resetn_arst on CLKINT  I_518 
-@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  I_519 
+@N: FP130 |Promoting Net resetn_arst on CLKINT  MemorySynchronizer_0.un120_in_enable_0_I_1_613 
+@N: FP130 |Promoting Net debug_led_net_0_arst on CLKINT  MemorySynchronizer_0.un120_in_enable_0_I_1_614 
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
