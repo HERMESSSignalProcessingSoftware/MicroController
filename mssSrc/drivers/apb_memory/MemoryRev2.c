@@ -11,10 +11,11 @@
 
 #define PAGE_COUNT 125000
 
-void InitSPIMemory(void) {
+void InitMemorySynchronizer(void) {
     /* Set disable the not ABP part of this component*/
-    DisableMemorySync();
-    MSS_GPIO_config(OUT_ENA_MEMORY_CU, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_set_output(OUT_ENABLE_MEM_SYNC, 0);
+    /* Reconfigure the port */
+    MSS_GPIO_config(OUT_ENABLE_MEM_SYNC, MSS_GPIO_OUTPUT_MODE);
 
     /* Do the SPI init */
     MSS_SPI_init(&g_mss_spi0);
@@ -36,22 +37,7 @@ void InitSPIMemory(void) {
     HW_set_32bit_reg(MEMORY_REG(ResyncTimerValueReg), 0x0000C350);
     /* Set the Reset Timer to 500 ms*/
     HW_set_32bit_reg(MEMORY_REG(ResyncTimerValueReg), 0x00bebc20);
-}
 
-
-/*
- * Enables the FSM of the memory synchronizer
- *
- */
-void __inline EnableMemorySync(void) {
-    MSS_GPIO_set_output(OUT_ENA_MEMORY_CU, 1);
-}
-
-/*
- * Disables the FSM of the memory synchronizer
- */
-void __inline DisableMemorySync(void) {
-    MSS_GPIO_set_output(OUT_ENA_MEMORY_CU, 0);
 }
 
 

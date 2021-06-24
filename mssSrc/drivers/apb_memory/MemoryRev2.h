@@ -14,6 +14,8 @@ extern "C" {
 
 //#include "memory.h"
 //#include "../../CMSIS/system_m2sxxx.h"
+#include "../../drivers/mss_gpio/mss_gpio.h"
+#include "../../hal.h"
 #include "../../hw_platform.h"
 #include "../../drivers/mss_spi/mss_spi.h"
 #include "../../components/tools.h"
@@ -30,7 +32,7 @@ extern "C" {
 #define c_READ 0x13
 #define c_READID 0x9F
 
-#define REGADDR(i) ( ADDR_MEMORY | i)
+#define MEMORY_REG(i) ( ADDR_MEMORY | i)
 
 /*Warining: Chip Erease below!*/
 #define c_CE 0xC7
@@ -45,12 +47,6 @@ typedef struct {
     uint32_t CS_Pin;
 } SPI_Values;
 
-/**
- * Inits the memory
- *
- * \deprecated
- */
-//int32_t InitMemory(void);
 
 /**
  * Disables the state machine of the memory synchronizer (MS) component
@@ -62,23 +58,12 @@ typedef struct {
  * Configures the  MS with default values, you may change them
  *
  */
-void InitSPIMemory(void);
+void InitMemorySynchronizer(void);
 
 /**
  *
  */
 uint32_t FastMemoryTest(void);
-
-/*
- * Enables the FSM of the memory synchronizer
- *
- */
-void __inline EnableMemorySync(void);
-
-/*
- * Disables the FSM of the memory synchronizer
- */
-void __inline DisableMemorySync(void);
 
 
 /**

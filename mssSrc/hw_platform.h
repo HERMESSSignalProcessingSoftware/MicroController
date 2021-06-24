@@ -21,7 +21,7 @@
 #define OUT_ADC_START                   3
 #define OUT_RESET_N                     4
 #define IN_SYNC_START                   5
-#define OUT_ENA_MEMORY_CU               20
+#define OUT_ENABLE_MEM_SYNC               20
 #define LED_RECORDING                   30
 #define LED_HEARTBEAT                   31
 #define nCS1                            21

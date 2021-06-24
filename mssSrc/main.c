@@ -39,9 +39,6 @@ int main(void) {
     MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
     MSS_UART_set_tx_endian(&g_mss_uart0, MSS_UART_LITTLEEND);
 
-    /* Init SPI for Memory usage */
-
-
 
 
     // check, if the start of this application is the result of
@@ -58,7 +55,7 @@ int main(void) {
     MSS_GPIO_config(nCS2, MSS_GPIO_OUTPUT_MODE);
 
     /* run the memory test */
-    InitSPIMemory();
+    InitMemorySynchronizer();
 
     //FastMemoryTest();
 
