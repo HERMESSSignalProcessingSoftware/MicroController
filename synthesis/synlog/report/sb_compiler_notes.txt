@@ -29,15 +29,16 @@
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":582:10:582:12|Synthesizing smartfusion2.vcc.syn_black_box.
 @N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":191:10:191:13|Synthesizing smartfusion2.and2.syn_black_box.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":47:7:47:24|Synthesizing work.memorysynchronizer.arch.
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":139:27:139:28|Using onehot encoding for type memorysyncstate_t. For example, enumeration start is mapped to "1000000".
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":141:22:141:23|Using sequential encoding for type apbstatetype.
+@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":140:27:140:28|Using onehot encoding for type memorysyncstate_t. For example, enumeration start is mapped to "1000000".
+@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":142:22:142:23|Using sequential encoding for type apbstatetype.
+@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":592:16:592:29|OTHERS clause is not synthesized.
 @N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":28:7:28:15|Synthesizing work.timestamp.behaviour.
 @N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":38:16:38:17|Using sequential encoding for type t_tate.
 @N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":65:20:65:33|OTHERS clause is not synthesized.
 @N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":33:4:33:10|Input getTime is unused.
-@N: CL189 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Register bit end_one_counter(2) is always 0.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Trying to extract state machine for register APBState.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":283:8:283:9|Trying to extract state machine for register MemorySyncState.
+@N: CL189 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Register bit end_one_counter(2) is always 0.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Trying to extract state machine for register APBState.
+@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Trying to extract state machine for register MemorySyncState.
 @N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":75:0:75:4|Input IADDR is unused.
 @N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":76:0:76:6|Input PRESETN is unused.
 @N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":77:0:77:3|Input PCLK is unused.

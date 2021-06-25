@@ -1,6 +1,6 @@
 Resource Report
 Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
-Date: Thu Jun 24 09:57:37 2021
+Date: Fri Jun 25 12:12:19 2021
 
 Device Selection
 +--------------------------------+----------------+
@@ -37,7 +37,7 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 1741 | 12084 | 14.41      |
+| 4LUT                      | 1758 | 12084 | 14.55      |
 | DFF                       | 935  | 12084 | 7.74       |
 | I/O Register              | 0    | 585   | 0.00       |
 | User I/O                  | 26   | 195   | 13.33      |
@@ -58,11 +58,11 @@ Detailed Logic Resource Usage
 +--------------------------+------+-----+
 | Type                     | 4LUT | DFF |
 +--------------------------+------+-----+
-| Fabric Logic             | 1741 | 935 |
+| Fabric Logic             | 1758 | 935 |
 | RAM64x18 Interface Logic | 0    | 0   |
 | RAM1K18 Interface Logic  | 0    | 0   |
 | MACC Interface Logic     | 0    | 0   |
-| Total Used               | 1741 | 935 |
+| Total Used               | 1758 | 935 |
 +--------------------------+------+-----+
 
 MSS Resource Usage
@@ -89,16 +89,17 @@ MSS Resource Usage
 Detailed Carry Chains Resource Usage
 +--------+------+
 | Length | Used |
+| 3      | 1    |
 | 6      | 2    |
 | 7      | 1    |
 | 12     | 1    |
-| 16     | 1    |
+| 15     | 1    |
 | 17     | 1    |
 | 28     | 1    |
 | 31     | 2    |
 | 32     | 6    |
 | 33     | 1    |
-| Total  | 16   |
+| Total  | 17   |
 +--------+------+
 
 I/O Function
@@ -127,10 +128,10 @@ Nets assigned to chip global resources
 |        |         | Driver: sb_sb_0/CCC_0/GL0_INST/U0_RGB1                         |
 |        |         | Source: NETLIST                                                |
 | 419    | INT_NET | Net   : MemorySynchronizer_0/resetn_arst                       |
-|        |         | Driver: MemorySynchronizer_0/un120_in_enable_0_I_1_613/U0_RGB1 |
+|        |         | Driver: MemorySynchronizer_0/un112_in_enable_0_I_1_476/U0_RGB1 |
 |        |         | Source: NETLIST                                                |
 | 155    | INT_NET | Net   : debug_led_net_0_arst                                   |
-|        |         | Driver: MemorySynchronizer_0/un120_in_enable_0_I_1_614/U0_RGB1 |
+|        |         | Driver: MemorySynchronizer_0/un112_in_enable_0_I_1_477/U0_RGB1 |
 |        |         | Source: NETLIST                                                |
 | 1      | INT_NET | Net   : adc_clk_c                                              |
 |        |         | Driver: sb_sb_0/CCC_0/GL1_INST/U0_RGB1                         |
@@ -144,54 +145,54 @@ Nets assigned to row global resources
 +--------+------+------+
 
 High fanout nets
-+--------+---------+----------------------------------------------------------------------+
-| Fanout | Type    | Name                                                                 |
-+--------+---------+----------------------------------------------------------------------+
-| 128    | INT_NET | Net   : NN_1                                                         |
-|        |         | Driver: ResetAND                                                     |
-| 120    | INT_NET | Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa           |
-|        |         | Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_0_a2_0_a2 |
-| 96     | INT_NET | Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa             |
-|        |         | Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_0_a2_1_a2   |
-| 66     | INT_NET | Net   : STAMP_0/component_state_Z[5]                                 |
-|        |         | Driver: STAMP_0/component_state[5]                                   |
-| 65     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                                       |
-|        |         | Driver: STAMP_0/spi/state[0]                                         |
-| 62     | INT_NET | Net   : CFG0_GND_INST_NET                                            |
-|        |         | Driver: CFG0_GND_INST                                                |
-| 61     | INT_NET | Net   : ENABLE_MEMORY_LED_c                                          |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                           |
-| 50     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                                       |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                           |
-| 44     | INT_NET | Net   : MemorySynchronizer_0.k_1[1]                                  |
-|        |         | Driver: STAMP_0/new_avail                                            |
-| 44     | INT_NET | Net   : MemorySynchronizer_0/APBState_Z[0]                           |
-|        |         | Driver: MemorySynchronizer_0/APBState[0]                             |
-+--------+---------+----------------------------------------------------------------------+
++--------+---------+-----------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                  |
++--------+---------+-----------------------------------------------------------------------+
+| 128    | INT_NET | Net   : NN_1                                                          |
+|        |         | Driver: ResetAND                                                      |
+| 120    | INT_NET | Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa            |
+|        |         | Driver: MemorySynchronizer_0/un1_stamp1shadowreg145_2_0_a2_2_RNISMMJ1 |
+| 95     | INT_NET | Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa              |
+|        |         | Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_0_a2         |
+| 71     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                                        |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                            |
+| 65     | INT_NET | Net   : STAMP_0/component_state_Z[5]                                  |
+|        |         | Driver: STAMP_0/component_state[5]                                    |
+| 62     | INT_NET | Net   : CFG0_GND_INST_NET                                             |
+|        |         | Driver: CFG0_GND_INST                                                 |
+| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                                        |
+|        |         | Driver: STAMP_0/spi/state[0]                                          |
+| 55     | INT_NET | Net   : ENABLE_MEMORY_LED_c                                           |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                            |
+| 50     | INT_NET | Net   : MemorySynchronizer_0/un1_stamp1shadowreg145_0                 |
+|        |         | Driver: MemorySynchronizer_0/un1_stamp1shadowreg145_2_0               |
+| 43     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                                        |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                            |
++--------+---------+-----------------------------------------------------------------------+
 
 High fanout nets (through buffer trees)
-+--------+---------+----------------------------------------------------------------------+
-| Fanout | Type    | Name                                                                 |
-+--------+---------+----------------------------------------------------------------------+
-| 128    | INT_NET | Net   : NN_1                                                         |
-|        |         | Driver: ResetAND                                                     |
-| 120    | INT_NET | Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa           |
-|        |         | Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_0_a2_0_a2 |
-| 96     | INT_NET | Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa             |
-|        |         | Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_0_a2_1_a2   |
-| 66     | INT_NET | Net   : STAMP_0/component_state_Z[5]                                 |
-|        |         | Driver: STAMP_0/component_state[5]                                   |
-| 65     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                                       |
-|        |         | Driver: STAMP_0/spi/state[0]                                         |
-| 62     | INT_NET | Net   : CFG0_GND_INST_NET                                            |
-|        |         | Driver: CFG0_GND_INST                                                |
-| 61     | INT_NET | Net   : ENABLE_MEMORY_LED_c                                          |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                           |
-| 50     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                                       |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                           |
-| 44     | INT_NET | Net   : MemorySynchronizer_0.k_1[1]                                  |
-|        |         | Driver: STAMP_0/new_avail                                            |
-| 44     | INT_NET | Net   : MemorySynchronizer_0/APBState_Z[0]                           |
-|        |         | Driver: MemorySynchronizer_0/APBState[0]                             |
-+--------+---------+----------------------------------------------------------------------+
++--------+---------+-----------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                  |
++--------+---------+-----------------------------------------------------------------------+
+| 128    | INT_NET | Net   : NN_1                                                          |
+|        |         | Driver: ResetAND                                                      |
+| 120    | INT_NET | Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa            |
+|        |         | Driver: MemorySynchronizer_0/un1_stamp1shadowreg145_2_0_a2_2_RNISMMJ1 |
+| 95     | INT_NET | Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa              |
+|        |         | Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_0_a2         |
+| 71     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                                        |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                            |
+| 65     | INT_NET | Net   : STAMP_0/component_state_Z[5]                                  |
+|        |         | Driver: STAMP_0/component_state[5]                                    |
+| 62     | INT_NET | Net   : CFG0_GND_INST_NET                                             |
+|        |         | Driver: CFG0_GND_INST                                                 |
+| 59     | INT_NET | Net   : STAMP_0/spi/state_Z[0]                                        |
+|        |         | Driver: STAMP_0/spi/state[0]                                          |
+| 55     | INT_NET | Net   : ENABLE_MEMORY_LED_c                                           |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                            |
+| 50     | INT_NET | Net   : MemorySynchronizer_0/un1_stamp1shadowreg145_0                 |
+|        |         | Driver: MemorySynchronizer_0/un1_stamp1shadowreg145_2_0               |
+| 43     | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                                        |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                            |
++--------+---------+-----------------------------------------------------------------------+
 

@@ -135,6 +135,7 @@ process
   procedure READREGS (
     NOTProvided : std_logic_vector(5 downto 0)
   ) is
+  variable i : Integer;
   begin
     Report "START OF REGISTER READING";
     PSEL <= '1';
@@ -237,6 +238,24 @@ process
       assert PRDATA = X"00000000" report "STAMP6Reg2 does not match";
     end if;
     Report "END OF Register Reading!";
+    -- Resetting the Registers
+    wait until rising_edge(clk);
+    PENABLE <= '1';
+    PWRITE <= '1';
+    wait until rising_edge(clk);
+    i := 0;
+    wait until rising_edge(clk);
+    while (i < 16#04C#)
+    loop
+      --Do something
+      PADDR <= std_logic_vector(to_unsigned(i, PADDR'length));
+      PWDATA <= (others => '0');
+      wait for 40 ns;
+      i := i + 4;
+    end loop;
+    wait until rising_edge(clk);
+    PENABLE <= '0';
+    PWRITE <= '0';
     PSEL <= '0';
     wait until rising_edge(clk);
   end procedure READREGS;

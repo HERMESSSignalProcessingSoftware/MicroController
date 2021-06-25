@@ -5,7 +5,7 @@
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
   <spirit:busInterface>
-    <spirit:name>APB</spirit:name>
+    <spirit:name>AMBA_APB3</spirit:name>
     <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
     <spirit:slave></spirit:slave>
     <spirit:signalMap>
@@ -22,7 +22,9 @@
       <spirit:signalName>
         <spirit:componentSignalName>PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
-        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
     <spirit:vendorExtensions></spirit:vendorExtensions>
   </spirit:busInterface>
   </spirit:busInterfaces>
@@ -111,6 +113,10 @@
         <spirit:direction>out</spirit:direction>
         <spirit:left>31</spirit:left>
         <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSLVERR</spirit:name>
+        <spirit:direction>out</spirit:direction>
       </spirit:signal>
     </spirit:signals>
     <spirit:hwParameters>

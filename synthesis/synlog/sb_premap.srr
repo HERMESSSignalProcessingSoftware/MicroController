@@ -1,4 +1,4 @@
-# Thu Jun 24 09:57:02 2021
+# Fri Jun 25 12:11:48 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -35,7 +35,7 @@ Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0
 Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 137MB peak: 137MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 139MB)
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 137MB peak: 139MB)
 
 @W: BN132 :"d:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Removing sequential instance MemorySynchronizer_0.TimeStampGen.timestamp[31:0] because it is equivalent to instance MemorySynchronizer_0.TimeStampGen.counter[31:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sb_sb_0.CORERESETP_0.MDDR_DDR_AXI_S_CORE_RESET_N_int because it is equivalent to instance sb_sb_0.CORERESETP_0.FDDR_CORE_RESET_N_int. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -55,7 +55,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q3 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q3 is reduced to a combinational gate by constant propagation.
 @W: MO129 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1331:8:1331:9|Sequential instance sb_sb_0.CORERESETP_0.RESET_N_F2M_int is reduced to a combinational gate by constant propagation.
-@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb\sb.vhd":530:24:530:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
+@N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb\sb.vhd":532:24:532:40|Removing instance Synchronizer_0 (in view: work.sb(rtl)) of type view:work.Synchronizer(architecture_synchronizer) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance DDR_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_RELEASED_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
@@ -68,7 +68,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance SDIF2_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":283:8:283:9|Removing sequential instance ADCResync (in view: work.MemorySynchronizer(arch)) of type view:PrimLib.dffse(prim) because it does not drive other instances.
+@N: BN362 :"d:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Removing sequential instance ADCResync (in view: work.MemorySynchronizer(arch)) of type view:PrimLib.dffse(prim) because it does not drive other instances.
 @N: BN115 :"d:\hermess_spsoftware\microcontroller\component\work\sb_sb\sb_sb.vhd":741:0:741:11|Removing instance CORERESETP_0 (in view: work.sb_sb(rtl)) of type view:work.CoreResetP(rtl) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance INIT_DONE_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance sdif0_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
@@ -128,7 +128,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"d:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":553:8:553:9|Removing sequential instance POWER_ON_RESET_N_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: FX1184 |Applying syn_allowed_resources blockrams=21 on top level netlist sb 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 173MB peak: 173MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 172MB peak: 172MB)
 
 
 
@@ -162,7 +162,7 @@ sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     800       sb_sb_0.CCC_0.CCC_INST.GL0
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 171MB peak: 173MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 171MB peak: 173MB)
 
 Encoding state machine MemorySyncState[0:5] (in view: work.MemorySynchronizer(arch))
 original code -> new code
@@ -186,16 +186,16 @@ original code -> new code
    010000 -> 010000
    100000 -> 100000
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 174MB peak: 174MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 174MB peak: 174MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 175MB peak: 175MB)
+Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 175MB peak: 175MB)
 
 Pre-mapping successful!
 
 At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 89MB peak: 176MB)
 
-Process took 0h:00m:03s realtime, 0h:00m:02s cputime
-# Thu Jun 24 09:57:05 2021
+Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+# Fri Jun 25 12:11:50 2021
 
 ###########################################################]

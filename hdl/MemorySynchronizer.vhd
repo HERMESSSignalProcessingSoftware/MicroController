@@ -64,7 +64,8 @@ entity MemorySynchronizer is
     PWRITE              : in std_logic;
     PWDATA              : in std_logic_vector(31 downto 0);
     PREADY              : out std_logic;
-    PRDATA              : out std_logic_vector(31 downto 0)
+    PRDATA              : out std_logic_vector(31 downto 0);
+    PSLVERR             : OUT STD_LOGIC-- not supported by this component
   ) ;
 end MemorySynchronizer;
 
@@ -303,7 +304,7 @@ begin
             WaitingTimerValueReg    <= (others => '1'); -- Start with a really high number to avoid initial system failure
             ResyncTimerValueReg     <= (others => '1'); -- Start with a really high number to avoid initial system failure
             -- Clear Config Reg
-            ConfigReg               <= x"00000044";
+            ConfigReg               <= X"00000044";
             -- init state machines
             MemorySyncState <= Start;
             APBState        <= APBWaiting;
@@ -314,6 +315,7 @@ begin
             ReadInterrupt           <= '0';
             PREADY                  <= '0';
             PRDATA                  <= (others => '0');
+            
             -- disable timestamp 
             enableTimestampGen      <= '0';
             -- Init Variables
@@ -330,6 +332,8 @@ begin
             Error1Counter                  := 0;
             --
             getTime                        <= '0';
+            -- Not supported
+            PSLVERR <= '0';
         elsif (rising_edge(clk)) then 
             if (IN_enable = '1') then 
                 enableTimestampGen      <= '1';
@@ -448,102 +452,130 @@ begin
                 enableTimestampGen      <= '0';
             end if; -- End enable 
 
+            -- 
+            IF (CONFIGREG(30) = '1' ) THEN-- Clear Sync Interrupt
+                SynchronizerInterrupt <= '0';
+                CONFIGREG(30) <= '0'; -- Reset the clear bit
+                SynchStatusReg(31) <= '0';
+            END IF;
+
+            IF (CONFIGREG(29) = '1') THEN -- Clear the ReadInterrupt
+                ReadInterrupt <= '0';
+                CONFIGREG(29) <= '0'; -- Reset the clear bit
+                SynchStatusReg(30) <= '0';          
+            END IF;
+
             case APBState is 
                 when APBWaiting => 
-                    if ((PENABLE = '1') and (PWRITE = '1') and (PSEL = '1')) then 
+                    if ((PENABLE = '1') AND (PWRITE = '1') AND (PSEL = '1')) then 
                         APBState <= APBWriting;
                     elsif ((PWRITE = '0' AND PSEL = '1')) then
                         APBState <= APBReading;
                     end if;
-                    -- Reset the Clear bits 
-                    if (ConfigReg(30) = '1' ) then
-                        ConfigReg(30) <= '0'; -- automatic clear of that bit
-                    end if;
-                    if (ConfigReg(29) = '1' ) then
-                        ConfigReg(29) <= '0'; -- automatic clear of that bit
-                    end if;
                     PREADY <= '0';
                 when APBWriting => 
-                    PREADY <= '1';
                     case PADDR is 
+                        when X"004" => 
+                            Stamp1ShadowReg1 <= (others => '0');
+                            PREADY <= '1';
+                        when X"008" => 
+                            Stamp1ShadowReg2 <= (others => '0');
+                            PREADY <= '1';
+                        when X"00C" => 
+                            Stamp2ShadowReg1 <= (others => '0');
+                            PREADY <= '1';
+                        when X"010" => 
+                            Stamp2ShadowReg2 <= (others => '0');
+                            PREADY <= '1';
+                        when X"014" => 
+                            Stamp3ShadowReg1 <= (others => '0');
+                            PREADY <= '1';
+                        when X"018" => 
+                            Stamp3ShadowReg2 <= (others => '0');
+                            PREADY <= '1';
+                        when X"01C" => 
+                            Stamp4ShadowReg1 <= (others => '0');
+                            PREADY <= '1';
+                        when X"020" => 
+                            Stamp4ShadowReg2 <= (others => '0');
+                            PREADY <= '1';
+                        when X"024" => 
+                            Stamp5ShadowReg1 <= (others => '0');
+                            PREADY <= '1';
+                        when X"028" => 
+                            Stamp5ShadowReg2 <= (others => '0');
+                            PREADY <= '1';
+                        when X"02C" => 
+                            Stamp6ShadowReg1 <= (others => '0');
+                            PREADY <= '1';
+                        when X"030" => 
+                            Stamp6ShadowReg2 <= (others => '0');
+                            PREADY <= '1';
+                        when X"034" =>
+                            SynchStatusReg(25 downto 0) <= (others => '0');
+                            SynchStatusReg(28) <= '0'; -- Reset of the APB Address ERROR bit
+                            PREADY <= '1';
                         when X"038" => 
                             ConfigReg <= PWDATA;
                             numberOfnewAvails               := TO_INTEGER(UNSIGNED(ConfigReg(2 downto 0)));
                             NumberOfPendingResyncRequest    := TO_INTEGER(UNSIGNED(ConfigReg(6 downto 4)));
-                            --    31 30 29
-                            -- +--+--+--+-
-                            -- |EI|CS|CR| 
-                            -- +--+--+--+-
-                            if (PWDATA(30) = '1') then
-                                SynchronizerInterrupt <= '0';
-                                SynchStatusReg(31) <= '0';
-                            end if;
-                            if (PWDATA(29) = '1') then 
-                                ReadInterrupt <= '0';
-                                SynchStatusReg(30) <= '0';
-                            end if;
+                            PREADY <= '1';
                         when X"03C" => 
                             ResetTimerValueReg <= PWDATA;   
                             ResetTimerCounter              := TO_INTEGER(UNSIGNED(PWDATA)); 
+                            PREADY <= '1';
                         when X"040" =>
                             WaitingTimerValueReg <= PWDATA;
                             WaitingTimerCounter            := TO_INTEGER(UNSIGNED(PWDATA));
+                            PREADY <= '1';
                         when X"044" =>
                             ResyncTimerValueReg <= PWDATA;
+                            PREADY <= '1';
                             -- Do not reload the counter here
                             -- ResyncTimerCounter             := TO_INTEGER(UNSIGNED(PWDATA));
+                        when X"048" => 
+                            TimeStampReg <= (others => '0');
+                            PREADY <= '1';
+                        when X"04C" => 
+                            SynchStatusReg2 <= (others => '0');
+                            PREADY <= '1';
                         when others => 
                             SynchStatusReg(28) <= '1';
+                            PREADY <= '1';
                     end case; -- and Writing addr case 
                     APBState <= APBWaiting;
                 when APBReading =>
-                    PREADY <= '1';
                     case PADDR is 
                         when X"004" => 
                             PRDATA <= Stamp1ShadowReg1;
-                            Stamp1ShadowReg1 <= (others => '0');
                         when X"008" =>
                             PRDATA <= Stamp1ShadowReg2;
-                            Stamp1ShadowReg2 <= (others => '0');
                         when X"00C" => 
                             PRDATA <= Stamp2ShadowReg1;
-                            Stamp2ShadowReg1 <= (others => '0');
                         when X"010" =>
                             PRDATA <= Stamp2ShadowReg2;
-                            Stamp2ShadowReg2 <= (others => '0');
                         when X"014" => 
                             PRDATA <= Stamp3ShadowReg1;
-                            Stamp3ShadowReg1 <= (others => '0');
                         when X"018" =>
                             PRDATA <= Stamp3ShadowReg2;
-                            Stamp3ShadowReg2 <= (others => '0');
                         when X"01C" => 
                             PRDATA <= Stamp4ShadowReg1;
-                            Stamp4ShadowReg1 <= (others => '0');
                         when X"020" =>
                             PRDATA <= Stamp4ShadowReg2;
-                            Stamp4ShadowReg2 <= (others => '0');
                         when X"024" => 
                             PRDATA <= Stamp5ShadowReg1;
-                            Stamp5ShadowReg1 <= (others => '0');
                         when X"028" =>
                             PRDATA <= Stamp5ShadowReg2;
-                            Stamp5ShadowReg2 <= (others => '0');
                         when X"02C" => 
                             PRDATA <= Stamp6ShadowReg1;
-                            Stamp6ShadowReg1 <= (others => '0');
                         when X"030" =>
                             PRDATA <= Stamp6ShadowReg2;
-                            Stamp6ShadowReg2 <= (others => '0');
                         when X"034" => 
                             PRDATA <= SynchStatusReg;
-                            SynchStatusReg(11 downto 0) <= (others => '0'); -- Clear bitmasks
-                            SynchStatusReg(25 downto 0) <= (others => '0');
-                            SynchStatusReg(28) <= '0'; -- Reset of the APB Address ERROR bit
                         when X"038" => 
                             PRDATA <= ConfigReg;
                         when X"03C" => 
-                            PRDATA <= ResetTimerValueReg;    
+                            PRDATA <= ResetTimerValueReg;
                         when X"040" =>
                             PRDATA <= WaitingTimerValueReg;
                         when X"044" =>
@@ -552,11 +584,14 @@ begin
                             PRDATA <= TimeStampReg;
                         when X"04C" => 
                             PRDATA <= SynchStatusReg2;
-                            SynchStatusReg2 <= (others => '0');
                         when others => 
                             PRDATA <= X"AFFEDEAD";
                     end case; -- end Reading addr case
                     APBState <= APBWaiting;
+                    PREADY <= '1';
+                when others => 
+                    APBState <= APBWaiting;
+                    PREADY <= '1';
             end case; -- End of APB Reading FSM
         end if; -- end risign_edge
     end process;
