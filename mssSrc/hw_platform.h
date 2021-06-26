@@ -21,7 +21,7 @@
 #define OUT_ADC_START                   3
 #define OUT_RESET_N                     4
 #define IN_SYNC_START                   5
-#define OUT_ENABLE_MEM_SYNC               20
+#define OUT_ENABLE_MEM_SYNC             20
 #define LED_RECORDING                   30
 #define LED_HEARTBEAT                   31
 #define nCS1                            21
@@ -30,24 +30,28 @@
 /*-----------------------------------------------------------------------------
 * APB SLAVES
 *---------------------------------------------------------------------------*/
-#define ADDR_STAMP_0                    0x50000000U
-#define ADDR_STAMP_1                    0x50001000U
-#define ADDR_STAMP_2                    0x50002000U
-#define ADDR_STAMP_3                    0x50003000U
-#define ADDR_STAMP_4                    0x50004000U
-#define ADDR_STAMP_5                    0x50005000U
-#define ADDR_MEMORY                     0x50006000U
+#define ADDR_MEMORY                     0x50000000U
+#define ADDR_STAMP_0                    0x50001000U
+#define ADDR_STAMP_1                    0x50002000U
+#define ADDR_STAMP_2                    0x50003000U
+#define ADDR_STAMP_3                    0x50004000U
+#define ADDR_STAMP_4                    0x50005000U
+#define ADDR_STAMP_5                    0x50006000U
+
 
 /*-----------------------------------------------------------------------------
 * F2M INTERRUPTS (MSS_INT_F2M[x])
 *---------------------------------------------------------------------------*/
-#define F2M_INT_STAMP_0                 0
-#define F2M_INT_STAMP_1                 1
-#define F2M_INT_STAMP_2                 2
-#define F2M_INT_STAMP_3                 3
-#define F2M_INT_STAMP_4                 4
-#define F2M_INT_STAMP_5                 5
-#define F2M_INT_MEMORY_READ_INT         6
-#define F2M_INT_MEMORY_SYNC_INT         7
+#define F2M_INT_STAMP_0                 1
+#define F2M_INT_STAMP_1                 2
+#define F2M_INT_STAMP_2                 3
+#define F2M_INT_STAMP_3                 4
+#define F2M_INT_STAMP_4                 5
+#define F2M_INT_STAMP_5                 6
+/* !!! Wie unterscheidet man die beiden signale?*/
+#define F2M_INT_MEMORY_READ_INT         0
+#define F2M_INT_MEMORY_SYNC_INT         0
+
+#define MEMORY_SYNC_IRQn   FabricIrq0_IRQn
 
 #endif

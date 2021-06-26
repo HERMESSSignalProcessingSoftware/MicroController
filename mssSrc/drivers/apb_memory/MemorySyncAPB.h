@@ -13,26 +13,30 @@
 extern "C" {
 #endif
 
-#define Stamp1ShadowReg1        0x4
-#define Stamp1ShadowReg2        0x8
-#define Stamp2ShadowReg1        0xc
-#define Stamp2ShadowReg2        0x10
-#define Stamp3ShadowReg1        0x14
-#define Stamp3ShadowReg2        0x18
-#define Stamp4ShadowReg1        0x1c
-#define Stamp4ShadowReg2        0x20
-#define Stamp5ShadowReg1        0x24
-#define Stamp5ShadowReg2        0x28
-#define Stamp6ShadowReg1        0x2c
-#define Stamp6ShadowReg2        0x30
-#define SynchStatusReg          0x34
-#define ConfigReg               0x38
-#define ResetTimerValueReg      0x3c
-#define WaitingTimerValueReg    0x40
-#define ResyncTimerValueReg     0x44
-#define TimeStampReg            0x48
-#define SynchStatusReg2         0x4c
+#define Stamp1ShadowReg1        0x004
+#define Stamp1ShadowReg2        0x008
+#define Stamp2ShadowReg1        0x00c
+#define Stamp2ShadowReg2        0x010
+#define Stamp3ShadowReg1        0x014
+#define Stamp3ShadowReg2        0x018
+#define Stamp4ShadowReg1        0x01c
+#define Stamp4ShadowReg2        0x020
+#define Stamp5ShadowReg1        0x024
+#define Stamp5ShadowReg2        0x028
+#define Stamp6ShadowReg1        0x02c
+#define Stamp6ShadowReg2        0x030
+#define SynchStatusReg          0x034
+#define ConfigReg               0x038
+#define ResetTimerValueReg      0x03c
+#define WaitingTimerValueReg    0x040
+#define ResyncTimerValueReg     0x044
+#define TimeStampReg            0x048
+#define SynchStatusReg2         0x04c
 
+#define LOWESTADDR               Stamp1ShadowReg1
+#define LOWESTSTAMP              Stamp1ShadowReg1
+#define HIGHESTSTAMP             Stamp6ShadowReg2
+#define HIGHSTADDR              SynchStatusReg2
 //CONFIG REG
 //     31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0
 //  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
@@ -61,7 +65,36 @@ extern "C" {
 #define CONFIG_REG_NUMBER_OF_REQUEST_RESNYCS(number) ((number & 0x00000003)  << 4)
 
 
+#define PENDING_SYNCHRONIZER_INTERRUPT  (1 << 31)
+#define PENDING_READ_INTERRUPT          (1 << 30)
+#define PENDING_APB_ADDRESS_ERROR       (1 << 28)
 
+#define SODS_MARKER                     (1 << 27)
+#define LO_MARKER                       (1 << 29)
+#define SOE_MARKER                      (1 << 26)
+// SynchStatusReg
+//    --     31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0
+//    --  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//    --  |PS|PR|LO|AE|SD|SE|O6|O5|O4|O3|O2|O1|RE|RE|RE|RE|RE|RE|RE|RE|R6|R5|R4|R3|R2|R1|M6|M5|M4|M3|M2|M1|
+//    --  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//    -- M1 - M6: Bitmask for every stamp which has not provied a newAvails signal
+//    -- R1 - R6: Bitmask for every stamp which is requesting a Resync
+//    -- RE: 8 bit counter: the number of ResyncEvents
+//    -- O1 - O6: StatusReg2 overflow marker. Means that the difference to the timestamp register is bigger than the size of 5 bits
+//    -- AE: APB Error Address not known
+//    -- U: Unused
+//    -- PR: Pending Reading Interrupt
+//    -- PS: Pending Synchronizer Interrupt
+//    -- Timer and Prescaler
+//
+
+// signal SynchStatusReg2          : std_logic_vector(31 downto 0);
+//    --     31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0
+//    --  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//    --  |U |U |S6|S6|S6|S6|S6|S5|S5|S5|S5|S5|S4|S4|S4|S4|S4|S3|S3|S3|S3|S3|S2|S2|S2|S2|S2|S1|S1|S1|S1|S1|
+//    --  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//    -- U: Unused
+//    -- S1 5 bit counter; relative distance to the Timestamp value
 
 #ifdef __cplusplus
 }

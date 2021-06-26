@@ -207,7 +207,7 @@ void stampsInit (void) {
             STAMP_MOD_NONE);
 
     // enable interrupts from the ADC !DRDY signal
-    APB_STAMP_enableInterrupt(&stamps[0]);
+    //APB_STAMP_enableInterrupt(&stamps[0]);
 
     // enable continuous mode (on APB_STAMP) and set configuration parameters
     MSS_GPIO_set_output(OUT_ADC_START, 0);
@@ -217,9 +217,9 @@ void stampsInit (void) {
     MSS_GPIO_set_output(OUT_ADC_START, 1);
 
     // configure ADC start signal from the synchronizer (triggered when async)
-    MSS_GPIO_config(IN_SYNC_START,
-            MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_NEGATIVE);
-    MSS_GPIO_enable_irq(IN_SYNC_START);
+   // MSS_GPIO_config(IN_SYNC_START,
+    //        MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_NEGATIVE);
+    //MSS_GPIO_enable_irq(IN_SYNC_START);
 }
 
 

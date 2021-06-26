@@ -11,15 +11,21 @@
  * !!!
  */
 
-#ifndef DAPI_H
-#define DAPI_H
+#ifndef TM_H
+#define TM_H
 
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+#include <stdint.h>
 
+#define FRAMESIZE 60
+
+extern uint8_t TransmissionPtr[60];
+
+void InitTelemetry(void);
 
 
 
