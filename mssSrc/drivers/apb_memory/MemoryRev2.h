@@ -204,6 +204,18 @@ int chipErase(SPI_Values);
  */
 void writeReady(SPI_Values);
 
+/**
+ * @brief Reads a given number of bytes form memory
+ *
+ * @param data The memory region to save the read value at
+ * @param address The memory start address to read from
+ * @param count The number of bytes to be read
+ * @param spi_val The device descriptor to be read from
+ * @return 0: 0k, 1: Error
+ */
+int readBytes(uint8_t *data, uint32_t address, int count, SPI_Values spi_val);
+
+
 /*
  * Copies the registers Stamp1Shadow1 - Stamp6Shadow2, SR, SR2, Timestamp to the internal memory
  * @param puffer pointer to a memory region of 512 byte

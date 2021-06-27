@@ -379,11 +379,8 @@ int chipErase(SPI_Values SPI_val) {
     return 0;
 }
 
-/* TODO: DOCUMENTATION!!
- *  UNDOCUMENTED
- * */
-int readBytes(uint8_t *data, uint32_t address, int count, SPI_Values spi_val) {
 
+int readBytes(uint8_t *data, uint32_t address, int count, SPI_Values spi_val) {
     if (count > sizeof(data)) {
         return 1;
     }

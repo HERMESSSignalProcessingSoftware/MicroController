@@ -63,18 +63,18 @@ int main(void) {
     /* Config the heartbeat duration */
     SetHeartbeatPeriode(500);
     /* run the memory test */
-    InitMemorySynchronizer(DO_NOT_ERASE, AUTO_START_ON);
+    InitMemorySynchronizer(DO_NOT_ERASE, AUTO_START_OFF);
 
 
     MemoryConfig MemConfig = Recovery();
     if (!MemConfig.RecoverySuccess) {
-        asm volatile ("nop");
+        MemConfig.StartPage = 0x200;
+        MemConfig.CurrentPage = 0x200;
+        MemConfig.StartChipSelect = nCS1;
+        MemConfig.CurrentChipSelect = nCS1;
+        MemConfig.MetaAddress = 0x0;
     }
-    MemConfig.StartPage = 0x200;
-    MemConfig.CurrentPage = 0x200;
-    MemConfig.StartChipSelect = nCS1;
-    MemConfig.CurrentChipSelect = nCS1;
-    MemConfig.MetaAddress = 0x0;
+
     // initialize the stamps
     stampsInit();
 
@@ -89,7 +89,7 @@ int main(void) {
     for (;;) {
 
         /*
-         * TODO: Hanlde these signals
+         * TODO: Handle these signals
          *
          * */
         if (MSS_SIGNALS & MSS_SIGNAL_SODS) {
@@ -141,7 +141,8 @@ int main(void) {
         }
 
         if (MSS_SIGNALS & MSS_SIGNAL_TELEMETRY) {
-            /*
+            /* See Issue number 9 on github
+             *
              * TODO: Transmit data to Earth here
              * Be careful! Do not transmit all the data at once,
              * it may blocks the loop here and signals with higher
@@ -181,7 +182,10 @@ void FabricIrq0_IRQHandler(void) {
          * - Do normal start up
          * - Continue writing
          * */
+        /* NOT tested yet */
+        NVIC_SystemReset();
     }
+
     if (SR1 & PENDING_READ_INTERRUPT) {
         MemoryInterruptCounter++; /* Count the number of interrupts */
         if (MemoryInterruptCounter % 8 == 0) { /* Just save the content to SPI Memory by ... it to the main process*/
