@@ -671,7 +671,7 @@ architecture arch of Memory is
                             PRDATA <= Stamp6ShadowReg1;
                             PREADY <= '1';
                         when X"030" =>
-                            PRDATA <= Stamp6ShadowReg1;
+                            PRDATA <= Stamp6ShadowReg2;
                             PREADY <= '1';
                         when X"034" => 
                             PRDATA <= StartAddrReg; 
