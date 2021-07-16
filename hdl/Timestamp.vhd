@@ -35,8 +35,8 @@ entity Timestamp is
   ) ;
 end Timestamp;
 architecture behaviour of Timestamp is
-    type t_tate is (S1, S2);
-    signal state : t_tate;
+    --type t_tate is (S1, S2);
+    --signal state : t_tate;
 begin
 
     process (clk, nReset) 
@@ -44,27 +44,19 @@ begin
     variable prescaler  : Integer range 0 to  51;
     begin 
         if (nReset = '0') then
-            state <= S1;
             Counter := 0;
             timestamp <= (others => '0');
             prescaler := 0;
         elsif (rising_edge(clk)) then
             if (enable = '1') then 
-                case State is 
-                    when S1 =>  -- Counting
-                        if (prescaler = 24) then 
-                            Counter := Counter + 1;
-                            prescaler := 0;
-                        else 
-                            prescaler := prescaler + 1;
-                        end if;
-                        timestamp <=  std_logic_vector(to_unsigned(Counter, timestamp'length));
-                    when S2 => -- Ignore this case
-                        timestamp <=  std_logic_vector(to_unsigned(Counter, timestamp'length));
-                        state <= S1;
-                    when others => 
-                        state <= S1;
-                end case;
+                if (prescaler = 24) then 
+                    Counter := Counter + 1;
+                    prescaler := 0;
+                else 
+                    prescaler := prescaler + 1;
+                end if;
+                timestamp <=  std_logic_vector(to_unsigned(Counter, timestamp'length));
+        
             end if;
         end if;
     end process ; -- 
