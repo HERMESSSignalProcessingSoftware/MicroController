@@ -48,7 +48,7 @@ architecture behaviour of Timestamp_tb is
 begin
 
     dut : Timestamp Port map(clk => clk, nReset => nReset, enable => enable, getTime => getTime, timestamp => TS);
-    clk <= not clk after 20 ns;
+    clk <= not clk after 10 ns;
     nReset <= '0' after 5 ns, '1' after 25 ns;
     enable <= '1' after 1 us;
 end behaviour ; -- behaviour
