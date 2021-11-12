@@ -1,4 +1,6 @@
 --------------------------------------------------------------------------------
+-- !!! was bei ADC resync? Was bei ADC reset?
+-- !!! Conf reset komplett zu 0 geeignet? Was mit ID? Unterschied Hard/Soft notwendig?
 -- HERMESS Project
 -- 
 -- This is designed for use with 3 ADS114x on a shared SPI bus.
@@ -150,7 +152,7 @@ BEGIN
     PROCESS (PRESETN, PCLK)
         variable next_state : component_state_t;
         
-        -- resets the the inter STAMP (not the ADCs).
+        -- resets the inter STAMP (not the ADCs).
         -- hardreset addtionally resets the internal configuration.
         PROCEDURE proc_reset_stamp (constant hardreset : in BOOLEAN) IS BEGIN
             new_avail <= '0';

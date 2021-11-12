@@ -3,7 +3,7 @@
 <doc>
 <title>Resource Report</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</text>
-<text>Date: Fri Jun 25 12:12:19 2021
+<text>Date: Wed Sep 29 12:58:42 2021
 </text>
 <section><name>Device Selection</name></section>
 <table>
@@ -19,7 +19,7 @@
 </row>
 <row>
  <cell>Package</cell>
- <cell>400 VF</cell>
+ <cell>144 TQ</cell>
 </row>
 <row>
  <cell>Speed Grade</cell>
@@ -27,7 +27,7 @@
 </row>
 <row>
  <cell>Temp</cell>
- <cell>0:25:85</cell>
+ <cell>-40:25:100</cell>
 </row>
 <row>
  <cell>Voltage</cell>
@@ -47,7 +47,7 @@
 </row>
 <row>
  <cell>PLL Supply Voltage</cell>
- <cell>3.3V</cell>
+ <cell>2.5V</cell>
 </row>
 <row>
  <cell>Default I/O technology</cell>
@@ -76,7 +76,7 @@
 </row>
 <row>
  <cell>Source</cell>
- <cell>D:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.vm</cell>
+ <cell>C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\sb.vm</cell>
 </row>
 </table>
 <section><name>Options</name></section>
@@ -106,38 +106,38 @@
 </header>
 <row>
  <cell>4LUT</cell>
- <cell>1758</cell>
+ <cell>4520</cell>
  <cell>12084</cell>
- <cell>14.55</cell>
+ <cell>37.40</cell>
 </row>
 <row>
  <cell>DFF</cell>
- <cell>935</cell>
+ <cell>2899</cell>
  <cell>12084</cell>
- <cell>7.74</cell>
+ <cell>23.99</cell>
 </row>
 <row>
  <cell>I/O Register</cell>
  <cell>0</cell>
- <cell>585</cell>
+ <cell>252</cell>
  <cell>0.00</cell>
 </row>
 <row>
  <cell>User I/O</cell>
- <cell>26</cell>
- <cell>195</cell>
- <cell>13.33</cell>
+ <cell>72</cell>
+ <cell>84</cell>
+ <cell>85.71</cell>
 </row>
 <row>
  <cell>-- Single-ended I/O</cell>
- <cell>26</cell>
- <cell>195</cell>
- <cell>13.33</cell>
+ <cell>72</cell>
+ <cell>84</cell>
+ <cell>85.71</cell>
 </row>
 <row>
  <cell>-- Differential I/O Pairs</cell>
  <cell>0</cell>
- <cell>97</cell>
+ <cell>37</cell>
  <cell>0.00</cell>
 </row>
 <row>
@@ -160,9 +160,9 @@
 </row>
 <row>
  <cell>Chip Globals</cell>
- <cell>4</cell>
+ <cell>2</cell>
  <cell>8</cell>
- <cell>50.00</cell>
+ <cell>25.00</cell>
 </row>
 <row>
  <cell>CCC</cell>
@@ -204,8 +204,8 @@
 </header>
 <row>
  <cell>Fabric Logic</cell>
- <cell>1758</cell>
- <cell>935</cell>
+ <cell>4520</cell>
+ <cell>2899</cell>
 </row>
 <row>
  <cell>RAM64x18 Interface Logic</cell>
@@ -224,8 +224,8 @@
 </row>
 <row>
  <cell>Total Used</cell>
- <cell>1758</cell>
- <cell>935</cell>
+ <cell>4520</cell>
+ <cell>2899</cell>
 </row>
 </table>
 <section><name>MSS Resource Usage</name></section>
@@ -312,23 +312,23 @@
  <cell>Used</cell>
 </row>
 <row>
- <cell>3</cell>
- <cell>1</cell>
+ <cell>2</cell>
+ <cell>33</cell>
 </row>
 <row>
  <cell>6</cell>
- <cell>2</cell>
+ <cell>11</cell>
 </row>
 <row>
  <cell>7</cell>
- <cell>1</cell>
+ <cell>7</cell>
 </row>
 <row>
  <cell>12</cell>
- <cell>1</cell>
+ <cell>6</cell>
 </row>
 <row>
- <cell>15</cell>
+ <cell>16</cell>
  <cell>1</cell>
 </row>
 <row>
@@ -337,7 +337,7 @@
 </row>
 <row>
  <cell>28</cell>
- <cell>1</cell>
+ <cell>6</cell>
 </row>
 <row>
  <cell>31</cell>
@@ -345,7 +345,7 @@
 </row>
 <row>
  <cell>32</cell>
- <cell>6</cell>
+ <cell>11</cell>
 </row>
 <row>
  <cell>33</cell>
@@ -353,7 +353,7 @@
 </row>
 <row>
  <cell>Total</cell>
- <cell>17</cell>
+ <cell>79</cell>
 </row>
 </table>
 <section><name>I/O Function</name></section>
@@ -366,13 +366,13 @@
 </header>
 <row>
  <cell>Input I/O</cell>
- <cell>9</cell>
+ <cell>31</cell>
  <cell>0</cell>
  <cell>0</cell>
 </row>
 <row>
  <cell>Output I/O</cell>
- <cell>17</cell>
+ <cell>41</cell>
  <cell>0</cell>
  <cell>0</cell>
 </row>
@@ -409,8 +409,8 @@
  <cell>LVCMOS33</cell>
  <cell> 3.30v</cell>
  <cell> N/A</cell>
- <cell> 9</cell>
- <cell> 17</cell>
+ <cell> 31</cell>
+ <cell> 41</cell>
  <cell> 0</cell>
 </row>
 </table>
@@ -422,7 +422,7 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>874</cell>
+ <cell>2838</cell>
  <cell>INT_NET</cell>
  <cell>Net   : sb_sb_0_FIC_0_CLK</cell>
 </row>
@@ -437,44 +437,14 @@
  <cell>Source: NETLIST</cell>
 </row>
 <row>
- <cell>419</cell>
+ <cell>1673</cell>
  <cell>INT_NET</cell>
- <cell>Net   : MemorySynchronizer_0/resetn_arst</cell>
+ <cell>Net   : AND2_0_Y_arst</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: MemorySynchronizer_0/un112_in_enable_0_I_1_476/U0_RGB1</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Source: NETLIST</cell>
-</row>
-<row>
- <cell>155</cell>
- <cell>INT_NET</cell>
- <cell>Net   : debug_led_net_0_arst</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: MemorySynchronizer_0/un112_in_enable_0_I_1_477/U0_RGB1</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Source: NETLIST</cell>
-</row>
-<row>
- <cell>1</cell>
- <cell>INT_NET</cell>
- <cell>Net   : adc_clk_c</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: sb_sb_0/CCC_0/GL1_INST/U0_RGB1</cell>
+ <cell>Driver: MemorySynchronizer_0/un120_in_enable_0_I_1_1633/U0_RGB1</cell>
 </row>
 <row>
  <cell></cell>
@@ -498,37 +468,7 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>128</cell>
- <cell>INT_NET</cell>
- <cell>Net   : NN_1</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: ResetAND</cell>
-</row>
-<row>
- <cell>120</cell>
- <cell>INT_NET</cell>
- <cell>Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: MemorySynchronizer_0/un1_stamp1shadowreg145_2_0_a2_2_RNISMMJ1</cell>
-</row>
-<row>
- <cell>95</cell>
- <cell>INT_NET</cell>
- <cell>Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_0_a2</cell>
-</row>
-<row>
- <cell>71</cell>
+ <cell>404</cell>
  <cell>INT_NET</cell>
  <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
 </row>
@@ -538,14 +478,74 @@
  <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
 </row>
 <row>
- <cell>65</cell>
+ <cell>249</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/component_state_Z[5]</cell>
+ <cell>Net   : sb_sb_0_STAMP_PADDR[9]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: STAMP_0/component_state[5]</cell>
+ <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
+</row>
+<row>
+ <cell>229</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : AND2_0_Y</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: AND2_0</cell>
+</row>
+<row>
+ <cell>130</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_Z[1]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS[1]</cell>
+</row>
+<row>
+ <cell>120</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_0_a2</cell>
+</row>
+<row>
+ <cell>100</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_Z[2]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS[2]</cell>
+</row>
+<row>
+ <cell>69</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : MemorySynchronizer_0/APBState_Z[1]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: MemorySynchronizer_0/APBState[1]</cell>
+</row>
+<row>
+ <cell>64</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : STAMP_1/spi/state_Z[0]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: STAMP_1/spi/state[0]</cell>
 </row>
 <row>
  <cell>62</cell>
@@ -558,39 +558,9 @@
  <cell>Driver: CFG0_GND_INST</cell>
 </row>
 <row>
- <cell>59</cell>
+ <cell>60</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/spi/state_Z[0]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: STAMP_0/spi/state[0]</cell>
-</row>
-<row>
- <cell>55</cell>
- <cell>INT_NET</cell>
- <cell>Net   : ENABLE_MEMORY_LED_c</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
-</row>
-<row>
- <cell>50</cell>
- <cell>INT_NET</cell>
- <cell>Net   : MemorySynchronizer_0/un1_stamp1shadowreg145_0</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: MemorySynchronizer_0/un1_stamp1shadowreg145_2_0</cell>
-</row>
-<row>
- <cell>43</cell>
- <cell>INT_NET</cell>
- <cell>Net   : sb_sb_0_STAMP_PADDR[9]</cell>
+ <cell>Net   : sb_sb_0_STAMP_PADDR[7]</cell>
 </row>
 <row>
  <cell></cell>
@@ -606,37 +576,7 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>128</cell>
- <cell>INT_NET</cell>
- <cell>Net   : NN_1</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: ResetAND</cell>
-</row>
-<row>
- <cell>120</cell>
- <cell>INT_NET</cell>
- <cell>Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: MemorySynchronizer_0/un1_stamp1shadowreg145_2_0_a2_2_RNISMMJ1</cell>
-</row>
-<row>
- <cell>95</cell>
- <cell>INT_NET</cell>
- <cell>Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa_0_a2</cell>
-</row>
-<row>
- <cell>71</cell>
+ <cell>404</cell>
  <cell>INT_NET</cell>
  <cell>Net   : sb_sb_0_STAMP_PADDR[8]</cell>
 </row>
@@ -646,14 +586,74 @@
  <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
 </row>
 <row>
- <cell>65</cell>
+ <cell>249</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/component_state_Z[5]</cell>
+ <cell>Net   : sb_sb_0_STAMP_PADDR[9]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: STAMP_0/component_state[5]</cell>
+ <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
+</row>
+<row>
+ <cell>229</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : AND2_0_Y</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: AND2_0</cell>
+</row>
+<row>
+ <cell>130</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_Z[1]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS[1]</cell>
+</row>
+<row>
+ <cell>120</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_0_a2</cell>
+</row>
+<row>
+ <cell>100</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_Z[2]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS[2]</cell>
+</row>
+<row>
+ <cell>69</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : MemorySynchronizer_0/APBState_Z[1]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: MemorySynchronizer_0/APBState[1]</cell>
+</row>
+<row>
+ <cell>64</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : STAMP_1/spi/state_Z[0]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: STAMP_1/spi/state[0]</cell>
 </row>
 <row>
  <cell>62</cell>
@@ -666,39 +666,9 @@
  <cell>Driver: CFG0_GND_INST</cell>
 </row>
 <row>
- <cell>59</cell>
+ <cell>60</cell>
  <cell>INT_NET</cell>
- <cell>Net   : STAMP_0/spi/state_Z[0]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: STAMP_0/spi/state[0]</cell>
-</row>
-<row>
- <cell>55</cell>
- <cell>INT_NET</cell>
- <cell>Net   : ENABLE_MEMORY_LED_c</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST</cell>
-</row>
-<row>
- <cell>50</cell>
- <cell>INT_NET</cell>
- <cell>Net   : MemorySynchronizer_0/un1_stamp1shadowreg145_0</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: MemorySynchronizer_0/un1_stamp1shadowreg145_2_0</cell>
-</row>
-<row>
- <cell>43</cell>
- <cell>INT_NET</cell>
- <cell>Net   : sb_sb_0_STAMP_PADDR[9]</cell>
+ <cell>Net   : sb_sb_0_STAMP_PADDR[7]</cell>
 </row>
 <row>
  <cell></cell>

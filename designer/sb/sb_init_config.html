@@ -31,7 +31,7 @@
     <body>
         <h1 align="center">Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)</h1>
         <p>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</p>
-        <p>Date: Fri Jun 25 12:12:59 2021
+        <p>Date: Fri Nov 12 15:31:02 2021
 </p>
         <h2>sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP</h2>
         <table cellpadding="4">
@@ -51,7 +51,7 @@
                 <td>FCCC_FBDIV_CR0</td>
                 <td>FBDIV[7:0]</td>
                 <td>INIT[15:8]</td>
-                <td>8'h25</td>
+                <td>8'h1</td>
             </tr>
             <tr>
                 <td>FCCC_FBDIV_CR1</td>
@@ -63,13 +63,13 @@
                 <td>FCCC_GPD0_CR</td>
                 <td>GPDIV[7:0]</td>
                 <td>INIT[29:22]</td>
-                <td>8'h13</td>
+                <td>8'h1</td>
             </tr>
             <tr>
                 <td>FCCC_GPD1_CR</td>
                 <td>GPDIV[7:0]</td>
                 <td>INIT[37:30]</td>
-                <td>8'he8</td>
+                <td>8'h1</td>
             </tr>
             <tr>
                 <td>FCCC_GPD2_CR</td>
@@ -99,13 +99,13 @@
                 <td>FCCC_GPMUX0_CR</td>
                 <td>SEL_GPMUX0[4:0]</td>
                 <td>INIT[66:62]</td>
-                <td>5'h7</td>
+                <td>5'h18</td>
             </tr>
             <tr>
                 <td>FCCC_GPMUX1_CR</td>
                 <td>SEL_GPMUX1[4:0]</td>
                 <td>INIT[71:67]</td>
-                <td>5'h7</td>
+                <td>5'h18</td>
             </tr>
             <tr>
                 <td>FCCC_GPMUX2_CR</td>
@@ -123,7 +123,7 @@
                 <td>FCCC_NGMUX0_CR0</td>
                 <td>SELGL[4:0]</td>
                 <td>INIT[86:82]</td>
-                <td>5'h8</td>
+                <td>5'h18</td>
             </tr>
             <tr>
                 <td>FCCC_NGMUX0_CR1</td>
@@ -147,7 +147,7 @@
                 <td>FCCC_NGMUX2_CR0</td>
                 <td>SELGL[24:20]</td>
                 <td>INIT[106:102]</td>
-                <td>5'h9</td>
+                <td>5'h7</td>
             </tr>
             <tr>
                 <td>FCCC_NGMUX2_CR1</td>
@@ -171,13 +171,13 @@
                 <td>FCCC_GPD0_SYNC_CR</td>
                 <td>RESET_GENEN[0]</td>
                 <td>INIT[122:122]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
             </tr>
             <tr>
                 <td>FCCC_GPD1_SYNC_CR</td>
                 <td>RESET_GENEN[1]</td>
                 <td>INIT[123:123]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
             </tr>
             <tr>
                 <td>FCCC_GPD2_SYNC_CR</td>
@@ -225,7 +225,7 @@
                 <td>FCCC_PLL_CR7</td>
                 <td>DIVQ[2:0]</td>
                 <td>INIT[148:146]</td>
-                <td>3'h0</td>
+                <td>3'h4</td>
             </tr>
             <tr>
                 <td>FCCC_PLL_CR5</td>
@@ -243,7 +243,7 @@
                 <td>FCCC_PLL_CR5</td>
                 <td>MODE_3V3</td>
                 <td>INIT[151:151]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
             </tr>
             <tr>
                 <td>FCCC_PLL_CR6</td>
@@ -1685,7 +1685,7 @@
                 <td>MDDR_IO_CALIB</td>
                 <td>PCODE</td>
                 <td>INIT[472:467]</td>
-                <td>6'h00</td>
+                <td>'h2a</td>
                 <td>INIT[54]</td>
                 <td>1</td>
             </tr>
@@ -1693,7 +1693,7 @@
                 <td>MDDR_IO_CALIB</td>
                 <td>NCODE</td>
                 <td>INIT[478:473]</td>
-                <td>6'h00</td>
+                <td>'h28</td>
                 <td>INIT[54]</td>
                 <td>1</td>
             </tr>
@@ -1701,7 +1701,7 @@
                 <td>MDDR_IO_CALIB</td>
                 <td>CALIB_TRIM</td>
                 <td>INIT[479:479]</td>
-                <td>1'h0</td>
+                <td>1</td>
                 <td>INIT[54]</td>
                 <td>1</td>
             </tr>
@@ -1997,7 +1997,7 @@
                 <td>MSSDDR_PLL_STATUS_HIGH</td>
                 <td>FACC_PLL_MODE_3V3</td>
                 <td>INIT[578:578]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[63]</td>
                 <td>1</td>
             </tr>
@@ -2285,7 +2285,7 @@
                 <td>WDOGLOAD</td>
                 <td>G4_TESTWDOGLOAD</td>
                 <td>INIT[666:641]</td>
-                <td>26'h017D784</td>
+                <td>26'h2FAF080</td>
                 <td>N/A</td>
                 <td>N/A</td>
             </tr>
@@ -3917,7 +3917,7 @@
                 <td>IOMUXCELL_19_CONFIG</td>
                 <td>MSS_IOMUXSEL2</td>
                 <td>INIT[1060:1060]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[109]</td>
                 <td>1</td>
             </tr>
@@ -3925,7 +3925,7 @@
                 <td>IOMUXCELL_19_CONFIG</td>
                 <td>MSS_IOMUXSEL3</td>
                 <td>INIT[1061:1061]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[109]</td>
                 <td>1</td>
             </tr>
@@ -7026,7 +7026,7 @@
                 <td>SER_PLL_CONFIG_HIGH</td>
                 <td>PLL_MODE_3V3</td>
                 <td>INIT[113:113]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[9]</td>
                 <td>1</td>
             </tr>

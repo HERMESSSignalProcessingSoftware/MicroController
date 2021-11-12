@@ -16,7 +16,7 @@
 </row>
 <row>
  <cell>Package</cell>
- <cell>400 VF</cell>
+ <cell>144 TQ</cell>
 </row>
 <row>
  <cell>Speed Grade</cell>
@@ -2099,11 +2099,11 @@
 </row>
 <row>
  <cell>GL1_IS_USED</cell>
- <cell>1</cell>
+ <cell>0</cell>
 </row>
 <row>
  <cell>GL1_OUT_0_FREQ</cell>
- <cell>4.096</cell>
+ <cell></cell>
 </row>
 <row>
  <cell>GL2_IS_USED</cell>
@@ -2219,7 +2219,7 @@
 </row>
 <row>
  <cell>WDOG_LOAD</cell>
- <cell>0x17D784</cell>
+ <cell>0x2FAF080</cell>
 </row>
 <row>
  <cell>WDOG_MODE</cell>
@@ -3449,11 +3449,11 @@
 </row>
 <row>
  <cell>GPIO20_TYPE</cell>
- <cell>CONNECTION_FABRICB</cell>
+ <cell>CONNECTION_IOA</cell>
 </row>
 <row>
  <cell>GPIO20_USAGE</cell>
- <cell>USAGE_OUTPUT</cell>
+ <cell>NOT_USED</cell>
 </row>
 <row>
  <cell>GPIO21_FAB_CAPT</cell>
@@ -3461,11 +3461,11 @@
 </row>
 <row>
  <cell>GPIO21_TYPE</cell>
- <cell>CONNECTION_FABRICB</cell>
+ <cell>CONNECTION_IOA</cell>
 </row>
 <row>
  <cell>GPIO21_USAGE</cell>
- <cell>USAGE_OUTPUT</cell>
+ <cell>NOT_USED</cell>
 </row>
 <row>
  <cell>GPIO22_FAB_CAPT</cell>
@@ -3473,11 +3473,11 @@
 </row>
 <row>
  <cell>GPIO22_TYPE</cell>
- <cell>CONNECTION_FABRICB</cell>
+ <cell>CONNECTION_IOA</cell>
 </row>
 <row>
  <cell>GPIO22_USAGE</cell>
- <cell>USAGE_OUTPUT</cell>
+ <cell>NOT_USED</cell>
 </row>
 <row>
  <cell>GPIO23_FAB_CAPT</cell>
@@ -3656,7 +3656,7 @@
 </header>
 <row>
  <cell>NB_SLAVES</cell>
- <cell>1</cell>
+ <cell>2</cell>
 </row>
 <row>
  <cell>SPI_MUX</cell>
@@ -3667,7 +3667,7 @@
 </data>
 <separator/>
 <data>
-<name>Memory</name>
+<name>MemSync</name>
 <table>
 <header>
  <cell>Name</cell>
@@ -3695,7 +3695,7 @@
 </row>
 <row>
  <cell>NUM_OF_INTERRUPTS</cell>
- <cell>2</cell>
+ <cell>1</cell>
 </row>
 </table>
 </cdata>
@@ -3746,8 +3746,8 @@
 </header>
 <row>
  <cell>sb_sb_MSS_0:MSS_INT_F2M[0]</cell>
- <cell>Memory_0</cell>
- <cell>Memory_0_INTR_0_top, Memory_0_INTR_1_top</cell>
+ <cell>MemSync_0</cell>
+ <cell>MemSync_0_INTR_0_top</cell>
 </row>
 <row>
  <cell>sb_sb_MSS_0:MSS_INT_F2M[1]</cell>
@@ -3808,12 +3808,7 @@
  <cell>-</cell>
 </row>
 <row>
- <cell>Memory_0_INTR_0_top</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>Memory_0_INTR_1_top</cell>
+ <cell>MemSync_0_INTR_0_top</cell>
  <cell>IN</cell>
  <cell>-</cell>
 </row>
@@ -3848,7 +3843,7 @@
  <cell>-</cell>
 </row>
 <row>
- <cell>Memory</cell>
+ <cell>MemSync</cell>
  <cell>MIRROREDSLAVE</cell>
  <cell>Slave bus interface pin on  FIC0_Master_Subsystem</cell>
 </row>
@@ -3891,16 +3886,6 @@
  <cell>FIC_0_LOCK</cell>
  <cell>OUT</cell>
  <cell>Use this clock to drive peripherals in the FIC0_Slave_Subsystem or FIC0_Master_Subsystem</cell>
-</row>
-<row>
- <cell>FAB_CCC_GL1</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>FAB_CCC_LOCK</cell>
- <cell>OUT</cell>
- <cell>-</cell>
 </row>
 <row>
  <cell>MSS_READY</cell>
@@ -3963,21 +3948,6 @@
  <cell>-</cell>
 </row>
 <row>
- <cell>GPIO_20_M2F</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>GPIO_21_M2F</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>GPIO_22_M2F</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
  <cell>GPIO_30_M2F</cell>
  <cell>OUT</cell>
  <cell>-</cell>
@@ -4022,6 +3992,11 @@
  <cell>OUT</cell>
  <cell>-</cell>
 </row>
+<row>
+ <cell>SPI_0_SS1_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
 </table>
 </data>
 </toplevelport>
@@ -4047,8 +4022,8 @@
 </header>
 <row>
  <cell>Connect Generic User Slave Peripheral</cell>
- <cell>Memory is a slave on FIC0_Master_Subsystem subsystem.
-Connect your peripheral to Memory bus interface pin in the top design.</cell>
+ <cell>MemSync is a slave on FIC0_Master_Subsystem subsystem.
+Connect your peripheral to MemSync bus interface pin in the top design.</cell>
 </row>
 <separator/>
 <row>

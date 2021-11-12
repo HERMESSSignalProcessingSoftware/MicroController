@@ -20,12 +20,9 @@
 #define IN_RXSM_SODS                    2
 #define OUT_ADC_START                   3
 #define OUT_RESET_N                     4
-#define IN_SYNC_START                   5
-#define OUT_ENABLE_MEM_SYNC             20
+#define IN_WP                           5
 #define LED_RECORDING                   30
 #define LED_HEARTBEAT                   31
-#define nCS1                            21
-#define nCS2                            22
 
 /*-----------------------------------------------------------------------------
 * APB SLAVES
@@ -42,16 +39,14 @@
 /*-----------------------------------------------------------------------------
 * F2M INTERRUPTS (MSS_INT_F2M[x])
 *---------------------------------------------------------------------------*/
+#define F2M_INT_MEMORYSYNC              0
 #define F2M_INT_STAMP_0                 1
 #define F2M_INT_STAMP_1                 2
 #define F2M_INT_STAMP_2                 3
 #define F2M_INT_STAMP_3                 4
 #define F2M_INT_STAMP_4                 5
 #define F2M_INT_STAMP_5                 6
-/* !!! Wie unterscheidet man die beiden signale?*/
-#define F2M_INT_MEMORY_READ_INT         0
-#define F2M_INT_MEMORY_SYNC_INT         0
 
-#define MEMORY_SYNC_IRQn   FabricIrq0_IRQn
+#define MEMORY_SYNC_IRQn                FabricIrq0_IRQn
 
 #endif

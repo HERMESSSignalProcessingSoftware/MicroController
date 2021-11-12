@@ -6,9 +6,9 @@
 
 # Input Netlist Format: EDIF 
 
-# Family: SmartFusion2 , Die: M2S010 , Package: 400 VF , Speed grade: STD 
+# Family: SmartFusion2 , Die: M2S010 , Package: 144 TQ , Speed grade: STD 
 
-# Date generated: Fri Jun 25 12:12:20 2021 
+# Date generated: Wed Sep 29 12:58:43 2021 
 
 
 #
@@ -30,7 +30,7 @@
 # I/O constraints
 #
 
-set_io DEVRST_N -DIRECTION INPUT -pinname U17
+set_io DEVRST_N -DIRECTION INPUT -pinname 72
 
 #
 # Core cell constraints
