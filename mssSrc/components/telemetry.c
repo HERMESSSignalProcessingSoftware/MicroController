@@ -5,12 +5,15 @@
  *      Author: Robin Grimsmann
  */
 
-#include "tm.h"
+#include "telemetry.h"
 
 uint8_t TransmissionPtr[60];
 
 void InitTelemetry(void) {
     //TODO: Do other TM Stuff here
+    //- Init RS232 for telemetry
+    //- Add functions for transmitting 
+    //  - Maybe add functions for partial transmitting
 
     for (int i = 0; i < FRAMESIZE; i++) {
         TransmissionPtr[i] = 0;

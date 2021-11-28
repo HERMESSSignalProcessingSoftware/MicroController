@@ -1,141 +1,115 @@
-///*
-// * memory.c
-// *
-// *  Created on: 08.05.2021
-// *      Author: Robin Grimsmann
-// */
-//
-//#include "memory.h"
-//#include "../../CMSIS/system_m2sxxx.h"
-//#include "../../hw_platform.h"
-//
-//ConfigStatusT ResolveBitfield(uint32_t value) {
-//    ConfigStatusT csr = { 0 };
-//    csr.SPIStartAddr = value & (~0xFFFFFFFE);
-//    csr.LockCUFSM = value & (1 << CSR_MASK_LOCK_FSM);
-//    csr.PageSize = (value >> 8) & (0x0000FFFF);
-//    return csr;
-//}
-//
-//void SetStartAddress(uint32_t startAddr) {
-//    HW_set_32bit_reg(ADDR_MEMORY | MEMORY_STARTADDR, startAddr);
-//}
-//
-//void ReadMemory(enumMEM mem, uint32_t *memPool, uint32_t page) {
-//    if (memPool) {
-//        uint32_t cmd = page & 0x00FFFF00;
-//        addr_t addrReading = ADDR_MEMORY | MEMORY_MEMORY_READBACK_REG;
-//        addr_t addrCmd = ADDR_MEMORY | MEMORY_COMMAND_REG;
-//        addr_t addrCSR = ADDR_MEMORY | MEMORY_CONFIG_STATUS_REG;
-//        uint32_t memPoolCnt = 0;
-//        uint32_t data = 0;
-//        switch (mem) {
-//        case nCS1:
-//            cmd |= (COMMAND_READ_EXTERNAL_MEMORY_NCS1 << CMD_SHIFT);
-//            break;
-//        case nCS2:
-//            cmd |= (COMMAND_READ_EXTERNAL_MEMORY_NCS2 << CMD_SHIFT);
-//            break;
-//        default:
-//            break;
-//        }
-//        uint32_t CSR = HW_get_32bit_reg(addrCSR);
-//        ConfigStatusT c = ResolveBitfield(CSR);
-//        if (((CSR & MASK(CSR_MASK_SPI_BUSY))
-//                | (CSR & MASK(CSR_MASK_MEMORY_LOADED))) == 0) {
-//            HW_set_32bit_reg(addrCmd, cmd);
-//            do {
-//                CSR = HW_get_32bit_reg(addrCSR);
-//            } while (CSR & MASK(CSR_MASK_READING_INDICATOR)); // Wait until memory is loaded
-//            do {
-//                data = HW_get_32bit_reg(addrReading);
-//                CSR = HW_get_32bit_reg(addrCSR);
-//                memPool[memPoolCnt++] = data;
-//            } while (CSR & MASK(CSR_MASK_MEMORY_LOADED)); // While memory is available read
-//        }
-//
-//    }
-//}
-//
-//void ReadStamps(Stamp_t *stamp) {
-//    uint32_t *p = (uint32_t*) stamp;
-//    for (int i = 4; i < 0x034; i += 4) {
-//        *(p++) = HW_get_32bit_reg(ADDR_MEMORY | i);
-//        //p++;
-//    }
-//}
-//
-//void InitMemory(ConfigStatusT csr) {
-//    uint32_t csr_value = CreateBitfield(csr);
-//    HW_set_32bit_reg(ADDR_MEMORY | MEMORY_CONFIG_STATUS_REG, csr_value);
-//    HW_set_32bit_reg(ADDR_MEMORY | MEMORY_STARTADDR, csr.StartPageNumber);
-//}
-//
-///* not tested yet */
-//void ReconfigureConfigStatusReg(uint32_t value) {
-//    uint32_t CSRread = HW_get_32bit_reg(ADDR_MEMORY | MEMORY_CONFIG_STATUS_REG);
-//    uint32_t CSRnew = CSRread & 0xE000001A;
-//    /* Writing the new Pagesize */
-//    CSRnew |= (value & 0x00FFFF00);
-//    CSRnew |= (value & (1 << CSR_MASK_LOCK_FSM));
-//    CSRnew |= (value & 0x00000001);
-//    HW_set_32bit_reg(ADDR_MEMORY | MEMORY_CONFIG_STATUS_REG, CSRnew);
-//}
-//
-//int TransmitData(uint32_t *data, size_t size, enumMEM memoryID) {
-//    uint32_t rxReg = 0;
-//    uint32_t counter = 0;
-//    uint32_t csr = HW_get_32bit_reg(ADDR_MEMORY | MEMORY_CONFIG_STATUS_REG);
-//    if (data && size > 0) {
-//        for (size_t index = 0; index < size; index++) {
-//            SPITransmit(data[index], memoryID, WAIT_UNTIL_DONE);
-////            if (data[index] == 0x06000000 || data[index] == 0x00000006) { /* Check if write enable latch has be updated */
-////                SPITransmit(0x05000000, memoryID, WAIT_UNTIL_DONE); /* Transmit command RDSR1 to the memory device */
-////                SPITransmit(0x00, memoryID, WAIT_UNTIL_DONE); /* Receive the value of SR1 */
-////                rxReg = HW_get_32bit_reg(ADDR_MEMORY | MEMORY_SPI_RX_REG);
-////                if (rxReg & (1 << 1)) {
-////                   /* WEL set */
-////                   counter = 1;
-////                }
-////                SPITransmit(0x00, memoryID, WAIT_UNTIL_DONE); /* Receive the value of SR1 */
-////                rxReg = HW_get_32bit_reg(ADDR_MEMORY | MEMORY_SPI_RX_REG);
-////               if (rxReg & (1 << 1)) {
-////                  /* WEL set */
-////                  counter = 1;
-////               }
-////            }
-//        }
-//    }
-//    return counter;
-//}
-//
-//void SPITransmit(uint32_t data, enumMEM dest, SPIWaitingMode waiting) {
-//    uint32_t csr = 0;
-//    uint32_t command;
-//    switch(dest) {
-//    case nCS1:
-//        command = COMMAND_SPI_TRANSMIT_NCS1 << CMD_SHIFT;
-//        break;
-//    case nCS2:
-//        command = COMMAND_SPI_TRANSMIT_NCS2 << CMD_SHIFT;
-//        break;
-//    default:
-//        break;
-//    }
-//
-//    /* Wait until SPI is cleared */
-//    do {
-//        csr = HW_get_32bit_reg(ADDR_MEMORY | MEMORY_CONFIG_STATUS_REG);
-//    } while(csr & MASK(CSR_MASK_SPI_BUSY));
-//    /* Load new data into SPI TX reg */
-//    HW_set_32bit_reg(ADDR_MEMORY | MEMORY_SPI_TX_REG, data);
-//    /* Transmit the data to the device */
-//    HW_set_32bit_reg(ADDR_MEMORY | MEMORY_COMMAND_REG, command);
-//    /* wait here until spi finished the transmission */
-//    if (waiting == WAIT_UNTIL_DONE) {
-//        do {
-//            csr = HW_get_32bit_reg(ADDR_MEMORY | MEMORY_CONFIG_STATUS_REG);
-//        } while (csr & MASK(CSR_MASK_SPI_BUSY));
-//    }
-//}
-//
+/*
+ * memory.c
+ *
+ *  Created on: Jun 17, 2021
+ *      Author: Robin Grimsmann
+ */
+
+#include "memory.h"
+#include <stdio.h>
+#include "../../drivers/mss_gpio/mss_gpio.h"
+#include "../../hw_platform.h"
+
+#define PAGE_COUNT 125000
+
+/**
+ * Creating a pointer to save the data internally and than process SPI actions
+ *
+ * */
+uint8_t MemoryPtr[PAGESIZE];
+
+/**
+ * The numer of used bytes in the memory area referred by MemoryPtr
+ */
+uint32_t MemoryPtrWatermark32Bit = 0x0;
+
+/*
+ * The number of interrupts is an indicator for the frame, transmitted by telemetry
+ */
+uint32_t MemoryInterruptCounter = 0x0;
+
+/*
+ * Continuous counts the datasets of the SPU starting with 0 on STARTPAGE at nCSx with x defined by the user
+ */
+uint32_t MemoryDatasetCounter = 0x0;
+
+/*
+ * The fist page of nCS1 connected device contains the current Page address on
+ */
+uint8_t MemoryMetadataPage[PAGESIZE];
+
+void InitMemorySynchronizer(uint32_t start) {
+    MSS_SIGNALS = 0x0;
+    /* Set disable the not ABP part of this component*/
+    MSS_GPIO_set_output(OUT_ENABLE_MEM_SYNC, 0);
+
+  
+    /* Disable Interrupts */
+    NVIC_DisableIRQ(MEMORY_SYNC_IRQn);
+    NVIC_ClearPendingIRQ(MEMORY_SYNC_IRQn);
+
+    /* Init via APB */
+    uint32_t ConfigRegValue = CONFIG_REG_ENABLE_INTERRUPT;
+    ConfigRegValue |= CONFIG_REG_NUMBER_OF_NEW_AVAILABLES(4);
+    ConfigRegValue |= CONFIG_REG_NUMBER_OF_REQUEST_RESNYCS(4);
+    HW_set_32bit_reg(MEMORY_REG(ConfigReg), ConfigRegValue);
+    /* Programm the Waiting Value of S1 to 500 (20us)*/
+    HW_set_32bit_reg(MEMORY_REG(WaitingTimerValueReg), 0x000001F4);
+    /* Wait for 2 ms after each Resync Event */
+    HW_set_32bit_reg(MEMORY_REG(ResyncTimerValueReg), 0x0000C350);
+    /* Set the Reset Timer to 500 ms*/
+    HW_set_32bit_reg(MEMORY_REG(ResyncTimerValueReg), 0x00bebc20);
+
+    /* Setup the puffer */
+    for (int i = 0; i < PAGESIZE; i++) {
+        MemoryPtr[i] = 0;
+    }
+    
+    NVIC_EnableIRQ(MEMORY_SYNC_IRQn);
+    if(start == AUTO_START_ON) {
+        /* Enable this component */
+        MSS_GPIO_set_output(OUT_ENABLE_MEM_SYNC, 1);
+    } else {
+        MSS_GPIO_set_output(OUT_ENABLE_MEM_SYNC, 0);
+    }
+}
+
+/*
+ * Copies the registers Stamp1Shadow1 - Stamp6Shadow2, SR, SR2, Timestamp to the internal memory
+ * @param puffer pointer to a memory region of 512 byte
+ * @param SRlocals missing three bits covering SODS SOE and LO signals to save them to memory
+ * @return uint32_t the value of SR1 for interrupt reason examination after copying the data
+ */
+uint32_t CopyDataFabricToMaster(uint8_t *puffer, uint32_t SRlocals) {
+    uint32_t SR1 = HW_get_32bit_reg(MEMORY_REG(SynchStatusReg));
+    SR1 |= SRlocals;
+    if (puffer) {
+        uint32_t *ptr32 = (uint32_t*) puffer;
+        if (MemoryPtrWatermark32Bit == 0) {
+            puffer[0] = 0x7F; // Basic start of page magic number
+            puffer[1] = (uint8_t) ((MemoryDatasetCounter >> 16) & 0x000000FF);
+            puffer[2] = (uint8_t) ((MemoryDatasetCounter >> 8) & 0x000000FF);
+            puffer[3] = (uint8_t) ((MemoryDatasetCounter) & 0x000000FF);
+            MemoryPtrWatermark32Bit++;
+            MemoryDatasetCounter++;
+        }
+        ptr32[MemoryPtrWatermark32Bit++] = HW_get_32bit_reg(
+                MEMORY_REG(TimeStampReg));
+        /*Copy all the data */
+        for (int i = LOWESTSTAMP; i <= HIGHESTSTAMP; i += 4) {
+            ptr32[MemoryPtrWatermark32Bit++] = HW_get_32bit_reg(MEMORY_REG(i));
+            HW_set_32bit_reg(MEMORY_REG(i), 0x0); //Reset the stamp shadow registers
+        }
+        /* Add status registers */
+        ptr32[MemoryPtrWatermark32Bit++] = SR1;
+        ptr32[MemoryPtrWatermark32Bit++] = HW_get_32bit_reg(
+                MEMORY_REG(SynchStatusReg2));
+        /* Reset TimeStampReg, SR2, SR1 values */
+        HW_set_32bit_reg(MEMORY_REG(TimeStampReg), 0x0);
+        HW_set_32bit_reg(MEMORY_REG(SynchStatusReg2), 0x0);
+        HW_set_32bit_reg(MEMORY_REG(SynchStatusReg), 0x0);
+    }
+    return SR1;
+}
+
+

@@ -11,8 +11,8 @@
  * !!!
  */
 
-#ifndef TM_H
-#define TM_H
+#ifndef TELEMETRY_H
+#define TELEMETRY_H
 
 
 #ifdef __cplusplus

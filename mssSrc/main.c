@@ -12,9 +12,10 @@
 #include "components/tools.h"
 #include "components/stamps.h"
 #include "hw_platform.h"
-#include "drivers/apb_memory/MemoryRev2.h"
+#include "drivers/apb_memory/memory.h"
 #include "drivers/mss_spi/mss_spi.h"
 #include "components/HERMESS.h"
+#include "components/storage.h"
 
 /**
  * @brief Use this 32 bit value to add the missing three bits into the SR1 from the fabric befor saving them.
@@ -63,7 +64,8 @@ int main(void) {
     /* Config the heartbeat duration */
     SetHeartbeatPeriode(500);
     /* run the memory test */
-    InitMemorySynchronizer(DO_NOT_ERASE, AUTO_START_OFF);
+    InitSPI(DO_NOT_ERASE);
+    InitMemorySynchronizer(AUTO_START_OFF);
 
 
     MemoryConfig MemConfig = Recovery();
