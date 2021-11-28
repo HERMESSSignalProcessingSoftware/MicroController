@@ -6,17 +6,17 @@ with Synopsys, Inc. All other use, reproduction, modification, or distribution o
 Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: Q-2020.03M-SP1
-Install: D:\Programme\LiberoSoCv12.6\SynplifyPro
+Install: J:\LiberoSoC\SynplifyPro
 OS: Windows 6.2
 
-Hostname: BND01
+Hostname: LUS210
 
 Implementation : synthesis
 
-# Written on Fri Jun 25 12:11:48 2021
+# Written on Wed Sep 29 12:58:13 2021
 
 ##### FILES SYNTAX CHECKED ##############################################
-Constraint File(s):      "D:\HERMESS_SPSoftware\Microcontroller\designer\sb\synthesis.fdc"
+Constraint File(s):      "C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\synthesis.fdc"
 
 #Run constraint checker to find more issues with constraints.
 #########################################################################
@@ -35,7 +35,7 @@ Level     Clock                                       Frequency     Period      
 ----------------------------------------------------------------------------------------------------------------------------
 0 -       System                                      100.0 MHz     10.000        system       system_clkgroup         0    
                                                                                                                             
-0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     800  
+0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     2784 
 ============================================================================================================================
 
 
@@ -47,5 +47,5 @@ Clock                                       Load      Pin                       
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 System                                      0         -                                   -                           -                 -                             
                                                                                                                                                                       
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     800       sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_0.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     2784      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_6.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
 ======================================================================================================================================================================

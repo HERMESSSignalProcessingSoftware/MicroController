@@ -1,184 +1,174 @@
-@N: CD231 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\vhd2008\std1164.vhd":888:16:888:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb\sb.vhd":17:7:17:8|Synthesizing work.sb.rtl.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Synchronizer.vhd":10:7:10:18|Synthesizing work.synchronizer.architecture_synchronizer.
-@W: CD638 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Synchronizer.vhd":29:11:29:14|Signal test is undriven. Either assign the signal a value or remove the signal declaration.
-Post processing for work.synchronizer.architecture_synchronizer
-Running optimization stage 1 on Synchronizer .......
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":31:7:31:11|Synthesizing work.stamp.architecture_stamp.
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":72:27:72:28|Using onehot encoding for type component_state_t. For example, enumeration fsm_idle is mapped to "100000".
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":75:27:75:28|Using sequential encoding for type spi_request_for_t.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":426:16:426:29|OTHERS clause is not synthesized.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":30:7:30:16|Synthesizing work.spi_master.logic.
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":53:15:53:16|Using sequential encoding for type machine.
+@N: CD231 :"J:\LiberoSoC\SynplifyPro\lib\vhd2008\std1164.vhd":888:16:888:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd":17:7:17:8|Synthesizing work.sb.rtl.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":33:7:33:11|Synthesizing work.stamp.architecture_stamp.
+@N: CD231 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":74:27:74:28|Using onehot encoding for type component_state_t. For example, enumeration fsm_idle is mapped to "100000".
+@N: CD233 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":77:27:77:28|Using sequential encoding for type spi_request_for_t.
+@N: CD604 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":428:16:428:29|OTHERS clause is not synthesized.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":30:7:30:16|Synthesizing work.spi_master.logic.
+@N: CD233 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":53:15:53:16|Using sequential encoding for type machine.
 Post processing for work.spi_master.logic
 Running optimization stage 1 on spi_master .......
-@W: CL271 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Pruning unused bits 31 to 1 of slave_6(31 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal rx_buffer[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal clk_toggles[5:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal tx_buffer[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal continue. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal sclk_buffer. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal last_bit_rx[5:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal count[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal slave[0:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal clk_ratio[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal assert_data. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@W: CL271 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Pruning unused bits 31 to 1 of slave_6(31 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal rx_buffer[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal clk_toggles[5:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal tx_buffer[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal continue. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal sclk_buffer. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal last_bit_rx[5:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal count[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal slave[0:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal clk_ratio[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Feedback mux created for signal assert_data. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
 Post processing for work.stamp.architecture_stamp
 Running optimization stage 1 on STAMP .......
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal PRDATA[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal apb_spi_finished. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal measurement_temp[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal spi_request_for[1:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal measurement_dms2[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal measurement_dms1[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal spi_tx_data[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal apb_is_reset. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Feedback mux created for signal apb_is_atomic. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\sb_sb.vhd":20:7:20:11|Synthesizing work.sb_sb.rtl.
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":790:10:790:17|Synthesizing smartfusion2.sysreset.syn_black_box.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Feedback mux created for signal PRDATA[31:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Feedback mux created for signal apb_spi_finished. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Feedback mux created for signal measurement_temp[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Feedback mux created for signal spi_request_for[1:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Feedback mux created for signal measurement_dms2[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Feedback mux created for signal measurement_dms1[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Feedback mux created for signal spi_tx_data[15:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Feedback mux created for signal apb_is_reset. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Feedback mux created for signal apb_is_atomic. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd":20:7:20:11|Synthesizing work.sb_sb.rtl.
+@N: CD630 :"J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.vhd":790:10:790:17|Synthesizing smartfusion2.sysreset.syn_black_box.
 Post processing for smartfusion2.sysreset.syn_black_box
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS.vhd":17:7:17:15|Synthesizing work.sb_sb_mss.rtl.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd":10:7:10:13|Synthesizing work.mss_010.def_arch.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd":17:7:17:15|Synthesizing work.sb_sb_mss.rtl.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd":10:7:10:13|Synthesizing work.mss_010.def_arch.
 Post processing for work.mss_010.def_arch
 Post processing for work.sb_sb_mss.rtl
 Running optimization stage 1 on sb_sb_MSS .......
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":249:10:249:12|Synthesizing smartfusion2.or3.syn_black_box.
-Post processing for smartfusion2.or3.syn_black_box
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":8:7:8:24|Synthesizing work.sb_sb_fabosc_0_osc.def_arch.
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":562:10:562:15|Synthesizing smartfusion2.clkint.syn_black_box.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":8:7:8:24|Synthesizing work.sb_sb_fabosc_0_osc.def_arch.
+@N: CD630 :"J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.vhd":562:10:562:15|Synthesizing smartfusion2.clkint.syn_black_box.
 Post processing for smartfusion2.clkint.syn_black_box
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd":19:7:19:20|Synthesizing work.rcosc_25_50mhz.def_arch.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd":19:7:19:20|Synthesizing work.rcosc_25_50mhz.def_arch.
 Post processing for work.rcosc_25_50mhz.def_arch
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd":79:7:79:24|Synthesizing work.rcosc_25_50mhz_fab.def_arch.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd":79:7:79:24|Synthesizing work.rcosc_25_50mhz_fab.def_arch.
 Post processing for work.rcosc_25_50mhz_fab.def_arch
 Post processing for work.sb_sb_fabosc_0_osc.def_arch
 Running optimization stage 1 on sb_sb_FABOSC_0_OSC .......
-@W: CL240 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":16:10:16:19|Signal XTLOSC_O2F is floating; a simulation mismatch is possible.
-@W: CL240 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":15:10:15:19|Signal XTLOSC_CCC is floating; a simulation mismatch is possible.
-@W: CL240 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":14:10:14:23|Signal RCOSC_1MHZ_O2F is floating; a simulation mismatch is possible.
-@W: CL240 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":13:10:13:23|Signal RCOSC_1MHZ_CCC is floating; a simulation mismatch is possible.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":27:7:27:16|Synthesizing work.coreresetp.rtl.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":477:8:477:25|Signal soft_ext_reset_out in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":478:8:478:21|Signal soft_reset_f2m in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":479:8:479:20|Signal soft_m3_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":480:8:480:37|Signal soft_mddr_ddr_axi_s_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":481:8:481:27|Signal soft_fddr_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":482:8:482:27|Signal soft_sdif0_phy_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":483:8:483:28|Signal soft_sdif0_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":484:8:484:27|Signal soft_sdif1_phy_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":485:8:485:28|Signal soft_sdif1_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":486:8:486:27|Signal soft_sdif2_phy_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":487:8:487:28|Signal soft_sdif2_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":488:8:488:27|Signal soft_sdif3_phy_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":489:8:489:28|Signal soft_sdif3_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":490:8:490:30|Signal soft_sdif0_0_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":491:8:491:30|Signal soft_sdif0_1_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CL240 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":16:10:16:19|Signal XTLOSC_O2F is floating; a simulation mismatch is possible.
+@W: CL240 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":15:10:15:19|Signal XTLOSC_CCC is floating; a simulation mismatch is possible.
+@W: CL240 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":14:10:14:23|Signal RCOSC_1MHZ_O2F is floating; a simulation mismatch is possible.
+@W: CL240 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":13:10:13:23|Signal RCOSC_1MHZ_CCC is floating; a simulation mismatch is possible.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":27:7:27:16|Synthesizing work.coreresetp.rtl.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":477:8:477:25|Signal soft_ext_reset_out in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":478:8:478:21|Signal soft_reset_f2m in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":479:8:479:20|Signal soft_m3_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":480:8:480:37|Signal soft_mddr_ddr_axi_s_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":481:8:481:27|Signal soft_fddr_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":482:8:482:27|Signal soft_sdif0_phy_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":483:8:483:28|Signal soft_sdif0_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":484:8:484:27|Signal soft_sdif1_phy_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":485:8:485:28|Signal soft_sdif1_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":486:8:486:27|Signal soft_sdif2_phy_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":487:8:487:28|Signal soft_sdif2_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":488:8:488:27|Signal soft_sdif3_phy_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":489:8:489:28|Signal soft_sdif3_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":490:8:490:30|Signal soft_sdif0_0_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":491:8:491:30|Signal soft_sdif0_1_core_reset in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
 Post processing for work.coreresetp.rtl
 Running optimization stage 1 on CoreResetP .......
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1519:8:1519:9|Pruning unused register count_ddr_2(13 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1495:8:1495:9|Pruning unused register count_sdif3_1(12 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1471:8:1471:9|Pruning unused register count_sdif2_1(12 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1447:8:1447:9|Pruning unused register count_sdif1_1(12 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1423:8:1423:9|Pruning unused register count_sdif0_2(12 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_ddr_enable_rcosc_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_ddr_enable_q1_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif3_enable_rcosc_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif2_enable_rcosc_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif1_enable_rcosc_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif0_enable_rcosc_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif3_enable_q1_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif2_enable_q1_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif1_enable_q1_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif0_enable_q1_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Pruning unused register count_sdif3_enable_3. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Pruning unused register count_sdif2_enable_3. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Pruning unused register count_sdif1_enable_3. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Pruning unused register count_sdif0_enable_3. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Pruning unused register count_ddr_enable_3. Make sure that there are no unused intermediate registers.
-@W: CL177 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1331:8:1331:9|Sharing sequential element M3_RESET_N_int. Add a syn_preserve attribute to the element to prevent sharing.
-@W: CL177 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif2_spll_lock_q1. Add a syn_preserve attribute to the element to prevent sharing.
-@W: CL177 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif1_spll_lock_q1. Add a syn_preserve attribute to the element to prevent sharing.
-@W: CL177 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif0_spll_lock_q1. Add a syn_preserve attribute to the element to prevent sharing.
-@W: CL177 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element fpll_lock_q1. Add a syn_preserve attribute to the element to prevent sharing.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1376:8:1376:9|Optimizing register bit EXT_RESET_OUT_int to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Pruning unused register release_ext_reset. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1376:8:1376:9|Pruning unused register EXT_RESET_OUT_int. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1376:8:1376:9|Pruning unused register sm2_state(2 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":792:8:792:9|Pruning unused register sm2_areset_n_q1. Make sure that there are no unused intermediate registers.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":792:8:792:9|Pruning unused register sm2_areset_n_clk_base. Make sure that there are no unused intermediate registers.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":34:7:34:14|Synthesizing coreapb3_lib.coreapb3.coreapb3_arch.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":665:16:665:29|OTHERS clause is not synthesized.
-@W: CD434 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":1453:41:1453:46|Signal infill in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD638 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":616:7:616:15|Signal ia_prdata is undriven. Either assign the signal a value or remove the signal declaration.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3_muxptob3.vhd":33:7:33:23|Synthesizing coreapb3_lib.coreapb3_muxptob3.coreapb3_muxptob3_arch.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1519:8:1519:9|Pruning unused register count_ddr_2(13 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1495:8:1495:9|Pruning unused register count_sdif3_1(12 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1471:8:1471:9|Pruning unused register count_sdif2_1(12 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1447:8:1447:9|Pruning unused register count_sdif1_1(12 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1423:8:1423:9|Pruning unused register count_sdif0_2(12 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_ddr_enable_rcosc_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_ddr_enable_q1_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif3_enable_rcosc_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif2_enable_rcosc_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif1_enable_rcosc_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif0_enable_rcosc_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif3_enable_q1_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif2_enable_q1_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif1_enable_q1_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1395:8:1395:9|Pruning unused register count_sdif0_enable_q1_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Pruning unused register count_sdif3_enable_3. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Pruning unused register count_sdif2_enable_3. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Pruning unused register count_sdif1_enable_3. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Pruning unused register count_sdif0_enable_3. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Pruning unused register count_ddr_enable_3. Make sure that there are no unused intermediate registers.
+@W: CL177 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1331:8:1331:9|Sharing sequential element M3_RESET_N_int. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif2_spll_lock_q1. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif1_spll_lock_q1. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif0_spll_lock_q1. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element fpll_lock_q1. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1376:8:1376:9|Optimizing register bit EXT_RESET_OUT_int to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Pruning unused register release_ext_reset. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1376:8:1376:9|Pruning unused register EXT_RESET_OUT_int. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1376:8:1376:9|Pruning unused register sm2_state(2 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":792:8:792:9|Pruning unused register sm2_areset_n_q1. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":792:8:792:9|Pruning unused register sm2_areset_n_clk_base. Make sure that there are no unused intermediate registers.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":34:7:34:14|Synthesizing coreapb3_lib.coreapb3.coreapb3_arch.
+@N: CD604 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":665:16:665:29|OTHERS clause is not synthesized.
+@W: CD434 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":1453:41:1453:46|Signal infill in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD638 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":616:7:616:15|Signal ia_prdata is undriven. Either assign the signal a value or remove the signal declaration.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3_muxptob3.vhd":33:7:33:23|Synthesizing coreapb3_lib.coreapb3_muxptob3.coreapb3_muxptob3_arch.
 Post processing for coreapb3_lib.coreapb3_muxptob3.coreapb3_muxptob3_arch
 Running optimization stage 1 on COREAPB3_MUXPTOB3 .......
 Post processing for coreapb3_lib.coreapb3.coreapb3_arch
 Running optimization stage 1 on CoreAPB3 .......
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd":8:7:8:22|Synthesizing work.sb_sb_ccc_0_fccc.def_arch.
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":798:10:798:12|Synthesizing smartfusion2.ccc.syn_black_box.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd":8:7:8:22|Synthesizing work.sb_sb_ccc_0_fccc.def_arch.
+@N: CD630 :"J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.vhd":798:10:798:12|Synthesizing smartfusion2.ccc.syn_black_box.
 Post processing for smartfusion2.ccc.syn_black_box
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":576:10:576:12|Synthesizing smartfusion2.gnd.syn_black_box.
+@N: CD630 :"J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.vhd":576:10:576:12|Synthesizing smartfusion2.gnd.syn_black_box.
 Post processing for smartfusion2.gnd.syn_black_box
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":582:10:582:12|Synthesizing smartfusion2.vcc.syn_black_box.
+@N: CD630 :"J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.vhd":582:10:582:12|Synthesizing smartfusion2.vcc.syn_black_box.
 Post processing for smartfusion2.vcc.syn_black_box
 Post processing for work.sb_sb_ccc_0_fccc.def_arch
 Running optimization stage 1 on sb_sb_CCC_0_FCCC .......
 Post processing for work.sb_sb.rtl
 Running optimization stage 1 on sb_sb .......
-@N: CD630 :"D:\Programme\LiberoSoCv12.6\SynplifyPro\lib\generic\smartfusion2.vhd":191:10:191:13|Synthesizing smartfusion2.and2.syn_black_box.
-Post processing for smartfusion2.and2.syn_black_box
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":47:7:47:24|Synthesizing work.memorysynchronizer.arch.
-@N: CD231 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":140:27:140:28|Using onehot encoding for type memorysyncstate_t. For example, enumeration start is mapped to "1000000".
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":142:22:142:23|Using sequential encoding for type apbstatetype.
-@W: CD273 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":348:55:348:75|Comparison (/=) of different length arrays is always true!
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":592:16:592:29|OTHERS clause is not synthesized.
-@N: CD630 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":28:7:28:15|Synthesizing work.timestamp.behaviour.
-@N: CD233 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":38:16:38:17|Using sequential encoding for type t_tate.
-@N: CD604 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":65:20:65:33|OTHERS clause is not synthesized.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":47:7:47:24|Synthesizing work.memorysynchronizer.arch.
+@N: CD231 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":140:27:140:28|Using onehot encoding for type memorysyncstate_t. For example, enumeration start is mapped to "1000000".
+@N: CD233 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":142:22:142:23|Using sequential encoding for type apbstatetype.
+@W: CD273 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":348:55:348:75|Comparison (/=) of different length arrays is always true!
+@N: CD604 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":592:16:592:29|OTHERS clause is not synthesized.
+@N: CD630 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Timestamp.vhd":28:7:28:15|Synthesizing work.timestamp.behaviour.
 Post processing for work.timestamp.behaviour
 Running optimization stage 1 on Timestamp .......
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":46:8:46:9|Optimizing register bit state(s1) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL169 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":46:8:46:9|Pruning unused register state(s1). Make sure that there are no unused intermediate registers.
 Post processing for work.memorysynchronizer.arch
 Running optimization stage 1 on MemorySynchronizer .......
-@A: CL282 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Feedback mux created for signal end_one_counter[2:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|All reachable assignments to SynchStatusReg(27) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|All reachable assignments to SynchStatusReg(29) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|All reachable assignments to getTime are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|All reachable assignments to PSLVERR are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg2(5) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg2(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bit 31 of SynchStatusReg2(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bit 5 of SynchStatusReg2(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@A: CL282 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Feedback mux created for signal end_one_counter[2:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@W: CL111 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|All reachable assignments to SynchStatusReg(27) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|All reachable assignments to SynchStatusReg(29) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|All reachable assignments to getTime are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|All reachable assignments to PSLVERR are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg2(5) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg2(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bit 31 of SynchStatusReg2(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bit 5 of SynchStatusReg2(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CD630 :"J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.vhd":191:10:191:13|Synthesizing smartfusion2.and2.syn_black_box.
+Post processing for smartfusion2.and2.syn_black_box
 Post processing for work.sb.rtl
 Running optimization stage 1 on sb .......
 Running optimization stage 2 on Timestamp .......
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Timestamp.vhd":33:4:33:10|Input getTime is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Timestamp.vhd":33:4:33:10|Input getTime is unused.
 Running optimization stage 2 on MemorySynchronizer .......
-@N: CL189 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Register bit end_one_counter(2) is always 0.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit resynceventpulldowncounter(3) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit resynceventpulldowncounter(4) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit resynctimercounter(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(14) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(15) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(16) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(17) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(18) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(19) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(20) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(21) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bits 21 to 14 of SynchStatusReg(31 downto 2). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bit 31 of resynctimercounter(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bits 4 to 3 of resynceventpulldowncounter(4 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bit 2 of end_one_counter(2 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Trying to extract state machine for register APBState.
+@N: CL189 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Register bit end_one_counter(2) is always 0.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit resynceventpulldowncounter(3) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit resynceventpulldowncounter(4) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit resynctimercounter(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(14) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(15) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(16) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(17) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(18) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(19) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(20) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Optimizing register bit SynchStatusReg(21) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL279 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bits 21 to 14 of SynchStatusReg(31 downto 2). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bit 31 of resynctimercounter(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bits 4 to 3 of resynceventpulldowncounter(4 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Pruning register bit 2 of end_one_counter(2 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Trying to extract state machine for register APBState.
 Extracted state machine for register APBState
 State machine has 3 reachable states with original encodings of:
    00
    01
    10
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\MemorySynchronizer.vhd":284:8:284:9|Trying to extract state machine for register MemorySyncState.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd":284:8:284:9|Trying to extract state machine for register MemorySyncState.
 Extracted state machine for register MemorySyncState
 State machine has 6 reachable states with original encodings of:
    0000001
@@ -190,70 +180,70 @@ State machine has 6 reachable states with original encodings of:
 Running optimization stage 2 on sb_sb_CCC_0_FCCC .......
 Running optimization stage 2 on COREAPB3_MUXPTOB3 .......
 Running optimization stage 2 on CoreAPB3 .......
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":75:0:75:4|Input IADDR is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":76:0:76:6|Input PRESETN is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":77:0:77:3|Input PCLK is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":114:0:114:7|Input PRDATAS7 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":115:0:115:7|Input PRDATAS8 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":116:0:116:7|Input PRDATAS9 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":117:0:117:8|Input PRDATAS10 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":118:0:118:8|Input PRDATAS11 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":119:0:119:8|Input PRDATAS12 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":120:0:120:8|Input PRDATAS13 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":121:0:121:8|Input PRDATAS14 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":122:0:122:8|Input PRDATAS15 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":131:0:131:7|Input PREADYS7 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":132:0:132:7|Input PREADYS8 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":133:0:133:7|Input PREADYS9 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":134:0:134:8|Input PREADYS10 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":135:0:135:8|Input PREADYS11 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":136:0:136:8|Input PREADYS12 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":137:0:137:8|Input PREADYS13 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":138:0:138:8|Input PREADYS14 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":139:0:139:8|Input PREADYS15 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":148:0:148:8|Input PSLVERRS7 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":149:0:149:8|Input PSLVERRS8 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":150:0:150:8|Input PSLVERRS9 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":151:0:151:9|Input PSLVERRS10 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":152:0:152:9|Input PSLVERRS11 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":153:0:153:9|Input PSLVERRS12 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":154:0:154:9|Input PSLVERRS13 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":155:0:155:9|Input PSLVERRS14 is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":156:0:156:9|Input PSLVERRS15 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":75:0:75:4|Input IADDR is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":76:0:76:6|Input PRESETN is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":77:0:77:3|Input PCLK is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":114:0:114:7|Input PRDATAS7 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":115:0:115:7|Input PRDATAS8 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":116:0:116:7|Input PRDATAS9 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":117:0:117:8|Input PRDATAS10 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":118:0:118:8|Input PRDATAS11 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":119:0:119:8|Input PRDATAS12 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":120:0:120:8|Input PRDATAS13 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":121:0:121:8|Input PRDATAS14 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":122:0:122:8|Input PRDATAS15 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":131:0:131:7|Input PREADYS7 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":132:0:132:7|Input PREADYS8 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":133:0:133:7|Input PREADYS9 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":134:0:134:8|Input PREADYS10 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":135:0:135:8|Input PREADYS11 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":136:0:136:8|Input PREADYS12 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":137:0:137:8|Input PREADYS13 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":138:0:138:8|Input PREADYS14 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":139:0:139:8|Input PREADYS15 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":148:0:148:8|Input PSLVERRS7 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":149:0:149:8|Input PSLVERRS8 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":150:0:150:8|Input PSLVERRS9 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":151:0:151:9|Input PSLVERRS10 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":152:0:152:9|Input PSLVERRS11 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":153:0:153:9|Input PSLVERRS12 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":154:0:154:9|Input PSLVERRS13 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":155:0:155:9|Input PSLVERRS14 is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd":156:0:156:9|Input PSLVERRS15 is unused.
 Running optimization stage 2 on CoreResetP .......
-@W: CL177 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif0_spll_lock_q2. Add a syn_preserve attribute to the element to prevent sharing.
-@W: CL177 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element fpll_lock_q2. Add a syn_preserve attribute to the element to prevent sharing.
-@W: CL177 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif1_spll_lock_q2. Add a syn_preserve attribute to the element to prevent sharing.
-@W: CL177 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif2_spll_lock_q2. Add a syn_preserve attribute to the element to prevent sharing.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Trying to extract state machine for register sdif3_state.
+@W: CL177 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif0_spll_lock_q2. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element fpll_lock_q2. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif1_spll_lock_q2. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Sharing sequential element sdif2_spll_lock_q2. Add a syn_preserve attribute to the element to prevent sharing.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Trying to extract state machine for register sdif3_state.
 Extracted state machine for register sdif3_state
 State machine has 4 reachable states with original encodings of:
    000
    001
    010
    011
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Trying to extract state machine for register sdif2_state.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Trying to extract state machine for register sdif2_state.
 Extracted state machine for register sdif2_state
 State machine has 4 reachable states with original encodings of:
    000
    001
    010
    011
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Trying to extract state machine for register sdif1_state.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Trying to extract state machine for register sdif1_state.
 Extracted state machine for register sdif1_state
 State machine has 4 reachable states with original encodings of:
    000
    001
    010
    011
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Trying to extract state machine for register sdif0_state.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Trying to extract state machine for register sdif0_state.
 Extracted state machine for register sdif0_state
 State machine has 4 reachable states with original encodings of:
    000
    001
    010
    011
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Trying to extract state machine for register sm0_state.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Trying to extract state machine for register sm0_state.
 Extracted state machine for register sm0_state
 State machine has 7 reachable states with original encodings of:
    000
@@ -263,58 +253,58 @@ State machine has 7 reachable states with original encodings of:
    100
    101
    110
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":96:4:96:12|Input CLK_LTSSM is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":123:4:123:12|Input FPLL_LOCK is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":126:4:126:18|Input SDIF0_SPLL_LOCK is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":135:4:135:18|Input SDIF1_SPLL_LOCK is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":139:4:139:18|Input SDIF2_SPLL_LOCK is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":143:4:143:18|Input SDIF3_SPLL_LOCK is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":157:4:157:13|Input SDIF0_PSEL is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":158:4:158:15|Input SDIF0_PWRITE is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":159:4:159:15|Input SDIF0_PRDATA is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":160:4:160:13|Input SDIF1_PSEL is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":161:4:161:15|Input SDIF1_PWRITE is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":162:4:162:15|Input SDIF1_PRDATA is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":163:4:163:13|Input SDIF2_PSEL is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":164:4:164:15|Input SDIF2_PWRITE is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":165:4:165:15|Input SDIF2_PRDATA is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":166:4:166:13|Input SDIF3_PSEL is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":167:4:167:15|Input SDIF3_PWRITE is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":168:4:168:15|Input SDIF3_PRDATA is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":174:4:174:21|Input SOFT_EXT_RESET_OUT is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":175:4:175:17|Input SOFT_RESET_F2M is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":176:4:176:16|Input SOFT_M3_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":177:4:177:33|Input SOFT_MDDR_DDR_AXI_S_CORE_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":178:4:178:23|Input SOFT_FDDR_CORE_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":179:4:179:23|Input SOFT_SDIF0_PHY_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":180:4:180:24|Input SOFT_SDIF0_CORE_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":181:4:181:23|Input SOFT_SDIF1_PHY_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":182:4:182:24|Input SOFT_SDIF1_CORE_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":183:4:183:23|Input SOFT_SDIF2_PHY_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":184:4:184:24|Input SOFT_SDIF2_CORE_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":185:4:185:23|Input SOFT_SDIF3_PHY_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":186:4:186:24|Input SOFT_SDIF3_CORE_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":190:4:190:26|Input SOFT_SDIF0_0_CORE_RESET is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":191:4:191:26|Input SOFT_SDIF0_1_CORE_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":96:4:96:12|Input CLK_LTSSM is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":123:4:123:12|Input FPLL_LOCK is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":126:4:126:18|Input SDIF0_SPLL_LOCK is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":135:4:135:18|Input SDIF1_SPLL_LOCK is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":139:4:139:18|Input SDIF2_SPLL_LOCK is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":143:4:143:18|Input SDIF3_SPLL_LOCK is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":157:4:157:13|Input SDIF0_PSEL is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":158:4:158:15|Input SDIF0_PWRITE is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":159:4:159:15|Input SDIF0_PRDATA is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":160:4:160:13|Input SDIF1_PSEL is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":161:4:161:15|Input SDIF1_PWRITE is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":162:4:162:15|Input SDIF1_PRDATA is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":163:4:163:13|Input SDIF2_PSEL is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":164:4:164:15|Input SDIF2_PWRITE is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":165:4:165:15|Input SDIF2_PRDATA is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":166:4:166:13|Input SDIF3_PSEL is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":167:4:167:15|Input SDIF3_PWRITE is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":168:4:168:15|Input SDIF3_PRDATA is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":174:4:174:21|Input SOFT_EXT_RESET_OUT is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":175:4:175:17|Input SOFT_RESET_F2M is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":176:4:176:16|Input SOFT_M3_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":177:4:177:33|Input SOFT_MDDR_DDR_AXI_S_CORE_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":178:4:178:23|Input SOFT_FDDR_CORE_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":179:4:179:23|Input SOFT_SDIF0_PHY_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":180:4:180:24|Input SOFT_SDIF0_CORE_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":181:4:181:23|Input SOFT_SDIF1_PHY_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":182:4:182:24|Input SOFT_SDIF1_CORE_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":183:4:183:23|Input SOFT_SDIF2_PHY_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":184:4:184:24|Input SOFT_SDIF2_CORE_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":185:4:185:23|Input SOFT_SDIF3_PHY_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":186:4:186:24|Input SOFT_SDIF3_CORE_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":190:4:190:26|Input SOFT_SDIF0_0_CORE_RESET is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":191:4:191:26|Input SOFT_SDIF0_1_CORE_RESET is unused.
 Running optimization stage 2 on sb_sb_FABOSC_0_OSC .......
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":10:10:10:12|Input XTL is unused.
+@N: CL159 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd":10:10:10:12|Input XTL is unused.
 Running optimization stage 2 on sb_sb_MSS .......
 Running optimization stage 2 on sb_sb .......
 Running optimization stage 2 on spi_master .......
-@W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\spi_master.vhd":74:4:74:5|Pruning register bits 4 to 1 of last_bit_rx(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd":74:4:74:5|Pruning register bits 4 to 1 of last_bit_rx(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 Running optimization stage 2 on STAMP .......
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit async_prescaler_count(12) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit async_prescaler_count(13) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit async_prescaler_count(14) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit async_prescaler_count(15) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit delay_counter(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Pruning register bit 31 of delay_counter(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL279 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Pruning register bits 15 to 12 of async_prescaler_count(15 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit delay_counter(30) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Pruning register bit 30 of delay_counter(30 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit delay_counter(29) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Pruning register bit 29 of delay_counter(29 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@N: CL201 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Trying to extract state machine for register component_state.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Optimizing register bit async_prescaler_count(12) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Optimizing register bit async_prescaler_count(13) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Optimizing register bit async_prescaler_count(14) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Optimizing register bit async_prescaler_count(15) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Optimizing register bit delay_counter(31) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Pruning register bit 31 of delay_counter(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Pruning register bits 15 to 12 of async_prescaler_count(15 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Optimizing register bit delay_counter(30) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Pruning register bit 30 of delay_counter(30 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Optimizing register bit delay_counter(29) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Pruning register bit 29 of delay_counter(29 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Trying to extract state machine for register component_state.
 Extracted state machine for register component_state
 State machine has 6 reachable states with original encodings of:
    000001
@@ -323,16 +313,11 @@ State machine has 6 reachable states with original encodings of:
    001000
    010000
    100000
-@W: CL190 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Optimizing register bit delay_counter(28) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\STAMP.vhd":201:8:201:9|Pruning register bit 28 of delay_counter(28 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-Running optimization stage 2 on Synchronizer .......
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Synchronizer.vhd":17:8:17:13|Input resetn is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Synchronizer.vhd":18:8:18:10|Input clk is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Synchronizer.vhd":19:8:19:16|Input new_avail is unused.
-@N: CL159 :"D:\HERMESS_SPSoftware\Microcontroller\hdl\Synchronizer.vhd":20:8:20:21|Input request_resync is unused.
+@W: CL190 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Optimizing register bit delay_counter(28) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd":203:8:203:9|Pruning register bit 28 of delay_counter(28 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
 Running optimization stage 2 on sb .......
 
 For a summary of runtime and memory usage per design unit, please see file:
 ==========================================================
-@L: D:\HERMESS_SPSoftware\Microcontroller\synthesis\synwork\layer0.rt.csv
+@L: C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\layer0.rt.csv
 

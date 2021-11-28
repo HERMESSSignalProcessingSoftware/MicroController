@@ -2,37 +2,38 @@ Resource Usage Report for sb
 
 Mapping to part: m2s010vf400std
 Cell usage:
-AND2            3 uses
+AND2            1 use
 CCC             1 use
-CLKINT          4 uses
+CLKINT          2 uses
 MSS_010         1 use
-OR3             1 use
 RCOSC_25_50MHZ  1 use
 SYSRESET        1 use
-CFG1           71 uses
-CFG2           265 uses
-CFG3           403 uses
-CFG4           697 uses
+CFG1           101 uses
+CFG2           579 uses
+CFG3           1335 uses
+CFG4           1682 uses
 
 Carry cells:
-ARI1            372 uses - used for arithmetic functions
+ARI1            823 uses - used for arithmetic functions
+ARI1            66 uses - used for Wide-Mux implementation
+Total ARI1      889 uses
 
 
 Sequential Cells: 
-SLE            935 uses
+SLE            2899 uses
 
 DSP Blocks:    0 of 22 (0%)
 
-I/O ports: 27
-I/O primitives: 26
-INBUF          9 uses
-OUTBUF         16 uses
-TRIBUFF        1 use
+I/O ports: 73
+I/O primitives: 72
+INBUF          31 uses
+OUTBUF         35 uses
+TRIBUFF        6 uses
 
 
-Global Clock Buffers: 4
+Global Clock Buffers: 2
 
-Total LUTs:    1808
+Total LUTs:    4586
 
 Extra resources required for RAM and MACC interface logic during P&R:
 
@@ -40,6 +41,6 @@ RAM64x18 Interface Logic : SLEs = 0; LUTs = 0;
 RAM1K18  Interface Logic : SLEs = 0; LUTs = 0;
 MACC     Interface Logic : SLEs = 0; LUTs = 0;
 
-Total number of SLEs after P&R:  935 + 0 + 0 + 0 = 935;
-Total number of LUTs after P&R:  1808 + 0 + 0 + 0 = 1808;
+Total number of SLEs after P&R:  2899 + 0 + 0 + 0 = 2899;
+Total number of LUTs after P&R:  4586 + 0 + 0 + 0 = 4586;
 

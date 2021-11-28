@@ -1,11 +1,15 @@
 #--  Synopsys, Inc.
 #--  Version Q-2020.03M-SP1
 #--  Project file C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\sb_syn.prj
-#--  Written on Sat Feb 13 10:00:07 2021
+#--  Written on Fri Jun 25 12:12:12 2021
 
 
 #project files
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/Timestamp.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/MemorySynchronizer.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/spi_master.vhd"
 add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/STAMP.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/Synchronizer.vhd"
 add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3_muxptob3.vhd"
 add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3_iaddr_reg.vhd"
 add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3.vhd"
@@ -28,12 +32,12 @@ impl -add synthesis -type fpga
 #device options
 set_option -technology SmartFusion2
 set_option -part M2S010
-set_option -package VF400
 set_option -speed_grade STD
-set_option -part_companion ""
+set_option -package VF400
+set_option -part M2S010
+set_option -speed_grade STD
 
 #compilation/mapping options
-set_option -use_fsm_explorer 0
 set_option -top_module "work.sb"
 
 # hdl_compiler_options

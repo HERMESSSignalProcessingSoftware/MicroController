@@ -2,22 +2,20 @@
 ===============================================================================.
 
 Info: Global design data: 
-      Total globals:                       4 
-      Globals that cannot be demoted:      2 
-      Globals considered for demotion:     2 
+      Total globals:                       2 
+      Globals that cannot be demoted:      1 
+      Globals considered for demotion:     1 
 
 
 Info: List of globals that cannot be demoted: 
     CLK    ASYN   DATA   Instance Name 
     ---    ----   ----   ------------- 
-    874    0      0      'sb_sb_0/CCC_0/GL0_INST' 
-    0      0      1      'sb_sb_0/CCC_0/GL1_INST' 
+    2838   0      0      'sb_sb_0/CCC_0/GL0_INST' 
 
 Info: List of globals considered for demotion: 
     CLK    ASYN   DATA   Instance Name 
     ---    ----   ----   ------------- 
-    0      419    0      'MemorySynchronizer_0/un112_in_enable_0_I_1_476' 
-    0      155    0      'MemorySynchronizer_0/un112_in_enable_0_I_1_477' 
+    0      1673   0      'MemorySynchronizer_0/un120_in_enable_0_I_1_1633' 
 
 Info: Demotion information: 
 Info: CMPG4-302: Added 0 row global instances.

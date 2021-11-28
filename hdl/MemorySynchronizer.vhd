@@ -33,9 +33,9 @@
 -- Revision: 
 -- Revision 0.01 - File Created
 -- Revision 1.00 -  Update logic
---                  First 512 bytes are just for internal use, you may not write to this mememory.
+--                  First 512 bytes are just for internal use, you may not write to this memory.
 -- Revision 2.00 - Update of SPI Logic
--- Revision 3.00 - Rewrite due to logic problems and updated usecase describtion
+-- Revision 3.00 - Rewrite due to logic problems and updated usecase description
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------

@@ -44,8 +44,10 @@ int main(void) {
 
     // check, if the start of this application is the result of
     // the watchdog triggering
-    if (MSS_WD_timeout_occured())
+    if (MSS_WD_timeout_occured()) {
+        MSS_WD_clear_timeout_event();
         spuLog("Watchdog timed out");
+    }
 
     // configure the GPIOs
     MSS_GPIO_set_outputs(0);

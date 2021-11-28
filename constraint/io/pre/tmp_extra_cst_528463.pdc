@@ -4,9 +4,9 @@
 
 # Version: v12.6 12.900.20.24
 
-# Family: SmartFusion2 , Die: M2S010 , Package: 400 VF
+# Family: SmartFusion2 , Die: M2S010 , Package: 144 TQ
 
-# Date generated: Fri Jun 25 12:47:53 2021 
+# Date generated: Fri Nov 12 11:32:50 2021 
 
 # 
 # User Locked I/O Bank Settings
@@ -33,7 +33,7 @@
 # 
 
 set_io DEVRST_N       \
-    -pinname U17      \
+    -pinname 72       \
     -DIRECTION INPUT
 
 

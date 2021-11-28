@@ -1,42 +1,122 @@
 
-fsm_encoding {2028482842} onehot
+fsm_encoding {1928482842} onehot
 
-fsm_state_encoding {2028482842} start {000001}
+fsm_state_encoding {1928482842} start {000001}
 
-fsm_state_encoding {2028482842} resyncevent {000010}
+fsm_state_encoding {1928482842} resyncevent {000010}
 
-fsm_state_encoding {2028482842} s1 {000100}
+fsm_state_encoding {1928482842} s1 {000100}
 
-fsm_state_encoding {2028482842} s2 {001000}
+fsm_state_encoding {1928482842} s2 {001000}
 
-fsm_state_encoding {2028482842} end1 {010000}
+fsm_state_encoding {1928482842} end1 {010000}
 
-fsm_state_encoding {2028482842} error1 {100000}
+fsm_state_encoding {1928482842} error1 {100000}
 
-fsm_registers {2028482842} {MemorySyncState[0]}  {MemorySyncState[1]}  {MemorySyncState[2]}  {MemorySyncState[3]}  {MemorySyncState[4]}  {MemorySyncState[5]} 
+fsm_registers {1928482842} {MemorySyncState[0]}  {MemorySyncState[1]}  {MemorySyncState[2]}  {MemorySyncState[3]}  {MemorySyncState[4]}  {MemorySyncState[5]} 
 
-fsm_encoding {2028482841} sequential
+fsm_encoding {1928482841} sequential
 
-fsm_state_encoding {2028482841} apbwaiting {00}
+fsm_state_encoding {1928482841} apbwaiting {00}
 
-fsm_state_encoding {2028482841} apbreading {01}
+fsm_state_encoding {1928482841} apbreading {01}
 
-fsm_state_encoding {2028482841} apbwriting {10}
+fsm_state_encoding {1928482841} apbwriting {10}
 
-fsm_registers {2028482841} {APBState[1]}  {APBState[0]} 
+fsm_registers {1928482841} {APBState[1]}  {APBState[0]} 
 
-fsm_encoding {2120182018} onehot
+fsm_encoding {2020382038} onehot
 
-fsm_state_encoding {2120182018} fsm_idle {000001}
+fsm_state_encoding {2020382038} fsm_idle {000001}
 
-fsm_state_encoding {2120182018} fsm_apb_setup {000010}
+fsm_state_encoding {2020382038} fsm_apb_setup {000010}
 
-fsm_state_encoding {2120182018} fsm_apb_access {000100}
+fsm_state_encoding {2020382038} fsm_apb_access {000100}
 
-fsm_state_encoding {2120182018} fsm_apb_teardown {001000}
+fsm_state_encoding {2020382038} fsm_apb_teardown {001000}
 
-fsm_state_encoding {2120182018} fsm_spi_setup {010000}
+fsm_state_encoding {2020382038} fsm_spi_setup {010000}
 
-fsm_state_encoding {2120182018} fsm_spi_access {100000}
+fsm_state_encoding {2020382038} fsm_spi_access {100000}
 
-fsm_registers {2120182018} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 
+fsm_registers {2020382038} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 
+
+fsm_encoding {2020382038} onehot
+
+fsm_state_encoding {2020382038} fsm_idle {000001}
+
+fsm_state_encoding {2020382038} fsm_apb_setup {000010}
+
+fsm_state_encoding {2020382038} fsm_apb_access {000100}
+
+fsm_state_encoding {2020382038} fsm_apb_teardown {001000}
+
+fsm_state_encoding {2020382038} fsm_spi_setup {010000}
+
+fsm_state_encoding {2020382038} fsm_spi_access {100000}
+
+fsm_registers {2020382038} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 
+
+fsm_encoding {2020382038} onehot
+
+fsm_state_encoding {2020382038} fsm_idle {000001}
+
+fsm_state_encoding {2020382038} fsm_apb_setup {000010}
+
+fsm_state_encoding {2020382038} fsm_apb_access {000100}
+
+fsm_state_encoding {2020382038} fsm_apb_teardown {001000}
+
+fsm_state_encoding {2020382038} fsm_spi_setup {010000}
+
+fsm_state_encoding {2020382038} fsm_spi_access {100000}
+
+fsm_registers {2020382038} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 
+
+fsm_encoding {2020382038} onehot
+
+fsm_state_encoding {2020382038} fsm_idle {000001}
+
+fsm_state_encoding {2020382038} fsm_apb_setup {000010}
+
+fsm_state_encoding {2020382038} fsm_apb_access {000100}
+
+fsm_state_encoding {2020382038} fsm_apb_teardown {001000}
+
+fsm_state_encoding {2020382038} fsm_spi_setup {010000}
+
+fsm_state_encoding {2020382038} fsm_spi_access {100000}
+
+fsm_registers {2020382038} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 
+
+fsm_encoding {2020382038} onehot
+
+fsm_state_encoding {2020382038} fsm_idle {000001}
+
+fsm_state_encoding {2020382038} fsm_apb_setup {000010}
+
+fsm_state_encoding {2020382038} fsm_apb_access {000100}
+
+fsm_state_encoding {2020382038} fsm_apb_teardown {001000}
+
+fsm_state_encoding {2020382038} fsm_spi_setup {010000}
+
+fsm_state_encoding {2020382038} fsm_spi_access {100000}
+
+fsm_registers {2020382038} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 
+
+fsm_encoding {2020382038} onehot
+
+fsm_state_encoding {2020382038} fsm_idle {000001}
+
+fsm_state_encoding {2020382038} fsm_apb_setup {000010}
+
+fsm_state_encoding {2020382038} fsm_apb_access {000100}
+
+fsm_state_encoding {2020382038} fsm_apb_teardown {001000}
+
+fsm_state_encoding {2020382038} fsm_spi_setup {010000}
+
+fsm_state_encoding {2020382038} fsm_spi_access {100000}
+
+fsm_registers {2020382038} {component_state[0]}  {component_state[1]}  {component_state[2]}  {component_state[3]}  {component_state[4]}  {component_state[5]} 
