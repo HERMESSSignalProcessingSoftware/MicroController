@@ -8,7 +8,7 @@ extern "C" {
 
 
 #include <stdint.h>
-#include "../../components/HERMESS.h"
+#include "../status.h"
 
 /**
  * Wait for at least the specified time in milliseconds. This function
@@ -32,12 +32,6 @@ void delay (uint32_t ms);
  * Null-terminated ASCII string
  */
 void spuLog (char message[]);
-
-/*
- * @param period: the value to present the heartbeat signal by setting MSS_Signals |= TIM1_HEARTBEAT_SIGNAL
- *
- */
-void SetHeartbeatPeriode(uint32_t periode);
 
 #ifdef __cplusplus
 }

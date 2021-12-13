@@ -14,90 +14,63 @@ Hostname: LUS210
 Implementation : synthesis
 Synopsys HDL compiler and linker, Version comp202003synp2, Build 166R, Built Oct 19 2020 10:50:56, @
 
-Modified Files: 6
+Modified Files: 5
 FID:  path (prevtimestamp, timestamp)
-7        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38)
-8        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd (2021-09-29 00:14:00, 2021-09-29 12:56:51)
-9        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53)
-10       C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53)
-11       C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-09-29 00:13:57, 2021-09-29 12:56:48)
-12       C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd (2021-09-29 00:13:57, 2021-09-29 12:56:47)
+8        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd (2021-12-12 10:36:43, 2021-12-13 03:44:45)
+9        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46)
+10       C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46)
+11       C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-12-12 10:36:40, 2021-12-13 03:44:41)
+12       C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd (2021-12-12 10:36:40, 2021-12-13 03:44:41)
 
 *******************************************************************
-Modules that may have changed as a result of file changes: 21
+Modules that may have changed as a result of file changes: 16
 MID:  lib.cell.view
 0        coreapb3_lib.coreapb3.coreapb3_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 2        coreapb3_lib.coreapb3_iaddr_reg.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 4        coreapb3_lib.coreapb3_muxptob3.coreapb3_muxptob3_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 6        work.coreresetp.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 8        work.coreresetp_pcie_hotreset.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-48       work.memorysynchronizer.arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 10       work.mss_010.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-09-29 00:13:57, 2021-09-29 12:56:48) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd (2021-09-29 00:13:57, 2021-09-29 12:56:47) <-- (architecture and entity definition)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-12-12 10:36:40, 2021-12-13 03:44:41) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd (2021-12-12 10:36:40, 2021-12-13 03:44:41) <-- (architecture and entity definition)
 12       work.rcosc_1mhz.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 14       work.rcosc_1mhz_fab.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 16       work.rcosc_25_50mhz.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 18       work.rcosc_25_50mhz_fab.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-20       work.sb.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (architecture and entity definition)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 22       work.sb_sb.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (architecture and entity definition)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (architecture and entity definition)
 24       work.sb_sb_ccc_0_fccc.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd (2021-09-29 00:14:00, 2021-09-29 12:56:51) <-- (architecture and entity definition)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd (2021-12-12 10:36:43, 2021-12-13 03:44:45) <-- (architecture and entity definition)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 26       work.sb_sb_fabosc_0_osc.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (architecture and entity definition)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (architecture and entity definition)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 28       work.sb_sb_mss.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-09-29 00:13:57, 2021-09-29 12:56:48) <-- (architecture and entity definition)
-30       work.spi_master.logic may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-32       work.stamp.architecture_stamp may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-46       work.timestamp.behaviour may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-12-12 10:36:40, 2021-12-13 03:44:41) <-- (architecture and entity definition)
 36       work.xtlosc.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 38       work.xtlosc_fab.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-09-29 01:01:06, 2021-09-29 12:57:38) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-09-29 00:14:02, 2021-09-29 12:56:53) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-12 10:36:44, 2021-12-13 03:44:46) <-- (may instantiate this module)
 
 *******************************************************************
-Unmodified files: 22
+Unmodified files: 23
 FID:  path (timestamp)
 0        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\components.vhd (2021-02-12 14:49:18)
 1        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd (2021-02-12 14:49:18)
@@ -106,6 +79,7 @@ FID:  path (timestamp)
 4        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd (2021-02-11 20:34:35)
 5        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp_pcie_hotreset.vhd (2021-02-11 20:34:35)
 6        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd (2021-02-11 20:34:37)
+7        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-12-12 10:37:28)
 59       C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd (2021-09-28 18:13:11)
 13       C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd (2021-09-28 18:13:11)
 60       C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Timestamp.vhd (2021-09-28 18:12:26)
@@ -123,5 +97,15 @@ FID:  path (timestamp)
 26       J:\LiberoSoC\SynplifyPro\lib\vhd\umr_capim.vhd (2020-11-03 08:58:13)
 
 *******************************************************************
-Unchanged modules: 0
+Unchanged modules: 10
 MID:  lib.cell.view
+48       work.memorysynchronizer.arch
+49       work.memorysynchronizer.vhdl
+20       work.sb.rtl
+21       work.sb.vhdl
+30       work.spi_master.logic
+31       work.spi_master.vhdl
+32       work.stamp.architecture_stamp
+33       work.stamp.vhdl
+46       work.timestamp.behaviour
+47       work.timestamp.vhdl

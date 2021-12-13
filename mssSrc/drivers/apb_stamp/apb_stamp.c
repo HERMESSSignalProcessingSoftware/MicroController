@@ -69,21 +69,24 @@ void APB_STAMP_generateConfigStruct (uint32_t bits, stamp_config_t* config) {
 }
 
 
-void APB_STAMP_init (
-        apb_stamp_t *instance,
+apb_stamp_t APB_STAMP_init (
         addr_t baseAddr,
         uint8_t interruptPin
 ) {
+    apb_stamp_t instance = {0};
+
     // save to instance for later reference
-    instance->baseAddr = baseAddr;
-    instance->interruptPin = interruptPin;
+    instance.baseAddr = baseAddr;
+    instance.interruptPin = interruptPin;
 
     // reset the entire component
     stamp_config_t conf = {.reset = 1};
-    APB_STAMP_writeConfig(instance, &conf, STAMP_MOD_STATUS_RESET);
+    APB_STAMP_writeConfig(&instance, &conf, STAMP_MOD_STATUS_RESET);
 
     // make sure the interrupt is disabled for the beginning
-    APB_STAMP_disableInterrupt(instance);
+    APB_STAMP_disableInterrupt(&instance);
+
+    return instance;
 }
 
 

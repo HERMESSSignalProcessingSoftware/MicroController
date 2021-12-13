@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
--Pin Report - Date: Fri Nov 12 15:30:54 2021 Pinchecksum: NOT-AVAILABLE
+-Pin Report - Date: Mon Dec 13 03:46:42 2021 Pinchecksum: NOT-AVAILABLE
 -Product: Designer
 -Release: v12.6
 -Version: 12.900.20.24
@@ -133,9 +133,9 @@ Number |Port             |Function                     |State      |I/O Std  |Di
 120                       VREF0                         Reserved    
 121                       VDD                           Reserved    
 122     STAMP2_MOSI       DDRIO43NB0                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
-123     IN_RXSM_SOE       DDRIO43PB0                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
-124     IN_RXSM_SODS      DDRIO44NB0                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
-125     IN_RXSM_LO        DDRIO44PB0                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+123     IN_RXSM_SOE       DDRIO43PB0                    Fixed       LVCMOS12  Input      TRISTATE                        Up             No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+124     IN_RXSM_SODS      DDRIO44NB0                    Fixed       LVCMOS12  Input      TRISTATE                        Up             No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+125     IN_RXSM_LO        DDRIO44PB0                    Fixed       LVCMOS12  Input      TRISTATE                        Up             No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
 126                       VSS                           Reserved    
 127                       VDDI0                         Reserved    
 128     OUT_ADC_START     DDRIO47NB0                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
