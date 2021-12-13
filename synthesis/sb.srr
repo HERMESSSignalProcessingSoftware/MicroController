@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: LUS210
 
-# Mon Dec 13 03:44:59 2021
+# Mon Dec 13 16:00:38 2021
 
 #Implementation: synthesis
 
@@ -390,12 +390,12 @@ For a summary of runtime and memory usage per design unit, please see file:
 @L: C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\layer0.rt.csv
 
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 140MB peak: 174MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 141MB peak: 174MB)
 
 Process took 0h:00m:06s realtime, 0h:00m:06s cputime
 
 Process completed successfully.
-# Mon Dec 13 03:45:06 2021
+# Mon Dec 13 16:00:45 2021
 
 ###########################################################]
 ###########################################################[
@@ -423,7 +423,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Dec 13 03:45:06 2021
+# Mon Dec 13 16:00:46 2021
 
 ###########################################################]
 
@@ -433,12 +433,12 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 22MB peak: 23MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 22MB peak: 23MB)
 
-Process took 0h:00m:06s realtime, 0h:00m:06s cputime
+Process took 0h:00m:07s realtime, 0h:00m:06s cputime
 
 Process completed successfully.
-# Mon Dec 13 03:45:06 2021
+# Mon Dec 13 16:00:46 2021
 
 ###########################################################]
 ###########################################################[
@@ -466,12 +466,12 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Dec 13 03:45:08 2021
+# Mon Dec 13 16:00:47 2021
 
 ###########################################################]
 Premap Report
 
-# Mon Dec 13 03:45:08 2021
+# Mon Dec 13 16:00:48 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -502,13 +502,13 @@ See clock summary report "C:\Users\jl\source\repos\hermess\hermess-MicroControll
 Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 135MB peak: 135MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 135MB peak: 135MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 135MB peak: 136MB)
 
 
 Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 136MB peak: 136MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 136MB peak: 138MB)
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 137MB peak: 138MB)
 
 @W: BN132 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\timestamp.vhd":46:8:46:9|Removing sequential instance MemorySynchronizer_0.TimeStampGen.timestamp[31:0] because it is equivalent to instance MemorySynchronizer_0.TimeStampGen.counter[31:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sb_sb_0.CORERESETP_0.MDDR_DDR_AXI_S_CORE_RESET_N_int because it is equivalent to instance sb_sb_0.CORERESETP_0.FDDR_CORE_RESET_N_int. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -606,7 +606,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 @N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":553:8:553:9|Removing sequential instance POWER_ON_RESET_N_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: FX1184 |Applying syn_allowed_resources blockrams=21 on top level netlist sb 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 178MB peak: 178MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 179MB peak: 179MB)
 
 
 
@@ -640,7 +640,7 @@ sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     2784      sb_sb_0.CCC_0.CCC_INST.GL0
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\sb.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 176MB peak: 179MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 176MB peak: 180MB)
 
 Encoding state machine MemorySyncState[0:5] (in view: work.MemorySynchronizer(arch))
 original code -> new code
@@ -704,22 +704,22 @@ original code -> new code
    010000 -> 010000
    100000 -> 100000
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 180MB peak: 180MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 181MB peak: 181MB)
 
 
 Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 183MB peak: 183MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 96MB peak: 183MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 98MB peak: 184MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Mon Dec 13 03:45:10 2021
+# Mon Dec 13 16:00:49 2021
 
 ###########################################################]
 Map & Optimize Report
 
-# Mon Dec 13 03:45:10 2021
+# Mon Dec 13 16:00:50 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -757,7 +757,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 
 
 
-Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 164MB peak: 165MB)
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 165MB peak: 165MB)
 
 
 Available hyper_sources - for debug and ip models
@@ -802,7 +802,7 @@ original code -> new code
 @W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[1] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
 @W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[0] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
 
-Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 193MB peak: 193MB)
+Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 193MB peak: 193MB)
 
 Auto Dissolve of spi (inst of view:work.spi_master(logic))
 
@@ -821,7 +821,7 @@ Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:06s; CP
 Starting Early Timing Optimization (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 225MB peak: 258MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 233MB peak: 258MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:09s; Memory used current: 233MB peak: 258MB)
 
 
 Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 234MB peak: 258MB)
@@ -830,19 +830,19 @@ Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:10s; CP
 Finished preparing to map (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 234MB peak: 258MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 292MB peak: 292MB)
+Finished technology mapping (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 292MB peak: 292MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:13s		    -6.54ns		5189 /      2752
-   2		0h:00m:13s		    -6.46ns		5054 /      2752
+   1		0h:00m:12s		    -6.54ns		5189 /      2752
+   2		0h:00m:12s		    -6.46ns		5054 /      2752
 
    3		0h:00m:13s		    -6.46ns		5055 /      2752
    4		0h:00m:13s		    -4.53ns		5059 /      2752
-   5		0h:00m:14s		    -4.34ns		5060 /      2752
-   6		0h:00m:14s		    -4.36ns		5063 /      2752
-   7		0h:00m:14s		    -4.16ns		5064 /      2752
-   8		0h:00m:14s		    -3.88ns		5065 /      2752
+   5		0h:00m:13s		    -4.34ns		5060 /      2752
+   6		0h:00m:13s		    -4.36ns		5063 /      2752
+   7		0h:00m:13s		    -4.16ns		5064 /      2752
+   8		0h:00m:13s		    -3.88ns		5065 /      2752
    9		0h:00m:14s		    -3.88ns		5066 /      2752
 @N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[1] (in view: work.sb(rtl)) with 6 loads 1 time to improve timing.
 @N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[0] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
@@ -868,11 +868,11 @@ Added 0 LUTs via timing driven replication
 
 
   10		0h:00m:15s		    -3.56ns		5081 /      2770
-  11		0h:00m:16s		    -3.48ns		5082 /      2770
-  12		0h:00m:17s		    -3.48ns		5082 /      2770
-  13		0h:00m:17s		    -3.48ns		5082 /      2770
-  14		0h:00m:18s		    -3.48ns		5082 /      2770
-  15		0h:00m:19s		    -3.48ns		5082 /      2770
+  11		0h:00m:15s		    -3.48ns		5082 /      2770
+  12		0h:00m:16s		    -3.48ns		5082 /      2770
+  13		0h:00m:16s		    -3.48ns		5082 /      2770
+  14		0h:00m:17s		    -3.48ns		5082 /      2770
+  15		0h:00m:18s		    -3.48ns		5082 /      2770
 @N: FP130 |Promoting Net AND2_0_Y_arst on CLKINT  MemorySynchronizer_0.un120_in_enable_0_I_1_1618 
 
 Added 0 Buffers
@@ -880,10 +880,10 @@ Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 296MB peak: 296MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 296MB peak: 296MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:20s; Memory used current: 296MB peak: 298MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 296MB peak: 298MB)
 
 
 
@@ -969,11 +969,11 @@ Clock Tree ID     Driving Element                                               
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:21s; Memory used current: 244MB peak: 298MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:19s; Memory used current: 244MB peak: 298MB)
 
 Writing Analyst data base C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\sb_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:21s; Memory used current: 287MB peak: 298MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 287MB peak: 298MB)
 
 Writing Verilog Simulation files
 @N: BW110 :|Renaming port spi_master_5 due to collision with Verilog/ System Verilog reserved word 
@@ -991,17 +991,17 @@ Writing Verilog Simulation files
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 
-Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:23s; Memory used current: 287MB peak: 298MB)
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:21s; Memory used current: 287MB peak: 298MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:24s; CPU Time elapsed 0h:00m:23s; Memory used current: 282MB peak: 298MB)
+Start final timing analysis (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 282MB peak: 298MB)
 
 @W: MT246 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\work\sb_sb\ccc_0\sb_sb_ccc_0_fccc.vhd":106:4:106:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
 @W: MT420 |Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on net sb_sb_0.CCC_0.GL0_net.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Mon Dec 13 03:45:34 2021
+# Timing report written on Mon Dec 13 16:01:13 2021
 #
 
 
@@ -2101,10 +2101,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:24s; CPU Time elapsed 0h:00m:23s; Memory used current: 283MB peak: 298MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 283MB peak: 298MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:24s; CPU Time elapsed 0h:00m:23s; Memory used current: 283MB peak: 298MB)
+Finished timing report (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 283MB peak: 298MB)
 
 ---------------------------------------
 Resource Usage Report for sb 
@@ -2155,9 +2155,9 @@ Total number of LUTs after P&R:  4588 + 0 + 0 + 0 = 4588;
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:24s; CPU Time elapsed 0h:00m:24s; Memory used current: 99MB peak: 298MB)
+At Mapper Exit (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:22s; Memory used current: 98MB peak: 298MB)
 
-Process took 0h:00m:24s realtime, 0h:00m:24s cputime
-# Mon Dec 13 03:45:35 2021
+Process took 0h:00m:23s realtime, 0h:00m:22s cputime
+# Mon Dec 13 16:01:13 2021
 
 ###########################################################]
