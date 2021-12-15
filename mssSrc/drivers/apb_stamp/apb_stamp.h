@@ -94,7 +94,9 @@ extern "C" {
 #define STAMP_REG_DUMMY             0x380U
 
 
-/**
+/** @struct apb_stamp_t
+ * Will be used for referencing a selected STAMP
+ * @warning
  * ANY MANUAL CHANGES TO INSTANCES OF THIS STRUCT LEAD TO UNDEFINED BEHAVIOR!
  */
 typedef struct apb_stamp {
@@ -103,7 +105,7 @@ typedef struct apb_stamp {
 } apb_stamp_t;
 
 
-/**
+/** @struct stamp_status_t
  * Use this union to evaluate the status bits
  * Make sure to generate using "stamp_status_t name = {0}"
  */
@@ -127,8 +129,8 @@ uint32_t APB_STAMP_generateStatusBitfield (stamp_status_t *status);
 void APB_STAMP_generateStatusStruct (uint32_t bits, stamp_status_t *status);
 
 
-/**
- * Use this union to generate and evaluate the configuration register
+/** @struct stamp_config_t
+ * Use this struct to generate and evaluate the configuration register
  * Make sure to generate using "stamp_config_t name = {0}"
  */
 typedef struct stamp_config {
@@ -153,17 +155,15 @@ void APB_STAMP_generateConfigStruct (uint32_t bits, stamp_config_t* config);
 /**
  * Initializes a STAMP driver instance.
  *
- * @param instance
- * an empty, non null pointer to an apb_stamp_t instance
- *
  * @param baseAddr
  * the APB base address
  *
  * @param interruptPin
  * the integer of the F2M integer register bit. Must be 0 <= n <= 15.
+ *
+ * @return an initialized struct
  */
-void APB_STAMP_init (
-        apb_stamp_t *instance,
+apb_stamp_t APB_STAMP_init (
         addr_t baseAddr,
         uint8_t interruptPin
 );

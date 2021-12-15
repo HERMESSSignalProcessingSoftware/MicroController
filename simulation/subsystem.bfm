@@ -1,5 +1,5 @@
 #===========================================================
-# Created by Microsemi SmartDesign Wed Sep 29 12:57:39 2021
+# Created by Microsemi SmartDesign Fri Feb 12 10:06:10 2021
 #
 # Syntax: 
 # ------- 
@@ -17,14 +17,4 @@
 # Define name and base address of each resource.
 #-----------------------------------------------------------
 
-memmap MemorySynchronizer_0 0x5000_0000;
-memmap STAMP_1 0x5000_1000;
-memmap STAMP_2 0x5000_2000;
-memmap STAMP_3 0x5000_3000;
-memmap STAMP_4 0x5000_4000;
-memmap STAMP_5 0x5000_5000;
-memmap STAMP_6 0x5000_6000;
-#-----------------------------------------------------------
-# Include resource scriptlets
-#-----------------------------------------------------------
-
+memmap sb_sb 0x5000_0000;

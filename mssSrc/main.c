@@ -5,45 +5,36 @@
  */
 
 #include <stdint.h>
+#include "hw_platform.h"
+#include "status.h"
 #include "CMSIS/system_m2sxxx.h"
 #include "drivers/mss_watchdog/mss_watchdog.h"
-#include "drivers/mss_uart/mss_uart.h"
 #include "drivers/mss_gpio/mss_gpio.h"
 #include "components/tools.h"
 #include "components/stamps.h"
-#include "hw_platform.h"
-#include "drivers/apb_memory/memory.h"
+#include "components/dapi.h"
+#include "drivers/apb_memory/Memory.h"
 #include "drivers/mss_spi/mss_spi.h"
-#include "components/HERMESS.h"
-#include "components/storage.h"
 
 /**
- * @brief Use this 32 bit value to add the missing three bits into the SR1 from the fabric befor saving them.
+ * @brief Use this 32 bit value to add the missing three bits into the SR1 from the fabric before saving them.
  */
-uint32_t volatile StatusRegisterLocals = 0x0;
+static volatile uint32_t StatusRegisterLocals = 0x0;
+uint32_t mssSignals = 0;
 
-static void dreadyCb(uint8_t num, uint32_t dms12, uint32_t tempReg) {
-    uint8_t buf[] = { 0xAA, (dms12 >> 24) & 0xFF, (dms12 >> 16) & 0xFF, (dms12
-            >> 8) & 0xFF, dms12 & 0xFF, (tempReg >> 24) & 0xFF, (tempReg >> 16)
-            & 0xFF };
-
-    MSS_UART_polled_tx(&g_mss_uart0, buf, sizeof(buf));
-}
-
-int main(void) {
+int main (void) {
     uint32_t csr = 0;
     // Initialize driver components
     SystemInit();
     MSS_WD_init();
     MSS_GPIO_init();
 
-    // !!! move to DAPI file
-    MSS_UART_init(&g_mss_uart0, MSS_UART_115200_BAUD,
-    MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
-    MSS_UART_set_tx_endian(&g_mss_uart0, MSS_UART_LITTLEEND);
+    // initialize the DAPI
+    dapiInit();
 
     // check, if the start of this application is the result of
     // the watchdog triggering
+    MSS_WD_enable_timeout_irq(); // just for debugging using timeouts instead of resets
     if (MSS_WD_timeout_occured()) {
         MSS_WD_clear_timeout_event();
         spuLog("Watchdog timed out");
@@ -54,97 +45,112 @@ int main(void) {
     MSS_GPIO_config(OUT_RESET_N, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(LED_RECORDING, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(LED_HEARTBEAT, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_config(nCS1, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_config(nCS2, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(FLASH_CS1, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(FLASH_CS2, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(OUT_ENABLE_MEM_SYNC, MSS_GPIO_OUTPUT_MODE);
-
+    MSS_GPIO_config(IN_RXSM_LO, MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_BOTH);
+    MSS_GPIO_config(IN_RXSM_SODS, MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_BOTH);
+    MSS_GPIO_config(IN_RXSM_SOE, MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_BOTH);
+    MSS_GPIO_enable_irq(IN_RXSM_LO);
+    MSS_GPIO_enable_irq(IN_RXSM_SODS);
+    MSS_GPIO_enable_irq(IN_RXSM_SOE);
     // reset the peripherals
     MSS_GPIO_set_output(OUT_RESET_N, 0);
     delay(1);
     MSS_GPIO_set_output(OUT_RESET_N, 1);
-
-    /* Config the heartbeat duration */
-    SetHeartbeatPeriode(500);
     /* run the memory test */
-    InitSPI(DO_NOT_ERASE);
-    InitMemorySynchronizer(AUTO_START_OFF);
-
-
+    InitMemorySynchronizer(DO_NOT_ERASE, AUTO_START_OFF);
+    //FastMemoryTest();
     MemoryConfig MemConfig = Recovery();
     if (!MemConfig.RecoverySuccess) {
         MemConfig.StartPage = 0x200;
         MemConfig.CurrentPage = 0x200;
-        MemConfig.StartChipSelect = nCS1;
-        MemConfig.CurrentChipSelect = nCS1;
+        MemConfig.StartChipSelect = FLASH_CS1;
+        MemConfig.CurrentChipSelect = FLASH_CS1;
         MemConfig.MetaAddress = 0x0;
     }
 
     // initialize the stamps
-    stampsInit();
+    // SGR: PGA 64 @ 1kSPS
+    // RTD: PGA 16 @ 20SPS
+    stampsInit(STAMPS_PGA_64, STAMPS_SPS_1000, STAMPS_PGA_16, STAMPS_SPS_20);
 
-    //stampsSetDReadyCallback(dreadyCb);
     uint8_t heartbeat = 0;
     SPI_Values device;
     device.CS_Pin = MemConfig.StartChipSelect;
     device.spihandle = &g_mss_spi0;
     SPI_Values metaDevice;
-    metaDevice.CS_Pin = nCS1;
+    metaDevice.CS_Pin = FLASH_CS1;
     metaDevice.spihandle = &g_mss_spi0;
     for (;;) {
+        /*Start recording here*/
+        if ((mssSignals & MSS_SIGNAL_SODS) | (mssSignals & MSS_SIGNAL_SOE)) {
+            mssSignals &= ~(MSS_SIGNAL_SOE | MSS_SIGNAL_SODS);
+            StatusRegisterLocals |= ((MSS_SIGNAL_SOE) | (MSS_SIGNAL_SODS));
+            StartMemorySync();
+            MSS_GPIO_set_output(LED_RECORDING, 1);
+            delay(1);
+        }
+        /* Stop action here */
+        if ((mssSignals & MSS_SIGNAL_SODS_RESET) | (mssSignals & MSS_SIGNAL_SOE_RESET) | (mssSignals & MSS_SIGNAL_LO_RESET)) {
+            mssSignals &= ~(MSS_SIGNAL_SOE_RESET | MSS_SIGNAL_SODS_RESET | MSS_SIGNAL_LO_RESET);
+            StatusRegisterLocals &= ~((MSS_SIGNAL_SOE) | (MSS_SIGNAL_SODS) | (MSS_SIGNAL_LO));
+            StopMemorySync();
+            MSS_GPIO_set_output(LED_RECORDING, 0);
+            delay(1);
+        }
 
-        /*
-         * TODO: Handle these signals
-         *
-         * */
-        if (MSS_SIGNALS & MSS_SIGNAL_SODS) {
-            StatusRegisterLocals |= (MSS_SIGNAL_SODS);
-            MSS_SIGNALS &= ~(MSS_SIGNAL_SODS);
+        if (mssSignals & MSS_SIGNAL_DAPI_CMD) {
+           // mssSignals &= ~(MSS_SIGNAL_DAPI_CMD);
+            dapiExecutePendingCommand();
         }
-        if (MSS_SIGNALS & MSS_SIGNAL_SOE) {
-            MSS_GPIO_set_output(OUT_ENABLE_MEM_SYNC, 1); // From this point forward the Farbric0 Interrupt will be coming and data will be stored
-            StatusRegisterLocals |= (MSS_SIGNAL_SOE);
-            MSS_SIGNALS &= ~(MSS_SIGNAL_SOE);
-        }
-        if (MSS_SIGNALS & MSS_SIGNAL_LO) {
+
+        /* Ignored LO signal does nothing */
+        if (mssSignals & MSS_SIGNAL_LO) {
             StatusRegisterLocals |= (MSS_SIGNAL_LO);
-            MSS_SIGNALS &= ~(MSS_SIGNAL_LO);
         }
-        if ((MSS_SIGNALS & MSS_SIGNAL_UPDATE_META)
-                && ((MSS_SIGNALS & MSS_SIGNAL_SPI_WRITE) == 0)) {
-            /* Make sure you dont violate any memory above the start addreess
+
+        /*Write Meta data to FLASH_CS1 connected device*/
+        if ((mssSignals & MSS_SIGNAL_UPDATE_META)
+                && ((mssSignals & MSS_SIGNAL_SPI_WRITE) == 0)) {
+            /* Make sure you dont violate any memory above the start address
              *
-             * Its very unlikely to to hat in a about 800s time space
+             * Its very unlikely to do that in a about 800s time space
              * */
             if (MemConfig.MetaAddress < MemConfig.StartPage)
-                Write32Bit(MemConfig.CurrentPage, MemConfig.MetaAddress, metaDevice);
+                Write32Bit(MemConfig.CurrentPage, MemConfig.MetaAddress,
+                        metaDevice);
 
             MemConfig.MetaAddress += 4;
-            MSS_SIGNALS &= ~(MSS_SIGNAL_UPDATE_META);
+            mssSignals &= ~(MSS_SIGNAL_UPDATE_META);
         }
 
-        if ((MSS_SIGNALS & MSS_SIGNAL_SPI_WRITE) ||
-                (MSS_SIGNALS & MSS_SIGNAL_WRITE_AND_KILL)) {
+        /*Write data to device*/
+        if ((mssSignals & MSS_SIGNAL_SPI_WRITE)
+                || (mssSignals & MSS_SIGNAL_WRITE_AND_KILL)) {
             writePage(MemoryPtr, MemConfig.CurrentPage, device);
-            if (MemConfig.CurrentChipSelect == nCS2) {
+            if (MemConfig.CurrentChipSelect == FLASH_CS2) {
                 MemConfig.CurrentPage++;
-                MemConfig.CurrentChipSelect = nCS1;
-                device.CS_Pin = nCS1;
-            } else if (MemConfig.CurrentChipSelect == nCS1) {
-                MemConfig.CurrentChipSelect = nCS2;
-                device.CS_Pin = nCS2;
+                MemConfig.CurrentChipSelect = FLASH_CS1;
+                device.CS_Pin = FLASH_CS1;
+            } else if (MemConfig.CurrentChipSelect == FLASH_CS1) {
+                MemConfig.CurrentChipSelect = FLASH_CS2;
+                device.CS_Pin = FLASH_CS2;
             }
             /* Just reset a signal bit */
-            MSS_SIGNALS &= ~(MSS_SIGNAL_SPI_WRITE);
-            if (MSS_SIGNALS & MSS_SIGNAL_WRITE_AND_KILL) {
+            mssSignals &= ~(MSS_SIGNAL_SPI_WRITE);
+            if (mssSignals & MSS_SIGNAL_WRITE_AND_KILL) {
                 if (MemConfig.MetaAddress < MemConfig.StartPage)
-                    Write32Bit(MemConfig.CurrentPage, MemConfig.MetaAddress, metaDevice);
+                    Write32Bit(MemConfig.CurrentPage, MemConfig.MetaAddress,
+                            metaDevice);
                 /* Request killing the system */
-
-                //SCB_AIRCR_ =
+                // !!! TODO: Kill system here
             }
+            /* Count every page ld(250000) approx 18 */
+            MemoryDatasetCounter++;
         }
 
-        if (MSS_SIGNALS & MSS_SIGNAL_TELEMETRY) {
+        if (mssSignals & MSS_SIGNAL_TELEMETRY) {
             /* See Issue number 9 on github
              *
              * TODO: Transmit data to Earth here
@@ -154,14 +160,14 @@ int main(void) {
              *
              * Lets assume Tbit = 33us (boi its long)
              */
-            MSS_SIGNALS &= ~(MSS_SIGNAL_TELEMETRY);
+            mssSignals &= ~(MSS_SIGNAL_TELEMETRY);
         }
 
         // do nothing but toggle an led once in a while
-        if (MSS_SIGNALS & TIM2_HEARTBEAT_SIGNAL) {
+        if (mssSignals & TIM2_HEARTBEAT_SIGNAL) {
             heartbeat = (~heartbeat) & 1U;
             MSS_GPIO_set_output(LED_HEARTBEAT, heartbeat);
-            MSS_SIGNALS &= ~(TIM2_HEARTBEAT_SIGNAL);
+            mssSignals &= ~(TIM2_HEARTBEAT_SIGNAL);
         }
         // reset the watchdog timer to prevent hardware reset
         MSS_WD_reload();
@@ -176,11 +182,11 @@ void FabricIrq0_IRQHandler(void) {
     uint32_t SR1 = CopyDataFabricToMaster(MemoryPtr, StatusRegisterLocals);
     uint32_t CR = HW_get_32bit_reg(MEMORY_REG(ConfigReg));
     if (SR1 & PENDING_SYNCHRONIZER_INTERRUPT) {
-        MSS_SIGNALS |= (MSS_SIGNAL_WRITE_AND_KILL);
+        mssSignals |= (MSS_SIGNAL_WRITE_AND_KILL);
         // Do the REset here
         /* TODO in this case
          * - Save the started page and the last registers to flash mem
-         * - Save current nCS line and current Page addr to 1. Page (STARTADDR) on nCS1
+         * - Save current nCS line and current Page addr to 1. Page (STARTADDR) on FLASH_CS1
          * - Trigger Reset
          * - after reset, read StartAddrs page, restore address offset
          * - Do normal start up
@@ -193,14 +199,14 @@ void FabricIrq0_IRQHandler(void) {
     if (SR1 & PENDING_READ_INTERRUPT) {
         MemoryInterruptCounter++; /* Count the number of interrupts */
         if (MemoryInterruptCounter % 8 == 0) { /* Just save the content to SPI Memory by ... it to the main process*/
-            MSS_SIGNALS |= MSS_SIGNAL_SPI_WRITE;
+            mssSignals |= MSS_SIGNAL_SPI_WRITE;
             MemoryPtrWatermark32Bit = 0; /* ! Reset the watermark to prevent a buffer overflow */
 
         } else if (MemoryInterruptCounter % 33 == 0) {
-            MSS_SIGNALS |= MSS_SIGNAL_TELEMETRY;
+            mssSignals |= MSS_SIGNAL_TELEMETRY;
 
         } else if (MemoryInterruptCounter == 67) {
-            MSS_SIGNALS |= MSS_SIGNAL_UPDATE_META;
+            mssSignals |= MSS_SIGNAL_UPDATE_META;
             MemoryInterruptCounter = 1;
         }
 
@@ -218,3 +224,53 @@ void FabricIrq0_IRQHandler(void) {
     HW_set_32bit_reg(MEMORY_REG(SynchStatusReg), 0x00); // Just write something to the SR Register (it does not care about the content)
     NVIC_ClearPendingIRQ(MEMORY_SYNC_IRQn);
 }
+
+
+/**
+ * ISR: Will be called whenever a change of the RXSM-LO Signal occurs
+ * and sets the appropriate flag for the main execution loop
+ */
+void GPIO_HANDLER(IN_RXSM_LO) (void) {
+    if (MSS_GPIO_get_inputs() & (1 << IN_RXSM_LO)) {
+        mssSignals |= MSS_SIGNAL_LO_RESET;
+    } else {
+        mssSignals |= MSS_SIGNAL_LO;
+    }
+    MSS_GPIO_clear_irq(IN_RXSM_LO);
+}
+
+
+/**
+ * ISR: Will be called whenever a change of the RXSM-SODS Signal occurs
+ * and sets the appropriate flag for the main execution loop
+ */
+void GPIO_HANDLER(IN_RXSM_SODS) (void) {
+    if (MSS_GPIO_get_inputs() & (1 << IN_RXSM_SODS)) {
+        mssSignals |= MSS_SIGNAL_SODS_RESET;
+    } else {
+        mssSignals |= MSS_SIGNAL_SODS;
+    }
+    MSS_GPIO_clear_irq(IN_RXSM_SODS);
+}
+
+
+/**
+ * ISR: Will be called whenever a change of the RXSM-SOE Signal occurs
+ * and sets the appropriate flag for the main execution loop
+ */
+void GPIO_HANDLER(IN_RXSM_SOE) (void) {
+    if (MSS_GPIO_get_inputs() & (1 << IN_RXSM_SOE)) {
+        mssSignals |= MSS_SIGNAL_SOE_RESET;
+    } else {
+        mssSignals |= MSS_SIGNAL_SOE;
+    }
+    MSS_GPIO_clear_irq(IN_RXSM_SOE);
+}
+
+
+void NMI_Handler (void) {
+    MSS_WD_clear_timeout_irq();
+}
+
+
+

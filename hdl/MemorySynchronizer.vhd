@@ -404,6 +404,7 @@ begin
                         elsif (WaitingTimerCounter = (TO_INTEGER(UNSIGNED(WaitingTimerValueReg)) - 2 ) -- 2 becase the if case will do -1 and the next cycle in S1 will do an other
                                     AND NUMBEROF(IN_newAvails) /= 6) then -- Just do it to wait for one cycle to prevent reading TimeStampReg in the same cycle as writing it
                             COPY_AND_MARK_DATA(IN_newAvails, IN_databus);
+							-- !!! Read line below and write it a bit nicer
                         elsif (WaitingTimerCounter = 1 OR NUMBEROF(IN_newAvails) = 6) then  
                             if (NUMBEROF(IN_newAvails) >= numberOfnewAvails) then 
                                 COPY_AND_MARK_DATA(IN_newAvails, IN_databus);

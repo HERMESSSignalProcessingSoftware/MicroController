@@ -1,4 +1,5 @@
 /**
+ * @file hw_platform.h
  * HERMESS SPU hardware configuration
  * based on the auto generated sb_hw_platform.h
  */
@@ -23,6 +24,10 @@
 #define IN_WP                           5
 #define LED_RECORDING                   30
 #define LED_HEARTBEAT                   31
+/*Needed because of the nCS falling - rising behaviour after each byte */
+#define FLASH_CS1                       28
+#define FLASH_CS2                       29
+#define OUT_ENABLE_MEM_SYNC             12
 
 /*-----------------------------------------------------------------------------
 * APB SLAVES

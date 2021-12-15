@@ -10,7 +10,7 @@ extern "C" {
 #include "../drivers/mss_gpio/mss_gpio.h"
 #include "../drivers/apb_stamp/apb_stamp.h"
 #include "tools.h"
-
+#include "../drivers/mss_watchdog/mss_watchdog.h"
 
 #define ADS_CMD_WAKEUP              0xFF00U
 #define ADS_CMD_SLEEP               0xFF02U
@@ -49,177 +49,189 @@ static const uint8_t stampsIrqnBit[] = {
         F2M_INT_STAMP_3, F2M_INT_STAMP_4, F2M_INT_STAMP_5
 };
 // stores instances to all stamps
-static apb_stamp_t stamps[] = {{0}, {0}, {0}, {0}, {0}, {0}};
+static apb_stamp_t stamps[6];
 // stores the callback for the data available handler
 static void (*stampsIrqnDataAvail)(uint8_t, uint32_t, uint32_t) = 0;
-// stores the callback for an async event
-static void (*stampsIrqnAsync)() = 0;
 
 
 
-void stampsInit (void) {
+void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
+        uint8_t pgaRtd, uint8_t spsRtd) {
     // initialize ADC start GPIO and settle ADC
     MSS_GPIO_config(OUT_ADC_START, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_set_output(OUT_ADC_START, 1);
     delay(20);
 
+    // assemble the configuration
+    const uint16_t sgrConf = 0xB000U | (pgaSgr << 4) | spsSgr;
+    const uint16_t rtdConf =  0x2032U | (pgaRtd << 4) | spsRtd;
+    uint32_t configflags = 0x0;
+
     // initialize the APB STAMP component
-    APB_STAMP_init(&stamps[0], stampsAddresses[0], stampsIrqnBit[0]);
+    for (int i = 0; i < 6; i++) {
+        stamps[i] = APB_STAMP_init(stampsAddresses[i], stampsIrqnBit[i]);
 
-    // reset all ADCs and let it settle
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
-            ADS_CMD_RESET,
-            STAMP_MOD_NONE);
-    delay(1);
-
-    // stop continuous data conversion by ADC
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
-            ADS_CMD_SDATAC,
-            STAMP_MOD_NONE);
-
-    // write to registers (MUX1 and SOS0) and check if correct
-    const uint16_t dmsConf = 0xB078U; // PGA 128; SPS 1000
-    uint16_t readConf = 0;
-    uint8_t confTrials = 0;
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2,
-            ADS_CMD_WREG(ADS_REG_MUX1, 2),
-            STAMP_MOD_ATOMIC);
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2,
-            dmsConf,
-            STAMP_MOD_NONE);
-    // check configuration for DMS1
-    do {
-        confTrials++;
-        APB_STAMP_writeAdc(&stamps[0],
-                STAMP_REG_WRITE_DMS1,
-                ADS_CMD_RREG(ADS_REG_MUX1, 2),
-                STAMP_MOD_ATOMIC);
-        APB_STAMP_writeAdc(&stamps[0],
-                STAMP_REG_WRITE_DMS1,
-                ADS_CMD_NOP,
+        // reset all ADCs and let it settle
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
+                ADS_CMD_RESET,
                 STAMP_MOD_NONE);
-        readConf = APB_STAMP_readAdc(&stamps[0], STAMP_MOD_NONE);
-        if (readConf != dmsConf)
-            spuLog("DMS1 configuration mismatch!");
-    } while (readConf != dmsConf && confTrials < 3);
-    confTrials = 0;
-    // check configuration for DMS2
-    do {
-        confTrials++;
-        APB_STAMP_writeAdc(&stamps[0],
-                STAMP_REG_WRITE_DMS2,
-                ADS_CMD_RREG(ADS_REG_MUX1, 2),
-                STAMP_MOD_ATOMIC);
-        APB_STAMP_writeAdc(&stamps[0],
-                STAMP_REG_WRITE_DMS2,
-                ADS_CMD_NOP,
-                STAMP_MOD_NONE);
-        readConf = APB_STAMP_readAdc(&stamps[0], STAMP_MOD_NONE);
-        if (readConf != dmsConf)
-            spuLog("DMS2 configuration mismatch!");
-    } while (readConf != dmsConf && confTrials < 3);
+        delay(1);
 
-    // configure temperature sensor
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_TEMP,
-            ADS_CMD_WREG(ADS_REG_MUX0, 4),
-            STAMP_MOD_ATOMIC);
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_TEMP,
-            0x0A00U, // ADC Pos: AIN1, ADC Neg: AIN2
-            STAMP_MOD_ATOMIC);
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_TEMP,
-            0x2032U, // PGA 4; SPS 20
-            STAMP_MOD_NONE);
-    // configure temperature IDACs
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_TEMP,
-            ADS_CMD_WREG(ADS_REG_IDAC0, 2),
-            STAMP_MOD_ATOMIC);
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_TEMP,
-            0x0603U, // IDAC 1mA; IDAC0: AIN0, IDAC1: AIN3
-            STAMP_MOD_NONE);
-    // check the configuration
-    confTrials = 0;
-    uint32_t readTempConf = 0;
-    do {
-        readTempConf = 0;
-        APB_STAMP_writeAdc(&stamps[0],
+        // stop continuous data conversion by ADC
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
+                ADS_CMD_SDATAC,
+                STAMP_MOD_NONE);
+
+        // write to registers (MUX1 and SOS0) and check if correct
+        uint16_t readConf = 0;
+        uint8_t confTrials = 0;
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2,
+                ADS_CMD_WREG(ADS_REG_MUX1, 2),
+                STAMP_MOD_ATOMIC);
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2,
+                sgrConf, // PGA and SPS
+                STAMP_MOD_NONE);
+        // check configuration for SGR1
+        do {
+            confTrials++;
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_DMS1,
+                    ADS_CMD_RREG(ADS_REG_MUX1, 2),
+                    STAMP_MOD_ATOMIC);
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_DMS1,
+                    ADS_CMD_NOP,
+                    STAMP_MOD_NONE);
+            readConf = APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE);
+            if (readConf != sgrConf) {
+                configflags = 1;
+                 spuLog("SGR1 configuration mismatch!");
+            }
+        } while (readConf != sgrConf && confTrials < 3);
+        confTrials = 0;
+        // check configuration for SGR2
+        do {
+            confTrials++;
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_DMS2,
+                    ADS_CMD_RREG(ADS_REG_MUX1, 2),
+                    STAMP_MOD_ATOMIC);
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_DMS2,
+                    ADS_CMD_NOP,
+                    STAMP_MOD_NONE);
+            readConf = APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE);
+            if (readConf != sgrConf) {
+                configflags = 1;
+                spuLog("SGR2 configuration mismatch!");
+            }
+        } while (readConf != sgrConf && confTrials < 3);
+
+        // configure temperature sensor
+        APB_STAMP_writeAdc(&stamps[i],
                 STAMP_REG_WRITE_TEMP,
-                ADS_CMD_RREG(ADS_REG_MUX0, 2),
+                ADS_CMD_WREG(ADS_REG_MUX0, 4),
                 STAMP_MOD_ATOMIC);
-        APB_STAMP_writeAdc(&stamps[0],
+        APB_STAMP_writeAdc(&stamps[i],
                 STAMP_REG_WRITE_TEMP,
-                ADS_CMD_NOP,
+                0x0A00U, // ADC Pos: AIN1, ADC Neg: AIN2
+                STAMP_MOD_ATOMIC);
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_TEMP,
+                rtdConf,
                 STAMP_MOD_NONE);
-        readTempConf = APB_STAMP_readAdc(&stamps[0], STAMP_MOD_NONE) ^ 0x0A00U;
-        if (readTempConf) {
-            spuLog("TEMP configuration mismatch!");
+        // configure temperature IDACs
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_TEMP,
+                ADS_CMD_WREG(ADS_REG_IDAC0, 2),
+                STAMP_MOD_ATOMIC);
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_TEMP,
+                0x0603U, // IDAC 1mA; IDAC0: AIN0, IDAC1: AIN3
+                STAMP_MOD_NONE);
+
+        // check the temperature configuration
+        confTrials = 0;
+        uint32_t readTempConf = 0;
+        do {
+            confTrials++;
+            readTempConf = 0;
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_TEMP,
+                    ADS_CMD_RREG(ADS_REG_MUX0, 2),
+                    STAMP_MOD_ATOMIC);
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_TEMP,
+                    ADS_CMD_NOP,
+                    STAMP_MOD_NONE);
+            readTempConf = APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE)
+                    ^ 0x0A00U;
+            if (readTempConf) {
+                spuLog("TEMP configuration mismatch!");
+                continue;
+            }
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_TEMP,
+                    ADS_CMD_RREG(ADS_REG_MUX1, 2),
+                    STAMP_MOD_ATOMIC);
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_TEMP,
+                    ADS_CMD_NOP,
+                    STAMP_MOD_NONE);
+            readTempConf = ((APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE)
+                    & 0x7FFFU) ^ rtdConf) << 16;
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_TEMP,
+                    ADS_CMD_RREG(ADS_REG_IDAC0, 2),
+                    STAMP_MOD_ATOMIC);
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_TEMP,
+                    ADS_CMD_NOP,
+                    STAMP_MOD_NONE);
+            readTempConf |= ((APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE)
+                    & 0x0FFFU) ^ 0x0603U);
+            if (readTempConf) {
+                configflags = 1;
+                spuLog("TEMP configuration mismatch!");
+            }
+        } while (readTempConf && confTrials < 3);
+        if (configflags == 1) {
+            configflags = 0;
             continue;
         }
-        APB_STAMP_writeAdc(&stamps[0],
-                STAMP_REG_WRITE_TEMP,
-                ADS_CMD_RREG(ADS_REG_MUX1, 2),
-                STAMP_MOD_ATOMIC);
-        APB_STAMP_writeAdc(&stamps[0],
-                STAMP_REG_WRITE_TEMP,
-                ADS_CMD_NOP,
-                STAMP_MOD_NONE);
-        readTempConf = ((APB_STAMP_readAdc(&stamps[0], STAMP_MOD_NONE) & 0x7FFFU) ^ 0x2032U) << 16;
-        APB_STAMP_writeAdc(&stamps[0],
-                STAMP_REG_WRITE_TEMP,
-                ADS_CMD_RREG(ADS_REG_IDAC0, 2),
-                STAMP_MOD_ATOMIC);
-        APB_STAMP_writeAdc(&stamps[0],
-                STAMP_REG_WRITE_TEMP,
-                ADS_CMD_NOP,
-                STAMP_MOD_NONE);
-        readTempConf |= ((APB_STAMP_readAdc(&stamps[0], STAMP_MOD_NONE) & 0x0FFFU) ^ 0x0603U);
-        if (readTempConf)
-            spuLog("TEMP configuration mismatch!");
-        confTrials++;
-    } while (readTempConf && confTrials < 3);
-
-    // run offset cal
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_DMS1,
-            ADS_CMD_SYSOCAL,
-            STAMP_MOD_DATA_READY);
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_DMS2,
-            ADS_CMD_SYSOCAL,
-            STAMP_MOD_DATA_READY);
-    APB_STAMP_writeAdc(&stamps[0],
+        // run offset calibration
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_DMS1,
+                ADS_CMD_SYSOCAL,
+                STAMP_MOD_DATA_READY);
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_DMS2,
+                ADS_CMD_SYSOCAL,
+                STAMP_MOD_DATA_READY);
+        APB_STAMP_writeAdc(&stamps[i],
                 STAMP_REG_WRITE_TEMP,
                 ADS_CMD_SYSOCAL,
                 STAMP_MOD_DATA_READY);
 
-    // start continuous data conversion by ADC
-    APB_STAMP_writeAdc(&stamps[0],
-            STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
-            ADS_CMD_RDATAC,
-            STAMP_MOD_NONE);
-
-    // enable interrupts from the ADC !DRDY signal
-    //APB_STAMP_enableInterrupt(&stamps[0]);
+        // start continuous data conversion by ADC
+        APB_STAMP_writeAdc(&stamps[i],
+                STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
+                ADS_CMD_RDATAC,
+                STAMP_MOD_NONE);
+        MSS_WD_reload();
+    }
 
     // enable continuous mode (on APB_STAMP) and set configuration parameters
     MSS_GPIO_set_output(OUT_ADC_START, 0);
     stamp_config_t conf = {.reset = 0, .continuous = 1, .asyncThreshold = 16,
             .empty = 0, .stampId = 0};
-    APB_STAMP_writeConfig(&stamps[0], &conf, STAMP_MOD_NONE);
+    for (int i = 0; i < 6; i++)
+        APB_STAMP_writeConfig(&stamps[i], &conf, STAMP_MOD_NONE);
     MSS_GPIO_set_output(OUT_ADC_START, 1);
-
-    // configure ADC start signal from the synchronizer (triggered when async)
-   // MSS_GPIO_config(IN_SYNC_START,
-    //        MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_NEGATIVE);
-    //MSS_GPIO_enable_irq(IN_SYNC_START);
 }
 
 
@@ -233,24 +245,17 @@ void stampsSync (void) {
 
 
 void stampsEnableDReadyInterrupts (void) {
-    APB_STAMP_enableInterrupt(&stamps[0]);
+    for (int i = 0; i < 6; i++) {
+        APB_STAMP_enableInterrupt(&stamps[i]);
+    }
 }
 void stampsDisableDReadyInterrupts (void) {
-    APB_STAMP_disableInterrupt(&stamps[0]);
+    for (int i = 0; i < 6; i++) {
+        APB_STAMP_disableInterrupt(&stamps[i]);
+    }
 }
 void stampsSetDReadyCallback (void (*callback)(uint8_t, uint32_t, uint32_t)) {
     stampsIrqnDataAvail = callback;
-}
-
-
-void stampsEnableAsyncInterrupt (void) {
-    MSS_GPIO_enable_irq(IN_SYNC_START);
-}
-void stampsDisableAsyncInterrupt (void) {
-    MSS_GPIO_disable_irq(IN_SYNC_START);
-}
-void stampsSetAsyncCallback (void (*callback)()) {
-    stampsIrqnAsync = callback;
 }
 
 
@@ -278,14 +283,6 @@ STAMP_IRQN(F2M_INT_STAMP_2)
 STAMP_IRQN(F2M_INT_STAMP_3)
 STAMP_IRQN(F2M_INT_STAMP_4)
 STAMP_IRQN(F2M_INT_STAMP_5)
-
-
-// the ISR for the async event
-void GPIO_HANDLER(IN_SYNC_START) () {
-    if (stampsIrqnAsync)
-        stampsIrqnAsync();
-    MSS_GPIO_clear_irq(IN_SYNC_START);
-}
 
 
 

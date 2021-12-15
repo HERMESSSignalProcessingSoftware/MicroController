@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Wed Sep 29 12:57:38 2021
+-- Created by SmartDesign Sun Dec 12 10:37:28 2021
 -- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
@@ -161,6 +161,9 @@ component sb_sb
         -- Outputs
         FIC_0_CLK            : out std_logic;
         FIC_0_LOCK           : out std_logic;
+        GPIO_12_M2F          : out std_logic;
+        GPIO_28_M2F          : out std_logic;
+        GPIO_29_M2F          : out std_logic;
         GPIO_30_M2F          : out std_logic;
         GPIO_31_M2F          : out std_logic;
         GPIO_3_M2F           : out std_logic;
@@ -179,7 +182,6 @@ component sb_sb
         SPI_0_DO_M2F         : out std_logic;
         SPI_0_SS0_M2F        : out std_logic;
         SPI_0_SS0_M2F_OE     : out std_logic;
-        SPI_0_SS1_M2F        : out std_logic;
         STAMP_1_PADDRS       : out std_logic_vector(31 downto 0);
         STAMP_1_PENABLES     : out std_logic;
         STAMP_1_PSELS2       : out std_logic;
@@ -220,8 +222,8 @@ end component;
 signal AND2_0_Y                            : std_logic;
 signal DAPI_TXD_net_0                      : std_logic;
 signal F_CLK_net_0                         : std_logic;
-signal F_CS1_net_0                         : std_logic;
-signal F_CS2_net_0                         : std_logic;
+signal F_CS1_0                             : std_logic;
+signal F_CS2_0                             : std_logic;
 signal F_MOSI_net_0                        : std_logic;
 signal LED_HB_MSS_net_0                    : std_logic;
 signal LED_RECORDING_net_0                 : std_logic;
@@ -230,6 +232,7 @@ signal MemorySynchronizer_0_ReadInterrupt  : std_logic;
 signal OUT_ADC_START_net_0                 : std_logic;
 signal sb_sb_0_FIC_0_CLK                   : std_logic;
 signal sb_sb_0_GPIO_4_M2F                  : std_logic;
+signal sb_sb_0_GPIO_12_M2F                 : std_logic;
 signal sb_sb_0_MemSync_PENABLE             : std_logic;
 signal sb_sb_0_MemSync_PRDATA              : std_logic_vector(31 downto 0);
 signal sb_sb_0_MemSync_PREADY              : std_logic;
@@ -334,10 +337,10 @@ signal LED_RECORDING_net_1                 : std_logic;
 signal OUT_ADC_START_net_1                 : std_logic;
 signal DAPI_TXD_net_1                      : std_logic;
 signal TM_TXD_net_1                        : std_logic;
-signal F_CS2_net_1                         : std_logic;
+signal F_CS2_0_net_0                       : std_logic;
 signal F_CLK_net_1                         : std_logic;
 signal F_MOSI_net_1                        : std_logic;
-signal F_CS1_net_1                         : std_logic;
+signal F_CS1_0_net_0                       : std_logic;
 signal STAMP1_CS_TEMP_net_1                : std_logic;
 signal STAMP1_MOSI_net_1                   : std_logic;
 signal STAMP1_CS_SGR2_net_1                : std_logic;
@@ -374,8 +377,8 @@ signal IN_requestSync_net_0                : std_logic_vector(5 downto 0);
 ----------------------------------------------------------------------
 -- TiedOff Signals
 ----------------------------------------------------------------------
-signal GND_net                             : std_logic;
 signal VCC_net                             : std_logic;
+signal GND_net                             : std_logic;
 ----------------------------------------------------------------------
 -- Bus Interface Nets Declarations - Unequal Pin Widths
 ----------------------------------------------------------------------
@@ -412,12 +415,12 @@ begin
 ----------------------------------------------------------------------
 -- Constant assignments
 ----------------------------------------------------------------------
- GND_net <= '0';
  VCC_net <= '1';
+ GND_net <= '0';
 ----------------------------------------------------------------------
 -- TieOff assignments
 ----------------------------------------------------------------------
- LED_HB_MEMSYNC       <= '0';
+ LED_HB_MEMSYNC       <= '1';
  LED_FPGA_LOADED      <= '1';
 ----------------------------------------------------------------------
 -- Top level output port assignments
@@ -432,14 +435,14 @@ begin
  DAPI_TXD             <= DAPI_TXD_net_1;
  TM_TXD_net_1         <= TM_TXD_net_0;
  TM_TXD               <= TM_TXD_net_1;
- F_CS2_net_1          <= F_CS2_net_0;
- F_CS2                <= F_CS2_net_1;
+ F_CS2_0_net_0        <= F_CS2_0;
+ F_CS2                <= F_CS2_0_net_0;
  F_CLK_net_1          <= F_CLK_net_0;
  F_CLK                <= F_CLK_net_1;
  F_MOSI_net_1         <= F_MOSI_net_0;
  F_MOSI               <= F_MOSI_net_1;
- F_CS1_net_1          <= F_CS1_net_0;
- F_CS1                <= F_CS1_net_1;
+ F_CS1_0_net_0        <= F_CS1_0;
+ F_CS1                <= F_CS1_0_net_0;
  STAMP1_CS_TEMP_net_1 <= STAMP1_CS_TEMP_net_0;
  STAMP1_CS_TEMP       <= STAMP1_CS_TEMP_net_1;
  STAMP1_MOSI_net_1    <= STAMP1_MOSI_net_0;
@@ -548,7 +551,7 @@ MemorySynchronizer_0 : entity work.MemorySynchronizer
         -- Inputs
         clk                   => sb_sb_0_FIC_0_CLK,
         nReset                => AND2_0_Y,
-        IN_enable             => VCC_net,
+        IN_enable             => sb_sb_0_GPIO_12_M2F,
         PSEL                  => sb_sb_0_MemSync_PSELx,
         PENABLE               => sb_sb_0_MemSync_PENABLE,
         PWRITE                => sb_sb_0_MemSync_PWRITE,
@@ -654,13 +657,15 @@ sb_sb_0 : sb_sb
         MMUART_1_TXD_M2F     => TM_TXD_net_0,
         GPIO_3_M2F           => OUT_ADC_START_net_0,
         GPIO_4_M2F           => sb_sb_0_GPIO_4_M2F,
+        GPIO_12_M2F          => sb_sb_0_GPIO_12_M2F,
+        GPIO_28_M2F          => F_CS1_0,
+        GPIO_29_M2F          => F_CS2_0,
         GPIO_30_M2F          => LED_RECORDING_net_0,
         GPIO_31_M2F          => LED_HB_MSS_net_0,
         SPI_0_DO_M2F         => F_MOSI_net_0,
         SPI_0_CLK_M2F        => F_CLK_net_0,
-        SPI_0_SS0_M2F        => F_CS1_net_0,
-        SPI_0_SS0_M2F_OE     => OPEN,
-        SPI_0_SS1_M2F        => F_CS2_net_0 
+        SPI_0_SS0_M2F        => OPEN,
+        SPI_0_SS0_M2F_OE     => OPEN 
         );
 -- STAMP_1
 STAMP_1 : entity work.STAMP

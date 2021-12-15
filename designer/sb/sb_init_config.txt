@@ -1,6 +1,6 @@
 Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)
 Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
-Date: Fri Nov 12 15:31:02 2021
+Date: Mon Dec 13 16:02:05 2021
 
 sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 +-------------------+--------------------+---------------+-------+
@@ -252,7 +252,7 @@ sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | PERIPH_CLOCK_MUX_SEL    | SPI1_SCK_FAB_SEL            | INIT[463:463]   | 1'h0         | INIT[52]  | 1             |
 | PERIPH_CLOCK_MUX_SEL    | TRACECLK_DIV2_SEL           | INIT[464:464]   | 1'h0         | INIT[52]  | 1             |
 | WDOGCONFIG              | G4_TESTWDOGENABLE           | INIT[465:465]   | 1'h1         | INIT[53]  | 1             |
-| WDOGCONFIG              | G4_TESTWDOGMODE             | INIT[466:466]   | 1'h0         | INIT[53]  | 1             |
+| WDOGCONFIG              | G4_TESTWDOGMODE             | INIT[466:466]   | 1'h1         | INIT[53]  | 1             |
 | MDDR_IO_CALIB           | PCODE                       | INIT[472:467]   | 'h2a         | INIT[54]  | 1             |
 | MDDR_IO_CALIB           | NCODE                       | INIT[478:473]   | 'h28         | INIT[54]  | 1             |
 | MDDR_IO_CALIB           | CALIB_TRIM                  | INIT[479:479]   | 1            | INIT[54]  | 1             |
@@ -532,8 +532,8 @@ sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1057:1057] | 1'h0         | INIT[108] | 1             |
 | IOMUXCELL_19_CONFIG     | MSS_IOMUXSEL0               | INIT[1058:1058] | 1'h0         | INIT[109] | 1             |
 | IOMUXCELL_19_CONFIG     | MSS_IOMUXSEL1               | INIT[1059:1059] | 1'h0         | INIT[109] | 1             |
-| IOMUXCELL_19_CONFIG     | MSS_IOMUXSEL2               | INIT[1060:1060] | 1'h1         | INIT[109] | 1             |
-| IOMUXCELL_19_CONFIG     | MSS_IOMUXSEL3               | INIT[1061:1061] | 1'h1         | INIT[109] | 1             |
+| IOMUXCELL_19_CONFIG     | MSS_IOMUXSEL2               | INIT[1060:1060] | 1'h0         | INIT[109] | 1             |
+| IOMUXCELL_19_CONFIG     | MSS_IOMUXSEL3               | INIT[1061:1061] | 1'h0         | INIT[109] | 1             |
 | IOMUXCELL_19_CONFIG     | MSS_IOMUXSEL4UPPER          | INIT[1062:1062] | 1'h0         | INIT[109] | 1             |
 | IOMUXCELL_19_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1063:1063] | 1'h0         | INIT[109] | 1             |
 | IOMUXCELL_19_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1064:1064] | 1'h0         | INIT[109] | 1             |

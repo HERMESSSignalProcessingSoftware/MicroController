@@ -3,7 +3,7 @@
 <doc>
 <title>Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</text>
-<text>Date: Fri Nov 12 15:31:02 2021
+<text>Date: Mon Dec 13 16:02:05 2021
 </text>
 <section><name>sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP</name></section>
 <table>
@@ -1649,7 +1649,7 @@
  <cell>WDOGCONFIG</cell>
  <cell>G4_TESTWDOGMODE</cell>
  <cell>INIT[466:466]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[53]</cell>
  <cell>1</cell>
 </row>
@@ -3889,7 +3889,7 @@
  <cell>IOMUXCELL_19_CONFIG</cell>
  <cell>MSS_IOMUXSEL2</cell>
  <cell>INIT[1060:1060]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[109]</cell>
  <cell>1</cell>
 </row>
@@ -3897,7 +3897,7 @@
  <cell>IOMUXCELL_19_CONFIG</cell>
  <cell>MSS_IOMUXSEL3</cell>
  <cell>INIT[1061:1061]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[109]</cell>
  <cell>1</cell>
 </row>

@@ -1,6 +1,6 @@
 set_component sb_sb_MSS
 # Microsemi Corp.
-# Date: 2021-Sep-29 12:56:47
+# Date: 2021-Dec-13 15:59:17
 #
 
 create_clock -period 40 [ get_pins { MSS_ADLIB_INST/CLK_CONFIG_APB } ]

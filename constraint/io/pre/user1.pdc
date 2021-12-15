@@ -6,7 +6,7 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 144 TQ
 
-# Date generated: Fri Nov 12 15:21:48 2021 
+# Date generated: Sun Dec 12 12:10:54 2021 
 
 
 # 
@@ -73,6 +73,7 @@ set_io IN_RXSM_LO     \
     -pinname 125      \
     -fixed yes        \
     -iostd LVCMOS12   \
+    -RES_PULL Up      \
     -DIRECTION INPUT
 
 
@@ -80,6 +81,7 @@ set_io IN_RXSM_SODS   \
     -pinname 124      \
     -fixed yes        \
     -iostd LVCMOS12   \
+    -RES_PULL Up      \
     -DIRECTION INPUT
 
 
@@ -87,6 +89,7 @@ set_io IN_RXSM_SOE    \
     -pinname 123      \
     -fixed yes        \
     -iostd LVCMOS12   \
+    -RES_PULL Up      \
     -DIRECTION INPUT
 
 
@@ -362,14 +365,12 @@ set_io STAMP5_CS_SGR1  \
 set_io STAMP5_CS_SGR2  \
     -pinname 13        \
     -fixed yes         \
-    -iostd LVCMOS33    \
     -DIRECTION OUTPUT
 
 
 set_io STAMP5_CS_TEMP  \
     -pinname 14        \
     -fixed yes         \
-    -iostd LVCMOS33    \
     -DIRECTION OUTPUT
 
 
@@ -434,7 +435,6 @@ set_io STAMP6_CS_TEMP  \
 set_io STAMP6_DRDY_SGR1  \
     -pinname 4           \
     -fixed yes           \
-    -iostd LVCMOS33      \
     -DIRECTION INPUT
 
 
@@ -453,21 +453,18 @@ set_io STAMP6_DRDY_TEMP  \
 set_io STAMP6_MISO    \
     -pinname 3        \
     -fixed yes        \
-    -iostd LVCMOS33   \
     -DIRECTION INPUT
 
 
 set_io STAMP6_MOSI     \
     -pinname 2         \
     -fixed yes         \
-    -iostd LVCMOS33    \
     -DIRECTION OUTPUT
 
 
 set_io STAMP6_SCLK     \
     -pinname 1         \
     -fixed yes         \
-    -iostd LVCMOS33    \
     -DIRECTION OUTPUT
 
 
