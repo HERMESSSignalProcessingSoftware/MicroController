@@ -65,7 +65,14 @@ void dapiExecutePendingCommand (void) {
             MSS_UART_polled_tx(&g_mss_uart0, txEndBuffer, 3);
             // answer the request with the response
             } break;
-
+        case 0x20: {
+            uint8_t test = (uint8_t)(FastTest(device)) << 1;
+            device.CS_Pin = FLASH_CS2;
+            test |= (uint8_t)(FastTest(device));
+            uint8_t txBuffer[] = {0x20, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0F, 0x17, 0xF0 };
+            txBuffer[5] = test;
+            MSS_UART_polled_tx(&g_mss_uart0, txBuffer, 9);
+        } break;
         case 0xAA: {
             // empty the chip
             chipErase(device);

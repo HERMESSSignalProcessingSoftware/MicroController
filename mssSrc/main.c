@@ -13,6 +13,7 @@
 #include "components/tools.h"
 #include "components/stamps.h"
 #include "components/dapi.h"
+#include "components/telemetry.h"
 #include "drivers/apb_memory/Memory.h"
 #include "drivers/mss_spi/mss_spi.h"
 
@@ -24,6 +25,8 @@ uint32_t mssSignals = 0;
 
 int main (void) {
     uint32_t csr = 0;
+    uint32_t telemetryCounter = 0;
+    uint8_t *telemetryFramePtr = (uint8_t*)(&telemetryFrame);;
     // Initialize driver components
     SystemInit();
     MSS_WD_init();
@@ -160,7 +163,14 @@ int main (void) {
              *
              * Lets assume Tbit = 33us (boi its long)
              */
-            mssSignals &= ~(MSS_SIGNAL_TELEMETRY);
+            while(mssSignals != MSS_SIGNAL_SPI_WRITE) {
+                telemetryCounter++;
+                TransmitByte(*(telemetryFramePtr++));
+            }
+            if (telemetryCounter == FRAMESIZE - 1) {
+                telemetryFramePtr = (uint8_t*)(&telemetryFrame);
+                mssSignals &= ~(MSS_SIGNAL_TELEMETRY);
+            }
         }
 
         // do nothing but toggle an led once in a while
@@ -179,7 +189,7 @@ int main (void) {
 // Handle Interrupts
 void FabricIrq0_IRQHandler(void) {
     /*At first read all data */
-    uint32_t SR1 = CopyDataFabricToMaster(MemoryPtr, StatusRegisterLocals);
+    uint32_t SR1 = CopyDataFabricToMaster(MemoryPtr, &telemetryFrame,  StatusRegisterLocals);
     uint32_t CR = HW_get_32bit_reg(MEMORY_REG(ConfigReg));
     if (SR1 & PENDING_SYNCHRONIZER_INTERRUPT) {
         mssSignals |= (MSS_SIGNAL_WRITE_AND_KILL);

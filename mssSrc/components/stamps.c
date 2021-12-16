@@ -203,20 +203,23 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
             configflags = 0;
             continue;
         }
+        delay(10);
         // run offset calibration
         APB_STAMP_writeAdc(&stamps[i],
                 STAMP_REG_WRITE_DMS1,
                 ADS_CMD_SYSOCAL,
                 STAMP_MOD_DATA_READY);
+        delay(10);
         APB_STAMP_writeAdc(&stamps[i],
                 STAMP_REG_WRITE_DMS2,
                 ADS_CMD_SYSOCAL,
                 STAMP_MOD_DATA_READY);
+        delay(10);
         APB_STAMP_writeAdc(&stamps[i],
                 STAMP_REG_WRITE_TEMP,
                 ADS_CMD_SYSOCAL,
                 STAMP_MOD_DATA_READY);
-
+        delay(10);
         // start continuous data conversion by ADC
         APB_STAMP_writeAdc(&stamps[i],
                 STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,

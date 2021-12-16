@@ -6,16 +6,25 @@
  */
 
 #include "telemetry.h"
+#include "../status.h"
+#include "../drivers/mss_uart/mss_uart.h"
 
-uint8_t TransmissionPtr[60];
+Telemmetry_t telemetryFrame = { 0 };
+
+static void telemetryRxHandler (mss_uart_instance_t *this_uart) {
+
+}
 
 void InitTelemetry(void) {
-    //TODO: Do other TM Stuff here
-    //- Init RS232 for telemetry
-    //- Add functions for transmitting 
-    //  - Maybe add functions for partial transmitting
+    MSS_UART_init(&g_mss_uart1, MSS_UART_19200_BAUD,
+            MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
+    MSS_UART_set_tx_endian(&g_mss_uart1, MSS_UART_LITTLEEND);
+    MSS_UART_set_rx_handler(&g_mss_uart1, telemetryRxHandler,
+                MSS_UART_FIFO_SINGLE_BYTE);
+}
 
-    for (int i = 0; i < FRAMESIZE; i++) {
-        TransmissionPtr[i] = 0;
-    }
+/*TODO: Fix retrun value! */
+uint32_t TransmitByte(uint8_t byte) {
+    MSS_UART_polled_tx(&g_mss_uart1, &byte, 1);
+    return 0;
 }

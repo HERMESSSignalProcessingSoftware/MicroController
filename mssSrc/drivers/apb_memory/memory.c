@@ -11,6 +11,7 @@
 #include "../../drivers/mss_gpio/mss_gpio.h"
 #include "../../hw_platform.h"
 #include "../../drivers/mss_spi/mss_spi.h"
+#include "../../components/telemetry.h"
 
 /**
  * Creating a pointer to save the data internally and than process SPI actions
@@ -51,7 +52,7 @@ void InitMemorySynchronizer(uint32_t Erase, uint32_t start) {
             16u, MSS_SPI_BLOCK_TRANSFER_FRAME_SIZE);
     /* Do set the nCSx signals to high */
     MSS_GPIO_set_output(FLASH_CS1, 1);
-    MSS_GPIO_set_output(FLASH_CS1, 1);
+    MSS_GPIO_set_output(FLASH_CS2, 1);
     MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 
     /* Disable Interrupts */
@@ -197,10 +198,6 @@ uint32_t FastTest(SPI_Values spi_val) {
         writeBuffer[i] = i;
     }
 
-    //CHIP löschen
-    //chipErase(DUT);
-    //evtl Zusätzliche Schleife für die verschiedenen Chips und CS pin
-    //Daten für eine Page schicken
     writePage(writeBuffer, adresse, spi_val);
     //Warten bis fertig geschrieben wurde
     writeReady(spi_val);
@@ -446,8 +443,10 @@ void writeReady(SPI_Values SPI_val) {
  * @param SRlocals missing three bits covering SODS SOE and LO signals to save them to memory
  * @return uint32_t the value of SR1 for interrupt reason examination after copying the data
  */
-uint32_t CopyDataFabricToMaster(uint8_t *puffer, uint32_t SRlocals) {
+uint32_t CopyDataFabricToMaster(uint8_t *puffer, Telemmetry_t *telFrame, uint32_t SRlocals) {
     uint32_t SR1 = HW_get_32bit_reg(MEMORY_REG(SynchStatusReg));
+    uint32_t local = 0;
+    uint32_t *telFramePtr = (uint32_t*)(telFrame);
     SR1 |= SRlocals;
     if (puffer) {
         uint32_t *ptr32 = (uint32_t*) puffer;
@@ -459,17 +458,23 @@ uint32_t CopyDataFabricToMaster(uint8_t *puffer, uint32_t SRlocals) {
             MemoryPtrWatermark32Bit++;
             MemoryDatasetCounter++;
         }
-        ptr32[MemoryPtrWatermark32Bit++] = HW_get_32bit_reg(
-                MEMORY_REG(TimeStampReg));
+        local = HW_get_32bit_reg(MEMORY_REG(TimeStampReg));
+        ptr32[MemoryPtrWatermark32Bit++] = local;
+        telFrame->timestamp = local;
+        telFramePtr++;
         /*Copy all the data */
         for (int i = LOWESTSTAMP; i <= HIGHESTSTAMP; i += 4) {
-            ptr32[MemoryPtrWatermark32Bit++] = HW_get_32bit_reg(MEMORY_REG(i));
+            local = HW_get_32bit_reg(MEMORY_REG(i));
+            *(telFramePtr++) = local;
+            ptr32[MemoryPtrWatermark32Bit++] = local;
             HW_set_32bit_reg(MEMORY_REG(i), 0x0); //Reset the stamp shadow registers
         }
         /* Add status registers */
         ptr32[MemoryPtrWatermark32Bit++] = SR1;
-        ptr32[MemoryPtrWatermark32Bit++] = HW_get_32bit_reg(
-                MEMORY_REG(SynchStatusReg2));
+        telFrame->statusReg1 = SR1;
+        local = HW_get_32bit_reg(MEMORY_REG(SynchStatusReg2));
+        ptr32[MemoryPtrWatermark32Bit++] = local;
+        telFrame->statusReg2 = local;
         /* Reset TimeStampReg, SR2, SR1 values */
         HW_set_32bit_reg(MEMORY_REG(TimeStampReg), 0x0);
         HW_set_32bit_reg(MEMORY_REG(SynchStatusReg2), 0x0);

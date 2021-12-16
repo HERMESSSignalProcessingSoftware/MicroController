@@ -17,6 +17,7 @@ extern "C" {
 #include "../../hw_platform.h"
 #include "../../drivers/mss_spi/mss_spi.h"
 #include "../../components/tools.h"
+#include "../../components/telemetry.h"
 #include "MemorySyncAPB.h"
 
 #define c_WRDI 0x04
@@ -216,10 +217,11 @@ void writeReady(SPI_Values);
 /*
  * Copies the registers Stamp1Shadow1 - Stamp6Shadow2, SR, SR2, Timestamp to the internal memory
  * @param puffer pointer to a memory region of 512 byte
+ * @param telFrame pointer to typedef struct for telemetry
  * @param SRlocals missing three bits covering SODS SOE and LO signals to save them to memory
  * @return uint32_t the value of SR1 for interrupt reason examination after copying the data
  */
-uint32_t CopyDataFabricToMaster(uint8_t *puffer, uint32_t SRlocals);
+uint32_t CopyDataFabricToMaster(uint8_t *puffer, Telemmetry_t *telFrame, uint32_t SRlocals);
 
 /**
  * Writes a given number of bytes to the spi device; you may use this for partial page writing
