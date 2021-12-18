@@ -31,7 +31,7 @@
     <body>
         <h1 align="center">Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)</h1>
         <p>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</p>
-        <p>Date: Fri Feb 12 10:15:04 2021
+        <p>Date: Mon Dec 13 16:02:05 2021
 </p>
         <h2>sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP</h2>
         <table cellpadding="4">
@@ -51,7 +51,7 @@
                 <td>FCCC_FBDIV_CR0</td>
                 <td>FBDIV[7:0]</td>
                 <td>INIT[15:8]</td>
-                <td>8'h3</td>
+                <td>8'h1</td>
             </tr>
             <tr>
                 <td>FCCC_FBDIV_CR1</td>
@@ -225,7 +225,7 @@
                 <td>FCCC_PLL_CR7</td>
                 <td>DIVQ[2:0]</td>
                 <td>INIT[148:146]</td>
-                <td>3'h3</td>
+                <td>3'h4</td>
             </tr>
             <tr>
                 <td>FCCC_PLL_CR5</td>
@@ -243,7 +243,7 @@
                 <td>FCCC_PLL_CR5</td>
                 <td>MODE_3V3</td>
                 <td>INIT[151:151]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
             </tr>
             <tr>
                 <td>FCCC_PLL_CR6</td>
@@ -1325,7 +1325,7 @@
                 <td>SOFTRESET</td>
                 <td>G4SPI0_SOFTRESET</td>
                 <td>INIT[359:359]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[27]</td>
                 <td>1</td>
             </tr>
@@ -1509,7 +1509,7 @@
                 <td>FAB_IF</td>
                 <td>FAB0_AHB_MODE</td>
                 <td>INIT[408:408]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[46]</td>
                 <td>1</td>
             </tr>
@@ -1645,7 +1645,7 @@
                 <td>PERIPH_CLOCK_MUX_SEL</td>
                 <td>SPI0_SCK_FAB_SEL</td>
                 <td>INIT[462:462]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[52]</td>
                 <td>1</td>
             </tr>
@@ -1677,7 +1677,7 @@
                 <td>WDOGCONFIG</td>
                 <td>G4_TESTWDOGMODE</td>
                 <td>INIT[466:466]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[53]</td>
                 <td>1</td>
             </tr>
@@ -1685,7 +1685,7 @@
                 <td>MDDR_IO_CALIB</td>
                 <td>PCODE</td>
                 <td>INIT[472:467]</td>
-                <td>6'h00</td>
+                <td>'h2a</td>
                 <td>INIT[54]</td>
                 <td>1</td>
             </tr>
@@ -1693,7 +1693,7 @@
                 <td>MDDR_IO_CALIB</td>
                 <td>NCODE</td>
                 <td>INIT[478:473]</td>
-                <td>6'h00</td>
+                <td>'h28</td>
                 <td>INIT[54]</td>
                 <td>1</td>
             </tr>
@@ -1701,7 +1701,7 @@
                 <td>MDDR_IO_CALIB</td>
                 <td>CALIB_TRIM</td>
                 <td>INIT[479:479]</td>
-                <td>1'h0</td>
+                <td>1</td>
                 <td>INIT[54]</td>
                 <td>1</td>
             </tr>
@@ -1933,7 +1933,7 @@
                 <td>MSSDDR_PLL_STATUS_LOW</td>
                 <td>FACC_PLL_DIVR</td>
                 <td>INIT[551:546]</td>
-                <td>6'h01</td>
+                <td>6'h00</td>
                 <td>INIT[62]</td>
                 <td>1</td>
             </tr>
@@ -1941,7 +1941,7 @@
                 <td>MSSDDR_PLL_STATUS_LOW</td>
                 <td>FACC_PLL_DIVF</td>
                 <td>INIT[561:552]</td>
-                <td>10'h001</td>
+                <td>10'h000</td>
                 <td>INIT[62]</td>
                 <td>1</td>
             </tr>
@@ -1997,7 +1997,7 @@
                 <td>MSSDDR_PLL_STATUS_HIGH</td>
                 <td>FACC_PLL_MODE_3V3</td>
                 <td>INIT[578:578]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[63]</td>
                 <td>1</td>
             </tr>
@@ -2093,7 +2093,7 @@
                 <td>MSSDDR_FACC_CONFIG_1</td>
                 <td>FIC32_0_DIVISOR</td>
                 <td>INIT[604:602]</td>
-                <td>3'h0</td>
+                <td>3'h1</td>
                 <td>INIT[70]</td>
                 <td>1</td>
             </tr>
@@ -2117,7 +2117,7 @@
                 <td>MSSDDR_FACC_CONFIG_1</td>
                 <td>BASE_DIVISOR</td>
                 <td>INIT[613:611]</td>
-                <td>3'h0</td>
+                <td>3'h1</td>
                 <td>INIT[73]</td>
                 <td>1</td>
             </tr>
@@ -2285,7 +2285,7 @@
                 <td>WDOGLOAD</td>
                 <td>G4_TESTWDOGLOAD</td>
                 <td>INIT[666:641]</td>
-                <td>26'h1800000</td>
+                <td>26'h2FAF080</td>
                 <td>N/A</td>
                 <td>N/A</td>
             </tr>
@@ -3757,7 +3757,7 @@
                 <td>IOMUXCELL_17_CONFIG</td>
                 <td>MSS_IOMUXSEL2</td>
                 <td>INIT[1040:1040]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[107]</td>
                 <td>1</td>
             </tr>
@@ -3765,7 +3765,7 @@
                 <td>IOMUXCELL_17_CONFIG</td>
                 <td>MSS_IOMUXSEL3</td>
                 <td>INIT[1041:1041]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[107]</td>
                 <td>1</td>
             </tr>
@@ -3837,7 +3837,7 @@
                 <td>IOMUXCELL_18_CONFIG</td>
                 <td>MSS_IOMUXSEL2</td>
                 <td>INIT[1050:1050]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[108]</td>
                 <td>1</td>
             </tr>
@@ -3845,7 +3845,7 @@
                 <td>IOMUXCELL_18_CONFIG</td>
                 <td>MSS_IOMUXSEL3</td>
                 <td>INIT[1051:1051]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[108]</td>
                 <td>1</td>
             </tr>
@@ -5757,7 +5757,7 @@
                 <td>IOMUXCELL_42_CONFIG</td>
                 <td>MSS_IOMUXSEL2</td>
                 <td>INIT[1290:1290]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[132]</td>
                 <td>1</td>
             </tr>
@@ -5765,7 +5765,7 @@
                 <td>IOMUXCELL_42_CONFIG</td>
                 <td>MSS_IOMUXSEL3</td>
                 <td>INIT[1291:1291]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[132]</td>
                 <td>1</td>
             </tr>
@@ -5797,7 +5797,7 @@
                 <td>IOMUXCELL_42_CONFIG</td>
                 <td>MSS_IOMUXSEL5UPPER</td>
                 <td>INIT[1295:1295]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[132]</td>
                 <td>1</td>
             </tr>
@@ -5901,7 +5901,7 @@
                 <td>IOMUXCELL_44_CONFIG</td>
                 <td>MSS_IOMUXSEL0</td>
                 <td>INIT[1308:1308]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[134]</td>
                 <td>1</td>
             </tr>
@@ -5941,7 +5941,7 @@
                 <td>IOMUXCELL_44_CONFIG</td>
                 <td>MSS_IOMUXSEL4MID</td>
                 <td>INIT[1313:1313]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[134]</td>
                 <td>1</td>
             </tr>
@@ -5949,7 +5949,7 @@
                 <td>IOMUXCELL_44_CONFIG</td>
                 <td>MSS_IOMUXSEL4LOWER</td>
                 <td>INIT[1314:1314]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[134]</td>
                 <td>1</td>
             </tr>
@@ -5965,7 +5965,7 @@
                 <td>IOMUXCELL_44_CONFIG</td>
                 <td>MSS_IOMUXSEL5MID</td>
                 <td>INIT[1316:1316]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[134]</td>
                 <td>1</td>
             </tr>
@@ -5973,7 +5973,7 @@
                 <td>IOMUXCELL_44_CONFIG</td>
                 <td>MSS_IOMUXSEL5LOWER</td>
                 <td>INIT[1317:1317]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[134]</td>
                 <td>1</td>
             </tr>
@@ -6477,7 +6477,7 @@
                 <td>IOMUXCELL_51_CONFIG</td>
                 <td>MSS_IOMUXSEL2</td>
                 <td>INIT[1380:1380]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[141]</td>
                 <td>1</td>
             </tr>
@@ -6485,7 +6485,7 @@
                 <td>IOMUXCELL_51_CONFIG</td>
                 <td>MSS_IOMUXSEL3</td>
                 <td>INIT[1381:1381]</td>
-                <td>1'h0</td>
+                <td>1'h1</td>
                 <td>INIT[141]</td>
                 <td>1</td>
             </tr>
@@ -6517,7 +6517,7 @@
                 <td>IOMUXCELL_51_CONFIG</td>
                 <td>MSS_IOMUXSEL5UPPER</td>
                 <td>INIT[1385:1385]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[141]</td>
                 <td>1</td>
             </tr>
@@ -6541,7 +6541,7 @@
                 <td>IOMUXCELL_52_CONFIG</td>
                 <td>MSS_IOMUXSEL0</td>
                 <td>INIT[1388:1388]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[142]</td>
                 <td>1</td>
             </tr>
@@ -6581,7 +6581,7 @@
                 <td>IOMUXCELL_52_CONFIG</td>
                 <td>MSS_IOMUXSEL4MID</td>
                 <td>INIT[1393:1393]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[142]</td>
                 <td>1</td>
             </tr>
@@ -6589,7 +6589,7 @@
                 <td>IOMUXCELL_52_CONFIG</td>
                 <td>MSS_IOMUXSEL4LOWER</td>
                 <td>INIT[1394:1394]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[142]</td>
                 <td>1</td>
             </tr>
@@ -6605,7 +6605,7 @@
                 <td>IOMUXCELL_52_CONFIG</td>
                 <td>MSS_IOMUXSEL5MID</td>
                 <td>INIT[1396:1396]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[142]</td>
                 <td>1</td>
             </tr>
@@ -6613,7 +6613,7 @@
                 <td>IOMUXCELL_52_CONFIG</td>
                 <td>MSS_IOMUXSEL5LOWER</td>
                 <td>INIT[1397:1397]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[142]</td>
                 <td>1</td>
             </tr>
@@ -7026,7 +7026,7 @@
                 <td>SER_PLL_CONFIG_HIGH</td>
                 <td>PLL_MODE_3V3</td>
                 <td>INIT[113:113]</td>
-                <td>1'h1</td>
+                <td>1'h0</td>
                 <td>INIT[9]</td>
                 <td>1</td>
             </tr>

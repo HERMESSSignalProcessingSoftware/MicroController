@@ -14,79 +14,98 @@ Hostname: LUS210
 Implementation : synthesis
 Synopsys HDL compiler and linker, Version comp202003synp2, Build 166R, Built Oct 19 2020 10:50:56, @
 
-Modified Files: 2
+Modified Files: 5
 FID:  path (prevtimestamp, timestamp)
-7        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55)
-13       C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\hdl\STAMP.vhd (2021-02-13 00:53:53, 2021-02-13 09:59:46)
+8        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd (2021-12-13 03:44:45, 2021-12-13 15:59:21)
+9        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:22)
+10       C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23)
+11       C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-12-13 03:44:41, 2021-12-13 15:59:17)
+12       C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd (2021-12-13 03:44:41, 2021-12-13 15:59:17)
 
 *******************************************************************
-Modules that may have changed as a result of file changes: 18
+Modules that may have changed as a result of file changes: 16
 MID:  lib.cell.view
 0        coreapb3_lib.coreapb3.coreapb3_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 2        coreapb3_lib.coreapb3_iaddr_reg.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 4        coreapb3_lib.coreapb3_muxptob3.coreapb3_muxptob3_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 6        work.coreresetp.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 8        work.coreresetp_pcie_hotreset.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 10       work.mss_010.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-12-13 03:44:41, 2021-12-13 15:59:17) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd (2021-12-13 03:44:41, 2021-12-13 15:59:17) <-- (architecture and entity definition)
 12       work.rcosc_1mhz.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:22) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 14       work.rcosc_1mhz_fab.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:22) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 16       work.rcosc_25_50mhz.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:22) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 18       work.rcosc_25_50mhz_fab.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
-20       work.sb.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (architecture and entity definition)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:22) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 22       work.sb_sb.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (architecture and entity definition)
 24       work.sb_sb_ccc_0_fccc.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd (2021-12-13 03:44:45, 2021-12-13 15:59:21) <-- (architecture and entity definition)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 26       work.sb_sb_fabosc_0_osc.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:22) <-- (architecture and entity definition)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 28       work.sb_sb_mss.rtl may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
-30       work.stamp.architecture_stamp may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\hdl\STAMP.vhd (2021-02-13 00:53:53, 2021-02-13 09:59:46) <-- (architecture and entity definition)
-32       work.xtlosc.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
-34       work.xtlosc_fab.def_arch may have changed because the following files changed:
-                        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb\sb.vhd (2021-02-13 09:02:01, 2021-02-13 09:53:55) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-12-13 03:44:41, 2021-12-13 15:59:17) <-- (architecture and entity definition)
+36       work.xtlosc.def_arch may have changed because the following files changed:
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:22) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
+38       work.xtlosc_fab.def_arch may have changed because the following files changed:
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:22) <-- (may instantiate this module)
+                        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb_sb\sb_sb.vhd (2021-12-13 03:44:46, 2021-12-13 15:59:23) <-- (may instantiate this module)
 
 *******************************************************************
 Unmodified files: 23
 FID:  path (timestamp)
-0        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\components.vhd (2021-02-12 14:49:18)
-1        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd (2021-02-12 14:49:18)
-2        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3_iaddr_reg.vhd (2021-02-12 14:49:18)
-3        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3_muxptob3.vhd (2021-02-12 14:49:18)
-4        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd (2021-02-11 20:34:35)
-5        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp_pcie_hotreset.vhd (2021-02-11 20:34:35)
-6        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd (2021-02-11 20:34:37)
-8        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb_sb\CCC_0\sb_sb_CCC_0_FCCC.vhd (2021-02-12 23:56:06)
-9        C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb_sb\FABOSC_0\sb_sb_FABOSC_0_OSC.vhd (2021-02-12 23:56:08)
-10       C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb_sb\sb_sb.vhd (2021-02-12 23:56:08)
-11       C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb_sb_MSS\sb_sb_MSS.vhd (2021-02-12 23:56:01)
-12       C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\component\work\sb_sb_MSS\sb_sb_MSS_syn.vhd (2021-02-12 23:56:01)
-14       J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.vhd (2020-11-03 08:58:10)
-15       J:\LiberoSoC\SynplifyPro\lib\vhd2008\arith.vhd (2020-11-03 08:58:13)
-16       J:\LiberoSoC\SynplifyPro\lib\vhd2008\location.map (2020-11-03 08:58:13)
-17       J:\LiberoSoC\SynplifyPro\lib\vhd2008\numeric.vhd (2020-11-03 08:58:13)
-18       J:\LiberoSoC\SynplifyPro\lib\vhd2008\std.vhd (2020-11-03 08:58:13)
-19       J:\LiberoSoC\SynplifyPro\lib\vhd2008\std1164.vhd (2020-11-03 08:58:13)
-20       J:\LiberoSoC\SynplifyPro\lib\vhd2008\std_textio.vhd (2020-11-03 08:58:13)
-21       J:\LiberoSoC\SynplifyPro\lib\vhd2008\unsigned.vhd (2020-11-03 08:58:13)
-22       J:\LiberoSoC\SynplifyPro\lib\vhd\hyperents.vhd (2020-11-03 08:58:13)
-23       J:\LiberoSoC\SynplifyPro\lib\vhd\snps_haps_pkg.vhd (2020-11-03 08:58:13)
-24       J:\LiberoSoC\SynplifyPro\lib\vhd\umr_capim.vhd (2020-11-03 08:58:13)
+0        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\components.vhd (2021-02-12 14:49:18)
+1        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3.vhd (2021-02-12 14:49:18)
+2        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3_iaddr_reg.vhd (2021-02-12 14:49:18)
+3        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\core\coreapb3_muxptob3.vhd (2021-02-12 14:49:18)
+4        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd (2021-02-11 20:34:35)
+5        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp_pcie_hotreset.vhd (2021-02-11 20:34:35)
+6        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd (2021-02-11 20:34:37)
+7        C:\Users\jl\source\repos\hermess\hermess-MicroController\component\work\sb\sb.vhd (2021-12-12 10:37:28)
+59       C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\MemorySynchronizer.vhd (2021-09-28 18:13:11)
+13       C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\STAMP.vhd (2021-09-28 18:13:11)
+60       C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\Timestamp.vhd (2021-09-28 18:12:26)
+15       C:\Users\jl\source\repos\hermess\hermess-MicroController\hdl\spi_master.vhd (2021-02-25 12:56:18)
+16       J:\LiberoSoC\SynplifyPro\lib\generic\smartfusion2.vhd (2020-11-03 08:58:10)
+17       J:\LiberoSoC\SynplifyPro\lib\vhd2008\arith.vhd (2020-11-03 08:58:13)
+18       J:\LiberoSoC\SynplifyPro\lib\vhd2008\location.map (2020-11-03 08:58:13)
+19       J:\LiberoSoC\SynplifyPro\lib\vhd2008\numeric.vhd (2020-11-03 08:58:13)
+20       J:\LiberoSoC\SynplifyPro\lib\vhd2008\std.vhd (2020-11-03 08:58:13)
+21       J:\LiberoSoC\SynplifyPro\lib\vhd2008\std1164.vhd (2020-11-03 08:58:13)
+22       J:\LiberoSoC\SynplifyPro\lib\vhd2008\std_textio.vhd (2020-11-03 08:58:13)
+23       J:\LiberoSoC\SynplifyPro\lib\vhd2008\unsigned.vhd (2020-11-03 08:58:13)
+24       J:\LiberoSoC\SynplifyPro\lib\vhd\hyperents.vhd (2020-11-03 08:58:13)
+25       J:\LiberoSoC\SynplifyPro\lib\vhd\snps_haps_pkg.vhd (2020-11-03 08:58:13)
+26       J:\LiberoSoC\SynplifyPro\lib\vhd\umr_capim.vhd (2020-11-03 08:58:13)
 
 *******************************************************************
-Unchanged modules: 0
+Unchanged modules: 10
 MID:  lib.cell.view
+48       work.memorysynchronizer.arch
+49       work.memorysynchronizer.vhdl
+20       work.sb.rtl
+21       work.sb.vhdl
+30       work.spi_master.logic
+31       work.spi_master.vhdl
+32       work.stamp.architecture_stamp
+33       work.stamp.vhdl
+46       work.timestamp.behaviour
+47       work.timestamp.vhdl

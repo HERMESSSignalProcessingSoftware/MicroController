@@ -1,0 +1,514 @@
+# Microsemi I/O Physical Design Constraints file
+
+# User I/O Constraints file 
+
+# Version: v12.6 12.900.20.24
+
+# Family: SmartFusion2 , Die: M2S010 , Package: 144 TQ
+
+# Date generated: Sun Dec 12 12:10:54 2021 
+
+
+# 
+# User Locked I/O Bank Settings
+# 
+
+
+# 
+# Unlocked I/O Bank Settings
+# The I/O Bank Settings can be locked by directly editing this file
+# or by making changes in the I/O Attribute Editor
+# 
+
+
+# 
+# User Locked I/O settings
+# 
+
+set_io DAPI_RXD       \
+    -pinname 110      \
+    -fixed yes        \
+    -iostd LVCMOS12   \
+    -DIRECTION INPUT
+
+
+set_io DAPI_TXD        \
+    -pinname 111       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io F_CLK           \
+    -pinname 100       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io F_CS1           \
+    -pinname 103       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io F_CS2           \
+    -pinname 94        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io F_MISO         \
+    -pinname 101      \
+    -fixed yes        \
+    -DIRECTION INPUT
+
+
+set_io F_MOSI          \
+    -pinname 102       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io IN_RXSM_LO     \
+    -pinname 125      \
+    -fixed yes        \
+    -iostd LVCMOS12   \
+    -RES_PULL Up      \
+    -DIRECTION INPUT
+
+
+set_io IN_RXSM_SODS   \
+    -pinname 124      \
+    -fixed yes        \
+    -iostd LVCMOS12   \
+    -RES_PULL Up      \
+    -DIRECTION INPUT
+
+
+set_io IN_RXSM_SOE    \
+    -pinname 123      \
+    -fixed yes        \
+    -iostd LVCMOS12   \
+    -RES_PULL Up      \
+    -DIRECTION INPUT
+
+
+set_io LED_FPGA_LOADED  \
+    -pinname 23         \
+    -fixed yes          \
+    -iostd LVCMOS12     \
+    -DIRECTION OUTPUT
+
+
+set_io LED_HB_MEMSYNC  \
+    -pinname 28        \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io LED_HB_MSS      \
+    -pinname 24        \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io LED_RECORDING   \
+    -pinname 27        \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io OUT_ADC_START   \
+    -pinname 128       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP1_CS_SGR1  \
+    -pinname 137       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP1_CS_SGR2  \
+    -pinname 141       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP1_CS_TEMP  \
+    -pinname 142       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP1_DRDY_SGR1  \
+    -pinname 134         \
+    -fixed yes           \
+    -iostd LVCMOS12      \
+    -DIRECTION INPUT
+
+
+set_io STAMP1_DRDY_SGR2  \
+    -pinname 135         \
+    -fixed yes           \
+    -iostd LVCMOS12      \
+    -DIRECTION INPUT
+
+
+set_io STAMP1_DRDY_TEMP  \
+    -pinname 136         \
+    -fixed yes           \
+    -iostd LVCMOS12      \
+    -DIRECTION INPUT
+
+
+set_io STAMP1_MISO    \
+    -pinname 131      \
+    -fixed yes        \
+    -iostd LVCMOS12   \
+    -DIRECTION INPUT
+
+
+set_io STAMP1_MOSI     \
+    -pinname 130       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP1_SCLK     \
+    -pinname 129       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP2_CS_SGR1  \
+    -pinname 87        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP2_CS_SGR2  \
+    -pinname 88        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP2_CS_TEMP  \
+    -pinname 89        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP2_DRDY_SGR1  \
+    -pinname 82          \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP2_DRDY_SGR2  \
+    -pinname 83          \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP2_DRDY_TEMP  \
+    -pinname 85          \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP2_MISO    \
+    -pinname 81       \
+    -fixed yes        \
+    -DIRECTION INPUT
+
+
+set_io STAMP2_MOSI     \
+    -pinname 122       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP2_SCLK     \
+    -pinname 118       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP3_CS_SGR1  \
+    -pinname 48        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP3_CS_SGR2  \
+    -pinname 49        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP3_CS_TEMP  \
+    -pinname 52        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP3_DRDY_SGR1  \
+    -pinname 93          \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP3_DRDY_SGR2  \
+    -pinname 43          \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP3_DRDY_TEMP  \
+    -pinname 44          \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP3_MISO    \
+    -pinname 92       \
+    -fixed yes        \
+    -DIRECTION INPUT
+
+
+set_io STAMP3_MOSI     \
+    -pinname 91        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP3_SCLK     \
+    -pinname 90        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP4_CS_SGR1  \
+    -pinname 61        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP4_CS_SGR2  \
+    -pinname 60        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP4_CS_TEMP  \
+    -pinname 58        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP4_DRDY_SGR1  \
+    -pinname 63          \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP4_DRDY_SGR2  \
+    -pinname 64          \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP4_DRDY_TEMP  \
+    -pinname 66          \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP4_MISO    \
+    -pinname 67       \
+    -fixed yes        \
+    -DIRECTION INPUT
+
+
+set_io STAMP4_MOSI     \
+    -pinname 55        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP4_SCLK     \
+    -pinname 53        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP5_CS_SGR1  \
+    -pinname 38        \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP5_CS_SGR2  \
+    -pinname 13        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP5_CS_TEMP  \
+    -pinname 14        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP5_DRDY_SGR1  \
+    -pinname 33          \
+    -fixed yes           \
+    -iostd LVCMOS12      \
+    -DIRECTION INPUT
+
+
+set_io STAMP5_DRDY_SGR2  \
+    -pinname 36          \
+    -fixed yes           \
+    -iostd LVCMOS12      \
+    -DIRECTION INPUT
+
+
+set_io STAMP5_DRDY_TEMP  \
+    -pinname 37          \
+    -fixed yes           \
+    -iostd LVCMOS12      \
+    -DIRECTION INPUT
+
+
+set_io STAMP5_MISO    \
+    -pinname 32       \
+    -fixed yes        \
+    -iostd LVCMOS12   \
+    -DIRECTION INPUT
+
+
+set_io STAMP5_MOSI     \
+    -pinname 57        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP5_SCLK     \
+    -pinname 56        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP6_CS_SGR1  \
+    -pinname 9         \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP6_CS_SGR2  \
+    -pinname 10        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP6_CS_TEMP  \
+    -pinname 22        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP6_DRDY_SGR1  \
+    -pinname 4           \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP6_DRDY_SGR2  \
+    -pinname 7           \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP6_DRDY_TEMP  \
+    -pinname 8           \
+    -fixed yes           \
+    -DIRECTION INPUT
+
+
+set_io STAMP6_MISO    \
+    -pinname 3        \
+    -fixed yes        \
+    -DIRECTION INPUT
+
+
+set_io STAMP6_MOSI     \
+    -pinname 2         \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io STAMP6_SCLK     \
+    -pinname 1         \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io TM_RXD         \
+    -pinname 144      \
+    -fixed yes        \
+    -iostd LVCMOS12   \
+    -DIRECTION INPUT
+
+
+set_io TM_TXD          \
+    -pinname 143       \
+    -fixed yes         \
+    -iostd LVCMOS12    \
+    -DIRECTION OUTPUT
+
+
+set_io WP             \
+    -pinname 30       \
+    -fixed yes        \
+    -iostd LVCMOS12   \
+    -DIRECTION INPUT
+
+
+
+# 
+# Dedicated Peripheral I/O Settings
+# 
+
+
+# 
+# Unlocked I/O settings
+# The I/Os in this section are unplaced or placed but are not locked
+# the other listed attributes have been applied
+# 
+
+
+#
+#Ports using Dedicated Pins
+
+#
+
+set_io DEVRST_N       \
+    -pinname 72       \
+    -DIRECTION INPUT
+
+

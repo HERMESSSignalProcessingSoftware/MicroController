@@ -21,4 +21,12 @@ procedure user_main;
 
 # add your BFM commands below:
 
-return
+wait 5;
+header "Testing STAMP module";
+write w STAMP_0 0x38 0xcccccccc;
+wait 10;
+readcheck w STAMP_0 0x38 0xcccccccc;
+wait 10;
+stop 1;
+
+return;

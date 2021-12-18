@@ -5,15 +5,15 @@
   <project-settings>
     <fam>SmartFusion2</fam>
     <die>M2S010</die>
-    <package>400 VF</package>
+    <package>144 TQ</package>
     <speed-grade>STD</speed-grade>
     <voltage>1.2</voltage>
     <hdl-type>VHDL</hdl-type>
     <project-description>
     </project-description>
-    <location>C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/work/sb</location>
-    <state>GENERATED ( Sat Feb 13 09:19:30 2021 )</state>
-    <swide-toolchain>SoftConsole workspace generated to C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\SoftConsole</swide-toolchain>
+    <location>C:/Users/jl/source/repos/hermess/hermess-MicroController/component/work/sb</location>
+    <state>GENERATED ( Mon Dec 13 03:45:49 2021 )</state>
+    <swide-toolchain>SoftConsole workspace has not been generated</swide-toolchain>
   </project-settings>
   <site-map>
   </site-map>
@@ -86,16 +86,24 @@
           <range>0x0004_0000</range>
         </slave>
         <slave>
-          <name>ENVM-SPU_Conf</name>
+          <name>ENVM-SPU_Program</name>
           <fullPinName>
           </fullPinName>
           <remapAddress>0x6000_0000</remapAddress>
-          <fullAddressSpace>0x6000_0000 - 0x6000_007F</fullAddressSpace>
-          <range>0x80</range>
+          <fullAddressSpace>0x6000_0000 - 0x6001_F3FF</fullAddressSpace>
+          <range>0x1_F400</range>
         </slave>
         <slave>
-          <name>STAMP_0</name>
-          <fullPinName>STAMP_0:AMBA</fullPinName>
+          <name>ENVM-SPU_Conf</name>
+          <fullPinName>
+          </fullPinName>
+          <remapAddress>0x6001_F400</remapAddress>
+          <fullAddressSpace>0x6001_F400 - 0x6001_F57F</fullAddressSpace>
+          <range>0x180</range>
+        </slave>
+        <slave>
+          <name>MemorySynchronizer_0</name>
+          <fullPinName>MemorySynchronizer_0:AMBA_APB3</fullPinName>
           <remapAddress>0x5000_0000</remapAddress>
           <combinedAddressSpace>0x5000_0000 - 0x5000_0FFF</combinedAddressSpace>
           <remapAddress>0x3000_0000</remapAddress>
@@ -103,8 +111,8 @@
           <range>0x0000_1000</range>
         </slave>
         <slave>
-          <name>CoreAPB3_0</name>
-          <fullPinName>sb_sb:STAMP_1</fullPinName>
+          <name>STAMP_1</name>
+          <fullPinName>STAMP_1:AMBA</fullPinName>
           <remapAddress>0x5000_1000</remapAddress>
           <combinedAddressSpace>0x5000_1000 - 0x5000_1FFF</combinedAddressSpace>
           <remapAddress>0x3000_1000</remapAddress>
@@ -112,8 +120,8 @@
           <range>0x0000_1000</range>
         </slave>
         <slave>
-          <name>CoreAPB3_0</name>
-          <fullPinName>sb_sb:STAMP_2</fullPinName>
+          <name>STAMP_2</name>
+          <fullPinName>STAMP_2:AMBA</fullPinName>
           <remapAddress>0x5000_2000</remapAddress>
           <combinedAddressSpace>0x5000_2000 - 0x5000_2FFF</combinedAddressSpace>
           <remapAddress>0x3000_2000</remapAddress>
@@ -121,8 +129,8 @@
           <range>0x0000_1000</range>
         </slave>
         <slave>
-          <name>CoreAPB3_0</name>
-          <fullPinName>sb_sb:STAMP_3</fullPinName>
+          <name>STAMP_3</name>
+          <fullPinName>STAMP_3:AMBA</fullPinName>
           <remapAddress>0x5000_3000</remapAddress>
           <combinedAddressSpace>0x5000_3000 - 0x5000_3FFF</combinedAddressSpace>
           <remapAddress>0x3000_3000</remapAddress>
@@ -130,8 +138,8 @@
           <range>0x0000_1000</range>
         </slave>
         <slave>
-          <name>CoreAPB3_0</name>
-          <fullPinName>sb_sb:STAMP_4</fullPinName>
+          <name>STAMP_4</name>
+          <fullPinName>STAMP_4:AMBA</fullPinName>
           <remapAddress>0x5000_4000</remapAddress>
           <combinedAddressSpace>0x5000_4000 - 0x5000_4FFF</combinedAddressSpace>
           <remapAddress>0x3000_4000</remapAddress>
@@ -139,12 +147,21 @@
           <range>0x0000_1000</range>
         </slave>
         <slave>
-          <name>CoreAPB3_0</name>
-          <fullPinName>sb_sb:STAMP_5</fullPinName>
+          <name>STAMP_5</name>
+          <fullPinName>STAMP_5:AMBA</fullPinName>
           <remapAddress>0x5000_5000</remapAddress>
           <combinedAddressSpace>0x5000_5000 - 0x5000_5FFF</combinedAddressSpace>
           <remapAddress>0x3000_5000</remapAddress>
           <combinedAddressSpace>0x3000_5000 - 0x3000_5FFF</combinedAddressSpace>
+          <range>0x0000_1000</range>
+        </slave>
+        <slave>
+          <name>STAMP_6</name>
+          <fullPinName>STAMP_6:AMBA</fullPinName>
+          <remapAddress>0x5000_6000</remapAddress>
+          <combinedAddressSpace>0x5000_6000 - 0x5000_6FFF</combinedAddressSpace>
+          <remapAddress>0x3000_6000</remapAddress>
+          <combinedAddressSpace>0x3000_6000 - 0x3000_6FFF</combinedAddressSpace>
           <range>0x0000_1000</range>
         </slave>
         <slave>

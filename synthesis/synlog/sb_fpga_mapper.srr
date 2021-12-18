@@ -1,4 +1,4 @@
-# Sat Feb 13 10:00:04 2021
+# Mon Dec 13 16:00:50 2021
 
 
 Copyright (C) 1994-2020 Synopsys, Inc.
@@ -36,57 +36,133 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 
 
 
-Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 162MB peak: 162MB)
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 165MB peak: 165MB)
 
-@W: BN114 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\work\sb_sb\sb_sb.vhd":791:0:791:11|Removing instance SYSRESET_POR (in view: work.sb_sb(rtl)) of black box view:ACG4.SYSRESET(PRIM) because it does not drive other instances.
 
 Available hyper_sources - for debug and ip models
 	None Found
 
-@W: FA239 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
-@W: FA239 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
-@N: MO106 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_9[5:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 6 bits.
+@W: FA239 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
+@W: FA239 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
+@N: MO106 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 7 bits.
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 166MB peak: 166MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 174MB peak: 174MB)
+
+Encoding state machine MemorySyncState[0:5] (in view: work.MemorySynchronizer(arch))
+original code -> new code
+   0000001 -> 000001
+   0000010 -> 000010
+   0000100 -> 000100
+   0001000 -> 001000
+   0010000 -> 010000
+   0100000 -> 100000
+Encoding state machine APBState[0:2] (in view: work.MemorySynchronizer(arch))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\timestamp.vhd":46:8:46:9|Found counter in view:work.MemorySynchronizer(arch) instance TimeStampGen.counter[31:0] 
+@N: MF179 :|Found 32 by 32 bit equality operator ('==') un120_in_enable (in view: work.MemorySynchronizer(arch))
+@N: MF179 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":400:28:400:60|Found 32 by 32 bit equality operator ('==') un112_in_enable (in view: work.MemorySynchronizer(arch))
+Encoding state machine component_state[0:5] (in view: work.STAMP(architecture_stamp))
+original code -> new code
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\stamp.vhd":203:8:203:9|Found counter in view:work.STAMP(architecture_stamp) instance delay_counter[27:0] 
+@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\stamp.vhd":203:8:203:9|Found counter in view:work.STAMP(architecture_stamp) instance status_async_cycles[5:0] 
+@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance clk_toggles[5:0] 
+@N: MO231 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance count[31:0] 
+@W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[3] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[2] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[1] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO161 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[0] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
+
+Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 193MB peak: 193MB)
+
+Auto Dissolve of spi (inst of view:work.spi_master(logic))
+
+Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 211MB peak: 211MB)
 
 
-Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 166MB peak: 166MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 223MB peak: 258MB)
+
+@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_1.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_2.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_3.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_4.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_5.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_6.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 225MB peak: 258MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 166MB peak: 166MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:09s; Memory used current: 233MB peak: 258MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 167MB peak: 167MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 234MB peak: 258MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 167MB peak: 167MB)
+Finished preparing to map (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 234MB peak: 258MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 167MB)
-
-
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 167MB)
-
-
-Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 167MB)
-
-
-Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 167MB)
+Finished technology mapping (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 292MB peak: 292MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:01s		     0.01ns		  44 /         0
-   2		0h:00m:01s		     0.01ns		  44 /         0
+   1		0h:00m:12s		    -6.54ns		5189 /      2752
+   2		0h:00m:12s		    -6.46ns		5054 /      2752
+
+   3		0h:00m:13s		    -6.46ns		5055 /      2752
+   4		0h:00m:13s		    -4.53ns		5059 /      2752
+   5		0h:00m:13s		    -4.34ns		5060 /      2752
+   6		0h:00m:13s		    -4.36ns		5063 /      2752
+   7		0h:00m:13s		    -4.16ns		5064 /      2752
+   8		0h:00m:13s		    -3.88ns		5065 /      2752
+   9		0h:00m:14s		    -3.88ns		5066 /      2752
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[1] (in view: work.sb(rtl)) with 6 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[0] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[2] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[3] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[4] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[5] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[6] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[7] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[8] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[9] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[10] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[11] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[12] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[13] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[14] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[15] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[16] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[17] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+Timing driven replication report
+Added 18 Registers via timing driven replication
+Added 0 LUTs via timing driven replication
+
+
+  10		0h:00m:15s		    -3.56ns		5081 /      2770
+  11		0h:00m:15s		    -3.48ns		5082 /      2770
+  12		0h:00m:16s		    -3.48ns		5082 /      2770
+  13		0h:00m:16s		    -3.48ns		5082 /      2770
+  14		0h:00m:17s		    -3.48ns		5082 /      2770
+  15		0h:00m:18s		    -3.48ns		5082 /      2770
+@N: FP130 |Promoting Net AND2_0_Y_arst on CLKINT  MemorySynchronizer_0.un120_in_enable_0_I_1_1618 
 
 Added 0 Buffers
 Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 168MB peak: 168MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 296MB peak: 296MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 168MB peak: 168MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 296MB peak: 298MB)
 
 
 
@@ -97,40 +173,114 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:
 
 Clock optimization not enabled
 0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
-1 gated/generated clock tree(s) driving 1 clock pin(s) of sequential element(s)
-0 instances converted, 1 sequential instance remains driven by gated/generated clocks
+63 gated/generated clock tree(s) driving 2895 clock pin(s) of sequential element(s)
+0 instances converted, 2895 sequential instances remain driven by gated/generated clocks
 
-============================================================================ Gated/Generated Clocks =============================================================================
-Clock Tree ID     Driving Element            Drive Element Type     Fanout     Sample Instance                        Explanation                                                
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       sb_sb_0.CCC_0.CCC_INST     CCC                    1          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     No gated clock conversion method for cell cell:work.MSS_010
-=================================================================================================================================================================================
+=================================================================================================== Gated/Generated Clocks ===================================================================================================
+Clock Tree ID     Driving Element                                                      Drive Element Type     Fanout     Sample Instance                           Explanation                                                
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@K:CKID0001       sb_sb_0.CCC_0.CCC_INST                                               CCC                    2833       sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST        No gated clock conversion method for cell cell:work.MSS_010
+@K:CKID0002       MemorySynchronizer_0.un1_ResyncTimerValueReg_59                      CFG2                   1          MemorySynchronizer_0.un1_nreset_24_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0003       MemorySynchronizer_0.un1_ResyncTimerValueReg_33                      CFG2                   1          MemorySynchronizer_0.un1_nreset_45_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0004       MemorySynchronizer_0.un1_ResyncTimerValueReg_47                      CFG2                   1          MemorySynchronizer_0.un1_nreset_25_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0005       MemorySynchronizer_0.un1_ResyncTimerValueReg_32                      CFG2                   1          MemorySynchronizer_0.un1_nreset_26_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0006       MemorySynchronizer_0.un1_ResyncTimerValueReg_61                      CFG2                   1          MemorySynchronizer_0.un1_nreset_1_rs      No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0007       MemorySynchronizer_0.un1_ResyncTimerValueReg_36                      CFG2                   1          MemorySynchronizer_0.un1_nreset_23_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0008       MemorySynchronizer_0.un1_ResyncTimerValueReg_58                      CFG2                   1          MemorySynchronizer_0.un1_nreset_28_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0009       MemorySynchronizer_0.un1_ResyncTimerValueReg_37                      CFG2                   1          MemorySynchronizer_0.un1_nreset_62_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0010       MemorySynchronizer_0.un1_ResyncTimerValueReg_35                      CFG2                   1          MemorySynchronizer_0.un1_nreset_7_rs      No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0011       MemorySynchronizer_0.un1_ResyncTimerValueReg_34                      CFG2                   1          MemorySynchronizer_0.un1_nreset_42_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0012       MemorySynchronizer_0.un1_ResyncTimerValueReg_42                      CFG2                   1          MemorySynchronizer_0.un1_nreset_20_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0013       MemorySynchronizer_0.un1_ResyncTimerValueReg_41                      CFG2                   1          MemorySynchronizer_0.un1_nreset_40_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0014       MemorySynchronizer_0.un1_ResyncTimerValueReg_40                      CFG2                   1          MemorySynchronizer_0.un1_nreset_39_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0015       MemorySynchronizer_0.un61_in_enable_1.un1_ResyncTimerValueReg_39     CFG2                   1          MemorySynchronizer_0.un1_nreset_38_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0016       MemorySynchronizer_0.un1_ResyncTimerValueReg_46_0_a2                 CFG2                   1          MemorySynchronizer_0.un1_nreset_3_rs      No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0017       MemorySynchronizer_0.un1_ResyncTimerValueReg_31_0_a2                 CFG2                   1          MemorySynchronizer_0.un1_nreset_27_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0018       MemorySynchronizer_0.k_1_2.un1_ResyncTimerValueReg_60_0_a2           CFG2                   1          MemorySynchronizer_0.un1_nreset_44_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0019       MemorySynchronizer_0.un1_ResyncTimerValueReg_44                      CFG2                   1          MemorySynchronizer_0.un1_nreset_6_rs      No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0020       MemorySynchronizer_0.un1_ResyncTimerValueReg_43_0_a2                 CFG2                   1          MemorySynchronizer_0.un1_nreset_60_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0021       MemorySynchronizer_0.k_1_2.un1_ResyncTimerValueReg_56_0_a2           CFG2                   1          MemorySynchronizer_0.un1_nreset_41_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0022       MemorySynchronizer_0.un1_ResyncTimerValueReg_55                      CFG2                   1          MemorySynchronizer_0.un1_nreset_58_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0023       MemorySynchronizer_0.k_1_2.un1_ResyncTimerValueReg_54_0_a2           CFG2                   1          MemorySynchronizer_0.un1_nreset_57_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0024       MemorySynchronizer_0.un1_ResyncTimerValueReg_53                      CFG2                   1          MemorySynchronizer_0.un1_nreset_56_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0025       MemorySynchronizer_0.un1_ResyncTimerValueReg_52                      CFG2                   1          MemorySynchronizer_0.un1_nreset_55_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0026       MemorySynchronizer_0.un1_ResyncTimerValueReg_51                      CFG2                   1          MemorySynchronizer_0.un1_nreset_54_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0027       MemorySynchronizer_0.un1_ResyncTimerValueReg_50                      CFG2                   1          MemorySynchronizer_0.un1_nreset_53_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0028       MemorySynchronizer_0.un1_ResyncTimerValueReg_49                      CFG2                   1          MemorySynchronizer_0.un1_nreset_52_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0029       MemorySynchronizer_0.un1_ResyncTimerValueReg_45                      CFG2                   1          MemorySynchronizer_0.un1_nreset_51_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0030       MemorySynchronizer_0.un1_ResyncTimerValueReg_48                      CFG2                   1          MemorySynchronizer_0.un1_nreset_4_rs      No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0031       MemorySynchronizer_0.un1_ResetTimerValueReg_34_0_a2                  CFG2                   1          MemorySynchronizer_0.un1_nreset_8_rs      No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0032       MemorySynchronizer_0.k_1_2.un1_ResyncTimerValueReg_57_0_a2           CFG2                   1          MemorySynchronizer_0.un1_nreset_59_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0033       MemorySynchronizer_0.un1_ResyncTimerValueReg_38_0_a2                 CFG2                   1          MemorySynchronizer_0.un1_nreset_2_rs      No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0034       MemorySynchronizer_0.un1_ResetTimerValueReg_33                       CFG2                   1          MemorySynchronizer_0.un1_nreset_21_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0035       MemorySynchronizer_0.un1_ResetTimerValueReg_42                       CFG2                   1          MemorySynchronizer_0.un1_nreset_47_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0036       MemorySynchronizer_0.un1_ResetTimerValueReg_41                       CFG2                   1          MemorySynchronizer_0.un1_nreset_19_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0037       MemorySynchronizer_0.un1_ResetTimerValueReg_40                       CFG2                   1          MemorySynchronizer_0.un1_nreset_18_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0038       MemorySynchronizer_0.un1_ResetTimerValueReg_39                       CFG2                   1          MemorySynchronizer_0.un1_nreset_17_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0039       MemorySynchronizer_0.un1_ResetTimerValueReg_38                       CFG2                   1          MemorySynchronizer_0.un1_nreset_16_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0040       MemorySynchronizer_0.un1_ResetTimerValueReg_37                       CFG2                   1          MemorySynchronizer_0.un1_nreset_15_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0041       MemorySynchronizer_0.un1_ResetTimerValueReg_36                       CFG2                   1          MemorySynchronizer_0.un1_nreset_14_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0042       MemorySynchronizer_0.un1_ResetTimerValueReg_35                       CFG2                   1          MemorySynchronizer_0.un1_nreset_13_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0043       MemorySynchronizer_0.un1_ResetTimerValueReg_48                       CFG2                   1          MemorySynchronizer_0.un1_nreset_12_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0044       MemorySynchronizer_0.un1_ResetTimerValueReg_59                       CFG2                   1          MemorySynchronizer_0.un1_nreset_32_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0045       MemorySynchronizer_0.un1_ResetTimerValueReg_46                       CFG2                   1          MemorySynchronizer_0.un1_nreset_31_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0046       MemorySynchronizer_0.un1_ResetTimerValueReg_61                       CFG2                   1          MemorySynchronizer_0.un1_nreset_30_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0047       MemorySynchronizer_0.un1_ResetTimerValueReg_45                       CFG2                   1          MemorySynchronizer_0.un1_nreset_22_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0048       MemorySynchronizer_0.ResetTimerValueReg_RNIQO93[29]                  CFG2                   1          MemorySynchronizer_0.un1_nreset_10_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0049       MemorySynchronizer_0.k_1_2.un1_ResetTimerValueReg_52_0_a2            CFG2                   1          MemorySynchronizer_0.un1_nreset_37_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0050       MemorySynchronizer_0.un1_ResetTimerValueReg_51                       CFG2                   1          MemorySynchronizer_0.un1_nreset_36_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0051       MemorySynchronizer_0.un1_ResetTimerValueReg_50_0_a2                  CFG2                   1          MemorySynchronizer_0.un1_nreset_35_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0052       MemorySynchronizer_0.ResetTimerValueReg_RNI2FLA[3]                   CFG2                   1          MemorySynchronizer_0.un1_nreset_34_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0053       MemorySynchronizer_0.un1_ResetTimerValueReg_60                       CFG2                   1          MemorySynchronizer_0.un1_nreset_33_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0054       MemorySynchronizer_0.un1_ResetTimerValueReg_32                       CFG2                   1          MemorySynchronizer_0.un1_nreset_50_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0055       MemorySynchronizer_0.un1_ResetTimerValueReg_58_0_a2                  CFG2                   1          MemorySynchronizer_0.un1_nreset_49_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0056       MemorySynchronizer_0.un1_ResetTimerValueReg_56_0_a2                  CFG2                   1          MemorySynchronizer_0.un1_nreset_48_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0057       MemorySynchronizer_0.un1_ResetTimerValueReg_44                       CFG2                   1          MemorySynchronizer_0.un1_nreset_61_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0058       MemorySynchronizer_0.k_1_2.un1_ResetTimerValueReg_43_0_a2            CFG2                   1          MemorySynchronizer_0.un1_nreset_46_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0059       MemorySynchronizer_0.un1_ResetTimerValueReg_55                       CFG2                   1          MemorySynchronizer_0.un1_nreset_43_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0060       MemorySynchronizer_0.un1_ResetTimerValueReg_54                       CFG2                   1          MemorySynchronizer_0.un1_nreset_5_rs      No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0061       MemorySynchronizer_0.un1_ResetTimerValueReg_53                       CFG2                   1          MemorySynchronizer_0.un1_nreset_9_rs      No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0062       MemorySynchronizer_0.un1_ResetTimerValueReg_31                       CFG2                   1          MemorySynchronizer_0.un1_nreset_11_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+@K:CKID0063       MemorySynchronizer_0.un1_ResetTimerValueReg_57                       CFG2                   1          MemorySynchronizer_0.un1_nreset_29_rs     No gated clock conversion method for cell cell:ACG4.SLE    
+==============================================================================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 138MB peak: 168MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:19s; Memory used current: 244MB peak: 298MB)
 
-Writing Analyst data base C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\synthesis\synwork\sb_m.srm
+Writing Analyst data base C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\synwork\sb_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 168MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 287MB peak: 298MB)
 
 Writing Verilog Simulation files
+@N: BW110 :|Renaming port spi_master_5 due to collision with Verilog/ System Verilog reserved word 
+    config[31:3] --> config_Z[31:3]
+@N: BW110 :|Renaming port spi_master_5_0 due to collision with Verilog/ System Verilog reserved word 
+    config[31:3] --> config_Z[31:3]
+@N: BW110 :|Renaming port spi_master_5_1 due to collision with Verilog/ System Verilog reserved word 
+    config[31:3] --> config_Z[31:3]
+@N: BW110 :|Renaming port spi_master_5_2 due to collision with Verilog/ System Verilog reserved word 
+    config[31:3] --> config_Z[31:3]
+@N: BW110 :|Renaming port spi_master_5_3 due to collision with Verilog/ System Verilog reserved word 
+    config[31:3] --> config_Z[31:3]
+@N: BW110 :|Renaming port spi_master_5_4 due to collision with Verilog/ System Verilog reserved word 
+    config[31:3] --> config_Z[31:3]
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 
-Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:21s; Memory used current: 287MB peak: 298MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
+Start final timing analysis (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 282MB peak: 298MB)
 
-@W: MT246 :"c:\users\jl\source\repos\smartfusion2 tinker\hermess\component\work\sb_sb\ccc_0\sb_sb_ccc_0_fccc.vhd":106:4:106:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
+@W: MT246 :"c:\users\jl\source\repos\hermess\hermess-microcontroller\component\work\sb_sb\ccc_0\sb_sb_ccc_0_fccc.vhd":106:4:106:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
 @W: MT420 |Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on net sb_sb_0.CCC_0.GL0_net.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sat Feb 13 10:00:06 2021
+# Timing report written on Mon Dec 13 16:01:13 2021
 #
 
 
@@ -138,7 +288,7 @@ Top view:               sb
 Requested Frequency:    100.0 MHz
 Wire load mode:         top
 Paths requested:        5
-Constraint File(s):    C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\designer\sb\synthesis.fdc
+Constraint File(s):    C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\synthesis.fdc
                        
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 
@@ -150,14 +300,14 @@ Performance Summary
 *******************
 
 
-Worst slack in design: 0.865
+Worst slack in design: -2.596
 
-                                            Requested     Estimated     Requested     Estimated               Clock        Clock              
-Starting Clock                              Frequency     Frequency     Period        Period        Slack     Type         Group              
-----------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     109.5 MHz     10.000        9.135         0.865     inferred     Inferred_clkgroup_0
-System                                      100.0 MHz     895.2 MHz     10.000        1.117         8.883     system       system_clkgroup    
-==============================================================================================================================================
+                                            Requested     Estimated     Requested     Estimated                Clock        Clock              
+Starting Clock                              Frequency     Frequency     Period        Period        Slack      Type         Group              
+-----------------------------------------------------------------------------------------------------------------------------------------------
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     79.4 MHz      10.000        12.596        -2.596     inferred     Inferred_clkgroup_0
+System                                      100.0 MHz     895.2 MHz     10.000        1.117         8.883      system       system_clkgroup    
+===============================================================================================================================================
 
 
 
@@ -166,13 +316,14 @@ System                                      100.0 MHz     895.2 MHz     10.000  
 Clock Relationships
 *******************
 
-Clocks                                                                            |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Starting                                 Ending                                   |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-System                                   System                                   |  10.000      8.883  |  No paths    -      |  No paths    -      |  No paths    -    
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      0.865  |  No paths    -      |  No paths    -      |  No paths    -    
-========================================================================================================================================================================
+Clocks                                                                            |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                 Ending                                   |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                   System                                   |  10.000      8.883   |  No paths    -      |  No paths    -      |  No paths    -    
+System                                   sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      -0.727  |  No paths    -      |  No paths    -      |  No paths    -    
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  sb_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      -2.596  |  No paths    -      |  No paths    -      |  No paths    -    
+=========================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
 
@@ -194,41 +345,41 @@ Detailed Report for Clock: sb_sb_CCC_0_FCCC|GL0_net_inferred_clock
 Starting Points with Worst Slack
 ********************************
 
-                                       Starting                                                                                                               Arrival          
-Instance                               Reference                                   Type        Pin                 Net                                        Time        Slack
+                                       Starting                                                                                                              Arrival           
+Instance                               Reference                                   Type        Pin                Net                                        Time        Slack 
                                        Clock                                                                                                                                   
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[15]      STAMP_PADDRS[15]                           3.580       0.865
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_SEL           sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx     3.488       0.900
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[13]      STAMP_PADDRS[13]                           3.647       0.965
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[14]      STAMP_PADDRS[14]                           3.652       1.177
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[12]      STAMP_PADDRS[12]                           3.677       1.346
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[3]      sb_sb_0_STAMP_PRDATA[3]                    3.838       4.107
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[17]     sb_sb_0_STAMP_PRDATA[17]                   3.878       4.292
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[13]     sb_sb_0_STAMP_PRDATA[13]                   3.782       4.347
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[19]     sb_sb_0_STAMP_PRDATA[19]                   3.811       4.375
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_WDATA[30]     sb_sb_0_STAMP_PRDATA[30]                   3.735       4.381
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[8]      sb_sb_0_STAMP_PADDR[8]                     3.983       -2.596
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[9]      sb_sb_0_STAMP_PADDR[9]                     3.771       -2.077
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[7]      sb_sb_0_STAMP_PADDR[7]                     3.628       -1.464
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[15]     STAMP_PADDRS[15]                           3.614       -1.159
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_SEL          sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx     3.524       -1.133
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[5]      sb_sb_0_STAMP_PADDR[5]                     3.695       -1.093
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[12]     STAMP_PADDRS[12]                           3.713       -1.026
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[10]     sb_sb_0_STAMP_PADDR[10]                    3.990       -0.955
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[13]     STAMP_PADDRS[13]                           3.682       -0.817
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_ADDR[6]      sb_sb_0_STAMP_PADDR[6]                     3.783       -0.782
 ===============================================================================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                                       Starting                                                                                                                    Required          
-Instance                               Reference                                   Type        Pin                 Net                                             Time         Slack
-                                       Clock                                                                                                                                         
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_READY         iPRDATA_0_sqmuxa_i                              8.486        0.865
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[3]      sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[3]      9.475        1.340
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[4]      sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[4]      9.541        1.406
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[9]      sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[9]      9.604        1.469
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[23]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[23]     9.616        1.481
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[0]      sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[0]      9.633        1.498
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[29]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[29]     9.642        1.507
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[30]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[30]     9.646        1.511
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[13]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[13]     9.659        1.524
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_010     F_HM0_RDATA[16]     sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA[16]     9.667        1.532
-=====================================================================================================================================================================================
+                                               Starting                                                                                 Required           
+Instance                                       Reference                                   Type     Pin     Net                         Time         Slack 
+                                               Clock                                                                                                       
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+MemorySynchronizer_0.resettimercounter[1]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[1]      9.745        -2.596
+MemorySynchronizer_0.resettimercounter[2]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[2]      9.745        -2.596
+MemorySynchronizer_0.resettimercounter[3]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[3]      9.745        -2.596
+MemorySynchronizer_0.resettimercounter[4]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[4]      9.745        -2.596
+MemorySynchronizer_0.resettimercounter[5]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[5]      9.745        -2.596
+MemorySynchronizer_0.resettimercounter[6]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[6]      9.745        -2.596
+MemorySynchronizer_0.resettimercounter[7]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[7]      9.745        -2.596
+MemorySynchronizer_0.resettimercounter[8]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[8]      9.745        -2.596
+MemorySynchronizer_0.resettimercounter[9]      sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[9]      9.745        -2.596
+MemorySynchronizer_0.resettimercounter[10]     sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       resettimercounter_9[10]     9.745        -2.596
+===========================================================================================================================================================
 
 
 
@@ -238,37 +389,211 @@ Worst Path Information
 
 Path information for path number 1: 
       Requested Period:                      10.000
-    - Setup time:                            1.514
+    - Setup time:                            0.255
     + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         8.486
+    = Required time:                         9.745
 
-    - Propagation time:                      7.621
+    - Propagation time:                      12.341
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     0.865
+    = Slack (critical) :                     -2.596
 
-    Number of logic level(s):                3
-    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[15]
-    Ending point:                            sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_READY
+    Number of logic level(s):                5
+    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
+    Ending point:                            MemorySynchronizer_0.resettimercounter[1] / D
     The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
-    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
 
-Instance / Net                                                             Pin                Pin               Arrival     No. of    
-Name                                                           Type        Name               Dir     Delay     Time        Fan Out(s)
---------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                             MSS_010     F_HM0_ADDR[15]     Out     3.580     3.580 f     -         
-STAMP_PADDRS[15]                                               Net         -                  -       0.248     -           1         
-sb_sb_0.CoreAPB3_0.u_mux_p_to_b3.g0_0                          CFG2        A                  In      -         3.829 f     -         
-sb_sb_0.CoreAPB3_0.u_mux_p_to_b3.g0_0                          CFG2        Y                  Out     0.087     3.916 f     -         
-N_8                                                            Net         -                  -       0.815     -           4         
-sb_sb_0.CoreAPB3_0.iPSELS_raw_0_a2[0]                          CFG4        B                  In      -         4.730 f     -         
-sb_sb_0.CoreAPB3_0.iPSELS_raw_0_a2[0]                          CFG4        Y                  Out     0.148     4.879 r     -         
-iPSELS_raw[0]                                                  Net         -                  -       1.299     -           33        
-sb_sb_0.CoreAPB3_0.u_mux_p_to_b3.PSELSBUS_0_a2_RNIUIPA1[1]     CFG4        D                  In      -         6.178 r     -         
-sb_sb_0.CoreAPB3_0.u_mux_p_to_b3.PSELSBUS_0_a2_RNIUIPA1[1]     CFG4        Y                  Out     0.326     6.504 f     -         
-iPRDATA_0_sqmuxa_i                                             Net         -                  -       1.117     -           1         
-sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                             MSS_010     F_HM0_READY        In      -         7.621 f     -         
-======================================================================================================================================
-Total path delay (propagation time + setup) of 9.135 is 5.656(61.9%) logic and 3.479(38.1%) route.
+Instance / Net                                                          Pin               Pin               Arrival      No. of    
+Name                                                        Type        Name              Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                          MSS_010     F_HM0_ADDR[8]     Out     3.983     3.983 r      -         
+sb_sb_0_STAMP_PADDR[8]                                      Net         -                 -       2.567     -            402       
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        D                 In      -         6.550 r      -         
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        Y                 Out     0.326     6.876 f      -         
+stamp1shadowreg145_3_0                                      Net         -                 -       1.161     -            18        
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        B                 In      -         8.037 f      -         
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        Y                 Out     0.164     8.202 f      -         
+ResetTimerValueReg_1_sqmuxa                                 Net         -                 -       1.639     -            96        
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        D                 In      -         9.841 f      -         
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        Y                 Out     0.288     10.128 f     -         
+N_161                                                       Net         -                 -       1.290     -            32        
+MemorySynchronizer_0.resettimercounter_9_iv_0[1]            CFG4        C                 In      -         11.418 f     -         
+MemorySynchronizer_0.resettimercounter_9_iv_0[1]            CFG4        Y                 Out     0.223     11.641 r     -         
+resettimercounter_9_iv_0[1]                                 Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter_9_iv[1]              CFG4        C                 In      -         11.889 r     -         
+MemorySynchronizer_0.resettimercounter_9_iv[1]              CFG4        Y                 Out     0.203     12.092 r     -         
+resettimercounter_9[1]                                      Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter[1]                   SLE         D                 In      -         12.341 r     -         
+===================================================================================================================================
+Total path delay (propagation time + setup) of 12.596 is 5.443(43.2%) logic and 7.154(56.8%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 2: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      12.341
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -2.596
+
+    Number of logic level(s):                5
+    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
+    Ending point:                            MemorySynchronizer_0.resettimercounter[17] / D
+    The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                          Pin               Pin               Arrival      No. of    
+Name                                                        Type        Name              Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                          MSS_010     F_HM0_ADDR[8]     Out     3.983     3.983 r      -         
+sb_sb_0_STAMP_PADDR[8]                                      Net         -                 -       2.567     -            402       
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        D                 In      -         6.550 r      -         
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        Y                 Out     0.326     6.876 f      -         
+stamp1shadowreg145_3_0                                      Net         -                 -       1.161     -            18        
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        B                 In      -         8.037 f      -         
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        Y                 Out     0.164     8.202 f      -         
+ResetTimerValueReg_1_sqmuxa                                 Net         -                 -       1.639     -            96        
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        D                 In      -         9.841 f      -         
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        Y                 Out     0.288     10.128 f     -         
+N_161                                                       Net         -                 -       1.290     -            32        
+MemorySynchronizer_0.resettimercounter_9_iv_0[17]           CFG4        C                 In      -         11.418 f     -         
+MemorySynchronizer_0.resettimercounter_9_iv_0[17]           CFG4        Y                 Out     0.223     11.641 r     -         
+resettimercounter_9_iv_0[17]                                Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter_9_iv[17]             CFG4        C                 In      -         11.889 r     -         
+MemorySynchronizer_0.resettimercounter_9_iv[17]             CFG4        Y                 Out     0.203     12.092 r     -         
+resettimercounter_9[17]                                     Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter[17]                  SLE         D                 In      -         12.341 r     -         
+===================================================================================================================================
+Total path delay (propagation time + setup) of 12.596 is 5.443(43.2%) logic and 7.154(56.8%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 3: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      12.341
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -2.596
+
+    Number of logic level(s):                5
+    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
+    Ending point:                            MemorySynchronizer_0.resettimercounter[29] / D
+    The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                          Pin               Pin               Arrival      No. of    
+Name                                                        Type        Name              Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                          MSS_010     F_HM0_ADDR[8]     Out     3.983     3.983 r      -         
+sb_sb_0_STAMP_PADDR[8]                                      Net         -                 -       2.567     -            402       
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        D                 In      -         6.550 r      -         
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        Y                 Out     0.326     6.876 f      -         
+stamp1shadowreg145_3_0                                      Net         -                 -       1.161     -            18        
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        B                 In      -         8.037 f      -         
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        Y                 Out     0.164     8.202 f      -         
+ResetTimerValueReg_1_sqmuxa                                 Net         -                 -       1.639     -            96        
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        D                 In      -         9.841 f      -         
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        Y                 Out     0.288     10.128 f     -         
+N_161                                                       Net         -                 -       1.290     -            32        
+MemorySynchronizer_0.resettimercounter_9_iv_0_0_0[29]       CFG4        C                 In      -         11.418 f     -         
+MemorySynchronizer_0.resettimercounter_9_iv_0_0_0[29]       CFG4        Y                 Out     0.223     11.641 r     -         
+resettimercounter_9_iv_0_0_0[29]                            Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter_9_iv_0_0[29]         CFG4        C                 In      -         11.889 r     -         
+MemorySynchronizer_0.resettimercounter_9_iv_0_0[29]         CFG4        Y                 Out     0.203     12.092 r     -         
+resettimercounter_9[29]                                     Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter[29]                  SLE         D                 In      -         12.341 r     -         
+===================================================================================================================================
+Total path delay (propagation time + setup) of 12.596 is 5.443(43.2%) logic and 7.154(56.8%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 4: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      12.341
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -2.596
+
+    Number of logic level(s):                5
+    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
+    Ending point:                            MemorySynchronizer_0.resettimercounter[18] / D
+    The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                          Pin               Pin               Arrival      No. of    
+Name                                                        Type        Name              Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                          MSS_010     F_HM0_ADDR[8]     Out     3.983     3.983 r      -         
+sb_sb_0_STAMP_PADDR[8]                                      Net         -                 -       2.567     -            402       
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        D                 In      -         6.550 r      -         
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        Y                 Out     0.326     6.876 f      -         
+stamp1shadowreg145_3_0                                      Net         -                 -       1.161     -            18        
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        B                 In      -         8.037 f      -         
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        Y                 Out     0.164     8.202 f      -         
+ResetTimerValueReg_1_sqmuxa                                 Net         -                 -       1.639     -            96        
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        D                 In      -         9.841 f      -         
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        Y                 Out     0.288     10.128 f     -         
+N_161                                                       Net         -                 -       1.290     -            32        
+MemorySynchronizer_0.resettimercounter_9_iv_0[18]           CFG4        C                 In      -         11.418 f     -         
+MemorySynchronizer_0.resettimercounter_9_iv_0[18]           CFG4        Y                 Out     0.223     11.641 r     -         
+resettimercounter_9_iv_0[18]                                Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter_9_iv[18]             CFG4        C                 In      -         11.889 r     -         
+MemorySynchronizer_0.resettimercounter_9_iv[18]             CFG4        Y                 Out     0.203     12.092 r     -         
+resettimercounter_9[18]                                     Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter[18]                  SLE         D                 In      -         12.341 r     -         
+===================================================================================================================================
+Total path delay (propagation time + setup) of 12.596 is 5.443(43.2%) logic and 7.154(56.8%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 5: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      12.341
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -2.596
+
+    Number of logic level(s):                5
+    Starting point:                          sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[8]
+    Ending point:                            MemorySynchronizer_0.resettimercounter[19] / D
+    The start point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                          Pin               Pin               Arrival      No. of    
+Name                                                        Type        Name              Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------
+sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST                          MSS_010     F_HM0_ADDR[8]     Out     3.983     3.983 r      -         
+sb_sb_0_STAMP_PADDR[8]                                      Net         -                 -       2.567     -            402       
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        D                 In      -         6.550 r      -         
+MemorySynchronizer_0.stamp1shadowreg145_3_0                 CFG4        Y                 Out     0.326     6.876 f      -         
+stamp1shadowreg145_3_0                                      Net         -                 -       1.161     -            18        
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        B                 In      -         8.037 f      -         
+MemorySynchronizer_0.stamp1shadowreg147_0_a2_0_RNIQ5T92     CFG4        Y                 Out     0.164     8.202 f      -         
+ResetTimerValueReg_1_sqmuxa                                 Net         -                 -       1.639     -            96        
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        D                 In      -         9.841 f      -         
+MemorySynchronizer_0.resettimercounter_1_sqmuxa_1_i_o2      CFG4        Y                 Out     0.288     10.128 f     -         
+N_161                                                       Net         -                 -       1.290     -            32        
+MemorySynchronizer_0.resettimercounter_9_iv_0[19]           CFG4        C                 In      -         11.418 f     -         
+MemorySynchronizer_0.resettimercounter_9_iv_0[19]           CFG4        Y                 Out     0.223     11.641 r     -         
+resettimercounter_9_iv_0[19]                                Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter_9_iv[19]             CFG4        C                 In      -         11.889 r     -         
+MemorySynchronizer_0.resettimercounter_9_iv[19]             CFG4        Y                 Out     0.203     12.092 r     -         
+resettimercounter_9[19]                                     Net         -                 -       0.248     -            1         
+MemorySynchronizer_0.resettimercounter[19]                  SLE         D                 In      -         12.341 r     -         
+===================================================================================================================================
+Total path delay (propagation time + setup) of 12.596 is 5.443(43.2%) logic and 7.154(56.8%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -283,23 +608,41 @@ Detailed Report for Clock: System
 Starting Points with Worst Slack
 ********************************
 
-                                      Starting                                                                                           Arrival          
-Instance                              Reference     Type               Pin        Net                                                    Time        Slack
-                                      Clock                                                                                                               
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.FABOSC_0.I_RCOSC_25_50MHZ     System        RCOSC_25_50MHZ     CLKOUT     FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC     0.000       8.883
-==========================================================================================================================================================
+                                          Starting                                            Arrival           
+Instance                                  Reference     Type     Pin     Net                  Time        Slack 
+                                          Clock                                                                 
+----------------------------------------------------------------------------------------------------------------
+MemorySynchronizer_0.un1_nreset_62_rs     System        SLE      Q       un1_nreset_62_rs     0.108       -0.727
+MemorySynchronizer_0.un1_nreset_4_rs      System        SLE      Q       un1_nreset_4_rs      0.108       -0.658
+MemorySynchronizer_0.un1_nreset_7_rs      System        SLE      Q       un1_nreset_7_rs      0.108       -0.632
+MemorySynchronizer_0.un1_nreset_45_rs     System        SLE      Q       un1_nreset_45_rs     0.108       -0.620
+MemorySynchronizer_0.un1_nreset_24_rs     System        SLE      Q       un1_nreset_24_rs     0.108       -0.564
+MemorySynchronizer_0.un1_nreset_42_rs     System        SLE      Q       un1_nreset_42_rs     0.108       -0.558
+MemorySynchronizer_0.un1_nreset_2_rs      System        SLE      Q       un1_nreset_2_rs      0.108       -0.533
+MemorySynchronizer_0.un1_nreset_25_rs     System        SLE      Q       un1_nreset_25_rs     0.108       -0.526
+MemorySynchronizer_0.un1_nreset_20_rs     System        SLE      Q       un1_nreset_20_rs     0.108       -0.509
+MemorySynchronizer_0.un1_nreset_59_rs     System        SLE      Q       un1_nreset_59_rs     0.087       -0.498
+================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                           Starting                                                                                         Required          
-Instance                   Reference     Type     Pin                Net                                                    Time         Slack
-                           Clock                                                                                                              
-----------------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.CCC_0.CCC_INST     System        CCC      RCOSC_25_50MHZ     FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC     10.000       8.883
-==============================================================================================================================================
+                                                 Starting                                                      Required           
+Instance                                         Reference     Type     Pin     Net                            Time         Slack 
+                                                 Clock                                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+MemorySynchronizer_0.waitingtimercounter[0]      System        SLE      D       waitingtimercounter_10[0]      9.745        -0.727
+MemorySynchronizer_0.waitingtimercounter[1]      System        SLE      D       waitingtimercounter_10[1]      9.745        -0.727
+MemorySynchronizer_0.waitingtimercounter[6]      System        SLE      D       waitingtimercounter_10[6]      9.745        -0.727
+MemorySynchronizer_0.waitingtimercounter[7]      System        SLE      D       waitingtimercounter_10[7]      9.745        -0.727
+MemorySynchronizer_0.waitingtimercounter[9]      System        SLE      D       waitingtimercounter_10[9]      9.745        -0.727
+MemorySynchronizer_0.waitingtimercounter[27]     System        SLE      D       waitingtimercounter_10[27]     9.745        -0.727
+MemorySynchronizer_0.Stamp5ShadowReg2[0]         System        SLE      EN      N_208                          9.662        -0.684
+MemorySynchronizer_0.Stamp5ShadowReg2[1]         System        SLE      EN      N_208                          9.662        -0.684
+MemorySynchronizer_0.Stamp5ShadowReg2[2]         System        SLE      EN      N_208                          9.662        -0.684
+MemorySynchronizer_0.Stamp5ShadowReg2[3]         System        SLE      EN      N_208                          9.662        -0.684
+==================================================================================================================================
 
 
 
@@ -309,30 +652,726 @@ Worst Path Information
 
 Path information for path number 1: 
       Requested Period:                      10.000
-    - Setup time:                            0.000
+    - Setup time:                            0.255
     + Clock delay at ending point:           0.000 (ideal)
-    + Estimated clock delay at ending point: 0.000
-    = Required time:                         10.000
+    = Required time:                         9.745
 
-    - Propagation time:                      1.117
+    - Propagation time:                      10.472
     - Clock delay at starting point:         0.000 (ideal)
     - Estimated clock delay at start point:  -0.000
-    = Slack (non-critical) :                 8.883
+    = Slack (non-critical) :                 -0.727
 
-    Number of logic level(s):                0
-    Starting point:                          sb_sb_0.FABOSC_0.I_RCOSC_25_50MHZ / CLKOUT
-    Ending point:                            sb_sb_0.CCC_0.CCC_INST / RCOSC_25_50MHZ
-    The start point is clocked by            System [rising]
-    The end   point is clocked by            System [rising]
+    Number of logic level(s):                39
+    Starting point:                          MemorySynchronizer_0.un1_nreset_62_rs / Q
+    Ending point:                            MemorySynchronizer_0.waitingtimercounter[1] / D
+    The start point is clocked by            System [rising] on pin CLK
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
 
-Instance / Net                                                            Pin                Pin               Arrival     No. of    
-Name                                                   Type               Name               Dir     Delay     Time        Fan Out(s)
--------------------------------------------------------------------------------------------------------------------------------------
-sb_sb_0.FABOSC_0.I_RCOSC_25_50MHZ                      RCOSC_25_50MHZ     CLKOUT             Out     0.000     0.000 r     -         
-FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC     Net                -                  -       1.117     -           1         
-sb_sb_0.CCC_0.CCC_INST                                 CCC                RCOSC_25_50MHZ     In      -         1.117 r     -         
-=====================================================================================================================================
-Total path delay (propagation time + setup) of 1.117 is 0.000(0.0%) logic and 1.117(100.0%) route.
+Instance / Net                                                                 Pin      Pin               Arrival      No. of    
+Name                                                                  Type     Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------------------------
+MemorySynchronizer_0.un1_nreset_62_rs                                 SLE      Q        Out     0.108     0.108 f      -         
+un1_nreset_62_rs                                                      Net      -        -       0.248     -            1         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     C        In      -         0.357 f      -         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     Y        Out     0.210     0.566 f      -         
+waitingtimercounter[24]                                               Net      -        -       0.815     -            4         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     D        In      -         1.381 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     Y        Out     0.317     1.698 r      -         
+un106_in_enablelto30_i_a2_19                                          Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     D        In      -         1.947 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     Y        Out     0.271     2.218 r      -         
+un106_in_enablelto30_i_a2_28                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     D        In      -         3.498 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     FCO      Out     0.503     4.002 f      -         
+un4_waitingtimercounter_cry_0                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCI      In      -         4.002 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCO      Out     0.016     4.018 f      -         
+un4_waitingtimercounter_cry_1                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCI      In      -         4.018 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCO      Out     0.016     4.034 f      -         
+un4_waitingtimercounter_cry_2                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCI      In      -         4.034 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCO      Out     0.016     4.051 f      -         
+un4_waitingtimercounter_cry_3                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCI      In      -         4.051 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCO      Out     0.016     4.067 f      -         
+un4_waitingtimercounter_cry_4                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCI      In      -         4.067 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCO      Out     0.016     4.083 f      -         
+un4_waitingtimercounter_cry_5                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCI      In      -         4.083 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCO      Out     0.016     4.099 f      -         
+un4_waitingtimercounter_cry_6                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCI      In      -         4.099 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCO      Out     0.016     4.116 f      -         
+un4_waitingtimercounter_cry_7                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCI      In      -         4.116 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCO      Out     0.016     4.132 f      -         
+un4_waitingtimercounter_cry_8                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCI      In      -         4.132 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCO      Out     0.016     4.148 f      -         
+un4_waitingtimercounter_cry_9                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCI      In      -         4.148 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCO      Out     0.016     4.165 f      -         
+un4_waitingtimercounter_cry_10                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCI      In      -         4.165 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCO      Out     0.016     4.181 f      -         
+un4_waitingtimercounter_cry_11                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCI      In      -         4.181 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCO      Out     0.016     4.197 f      -         
+un4_waitingtimercounter_cry_12                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCI      In      -         4.197 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCO      Out     0.016     4.213 f      -         
+un4_waitingtimercounter_cry_13                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCI      In      -         4.213 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCO      Out     0.016     4.230 f      -         
+un4_waitingtimercounter_cry_14                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCI      In      -         4.230 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCO      Out     0.016     4.246 f      -         
+un4_waitingtimercounter_cry_15                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCI      In      -         4.246 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCO      Out     0.016     4.262 f      -         
+un4_waitingtimercounter_cry_16                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCI      In      -         4.262 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCO      Out     0.016     4.279 f      -         
+un4_waitingtimercounter_cry_17                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCI      In      -         4.279 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCO      Out     0.016     4.295 f      -         
+un4_waitingtimercounter_cry_18                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCI      In      -         4.295 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCO      Out     0.016     4.311 f      -         
+un4_waitingtimercounter_cry_19                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCI      In      -         4.311 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCO      Out     0.016     4.328 f      -         
+un4_waitingtimercounter_cry_20                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCI      In      -         4.328 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCO      Out     0.016     4.344 f      -         
+un4_waitingtimercounter_cry_21                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCI      In      -         4.344 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCO      Out     0.016     4.360 f      -         
+un4_waitingtimercounter_cry_22                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCI      In      -         4.360 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCO      Out     0.016     4.377 f      -         
+un4_waitingtimercounter_cry_23                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCI      In      -         4.377 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCO      Out     0.016     4.393 f      -         
+un4_waitingtimercounter_cry_24                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCI      In      -         4.393 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCO      Out     0.016     4.409 f      -         
+un4_waitingtimercounter_cry_25                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCI      In      -         4.409 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCO      Out     0.016     4.425 f      -         
+un4_waitingtimercounter_cry_26                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCI      In      -         4.425 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCO      Out     0.016     4.442 f      -         
+un4_waitingtimercounter_cry_27                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCI      In      -         4.442 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCO      Out     0.016     4.458 f      -         
+un4_waitingtimercounter_cry_28                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCI      In      -         4.458 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCO      Out     0.016     4.474 f      -         
+un4_waitingtimercounter_cry_29                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     FCI      In      -         4.474 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     S        Out     0.073     4.547 r      -         
+un120_in_enable_i_A[30]                                               Net      -        -       0.896     -            6         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     D        In      -         5.443 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     FCO      Out     0.505     5.948 r      -         
+un112_in_enable_0_data_tmp[15]                                        Net      -        -       1.465     -            49        
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     A        In      -         7.413 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     Y        Out     0.077     7.490 r      -         
+N_187                                                                 Net      -        -       0.497     -            2         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     D        In      -         7.987 r      -         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     Y        Out     0.271     8.259 r      -         
+waitingtimercounter_3_sqmuxa                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0_sx[1]          CFG3     B        In      -         9.539 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0_sx[1]          CFG3     Y        Out     0.165     9.703 r      -         
+waitingtimercounter_10_iv_0_sx[1]                                     Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0[1]             CFG4     D        In      -         9.952 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0[1]             CFG4     Y        Out     0.271     10.223 r     -         
+waitingtimercounter_10[1]                                             Net      -        -       0.248     -            1         
+MemorySynchronizer_0.waitingtimercounter[1]                           SLE      D        In      -         10.472 r     -         
+=================================================================================================================================
+Total path delay (propagation time + setup) of 10.727 is 3.501(32.6%) logic and 7.226(67.4%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 2: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      10.472
+    - Clock delay at starting point:         0.000 (ideal)
+    - Estimated clock delay at start point:  -0.000
+    = Slack (non-critical) :                 -0.727
+
+    Number of logic level(s):                39
+    Starting point:                          MemorySynchronizer_0.un1_nreset_62_rs / Q
+    Ending point:                            MemorySynchronizer_0.waitingtimercounter[7] / D
+    The start point is clocked by            System [rising] on pin CLK
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                                 Pin      Pin               Arrival      No. of    
+Name                                                                  Type     Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------------------------
+MemorySynchronizer_0.un1_nreset_62_rs                                 SLE      Q        Out     0.108     0.108 f      -         
+un1_nreset_62_rs                                                      Net      -        -       0.248     -            1         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     C        In      -         0.357 f      -         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     Y        Out     0.210     0.566 f      -         
+waitingtimercounter[24]                                               Net      -        -       0.815     -            4         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     D        In      -         1.381 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     Y        Out     0.317     1.698 r      -         
+un106_in_enablelto30_i_a2_19                                          Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     D        In      -         1.947 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     Y        Out     0.271     2.218 r      -         
+un106_in_enablelto30_i_a2_28                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     D        In      -         3.498 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     FCO      Out     0.503     4.002 f      -         
+un4_waitingtimercounter_cry_0                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCI      In      -         4.002 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCO      Out     0.016     4.018 f      -         
+un4_waitingtimercounter_cry_1                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCI      In      -         4.018 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCO      Out     0.016     4.034 f      -         
+un4_waitingtimercounter_cry_2                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCI      In      -         4.034 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCO      Out     0.016     4.051 f      -         
+un4_waitingtimercounter_cry_3                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCI      In      -         4.051 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCO      Out     0.016     4.067 f      -         
+un4_waitingtimercounter_cry_4                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCI      In      -         4.067 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCO      Out     0.016     4.083 f      -         
+un4_waitingtimercounter_cry_5                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCI      In      -         4.083 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCO      Out     0.016     4.099 f      -         
+un4_waitingtimercounter_cry_6                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCI      In      -         4.099 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCO      Out     0.016     4.116 f      -         
+un4_waitingtimercounter_cry_7                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCI      In      -         4.116 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCO      Out     0.016     4.132 f      -         
+un4_waitingtimercounter_cry_8                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCI      In      -         4.132 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCO      Out     0.016     4.148 f      -         
+un4_waitingtimercounter_cry_9                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCI      In      -         4.148 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCO      Out     0.016     4.165 f      -         
+un4_waitingtimercounter_cry_10                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCI      In      -         4.165 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCO      Out     0.016     4.181 f      -         
+un4_waitingtimercounter_cry_11                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCI      In      -         4.181 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCO      Out     0.016     4.197 f      -         
+un4_waitingtimercounter_cry_12                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCI      In      -         4.197 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCO      Out     0.016     4.213 f      -         
+un4_waitingtimercounter_cry_13                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCI      In      -         4.213 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCO      Out     0.016     4.230 f      -         
+un4_waitingtimercounter_cry_14                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCI      In      -         4.230 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCO      Out     0.016     4.246 f      -         
+un4_waitingtimercounter_cry_15                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCI      In      -         4.246 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCO      Out     0.016     4.262 f      -         
+un4_waitingtimercounter_cry_16                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCI      In      -         4.262 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCO      Out     0.016     4.279 f      -         
+un4_waitingtimercounter_cry_17                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCI      In      -         4.279 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCO      Out     0.016     4.295 f      -         
+un4_waitingtimercounter_cry_18                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCI      In      -         4.295 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCO      Out     0.016     4.311 f      -         
+un4_waitingtimercounter_cry_19                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCI      In      -         4.311 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCO      Out     0.016     4.328 f      -         
+un4_waitingtimercounter_cry_20                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCI      In      -         4.328 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCO      Out     0.016     4.344 f      -         
+un4_waitingtimercounter_cry_21                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCI      In      -         4.344 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCO      Out     0.016     4.360 f      -         
+un4_waitingtimercounter_cry_22                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCI      In      -         4.360 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCO      Out     0.016     4.377 f      -         
+un4_waitingtimercounter_cry_23                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCI      In      -         4.377 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCO      Out     0.016     4.393 f      -         
+un4_waitingtimercounter_cry_24                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCI      In      -         4.393 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCO      Out     0.016     4.409 f      -         
+un4_waitingtimercounter_cry_25                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCI      In      -         4.409 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCO      Out     0.016     4.425 f      -         
+un4_waitingtimercounter_cry_26                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCI      In      -         4.425 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCO      Out     0.016     4.442 f      -         
+un4_waitingtimercounter_cry_27                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCI      In      -         4.442 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCO      Out     0.016     4.458 f      -         
+un4_waitingtimercounter_cry_28                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCI      In      -         4.458 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCO      Out     0.016     4.474 f      -         
+un4_waitingtimercounter_cry_29                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     FCI      In      -         4.474 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     S        Out     0.073     4.547 r      -         
+un120_in_enable_i_A[30]                                               Net      -        -       0.896     -            6         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     D        In      -         5.443 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     FCO      Out     0.505     5.948 r      -         
+un112_in_enable_0_data_tmp[15]                                        Net      -        -       1.465     -            49        
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     A        In      -         7.413 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     Y        Out     0.077     7.490 r      -         
+N_187                                                                 Net      -        -       0.497     -            2         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     D        In      -         7.987 r      -         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     Y        Out     0.271     8.259 r      -         
+waitingtimercounter_3_sqmuxa                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0_sx[7]          CFG3     B        In      -         9.539 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0_sx[7]          CFG3     Y        Out     0.165     9.703 r      -         
+waitingtimercounter_10_iv_0_sx[7]                                     Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0[7]             CFG4     D        In      -         9.952 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0[7]             CFG4     Y        Out     0.271     10.223 r     -         
+waitingtimercounter_10[7]                                             Net      -        -       0.248     -            1         
+MemorySynchronizer_0.waitingtimercounter[7]                           SLE      D        In      -         10.472 r     -         
+=================================================================================================================================
+Total path delay (propagation time + setup) of 10.727 is 3.501(32.6%) logic and 7.226(67.4%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 3: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      10.472
+    - Clock delay at starting point:         0.000 (ideal)
+    - Estimated clock delay at start point:  -0.000
+    = Slack (non-critical) :                 -0.727
+
+    Number of logic level(s):                39
+    Starting point:                          MemorySynchronizer_0.un1_nreset_62_rs / Q
+    Ending point:                            MemorySynchronizer_0.waitingtimercounter[9] / D
+    The start point is clocked by            System [rising] on pin CLK
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                                 Pin      Pin               Arrival      No. of    
+Name                                                                  Type     Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------------------------
+MemorySynchronizer_0.un1_nreset_62_rs                                 SLE      Q        Out     0.108     0.108 f      -         
+un1_nreset_62_rs                                                      Net      -        -       0.248     -            1         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     C        In      -         0.357 f      -         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     Y        Out     0.210     0.566 f      -         
+waitingtimercounter[24]                                               Net      -        -       0.815     -            4         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     D        In      -         1.381 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     Y        Out     0.317     1.698 r      -         
+un106_in_enablelto30_i_a2_19                                          Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     D        In      -         1.947 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     Y        Out     0.271     2.218 r      -         
+un106_in_enablelto30_i_a2_28                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     D        In      -         3.498 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     FCO      Out     0.503     4.002 f      -         
+un4_waitingtimercounter_cry_0                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCI      In      -         4.002 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCO      Out     0.016     4.018 f      -         
+un4_waitingtimercounter_cry_1                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCI      In      -         4.018 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCO      Out     0.016     4.034 f      -         
+un4_waitingtimercounter_cry_2                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCI      In      -         4.034 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCO      Out     0.016     4.051 f      -         
+un4_waitingtimercounter_cry_3                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCI      In      -         4.051 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCO      Out     0.016     4.067 f      -         
+un4_waitingtimercounter_cry_4                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCI      In      -         4.067 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCO      Out     0.016     4.083 f      -         
+un4_waitingtimercounter_cry_5                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCI      In      -         4.083 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCO      Out     0.016     4.099 f      -         
+un4_waitingtimercounter_cry_6                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCI      In      -         4.099 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCO      Out     0.016     4.116 f      -         
+un4_waitingtimercounter_cry_7                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCI      In      -         4.116 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCO      Out     0.016     4.132 f      -         
+un4_waitingtimercounter_cry_8                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCI      In      -         4.132 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCO      Out     0.016     4.148 f      -         
+un4_waitingtimercounter_cry_9                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCI      In      -         4.148 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCO      Out     0.016     4.165 f      -         
+un4_waitingtimercounter_cry_10                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCI      In      -         4.165 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCO      Out     0.016     4.181 f      -         
+un4_waitingtimercounter_cry_11                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCI      In      -         4.181 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCO      Out     0.016     4.197 f      -         
+un4_waitingtimercounter_cry_12                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCI      In      -         4.197 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCO      Out     0.016     4.213 f      -         
+un4_waitingtimercounter_cry_13                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCI      In      -         4.213 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCO      Out     0.016     4.230 f      -         
+un4_waitingtimercounter_cry_14                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCI      In      -         4.230 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCO      Out     0.016     4.246 f      -         
+un4_waitingtimercounter_cry_15                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCI      In      -         4.246 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCO      Out     0.016     4.262 f      -         
+un4_waitingtimercounter_cry_16                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCI      In      -         4.262 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCO      Out     0.016     4.279 f      -         
+un4_waitingtimercounter_cry_17                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCI      In      -         4.279 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCO      Out     0.016     4.295 f      -         
+un4_waitingtimercounter_cry_18                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCI      In      -         4.295 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCO      Out     0.016     4.311 f      -         
+un4_waitingtimercounter_cry_19                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCI      In      -         4.311 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCO      Out     0.016     4.328 f      -         
+un4_waitingtimercounter_cry_20                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCI      In      -         4.328 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCO      Out     0.016     4.344 f      -         
+un4_waitingtimercounter_cry_21                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCI      In      -         4.344 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCO      Out     0.016     4.360 f      -         
+un4_waitingtimercounter_cry_22                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCI      In      -         4.360 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCO      Out     0.016     4.377 f      -         
+un4_waitingtimercounter_cry_23                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCI      In      -         4.377 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCO      Out     0.016     4.393 f      -         
+un4_waitingtimercounter_cry_24                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCI      In      -         4.393 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCO      Out     0.016     4.409 f      -         
+un4_waitingtimercounter_cry_25                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCI      In      -         4.409 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCO      Out     0.016     4.425 f      -         
+un4_waitingtimercounter_cry_26                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCI      In      -         4.425 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCO      Out     0.016     4.442 f      -         
+un4_waitingtimercounter_cry_27                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCI      In      -         4.442 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCO      Out     0.016     4.458 f      -         
+un4_waitingtimercounter_cry_28                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCI      In      -         4.458 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCO      Out     0.016     4.474 f      -         
+un4_waitingtimercounter_cry_29                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     FCI      In      -         4.474 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     S        Out     0.073     4.547 r      -         
+un120_in_enable_i_A[30]                                               Net      -        -       0.896     -            6         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     D        In      -         5.443 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     FCO      Out     0.505     5.948 r      -         
+un112_in_enable_0_data_tmp[15]                                        Net      -        -       1.465     -            49        
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     A        In      -         7.413 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     Y        Out     0.077     7.490 r      -         
+N_187                                                                 Net      -        -       0.497     -            2         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     D        In      -         7.987 r      -         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     Y        Out     0.271     8.259 r      -         
+waitingtimercounter_3_sqmuxa                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0_sx[9]          CFG3     B        In      -         9.539 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0_sx[9]          CFG3     Y        Out     0.165     9.703 r      -         
+waitingtimercounter_10_iv_0_sx[9]                                     Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0[9]             CFG4     D        In      -         9.952 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0[9]             CFG4     Y        Out     0.271     10.223 r     -         
+waitingtimercounter_10[9]                                             Net      -        -       0.248     -            1         
+MemorySynchronizer_0.waitingtimercounter[9]                           SLE      D        In      -         10.472 r     -         
+=================================================================================================================================
+Total path delay (propagation time + setup) of 10.727 is 3.501(32.6%) logic and 7.226(67.4%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 4: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      10.472
+    - Clock delay at starting point:         0.000 (ideal)
+    - Estimated clock delay at start point:  -0.000
+    = Slack (non-critical) :                 -0.727
+
+    Number of logic level(s):                39
+    Starting point:                          MemorySynchronizer_0.un1_nreset_62_rs / Q
+    Ending point:                            MemorySynchronizer_0.waitingtimercounter[6] / D
+    The start point is clocked by            System [rising] on pin CLK
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                                 Pin      Pin               Arrival      No. of    
+Name                                                                  Type     Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------------------------
+MemorySynchronizer_0.un1_nreset_62_rs                                 SLE      Q        Out     0.108     0.108 f      -         
+un1_nreset_62_rs                                                      Net      -        -       0.248     -            1         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     C        In      -         0.357 f      -         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     Y        Out     0.210     0.566 f      -         
+waitingtimercounter[24]                                               Net      -        -       0.815     -            4         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     D        In      -         1.381 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     Y        Out     0.317     1.698 r      -         
+un106_in_enablelto30_i_a2_19                                          Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     D        In      -         1.947 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     Y        Out     0.271     2.218 r      -         
+un106_in_enablelto30_i_a2_28                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     D        In      -         3.498 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     FCO      Out     0.503     4.002 f      -         
+un4_waitingtimercounter_cry_0                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCI      In      -         4.002 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCO      Out     0.016     4.018 f      -         
+un4_waitingtimercounter_cry_1                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCI      In      -         4.018 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCO      Out     0.016     4.034 f      -         
+un4_waitingtimercounter_cry_2                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCI      In      -         4.034 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCO      Out     0.016     4.051 f      -         
+un4_waitingtimercounter_cry_3                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCI      In      -         4.051 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCO      Out     0.016     4.067 f      -         
+un4_waitingtimercounter_cry_4                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCI      In      -         4.067 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCO      Out     0.016     4.083 f      -         
+un4_waitingtimercounter_cry_5                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCI      In      -         4.083 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCO      Out     0.016     4.099 f      -         
+un4_waitingtimercounter_cry_6                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCI      In      -         4.099 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCO      Out     0.016     4.116 f      -         
+un4_waitingtimercounter_cry_7                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCI      In      -         4.116 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCO      Out     0.016     4.132 f      -         
+un4_waitingtimercounter_cry_8                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCI      In      -         4.132 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCO      Out     0.016     4.148 f      -         
+un4_waitingtimercounter_cry_9                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCI      In      -         4.148 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCO      Out     0.016     4.165 f      -         
+un4_waitingtimercounter_cry_10                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCI      In      -         4.165 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCO      Out     0.016     4.181 f      -         
+un4_waitingtimercounter_cry_11                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCI      In      -         4.181 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCO      Out     0.016     4.197 f      -         
+un4_waitingtimercounter_cry_12                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCI      In      -         4.197 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCO      Out     0.016     4.213 f      -         
+un4_waitingtimercounter_cry_13                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCI      In      -         4.213 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCO      Out     0.016     4.230 f      -         
+un4_waitingtimercounter_cry_14                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCI      In      -         4.230 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCO      Out     0.016     4.246 f      -         
+un4_waitingtimercounter_cry_15                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCI      In      -         4.246 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCO      Out     0.016     4.262 f      -         
+un4_waitingtimercounter_cry_16                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCI      In      -         4.262 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCO      Out     0.016     4.279 f      -         
+un4_waitingtimercounter_cry_17                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCI      In      -         4.279 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCO      Out     0.016     4.295 f      -         
+un4_waitingtimercounter_cry_18                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCI      In      -         4.295 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCO      Out     0.016     4.311 f      -         
+un4_waitingtimercounter_cry_19                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCI      In      -         4.311 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCO      Out     0.016     4.328 f      -         
+un4_waitingtimercounter_cry_20                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCI      In      -         4.328 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCO      Out     0.016     4.344 f      -         
+un4_waitingtimercounter_cry_21                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCI      In      -         4.344 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCO      Out     0.016     4.360 f      -         
+un4_waitingtimercounter_cry_22                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCI      In      -         4.360 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCO      Out     0.016     4.377 f      -         
+un4_waitingtimercounter_cry_23                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCI      In      -         4.377 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCO      Out     0.016     4.393 f      -         
+un4_waitingtimercounter_cry_24                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCI      In      -         4.393 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCO      Out     0.016     4.409 f      -         
+un4_waitingtimercounter_cry_25                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCI      In      -         4.409 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCO      Out     0.016     4.425 f      -         
+un4_waitingtimercounter_cry_26                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCI      In      -         4.425 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCO      Out     0.016     4.442 f      -         
+un4_waitingtimercounter_cry_27                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCI      In      -         4.442 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCO      Out     0.016     4.458 f      -         
+un4_waitingtimercounter_cry_28                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCI      In      -         4.458 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCO      Out     0.016     4.474 f      -         
+un4_waitingtimercounter_cry_29                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     FCI      In      -         4.474 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     S        Out     0.073     4.547 r      -         
+un120_in_enable_i_A[30]                                               Net      -        -       0.896     -            6         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     D        In      -         5.443 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     FCO      Out     0.505     5.948 r      -         
+un112_in_enable_0_data_tmp[15]                                        Net      -        -       1.465     -            49        
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     A        In      -         7.413 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     Y        Out     0.077     7.490 r      -         
+N_187                                                                 Net      -        -       0.497     -            2         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     D        In      -         7.987 r      -         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     Y        Out     0.271     8.259 r      -         
+waitingtimercounter_3_sqmuxa                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0_sx[6]          CFG3     B        In      -         9.539 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0_sx[6]          CFG3     Y        Out     0.165     9.703 r      -         
+waitingtimercounter_10_iv_0_sx[6]                                     Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0[6]             CFG4     D        In      -         9.952 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_0[6]             CFG4     Y        Out     0.271     10.223 r     -         
+waitingtimercounter_10[6]                                             Net      -        -       0.248     -            1         
+MemorySynchronizer_0.waitingtimercounter[6]                           SLE      D        In      -         10.472 r     -         
+=================================================================================================================================
+Total path delay (propagation time + setup) of 10.727 is 3.501(32.6%) logic and 7.226(67.4%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 5: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      10.472
+    - Clock delay at starting point:         0.000 (ideal)
+    - Estimated clock delay at start point:  -0.000
+    = Slack (non-critical) :                 -0.727
+
+    Number of logic level(s):                39
+    Starting point:                          MemorySynchronizer_0.un1_nreset_62_rs / Q
+    Ending point:                            MemorySynchronizer_0.waitingtimercounter[27] / D
+    The start point is clocked by            System [rising] on pin CLK
+    The end   point is clocked by            sb_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                                 Pin      Pin               Arrival      No. of    
+Name                                                                  Type     Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------------------------
+MemorySynchronizer_0.un1_nreset_62_rs                                 SLE      Q        Out     0.108     0.108 f      -         
+un1_nreset_62_rs                                                      Net      -        -       0.248     -            1         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     C        In      -         0.357 f      -         
+MemorySynchronizer_0.un1_ResyncTimerValueReg_37_set_RNI4TVJ           CFG3     Y        Out     0.210     0.566 f      -         
+waitingtimercounter[24]                                               Net      -        -       0.815     -            4         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     D        In      -         1.381 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_19               CFG4     Y        Out     0.317     1.698 r      -         
+un106_in_enablelto30_i_a2_19                                          Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     D        In      -         1.947 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_28               CFG4     Y        Out     0.271     2.218 r      -         
+un106_in_enablelto30_i_a2_28                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     D        In      -         3.498 r      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI99SL1      ARI1     FCO      Out     0.503     4.002 f      -         
+un4_waitingtimercounter_cry_0                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCI      In      -         4.002 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIMR1D3      ARI1     FCO      Out     0.016     4.018 f      -         
+un4_waitingtimercounter_cry_1                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCI      In      -         4.018 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4F875      ARI1     FCO      Out     0.016     4.034 f      -         
+un4_waitingtimercounter_cry_2                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCI      In      -         4.034 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI37J07      ARI1     FCO      Out     0.016     4.051 f      -         
+un4_waitingtimercounter_cry_3                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCI      In      -         4.051 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI4APP8      ARI1     FCO      Out     0.016     4.067 f      -         
+un4_waitingtimercounter_cry_4                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCI      In      -         4.067 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIM1TUA      ARI1     FCO      Out     0.016     4.083 f      -         
+un4_waitingtimercounter_cry_5                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCI      In      -         4.083 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIO414D      ARI1     FCO      Out     0.016     4.099 f      -         
+un4_waitingtimercounter_cry_6                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCI      In      -         4.099 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUKOOE      ARI1     FCO      Out     0.016     4.116 f      -         
+un4_waitingtimercounter_cry_7                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCI      In      -         4.116 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICR5LG      ARI1     FCO      Out     0.016     4.132 f      -         
+un4_waitingtimercounter_cry_8                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCI      In      -         4.132 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIPR9SI      ARI1     FCO      Out     0.016     4.148 f      -         
+un4_waitingtimercounter_cry_9                                         Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCI      In      -         4.148 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC2BKK      ARI1     FCO      Out     0.016     4.165 f      -         
+un4_waitingtimercounter_cry_10                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCI      In      -         4.165 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU237M      ARI1     FCO      Out     0.016     4.181 f      -         
+un4_waitingtimercounter_cry_11                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCI      In      -         4.181 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIFTH4O      ARI1     FCO      Out     0.016     4.197 f      -         
+un4_waitingtimercounter_cry_12                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCI      In      -         4.197 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIVHNSP      ARI1     FCO      Out     0.016     4.213 f      -         
+un4_waitingtimercounter_cry_13                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCI      In      -         4.213 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIN37FR      ARI1     FCO      Out     0.016     4.230 f      -         
+un4_waitingtimercounter_cry_14                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCI      In      -         4.230 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIB3RVS      ARI1     FCO      Out     0.016     4.246 f      -         
+un4_waitingtimercounter_cry_15                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCI      In      -         4.246 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIHSNPU      ARI1     FCO      Out     0.016     4.262 f      -         
+un4_waitingtimercounter_cry_16                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCI      In      -         4.262 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNICG5S01     ARI1     FCO      Out     0.016     4.279 f      -         
+un4_waitingtimercounter_cry_17                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCI      In      -         4.279 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI3E9Q21     ARI1     FCO      Out     0.016     4.295 f      -         
+un4_waitingtimercounter_cry_18                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCI      In      -         4.295 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIUP3B41     ARI1     FCO      Out     0.016     4.311 f      -         
+un4_waitingtimercounter_cry_19                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCI      In      -         4.311 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIC8PT51     ARI1     FCO      Out     0.016     4.328 f      -         
+un4_waitingtimercounter_cry_20                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCI      In      -         4.328 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI63NB71     ARI1     FCO      Out     0.016     4.344 f      -         
+un4_waitingtimercounter_cry_21                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCI      In      -         4.344 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINQRB91     ARI1     FCO      Out     0.016     4.360 f      -         
+un4_waitingtimercounter_cry_22                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCI      In      -         4.360 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIKGUA1     ARI1     FCO      Out     0.016     4.377 f      -         
+un4_waitingtimercounter_cry_23                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCI      In      -         4.377 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI9VGIC1     ARI1     FCO      Out     0.016     4.393 f      -         
+un4_waitingtimercounter_cry_24                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCI      In      -         4.393 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIEHR8E1     ARI1     FCO      Out     0.016     4.409 f      -         
+un4_waitingtimercounter_cry_25                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCI      In      -         4.409 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI2ATNF1     ARI1     FCO      Out     0.016     4.425 f      -         
+un4_waitingtimercounter_cry_26                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCI      In      -         4.425 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIIIAEH1     ARI1     FCO      Out     0.016     4.442 f      -         
+un4_waitingtimercounter_cry_27                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCI      In      -         4.442 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNI40UOI1     ARI1     FCO      Out     0.016     4.458 f      -         
+un4_waitingtimercounter_cry_28                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCI      In      -         4.458 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNIU11LK1     ARI1     FCO      Out     0.016     4.474 f      -         
+un4_waitingtimercounter_cry_29                                        Net      -        -       0.000     -            1         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     FCI      In      -         4.474 f      -         
+MemorySynchronizer_0.k_1_2.un106_in_enablelto30_i_a2_27_RNINOEBM1     ARI1     S        Out     0.073     4.547 r      -         
+un120_in_enable_i_A[30]                                               Net      -        -       0.896     -            6         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     D        In      -         5.443 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNI3EBNAS[30]               ARI1     FCO      Out     0.505     5.948 r      -         
+un112_in_enable_0_data_tmp[15]                                        Net      -        -       1.465     -            49        
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     A        In      -         7.413 r      -         
+MemorySynchronizer_0.WaitingTimerValueReg_RNINELIDS[30]               CFG2     Y        Out     0.077     7.490 r      -         
+N_187                                                                 Net      -        -       0.497     -            2         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     D        In      -         7.987 r      -         
+MemorySynchronizer_0.waitingtimercounter_3_sqmuxa_2                   CFG4     Y        Out     0.271     8.259 r      -         
+waitingtimercounter_3_sqmuxa                                          Net      -        -       1.280     -            31        
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_2_sx[27]         CFG3     B        In      -         9.539 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_2_sx[27]         CFG3     Y        Out     0.165     9.703 r      -         
+waitingtimercounter_10_iv_2_sx[27]                                    Net      -        -       0.248     -            1         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_2[27]            CFG4     D        In      -         9.952 r      -         
+MemorySynchronizer_0.k_1_2.waitingtimercounter_10_iv_2[27]            CFG4     Y        Out     0.271     10.223 r     -         
+waitingtimercounter_10[27]                                            Net      -        -       0.248     -            1         
+MemorySynchronizer_0.waitingtimercounter[27]                          SLE      D        In      -         10.472 r     -         
+=================================================================================================================================
+Total path delay (propagation time + setup) of 10.727 is 3.501(32.6%) logic and 7.226(67.4%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -341,41 +1380,48 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 283MB peak: 298MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
+Finished timing report (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 283MB peak: 298MB)
 
 ---------------------------------------
 Resource Usage Report for sb 
 
 Mapping to part: m2s010vf400std
 Cell usage:
+AND2            1 use
 CCC             1 use
-CLKINT          1 use
+CLKINT          2 uses
 MSS_010         1 use
 RCOSC_25_50MHZ  1 use
-CFG2           2 uses
-CFG3           2 uses
-CFG4           35 uses
+SYSRESET        1 use
+CFG1           95 uses
+CFG2           571 uses
+CFG3           1312 uses
+CFG4           1719 uses
+
+Carry cells:
+ARI1            825 uses - used for arithmetic functions
+ARI1            66 uses - used for Wide-Mux implementation
+Total ARI1      891 uses
 
 
 Sequential Cells: 
-SLE            0 uses
+SLE            2894 uses
 
 DSP Blocks:    0 of 22 (0%)
 
-I/O ports: 21
-I/O primitives: 16
-BIBUF          2 uses
-INBUF          4 uses
-OUTBUF         7 uses
-TRIBUFF        3 uses
+I/O ports: 73
+I/O primitives: 72
+INBUF          31 uses
+OUTBUF         35 uses
+TRIBUFF        6 uses
 
 
-Global Clock Buffers: 1
+Global Clock Buffers: 2
 
-Total LUTs:    39
+Total LUTs:    4588
 
 Extra resources required for RAM and MACC interface logic during P&R:
 
@@ -383,14 +1429,14 @@ RAM64x18 Interface Logic : SLEs = 0; LUTs = 0;
 RAM1K18  Interface Logic : SLEs = 0; LUTs = 0;
 MACC     Interface Logic : SLEs = 0; LUTs = 0;
 
-Total number of SLEs after P&R:  0 + 0 + 0 + 0 = 0;
-Total number of LUTs after P&R:  39 + 0 + 0 + 0 = 39;
+Total number of SLEs after P&R:  2894 + 0 + 0 + 0 = 2894;
+Total number of LUTs after P&R:  4588 + 0 + 0 + 0 = 4588;
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 60MB peak: 168MB)
+At Mapper Exit (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:22s; Memory used current: 98MB peak: 298MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:02s cputime
-# Sat Feb 13 10:00:07 2021
+Process took 0h:00m:23s realtime, 0h:00m:22s cputime
+# Mon Dec 13 16:01:13 2021
 
 ###########################################################]

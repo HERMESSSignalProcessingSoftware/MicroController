@@ -2,7 +2,7 @@
 <device>
   <name>sb</name>
   <version>1.0</version>
-  <description>CMSIS description for sb.  Created by Microsemi SmartDesign on Fri Feb 12 10:16:57 2021</description>
+  <description>CMSIS description for sb.  Created by Microsemi SmartDesign on Mon Mar  1 10:58:25 2021</description>
   <addressUnitBits>8</addressUnitBits>
   <width>32</width>
   <peripherals>
@@ -35,12 +35,36 @@
       <baseAddress>0x60000000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>ENVM-SPU_Conf</name>
+      <name>ENVM-SPU_Program</name>
       <baseAddress>0x60000000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>CoreAHBLite_0</name>
+      <name>ENVM-SPU_Conf</name>
+      <baseAddress>0x6001F400</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>STAMP_0</name>
       <baseAddress>0x50000000%0x30000000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>CoreAPB3_0</name>
+      <baseAddress>0x50001000%0x30001000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>CoreAPB3_0</name>
+      <baseAddress>0x50002000%0x30002000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>CoreAPB3_0</name>
+      <baseAddress>0x50003000%0x30003000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>CoreAPB3_0</name>
+      <baseAddress>0x50004000%0x30004000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>CoreAPB3_0</name>
+      <baseAddress>0x50005000%0x30005000</baseAddress>
     </peripheral>
     <peripheral>
       <name>CACHE_BACKDOOR</name>
@@ -3690,6 +3714,10 @@
     <peripheral>
       <name>TIMER</name>
       <baseAddress>0x40004000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>SPI_0</name>
+      <baseAddress>0x40001000</baseAddress>
     </peripheral>
     <peripheral>
       <name>MMUART_0</name>

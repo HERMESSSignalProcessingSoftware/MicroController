@@ -13,12 +13,12 @@ Hostname: LUS210
 
 Implementation : synthesis
 
-# Written on Sat Feb 13 10:00:04 2021
+# Written on Mon Dec 13 16:00:49 2021
 
 ##### DESIGN INFO #######################################################
 
 Top View:                "sb"
-Constraint File(s):      "C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\designer\sb\synthesis.fdc"
+Constraint File(s):      "C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\synthesis.fdc"
 
 
 
@@ -47,29 +47,79 @@ sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     sb_sb_CCC_0_FCCC|GL0_net_inferred_cl
 Unconstrained Start/End Points
 ******************************
 
-p:DAPI_RX
-p:DAPI_TX
+p:DAPI_RXD
+p:DAPI_TXD
 p:DEVRST_N
-p:LED_HEARTBEAT
+p:F_CLK
+p:F_CS1
+p:F_CS2
+p:F_MISO
+p:F_MOSI
+p:IN_RXSM_LO
+p:IN_RXSM_SODS
+p:IN_RXSM_SOE
+p:LED_FPGA_LOADED
+p:LED_HB_MEMSYNC
+p:LED_HB_MSS
 p:LED_RECORDING
-p:SODS
-p:SPI_DATASTORAGE_CLK (bidir end point)
-p:SPI_DATASTORAGE_CLK (bidir start point)
-p:SPI_DATASTORAGE_DI
-p:SPI_DATASTORAGE_DO
-p:SPI_DATASTORAGE_SS0 (bidir end point)
-p:SPI_DATASTORAGE_SS0 (bidir start point)
-p:TM_RX
-p:TM_TX
-p:ready_dms1
-p:ready_dms2
-p:ready_temp
-p:spi_clock
-p:spi_dms1_cs
-p:spi_dms2_cs
-p:spi_miso
-p:spi_mosi
-p:spi_temp_cs
+p:OUT_ADC_START
+p:STAMP1_CS_SGR1
+p:STAMP1_CS_SGR2
+p:STAMP1_CS_TEMP
+p:STAMP1_DRDY_SGR1
+p:STAMP1_DRDY_SGR2
+p:STAMP1_DRDY_TEMP
+p:STAMP1_MISO
+p:STAMP1_MOSI
+p:STAMP1_SCLK
+p:STAMP2_CS_SGR1
+p:STAMP2_CS_SGR2
+p:STAMP2_CS_TEMP
+p:STAMP2_DRDY_SGR1
+p:STAMP2_DRDY_SGR2
+p:STAMP2_DRDY_TEMP
+p:STAMP2_MISO
+p:STAMP2_MOSI
+p:STAMP2_SCLK
+p:STAMP3_CS_SGR1
+p:STAMP3_CS_SGR2
+p:STAMP3_CS_TEMP
+p:STAMP3_DRDY_SGR1
+p:STAMP3_DRDY_SGR2
+p:STAMP3_DRDY_TEMP
+p:STAMP3_MISO
+p:STAMP3_MOSI
+p:STAMP3_SCLK
+p:STAMP4_CS_SGR1
+p:STAMP4_CS_SGR2
+p:STAMP4_CS_TEMP
+p:STAMP4_DRDY_SGR1
+p:STAMP4_DRDY_SGR2
+p:STAMP4_DRDY_TEMP
+p:STAMP4_MISO
+p:STAMP4_MOSI
+p:STAMP4_SCLK
+p:STAMP5_CS_SGR1
+p:STAMP5_CS_SGR2
+p:STAMP5_CS_TEMP
+p:STAMP5_DRDY_SGR1
+p:STAMP5_DRDY_SGR2
+p:STAMP5_DRDY_TEMP
+p:STAMP5_MISO
+p:STAMP5_MOSI
+p:STAMP5_SCLK
+p:STAMP6_CS_SGR1
+p:STAMP6_CS_SGR2
+p:STAMP6_CS_TEMP
+p:STAMP6_DRDY_SGR1
+p:STAMP6_DRDY_SGR2
+p:STAMP6_DRDY_TEMP
+p:STAMP6_MISO
+p:STAMP6_MOSI
+p:STAMP6_SCLK
+p:TM_RXD
+p:TM_TXD
+p:WP
 
 
 Inapplicable constraints

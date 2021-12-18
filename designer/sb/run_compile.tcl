@@ -1,7 +1,7 @@
 set_defvar -name {SPEED}   -value {STD}
 set_defvar -name {VOLTAGE} -value {1.2}
-set_defvar -name {TEMPR}   -value {COM}
-set_defvar -name {PART_RANGE}   -value {COM}
+set_defvar -name {TEMPR}   -value {IND}
+set_defvar -name {PART_RANGE}   -value {IND}
 set_defvar -name {IO_DEFT_STD} -value {LVCMOS33}
 set_defvar -name {PACOMP_PARPT_MAX_NET} -value {10}
 set_defvar -name {PA4_GB_MAX_RCLKINT_INSERTION} -value {16}
@@ -30,7 +30,7 @@ set_compile_info \
 set_compile_info \
     -category {"Device Selection"} \
     -name {"Package"} \
-    -value {"400 VF"}
+    -value {"144 TQ"}
 set_compile_info \
     -category {"Device Selection"} \
     -name {"Speed Grade"} \
@@ -38,7 +38,7 @@ set_compile_info \
 set_compile_info \
     -category {"Device Selection"} \
     -name {"Temp"} \
-    -value {"0:25:85"}
+    -value {"-40:25:100"}
 set_compile_info \
     -category {"Device Selection"} \
     -name {"Voltage"} \
@@ -58,7 +58,7 @@ set_compile_info \
 set_compile_info \
     -category {"Device Selection"} \
     -name {"PLL Supply Voltage"} \
-    -value {"3.3V"}
+    -value {"2.5V"}
 set_compile_info \
     -category {"Device Selection"} \
     -name {"Default I/O technology"} \
@@ -82,7 +82,7 @@ set_compile_info \
 set_compile_info \
     -category {"Source Files"} \
     -name {"Source"} \
-    -value {"C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\synthesis\sb.vm"}
+    -value {"C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\sb.vm"}
 set_compile_info \
     -category {"Options"} \
     -name {"Enable Single Event Transient mitigation"} \
@@ -96,9 +96,9 @@ set_compile_info \
     -name {"Limit the number of high fanout nets to display to"} \
     -value {"10"}
 compile \
-    -desdir {C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\designer\sb} \
+    -desdir {C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb} \
     -design sb \
     -fam SmartFusion2 \
     -die PA4M1000_N \
-    -pkg vf400 \
+    -pkg tq144 \
     -merge_pdc 0

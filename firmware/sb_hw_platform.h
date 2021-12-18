@@ -2,16 +2,21 @@
 #define sb_HW_PLATFORM_H_
 /*****************************************************************************
 *
-*Created by Microsemi SmartDesign  Fri Feb 12 10:16:57 2021
+*Created by Microsemi SmartDesign  Mon Mar  1 10:58:25 2021
 *
 *Memory map specification for peripherals in sb
 */
 
 /*-----------------------------------------------------------------------------
 * CM3 subsystem memory map
-* Master(s) for this subsystem: CM3 FABRICTOMSSFIC0_AHB_BRIDGE 
+* Master(s) for this subsystem: CM3 
 *---------------------------------------------------------------------------*/
-#define SB_SB                           0x5000_0000U
+#define STAMP_0                         0x5000_0000U
+#define SB_SB_STAMP_1                   0x5000_1000U
+#define SB_SB_STAMP_2                   0x5000_2000U
+#define SB_SB_STAMP_3                   0x5000_3000U
+#define SB_SB_STAMP_4                   0x5000_4000U
+#define SB_SB_STAMP_5                   0x5000_5000U
 
 
 #endif /* sb_HW_PLATFORM_H_*/

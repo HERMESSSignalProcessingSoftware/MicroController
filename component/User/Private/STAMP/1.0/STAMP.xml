@@ -39,6 +39,20 @@
         <spirit:direction>out</spirit:direction>
       </spirit:signal>
       <spirit:signal>
+        <spirit:name>request_resync</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>data_frame</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>63</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>reset_status</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
         <spirit:name>PCLK</spirit:name>
         <spirit:direction>in</spirit:direction>
       </spirit:signal>
@@ -49,7 +63,7 @@
       <spirit:signal>
         <spirit:name>PADDR</spirit:name>
         <spirit:direction>in</spirit:direction>
-        <spirit:left>5</spirit:left>
+        <spirit:left>11</spirit:left>
         <spirit:right>0</spirit:right>
       </spirit:signal>
       <spirit:signal>
@@ -122,7 +136,7 @@
       </spirit:signal>
     </spirit:signals>
     <spirit:hwParameters>
-      <spirit:hwParameter spirit:id="async_threshold" spirit:name="async_threshold" spirit:prompt="async_threshold:" spirit:dataType="int" spirit:resolve="user">5</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="async_prescaler" spirit:name="async_prescaler" spirit:prompt="async_prescaler:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">2500</spirit:hwParameter>
     </spirit:hwParameters>
     <spirit:deletedhwParameters>
     </spirit:deletedhwParameters>

@@ -1,27 +1,30 @@
 #--  Synopsys, Inc.
 #--  Version Q-2020.03M-SP1
-#--  Project file C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\synthesis\scratchproject.prs
+#--  Project file C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\scratchproject.prs
 
 #project files
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/hdl/STAMP.vhd"
-add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3_muxptob3.vhd"
-add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3_iaddr_reg.vhd"
-add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3.vhd"
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vhdl/core/coreresetp_pcie_hotreset.vhd"
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vhdl/core/coreresetp.vhd"
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/work/sb_sb/CCC_0/sb_sb_CCC_0_FCCC.vhd"
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/Actel/SgCore/OSC/2.0.101/osc_comps.vhd"
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/work/sb_sb/FABOSC_0/sb_sb_FABOSC_0_OSC.vhd"
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/work/sb_sb_MSS/sb_sb_MSS_syn.vhd"
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/work/sb_sb_MSS/sb_sb_MSS.vhd"
-add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/components.vhd"
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/work/sb_sb/sb_sb.vhd"
-add_file -vhdl -lib work "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/component/work/sb/sb.vhd"
-add_file -fpga_constraint "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/designer/sb/synthesis.fdc"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/Timestamp.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/MemorySynchronizer.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/spi_master.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/hdl/STAMP.vhd"
+add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3_muxptob3.vhd"
+add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3_iaddr_reg.vhd"
+add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/coreapb3.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vhdl/core/coreresetp_pcie_hotreset.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vhdl/core/coreresetp.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/work/sb_sb/CCC_0/sb_sb_CCC_0_FCCC.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/SgCore/OSC/2.0.101/osc_comps.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/work/sb_sb/FABOSC_0/sb_sb_FABOSC_0_OSC.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/work/sb_sb_MSS/sb_sb_MSS_syn.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/work/sb_sb_MSS/sb_sb_MSS.vhd"
+add_file -vhdl -lib COREAPB3_LIB "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vhdl/core/components.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/work/sb_sb/sb_sb.vhd"
+add_file -vhdl -lib work "C:/Users/jl/source/repos/hermess/hermess-MicroController/component/work/sb/sb.vhd"
+add_file -fpga_constraint "C:/Users/jl/source/repos/hermess/hermess-MicroController/designer/sb/synthesis.fdc"
 
 
 #implementation: "synthesis"
-impl -add "C:\Users\jl\source\repos\Smartfusion2 Tinker\hermess\synthesis" -type fpga
+impl -add C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis -type fpga
 
 #device options
 set_option -technology SmartFusion2
@@ -93,5 +96,5 @@ set_option -vhdl2008 1
 set_option -write_apr_constraint 1
 
 #set result format/file last
-project -result_file "C:/Users/jl/source/repos/Smartfusion2 Tinker/hermess/synthesis/sb.vm"
+project -result_file "C:/Users/jl/source/repos/hermess/hermess-MicroController/synthesis/sb.vm"
 impl -active "synthesis"

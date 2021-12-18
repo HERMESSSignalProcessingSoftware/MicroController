@@ -1,0 +1,157 @@
+----------------------------------------------------------------
+-Pin Report - Date: Mon Dec 13 16:02:01 2021 Pinchecksum: NOT-AVAILABLE
+-Product: Designer
+-Release: v12.6
+-Version: 12.900.20.24
+-Design Name: sb
+-Family: SmartFusion2
+-Die: M2S010
+-Package: 144 TQ
+-----------------------------------------------------------------
+
+Number |Port             |Function                     |State      |I/O Std  |Direction |I/O state in Flash*Freeze mode |Resistor Pull |I/O available in Flash*Freeze mode |Schmitt Trigger |Odt_Static |Odt Imp (Ohm) |Low Power Exit |Input Delay |Slew |Pre-Emphasis |Output Drive (mA) |Output Load (pF) |
+-------|-----------------|-----------------------------|-----------|---------|----------|-------------------------------|--------------|-----------------------------------|----------------|-----------|--------------|---------------|------------|-----|-------------|------------------|-----------------|
+1       STAMP6_SCLK       MSIO64NB7                     Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+2       STAMP6_MOSI       MSIO64PB7                     Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+3       STAMP6_MISO       MSIO67NB7                     Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+4       STAMP6_DRDY_SGR1  MSIO67PB7                     Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+5                         VSS                           Reserved    
+6                         VDDI7                         Reserved    
+7       STAMP6_DRDY_SGR2  MSIO71NB7                     Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+8       STAMP6_DRDY_TEMP  MSIO71PB7                     Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+9       STAMP6_CS_SGR1    MSIO72NB7                     Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+10      STAMP6_CS_SGR2    MSIO73NB7                     Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+11                        VSS                           Reserved    
+12                        VDD                           Reserved    
+13      STAMP5_CS_SGR2    MSIO76NB7                     Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+14      STAMP5_CS_TEMP    MSIO76PB7                     Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+15                        MSIO77NB7                     Unassigned  
+16                        MSIO77PB7                     Unassigned  
+17                        VDDI7                         Reserved    
+18                        VSS                           Reserved    
+19                        MSIO79NB7                     Unassigned  
+20                        MSIO79PB7/GB1                 Special     
+21                        MSIO81NB7                     Unassigned  
+22      STAMP6_CS_TEMP    MSIO81PB7                     Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+23      LED_FPGA_LOADED   MSIOD84PB6/CCC_NE1_CLKI2      Special     LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+24      LED_HB_MSS        MSIOD85PB6/CCC_NE1_CLKI1      Special     LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+25                        VDDI6                         Reserved    
+26                        VSS                           Reserved    
+27      LED_RECORDING     MSIOD90NB6                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+28      LED_HB_MEMSYNC    MSIOD90PB6                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+29                        MSIOD93NB6                    Unassigned  
+30      WP                MSIOD93PB6                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+31                        VDD                           Reserved    
+32      STAMP5_MISO       MSIOD96PB6                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+33      STAMP5_DRDY_SGR1  MSIOD96NB6                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+34                        VSS                           Reserved    
+35                        VDDI6                         Reserved    
+36      STAMP5_DRDY_SGR2  MSIOD98NB6                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+37      STAMP5_DRDY_TEMP  MSIOD99PB6                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+38      STAMP5_CS_SGR1    MSIOD99NB6                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+39                        VDD                           Reserved    
+40                        VSS                           Reserved    
+41                        VPP                           Reserved    
+42                        VSS                           Reserved    
+43      STAMP3_DRDY_SGR2  MSIO102PB4                    Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+44      STAMP3_DRDY_TEMP  MSIO102NB4/CCC_NE1_CLKI0      Special     LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+45                        VDDI4                         Reserved    
+46                        MSIO103NB4/PROBE_B            Unassigned  
+47                        MSIO103PB4/PROBE_A            Unassigned  
+48      STAMP3_CS_SGR1    MSIO104NB4/GB7                Special     LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+49      STAMP3_CS_SGR2    MSIO104PB4/GB3                Special     LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+50                        VDD                           Reserved    
+51                        VSS                           Reserved    
+52      STAMP3_CS_TEMP    MSIO105PB4/CCC_NE0_CLKI0      Special     LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+53      STAMP4_SCLK       MSIO105NB4                    Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+54                        VDDI4                         Reserved    
+55      STAMP4_MOSI       MSIO106PB4                    Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+56      STAMP5_SCLK       MSIO106NB4                    Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+57      STAMP5_MOSI       MSIO108PB4                    Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+58      STAMP4_CS_TEMP    MSIO108NB4                    Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+59                        VSS                           Reserved    
+60      STAMP4_CS_SGR2    MSIO109PB4                    Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+61      STAMP4_CS_SGR1    MSIO109NB4                    Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+62                        VDDI4                         Reserved    
+63      STAMP4_DRDY_SGR1  MSIO113PB4                    Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+64      STAMP4_DRDY_SGR2  MSIO113NB4                    Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+65                        VSS                           Reserved    
+66      STAMP4_DRDY_TEMP  MSIO114PB4                    Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+67      STAMP4_MISO       MSIO114NB4                    Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+68                        XTLOSC_AUX_XTAL               Reserved    
+69                        XTLOSC_AUX_EXTAL              Reserved    
+70                        XTLOSC_MAIN_XTAL              Reserved    
+71                        XTLOSC_MAIN_EXTAL             Reserved    
+72      DEVRST_N          DEVRST_N                      Dedicated   
+73                        JTAGSEL                       Reserved    
+74                        JTAG_TDO/M3_TDO/M3_SWO        Reserved    
+75                        JTAG_TCK/M3_TCK               Reserved    
+76                        JTAG_TRSTB/M3_TRSTB           Reserved    
+77                        VDDI3                         Reserved    
+78                        JTAG_TMS/M3_TMS/M3_SWDIO      Reserved    
+79                        JTAG_TDI/M3_TDI               Reserved    
+80                        VPP                           Reserved    
+81      STAMP2_MISO       MSIO0NB2/USB_DATA7_B          Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+82      STAMP2_DRDY_SGR1  MSIO1PB2/USB_XCLK_B           Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+83      STAMP2_DRDY_SGR2  MSIO1NB2/USB_DIR_B            Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+84                        VSS                           Reserved    
+85      STAMP2_DRDY_TEMP  MSIO2PB2/USB_STP_B            Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+86                        VDDI2                         Reserved    
+87      STAMP2_CS_SGR1    MSIO2NB2/USB_NXT_B            Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+88      STAMP2_CS_SGR2    MSIO3PB2/USB_DATA0_B          Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+89      STAMP2_CS_TEMP    MSIO4PB2/USB_DATA2_B          Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+90      STAMP3_SCLK       MSIO3NB2/USB_DATA1_B          Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+91      STAMP3_MOSI       MSIO4NB2/USB_DATA3_B          Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+92      STAMP3_MISO       MSIO5PB2/USB_DATA4_B          Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+93      STAMP3_DRDY_SGR1  MSIO5NB2/USB_DATA5_B          Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+94      F_CS2             MSIO6PB2/USB_DATA6_B          Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+95                        VDD                           Reserved    
+96                        VSSNVM                        Reserved    
+97                        VPPNVM                        Reserved    
+98                        VSS                           Reserved    
+99                        VDDI2                         Reserved    
+100     F_CLK             MSIO12PB2/SPI_0_CLK           Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+101     F_MISO            MSIO12NB2/SPI_0_SDI/GPIO_5_A  Fixed       LVCMOS33  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
+102     F_MOSI            MSIO13PB2/SPI_0_SDO/GPIO_6_A  Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+103     F_CS1             MSIO13NB2/SPI_0_SS0/GPIO_7_A  Fixed       LVCMOS33  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          ---   ---           4                  5                 
+104                       VPP                           Reserved    
+105                       VDD                           Reserved    
+106                       CCC_NE1_PLL_VSSA              Reserved    
+107                       CCC_NE1_PLL_VDDA              Reserved    
+108                       CCC_NE0_PLL_VSSA              Reserved    
+109                       CCC_NE0_PLL_VDDA              Reserved    
+110     DAPI_RXD          DDRIO29PB0                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+111     DAPI_TXD          DDRIO30PB0                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+112                       DDRIO30NB0                    Unassigned  
+113                       VSS                           Reserved    
+114                       VDDI0                         Reserved    
+115                       DDRIO35NB0                    Unassigned  
+116                       DDRIO35PB0                    Unassigned  
+117                       DDRIO37NB0                    Unassigned  
+118     STAMP2_SCLK       DDRIO37PB0                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+119                       VSS                           Reserved    
+120                       VREF0                         Reserved    
+121                       VDD                           Reserved    
+122     STAMP2_MOSI       DDRIO43NB0                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+123     IN_RXSM_SOE       DDRIO43PB0                    Fixed       LVCMOS12  Input      TRISTATE                        Up             No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+124     IN_RXSM_SODS      DDRIO44NB0                    Fixed       LVCMOS12  Input      TRISTATE                        Up             No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+125     IN_RXSM_LO        DDRIO44PB0                    Fixed       LVCMOS12  Input      TRISTATE                        Up             No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+126                       VSS                           Reserved    
+127                       VDDI0                         Reserved    
+128     OUT_ADC_START     DDRIO47NB0                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+129     STAMP1_SCLK       DDRIO47PB0                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+130     STAMP1_MOSI       DDRIO48NB0                    Fixed       LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+131     STAMP1_MISO       DDRIO48PB0                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+132                       VSS                           Reserved    
+133                       VDD                           Reserved    
+134     STAMP1_DRDY_SGR1  DDRIO53NB0                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+135     STAMP1_DRDY_SGR2  DDRIO53PB0                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+136     STAMP1_DRDY_TEMP  DDRIO55NB0                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               
+137     STAMP1_CS_SGR1    DDRIO55PB0/CCC_NE0_CLKI3      Special     LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+138                       VDDI0                         Reserved    
+139                       VSS                           Reserved    
+140                       DNC                           Reserved    
+141     STAMP1_CS_SGR2    DDRIO59NB0/GB4                Special     LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+142     STAMP1_CS_TEMP    DDRIO60NB0/CCC_NE1_CLKI3      Special     LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+143     TM_TXD            DDRIO59PB0/GB0                Special     LVCMOS12  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+144     TM_RXD            DDRIO63PB0                    Fixed       LVCMOS12  Input      TRISTATE                        None           No                                  Off              Off         50             Off             Off          ---   ---           ---                ---               

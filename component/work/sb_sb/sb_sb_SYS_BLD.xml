@@ -16,7 +16,7 @@
 </row>
 <row>
  <cell>Package</cell>
- <cell>400 VF</cell>
+ <cell>144 TQ</cell>
 </row>
 <row>
  <cell>Speed Grade</cell>
@@ -2219,11 +2219,11 @@
 </row>
 <row>
  <cell>WDOG_LOAD</cell>
- <cell>0x1800000</cell>
+ <cell>0x2FAF080</cell>
 </row>
 <row>
  <cell>WDOG_MODE</cell>
- <cell>MODE_RESET</cell>
+ <cell>MODE_INTERRUPT</cell>
 </row>
 <row>
  <cell>WDOG_MVRP</cell>
@@ -3115,7 +3115,7 @@
 </row>
 <row>
  <cell>TX_RX_MUX</cell>
- <cell>MUX_IO</cell>
+ <cell>MUX_FABRIC</cell>
 </row>
 <row>
  <cell>USE_MODEM</cell>
@@ -3162,7 +3162,7 @@
 </row>
 <row>
  <cell>TX_RX_MUX</cell>
- <cell>MUX_IO</cell>
+ <cell>MUX_FABRIC</cell>
 </row>
 <row>
  <cell>USE_MODEM</cell>
@@ -3245,11 +3245,11 @@
 </row>
 <row>
  <cell>GPIO3_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICA</cell>
 </row>
 <row>
  <cell>GPIO3_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO4_FAB_CAPT</cell>
@@ -3257,11 +3257,11 @@
 </row>
 <row>
  <cell>GPIO4_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICA</cell>
 </row>
 <row>
  <cell>GPIO4_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO5_FAB_CAPT</cell>
@@ -3269,11 +3269,11 @@
 </row>
 <row>
  <cell>GPIO5_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICA</cell>
 </row>
 <row>
  <cell>GPIO5_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_INPUT</cell>
 </row>
 <row>
  <cell>GPIO6_FAB_CAPT</cell>
@@ -3353,11 +3353,11 @@
 </row>
 <row>
  <cell>GPIO12_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICA</cell>
 </row>
 <row>
  <cell>GPIO12_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO13_FAB_CAPT</cell>
@@ -3545,11 +3545,11 @@
 </row>
 <row>
  <cell>GPIO28_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICB</cell>
 </row>
 <row>
  <cell>GPIO28_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO29_FAB_CAPT</cell>
@@ -3557,11 +3557,11 @@
 </row>
 <row>
  <cell>GPIO29_TYPE</cell>
- <cell>CONNECTION_IOA</cell>
+ <cell>CONNECTION_FABRICB</cell>
 </row>
 <row>
  <cell>GPIO29_USAGE</cell>
- <cell>NOT_USED</cell>
+ <cell>USAGE_OUTPUT</cell>
 </row>
 <row>
  <cell>GPIO30_FAB_CAPT</cell>
@@ -3660,7 +3660,42 @@
 </row>
 <row>
  <cell>SPI_MUX</cell>
- <cell>MUX_IO</cell>
+ <cell>MUX_FABRIC</cell>
+</row>
+</table>
+</cdata>
+</data>
+<separator/>
+<data>
+<name>MemSync</name>
+<table>
+<header>
+ <cell>Name</cell>
+ <cell>Subsystem</cell>
+ <cell>Vendor</cell>
+ <cell>Version</cell>
+</header>
+<row>
+ <cell>AMBA_SLAVE</cell>
+ <cell>MSS FIC_0 - MSS Master Subsystem</cell>
+ <cell>Actel</cell>
+ <cell>0.0.102</cell>
+</row>
+</table>
+<cdata>
+<name>Configuration</name>
+<table>
+<header>
+ <cell>Parameter</cell>
+ <cell>Value</cell>
+</header>
+<row>
+ <cell>AMBA_INTERFACE_TYPE</cell>
+ <cell>APB3</cell>
+</row>
+<row>
+ <cell>NUM_OF_INTERRUPTS</cell>
+ <cell>1</cell>
 </row>
 </table>
 </cdata>
@@ -3711,31 +3746,36 @@
 </header>
 <row>
  <cell>sb_sb_MSS_0:MSS_INT_F2M[0]</cell>
+ <cell>MemSync_0</cell>
+ <cell>MemSync_0_INTR_0_top</cell>
+</row>
+<row>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[1]</cell>
  <cell>STAMP_0</cell>
  <cell>STAMP_0_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[1]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[2]</cell>
  <cell>STAMP_1</cell>
  <cell>STAMP_1_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[2]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[3]</cell>
  <cell>STAMP_2</cell>
  <cell>STAMP_2_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[3]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[4]</cell>
  <cell>STAMP_3</cell>
  <cell>STAMP_3_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[4]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[5]</cell>
  <cell>STAMP_4</cell>
  <cell>STAMP_4_INTR_0_top</cell>
 </row>
 <row>
- <cell>sb_sb_MSS_0:MSS_INT_F2M[5]</cell>
+ <cell>sb_sb_MSS_0:MSS_INT_F2M[6]</cell>
  <cell>STAMP_5</cell>
  <cell>STAMP_5_INTR_0_top</cell>
 </row>
@@ -3753,46 +3793,6 @@
  <cell>Description</cell>
 </header>
 <row>
- <cell>SPI_0_DI</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_DO</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_CLK</cell>
- <cell>INOUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_SS0</cell>
- <cell>INOUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>MMUART_1_TXD</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>MMUART_1_RXD</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>MMUART_0_TXD</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>MMUART_0_RXD</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
  <cell>POWER_ON_RESET_N</cell>
  <cell>OUT</cell>
  <cell>-</cell>
@@ -3805,6 +3805,11 @@
 <row>
  <cell>INIT_DONE</cell>
  <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>MemSync_0_INTR_0_top</cell>
+ <cell>IN</cell>
  <cell>-</cell>
 </row>
 <row>
@@ -3836,6 +3841,11 @@
  <cell>STAMP_0_INTR_0_top</cell>
  <cell>IN</cell>
  <cell>-</cell>
+</row>
+<row>
+ <cell>MemSync</cell>
+ <cell>MIRROREDSLAVE</cell>
+ <cell>Slave bus interface pin on  FIC0_Master_Subsystem</cell>
 </row>
 <row>
  <cell>STAMP</cell>
@@ -3888,6 +3898,26 @@
  <cell>-</cell>
 </row>
 <row>
+ <cell>MMUART_0_TXD_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>MMUART_0_RXD_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>MMUART_1_TXD_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>MMUART_1_RXD_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
  <cell>GPIO_0_F2M</cell>
  <cell>IN</cell>
  <cell>-</cell>
@@ -3903,12 +3933,77 @@
  <cell>-</cell>
 </row>
 <row>
+ <cell>GPIO_3_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>GPIO_4_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>GPIO_5_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>GPIO_12_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>GPIO_28_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>GPIO_29_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
  <cell>GPIO_30_M2F</cell>
  <cell>OUT</cell>
  <cell>-</cell>
 </row>
 <row>
  <cell>GPIO_31_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_DI_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_DO_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_CLK_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_CLK_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_SS0_F2M</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_SS0_M2F</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_SS0_M2F_OE</cell>
  <cell>OUT</cell>
  <cell>-</cell>
 </row>
@@ -3935,6 +4030,12 @@
  <cell>Task</cell>
  <cell>Description</cell>
 </header>
+<row>
+ <cell>Connect Generic User Slave Peripheral</cell>
+ <cell>MemSync is a slave on FIC0_Master_Subsystem subsystem.
+Connect your peripheral to MemSync bus interface pin in the top design.</cell>
+</row>
+<separator/>
 <row>
  <cell>Connect Generic User Slave Peripheral</cell>
  <cell>STAMP is a slave on FIC0_Master_Subsystem subsystem.

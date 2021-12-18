@@ -1,0 +1,72 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>User</spirit:vendor>
+  <spirit:library>Private</spirit:library>
+  <spirit:name>Synchronizer</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>resetn</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>clk</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>new_avail</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>5</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>request_resync</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>5</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>components_resetn</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>adc_start</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="async_threshold" spirit:name="async_threshold" spirit:prompt="async_threshold:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="0" spirit:maximum="63">5</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="max_resync_attempts" spirit:name="max_resync_attempts" spirit:prompt="max_resync_attempts:" spirit:dataType="int" spirit:resolve="user">5</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="min_resync_gap" spirit:name="min_resync_gap" spirit:prompt="min_resync_gap:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="0" spirit:maximum="16777215">16777215</spirit:hwParameter>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  </spirit:hwModel>
+  <spirit:choices>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="HDL_FILESET">
+    <spirit:file>
+      <spirit:name>hdl/Synchronizer.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>
