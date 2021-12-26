@@ -79,7 +79,7 @@ extern "C" {
 #define STAMP_MOD_ATOMIC            0x800U
 #define STAMP_MOD_STATUS_RESET      0x400U
 // address modifier only for use with writeAdc
-#define STAMP_MOD_DATA_READY        0x080U
+#define STAMP_MOD_DATA_READY        0x080U // 0000 1000 0000
 
 
 // usable addresses
