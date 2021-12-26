@@ -1,0 +1,2379 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>CoreGPIO</spirit:name>
+  <spirit:version>3.2.102</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>APB_bif</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  <spirit:memoryMap>
+    <spirit:name>RegisterMap</spirit:name>
+    <spirit:addressBlock>
+      <spirit:baseAddress>0x0</spirit:baseAddress>
+      <spirit:range>0xff</spirit:range>
+      <spirit:width>8</spirit:width>
+      <spirit:register>
+        <spirit:name>INTERRUPT CLEAR REGISTER1</spirit:name>
+        <spirit:addressOffset>0x80</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Interrupt register </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INTERRUPT CLEAR REGISTER2</spirit:name>
+        <spirit:addressOffset>0x84</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Interrupt register </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INTERRUPT CLEAR REGISTER3</spirit:name>
+        <spirit:addressOffset>0x88</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Interrupt register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INTERRUPT CLEAR REGISTER4</spirit:name>
+        <spirit:addressOffset>0x8C</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Interrupt register </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INPUT REGISTER1</spirit:name>
+        <spirit:addressOffset>0x90</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Input register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INPUT REGISTER2</spirit:name>
+        <spirit:addressOffset>0x94</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Input register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INPUT REGISTER3</spirit:name>
+        <spirit:addressOffset>0x98</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Input register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INPUT REGISTER4</spirit:name>
+        <spirit:addressOffset>0x9C</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Input register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>OUTPUT REGISTER1</spirit:name>
+        <spirit:addressOffset>0xA0</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Output register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>OUTPUT REGISTER2</spirit:name>
+        <spirit:addressOffset>0xA4</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Output register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>OUTPUT REGISTER3</spirit:name>
+        <spirit:addressOffset>0xA8</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Output register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>OUTPUT REGISTER4</spirit:name>
+        <spirit:addressOffset>0xAC</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Output register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG0</spirit:name>
+        <spirit:addressOffset>0x00</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Sets the interrupt type </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 0</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG1</spirit:name>
+        <spirit:addressOffset>0x04</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 1</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG2</spirit:name>
+        <spirit:addressOffset>0x08</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 2</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG3</spirit:name>
+        <spirit:addressOffset>0x0C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interuppt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 3</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG4</spirit:name>
+        <spirit:addressOffset>0x10</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 4</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG5</spirit:name>
+        <spirit:addressOffset>0x14</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enbale</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input  register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 5</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG6</spirit:name>
+        <spirit:addressOffset>0x18</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 6</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG7</spirit:name>
+        <spirit:addressOffset>0x1C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 7</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG8</spirit:name>
+        <spirit:addressOffset>0x20</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 8</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG9</spirit:name>
+        <spirit:addressOffset>0x24</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 9</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG10</spirit:name>
+        <spirit:addressOffset>0x28</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 10</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG11</spirit:name>
+        <spirit:addressOffset>0x2C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 11</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG12</spirit:name>
+        <spirit:addressOffset>0x30</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 12</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG13</spirit:name>
+        <spirit:addressOffset>0x34</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 13</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG14</spirit:name>
+        <spirit:addressOffset>0x38</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 14</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG15</spirit:name>
+        <spirit:addressOffset>0x3C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 15</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG16</spirit:name>
+        <spirit:addressOffset>0x40</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input  register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output  register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 16</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG17</spirit:name>
+        <spirit:addressOffset>0x44</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 17</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG18</spirit:name>
+        <spirit:addressOffset>0x48</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE </spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 18</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG19</spirit:name>
+        <spirit:addressOffset>0x4C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYTPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 19</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG20</spirit:name>
+        <spirit:addressOffset>0x50</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>inout register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 20</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG21</spirit:name>
+        <spirit:addressOffset>0x54</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 21</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG22</spirit:name>
+        <spirit:addressOffset>0x58</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 22</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG23</spirit:name>
+        <spirit:addressOffset>0x5C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 23</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG24</spirit:name>
+        <spirit:addressOffset>0x60</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 24</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG25</spirit:name>
+        <spirit:addressOffset>0x64</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 25</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG26</spirit:name>
+        <spirit:addressOffset>0x68</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUIFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 26</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG27</spirit:name>
+        <spirit:addressOffset>0x6C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 27</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG28</spirit:name>
+        <spirit:addressOffset>0x70</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 28</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG29</spirit:name>
+        <spirit:addressOffset>0x74</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 29</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG30</spirit:name>
+        <spirit:addressOffset>0x78</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 30</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONFIG_REG31</spirit:name>
+        <spirit:addressOffset>0x7C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTTYPE</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt type</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTENABLE</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the interrupt enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTBUFF</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>sets the output enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INREG</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>input register enable</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OUTREG</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>output register enable</spirit:description>
+          </spirit:field>
+        <spirit:description>Configuration register for GPIO 31</spirit:description>
+      </spirit:register>
+    </spirit:addressBlock>
+    <spirit:bitsInLau>8</spirit:bitsInLau>
+  </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VHDL_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs_ALL-O</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL-O"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>PRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSLVERR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('APB_WIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('APB_WIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('IO_NUM') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INT_OR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="INT_BUS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GPIO_IN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('IO_NUM') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GPIO_OUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('IO_NUM') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GPIO_OE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('IO_NUM') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="OE_TYPE" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="APB_WIDTH" spirit:name="APB_WIDTH" spirit:prompt="APB Data Width:" spirit:dataType="int" spirit:choiceRef="Choice_APBDWIDTH" spirit:configGroups="2Cols:Global Configuration" spirit:resolve="user">32</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_NUM" spirit:name="IO_NUM" spirit:prompt="Number of I/Os:" spirit:dataType="int" spirit:choiceRef="Choice_IO_NUM" spirit:configGroups="2Cols:Global Configuration" spirit:resolve="user">32</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INT_BUS" spirit:name="INT_BUS" spirit:prompt="Single-bit interrupt port:" spirit:dataType="int" spirit:choiceRef="Choice_Enable_Disable" spirit:configGroups="2Cols:Global Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="OE_TYPE" spirit:name="OE_TYPE" spirit:prompt="Output enable:" spirit:dataType="int" spirit:choiceRef="CHOICE_OE_TYPE" spirit:configGroups="2Cols:Global Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_0" spirit:name="IO_VAL_0" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 0" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_0" spirit:name="FIXED_CONFIG_0" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 0" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_0" spirit:name="IO_TYPE_0" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 0" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_0" spirit:name="IO_INT_TYPE_0" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 0" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_1" spirit:name="IO_VAL_1" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 1" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_1" spirit:name="FIXED_CONFIG_1" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 1" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_1" spirit:name="IO_TYPE_1" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 1" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_1" spirit:name="IO_INT_TYPE_1" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 1" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_2" spirit:name="IO_VAL_2" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 2" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_2" spirit:name="FIXED_CONFIG_2" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 2" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_2" spirit:name="IO_TYPE_2" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 2" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_2" spirit:name="IO_INT_TYPE_2" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 2" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_3" spirit:name="IO_VAL_3" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 3" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_3" spirit:name="FIXED_CONFIG_3" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 3" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_3" spirit:name="IO_TYPE_3" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 3" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_3" spirit:name="IO_INT_TYPE_3" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 3" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_4" spirit:name="IO_VAL_4" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 4" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_4" spirit:name="FIXED_CONFIG_4" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 4" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_4" spirit:name="IO_TYPE_4" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 4" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_4" spirit:name="IO_INT_TYPE_4" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 4" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_5" spirit:name="IO_VAL_5" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 5" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_5" spirit:name="FIXED_CONFIG_5" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 5" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_5" spirit:name="IO_TYPE_5" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 5" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_5" spirit:name="IO_INT_TYPE_5" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 5" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_6" spirit:name="IO_VAL_6" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 6" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_6" spirit:name="FIXED_CONFIG_6" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 6" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_6" spirit:name="IO_TYPE_6" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 6" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_6" spirit:name="IO_INT_TYPE_6" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 6" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_7" spirit:name="IO_VAL_7" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 7" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_7" spirit:name="FIXED_CONFIG_7" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 7" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_7" spirit:name="IO_TYPE_7" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 7" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_7" spirit:name="IO_INT_TYPE_7" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 7" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_8" spirit:name="IO_VAL_8" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 8" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_8" spirit:name="FIXED_CONFIG_8" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 8" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_8" spirit:name="IO_TYPE_8" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 8" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_8" spirit:name="IO_INT_TYPE_8" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 8" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_9" spirit:name="IO_VAL_9" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 9" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_9" spirit:name="FIXED_CONFIG_9" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 9" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_9" spirit:name="IO_TYPE_9" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 9" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_9" spirit:name="IO_INT_TYPE_9" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 9" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_10" spirit:name="IO_VAL_10" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 10" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_10" spirit:name="FIXED_CONFIG_10" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 10" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_10" spirit:name="IO_TYPE_10" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 10" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_10" spirit:name="IO_INT_TYPE_10" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 10" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_11" spirit:name="IO_VAL_11" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 11" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_11" spirit:name="FIXED_CONFIG_11" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 11" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_11" spirit:name="IO_TYPE_11" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 11" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_11" spirit:name="IO_INT_TYPE_11" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 11" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_12" spirit:name="IO_VAL_12" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 12" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_12" spirit:name="FIXED_CONFIG_12" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 12" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_12" spirit:name="IO_TYPE_12" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 12" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_12" spirit:name="IO_INT_TYPE_12" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 12" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_13" spirit:name="IO_VAL_13" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 13" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_13" spirit:name="FIXED_CONFIG_13" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 13" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_13" spirit:name="IO_TYPE_13" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 13" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_13" spirit:name="IO_INT_TYPE_13" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 13" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_14" spirit:name="IO_VAL_14" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 14" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_14" spirit:name="FIXED_CONFIG_14" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 14" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_14" spirit:name="IO_TYPE_14" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 14" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_14" spirit:name="IO_INT_TYPE_14" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 14" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_15" spirit:name="IO_VAL_15" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 15" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_15" spirit:name="FIXED_CONFIG_15" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 15" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_15" spirit:name="IO_TYPE_15" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 15" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_15" spirit:name="IO_INT_TYPE_15" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 15" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_16" spirit:name="IO_VAL_16" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 16" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_16" spirit:name="FIXED_CONFIG_16" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 16" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_16" spirit:name="IO_TYPE_16" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 16" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_16" spirit:name="IO_INT_TYPE_16" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 16" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_17" spirit:name="IO_VAL_17" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 17" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_17" spirit:name="FIXED_CONFIG_17" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 17" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_17" spirit:name="IO_TYPE_17" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 17" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_17" spirit:name="IO_INT_TYPE_17" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 17" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_18" spirit:name="IO_VAL_18" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 18" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_18" spirit:name="FIXED_CONFIG_18" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 18" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_18" spirit:name="IO_TYPE_18" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 18" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_18" spirit:name="IO_INT_TYPE_18" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 18" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_19" spirit:name="IO_VAL_19" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 19" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_19" spirit:name="FIXED_CONFIG_19" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 19" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_19" spirit:name="IO_TYPE_19" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 19" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_19" spirit:name="IO_INT_TYPE_19" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 19" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_20" spirit:name="IO_VAL_20" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 20" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_20" spirit:name="FIXED_CONFIG_20" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 20" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_20" spirit:name="IO_TYPE_20" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 20" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_20" spirit:name="IO_INT_TYPE_20" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 20" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_21" spirit:name="IO_VAL_21" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 21" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_21" spirit:name="FIXED_CONFIG_21" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 21" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_21" spirit:name="IO_TYPE_21" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 21" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_21" spirit:name="IO_INT_TYPE_21" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 21" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_22" spirit:name="IO_VAL_22" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 22" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_22" spirit:name="FIXED_CONFIG_22" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 22" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_22" spirit:name="IO_TYPE_22" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 22" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_22" spirit:name="IO_INT_TYPE_22" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 22" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_23" spirit:name="IO_VAL_23" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 23" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_23" spirit:name="FIXED_CONFIG_23" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 23" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_23" spirit:name="IO_TYPE_23" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 23" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_23" spirit:name="IO_INT_TYPE_23" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 23" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_24" spirit:name="IO_VAL_24" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 24" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_24" spirit:name="FIXED_CONFIG_24" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 24" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_24" spirit:name="IO_TYPE_24" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 24" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_24" spirit:name="IO_INT_TYPE_24" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 24" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_25" spirit:name="IO_VAL_25" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 25" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_25" spirit:name="FIXED_CONFIG_25" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 25" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_25" spirit:name="IO_TYPE_25" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 25" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_25" spirit:name="IO_INT_TYPE_25" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 25" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_26" spirit:name="IO_VAL_26" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 26" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_26" spirit:name="FIXED_CONFIG_26" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 26" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_26" spirit:name="IO_TYPE_26" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 26" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_26" spirit:name="IO_INT_TYPE_26" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 26" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_27" spirit:name="IO_VAL_27" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 27" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_27" spirit:name="FIXED_CONFIG_27" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 27" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_27" spirit:name="IO_TYPE_27" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 27" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_27" spirit:name="IO_INT_TYPE_27" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 27" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_28" spirit:name="IO_VAL_28" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 28" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_28" spirit:name="FIXED_CONFIG_28" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 28" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_28" spirit:name="IO_TYPE_28" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 28" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_28" spirit:name="IO_INT_TYPE_28" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 28" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_29" spirit:name="IO_VAL_29" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 29" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_29" spirit:name="FIXED_CONFIG_29" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 29" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_29" spirit:name="IO_TYPE_29" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 29" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_29" spirit:name="IO_INT_TYPE_29" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 29" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_30" spirit:name="IO_VAL_30" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 30" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_30" spirit:name="FIXED_CONFIG_30" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 30" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_30" spirit:name="IO_TYPE_30" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 30" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_30" spirit:name="IO_INT_TYPE_30" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 30" spirit:resolve="user">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_VAL_31" spirit:name="IO_VAL_31" spirit:prompt="Output on Reset:" spirit:dataType="int" spirit:choiceRef="Choice_01" spirit:configGroups="4Cols:I/O bit 31" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_CONFIG_31" spirit:name="FIXED_CONFIG_31" spirit:prompt="Fixed Config:" spirit:dataType="boolean" spirit:configGroups="4Cols:I/O bit 31" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_TYPE_31" spirit:name="IO_TYPE_31" spirit:prompt="I/O Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_IO_TYPE" spirit:configGroups="4Cols:I/O bit 31" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IO_INT_TYPE_31" spirit:name="IO_INT_TYPE_31" spirit:prompt="Interrupt Type:" spirit:dataType="int" spirit:choiceRef="CHOICE_INTERRUPT_TYPE" spirit:configGroups="4Cols:I/O bit 31" spirit:resolve="user">7</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('IO_TYPE_0', And(Eq('FIXED_CONFIG_0', '1'), GtOrEq('IO_NUM', '1')));\
+Enable('IO_TYPE_1', And(Eq('FIXED_CONFIG_1', '1'), GtOrEq('IO_NUM', '2')));\
+Enable('IO_TYPE_2', And(Eq('FIXED_CONFIG_2', '1'), GtOrEq('IO_NUM', '3')));\
+Enable('IO_TYPE_3', And(Eq('FIXED_CONFIG_3', '1'), GtOrEq('IO_NUM', '4')));\
+Enable('IO_TYPE_4', And(Eq('FIXED_CONFIG_4', '1'), GtOrEq('IO_NUM', '5')));\
+Enable('IO_TYPE_5', And(Eq('FIXED_CONFIG_5', '1'), GtOrEq('IO_NUM', '6')));\
+Enable('IO_TYPE_6', And(Eq('FIXED_CONFIG_6', '1'), GtOrEq('IO_NUM', '7')));\
+Enable('IO_TYPE_7', And(Eq('FIXED_CONFIG_7', '1'), GtOrEq('IO_NUM', '8')));\
+Enable('IO_TYPE_8', And(Eq('FIXED_CONFIG_8', '1'), GtOrEq('IO_NUM', '9')));\
+Enable('IO_TYPE_9', And(Eq('FIXED_CONFIG_9', '1'), GtOrEq('IO_NUM', '10')));\
+Enable('IO_TYPE_10', And(Eq('FIXED_CONFIG_10', '1'), GtOrEq('IO_NUM', '11')));\
+Enable('IO_TYPE_11', And(Eq('FIXED_CONFIG_11', '1'), GtOrEq('IO_NUM', '12')));\
+Enable('IO_TYPE_12', And(Eq('FIXED_CONFIG_12', '1'), GtOrEq('IO_NUM', '13')));\
+Enable('IO_TYPE_13', And(Eq('FIXED_CONFIG_13', '1'), GtOrEq('IO_NUM', '14')));\
+Enable('IO_TYPE_14', And(Eq('FIXED_CONFIG_14', '1'), GtOrEq('IO_NUM', '15')));\
+Enable('IO_TYPE_15', And(Eq('FIXED_CONFIG_15', '1'), GtOrEq('IO_NUM', '16')));\
+Enable('IO_TYPE_16', And(Eq('FIXED_CONFIG_16', '1'), GtOrEq('IO_NUM', '17')));\
+Enable('IO_TYPE_17', And(Eq('FIXED_CONFIG_17', '1'), GtOrEq('IO_NUM', '18')));\
+Enable('IO_TYPE_18', And(Eq('FIXED_CONFIG_18', '1'), GtOrEq('IO_NUM', '19')));\
+Enable('IO_TYPE_19', And(Eq('FIXED_CONFIG_19', '1'), GtOrEq('IO_NUM', '20')));\
+Enable('IO_TYPE_20', And(Eq('FIXED_CONFIG_20', '1'), GtOrEq('IO_NUM', '21')));\
+Enable('IO_TYPE_21', And(Eq('FIXED_CONFIG_21', '1'), GtOrEq('IO_NUM', '22')));\
+Enable('IO_TYPE_22', And(Eq('FIXED_CONFIG_22', '1'), GtOrEq('IO_NUM', '23')));\
+Enable('IO_TYPE_23', And(Eq('FIXED_CONFIG_23', '1'), GtOrEq('IO_NUM', '24')));\
+Enable('IO_TYPE_24', And(Eq('FIXED_CONFIG_24', '1'), GtOrEq('IO_NUM', '25')));\
+Enable('IO_TYPE_25', And(Eq('FIXED_CONFIG_25', '1'), GtOrEq('IO_NUM', '26')));\
+Enable('IO_TYPE_26', And(Eq('FIXED_CONFIG_26', '1'), GtOrEq('IO_NUM', '27')));\
+Enable('IO_TYPE_27', And(Eq('FIXED_CONFIG_27', '1'), GtOrEq('IO_NUM', '28')));\
+Enable('IO_TYPE_28', And(Eq('FIXED_CONFIG_28', '1'), GtOrEq('IO_NUM', '29')));\
+Enable('IO_TYPE_29', And(Eq('FIXED_CONFIG_29', '1'), GtOrEq('IO_NUM', '30')));\
+Enable('IO_TYPE_30', And(Eq('FIXED_CONFIG_30', '1'), GtOrEq('IO_NUM', '31')));\
+Enable('IO_TYPE_31', And(Eq('FIXED_CONFIG_31', '1'), GtOrEq('IO_NUM', '32')));\
+Enable('IO_INT_TYPE_0', And(Eq('FIXED_CONFIG_0', '1'), GtOrEq('IO_NUM', '1')));\
+Enable('IO_INT_TYPE_1', And(Eq('FIXED_CONFIG_1', '1'), GtOrEq('IO_NUM', '2')));\
+Enable('IO_INT_TYPE_2', And(Eq('FIXED_CONFIG_2', '1'), GtOrEq('IO_NUM', '3')));\
+Enable('IO_INT_TYPE_3', And(Eq('FIXED_CONFIG_3', '1'), GtOrEq('IO_NUM', '4')));\
+Enable('IO_INT_TYPE_4', And(Eq('FIXED_CONFIG_4', '1'), GtOrEq('IO_NUM', '5')));\
+Enable('IO_INT_TYPE_5', And(Eq('FIXED_CONFIG_5', '1'), GtOrEq('IO_NUM', '6')));\
+Enable('IO_INT_TYPE_6', And(Eq('FIXED_CONFIG_6', '1'), GtOrEq('IO_NUM', '7')));\
+Enable('IO_INT_TYPE_7', And(Eq('FIXED_CONFIG_7', '1'), GtOrEq('IO_NUM', '8')));\
+Enable('IO_INT_TYPE_8', And(Eq('FIXED_CONFIG_8', '1'), GtOrEq('IO_NUM', '9')));\
+Enable('IO_INT_TYPE_9', And(Eq('FIXED_CONFIG_9', '1'), GtOrEq('IO_NUM', '10')));\
+Enable('IO_INT_TYPE_10', And(Eq('FIXED_CONFIG_10', '1'), GtOrEq('IO_NUM', '11')));\
+Enable('IO_INT_TYPE_11', And(Eq('FIXED_CONFIG_11', '1'), GtOrEq('IO_NUM', '12')));\
+Enable('IO_INT_TYPE_12', And(Eq('FIXED_CONFIG_12', '1'), GtOrEq('IO_NUM', '13')));\
+Enable('IO_INT_TYPE_13', And(Eq('FIXED_CONFIG_13', '1'), GtOrEq('IO_NUM', '14')));\
+Enable('IO_INT_TYPE_14', And(Eq('FIXED_CONFIG_14', '1'), GtOrEq('IO_NUM', '15')));\
+Enable('IO_INT_TYPE_15', And(Eq('FIXED_CONFIG_15', '1'), GtOrEq('IO_NUM', '16')));\
+Enable('IO_INT_TYPE_16', And(Eq('FIXED_CONFIG_16', '1'), GtOrEq('IO_NUM', '17')));\
+Enable('IO_INT_TYPE_17', And(Eq('FIXED_CONFIG_17', '1'), GtOrEq('IO_NUM', '18')));\
+Enable('IO_INT_TYPE_18', And(Eq('FIXED_CONFIG_18', '1'), GtOrEq('IO_NUM', '19')));\
+Enable('IO_INT_TYPE_19', And(Eq('FIXED_CONFIG_19', '1'), GtOrEq('IO_NUM', '20')));\
+Enable('IO_INT_TYPE_20', And(Eq('FIXED_CONFIG_20', '1'), GtOrEq('IO_NUM', '21')));\
+Enable('IO_INT_TYPE_21', And(Eq('FIXED_CONFIG_21', '1'), GtOrEq('IO_NUM', '22')));\
+Enable('IO_INT_TYPE_22', And(Eq('FIXED_CONFIG_22', '1'), GtOrEq('IO_NUM', '23')));\
+Enable('IO_INT_TYPE_23', And(Eq('FIXED_CONFIG_23', '1'), GtOrEq('IO_NUM', '24')));\
+Enable('IO_INT_TYPE_24', And(Eq('FIXED_CONFIG_24', '1'), GtOrEq('IO_NUM', '25')));\
+Enable('IO_INT_TYPE_25', And(Eq('FIXED_CONFIG_25', '1'), GtOrEq('IO_NUM', '26')));\
+Enable('IO_INT_TYPE_26', And(Eq('FIXED_CONFIG_26', '1'), GtOrEq('IO_NUM', '27')));\
+Enable('IO_INT_TYPE_27', And(Eq('FIXED_CONFIG_27', '1'), GtOrEq('IO_NUM', '28')));\
+Enable('IO_INT_TYPE_28', And(Eq('FIXED_CONFIG_28', '1'), GtOrEq('IO_NUM', '29')));\
+Enable('IO_INT_TYPE_29', And(Eq('FIXED_CONFIG_29', '1'), GtOrEq('IO_NUM', '30')));\
+Enable('IO_INT_TYPE_30', And(Eq('FIXED_CONFIG_30', '1'), GtOrEq('IO_NUM', '31')));\
+Enable('IO_INT_TYPE_31', And(Eq('FIXED_CONFIG_31', '1'), GtOrEq('IO_NUM', '32')));\
+Enable('IO_VAL_0', And(Eq('FIXED_CONFIG_0', '1'), And(GtOrEq('IO_NUM', '1'), GtOrEq('IO_TYPE_0', '1'))));\
+Enable('IO_VAL_1', And(Eq('FIXED_CONFIG_1', '1'), And(GtOrEq('IO_NUM', '2'), GtOrEq('IO_TYPE_1', '1'))));\
+Enable('IO_VAL_2', And(Eq('FIXED_CONFIG_2', '1'), And(GtOrEq('IO_NUM', '3'), GtOrEq('IO_TYPE_2', '1'))));\
+Enable('IO_VAL_3', And(Eq('FIXED_CONFIG_3', '1'), And(GtOrEq('IO_NUM', '4'), GtOrEq('IO_TYPE_3', '1'))));\
+Enable('IO_VAL_4', And(Eq('FIXED_CONFIG_4', '1'), And(GtOrEq('IO_NUM', '5'), GtOrEq('IO_TYPE_4', '1'))));\
+Enable('IO_VAL_5', And(Eq('FIXED_CONFIG_5', '1'), And(GtOrEq('IO_NUM', '6'), GtOrEq('IO_TYPE_5', '1'))));\
+Enable('IO_VAL_6', And(Eq('FIXED_CONFIG_6', '1'), And(GtOrEq('IO_NUM', '7'), GtOrEq('IO_TYPE_6', '1'))));\
+Enable('IO_VAL_7', And(Eq('FIXED_CONFIG_7', '1'), And(GtOrEq('IO_NUM', '8'), GtOrEq('IO_TYPE_7', '1'))));\
+Enable('IO_VAL_8', And(Eq('FIXED_CONFIG_8', '1'), And(GtOrEq('IO_NUM', '9'), GtOrEq('IO_TYPE_8', '1'))));\
+Enable('IO_VAL_9', And(Eq('FIXED_CONFIG_9', '1'), And(GtOrEq('IO_NUM', '10'), GtOrEq('IO_TYPE_9', '1'))));\
+Enable('IO_VAL_10', And(Eq('FIXED_CONFIG_10', '1'), And(GtOrEq('IO_NUM', '11'), GtOrEq('IO_TYPE_10', '1'))));\
+Enable('IO_VAL_11', And(Eq('FIXED_CONFIG_11', '1'), And(GtOrEq('IO_NUM', '12'), GtOrEq('IO_TYPE_11', '1'))));\
+Enable('IO_VAL_12', And(Eq('FIXED_CONFIG_12', '1'), And(GtOrEq('IO_NUM', '13'), GtOrEq('IO_TYPE_12', '1'))));\
+Enable('IO_VAL_13', And(Eq('FIXED_CONFIG_13', '1'), And(GtOrEq('IO_NUM', '14'), GtOrEq('IO_TYPE_13', '1'))));\
+Enable('IO_VAL_14', And(Eq('FIXED_CONFIG_14', '1'), And(GtOrEq('IO_NUM', '15'), GtOrEq('IO_TYPE_14', '1'))));\
+Enable('IO_VAL_15', And(Eq('FIXED_CONFIG_15', '1'), And(GtOrEq('IO_NUM', '16'), GtOrEq('IO_TYPE_15', '1'))));\
+Enable('IO_VAL_16', And(Eq('FIXED_CONFIG_16', '1'), And(GtOrEq('IO_NUM', '17'), GtOrEq('IO_TYPE_16', '1'))));\
+Enable('IO_VAL_17', And(Eq('FIXED_CONFIG_17', '1'), And(GtOrEq('IO_NUM', '18'), GtOrEq('IO_TYPE_17', '1'))));\
+Enable('IO_VAL_18', And(Eq('FIXED_CONFIG_18', '1'), And(GtOrEq('IO_NUM', '19'), GtOrEq('IO_TYPE_18', '1'))));\
+Enable('IO_VAL_19', And(Eq('FIXED_CONFIG_19', '1'), And(GtOrEq('IO_NUM', '20'), GtOrEq('IO_TYPE_19', '1'))));\
+Enable('IO_VAL_20', And(Eq('FIXED_CONFIG_20', '1'), And(GtOrEq('IO_NUM', '21'), GtOrEq('IO_TYPE_20', '1'))));\
+Enable('IO_VAL_21', And(Eq('FIXED_CONFIG_21', '1'), And(GtOrEq('IO_NUM', '22'), GtOrEq('IO_TYPE_21', '1'))));\
+Enable('IO_VAL_22', And(Eq('FIXED_CONFIG_22', '1'), And(GtOrEq('IO_NUM', '23'), GtOrEq('IO_TYPE_22', '1'))));\
+Enable('IO_VAL_23', And(Eq('FIXED_CONFIG_23', '1'), And(GtOrEq('IO_NUM', '24'), GtOrEq('IO_TYPE_23', '1'))));\
+Enable('IO_VAL_24', And(Eq('FIXED_CONFIG_24', '1'), And(GtOrEq('IO_NUM', '25'), GtOrEq('IO_TYPE_24', '1'))));\
+Enable('IO_VAL_25', And(Eq('FIXED_CONFIG_25', '1'), And(GtOrEq('IO_NUM', '26'), GtOrEq('IO_TYPE_25', '1'))));\
+Enable('IO_VAL_26', And(Eq('FIXED_CONFIG_26', '1'), And(GtOrEq('IO_NUM', '27'), GtOrEq('IO_TYPE_26', '1'))));\
+Enable('IO_VAL_27', And(Eq('FIXED_CONFIG_27', '1'), And(GtOrEq('IO_NUM', '28'), GtOrEq('IO_TYPE_27', '1'))));\
+Enable('IO_VAL_28', And(Eq('FIXED_CONFIG_28', '1'), And(GtOrEq('IO_NUM', '29'), GtOrEq('IO_TYPE_28', '1'))));\
+Enable('IO_VAL_29', And(Eq('FIXED_CONFIG_29', '1'), And(GtOrEq('IO_NUM', '30'), GtOrEq('IO_TYPE_29', '1'))));\
+Enable('IO_VAL_30', And(Eq('FIXED_CONFIG_30', '1'), And(GtOrEq('IO_NUM', '31'), GtOrEq('IO_TYPE_30', '1'))));\
+Enable('IO_VAL_31', And(Eq('FIXED_CONFIG_31', '1'), And(GtOrEq('IO_NUM', '32'), GtOrEq('IO_TYPE_31', '1'))));\
+Enable('FIXED_CONFIG_0', GtOrEq('IO_NUM', '1'));\
+Enable('FIXED_CONFIG_1', GtOrEq('IO_NUM', '2'));\
+Enable('FIXED_CONFIG_2', GtOrEq('IO_NUM', '3'));\
+Enable('FIXED_CONFIG_3', GtOrEq('IO_NUM', '4'));\
+Enable('FIXED_CONFIG_4', GtOrEq('IO_NUM', '5'));\
+Enable('FIXED_CONFIG_5', GtOrEq('IO_NUM', '6'));\
+Enable('FIXED_CONFIG_6', GtOrEq('IO_NUM', '7'));\
+Enable('FIXED_CONFIG_7', GtOrEq('IO_NUM', '8'));\
+Enable('FIXED_CONFIG_8', GtOrEq('IO_NUM', '9'));\
+Enable('FIXED_CONFIG_9', GtOrEq('IO_NUM', '10'));\
+Enable('FIXED_CONFIG_10', GtOrEq('IO_NUM', '11'));\
+Enable('FIXED_CONFIG_11', GtOrEq('IO_NUM', '12'));\
+Enable('FIXED_CONFIG_12', GtOrEq('IO_NUM', '13'));\
+Enable('FIXED_CONFIG_13', GtOrEq('IO_NUM', '14'));\
+Enable('FIXED_CONFIG_14', GtOrEq('IO_NUM', '15'));\
+Enable('FIXED_CONFIG_15', GtOrEq('IO_NUM', '16'));\
+Enable('FIXED_CONFIG_16', GtOrEq('IO_NUM', '17'));\
+Enable('FIXED_CONFIG_17', GtOrEq('IO_NUM', '18'));\
+Enable('FIXED_CONFIG_18', GtOrEq('IO_NUM', '19'));\
+Enable('FIXED_CONFIG_19', GtOrEq('IO_NUM', '20'));\
+Enable('FIXED_CONFIG_20', GtOrEq('IO_NUM', '21'));\
+Enable('FIXED_CONFIG_21', GtOrEq('IO_NUM', '22'));\
+Enable('FIXED_CONFIG_22', GtOrEq('IO_NUM', '23'));\
+Enable('FIXED_CONFIG_23', GtOrEq('IO_NUM', '24'));\
+Enable('FIXED_CONFIG_24', GtOrEq('IO_NUM', '25'));\
+Enable('FIXED_CONFIG_25', GtOrEq('IO_NUM', '26'));\
+Enable('FIXED_CONFIG_26', GtOrEq('IO_NUM', '27'));\
+Enable('FIXED_CONFIG_27', GtOrEq('IO_NUM', '28'));\
+Enable('FIXED_CONFIG_28', GtOrEq('IO_NUM', '29'));\
+Enable('FIXED_CONFIG_29', GtOrEq('IO_NUM', '30'));\
+Enable('FIXED_CONFIG_30', GtOrEq('IO_NUM', '31'));\
+Enable('FIXED_CONFIG_31', GtOrEq('IO_NUM', '32'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>CHOICE_INTERRUPT_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="Level High">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Level Low">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Edge Positive">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="Edge Negative">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="Edge Both">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="Disabled">7</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>CHOICE_IO_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="Input">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Output">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Both">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>CHOICE_OE_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="External">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Internal">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_01</spirit:name>
+      <spirit:enumeration spirit:text="0">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_APBDWIDTH</spirit:name>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Enable_Disable</spirit:name>
+      <spirit:enumeration spirit:text="Disabled">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Enabled">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="Evaluation">E</spirit:enumeration>
+      <spirit:enumeration spirit:text="Obfuscated">O</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_IO_NUM</spirit:name>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="3">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="5">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="6">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="7">7</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="9">9</spirit:enumeration>
+      <spirit:enumeration spirit:text="10">10</spirit:enumeration>
+      <spirit:enumeration spirit:text="11">11</spirit:enumeration>
+      <spirit:enumeration spirit:text="12">12</spirit:enumeration>
+      <spirit:enumeration spirit:text="13">13</spirit:enumeration>
+      <spirit:enumeration spirit:text="14">14</spirit:enumeration>
+      <spirit:enumeration spirit:text="15">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="17">17</spirit:enumeration>
+      <spirit:enumeration spirit:text="18">18</spirit:enumeration>
+      <spirit:enumeration spirit:text="19">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="20">20</spirit:enumeration>
+      <spirit:enumeration spirit:text="21">21</spirit:enumeration>
+      <spirit:enumeration spirit:text="22">22</spirit:enumeration>
+      <spirit:enumeration spirit:text="23">23</spirit:enumeration>
+      <spirit:enumeration spirit:text="24">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="25">25</spirit:enumeration>
+      <spirit:enumeration spirit:text="26">26</spirit:enumeration>
+      <spirit:enumeration spirit:text="27">27</spirit:enumeration>
+      <spirit:enumeration spirit:text="28">28</spirit:enumeration>
+      <spirit:enumeration spirit:text="29">29</spirit:enumeration>
+      <spirit:enumeration spirit:text="30">30</spirit:enumeration>
+      <spirit:enumeration spirit:text="31">31</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/components.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/coregpio.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/coregpio_pkg.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/misc.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/textio.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_package.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahbl.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahblapb.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahbslave.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahbslaveext.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahbtoapb.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_apb.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_apbslave.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_apbslaveext.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_apbtoapb.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_main.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/testbench.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREGPIO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>bfmtovec_compile.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coregpio_usertb_apb_master.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coregpio_usertb_include.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>wave_vhdl.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coregpio.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbl.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahblapb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbslave.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbslaveext.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbtoapb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_apb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_apbslave.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_apbslaveext.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_apbtoapb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_main.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/testbench.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>bfmtovec_compile.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coregpio_usertb_apb_master.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coregpio_usertb_include.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>wave_vlog.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL-O">
+    <spirit:file>
+      <spirit:name>docs/CoreGPIO_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreGPIO_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreGPIO</actel-cc:displayName>
+    <actel-cc:description>CoreGPIO provides APB access to 32 general purpose IOs, with configurable per bit enabling and interrupt generation.</actel-cc:description>
+    <actel-cc:packageTimestamp>20170620164927</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="8.6">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Interface Type">
+      <actel-cc:category name="AmbaBus">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

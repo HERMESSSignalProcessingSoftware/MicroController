@@ -1,0 +1,206 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_CCC</spirit:name>
+  <spirit:version>1.0.100</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>MCCC_CLK_BASE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MCCC_CLK_BASE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="REFCLK_SRC" actel-cc:termValue="CLK_BASE"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MCCC_CLK_BASE_PLL_LOCK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MCCC_CLK_BASE_PLL_LOCK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="FAB_PLL_LOCK_IS_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MCCC_MPLL_LOCK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MCCC_MPLL_LOCK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MPLL_LOCK_IS_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MCCC_GLMUX_SEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MCCC_GLMUX_SEL" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="FACC_GLMUX_SEL_IS_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="REFCLK_SRC" spirit:name="REFCLK_SRC" spirit:prompt="REFCLK_SRC" spirit:dataType="string" actel-cc:choiceRef="REFCLK_SRC_CHOICES" spirit:resolve="user">CLK_BASE</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="REFCLK_FREQ" spirit:name="REFCLK_FREQ" spirit:prompt="REFCLK_FREQ" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="user">50.00</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MPLL_SUPPLY_VOLTAGE" spirit:name="MPLL_SUPPLY_VOLTAGE" spirit:prompt="MPLL_SUPPLY_VOLTAGE" spirit:dataType="string" actel-cc:choiceRef="MPLL_SUPPLY_VOLTAGE_CHOICES" spirit:resolve="user">3_3</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MPLL_LOCK_COUNT" spirit:name="MPLL_LOCK_COUNT" spirit:prompt="MPLL_LOCK_COUNT" spirit:dataType="string" actel-cc:choiceRef="MPLL_LOCK_COUNT_CHOICES" spirit:resolve="user">1024</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MPLL_LOCK_WINDOW" spirit:name="MPLL_LOCK_WINDOW" spirit:prompt="MPLL_LOCK_WINDOW" spirit:dataType="string" actel-cc:choiceRef="MPLL_LOCK_WINDOW_CHOICES" spirit:resolve="user">16000</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MDDR_FCLK_MULT" spirit:name="MDDR_FCLK_MULT" spirit:prompt="MDDR_FCLK_MULT" spirit:dataType="string" actel-cc:choiceRef="MDDR_FCLK_MULT_CHOICES" spirit:resolve="user">2</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FCLK_FREQ" spirit:name="FCLK_FREQ" spirit:prompt="FCLK_FREQ" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="user">100.00</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FCLK_PCLK0_DIVISOR" spirit:name="FCLK_PCLK0_DIVISOR" spirit:prompt="FCLK_PCLK0_DIVISOR" spirit:dataType="string" actel-cc:choiceRef="FCLK_DIVISOR_CHOICES" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FCLK_PCLK1_DIVISOR" spirit:name="FCLK_PCLK1_DIVISOR" spirit:prompt="FCLK_PCLK1_DIVISOR" spirit:dataType="string" actel-cc:choiceRef="FCLK_DIVISOR_CHOICES" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MDDR_CLK_FIC64_DIVISOR" spirit:name="MDDR_CLK_FIC64_DIVISOR" spirit:prompt="MDDR_CLK_FIC64_DIVISOR" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FIC32_0_DIVISOR" spirit:name="FIC32_0_DIVISOR" spirit:prompt="FIC32_0_DIVISOR" spirit:dataType="string" actel-cc:choiceRef="DIVISOR_B_CHOICES" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FIC32_1_DIVISOR" spirit:name="FIC32_1_DIVISOR" spirit:prompt="FIC32_1_DIVISOR" spirit:dataType="string" actel-cc:choiceRef="DIVISOR_B_CHOICES" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MPLL_LOCK_IS_USED" spirit:name="MPLL_LOCK_IS_USED" spirit:prompt="MPLL_LOCK_IS_USED" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FACC_GLMUX_SEL_IS_USED" spirit:name="FACC_GLMUX_SEL_IS_USED" spirit:prompt="FACC_GLMUX_SEL_IS_USED" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FAB_PLL_LOCK_IS_USED" spirit:name="FAB_PLL_LOCK_IS_USED" spirit:prompt="FAB_PLL_LOCK_IS_USED" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MPLL_LOCK_EN" spirit:name="MPLL_LOCK_EN" spirit:prompt="MPLL_LOCK_EN" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MPLL_LOCK_LOST_EN" spirit:name="MPLL_LOCK_LOST_EN" spirit:prompt="MPLL_LOCK_LOST_EN" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FAB_PLL_LOCK_EN" spirit:name="FAB_PLL_LOCK_EN" spirit:prompt="FAB_PLL_LOCK_EN" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FAB_PLL_LOCK_LOST_EN" spirit:name="FAB_PLL_LOCK_LOST_EN" spirit:prompt="FAB_PLL_LOCK_LOST_EN" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="PARAM_IS_FALSE" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>pa4msscccgui</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4msscccgui.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>g4msscccgui_UNIX</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4msscccgui</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DIVISOR_A_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="3">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DIVISOR_B_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>FCLK_DIVISOR_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>MDDR_FCLK_MULT_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="3">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="6">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>MPLL_LOCK_COUNT_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="32 cycles">32</spirit:enumeration>
+      <spirit:enumeration spirit:text="64 cycles">64</spirit:enumeration>
+      <spirit:enumeration spirit:text="128 cycles">128</spirit:enumeration>
+      <spirit:enumeration spirit:text="256 cycles">256</spirit:enumeration>
+      <spirit:enumeration spirit:text="512 cycles">512</spirit:enumeration>
+      <spirit:enumeration spirit:text="1024 cycles">1024</spirit:enumeration>
+      <spirit:enumeration spirit:text="2048 cycles">2048</spirit:enumeration>
+      <spirit:enumeration spirit:text="4096 cycles">4096</spirit:enumeration>
+      <spirit:enumeration spirit:text="8192 cycles">8192</spirit:enumeration>
+      <spirit:enumeration spirit:text="16384 cycles">16384</spirit:enumeration>
+      <spirit:enumeration spirit:text="32768 cycles">32768</spirit:enumeration>
+      <spirit:enumeration spirit:text="65536 cycles">65536</spirit:enumeration>
+      <spirit:enumeration spirit:text="131072 cycles">131072</spirit:enumeration>
+      <spirit:enumeration spirit:text="262144 cycles">262144</spirit:enumeration>
+      <spirit:enumeration spirit:text="524288 cycles">524288</spirit:enumeration>
+      <spirit:enumeration spirit:text="1048576 cycles">1048576</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>MPLL_LOCK_WINDOW_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="500 ppm">500</spirit:enumeration>
+      <spirit:enumeration spirit:text="1000 ppm">1000</spirit:enumeration>
+      <spirit:enumeration spirit:text="2000 ppm">2000</spirit:enumeration>
+      <spirit:enumeration spirit:text="4000 ppm">4000</spirit:enumeration>
+      <spirit:enumeration spirit:text="8000 ppm">8000</spirit:enumeration>
+      <spirit:enumeration spirit:text="16000 ppm">16000</spirit:enumeration>
+      <spirit:enumeration spirit:text="32000 ppm">32000</spirit:enumeration>
+      <spirit:enumeration spirit:text="64000 ppm">64000</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>MPLL_SUPPLY_VOLTAGE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="3V">3_3</spirit:enumeration>
+      <spirit:enumeration spirit:text="2V">2_5</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>REFCLK_SRC_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="CLK_BASE">CLK_BASE</spirit:enumeration>
+      <spirit:enumeration spirit:text="RCOSC_25_50MHZ">RCOSC_25_50MHZ</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_CCC</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20130307092711</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Clock &amp; Management">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:resources>
+      <actel-cc:resource doc_title="User's Guide" url="http://coredocs.actel-ip.com/Actel/SmartFusion2MSS/MSS_CCC/mss_ccc_config_ug_1.pdf">
+        <actel-cc:presentation></actel-cc:presentation></actel-cc:resource></actel-cc:resources>
+  </spirit:vendorExtensions>
+</spirit:component>

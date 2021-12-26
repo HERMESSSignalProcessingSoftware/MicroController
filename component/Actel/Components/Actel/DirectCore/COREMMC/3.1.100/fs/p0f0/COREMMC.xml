@@ -1,0 +1,1038 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREMMC</spirit:name>
+  <spirit:version>3.1.100</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>AHB_BIF</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>HADDR</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HTRANS</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWRITE</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSIZE</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HBURST</spirit:componentSignalName><spirit:busSignalName>HBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWDATA</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRDATA</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADYOUT</spirit:componentSignalName><spirit:busSignalName>HREADYOUT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRESP</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSEL</spirit:componentSignalName><spirit:busSignalName>HSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADYIN</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  <spirit:memoryMap>
+    <spirit:name>RegisterMap</spirit:name>
+    <spirit:addressBlock>
+      <spirit:baseAddress>0x0</spirit:baseAddress>
+      <spirit:range>0x80</spirit:range>
+      <spirit:width>8</spirit:width>
+      <spirit:register>
+        <spirit:name>SR</spirit:name>
+        <spirit:addressOffset>0x0</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x18</spirit:resetValue>
+        <spirit:description>Status Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>VR</spirit:name>
+        <spirit:addressOffset>0x1</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x84</spirit:resetValue>
+        <spirit:description>Version Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>MJVR</spirit:name>
+        <spirit:addressOffset>0x2</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>VLNV Major Version</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>MIVR</spirit:name>
+        <spirit:addressOffset>0x3</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>VLNV Minor Version</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CMDX</spirit:name>
+        <spirit:addressOffset>0x4</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Command Index</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>Arg1</spirit:name>
+        <spirit:addressOffset>0x8</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Command Arg1</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>Arg2</spirit:name>
+        <spirit:addressOffset>0x9</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Command Arg2</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>Arg3</spirit:name>
+        <spirit:addressOffset>0xa</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Command Arg3</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>Arg4</spirit:name>
+        <spirit:addressOffset>0xb</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Command Arg4</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR0</spirit:name>
+        <spirit:addressOffset>0x10</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 0</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR1</spirit:name>
+        <spirit:addressOffset>0x14</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 1</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR2</spirit:name>
+        <spirit:addressOffset>0x15</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 2</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR3</spirit:name>
+        <spirit:addressOffset>0x16</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 3</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR4</spirit:name>
+        <spirit:addressOffset>0x17</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 4</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR5</spirit:name>
+        <spirit:addressOffset>0x18</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 5</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR6</spirit:name>
+        <spirit:addressOffset>0x19</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 6</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR7</spirit:name>
+        <spirit:addressOffset>0x1a</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 7</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR8</spirit:name>
+        <spirit:addressOffset>0x1b</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 8</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR9</spirit:name>
+        <spirit:addressOffset>0x1c</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 9</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR10</spirit:name>
+        <spirit:addressOffset>0x1d</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 10</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR11</spirit:name>
+        <spirit:addressOffset>0x1e</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 11</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR12</spirit:name>
+        <spirit:addressOffset>0x1f</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 12</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR13</spirit:name>
+        <spirit:addressOffset>0x20</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 13</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR14</spirit:name>
+        <spirit:addressOffset>0x21</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 14</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RR15</spirit:name>
+        <spirit:addressOffset>0x22</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Response Register 15</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>WDR</spirit:name>
+        <spirit:addressOffset>0x24</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Write Data Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RDR</spirit:name>
+        <spirit:addressOffset>0x28</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Read Data Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>IMR</spirit:name>
+        <spirit:addressOffset>0x2c</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Interrupt Mask Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>SBIMR</spirit:name>
+        <spirit:addressOffset>0x2d</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Single Block Interrupt Mask Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>MBIMR</spirit:name>
+        <spirit:addressOffset>0x2e</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Multi Block Interrupt Mask Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>ISR</spirit:name>
+        <spirit:addressOffset>0x30</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Interrupt Status Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>SBISR</spirit:name>
+        <spirit:addressOffset>0x31</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Single Block Interrupt Status Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>MBISR</spirit:name>
+        <spirit:addressOffset>0x32</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Multi Block Interrupt Status Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>ICR</spirit:name>
+        <spirit:addressOffset>0x34</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Interrupt Clear Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>SBICR</spirit:name>
+        <spirit:addressOffset>0x35</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Single Block Interrupt Clear Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>MBICR</spirit:name>
+        <spirit:addressOffset>0x36</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Multi Block Interrupt Clear Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CTRL</spirit:name>
+        <spirit:addressOffset>0x38</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x2c</spirit:resetValue>
+        <spirit:description>Control Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>SBCSR</spirit:name>
+        <spirit:addressOffset>0x39</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Single Block Control and Status Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>MBCSR</spirit:name>
+        <spirit:addressOffset>0x3a</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Multi Block Control and Status Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RSTOR</spirit:name>
+        <spirit:addressOffset>0x3c</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x40</spirit:resetValue>
+        <spirit:description>Response Timeout Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>DATOR</spirit:name>
+        <spirit:addressOffset>0x40</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x400</spirit:resetValue>
+        <spirit:description>Data Timeout Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>BLR</spirit:name>
+        <spirit:addressOffset>0x44</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x200</spirit:resetValue>
+        <spirit:description>Block Length Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>DCTRL</spirit:name>
+        <spirit:addressOffset>0x48</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Data Control Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CLKR</spirit:name>
+        <spirit:addressOffset>0x4c</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x3f</spirit:resetValue>
+        <spirit:description>Clock Divider Register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>BCR</spirit:name>
+        <spirit:addressOffset>0x50</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+        <spirit:description>Block Count Register</spirit:description>
+      </spirit:register>
+    </spirit:addressBlock>
+    <spirit:bitsInLau>8</spirit:bitsInLau>
+  </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs_ALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Designer</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>DESIGNER_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="DESIGNER_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>HCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADYIN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSIZE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HTRANS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HBURST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>6</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADYOUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESP</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CLK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RST_N</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DATO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="spirit:pow(2, id('MMC_DWIDTH')) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DATI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="spirit:pow(2, id('MMC_DWIDTH')) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DAT_OE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="spirit:pow(2, id('MMC_DWIDTH')) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CMDO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CMDI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CMD_OE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INTERRUPT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WRFIFORFM</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RDFIFODAVAIL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="MMC_DWIDTH" spirit:name="MMC_DWIDTH" spirit:prompt="MMC_DWIDTH:" spirit:dataType="int" spirit:choiceRef="Choice_MMC_dwidth" spirit:configGroups="MMC Config" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIFO_DEPTH" spirit:name="FIFO_DEPTH" spirit:prompt="FIFO_DEPTH:" spirit:dataType="int" spirit:choiceRef="Choice_fifo_depth" spirit:configGroups="MMC Config" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="HDL_license" spirit:name="HDL_license" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:resolve="user">U</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:configGroups="General" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFire">26</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFireSoC">27</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_MMC_dwidth</spirit:name>
+      <spirit:enumeration spirit:text="1-Bit">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="4-Bit">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="8-Bit">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_fifo_depth</spirit:name>
+      <spirit:enumeration spirit:text="512">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="4K">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="16K">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="32K">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/AHBLSlaveCtrl.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreMMC.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/Crc16.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/Crc7.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/DualPort_Ram_SyncWr_SyncRd.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/FifoDualPort.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/MMCClkGen.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/MMCDataCtrl.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/MMCMaster.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/MMCMasterCtrl.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/Registers.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL">
+    <spirit:file>
+      <spirit:name>docs/CoreMMC_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreMMC_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec_compile.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/user_tb.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahblapb.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbslave.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbslaveext.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_main_emmc.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/parameters.v</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/Calculate_CRC16.i</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/Calculate_CRC7.i</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/MMCSlave.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/MMCSlaveAHBSlaveCtrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/testbench.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>1200000ns</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/AHBLSlaveCtrl.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/COREMMC.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/Crc16.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/Crc7.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/DualPort_RAM_SyncWr_SyncRd.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/EMMCPkg.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/FifoDualPort.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/MMCClkGen.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/MMCDataCtrl.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/MMCMaster.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/MMCMasterCtrl.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/Registers.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec_compile.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/wave_vhdl.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/user_tb.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_package.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/misc.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/textio.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahbl.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahblapb.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahbslave.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahbslaveext.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_main_emmc.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/parameters.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/Calculate_CRC7.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/Calculate_CRC16.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/MMCSlave.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/testbench.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>1200000ns</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="DESIGNER_FILESET">
+    <spirit:file>
+      <spirit:name>constraints/CoreMMC.sdc</spirit:name>
+      <spirit:fileType>SDC</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreMMC</actel-cc:displayName>
+    <actel-cc:description>CoreMMC provides an eMMC controller for interfacing to eMMC devices. The core is parameterized to allow user specification of MMC data bus width &amp;  FIFO depth and is conformant to the JEDEC eMMC v4.41 Standard Specification.
+CoreMMC consists of an AMBA High-Performance Bus Lite (AHB-Lite) slave inteface designed to connect to an AHB-Lite bus. Its registers, including write and read data FIFOs can be accessed by an AHBL master.  
+</actel-cc:description>
+    <actel-cc:packageTimestamp>20200928180637</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Interface Type">
+      <actel-cc:category name="AmbaBus">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFire">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFireSoC">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

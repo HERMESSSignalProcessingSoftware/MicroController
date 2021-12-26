@@ -1,0 +1,760 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_FIC32</spirit:name>
+  <spirit:version>1.0.100</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>AHB_SLAVE</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:bridge spirit:masterRef="DUMMY_AHB_MASTER" spirit:opaque="true" /></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HRDATA</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HADDR</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HREADY</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HWDATA</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HWRITE</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HRESP</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HSIZE</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HTRANS</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HMASTLOCK</spirit:componentSignalName><spirit:busSignalName>HMASTLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HSEL</spirit:componentSignalName><spirit:busSignalName>HSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_S_HREADYOUT</spirit:componentSignalName><spirit:busSignalName>HREADYOUT</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="INTERFACE_SLAVE" actel-cc:termValue="true"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="INTERFACE_TYPE" actel-cc:termValue="INTERFACE_AHB"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+      <actel-cc:export spirit:configGroups="export" spirit:prompt="AHB_SLAVE" spirit:resolve="user">true</actel-cc:export></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AHB_MASTER</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_M_HRDATA</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_M_HADDR</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_M_HREADY</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_M_HWDATA</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_M_HWRITE</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_M_HRESP</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_M_HSIZE</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_M_HTRANS</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="INTERFACE_MASTER" actel-cc:termValue="true"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="INTERFACE_TYPE" actel-cc:termValue="INTERFACE_AHB"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+      <actel-cc:export spirit:configGroups="export" spirit:prompt="AHB_MASTER" spirit:resolve="user">true</actel-cc:export></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>APB_SLAVE</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:bridge spirit:masterRef="DUMMY_APB_MASTER" spirit:opaque="true" /></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_S_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_S_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_S_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_S_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_S_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_S_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_S_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_S_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="INTERFACE_SLAVE" actel-cc:termValue="true"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="INTERFACE_TYPE" actel-cc:operation="notEqual" actel-cc:termValue="INTERFACE_AHB"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+      <actel-cc:export spirit:configGroups="export" spirit:prompt="APB_SLAVE" spirit:resolve="user">true</actel-cc:export></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>APB_MASTER</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_M_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_M_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_M_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_M_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_M_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_M_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_M_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_M_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="INTERFACE_MASTER" actel-cc:termValue="true"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="INTERFACE_TYPE" actel-cc:operation="notEqual" actel-cc:termValue="INTERFACE_AHB"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+      <actel-cc:export spirit:configGroups="export" spirit:prompt="APB_MASTER" spirit:resolve="user">true</actel-cc:export></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DUMMY_AHB_SLAVE</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:bridge spirit:masterRef="AHB_MASTER" spirit:opaque="true" /></spirit:slave>
+    <spirit:signalMap></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+      <actel-cc:export spirit:configGroups="export" spirit:prompt="DUMMY_AHB_SLAVE" spirit:resolve="user">false</actel-cc:export></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DUMMY_AHB_MASTER</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+      <actel-cc:export spirit:configGroups="export" spirit:prompt="DUMMY_AHB_MASTER" spirit:resolve="user">false</actel-cc:export></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DUMMY_APB_SLAVE</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:bridge spirit:masterRef="APB_MASTER" spirit:opaque="true" /></spirit:slave>
+    <spirit:signalMap></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+      <actel-cc:export spirit:configGroups="export" spirit:prompt="DUMMY_APB_SLAVE" spirit:resolve="user">false</actel-cc:export></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DUMMY_APB_MASTER</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+      <actel-cc:export spirit:configGroups="export" spirit:prompt="DUMMY_APB_MASTER" spirit:resolve="user">false</actel-cc:export></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>PREVIEWS</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="PREVIEWS"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>MASTER_ID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MASTER_ID" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="EXPOSE_MASTER_IDENTITY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MASTER_ID</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>F2MCALIB</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="F2MCALIB" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>F2MCALIB</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>M2FCALIB</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="M2FCALIB" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>M2FCALIB</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_S_PADDR" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_S_PADDR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_S_PWDATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_S_PWDATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_S_PENABLE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_S_PENABLE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_S_PSEL" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_S_PSEL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_S_PWRITE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_S_PWRITE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_S_PRDATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_S_PRDATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_S_PREADY" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_S_PREADY</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PSLVERR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_S_PSLVERR" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_S_PSLVERR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_M_PRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_M_PRDATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_M_PRDATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_M_PREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_M_PREADY" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_M_PREADY</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_M_PSLVERR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_M_PSLVERR" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_M_PSLVERR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_M_PADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_M_PADDR" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_M_PADDR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_M_PSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_M_PSEL" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_M_PSEL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_M_PWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_M_PWRITE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_M_PWRITE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_M_PENABLE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_M_PENABLE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_M_PENABLE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_M_PWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="APB_M_PWDATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>APB_M_PWDATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HADDR" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HADDR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HREADY" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HREADY</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HWDATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HWDATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HWRITE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HWRITE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HSIZE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HSIZE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HSIZE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HTRANS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HTRANS" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HTRANS</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HMASTLOCK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HMASTLOCK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HMASTLOCK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HSEL" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HSEL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HRESP</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HRESP" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HRESP</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HRDATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HRDATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_S_HREADYOUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_S_HREADYOUT" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_S_HREADYOUT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_M_HRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_M_HRDATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_M_HRDATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_M_HRESP</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_M_HRESP" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_M_HRESP</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_M_HREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_M_HREADY" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_M_HREADY</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_M_HADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_M_HADDR" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_M_HADDR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_M_HWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_M_HWDATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_M_HWDATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_M_HWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_M_HWRITE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_M_HWRITE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_M_HSIZE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_M_HSIZE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_M_HSIZE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_M_HTRANS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="AHB_M_HTRANS" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>AHB_M_HTRANS</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MSS_CLK_FREQUENCY" spirit:name="MSS_CLK_FREQUENCY" spirit:prompt="MSS Clock Frequency" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="1Cols:Clocks" spirit:resolve="user">100.00</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FAB_CLK_FREQUENCY" spirit:name="FAB_CLK_FREQUENCY" spirit:prompt="Fabric Clock Frequency" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="1Cols:Clocks" spirit:resolve="user">100.00</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="INTERFACE_TYPE" spirit:name="INTERFACE_TYPE" spirit:prompt="Interface Type" spirit:dataType="string" actel-cc:choiceRef="INTERFACE_CHOICES" spirit:configGroups="1Cols:Interface" spirit:resolve="user">INTERFACE_AHB</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USE_BYPASS_MODE" spirit:name="USE_BYPASS_MODE" spirit:prompt="Use Bypass Mode" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Interface" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="INTERFACE_MASTER" spirit:name="INTERFACE_MASTER" spirit:prompt="Use Master Interface" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Interface" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="INTERFACE_SLAVE" spirit:name="INTERFACE_SLAVE" spirit:prompt="Use Slave Interface" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Interface" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EXPOSE_MASTER_IDENTITY" spirit:name="EXPOSE_MASTER_IDENTITY" spirit:prompt="Expose Master Identity port" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Interface" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USE_FAB_REGION_0" spirit:name="USE_FAB_REGION_0" spirit:prompt="Use Fabric Region 0 (0x30000000 - -0x3FFFFFFF)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Memory Map (Data Used only by FIC32_0 Configurator to set both FICs)" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USE_FAB_REGION_1" spirit:name="USE_FAB_REGION_1" spirit:prompt="Use Fabric Region 1 (0x50000000 - -0x5FFFFFFF)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Memory Map (Data Used only by FIC32_0 Configurator to set both FICs)" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USE_FAB_REGION_2" spirit:name="USE_FAB_REGION_2" spirit:prompt="Use Fabric Region 2 (0x70000000 - -0x7FFFFFFF)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Memory Map (Data Used only by FIC32_0 Configurator to set both FICs)" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USE_FAB_REGION_3" spirit:name="USE_FAB_REGION_3" spirit:prompt="Use Fabric Region 3 (0x80000000 - -0x8FFFFFFF)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Memory Map (Data Used only by FIC32_0 Configurator to set both FICs)" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USE_FAB_REGION_4" spirit:name="USE_FAB_REGION_4" spirit:prompt="Use Fabric Region 4 (0x90000000 - -0x9FFFFFFF)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Memory Map (Data Used only by FIC32_0 Configurator to set both FICs)" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USE_FAB_REGION_5" spirit:name="USE_FAB_REGION_5" spirit:prompt="Use Fabric Region 5 (0xF0000000 - -0xFFFFFFFF)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Memory Map (Data Used only by FIC32_0 Configurator to set both FICs)" spirit:resolve="user">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('EXPOSE_MASTER_IDENTITY', Eq(ValueOf('INTERFACE_MASTER'), '1'));\
+Set('EXPOSE_MASTER_IDENTITY', Eq(ValueOf('INTERFACE_MASTER'), '0'), '0');\
+Enable('USE_BYPASS_MODE', And(Eq('MSS_CLK_FREQUENCY', 'FAB_CLK_FREQUENCY'), Eq(ValueOf('INTERFACE_TYPE'), 'INTERFACE_AHB')));\
+Set('USE_BYPASS_MODE', Eq(ValueOf('INTERFACE_TYPE'), 'INTERFACE_APB'), '0');\
+Enable('MSS_CLK_FREQUENCY', Eq('PARAM_IS_FALSE', '1'));\
+Enable('FAB_CLK_FREQUENCY', Eq('PARAM_IS_FALSE', '1'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>winConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssfic32.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>linConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssfic32</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>INTERFACE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="AHBLite">INTERFACE_AHB</spirit:enumeration>
+      <spirit:enumeration spirit:text="AMBA APB3">INTERFACE_APB</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="PREVIEWS">
+    <spirit:file>
+      <spirit:name>MSS_FIC32.html</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_SAPB.html</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_SAHB.html</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_MAPB.html</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_MAHB.html</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_MAPB_SAPB.html</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_MAHB_SAHB.html</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32.jpg</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_SAPB.jpg</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_SAHB.jpg</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_MAPB.jpg</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_MAHB.jpg</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_MAPB_SAPB.jpg</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS_FIC32_MAHB_SAHB.jpg</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_FIC32</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20130307092708</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

@@ -1,0 +1,93 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_DDRB</spirit:name>
+  <spirit:version>1.0.200</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+    </spirit:views>
+    <spirit:signals>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_TIMER" spirit:name="DDRB_TIMER" spirit:prompt="Write Buffer Time Out Counter" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="user">0x3FF</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_NB_SZ" spirit:name="DDRB_NB_SZ" spirit:prompt="Non Bufferable Region Size" spirit:dataType="string" actel-cc:choiceRef="DDRB_NB_SZ_CHOICES" spirit:resolve="user">64KB</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_NB_ADDR" spirit:name="DDRB_NB_ADDR" spirit:prompt="Non Bufferable Region Address (Upper 16 bits)" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="user">0xA000</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_DS_WEN" spirit:name="DDRB_DS_WEN" spirit:prompt="Enable Write Combining Buffer" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:DS Master" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_DS_REN" spirit:name="DDRB_DS_REN" spirit:prompt="Enable Read Buffer" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:DS Master" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_HPD_WEN" spirit:name="DDRB_HPD_WEN" spirit:prompt="Enable Write Combining Buffer" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:HPDMA Master" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_HPD_REN" spirit:name="DDRB_HPD_REN" spirit:prompt="Enable Read Buffer" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:HPDMA Master" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_SW_WEN" spirit:name="DDRB_SW_WEN" spirit:prompt="Enable Write Combining Buffer" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:SWITCH Master" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_SW_REN" spirit:name="DDRB_SW_REN" spirit:prompt="Enable Read Buffer" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:SWITCH Master" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_IDC_REN" spirit:name="DDRB_IDC_REN" spirit:prompt="Enable Read Buffer" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:IDC Master" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_BUF_SZ" spirit:name="DDRB_BUF_SZ" spirit:prompt="DDR Burst Size for Read/Write Buffers" spirit:dataType="string" actel-cc:choiceRef="DDRB_BUF_SZ_CHOICES" spirit:resolve="user">32B</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_HPD_ENABLE" spirit:name="DDRB_HPD_ENABLE" spirit:prompt="Enable HPDMA at Power-up" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Validate('Address must be a 10-bit hexadecimal number', IsHexOfWidth('DDRB_TIMER', '10'));\
+Validate('Address must be a 16-bit hexadecimal number', IsHexOfWidth('DDRB_NB_ADDR', '16'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DDRB_BUF_SZ_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="16 Bytes">16B</spirit:enumeration>
+      <spirit:enumeration spirit:text="32 Bytes">32B</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DDRB_NB_SZ_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="None">NONE</spirit:enumeration>
+      <spirit:enumeration spirit:text="64 KB">64KB</spirit:enumeration>
+      <spirit:enumeration spirit:text="128 KB">128KB</spirit:enumeration>
+      <spirit:enumeration spirit:text="256 KB">256KB</spirit:enumeration>
+      <spirit:enumeration spirit:text="512 KB">512KB</spirit:enumeration>
+      <spirit:enumeration spirit:text="1 MB">1MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="2 MB">2MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="4 MB">4MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="8 MB">8MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="16 MB">16MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="32 MB">32MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="64 MB">64MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="128 MB">128MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="256 MB">256MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="512 MB">512MB</spirit:enumeration>
+      <spirit:enumeration spirit:text="1 GB">1GB</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_DDRB</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20140327160130</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

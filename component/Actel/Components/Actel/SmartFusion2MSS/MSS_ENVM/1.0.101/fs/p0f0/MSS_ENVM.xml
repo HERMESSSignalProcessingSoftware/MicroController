@@ -1,0 +1,88 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_ENVM</spirit:name>
+  <spirit:version>1.0.101</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>winConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssenvmgui.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>linConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssenvmgui</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>winValidator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssenvm.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Validator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>linValidator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssenvm</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Validator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_ENVM</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20140507124401</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

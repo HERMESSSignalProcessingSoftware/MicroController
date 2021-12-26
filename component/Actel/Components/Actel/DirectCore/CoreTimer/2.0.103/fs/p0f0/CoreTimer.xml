@@ -1,0 +1,614 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>CoreTimer</spirit:name>
+  <spirit:version>2.0.103</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>APBslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:memoryMapRef spirit:memoryMapRef="RegisterMap" /></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  <spirit:memoryMap>
+    <spirit:name>RegisterMap</spirit:name>
+    <spirit:addressBlock>
+      <spirit:baseAddress>0x0</spirit:baseAddress>
+      <spirit:range>0x1000</spirit:range>
+      <spirit:width>32</spirit:width>
+      <spirit:register>
+        <spirit:name>TimerLoad</spirit:name>
+        <spirit:addressOffset>0x00</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>LoadValue</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Load value for counter</spirit:description>
+          </spirit:field>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TimerValue</spirit:name>
+        <spirit:addressOffset>0x04</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0xFFFFFFFF</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>CurrentValue</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Current value of counter</spirit:description>
+          </spirit:field>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TimerControl</spirit:name>
+        <spirit:addressOffset>0x08</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>TimerEnable</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Enable bit for timer</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>InterruptEnable</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Interrupt enable bit for timer</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TimerMode</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Selects continuous or one-shot operation</spirit:description>
+          </spirit:field>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TimerPrescale</spirit:name>
+        <spirit:addressOffset>0x0C</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>Prescale</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>4</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Determines effective clock rate for counter relative to PCLK</spirit:description>
+          </spirit:field>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TimerIntClr</spirit:name>
+        <spirit:addressOffset>0x10</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>TimerIntClr</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Any write to this location will clear the interrupt</spirit:description>
+          </spirit:field>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TimerRIS</spirit:name>
+        <spirit:addressOffset>0x14</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>RawTimerInterrupt</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Raw timer interrupt status, active high</spirit:description>
+          </spirit:field>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TimerMIS</spirit:name>
+        <spirit:addressOffset>0x18</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>TimerInterrupt</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Timer interrupt status, active high</spirit:description>
+          </spirit:field>
+      </spirit:register>
+    </spirit:addressBlock>
+    <spirit:bitsInLau>32</spirit:bitsInLau>
+  </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VHDL_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_ANY_SIMULATION_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs_ALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>PCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRESETn</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>4</spirit:left>
+        <spirit:right>2</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TIMINT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">17</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="WIDTH" spirit:name="WIDTH" spirit:prompt="Width:" spirit:dataType="int" spirit:choiceRef="widthChoice" spirit:choiceStyle="radio" spirit:configGroups="requiredConfig" spirit:resolve="user">32</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INTACTIVEH" spirit:name="INTACTIVEH" spirit:prompt="Interrupt active level:" spirit:dataType="int" spirit:choiceRef="interruptLevelChoice" spirit:choiceStyle="radio" spirit:configGroups="requiredConfig" spirit:resolve="user">1</spirit:hwParameter>
+    </spirit:hwParameters>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="Fusion">17</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3E">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="Axcelerator">11</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTAX-S">12</spirit:enumeration>
+      <spirit:enumeration spirit:text="54SX">7</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTSX-S">9</spirit:enumeration>
+      <spirit:enumeration spirit:text="54SXA">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="eX">10</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO">20</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOOe">21</spirit:enumeration>
+      <spirit:enumeration spirit:text="ACT1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="ACT2/1200XL">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="ACT3">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="3200DX">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="40MX">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="42MX">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="500K">13</spirit:enumeration>
+      <spirit:enumeration spirit:text="PA">14</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3L">22</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO+">23</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion">18</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>interruptLevelChoice</spirit:name>
+      <spirit:enumeration spirit:text="Low" spirit:help="Interrupt active low">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="High" spirit:help="Interrupt active high">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>widthChoice</spirit:name>
+      <spirit:enumeration spirit:text="16 bit" spirit:help="16 bit countdown timer">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32 bit" spirit:help="32 bit countdown timer">32</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coretimer.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/coretimer_pkg.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/coretimer.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbtoapb.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_apb.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_apbtoapb.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_main.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_package.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/testbench.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec_compile.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user_tb.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/misc.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/textio.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_package.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahbtoapb.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_apb.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_apbtoapb.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_main.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/testbench.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>CORETIMER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec_compile.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user_tb.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL">
+    <spirit:file>
+      <spirit:name>CoreTimer_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CoreTimer_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreTimer</actel-cc:displayName>
+    <actel-cc:description>
+The CoreTimer module is an APB slave that provides access to an interrupt-generating, 
+programmable decrementing counter.
+
+The width of the decrementing counter in the CoreTimer module can be statically configured 
+as either 16 or 32 bits. Programmable registers provide a means to dynamically control 
+the operation of the timer. 
+
+Two modes of operation are available for CoreTimer:
+Continuous mode and One-shot timer mode.
+
+        </actel-cc:description>
+    <actel-cc:packageTimestamp>20150605145407</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="8.6.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Medical">
+      </actel-cc:category>
+      <actel-cc:category name="Consumer">
+      </actel-cc:category>
+      <actel-cc:category name="Multimedia">
+      </actel-cc:category>
+      <actel-cc:category name="Gaming">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Interface Type">
+      <actel-cc:category name="AmbaBus">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="Fusion">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3E">
+      </actel-cc:category>
+      <actel-cc:category name="Axcelerator">
+      </actel-cc:category>
+      <actel-cc:category name="RTAX-S">
+      </actel-cc:category>
+      <actel-cc:category name="54SX">
+      </actel-cc:category>
+      <actel-cc:category name="RTSX-S">
+      </actel-cc:category>
+      <actel-cc:category name="54SXA">
+      </actel-cc:category>
+      <actel-cc:category name="eX">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOOe">
+      </actel-cc:category>
+      <actel-cc:category name="ACT1">
+      </actel-cc:category>
+      <actel-cc:category name="ACT2/1200XL">
+      </actel-cc:category>
+      <actel-cc:category name="ACT3">
+      </actel-cc:category>
+      <actel-cc:category name="3200DX">
+      </actel-cc:category>
+      <actel-cc:category name="40MX">
+      </actel-cc:category>
+      <actel-cc:category name="42MX">
+      </actel-cc:category>
+      <actel-cc:category name="500K">
+      </actel-cc:category>
+      <actel-cc:category name="PA">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3L">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO+">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:resources>
+      <actel-cc:resource doc_title="CoreTimer web page" url="http://www.actel.com/products/ip/search/detail.aspx?id=654">
+        <actel-cc:presentation></actel-cc:presentation></actel-cc:resource></actel-cc:resources>
+  </spirit:vendorExtensions>
+</spirit:component>

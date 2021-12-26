@@ -1,0 +1,474 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>CORETBITOEPCS</spirit:name>
+  <spirit:version>2.2.106</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-BASE-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-BASE-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs_ALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-BASE-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-BASE-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>TBI_RSTn</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_RxDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>9</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_TxDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>9</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_READY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_PWRDN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_TxOOB</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_TxRSTn</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_TxCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_TxDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>19</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_TxVAL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_RxRSTn</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_RxCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_RxDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>19</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_RxVAL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_RxIDLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EPCS_RxERR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TX_UPPER_EPCS" spirit:name="TX_UPPER_EPCS" spirit:prompt="EPCS Tx Upper 10-Bit" spirit:dataType="boolean" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RX_UPPER_EPCS" spirit:name="RX_UPPER_EPCS" spirit:prompt="EPCS Rx Upper 10-Bit" spirit:dataType="boolean" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_EPCS_DWIDTH</spirit:name>
+      <spirit:enumeration spirit:text="20">20</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_TBI_DWIDTH</spirit:name>
+      <spirit:enumeration spirit:text="10">10</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">NONE</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-BASE-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/rdch_ram.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/sync_resetn.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/wrch_ram.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/RDCHANNELFIFO.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/Synchronizer_EPCStoTBI.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/WRCHANNELFIFO.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/EPCSAccessController.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/TBIAccessController.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreTBItoEPCS.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/runall.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/wave_tbitoepcs_user_vlog.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/tb_user/checker.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/tb_user/EPCS.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/tb_user/TBI.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/tb_user/tb_user.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>tb_user</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL">
+    <spirit:file>
+      <spirit:name>docs/CoreTBItoEPCS_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreTBItoEPCS_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-BASE-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/components.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/CoreTBItoEPCS.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/EPCSAccessController.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/rdch_ram.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/RDCHANNELFIFO.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/sync_resetn.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/Synchronizer_EPCStoTBI.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/TBIAccessController.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/wrch_ram.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/WRCHANNELFIFO.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>common/misc.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>common/textio.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/tb_user/EPCS.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/tb_user/tb_user.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/tb_user/TBI.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORETBITOEPCS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreTBItoEPCS</actel-cc:displayName>
+    <actel-cc:description>The bridge appears between the Ten-Bit Interface (TBI) and External PCS (EPCS). The Core supports Ten-Bit interface Rx/Tx data bus on TBI side and 20-bit Rx/Tx data bus on EPCS side. This block receive TBI data (with double data rate) and transmit on EPCS bus and vice-versa. CoreTBItoEPCS includes user testbench for verification.</actel-cc:description>
+    <actel-cc:packageTimestamp>20170323094044</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="true"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.6">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Bus Interfaces">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Consumer">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

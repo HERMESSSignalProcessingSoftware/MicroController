@@ -1,0 +1,875 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREFIFO</spirit:name>
+  <spirit:version>3.0.101</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-Sync</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-Async</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSourceCommon-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-FWFT</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Sync"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Async"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSourceCommon-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-FWFT"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-DocsALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-DocsALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-Base</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-Sync</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-Async</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-CommonU</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-FWFT</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Base"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Sync"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Async"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-CommonU"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-FWFT"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-ConfiguratorWindows</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-GeneratorWindows</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-ConfiguratorLinux</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-GeneratorLinux</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-ConfiguratorWindows"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-GeneratorWindows"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-ConfiguratorLinux"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-GeneratorLinux"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VHDL_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_ANY_SIMULATION_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SYNC" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WCLOCK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SYNC" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RCLOCK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SYNC" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RESET_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SYNC" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WRESET_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SYNC" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RRESET_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SYNC" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('WWIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="2"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="3"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="PREFETCH" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FWFT" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>Q</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('RWIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="PREFETCH" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FWFT" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="2"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FULL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EMPTY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AFULL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AF_STATIC_EN" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AEMPTY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AE_STATIC_EN" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>OVERFLOW</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="OVERFLOW_EN" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UNDERFLOW</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UNDERFLOW_EN" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WACK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="WRITE_ACK" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DVLD</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="READ_DVALID" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WRCNT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('WDEPTH')))" spirit:resolve="dependent">512</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="WRCNT_EN" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RDCNT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('RDEPTH')))" spirit:resolve="dependent">512</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RDCNT_EN" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MEMWE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MEMRE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MEMWADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="((ceiling(spirit:log(2, id('WDEPTH'))) - 1) * (id('WDEPTH') != 1)) + (ceiling(spirit:log(2, id('WDEPTH'))) * (id('WDEPTH') = 1))" spirit:resolve="dependent">511</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MEMRADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="((ceiling(spirit:log(2, id('RDEPTH'))) - 1) * (id('RDEPTH') != 1)) + (ceiling(spirit:log(2, id('RDEPTH'))) * (id('RDEPTH') = 1))" spirit:resolve="dependent">511</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MEMWD</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('WWIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="PREFETCH" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FWFT" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MEMRD</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('RWIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="PREFETCH" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FWFT" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SB_CORRECT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicAndTerms>
+                    <actel-cc:logicTerm spirit:referenceId="ECC" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm>
+                    <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicAndTerms>
+                  <actel-cc:logicAndTerms>
+                    <actel-cc:logicTerm spirit:referenceId="ECC" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm>
+                    <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="3"></actel-cc:logicTerm>
+                    <actel-cc:logicOrTerms>
+                      <actel-cc:logicTerm spirit:referenceId="PIPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                      <actel-cc:logicTerm spirit:referenceId="PIPE" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms>
+                  <actel-cc:logicAndTerms>
+                    <actel-cc:logicTerm spirit:referenceId="ECC" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm>
+                    <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="3"></actel-cc:logicTerm>
+                    <actel-cc:logicTerm spirit:referenceId="PIPE" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="25"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="26"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DB_DETECT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicAndTerms>
+                    <actel-cc:logicTerm spirit:referenceId="ECC" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm>
+                    <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicAndTerms>
+                  <actel-cc:logicAndTerms>
+                    <actel-cc:logicTerm spirit:referenceId="ECC" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm>
+                    <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="3"></actel-cc:logicTerm>
+                    <actel-cc:logicOrTerms>
+                      <actel-cc:logicTerm spirit:referenceId="PIPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                      <actel-cc:logicTerm spirit:referenceId="PIPE" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms>
+                  <actel-cc:logicAndTerms>
+                    <actel-cc:logicTerm spirit:referenceId="ECC" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm>
+                    <actel-cc:logicTerm spirit:referenceId="CTRL_TYPE" actel-cc:termValue="3"></actel-cc:logicTerm>
+                    <actel-cc:logicTerm spirit:referenceId="PIPE" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="25"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="26"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DIE_SIZE" spirit:name="DIE_SIZE" spirit:prompt="Die number" spirit:dataType="int" spirit:configGroups="Implementation" spirit:resolve="user" spirit:minimum="0" spirit:maximum="35">25</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CTRL_TYPE" spirit:name="CTRL_TYPE" spirit:prompt="Controller Type" spirit:dataType="int" spirit:choiceRef="Choice_Ctrl_Only" spirit:configGroups="2Cols:FIFO Operation" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SYNC" spirit:name="SYNC" spirit:prompt="Clocks" spirit:dataType="int" spirit:choiceRef="Choice_Sync_Async_FIFO_TYPE" spirit:configGroups="2Cols:FIFO Operation" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SYNC_RESET" spirit:name="SYNC_RESET" spirit:prompt="Reset Type" spirit:dataType="int" spirit:choiceRef="Choice_Sync_Async_RESET_TYPE" spirit:configGroups="2Cols:FIFO Operation" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RAM_OPT" spirit:name="RAM_OPT" spirit:prompt="Optimized for" spirit:dataType="int" spirit:choiceRef="Choice_High_Speed_low_power" spirit:configGroups="2Cols:FIFO Operation" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PIPE" spirit:name="PIPE" spirit:prompt="Memory Pipeline" spirit:dataType="int" spirit:choiceRef="Choice_PIPELINE_OPTIONS" spirit:configGroups="2Cols:FIFO Operation" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECC" spirit:name="ECC" spirit:prompt="ECC:" spirit:dataType="int" spirit:choiceRef="Choice_ECC_TYPE" spirit:configGroups="2Cols: ECC feature" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PREFETCH" spirit:name="PREFETCH" spirit:prompt="Prefetch (Single Clock Cycle Read)" spirit:dataType="boolean" spirit:configGroups="2Cols:FIFO Operation" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FWFT" spirit:name="FWFT" spirit:prompt="FWFT (First-Word Fall-Through)" spirit:dataType="boolean" spirit:configGroups="2Cols:FIFO Operation" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RE_POLARITY" spirit:name="RE_POLARITY" spirit:prompt="Read Enable" spirit:dataType="int" spirit:choiceRef="Choice_Enable_Polarity" spirit:configGroups="2Cols:Clock, Enable and Reset" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="WE_POLARITY" spirit:name="WE_POLARITY" spirit:prompt="Write Enable" spirit:dataType="int" spirit:choiceRef="Choice_Enable_Polarity" spirit:configGroups="2Cols:Clock, Enable and Reset" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RWIDTH" spirit:name="RWIDTH" spirit:prompt="Width" spirit:dataType="int" spirit:configGroups="2Cols:Read Port" spirit:resolve="user">18</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RDEPTH" spirit:name="RDEPTH" spirit:prompt="Depth" spirit:dataType="int" spirit:configGroups="2Cols:Read Port" spirit:resolve="user" spirit:minimum="1" spirit:maximum="1130496">1024</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="WWIDTH" spirit:name="WWIDTH" spirit:prompt="Width" spirit:dataType="int" spirit:configGroups="2Cols:Write Port" spirit:resolve="user" spirit:minimum="1" spirit:maximum="7524">18</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="WDEPTH" spirit:name="WDEPTH" spirit:prompt="Depth" spirit:dataType="int" spirit:configGroups="2Cols:Write Port" spirit:resolve="user" spirit:minimum="1" spirit:maximum="1130496">1024</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="READ_DVALID" spirit:name="READ_DVALID" spirit:prompt="Read Data Valid" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Handshake" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="WRITE_ACK" spirit:name="WRITE_ACK" spirit:prompt="Write Acknowledgement" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Handshake" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ESTOP" spirit:name="ESTOP" spirit:prompt="Disable Read when FIFO is Empty" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Handshake" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="UNDERFLOW_EN" spirit:name="UNDERFLOW_EN" spirit:prompt="Underflow" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Handshake" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FSTOP" spirit:name="FSTOP" spirit:prompt="Disable Write when FIFO is Full" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Handshake" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="OVERFLOW_EN" spirit:name="OVERFLOW_EN" spirit:prompt="Overflow" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Handshake" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AE_STATIC_EN" spirit:name="AE_STATIC_EN" spirit:prompt="Almost EMPTY" spirit:dataType="boolean" spirit:configGroups="2Cols:Status" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AEVAL" spirit:name="AEVAL" spirit:prompt="Almost EMPTY Threshold" spirit:dataType="int" spirit:configGroups="2Cols:Status" spirit:resolve="user" spirit:minimum="2" spirit:maximum="1130495">4</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AF_STATIC_EN" spirit:name="AF_STATIC_EN" spirit:prompt="Almost FULL" spirit:dataType="boolean" spirit:configGroups="2Cols:Status" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AFVAL" spirit:name="AFVAL" spirit:prompt="Almost FULL  Threshold" spirit:dataType="int" spirit:configGroups="2Cols:Status" spirit:resolve="user" spirit:minimum="2" spirit:maximum="1130495">1020</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="WRCNT_EN" spirit:name="WRCNT_EN" spirit:prompt="Write Count" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Handshake" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RDCNT_EN" spirit:name="RDCNT_EN" spirit:prompt="Read Count" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Handshake" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NUM_STAGES" spirit:name="NUM_STAGES" spirit:prompt="Synchronizer Stages" spirit:dataType="int" spirit:configGroups="2Cols: FIFO Operations" spirit:resolve="user" spirit:minimum="2" spirit:maximum="4">2</spirit:hwParameter>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="HDL_License" spirit:name="HDL_License" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:choiceStyle="radio" spirit:resolve="user">U</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('PREFETCH', And(Eq('PIPE', 'Only Read Address Pipelined'), Eq('RWIDTH', 'WWIDTH'), Eq('RDEPTH', 'WDEPTH')));\
+Enable('AEVAL', Eq('AE_STATIC_EN', '1'));\
+Enable('AFVAL', Eq('AF_STATIC_EN', '1'));\
+Enable('UNDERFLOW_EN', Eq('ESTOP', '1'));\
+Enable('OVERFLOW_EN', Eq('FSTOP', '1'));\
+Enable('RWIDTH', Or(Eq('PREFETCH', '1'), Eq('FWFT', '1')));\
+Enable('WWIDTH', Or(Eq('PREFETCH', '1'), Eq('FWFT', '1')));\
+Enable('ECC', Eq('FAMILY', 'RTG4'));\
+Validate('RAM1Kx18 does not support Asynchronous Reads', Or(Neq('CTRL_TYPE', 'Controller with RAM1Kx18 Memory'), Neq('PIPE', 'Asynchronous')));\
+Validate('(RDEPTH * RWIDTH) is not equal to (WDEPTH * WWIDTH)', Eq(Mul('RDEPTH', 'RWIDTH'), Mul('WDEPTH', 'WWIDTH')));\
+Validate('Almost Full Threshold is not in range', Or(Mul(InRange('2', Sum('AFVAL', '1'), 'WDEPTH'), Eq('AF_STATIC_EN', '1')), Eq('AF_STATIC_EN', '0')));\
+Validate('Almost Empty Threshold is not in range', Or(Mul(InRange('2', Sum('AEVAL', '1'), 'RDEPTH'), Eq('AE_STATIC_EN', '1')), Eq('AE_STATIC_EN', '0')));\
+Validate('Write clock edge should be same as Read clock edge', Eq('RCLK_EDGE', 'WCLK_EDGE'));\
+Validate('Prefetch is not supported for variable aspect ratio', Or(Eq('RWIDTH', 'WWIDTH'), Eq('RDEPTH', 'WDEPTH'), Neq('PREFETCH', '1')));\
+Validate('FWFT is not supported for variable aspect ratio', Or(Eq('RWIDTH', 'WWIDTH'), Eq('RDEPTH', 'WDEPTH'), Neq('FWFT', '1')));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>WINCONFIGURATOR</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_fs-ConfiguratorWindows}/Standalone/tgi/executables/windows/CoreFIFOConfigurator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>WINGENERATOR</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_fs-GeneratorWindows}/Standalone/tgi/executables/windows/CoreFIFOGenerator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>LINCONFIGURATOR</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_fs-ConfiguratorLinux}/Standalone/tgi/executables/linux/CoreFIFOConfigurator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>LINGENERATOR</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_fs-GeneratorLinux}/Standalone/tgi/executables/linux/CoreFIFOGenerator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_Ctrl_Only</spirit:name>
+      <spirit:enumeration spirit:text="Controller Only">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Controller with RAM1Kx18 Memory">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="Controller with RAM64x18 Memory">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_ECC_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="Disabled">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Pipelined">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Non-pipelined">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Enable_Polarity</spirit:name>
+      <spirit:enumeration spirit:text="Active High">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Active Low">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFire">26</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFireSoC">27</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_High_Speed_low_power</spirit:name>
+      <spirit:enumeration spirit:text="High Speed">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Low Power">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_PIPELINE_OPTIONS</spirit:name>
+      <spirit:enumeration spirit:text="Asynchronous">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Only Read Address Pipelined">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Read Address and Read Data Pipelined">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Sync_Async_FIFO_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="Dual Clock">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Single Clock">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Sync_Async_RESET_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="Async Reset">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Sync Reset">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/COREFIFO.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/top_define.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/clock_driver.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/fifo_driver.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/fifo_monitor.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/g4_dp_ext_mem.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/testbench.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime> -all</actel-cc:SimulationTime>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/MEM_WeqR.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/MEM_WgtR.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/MEM_WltR.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Sync">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corefifo_sync.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corefifo_sync_scntr.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Async">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corefifo_async.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-DocsALL">
+    <spirit:file>
+      <spirit:name>docs/CoreFIFO_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreFIFO_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSourceCommon-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corefifo_NstagesSync.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corefifo_grayToBinConv.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Base">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/COREFIFO.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREFIFO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Sync">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corefifo_sync.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREFIFO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corefifo_sync_scntr.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREFIFO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Async">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corefifo_async.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREFIFO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-CommonU">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/fifo_pkg.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREFIFO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corefifo_NstagesSync.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREFIFO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corefifo_grayToBinConv.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREFIFO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-ConfiguratorWindows">
+    <spirit:file>
+      <spirit:name>Standalone/tgi/executables/windows/CoreFIFOConfigurator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-GeneratorWindows">
+    <spirit:file>
+      <spirit:name>Standalone/tgi/executables/windows/CoreFIFOGenerator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/XHDL_std_logic.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/XHDL_misc.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/g4_dp_ext_mem.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/TB.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-ConfiguratorLinux">
+    <spirit:file>
+      <spirit:name>Standalone/tgi/executables/linux/CoreFIFOConfigurator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-GeneratorLinux">
+    <spirit:file>
+      <spirit:name>Standalone/tgi/executables/linux/CoreFIFOGenerator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-FWFT">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corefifo_fwft.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-FWFT">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corefifo_fwft.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREFIFO_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/runall.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/wave_vhdl.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/runall_vhdl.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreFIFO</actel-cc:displayName>
+    <actel-cc:description>CoreFIFO is a fully configurable Soft FIFO controller. It is designed to support SmartFusion2, IGLOO2, RTG4, PolarFire and PolarFireSoC device family. </actel-cc:description>
+    <actel-cc:packageTimestamp>20210709110030</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Memory &amp; Controllers">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFire">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFireSoC">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

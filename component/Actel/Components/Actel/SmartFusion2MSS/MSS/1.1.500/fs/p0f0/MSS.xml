@@ -1,0 +1,252 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS</spirit:name>
+  <spirit:version>1.1.500</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>HierarchicalDesign</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>HIERARCHICAL_DESIGN_FS</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="HIERARCHICAL_DESIGN_FS"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>MSS_MAP_PORTS</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="MSS_MAP_PORTS"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSynthesis</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VhdlSynthesis</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ANY_SIMULATION_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ANY_SIMULATION_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="Platform" spirit:name="Platform" spirit:prompt="Platform" spirit:dataType="string" actel-cc:choiceRef="Platform_Choice" spirit:resolve="generated">Win32</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>MSSValidator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssdrc.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Validator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>MSSValidator_UNIX</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssdrc</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Validator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Platform_Choice</spirit:name>
+      <spirit:enumeration spirit:text="Win32">Win32</spirit:enumeration>
+      <spirit:enumeration spirit:text="Linux">Linux</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="HIERARCHICAL_DESIGN_FS">
+    <spirit:file>
+      <spirit:name>MSS.cxf</spirit:name>
+      <spirit:userFileType>CXF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>MSS.sdb</spirit:name>
+      <spirit:userFileType>SDB</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="MSS_MAP_PORTS">
+    <spirit:file>
+      <spirit:name>mssMapPortsData</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mssPadPortsData</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mssPcbitsMapData</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mssIoMuxData</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>peripheral_init.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>SmartFusion2 Microcontroller Subsystem (MSS)</actel-cc:displayName>
+    <actel-cc:description>SmartFusion2 Microcontroller Subsystem Configurator</actel-cc:description>
+    <actel-cc:packageTimestamp>20161004102220</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="true"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.6.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Processors">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:dependentCores>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_CAN" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_CC" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_DDRB" spirit:version="1.0.200"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_EDAC" spirit:version="1.0.101"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_GPIO" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_I2C" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_MAC" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_MMUART" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_SPI" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_SWITCH" spirit:version="1.0.101"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_USB" spirit:version="1.0.101"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_FIC32" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_CFGM" spirit:version="1.1.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_CCC" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_RESET" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_INTR" spirit:version="1.0.200"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_CM3" spirit:version="1.0.200"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_RTC" spirit:version="1.0.201"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_DMA" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_WATCHDOG" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_SECURITY" spirit:version="1.0.100"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_MDDR" spirit:version="1.0.203"/>
+      </actel-cc:dependentCore>
+      <actel-cc:dependentCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS_ENVM" spirit:version="1.0.101"/>
+      </actel-cc:dependentCore>
+    </actel-cc:dependentCores>
+    <actel-cc:customModels>
+      <actel-cc:customModel>
+        <name>pa4config</name>
+        <actel-cc:dll>pa4config</actel-cc:dll>
+        <actel-cc:entryFunctions>
+          <actel-cc:entryFunction actel-cc:type="close" actel-cc:entry="Closedesign"/>
+          <actel-cc:entryFunction actel-cc:type="load" actel-cc:entry="PafourconfigMssModelLoad"/>
+          <actel-cc:entryFunction actel-cc:type="generate" actel-cc:entry="PafourconfigMssGenerate"/>
+        </actel-cc:entryFunctions>
+      </actel-cc:customModel>
+    </actel-cc:customModels>
+  </spirit:vendorExtensions>
+</spirit:component>

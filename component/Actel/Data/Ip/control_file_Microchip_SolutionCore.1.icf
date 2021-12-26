@@ -1,0 +1,53 @@
+
+;  ********************************************************************/
+;  Microsemi Corporation Proprietary and Confidential
+;   Copyright 2007-2014 Microsemi Corporation.  All rights reserved.
+;
+;  ANY USE OR REDISTRIBUTION IN PART OR IN WHOLE MUST BE HANDLED IN
+;  ACCORDANCE WITH THE ACTEL LICENSE AGREEMENT AND MUST BE APPROVED
+;  IN ADVANCE IN WRITING.
+;
+;  Filename: control_file_Microsemi_SolutionCore_1.0.icf
+;
+;  Description:  Microsemi DirectCore supported device and OS platform
+;    metadata control file. Supplements/overrides core specific device/OS
+;    support metadata specified at packaging/CPZ creation time and contained
+;    in the core's ECN'd IP-XACT SPIRIT description.
+;
+;  Revision Information:
+;  Date     Description
+;
+;
+;  SVN Revision Information:
+;  SVN $Revision: 28169 $
+;  SVN $Date: 2016-12-13 09:47:42 +0000 (Tue, 13 Dec 2016) $
+;
+;  Resolved SARs
+;  SAR      Date     Who   Description
+;
+;  *********************************************************************/
+
+Version   0.1
+Timestamp 202011241000
+
+;----------------------------------------------------------------------
+; "Global" device family support mappings
+;----------------------------------------------------------------------
+
+; Map IGLOO, IGLOOe, IGLOO+, ProASIC3L, SmartFusion, SmartFusion2 to ProASIC3 
+; and IGLOO2 to SmartFusion2 for cores that do not explicitly support these
+; device families because the cores were not repackaged since these 
+; device families were introduced.
+; These are "global" mappings in that they are evaluated for every
+; core VLNV.
+; For a specific core 'X' the mapping of device family 'Y' to 'Z' applies 
+; UNLESS:
+; (a) core 'X' is already packaged to declare explicit support for device 
+; family 'Y' or
+; (b) core 'X' is not packaged to declare explicit support for device family
+; 'Z' or
+; (c) core 'X' has other rules in the ICF that override the mappings and
+; declaration of device family support
+
+VLNV Microchip:SolutionCore
+    map PA5:PolarFireSoC  => PA5:PolarFire

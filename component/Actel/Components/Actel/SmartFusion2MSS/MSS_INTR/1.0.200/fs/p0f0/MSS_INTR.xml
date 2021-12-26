@@ -1,0 +1,106 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_INTR</spirit:name>
+  <spirit:version>1.0.200</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>MSS_INT_M2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MSS_INT_M2F" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="H2F_INTERRUPT_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MSS_INT_M2F</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>M3_NMI</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="M3_NMI" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="H2F_INTERRUPT_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>M3_NMI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>COMM_BLK_INT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="COMM_BLK_INT" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="H2F_INTERRUPT_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>COMM_BLK_INT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MSS_INT_F2M</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MSS_INT_F2M" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="F2H_INTERRUPT_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MSS_INT_F2M</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="F2H_INTERRUPT_USED" spirit:name="F2H_INTERRUPT_USED" spirit:prompt="Use Fabric to MSS Interrupt" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="H2F_INTERRUPT_USED" spirit:name="H2F_INTERRUPT_USED" spirit:prompt="Use MSS to Fabric Interrupt" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_INTERRUPT_EN" spirit:name="SW_INTERRUPT_EN" spirit:prompt="Enable Communication Matrix Interrupts [6:0]" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="1Cols:" spirit:resolve="user">0x7F</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CC_INTERRUPT_EN" spirit:name="CC_INTERRUPT_EN" spirit:prompt="Enable Cache Controller Interrupts [2:0]" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="1Cols:" spirit:resolve="user">0x7</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDRB_INTERRUPT_EN" spirit:name="DDRB_INTERRUPT_EN" spirit:prompt="Enable DDR Bridge Interrupts [9:0]" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="1Cols:" spirit:resolve="user">0x3FF</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_INTR</actel-cc:displayName>
+    <actel-cc:description>MSS_INTR</actel-cc:description>
+    <actel-cc:packageTimestamp>20160930165918</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+    <spirit:vendor>Actel</spirit:vendor>
+    <spirit:library>DirectCore</spirit:library>
+    <spirit:name>CoreInterrupt</spirit:name>
+    <spirit:version>1.1.101</spirit:version>
+    <spirit:busInterfaces>
+        <!--
+		<spirit:busInterface>
+			<spirit:name>APBClk</spirit:name>
+			<spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+			<spirit:system>
+				<spirit:group>APB_CLK</spirit:group>
+			</spirit:system>
+			<spirit:connection>required</spirit:connection>
+			<spirit:signalMap>
+				<spirit:signalName>
+					<spirit:componentSignalName>PCLK</spirit:componentSignalName>
+					<spirit:busSignalName>PCLK</spirit:busSignalName>
+				</spirit:signalName>
+			</spirit:signalMap>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>APBReset</spirit:name>
+			<spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+			<spirit:system>
+				<spirit:group>APB_RESET</spirit:group>
+			</spirit:system>
+			<spirit:connection>required</spirit:connection>
+			<spirit:signalMap>
+				<spirit:signalName>
+					<spirit:componentSignalName>PRESETn</spirit:componentSignalName>
+					<spirit:busSignalName>PRESETn</spirit:busSignalName>
+				</spirit:signalName>
+			</spirit:signalMap>
+		</spirit:busInterface>
+-->
+        <spirit:busInterface>
+            <spirit:name>APBslave</spirit:name>
+            <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+            <spirit:slave>
+                <spirit:memoryMapRef spirit:memoryMapRef="RegisterMap"/>
+            </spirit:slave>
+            <spirit:connection>required</spirit:connection>
+            <spirit:signalMap>
+                <spirit:signalName>
+                    <spirit:componentSignalName>PSEL</spirit:componentSignalName>
+                    <spirit:busSignalName>PSELx</spirit:busSignalName>
+                </spirit:signalName>
+                <spirit:signalName>
+                    <spirit:componentSignalName>PENABLE</spirit:componentSignalName>
+                    <spirit:busSignalName>PENABLE</spirit:busSignalName>
+                </spirit:signalName>
+                <spirit:signalName>
+                    <spirit:componentSignalName>PADDR</spirit:componentSignalName>
+                    <spirit:busSignalName>PADDR</spirit:busSignalName>
+                </spirit:signalName>
+                <spirit:signalName>
+                    <spirit:componentSignalName>PWRITE</spirit:componentSignalName>
+                    <spirit:busSignalName>PWRITE</spirit:busSignalName>
+                </spirit:signalName>
+                <spirit:signalName>
+                    <spirit:componentSignalName>PWDATA</spirit:componentSignalName>
+                    <spirit:busSignalName>PWDATA</spirit:busSignalName>
+                </spirit:signalName>
+                <spirit:signalName>
+                    <spirit:componentSignalName>PRDATA</spirit:componentSignalName>
+                    <spirit:busSignalName>PRDATA</spirit:busSignalName>
+                </spirit:signalName>
+            </spirit:signalMap>
+            <spirit:vendorExtensions>
+                <actel-cc:interfaceRendering>busConnection</actel-cc:interfaceRendering>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:memoryMaps>
+        <spirit:memoryMap>
+            <spirit:name>RegisterMap</spirit:name>
+            <spirit:addressBlock>
+                <spirit:baseAddress>0x0</spirit:baseAddress>
+                <spirit:range spirit:format="long">0x1000</spirit:range>
+                <spirit:width spirit:format="long" spirit:id="width">32</spirit:width>
+                <spirit:register>
+                    <spirit:name>FIQSoftInt</spirit:name>
+                    <spirit:addressOffset>0x00</spirit:addressOffset>
+                    <spirit:size>8</spirit:size>
+                    <spirit:access>read-write</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>FIQSoftInt</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>8</spirit:bitWidth>
+                        <spirit:access>read-write</spirit:access>
+                        <spirit:description>Software driven FIQ interrupts</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>FIQSoftIntClear</spirit:name>
+                    <spirit:addressOffset>0x04</spirit:addressOffset>
+                    <spirit:size>8</spirit:size>
+                    <spirit:access>write-only</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>FIQSoftIntClear</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>8</spirit:bitWidth>
+                        <spirit:access>write-only</spirit:access>
+                        <spirit:description>Used to clear bits in FIQSoftInt register</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>FIQEnable</spirit:name>
+                    <spirit:addressOffset>0x08</spirit:addressOffset>
+                    <spirit:size>8</spirit:size>
+                    <spirit:access>read-write</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>FIQEnable</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>8</spirit:bitWidth>
+                        <spirit:access>read-write</spirit:access>
+                        <spirit:description>Enables for FIQ interrupt sources</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>FIQEnableClear</spirit:name>
+                    <spirit:addressOffset>0x0C</spirit:addressOffset>
+                    <spirit:size>8</spirit:size>
+                    <spirit:access>write-only</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>FIQEnableClear</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>8</spirit:bitWidth>
+                        <spirit:access>write-only</spirit:access>
+                        <spirit:description>Used to clear bits in FIQEnable register</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>FIQRawStatus</spirit:name>
+                    <spirit:addressOffset>0x10</spirit:addressOffset>
+                    <spirit:size>8</spirit:size>
+                    <spirit:access>read-only</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>FIQRawStatus</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>8</spirit:bitWidth>
+                        <spirit:access>read-only</spirit:access>
+                        <spirit:description>Status of FIQ sources before masking of FIQEnable register</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>FIQStatus</spirit:name>
+                    <spirit:addressOffset>0x14</spirit:addressOffset>
+                    <spirit:size>8</spirit:size>
+                    <spirit:access>read-only</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>FIQStatus</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>8</spirit:bitWidth>
+                        <spirit:access>read-only</spirit:access>
+                        <spirit:description>Status of FIQ sources after masking of FIQEnable register</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>IRQSoftInt</spirit:name>
+                    <spirit:addressOffset>0x18</spirit:addressOffset>
+                    <spirit:size>32</spirit:size>
+                    <spirit:access>read-write</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>IRQSoftInt</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>32</spirit:bitWidth>
+                        <spirit:access>read-write</spirit:access>
+                        <spirit:description>Software driven IRQ interrupts</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>IRQSoftIntClear</spirit:name>
+                    <spirit:addressOffset>0x1C</spirit:addressOffset>
+                    <spirit:size>32</spirit:size>
+                    <spirit:access>write-only</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>IRQSoftIntClear</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>32</spirit:bitWidth>
+                        <spirit:access>write-only</spirit:access>
+                        <spirit:description>Used to clear bits in IRQSoftInt register</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>IRQEnable</spirit:name>
+                    <spirit:addressOffset>0x20</spirit:addressOffset>
+                    <spirit:size>32</spirit:size>
+                    <spirit:access>read-write</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>IRQEnable</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>32</spirit:bitWidth>
+                        <spirit:access>read-write</spirit:access>
+                        <spirit:description>Enables for IRQ interrupt sources</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>IRQEnableClear</spirit:name>
+                    <spirit:addressOffset>0x24</spirit:addressOffset>
+                    <spirit:size>32</spirit:size>
+                    <spirit:access>write-only</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>IRQEnableClear</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>32</spirit:bitWidth>
+                        <spirit:access>write-only</spirit:access>
+                        <spirit:description>Used to clear bits in IRQEnable register</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>IRQRawStatus</spirit:name>
+                    <spirit:addressOffset>0x28</spirit:addressOffset>
+                    <spirit:size>32</spirit:size>
+                    <spirit:access>read-only</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>IRQRawStatus</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>32</spirit:bitWidth>
+                        <spirit:access>read-only</spirit:access>
+                        <spirit:description>Status of IRQ sources before masking of IRQEnable register</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+                <spirit:register>
+                    <spirit:name>IRQStatus</spirit:name>
+                    <spirit:addressOffset>0x2C</spirit:addressOffset>
+                    <spirit:size>32</spirit:size>
+                    <spirit:access>read-only</spirit:access>
+                    <spirit:resetValue>0x00</spirit:resetValue>
+                    <spirit:field>
+                        <spirit:name>IRQStatus</spirit:name>
+                        <spirit:bitOffset>0</spirit:bitOffset>
+                        <spirit:bitWidth>32</spirit:bitWidth>
+                        <spirit:access>read-only</spirit:access>
+                        <spirit:description>Status of IRQ sources after masking of IRQEnable register</spirit:description>
+                    </spirit:field>
+                </spirit:register>
+            </spirit:addressBlock>
+            <spirit:bitsInLau>32</spirit:bitsInLau>
+        </spirit:memoryMap>
+    </spirit:memoryMaps>
+    <spirit:hwModel>
+        <spirit:views>
+            <spirit:view>
+                <spirit:name>VerilogSource</spirit:name>
+                <spirit:envIdentifier>Modelsim</spirit:envIdentifier>
+                <spirit:language>verilog</spirit:language>
+                <spirit:fileSetRef>fs-VerilogSource-U</spirit:fileSetRef>
+                <spirit:fileSetRef>fs-VerilogSource-O</spirit:fileSetRef>
+                <spirit:vendorExtensions>
+                    <actel-cc:fsInclusionRules>
+                        <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-U">
+                            <actel-cc:logicEquation>
+                                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"/>
+                            </actel-cc:logicEquation>
+                        </actel-cc:fsInclusionRule>
+                        <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-O">
+                            <actel-cc:logicEquation>
+                                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"/>
+                            </actel-cc:logicEquation>
+                        </actel-cc:fsInclusionRule>
+                    </actel-cc:fsInclusionRules>
+                </spirit:vendorExtensions>
+            </spirit:view>
+            <spirit:view>
+                <spirit:name>VHDLSource</spirit:name>
+                <spirit:envIdentifier>Modelsim</spirit:envIdentifier>
+                <spirit:language>vhdl</spirit:language>
+                <spirit:fileSetRef>fs-VHDLSource-U</spirit:fileSetRef>
+                <spirit:fileSetRef>fs-VHDLSource-O</spirit:fileSetRef>
+                <spirit:vendorExtensions>
+                    <actel-cc:fsInclusionRules>
+                        <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-U">
+                            <actel-cc:logicEquation>
+                                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"/>
+                            </actel-cc:logicEquation>
+                        </actel-cc:fsInclusionRule>
+                        <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-O">
+                            <actel-cc:logicEquation>
+                                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"/>
+                            </actel-cc:logicEquation>
+                        </actel-cc:fsInclusionRule>
+                    </actel-cc:fsInclusionRules>
+                </spirit:vendorExtensions>
+            </spirit:view>
+            <spirit:view>
+                <spirit:name>VerilogSimulation</spirit:name>
+                <spirit:envIdentifier>ModelSim</spirit:envIdentifier>
+                <spirit:fileSetRef>ANY_SIMULATION_FILESET</spirit:fileSetRef>
+            </spirit:view>
+            <spirit:view>
+                <spirit:name>VHDLSimulation</spirit:name>
+                <spirit:envIdentifier>ModelSim</spirit:envIdentifier>
+                <spirit:fileSetRef>ANY_SIMULATION_FILESET</spirit:fileSetRef>
+            </spirit:view>
+        </spirit:views>
+        <spirit:signals>
+            <spirit:signal>
+                <spirit:name>PCLK</spirit:name>
+                <spirit:direction>in</spirit:direction>
+                <spirit:vendorExtensions>
+                   <actel-cc:requiredConnection/>
+                </spirit:vendorExtensions>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>PRESETn</spirit:name>
+                <spirit:direction>in</spirit:direction>
+                <spirit:vendorExtensions>
+                   <actel-cc:requiredConnection/>
+                </spirit:vendorExtensions>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>PSEL</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>PADDR</spirit:name>
+                <spirit:direction>in</spirit:direction>
+                <spirit:left>5</spirit:left>
+                <spirit:right>2</spirit:right>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>PWRITE</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>PENABLE</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>PWDATA</spirit:name>
+                <spirit:direction>in</spirit:direction>
+                <spirit:left>31</spirit:left>
+                <spirit:right>0</spirit:right>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>PRDATA</spirit:name>
+                <spirit:direction>out</spirit:direction>
+                <spirit:left>31</spirit:left>
+                <spirit:right>0</spirit:right>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>fiqSource0</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>fiqSource1</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>fiqSource2</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>fiqSource3</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>fiqSource4</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>fiqSource5</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>fiqSource6</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>fiqSource7</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource0</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource1</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource2</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource3</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource4</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource5</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource6</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource7</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource8</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource9</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource10</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource11</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource12</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource13</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource14</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource15</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource16</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource17</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource18</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource19</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource20</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource21</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource22</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource23</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource24</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource25</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource26</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource27</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource28</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource29</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource30</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>irqSource31</spirit:name>
+                <spirit:direction>in</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>FIQ</spirit:name>
+                <spirit:direction>out</spirit:direction>
+            </spirit:signal>
+            <spirit:signal>
+                <spirit:name>IRQ</spirit:name>
+                <spirit:direction>out</spirit:direction>
+            </spirit:signal>
+        </spirit:signals>
+        <spirit:hwParameters>
+            <spirit:hwParameter spirit:choiceRef="numIrqSrcChoice" spirit:choiceStyle="radio" spirit:configGroups="requiredConfig" spirit:dataType="int" spirit:format="choice" spirit:id="NUMIRQSRC" spirit:name="NUMIRQSRC" spirit:prompt="Number of IRQ sources:" spirit:resolve="user">8</spirit:hwParameter>
+            <spirit:hwParameter spirit:choiceRef="numFiqSrcChoice" spirit:choiceStyle="radio" spirit:configGroups="requiredConfig" spirit:dataType="int" spirit:format="choice" spirit:id="NUMFIQSRC" spirit:name="NUMFIQSRC" spirit:prompt="Number of FIQ sources:" spirit:resolve="user">0</spirit:hwParameter>
+            <spirit:hwParameter spirit:choiceRef="irqPolarityChoice" spirit:choiceStyle="radio" spirit:configGroups="requiredConfig" spirit:dataType="int" spirit:format="choice" spirit:id="IRQPOLARITY" spirit:name="IRQPOLARITY" spirit:prompt="IRQ output polarity:" spirit:resolve="user">0</spirit:hwParameter>
+            <spirit:hwParameter spirit:choiceRef="fiqPolarityChoice" spirit:choiceStyle="radio" spirit:configGroups="requiredConfig" spirit:dataType="int" spirit:format="choice" spirit:id="FIQPOLARITY" spirit:name="FIQPOLARITY" spirit:prompt="FIQ output polarity:" spirit:resolve="user">0</spirit:hwParameter>
+        </spirit:hwParameters>
+        <spirit:vendorExtensions>
+            <actel-cc:variantParameters>
+                <actel-cc:variantParameter actel-cc:choiceRef="HDL_licenseChoice" spirit:id="HDL_license" spirit:name="license" spirit:prompt="License:" spirit:resolve="user" spirit:dataType="string">U</actel-cc:variantParameter>
+            </actel-cc:variantParameters>
+         <actel-cc:script>
+            Validate('Please configure at least one IRQ or one FIQ source',Or(Neq('NUMIRQSRC','0'),Neq('NUMFIQSRC','0'));
+         </actel-cc:script>           
+        </spirit:vendorExtensions>
+    </spirit:hwModel>
+    <spirit:choices>
+        <spirit:choice>
+            <spirit:name>numIrqSrcChoice</spirit:name>
+            <spirit:enumeration spirit:text="0" spirit:help="0 IRQ interrupt sources">0</spirit:enumeration>
+            <spirit:enumeration spirit:text="1" spirit:help="1 IRQ interrupt sources">1</spirit:enumeration>
+            <spirit:enumeration spirit:text="2" spirit:help="2 IRQ interrupt sources">2</spirit:enumeration>
+            <spirit:enumeration spirit:text="3" spirit:help="3 IRQ interrupt sources">3</spirit:enumeration>
+            <spirit:enumeration spirit:text="4" spirit:help="4 IRQ interrupt sources">4</spirit:enumeration>
+            <spirit:enumeration spirit:text="5" spirit:help="5 IRQ interrupt sources">5</spirit:enumeration>
+            <spirit:enumeration spirit:text="6" spirit:help="6 IRQ interrupt sources">6</spirit:enumeration>
+            <spirit:enumeration spirit:text="7" spirit:help="7 IRQ interrupt sources">7</spirit:enumeration>
+            <spirit:enumeration spirit:text="8" spirit:help="8 IRQ interrupt sources">8</spirit:enumeration>
+            <spirit:enumeration spirit:text="9" spirit:help="9 IRQ interrupt sources">9</spirit:enumeration>
+            <spirit:enumeration spirit:text="10" spirit:help="10 IRQ interrupt sources">10</spirit:enumeration>
+            <spirit:enumeration spirit:text="11" spirit:help="11 IRQ interrupt sources">11</spirit:enumeration>
+            <spirit:enumeration spirit:text="12" spirit:help="12 IRQ interrupt sources">12</spirit:enumeration>
+            <spirit:enumeration spirit:text="13" spirit:help="13 IRQ interrupt sources">13</spirit:enumeration>
+            <spirit:enumeration spirit:text="14" spirit:help="14 IRQ interrupt sources">14</spirit:enumeration>
+            <spirit:enumeration spirit:text="15" spirit:help="15 IRQ interrupt sources">15</spirit:enumeration>
+            <spirit:enumeration spirit:text="16" spirit:help="16 IRQ interrupt sources">16</spirit:enumeration>
+            <spirit:enumeration spirit:text="17" spirit:help="17 IRQ interrupt sources">17</spirit:enumeration>
+            <spirit:enumeration spirit:text="18" spirit:help="18 IRQ interrupt sources">18</spirit:enumeration>
+            <spirit:enumeration spirit:text="19" spirit:help="19 IRQ interrupt sources">19</spirit:enumeration>
+            <spirit:enumeration spirit:text="20" spirit:help="20 IRQ interrupt sources">20</spirit:enumeration>
+            <spirit:enumeration spirit:text="21" spirit:help="21 IRQ interrupt sources">21</spirit:enumeration>
+            <spirit:enumeration spirit:text="22" spirit:help="22 IRQ interrupt sources">22</spirit:enumeration>
+            <spirit:enumeration spirit:text="23" spirit:help="23 IRQ interrupt sources">23</spirit:enumeration>
+            <spirit:enumeration spirit:text="24" spirit:help="24 IRQ interrupt sources">24</spirit:enumeration>
+            <spirit:enumeration spirit:text="25" spirit:help="25 IRQ interrupt sources">25</spirit:enumeration>
+            <spirit:enumeration spirit:text="26" spirit:help="26 IRQ interrupt sources">26</spirit:enumeration>
+            <spirit:enumeration spirit:text="27" spirit:help="27 IRQ interrupt sources">27</spirit:enumeration>
+            <spirit:enumeration spirit:text="28" spirit:help="28 IRQ interrupt sources">28</spirit:enumeration>
+            <spirit:enumeration spirit:text="29" spirit:help="29 IRQ interrupt sources">29</spirit:enumeration>
+            <spirit:enumeration spirit:text="30" spirit:help="30 IRQ interrupt sources">30</spirit:enumeration>
+            <spirit:enumeration spirit:text="31" spirit:help="31 IRQ interrupt sources">31</spirit:enumeration>
+            <spirit:enumeration spirit:text="32" spirit:help="32 IRQ interrupt sources">32</spirit:enumeration>
+        </spirit:choice>
+        <spirit:choice>
+            <spirit:name>numFiqSrcChoice</spirit:name>
+            <spirit:enumeration spirit:text="0" spirit:help="0 FIQ interrupt sources">0</spirit:enumeration>
+            <spirit:enumeration spirit:text="1" spirit:help="1 FIQ interrupt sources">1</spirit:enumeration>
+            <spirit:enumeration spirit:text="2" spirit:help="2 FIQ interrupt sources">2</spirit:enumeration>
+            <spirit:enumeration spirit:text="3" spirit:help="3 FIQ interrupt sources">3</spirit:enumeration>
+            <spirit:enumeration spirit:text="4" spirit:help="4 FIQ interrupt sources">4</spirit:enumeration>
+            <spirit:enumeration spirit:text="5" spirit:help="5 FIQ interrupt sources">5</spirit:enumeration>
+            <spirit:enumeration spirit:text="6" spirit:help="6 FIQ interrupt sources">6</spirit:enumeration>
+            <spirit:enumeration spirit:text="7" spirit:help="7 FIQ interrupt sources">7</spirit:enumeration>
+            <spirit:enumeration spirit:text="8" spirit:help="8 FIQ interrupt sources">8</spirit:enumeration>
+        </spirit:choice>
+        <spirit:choice>
+            <spirit:name>irqPolarityChoice</spirit:name>
+            <spirit:enumeration spirit:text="Low" spirit:help="IRQ output active low">0</spirit:enumeration>
+            <spirit:enumeration spirit:text="High" spirit:help="IRQ output active high">1</spirit:enumeration>
+        </spirit:choice>
+        <spirit:choice>
+            <spirit:name>fiqPolarityChoice</spirit:name>
+            <spirit:enumeration spirit:text="Low" spirit:help="FIQ output active low">0</spirit:enumeration>
+            <spirit:enumeration spirit:text="High" spirit:help="FIQ output active high">1</spirit:enumeration>
+        </spirit:choice>
+        <spirit:choice>
+            <spirit:name>HDL_licenseChoice</spirit:name>
+            <spirit:enumeration spirit:text="Obfuscated">O</spirit:enumeration>
+            <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+        </spirit:choice>
+    </spirit:choices>
+    <spirit:fileSets>
+        <spirit:fileSet spirit:fileSetId="fs-VerilogSource-U">
+            <spirit:group>RTL</spirit:group>
+            <spirit:file>
+                <spirit:name>rtl/verilog/u/CoreInterrupt.v</spirit:name>
+                <spirit:fileType>verilogSource</spirit:fileType>
+            </spirit:file>
+        </spirit:fileSet>
+        <spirit:fileSet spirit:fileSetId="fs-VerilogSource-O">
+            <spirit:group>Obfuscated</spirit:group>
+            <spirit:file>
+                <spirit:name>rtl/verilog/o/CoreInterrupt.v</spirit:name>
+                <spirit:fileType>verilogSource</spirit:fileType>
+            </spirit:file>
+        </spirit:fileSet>
+        <spirit:fileSet spirit:fileSetId="fs-VHDLSource-U">
+            <spirit:group>RTL</spirit:group>
+            <spirit:file>
+                <spirit:name>rtl/vhdl/u/CoreInterrupt.vhd</spirit:name>
+                <spirit:fileType>vhdlSource</spirit:fileType>
+            </spirit:file>
+        </spirit:fileSet>
+        <spirit:fileSet spirit:fileSetId="fs-VHDLSource-O">
+            <spirit:group>Obfuscated</spirit:group>
+            <spirit:file>
+                <spirit:name>rtl/vhdl/o/CoreInterrupt.vhd</spirit:name>
+                <spirit:fileType>vhdlSource</spirit:fileType>
+            </spirit:file>
+        </spirit:fileSet>
+        <spirit:fileSet spirit:fileSetId="ANY_SIMULATION_FILESET">
+            <spirit:group>Obfuscated</spirit:group>
+            <spirit:file>
+                <spirit:name>bfm/CoreInterrupt_scriptlet.bfm</spirit:name>
+                <spirit:fileType>unknown</spirit:fileType>
+            </spirit:file>
+        </spirit:fileSet>
+    </spirit:fileSets>
+    <spirit:vendorExtensions>
+        <actel-cc:displayName>CoreInterrupt</actel-cc:displayName>
+        <actel-cc:resources>
+            <actel-cc:resource doc_title="CoreInterrupt Datasheet" url="http://www.actel.com/documents/CoreInterrupt_DS.pdf"/>
+            <actel-cc:resource doc_title="CoreInterrupt web page" url="http://www.actel.com/products/ip/search/detail.aspx?id=659"/>
+        </actel-cc:resources>
+        <actel-cc:functionalType/>
+        <actel-cc:variation/>
+        <actel-cc:categories categoryName="Core Provider">
+            <actel-cc:category name="Actel"/>
+        </actel-cc:categories>
+        <actel-cc:type typeName="DirectCore"/>
+        <actel-cc:categories categoryName="Functional Category">
+            <actel-cc:category name="Peripherals"/>
+        </actel-cc:categories>
+        <actel-cc:categories categoryName="Market Segment">
+            <actel-cc:category name="Aerospace"/>
+            <actel-cc:category name="Automotive"/>
+            <actel-cc:category name="Military"/>
+            <actel-cc:category name="Industrial"/>
+            <actel-cc:category name="Medical"/>
+            <actel-cc:category name="Consumer"/>
+            <actel-cc:category name="Multimedia"/>
+            <actel-cc:category name="Gaming"/>
+        </actel-cc:categories>
+        <actel-cc:categories categoryName="Product Family" style="checkbox">
+            <actel-cc:category name="Fusion"/>
+            <actel-cc:category name="ProASIC3"/>
+            <actel-cc:category name="ProASIC3E"/>
+            <actel-cc:category name="ProASIC3/E"/>
+            <actel-cc:category name="ProASICPLUS"/>
+            <actel-cc:category name="ProASIC"/>
+            <actel-cc:category name="Axcelerator"/>
+            <actel-cc:category name="SX-A/SX"/>
+            <actel-cc:category name="RTAX-S"/>
+            <actel-cc:category name="RTSX-S"/>
+            <actel-cc:category name="eX"/>
+            <actel-cc:category name="IGLOO"/>
+            <actel-cc:category name="IGLOOe"/>
+            <actel-cc:category name="IGLOO/e"/>
+        </actel-cc:categories>
+        <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+            <actel-cc:category name="Automotive"/>
+            <actel-cc:category name="Commercial"/>
+            <actel-cc:category name="Industrial"/>
+            <actel-cc:category name="Military"/>
+        </actel-cc:categories>
+        <actel-cc:categories categoryName="Interface Type">
+            <actel-cc:category name="AmbaBus"/>
+        </actel-cc:categories>
+        <actel-cc:description>
+The CoreInterrupt module is an APB slave that provides configurable interrupt processing.
+
+CoreInterrupt supports 0 to 32 IRQ interrupt sources and 0 to 8 FIQ sources.
+The IRQ and FIQ interrupt source inputs are level sensitive, active high ports.
+These interrupt sources are processed to produce two output interrupt lines, IRQ and FIQ.
+All interrupt processing is combinational; that is, the paths from the IRQ/FIQ source
+inputs to the IRQ/FIQ output contain no flip-flops.
+
+Software driven IRQ/FIQ interrupts are supported and each IRQ/FIQ source can be
+individually enabled or disabled via control registers.
+
+        </actel-cc:description>
+        <actel-cc:packageTimestamp>20070822180000</actel-cc:packageTimestamp>
+    </spirit:vendorExtensions>
+</spirit:component>

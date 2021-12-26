@@ -1,0 +1,1507 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>CORESYSSERVICES</spirit:name>
+  <spirit:version>3.2.102</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>AHBL_MASTER</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>HADDR</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HTRANS</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWRITE</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSIZE</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HBURST</spirit:componentSignalName><spirit:busSignalName>HBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWDATA</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRDATA</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADY</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRESP</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs-ALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs-ALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSourceBase</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSourceBase"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>TB_VERIF_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>TB_USER_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="TB_VERIF_VERILOG_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="Verif"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="TB_USER_VERILOG_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HTRANS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HBURST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSIZE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESP</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_BUSY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_ENABLE_REQ</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_CMDBYTE_REQ</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_STATUS_VALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_STATUS_RESP</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_OPTIONS_MODE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>5</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="FFSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="PROGNVMDISERVICE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="PROGIAPSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="ZERSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TAMPERCONTROLSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_DATA_WVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_DATA_W</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_DATA_WRDY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_DATA_RVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_DATA_R</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>COMM_BLK_INT</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_CRYPTO_KEY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>255</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOAES128SERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOAES256SERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOHMACSERVICE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_CRYPTO_IV</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>127</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOAES128SERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOAES256SERVICE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_CRYPTO_MODE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOAES128SERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOAES256SERVICE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_CRYPTO_NBLOCKS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOAES128SERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOAES256SERVICE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_CRYPTO_LENGTH</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOSHA256SERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="CRYPTOHMACSERVICE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_NRBG_LENGTH</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NRBGSERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_NRBG_HANDLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NRBGSERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_NRBG_ADDLENGTH</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NRBGSERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_NRBG_PRREQ</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NRBGSERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_DPA_KEY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>255</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="KEYTREESERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_DPA_OPTYPE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="KEYTREESERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="CHRESPSERVICE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_DPA_PATH</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>127</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="KEYTREESERVICE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="CHRESPSERVICE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL005S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010S"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL010TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL025TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL050TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_PUF_SUBCMD</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="PUFSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_PUF_INKEYNUM</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="PUFSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_PUF_KEYSIZE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="PUFSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_CMD_ERROR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_PUFUSERKEYADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="PUFSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_USEREXTRINSICKEYADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="PUFSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2S150TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL090TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL060TS"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150T"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="die" actel-cc:termValue="M2GL150TS"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_SPIADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PROGIAPSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_TAMPER_MSGVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="TAMPERDETECTSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SERV_TAMPER_MSG</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="TAMPERDETECTSERVICE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="SNSERVICE" spirit:name="SNSERVICE" spirit:prompt="Serial Number Service:" spirit:dataType="boolean" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSNPTR" spirit:name="DSNPTR" spirit:prompt="Pointer to receive 128-bit Serial number:" spirit:dataType="int" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="UCSERVICE" spirit:name="UCSERVICE" spirit:prompt="User Code Service:" spirit:dataType="boolean" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="USERCODEPTR" spirit:name="USERCODEPTR" spirit:prompt="Pointer to receive 32-bit User Code:" spirit:dataType="int" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DCSERVICE" spirit:name="DCSERVICE" spirit:prompt="Device Certificate Service:" spirit:dataType="boolean" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DEVICECERTPTR" spirit:name="DEVICECERTPTR" spirit:prompt="Pointer to receive 768-byte Device Certificate:" spirit:dataType="int" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SECDCSERVICE" spirit:name="SECDCSERVICE" spirit:prompt="Secondary Device Certificate:" spirit:dataType="boolean" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SECONDECCCERTPTR" spirit:name="SECONDECCCERTPTR" spirit:prompt="Pointer to receive 640-byte Secondary Device Certificate:" spirit:dataType="int" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="UDVSERVICE" spirit:name="UDVSERVICE" spirit:prompt="User Design Version Service:" spirit:dataType="boolean" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DESIGNVERPTR" spirit:name="DESIGNVERPTR" spirit:prompt="Pointer to receive 16-bit Design Version:" spirit:dataType="int" spirit:configGroups="2Cols:Device and Design Information Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTOAES128SERVICE" spirit:name="CRYPTOAES128SERVICE" spirit:prompt="Cryptographic Service for AES128:" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTOAES128DATAPTR" spirit:name="CRYPTOAES128DATAPTR" spirit:prompt="Pointer to AES128 descriptor data:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTOAES256SERVICE" spirit:name="CRYPTOAES256SERVICE" spirit:prompt="Cryptographic Service for AES256:" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTOAES256DATAPTR" spirit:name="CRYPTOAES256DATAPTR" spirit:prompt="Pointer to AES256 descriptor data:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTOSRCADPTR" spirit:name="CRYPTOSRCADPTR" spirit:prompt="Pointer to input data to encrypt/decrypt:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTODSTADPTR" spirit:name="CRYPTODSTADPTR" spirit:prompt="Pointer to receive output decrypted/encrypted data:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTOSHA256SERVICE" spirit:name="CRYPTOSHA256SERVICE" spirit:prompt="Cryptographic Service for SHA256:" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTOSHA256DATAPTR" spirit:name="CRYPTOSHA256DATAPTR" spirit:prompt="Pointer to SHA256 descriptor data:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTOHMACSERVICE" spirit:name="CRYPTOHMACSERVICE" spirit:prompt="Cryptographic Service for HMAC:" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTOHMACDATAPTR" spirit:name="CRYPTOHMACDATAPTR" spirit:prompt="Pointer to HMAC descriptor data:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTORSLTPTR" spirit:name="CRYPTORSLTPTR" spirit:prompt="Pointer to receive 256-bit HASH result:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CRYPTODATAINPPTR" spirit:name="CRYPTODATAINPPTR" spirit:prompt="Pointer to data to be hashed:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPOINTMULTSERVICE" spirit:name="ECCPOINTMULTSERVICE" spirit:prompt="Point Multiplication Service:" spirit:dataType="boolean" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPMULTDESC" spirit:name="ECCPMULTDESC" spirit:prompt="Pointer to ECCPMUL descriptor structure:" spirit:dataType="int" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPMULTPPTR" spirit:name="ECCPMULTPPTR" spirit:prompt="Pointer to (X,Y) coordinates of P:" spirit:dataType="int" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPMULTDPTR" spirit:name="ECCPMULTDPTR" spirit:prompt="Pointer to 384-bit scalar, d:" spirit:dataType="int" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPMULTQPTR" spirit:name="ECCPMULTQPTR" spirit:prompt="Pointer to (X,Y) coordinates of result Q:" spirit:dataType="int" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPOINTADDSERVICE" spirit:name="ECCPOINTADDSERVICE" spirit:prompt="Point Addition Service:" spirit:dataType="boolean" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPADDDESC" spirit:name="ECCPADDDESC" spirit:prompt="Pointer to ECCPADD descriptor structure:" spirit:dataType="int" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPADDPPTR" spirit:name="ECCPADDPPTR" spirit:prompt="Pointer to (X,Y) coordinates of P:" spirit:dataType="int" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPADDQPTR" spirit:name="ECCPADDQPTR" spirit:prompt="Pointer to coordinates of Q:" spirit:dataType="int" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECCPADDRPTR" spirit:name="ECCPADDRPTR" spirit:prompt="Pointer to (X,Y) coordinates of result R:" spirit:dataType="int" spirit:configGroups="2Cols: Elliptic Curve Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="KEYTREESERVICE" spirit:name="KEYTREESERVICE" spirit:prompt="DPA Resistant Key Tree Service:" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="KEYTREEDATAPTR" spirit:name="KEYTREEDATAPTR" spirit:prompt="Pointer to Key Tree descriptor data:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CHRESPSERVICE" spirit:name="CHRESPSERVICE" spirit:prompt="DPA Resistant Pseudo PUF Challenge Response Service:" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CHRESPPTR" spirit:name="CHRESPPTR" spirit:prompt="Pointer to Pseudo PUF Challenge Response descriptor data:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CHRESPKEYADDR" spirit:name="CHRESPKEYADDR" spirit:prompt="Pointer to receive 32-byte result:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NRBGSERVICE" spirit:name="NRBGSERVICE" spirit:prompt="Non-Deterministic Random Number Generator Service:" spirit:dataType="boolean" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NRBGINSTPTR" spirit:name="NRBGINSTPTR" spirit:prompt="Pointer to DRBG Instantiate structure:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NRBGPERSTRINGPTR" spirit:name="NRBGPERSTRINGPTR" spirit:prompt="Pointer to RBG Personalization string:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NRBGGENPTR" spirit:name="NRBGGENPTR" spirit:prompt="Pointer to DRBG Generate structure:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NRBGREQDATAPTR" spirit:name="NRBGREQDATAPTR" spirit:prompt="Pointer to receive generated random data:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NRBGRESEEDPTR" spirit:name="NRBGRESEEDPTR" spirit:prompt="Pointer to DRBG Reseed structure:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NRBGADDINPPTR" spirit:name="NRBGADDINPPTR" spirit:prompt="Pointer to additional input data:" spirit:dataType="int" spirit:configGroups="2Cols:Data Security Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PUFSERVICE" spirit:name="PUFSERVICE" spirit:prompt="PUF Service:" spirit:dataType="boolean" spirit:configGroups="2Cols:PUF Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PUFUSERACPTR" spirit:name="PUFUSERACPTR" spirit:prompt="Pointer to User AC Structure:" spirit:dataType="int" spirit:configGroups="2Cols:PUF Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PUFUSERKCPTR" spirit:name="PUFUSERKCPTR" spirit:prompt="Pointer to User KC Structure:" spirit:dataType="int" spirit:configGroups="2Cols:PUF Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PUFUSERKEYPTR" spirit:name="PUFUSERKEYPTR" spirit:prompt="Pointer to PUF User Key Structure:" spirit:dataType="int" spirit:configGroups="2Cols:PUF Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PUFPUBLICKEYADDR" spirit:name="PUFPUBLICKEYADDR" spirit:prompt="Pointer to PUF Public Key Address:" spirit:dataType="int" spirit:configGroups="2Cols:PUF Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PUFPUBLICKEYPTR" spirit:name="PUFPUBLICKEYPTR" spirit:prompt="Pointer to PUF Public Key Structure:" spirit:dataType="int" spirit:configGroups="2Cols:PUF Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PUFSEEDPTR" spirit:name="PUFSEEDPTR" spirit:prompt="Pointer to PUF Seed Structure:" spirit:dataType="int" spirit:configGroups="2Cols:PUF Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PUFSEEDADDR" spirit:name="PUFSEEDADDR" spirit:prompt="Pointer to PUF Seed Address:" spirit:dataType="int" spirit:configGroups="2Cols:PUF Services" spirit:resolve="user">0x20000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PROGIAPSERVICE" spirit:name="PROGIAPSERVICE" spirit:prompt="IAP Service:" spirit:dataType="boolean" spirit:configGroups="Programming Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PROGNVMDISERVICE" spirit:name="PROGNVMDISERVICE" spirit:prompt="NVM Data Integrity Service:" spirit:dataType="boolean" spirit:configGroups="Programming Services" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PORDSERVICE" spirit:name="PORDSERVICE" spirit:prompt="Power-on-Reset Digest Error Service:" spirit:dataType="boolean" spirit:configGroups="Asynchronous Messaging" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TAMPERDETECTSERVICE" spirit:name="TAMPERDETECTSERVICE" spirit:prompt="Tamper Detect Service:" spirit:dataType="boolean" spirit:configGroups="Asynchronous Messaging" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ZERSERVICE" spirit:name="ZERSERVICE" spirit:prompt=" " spirit:dataType="boolean" spirit:configGroups="Zeroization Service" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TAMPERCONTROLSERVICE" spirit:name="TAMPERCONTROLSERVICE" spirit:prompt=" " spirit:dataType="boolean" spirit:configGroups="Tamper Control Service" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FFSERVICE" spirit:name="FFSERVICE" spirit:prompt=" " spirit:dataType="boolean" spirit:configGroups="Flash Freeze Service" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="die" spirit:name="die" spirit:prompt="" spirit:dataType="string" actel-cc:choiceRef="dieChoice" spirit:resolve="generated">M2S050</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="HDL_License" spirit:name="HDL_License" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:choiceStyle="radio" spirit:resolve="user">U</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CHRESPKEYADDR_HEX_RANGE" spirit:name="CHRESPKEYADDR_HEX_RANGE" spirit:prompt="CHRESPKEYADDR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CHRESPPTR_HEX_RANGE" spirit:name="CHRESPPTR_HEX_RANGE" spirit:prompt="CHRESPPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CRYPTODATAINPPTR_HEX_RANGE" spirit:name="CRYPTODATAINPPTR_HEX_RANGE" spirit:prompt="CRYPTODATAINPPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CRYPTODSTADPTR_HEX_RANGE" spirit:name="CRYPTODSTADPTR_HEX_RANGE" spirit:prompt="CRYPTODSTADPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CRYPTOHMACDATAPTR_HEX_RANGE" spirit:name="CRYPTOHMACDATAPTR_HEX_RANGE" spirit:prompt="CRYPTOHMACDATAPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CRYPTORSLTPTR_HEX_RANGE" spirit:name="CRYPTORSLTPTR_HEX_RANGE" spirit:prompt="CRYPTORSLTPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CRYPTOSHA256DATAPTR_HEX_RANGE" spirit:name="CRYPTOSHA256DATAPTR_HEX_RANGE" spirit:prompt="CRYPTOSHA256DATAPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CRYPTOSRCADPTR_HEX_RANGE" spirit:name="CRYPTOSRCADPTR_HEX_RANGE" spirit:prompt="CRYPTOSRCADPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DESIGNVERPTR_HEX_RANGE" spirit:name="DESIGNVERPTR_HEX_RANGE" spirit:prompt="DESIGNVERPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DEVICECERTPTR_HEX_RANGE" spirit:name="DEVICECERTPTR_HEX_RANGE" spirit:prompt="DEVICECERTPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DSNPTR_HEX_RANGE" spirit:name="DSNPTR_HEX_RANGE" spirit:prompt="DSNPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ECCPADDDESC_HEX_RANGE" spirit:name="ECCPADDDESC_HEX_RANGE" spirit:prompt="ECCPADDDESC_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ECCPADDPPTR_HEX_RANGE" spirit:name="ECCPADDPPTR_HEX_RANGE" spirit:prompt="ECCPADDPPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ECCPADDQPTR_HEX_RANGE" spirit:name="ECCPADDQPTR_HEX_RANGE" spirit:prompt="ECCPADDQPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ECCPADDRPTR_HEX_RANGE" spirit:name="ECCPADDRPTR_HEX_RANGE" spirit:prompt="ECCPADDRPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ECCPMULTDESC_HEX_RANGE" spirit:name="ECCPMULTDESC_HEX_RANGE" spirit:prompt="ECCPMULTDESC_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ECCPMULTDPTR_HEX_RANGE" spirit:name="ECCPMULTDPTR_HEX_RANGE" spirit:prompt="ECCPMULTDPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ECCPMULTPPTR_HEX_RANGE" spirit:name="ECCPMULTPPTR_HEX_RANGE" spirit:prompt="ECCPMULTPPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ECCPMULTQPTR_HEX_RANGE" spirit:name="ECCPMULTQPTR_HEX_RANGE" spirit:prompt="ECCPMULTQPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="KEYTREEDATAPTR_HEX_RANGE" spirit:name="KEYTREEDATAPTR_HEX_RANGE" spirit:prompt="KEYTREEDATAPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="NRBGADDINPPTR_HEX_RANGE" spirit:name="NRBGADDINPPTR_HEX_RANGE" spirit:prompt="NRBGADDINPPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="NRBGGENPTR_HEX_RANGE" spirit:name="NRBGGENPTR_HEX_RANGE" spirit:prompt="NRBGGENPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="NRBGINSTPTR_HEX_RANGE" spirit:name="NRBGINSTPTR_HEX_RANGE" spirit:prompt="NRBGINSTPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="NRBGPERSTRINGPTR_HEX_RANGE" spirit:name="NRBGPERSTRINGPTR_HEX_RANGE" spirit:prompt="NRBGPERSTRINGPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="NRBGREQDATAPTR_HEX_RANGE" spirit:name="NRBGREQDATAPTR_HEX_RANGE" spirit:prompt="NRBGREQDATAPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="NRBGRESEEDPTR_HEX_RANGE" spirit:name="NRBGRESEEDPTR_HEX_RANGE" spirit:prompt="NRBGRESEEDPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PUFPUBLICKEYADDR_HEX_RANGE" spirit:name="PUFPUBLICKEYADDR_HEX_RANGE" spirit:prompt="PUFPUBLICKEYADDR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PUFPUBLICKEYPTR_HEX_RANGE" spirit:name="PUFPUBLICKEYPTR_HEX_RANGE" spirit:prompt="PUFPUBLICKEYPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PUFSEEDADDR_HEX_RANGE" spirit:name="PUFSEEDADDR_HEX_RANGE" spirit:prompt="PUFSEEDADDR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PUFSEEDPTR_HEX_RANGE" spirit:name="PUFSEEDPTR_HEX_RANGE" spirit:prompt="PUFSEEDPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PUFUSERACPTR_HEX_RANGE" spirit:name="PUFUSERACPTR_HEX_RANGE" spirit:prompt="PUFUSERACPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PUFUSERKCPTR_HEX_RANGE" spirit:name="PUFUSERKCPTR_HEX_RANGE" spirit:prompt="PUFUSERKCPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PUFUSERKEYPTR_HEX_RANGE" spirit:name="PUFUSERKEYPTR_HEX_RANGE" spirit:prompt="PUFUSERKEYPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SECONDECCCERTPTR_HEX_RANGE" spirit:name="SECONDECCCERTPTR_HEX_RANGE" spirit:prompt="SECONDECCCERTPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USERCODEPTR_HEX_RANGE" spirit:name="USERCODEPTR_HEX_RANGE" spirit:prompt="USERCODEPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CRYPTOAES256DATAPTR_HEX_RANGE" spirit:name="CRYPTOAES256DATAPTR_HEX_RANGE" spirit:prompt="CRYPTOAES256DATAPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CRYPTOAES128DATAPTR_HEX_RANGE" spirit:name="CRYPTOAES128DATAPTR_HEX_RANGE" spirit:prompt="CRYPTOAES128DATAPTR_HEX_RANGE" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated">32</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('DSNPTR', Eq('SNSERVICE', '1'));\
+Enable('USERCODEPTR', Eq('UCSERVICE', '1'));\
+Enable('DEVICECERTPTR', Eq('DCSERVICE', '1'));\
+Enable('DESIGNVERPTR', Eq('UDVSERVICE', '1'));\
+Enable('CRYPTOAES128DATAPTR', And(Eq('CRYPTOAES128SERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CRYPTOAES256DATAPTR', And(Eq('CRYPTOAES256SERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CRYPTOSRCADPTR', And(Or(Eq('CRYPTOAES128SERVICE', '1'), Eq('CRYPTOAES256SERVICE', '1')), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CRYPTODSTADPTR', And(Or(Eq('CRYPTOAES128SERVICE', '1'), Eq('CRYPTOAES256SERVICE', '1')), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CRYPTOSHA256DATAPTR', And(Eq('CRYPTOSHA256SERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CRYPTOHMACDATAPTR', And(Eq('CRYPTOHMACSERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CRYPTORSLTPTR', And(Or(Eq('CRYPTOSHA256SERVICE', '1'), Eq('CRYPTOHMACSERVICE', '1')), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CRYPTODATAINPPTR', And(Or(Eq('CRYPTOSHA256SERVICE', '1'), Eq('CRYPTOHMACSERVICE', '1')), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('KEYTREEDATAPTR', And(Eq('KEYTREESERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CHRESPPTR', And(Eq('CHRESPSERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CHRESPKEYADDR', And(Eq('CHRESPSERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('NRBGINSTPTR', And(Eq('NRBGSERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('NRBGPERSTRINGPTR', And(Eq('NRBGSERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('NRBGGENPTR', And(Eq('NRBGSERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('NRBGREQDATAPTR', And(Eq('NRBGSERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('NRBGRESEEDPTR', And(Eq('NRBGSERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('NRBGADDINPPTR', And(Eq('NRBGSERVICE', '1'), Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('CRYPTOAES128SERVICE', Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('CRYPTOAES256SERVICE', Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('CRYPTOSHA256SERVICE', Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('CRYPTOHMACSERVICE', Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('KEYTREESERVICE', Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('CHRESPSERVICE', Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('NRBGSERVICE', Or(Eq('die', 'M2S005S'), Eq('die', 'M2S010S'), Eq('die', 'M2S010T'), Eq('die', 'M2S010TS'), Eq('die', 'M2S025T'), Eq('die', 'M2S025TS'), Eq('die', 'M2S050T'), Eq('die', 'M2S050TS'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL005S'), Eq('die', 'M2GL010S'), Eq('die', 'M2GL010T'), Eq('die', 'M2GL010TS'), Eq('die', 'M2GL025T'), Eq('die', 'M2GL025TS'), Eq('die', 'M2GL050T'), Eq('die', 'M2GL050TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('SECONDECCCERTPTR', And(Eq('SECDCSERVICE', '1'), Or(Eq('die', 'M2S090'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2S060'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2GL090'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'), Eq('die', 'M2GL060'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'))));\
+Enable('PUFUSERKCPTR', And(Eq('PUFSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('PUFUSERACPTR', And(Eq('PUFSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('PUFUSERKEYPTR', And(Eq('PUFSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('PUFPUBLICKEYADDR', And(Eq('PUFSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('PUFPUBLICKEYPTR', And(Eq('PUFSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('PUFSEEDPTR', And(Eq('PUFSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('PUFSEEDADDR', And(Eq('PUFSERVICE', '1'), And(Eq('PUFSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')))));\
+Enable('ECCPMULTDESC', And(Eq('ECCPOINTMULTSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('ECCPMULTPPTR', And(Eq('ECCPOINTMULTSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('ECCPMULTDPTR', And(Eq('ECCPOINTMULTSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('ECCPMULTQPTR', And(Eq('ECCPOINTMULTSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('ECCPADDDESC', And(Eq('ECCPOINTADDSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('ECCPADDPPTR', And(Eq('ECCPOINTADDSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('ECCPADDQPTR', And(Eq('ECCPOINTADDSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('ECCPADDRPTR', And(Eq('ECCPOINTADDSERVICE', '1'), Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'))));\
+Enable('PUFSERVICE', Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('ECCPOINTMULTSERVICE', Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('ECCPOINTADDSERVICE', Or(Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS')));\
+Enable('SECDCSERVICE', Or(Eq('die', 'M2S090'), Eq('die', 'M2S090T'), Eq('die', 'M2S090TS'), Eq('die', 'M2S150'), Eq('die', 'M2S150T'), Eq('die', 'M2S150TS'), Eq('die', 'M2S060'), Eq('die', 'M2S060T'), Eq('die', 'M2S060TS'), Eq('die', 'M2GL090'), Eq('die', 'M2GL090T'), Eq('die', 'M2GL090TS'), Eq('die', 'M2GL150'), Eq('die', 'M2GL150T'), Eq('die', 'M2GL150TS'), Eq('die', 'M2GL060'), Eq('die', 'M2GL060T'), Eq('die', 'M2GL060TS')));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FF0, ESRAM1 range: 0x20008000 to 0x2000FFF0', Or(And(GtOrEq('DSNPTR', '0x20000000'), Less('DSNPTR', '0x20007FF4')), And(GtOrEq('DSNPTR', '0x20008000'), Less('DSNPTR', '0x2000FFF4'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFC, ESRAM1 range: 0x20008000 to 0x2000FFFC', Or(And(GtOrEq('USERCODEPTR', '0x20000000'), Less('USERCODEPTR', '0x20007FFF')), And(GtOrEq('USERCODEPTR', '0x20008000'), Less('USERCODEPTR', '0x2000FFFF'))));\
+Validate('Length specified not sufficient; Enter valid ESRAM0 range: 0x20000000 to 0x20007CFC, ESRAM1 range: 0x20008000 to 0x2000FCFC', Or(And(GtOrEq('DEVICECERTPTR', '0x20000000'), Less('DEVICECERTPTR', '0x20007CFF')), And(GtOrEq('DEVICECERTPTR', '0x20008000'), Less('DEVICECERTPTR', '0x2000FCFF'))));\
+Validate('Length specified not sufficient; Enter valid ESRAM0 range: 0x20000000 to 0x20007D7C, ESRAM1 range: 0x20008000 to 0x2000FD7C', Or(And(GtOrEq('SECONDECCCERTPTR', '0x20000000'), Less('SECONDECCCERTPTR', '0x20007D7F')), And(GtOrEq('SECONDECCCERTPTR', '0x20008000'), Less('SECONDECCCERTPTR', '0x2000FD7F'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFC, ESRAM1 range: 0x20008000 to 0x2000FFFC', Or(And(GtOrEq('DESIGNVERPTR', '0x20000000'), Less('DESIGNVERPTR', '0x20007FFF')), And(GtOrEq('DESIGNVERPTR', '0x20008000'), Less('DESIGNVERPTR', '0x2000FFFF'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFF, ESRAM1 range: 0x20008000 to 0x2000FFFF', Or(And(GtOrEq('CRYPTOSRCADPTR', '0x20000000'), Less('CRYPTOSRCADPTR', '0x20007FFF')), And(GtOrEq('CRYPTOSRCADPTR', '0x20008000'), Less('CRYPTOSRCADPTR', '0x2000FFFF'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FD0, ESRAM1 range: 0x20008000 to 0x2000FFD0', Or(And(GtOrEq('CRYPTOAES128DATAPTR', '0x20000000'), Less('CRYPTOAES128DATAPTR', '0x20007FD4')), And(GtOrEq('CRYPTOAES128DATAPTR', '0x20008000'), Less('CRYPTOAES128DATAPTR', '0x2000FFD4'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FC0, ESRAM1 range: 0x20008000 to 0x2000FFC0', Or(And(GtOrEq('CRYPTOAES256DATAPTR', '0x20000000'), Less('CRYPTOAES256DATAPTR', '0x20007FC4')), And(GtOrEq('CRYPTOAES256DATAPTR', '0x20008000'), Less('CRYPTOAES256DATAPTR', '0x2000FFC4'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FF4, ESRAM1 range: 0x20008000 to 0x2000FFF4', Or(And(GtOrEq('CRYPTOSHA256DATAPTR', '0x20000000'), Less('CRYPTOSHA256DATAPTR', '0x20007FF8')), And(GtOrEq('CRYPTOSHA256DATAPTR', '0x20008000'), Less('CRYPTOSHA256DATAPTR', '0x2000FFF8'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FD0, ESRAM1 range: 0x20008000 to 0x2000FFD0', Or(And(GtOrEq('CRYPTOHMACDATAPTR', '0x20000000'), Less('CRYPTOHMACDATAPTR', '0x20007FD4')), And(GtOrEq('CRYPTOHMACDATAPTR', '0x20008000'), Less('CRYPTOHMACDATAPTR', '0x2000FFD4'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FC0, ESRAM1 range: 0x20008000 to 0x2000FFC0', Or(And(GtOrEq('KEYTREEDATAPTR', '0x20000000'), Less('KEYTREEDATAPTR', '0x20007FCC')), And(GtOrEq('KEYTREEDATAPTR', '0x20008000'), Less('KEYTREEDATAPTR', '0x2000FFCC'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FE4, ESRAM1 range: 0x20008000 to 0x2000FFE4', Or(And(GtOrEq('CHRESPPTR', '0x20000000'), Less('CHRESPPTR', '0x20007FE8')), And(GtOrEq('CHRESPPTR', '0x20008000'), Less('CHRESPPTR', '0x2000FFE8'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFF, ESRAM1 range: 0x20008000 to 0x2000FFFF', Or(And(GtOrEq('NRBGPERSTRINGPTR', '0x20000000'), Less('NRBGPERSTRINGPTR', '0x20007FFF')), And(GtOrEq('NRBGPERSTRINGPTR', '0x20008000'), Less('NRBGPERSTRINGPTR', '0x2000FFFF'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFF, ESRAM1 range: 0x20008000 to 0x2000FFFF', Or(And(GtOrEq('NRBGREQDATAPTR', '0x20000000'), Less('NRBGREQDATAPTR', '0x20007FFF')), And(GtOrEq('NRBGREQDATAPTR', '0x20008000'), Less('NRBGREQDATAPTR', '0x2000FFFF'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFF, ESRAM1 range: 0x20008000 to 0x2000FFFF', Or(And(GtOrEq('CRYPTORSLTPTR', '0x20000000'), Less('CRYPTORSLTPTR', '0x20007FFF')), And(GtOrEq('CRYPTORSLTPTR', '0x20008000'), Less('CRYPTORSLTPTR', '0x2000FFFF'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFF, ESRAM1 range: 0x20008000 to 0x2000FFFF', Or(And(GtOrEq('CRYPTODSTADPTR', '0x20000000'), Less('CRYPTODSTADPTR', '0x20007FFF')), And(GtOrEq('CRYPTODSTADPTR', '0x20008000'), Less('CRYPTODSTADPTR', '0x2000FFFF'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFF, ESRAM1 range: 0x20008000 to 0x2000FFFF', Or(And(GtOrEq('CRYPTODATAINPPTR', '0x20000000'), Less('CRYPTODATAINPPTR', '0x20007FFF')), And(GtOrEq('CRYPTODATAINPPTR', '0x20008000'), Less('CRYPTODATAINPPTR', '0x2000FFFF'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFF, ESRAM1 range: 0x20008000 to 0x2000FFFF', Or(And(GtOrEq('CHRESPKEYADDR', '0x20000000'), Less('CHRESPKEYADDR', '0x20007FDF')), And(GtOrEq('CHRESPKEYADDR', '0x20008000'), Less('CHRESPKEYADDR', '0x2000FFDF'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FF8, ESRAM1 range: 0x20008000 to 0x2000FFF8', Or(And(GtOrEq('NRBGINSTPTR', '0x20000000'), Less('NRBGINSTPTR', '0x20007FFC')), And(GtOrEq('NRBGINSTPTR', '0x20008000'), Less('NRBGINSTPTR', '0x2000FFFC'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FF4, ESRAM1 range: 0x20008000 to 0x2000FFF4', Or(And(GtOrEq('NRBGGENPTR', '0x20000000'), Less('NRBGGENPTR', '0x20007FF8')), And(GtOrEq('NRBGGENPTR', '0x20008000'), Less('NRBGGENPTR', '0x2000FFF8'))));\
+Validate('Length specified not sufficient; Enter Valid ESRAM0 range: 0x20000000 to 0x20007FF8, ESRAM1 range: 0x20008000 to 0x2000FFF8', Or(And(GtOrEq('NRBGRESEEDPTR', '0x20000000'), Less('NRBGRESEEDPTR', '0x20007FFC')), And(GtOrEq('NRBGRESEEDPTR', '0x20008000'), Less('NRBGRESEEDPTR', '0x2000FFFC'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FFF, ESRAM1 range: 0x20008000 to 0x2000FFFF', Or(And(GtOrEq('NRBGADDINPPTR', '0x20000000'), Less('NRBGADDINPPTR', '0x20007FFF')), And(GtOrEq('NRBGADDINPPTR', '0x20008000'), Less('NRBGADDINPPTR', '0x2000FFFF'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FF3, ESRAM1 range: 0x20008000 to 0x2000FFF3', Or(And(GtOrEq('ECCPMULTDESC', '0x20000000'), Less('ECCPMULTDESC', '0x20007FF3')), And(GtOrEq('ECCPMULTDESC', '0x20008000'), Less('ECCPMULTDESC', '0x2000FFF3'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FCF, ESRAM1 range: 0x20008000 to 0x2000FFCF', Or(And(GtOrEq('ECCPMULTDPTR', '0x20000000'), Less('ECCPMULTDPTR', '0x20007FD3')), And(GtOrEq('ECCPMULTDPTR', '0x20008000'), Less('ECCPMULTDPTR', '0x2000FFD3'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007F9F, ESRAM1 range: 0x20008000 to 0x2000FF9F', Or(And(GtOrEq('ECCPMULTPPTR', '0x20000000'), Less('ECCPMULTPPTR', '0x20007FA3')), And(GtOrEq('ECCPMULTPPTR', '0x20008000'), Less('ECCPMULTPPTR', '0x2000FFA3'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007F9F, ESRAM1 range: 0x20008000 to 0x2000FF9F', Or(And(GtOrEq('ECCPMULTQPTR', '0x20000000'), Less('ECCPMULTQPTR', '0x20007FA3')), And(GtOrEq('ECCPMULTQPTR', '0x20008000'), Less('ECCPMULTQPTR', '0x2000FFA3'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007FF3, ESRAM1 range: 0x20008000 to 0x2000FFF3', Or(And(GtOrEq('ECCPADDDESC', '0x20000000'), Less('ECCPADDDESC', '0x20007FF3')), And(GtOrEq('ECCPADDDESC', '0x20008000'), Less('ECCPADDDESC', '0x2000FFF3'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007F9F, ESRAM1 range: 0x20008000 to 0x2000FF9F', Or(And(GtOrEq('ECCPADDPPTR', '0x20000000'), Less('ECCPADDPPTR', '0x20007FA3')), And(GtOrEq('ECCPADDPPTR', '0x20008000'), Less('ECCPADDPPTR', '0x2000FFA3'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007F9F, ESRAM1 range: 0x20008000 to 0x2000FF9F', Or(And(GtOrEq('ECCPADDQPTR', '0x20000000'), Less('ECCPADDQPTR', '0x20007FA3')), And(GtOrEq('ECCPADDQPTR', '0x20008000'), Less('ECCPADDQPTR', '0x2000FFA3'))));\
+Validate('Enter Valid ESRAM0 range: 0x20000000 to 0x20007F9F, ESRAM1 range: 0x20008000 to 0x2000FF9F', Or(And(GtOrEq('ECCPADDRPTR', '0x20000000'), Less('ECCPADDRPTR', '0x20007FA3')), And(GtOrEq('ECCPADDRPTR', '0x20008000'), Less('ECCPADDRPTR', '0x2000FFA3'))));\
+Validate('Enter word-aligned address', Eq(Mod('DSNPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('USERCODEPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('DEVICECERTPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('SECONDECCCERTPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('DESIGNVERPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CRYPTOAES128DATAPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CRYPTOAES256DATAPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CRYPTOSRCADPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CRYPTODSTADPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CRYPTOSHA256DATAPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CRYPTOHMACDATAPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CRYPTORSLTPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CRYPTODATAINPPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('KEYTREEDATAPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CHRESPPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('CHRESPKEYADDR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('NRBGINSTPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('NRBGPERSTRINGPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('NRBGGENPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('NRBGREQDATAPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('NRBGRESEEDPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('NRBGADDINPPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('ECCPMULTDESC', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('ECCPMULTPPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('ECCPMULTDPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('ECCPMULTQPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('ECCPADDDESC', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('ECCPADDPPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('ECCPADDQPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('ECCPADDRPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('PUFUSERACPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('PUFUSERKCPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('PUFUSERKEYPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('PUFPUBLICKEYADDR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('PUFPUBLICKEYPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('PUFSEEDPTR', '4'), '0'));\
+Validate('Enter word-aligned address', Eq(Mod('PUFSEEDADDR', '4'), '0'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>ChoiceFamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Die</spirit:name>
+      <spirit:enumeration spirit:text="M2S050">0</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+      <spirit:enumeration spirit:text="Verif">Verif</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>dieChoice</spirit:name>
+      <spirit:enumeration spirit:text="M2S005">M2S005</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S005S">M2S005S</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S010">M2S010</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S010S">M2S010S</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S010T">M2S010T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S010TS">M2S010TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S025">M2S025</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S025T">M2S025T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S025TS">M2S025TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S050">M2S050</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S050T">M2S050T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S050TS">M2S050TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S090">M2S090</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S090T">M2S090T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S090TS">M2S090TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S150">M2S150</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S150T">M2S150T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S150TS">M2S150TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL005">M2GL005</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL005S">M2GL005S</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL010">M2GL010</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL010S">M2GL010S</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL010T">M2GL010T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL010TS">M2GL010TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL025">M2GL025</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL025T">M2GL025T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL025TS">M2GL025TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL050">M2GL050</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL050T">M2GL050T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL050TS">M2GL050TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL060">M2GL060</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL060T">M2GL060T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL060TS">M2GL060TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL090">M2GL090</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL090T">M2GL090T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL090TS">M2GL090TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL150">M2GL150</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL150T">M2GL150T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2GL150TS">M2GL150TS</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S060">M2S060</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S060T">M2S060T</spirit:enumeration>
+      <spirit:enumeration spirit:text="M2S060TS">M2S060TS</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreSysServices_AHBLMasterIF.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESYSSERVICES_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreSysServices_CmdDec.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESYSSERVICES_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreSysServices.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESYSSERVICES_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreSysServices_FSMCtrl.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESYSSERVICES_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreSysServices_UserIF.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESYSSERVICES_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs-ALL">
+    <spirit:file>
+      <spirit:name>docs/CoreSysServices_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreSysServices_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSourceBase">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/XHDL_misc.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/XHDL_std_logic.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/CoreSysServices_AHBLMasterIF.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/CoreSysServices_CmdDec.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/CoreSysServices_FSMCtrl.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/CoreSysServices_UserIF.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/CoreSysServices.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="TB_VERIF_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/testbench.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/CoreUSERLOGIC.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/status_USERCODE.txt</spirit:name>
+      <spirit:userFileType>TXT</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/status_SerialNumber.txt</spirit:name>
+      <spirit:userFileType>TXT</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/I1.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>status.txt</spirit:name>
+      <spirit:userFileType>TXT</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/coreahblite_defaultslavesm.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/coreahblite_masterstage.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/coreahblite.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/coreahblite_addrdec.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/coreresetp.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/coreahblite_matrix4x16.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/coreahblite_slavearbiter.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/coreahblite_slavestage.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/coreresetp_pcie_hotreset.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/CoreUserlogic_UCService.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/CoreUserlogic_SNService.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/HPMS_MSS_syn.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/HPMS_MSS.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/HPMS_MSS_pre.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/HPMS.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/OSC.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/verif/SYSSERVICE_CCC.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="TB_USER_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/comm_block.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/testbench.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/UserDriver.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/runall.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreSysServices</actel-cc:displayName>
+    <actel-cc:description>The system services are system controller actions initiated by asynchronous events from the master in the FPGA fabric or external User Interface corresponding to each service. 
+CoreSysServices soft IP provides access to the system services. The CoreSysServices soft IP communicates with the COMM_BLK through one of the FIC interfaces. 
+The CoreSysServices handles the system services grouped together into following groups of services:
+ 	Device and Design Information Services
+                Flash*Freeze Service
+ 	Programming Service
+ 	Cryptographic Services
+                PUF Services
+ 	DPA-Resistant Key-Tree Services
+ 	Non-Deterministic Random Bit Generator (NRBG) Services
+ 	Zeroization Service
+ 	Digest Check Service
+                Unrecognized Command Response
+</actel-cc:description>
+    <actel-cc:packageTimestamp>20180327110218</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

@@ -1,0 +1,90 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>Simulation</spirit:library>
+  <spirit:name>CLK_GEN</spirit:name>
+  <spirit:version>1.0.1</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>STIMULUS_FILESET_V</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="STIMULUS_FILESET_V"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>STIMULUS_FILESET_VHD</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="STIMULUS_FILESET_VHD"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>CLK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="CLK_PERIOD" spirit:name="CLK_PERIOD" spirit:prompt="Clock Period (ps)" spirit:dataType="int" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2147483647">10000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DUTY_CYCLE" spirit:name="DUTY_CYCLE" spirit:prompt="Duty Cycle (%)" spirit:dataType="int" spirit:resolve="user" spirit:minimum="0" spirit:maximum="100">50</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:script>Tooltip('CLK_PERIOD', 'Time units in picoseconds');\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="STIMULUS_FILESET_V">
+    <spirit:file>
+      <spirit:name>CLK_GEN.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="STIMULUS_FILESET_VHD">
+    <spirit:file>
+      <spirit:name>CLK_GEN.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>Clock_Generator</actel-cc:displayName>
+    <actel-cc:description>Clock_Generator &lt;br/&gt; Time Units in picoseconds</actel-cc:description>
+    <actel-cc:packageTimestamp>20120622025012</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="10.1">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Simulation_Core">
+      <actel-cc:category name="1">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Clock &amp; Management">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

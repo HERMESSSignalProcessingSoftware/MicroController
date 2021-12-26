@@ -1,0 +1,118 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_SWITCH</spirit:name>
+  <spirit:version>1.0.101</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>DUMMY_BIF</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="PARAM_IS_FALSE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+      <actel-cc:memoryDescription>
+        <actel-cc:type>DDF</actel-cc:type><name>mssMemmap.ddf</name><actel-cc:filesetRef>MSS_MEMMAP_DDF</actel-cc:filesetRef></actel-cc:memoryDescription></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>MSS_MEMMAP_DDF</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="MSS_MEMMAP_DDF"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CORTEXM3_REMAP" spirit:name="CORTEXM3_REMAP" spirit:prompt="Remapped Region to location 0x00000000 of Cortex-M3 ID Code space" spirit:dataType="string" actel-cc:choiceRef="CORTEXM3_REMAP_CHOICES" spirit:choiceStyle="radio" spirit:configGroups="Remapping" spirit:resolve="user">ENVM</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ENVM_REMAP_FABRIC_IS_USED" spirit:name="ENVM_REMAP_FABRIC_IS_USED" spirit:prompt="Remap eNVM to location 0x00000000 of Fabric Master space" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="Remapping" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ENVM_REMAP_REGION_SIZE" spirit:name="ENVM_REMAP_REGION_SIZE" spirit:prompt="eNVM Remap Region Size" spirit:dataType="int" actel-cc:choiceRef="ENVM_REMAP_REGION_SIZE_CHOICES" spirit:configGroups="Remapping" spirit:resolve="user">256</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ENVM_REMAP_BASE_ADDRESS" spirit:name="ENVM_REMAP_BASE_ADDRESS" spirit:prompt="eNVM Remap Base Address (Cortex-M3)" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="Remapping" spirit:resolve="user">0x00000000</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ENVM_REMAP_FABRIC_BASE_ADDRESS" spirit:name="ENVM_REMAP_FABRIC_BASE_ADDRESS" spirit:prompt="eNVM Remap Base Address (Fabric Master)" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="Remapping" spirit:resolve="user">0x00000000</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_WEIGHT_IC" spirit:name="SW_WEIGHT_IC" spirit:prompt="Fixed Priority (2) Weight for Cortex-M3 IC Master" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Arbitration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_WEIGHT_S" spirit:name="SW_WEIGHT_S" spirit:prompt="Fixed Priority (3) Weight for Cortex-M3 S Master" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Arbitration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_WEIGHT_G" spirit:name="SW_WEIGHT_G" spirit:prompt="Fixed Priority (4) Weight for System Controller Master" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Arbitration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_WEIGHT_FAB_0" spirit:name="SW_WEIGHT_FAB_0" spirit:prompt="Round Robin Weight for FIC_0 Master" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Arbitration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_WEIGHT_FAB_1" spirit:name="SW_WEIGHT_FAB_1" spirit:prompt="Round Robin Weight for FIC_1 Master" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Arbitration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_WEIGHT_PDMA" spirit:name="SW_WEIGHT_PDMA" spirit:prompt="Round Robin Weight for PDMA Master" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Arbitration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_WEIGHT_HPDMA" spirit:name="SW_WEIGHT_HPDMA" spirit:prompt="Round Robin Weight for HPDMA Master" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Arbitration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_WEIGHT_USB" spirit:name="SW_WEIGHT_USB" spirit:prompt="Round Robin Weight for HS USB OTG Master" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Arbitration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SW_WEIGHT_GIGE" spirit:name="SW_WEIGHT_GIGE" spirit:prompt="Round Robin Weight for 10/100/1000 Ethernet Master" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Arbitration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ESRAM_MAX_LAT_SW_MAX_LATENCY_ESRAM0" spirit:name="ESRAM_MAX_LAT_SW_MAX_LATENCY_ESRAM0" spirit:prompt="eSRAM_0 Access Maximum Latency Bus Cycles" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Fixed Priority Master Maximum Latency" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8">8</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ESRAM_MAX_LAT_SW_MAX_LATENCY_ESRAM1" spirit:name="ESRAM_MAX_LAT_SW_MAX_LATENCY_ESRAM1" spirit:prompt="eSRAM_1 Access Maximum Latency Bus Cycles" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Fixed Priority Master Maximum Latency" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8">8</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="PARAM_IS_FALSE" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('ENVM_REMAP_REGION_SIZE', Or(Eq('CORTEXM3_REMAP', 'eNVM'), Eq('ENVM_REMAP_FABRIC_IS_USED', '1')));\
+Enable('ENVM_REMAP_BASE_ADDRESS', Eq('CORTEXM3_REMAP', 'eNVM'));\
+Enable('ENVM_REMAP_FABRIC_BASE_ADDRESS', Eq('ENVM_REMAP_FABRIC_IS_USED', '1'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>CORTEXM3_REMAP_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="eNVM">ENVM</spirit:enumeration>
+      <spirit:enumeration spirit:text="eSRAM">ERAM</spirit:enumeration>
+      <spirit:enumeration spirit:text="MDDR">MDDR</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>ENVM_REMAP_REGION_SIZE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="16KB">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32KB">32</spirit:enumeration>
+      <spirit:enumeration spirit:text="64KB">64</spirit:enumeration>
+      <spirit:enumeration spirit:text="128KB">128</spirit:enumeration>
+      <spirit:enumeration spirit:text="256KB">256</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="MSS_MEMMAP_DDF">
+    <spirit:file>
+      <spirit:name>mssMemmap.ddf</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_SWITCH</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20140430130526</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

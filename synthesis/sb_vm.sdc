@@ -1,4 +1,4 @@
-# Written by Synplify Pro version map202003act, Build 160R. Synopsys Run ID: sid1639407650 
+# Written by Synplify Pro version map202103act, Build 060R. Synopsys Run ID: sid1640510483 
 # Top Level Design Parameters 
 
 # Clocks 

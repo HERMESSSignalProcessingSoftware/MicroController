@@ -1,0 +1,583 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREAHBL2AHBL_BRIDGE</spirit:name>
+  <spirit:version>2.2.100</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>AHBL_Slave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:memoryMapRef spirit:memoryMapRef="MEMORY_MAP_1" />
+      <spirit:bridge spirit:masterRef="AHBL_Master" spirit:opaque="true" /></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>HADDR_S0</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSEL_S0</spirit:componentSignalName><spirit:busSignalName>HSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HBURST_S0</spirit:componentSignalName><spirit:busSignalName>HBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSIZE_S0</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HTRANS_S0</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWRITE_S0</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWDATA_S0</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADYOUT_S0</spirit:componentSignalName><spirit:busSignalName>HREADYOUT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRDATA_S0</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRESP_S0</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="MASTER_BIF_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AHBL_MMaster</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:mirroredMaster></spirit:mirroredMaster>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>HADDR_S0</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HBURST_S0</spirit:componentSignalName><spirit:busSignalName>HBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSIZE_S0</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HTRANS_S0</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWRITE_S0</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWDATA_S0</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADYOUT_S0</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRDATA_S0</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRESP_S0</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="MASTER_BIF_TYPE" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AHBL_Master</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:master>
+      <spirit:addressSpaceRef spirit:addressSpaceRef="ADDRESS_SPACE_1" /></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>HADDR_M0</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HBURST_M0</spirit:componentSignalName><spirit:busSignalName>HBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSIZE_M0</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HTRANS_M0</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWRITE_M0</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWDATA_M0</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADYOUT_M0</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRDATA_M0</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRESP_M0</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="SLAVE_BIF_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AHBL_MSlave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:mirroredSlave></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>HADDR_M0</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSEL_M0</spirit:componentSignalName><spirit:busSignalName>HSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HBURST_M0</spirit:componentSignalName><spirit:busSignalName>HBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSIZE_M0</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HTRANS_M0</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWRITE_M0</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWDATA_M0</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADY_M0</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADYOUT_M0</spirit:componentSignalName><spirit:busSignalName>HREADYOUT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRDATA_M0</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRESP_M0</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="SLAVE_BIF_TYPE" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  <spirit:memoryMap>
+    <spirit:name>MEMORY_MAP_1</spirit:name>
+    <spirit:subspaceMap spirit:masterRef="AHBL_Master">
+      <spirit:baseAddress>0x0</spirit:baseAddress>
+    </spirit:subspaceMap>
+    <spirit:bitsInLau>8</spirit:bitsInLau>
+  </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:addressSpaces>
+    <spirit:addressSpace>
+      <spirit:name>ADDRESS_SPACE_1</spirit:name>
+    <spirit:range>4G</spirit:range>
+    </spirit:addressSpace>
+  </spirit:addressSpaces>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>TB_USER_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="TB_USER_VERILOG_ANY_SIMULATION_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-DocsALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-DocsALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>HCLK_S0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESETN_S0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HADDR_S0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSEL_S0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HBURST_S0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSIZE_S0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HTRANS_S0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWRITE_S0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWDATA_S0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADYOUT_S0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRDATA_S0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESP_S0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HCLK_M0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESETN_M0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HADDR_M0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSEL_M0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HBURST_M0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSIZE_M0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HTRANS_M0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWRITE_M0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWDATA_M0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADY_M0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADYOUT_M0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRDATA_M0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESP_M0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>BURST_ERROR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="FIFO_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="MASTER_BIF_TYPE" spirit:name="MASTER_BIF_TYPE" spirit:prompt="Select Master Side BIF Type :" spirit:dataType="int" spirit:choiceRef="Choice_MASTER_BIF_TYPE" spirit:choiceStyle="radio" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SLAVE_BIF_TYPE" spirit:name="SLAVE_BIF_TYPE" spirit:prompt="Select Slave Side BIF Type :" spirit:dataType="int" spirit:choiceRef="Choice_SLAVE_BIF_TYPE" spirit:choiceStyle="radio" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SYNC_CLOCK" spirit:name="SYNC_CLOCK" spirit:prompt="Master and Slave Clocks Synchronous :" spirit:dataType="boolean" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIFO_EN" spirit:name="FIFO_EN" spirit:prompt="Enable FIFO :" spirit:dataType="boolean" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="Testbench" spirit:name="Testbench" spirit:prompt="Test bench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="HDL_License" spirit:name="HDL_License" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:resolve="user">U</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFire">26</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFireSoC">27</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_MASTER_BIF_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="AHB Mirror Master BIF">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="AHB Slave BIF">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_SLAVE_BIF_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="AHB Mirror Slave BIF">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="AHB Master BIF">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreAHBL2AHBL_Bridge.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/reset_syn.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/bridge_master.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/bridge_slave.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_synchronizer.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_FIFO.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_grayCodeCounter.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/Bin2Gray.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_rdCtrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_wrCtrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/RAM_BLOCK.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/bridge_master_fifo.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/bridge_slave_fifo.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/Dualclk_Fifo.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreparameters.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/testbench.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREAHBL2AHBL_BRIDGE_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/bfm_main.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREAHBL2AHBL_BRIDGE_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/bfm_ahbl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREAHBL2AHBL_BRIDGE_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/bfm_ahbslave.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREAHBL2AHBL_BRIDGE_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/bfm_ahbslaveext.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREAHBL2AHBL_BRIDGE_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="TB_USER_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec_compile.tcl</spirit:name>
+      <spirit:fileType>tclSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/test.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/slave.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/test.vec</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-DocsALL">
+    <spirit:file>
+      <spirit:name>docs/CoreAHBL2AHBL_Bridge_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreAHBL2AHBL_Bridge_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreAHBL2AHBL_Bridge</actel-cc:displayName>
+    <actel-cc:description>The COREAHBL2AHBL_BRIDGE is used to connect two AHB-Lite buses clocked by asynchronous clocks. This bridge supports Single, INCR4, INCR8, INCR16 burst type.</actel-cc:description>
+    <actel-cc:packageTimestamp>20210210182024</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Bus Interfaces">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFire">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFireSoC">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

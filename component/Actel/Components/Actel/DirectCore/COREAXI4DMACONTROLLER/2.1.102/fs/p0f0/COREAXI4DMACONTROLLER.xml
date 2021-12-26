@@ -1,0 +1,1286 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREAXI4DMACONTROLLER</spirit:name>
+  <spirit:version>2.1.102</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>AXI4MasterDMA_IF</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA4" spirit:name="AXI4" spirit:version="r0p0_0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_AWID</spirit:componentSignalName><spirit:busSignalName>AWID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_AWADDR</spirit:componentSignalName><spirit:busSignalName>AWADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_AWLEN</spirit:componentSignalName><spirit:busSignalName>AWLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_AWSIZE</spirit:componentSignalName><spirit:busSignalName>AWSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_AWBURST</spirit:componentSignalName><spirit:busSignalName>AWBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_AWVALID</spirit:componentSignalName><spirit:busSignalName>AWVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_AWREADY</spirit:componentSignalName><spirit:busSignalName>AWREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_WDATA</spirit:componentSignalName><spirit:busSignalName>WDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_WSTRB</spirit:componentSignalName><spirit:busSignalName>WSTRB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_WLAST</spirit:componentSignalName><spirit:busSignalName>WLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_WVALID</spirit:componentSignalName><spirit:busSignalName>WVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_WREADY</spirit:componentSignalName><spirit:busSignalName>WREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_BID</spirit:componentSignalName><spirit:busSignalName>BID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_BRESP</spirit:componentSignalName><spirit:busSignalName>BRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_BVALID</spirit:componentSignalName><spirit:busSignalName>BVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_BREADY</spirit:componentSignalName><spirit:busSignalName>BREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_ARID</spirit:componentSignalName><spirit:busSignalName>ARID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_ARADDR</spirit:componentSignalName><spirit:busSignalName>ARADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_ARLEN</spirit:componentSignalName><spirit:busSignalName>ARLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_ARSIZE</spirit:componentSignalName><spirit:busSignalName>ARSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_ARBURST</spirit:componentSignalName><spirit:busSignalName>ARBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_ARVALID</spirit:componentSignalName><spirit:busSignalName>ARVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_ARREADY</spirit:componentSignalName><spirit:busSignalName>ARREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_RID</spirit:componentSignalName><spirit:busSignalName>RID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_RDATA</spirit:componentSignalName><spirit:busSignalName>RDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_RRESP</spirit:componentSignalName><spirit:busSignalName>RRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_RLAST</spirit:componentSignalName><spirit:busSignalName>RLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_RVALID</spirit:componentSignalName><spirit:busSignalName>RVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DMA_RREADY</spirit:componentSignalName><spirit:busSignalName>RREADY</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AXI4SlaveCtrl_IF</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA4" spirit:name="AXI4" spirit:version="r0p0_0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_AWADDR</spirit:componentSignalName><spirit:busSignalName>AWADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_AWVALID</spirit:componentSignalName><spirit:busSignalName>AWVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_AWREADY</spirit:componentSignalName><spirit:busSignalName>AWREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_WDATA</spirit:componentSignalName><spirit:busSignalName>WDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_WSTRB</spirit:componentSignalName><spirit:busSignalName>WSTRB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_WVALID</spirit:componentSignalName><spirit:busSignalName>WVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_WREADY</spirit:componentSignalName><spirit:busSignalName>WREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_BRESP</spirit:componentSignalName><spirit:busSignalName>BRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_BVALID</spirit:componentSignalName><spirit:busSignalName>BVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_BREADY</spirit:componentSignalName><spirit:busSignalName>BREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_ARADDR</spirit:componentSignalName><spirit:busSignalName>ARADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_ARVALID</spirit:componentSignalName><spirit:busSignalName>ARVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_ARREADY</spirit:componentSignalName><spirit:busSignalName>ARREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_RDATA</spirit:componentSignalName><spirit:busSignalName>RDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_RRESP</spirit:componentSignalName><spirit:busSignalName>RRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_RVALID</spirit:componentSignalName><spirit:busSignalName>RVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>CTRL_RREADY</spirit:componentSignalName><spirit:busSignalName>RREADY</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AXI4StreamSlave_IF</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TVALID</spirit:componentSignalName><spirit:busSignalName>TVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TDATA</spirit:componentSignalName><spirit:busSignalName>TDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TID</spirit:componentSignalName><spirit:busSignalName>TID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TKEEP</spirit:componentSignalName><spirit:busSignalName>TKEEP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TREADY</spirit:componentSignalName><spirit:busSignalName>TREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TSTRB</spirit:componentSignalName><spirit:busSignalName>TSTRB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TLAST</spirit:componentSignalName><spirit:busSignalName>TLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TDEST</spirit:componentSignalName><spirit:busSignalName>TDEST</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VerilogSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="Testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="Testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs_ALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>GeneratorFileSet</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-ConfiguratorWindows</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-GeneratorWindows</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-ConfiguratorLinux</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-GeneratorLinux</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="GeneratorFileSet"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-ConfiguratorWindows"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-GeneratorWindows"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-ConfiguratorLinux"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-GeneratorLinux"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>RESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CLOCK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_AWVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_WVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_BREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_ARVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_RREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_AWADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>10</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_WSTRB</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_WDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_ARADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>10</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>STRTDMAOP</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('NUM_INT_BDS') - 1" spirit:resolve="dependent">3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INTERRUPT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('NUM_OF_INTS') - 1" spirit:resolve="dependent">3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_BRESP</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_BID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('ID_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_RDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('AXI_DMA_DWIDTH') - 1" spirit:resolve="dependent">63</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_RID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('ID_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_AWREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_WREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_BVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_ARREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_RVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_RRESP</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_RLAST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_BRESP</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_RDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_AWREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_WREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_BVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_ARREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_RVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CTRL_RRESP</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_AWVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_WVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_WLAST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_BREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_ARVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_RREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_AWADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_AWID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('ID_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_AWLEN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_AWSIZE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_AWBURST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_WSTRB</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="(id('AXI_DMA_DWIDTH') div 8) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_WDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('AXI_DMA_DWIDTH') - 1" spirit:resolve="dependent">63</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_ARADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_ARID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('ID_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_ARLEN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_ARSIZE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DMA_ARBURST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AXI4_STREAM_IF" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AXI4_STREAM_IF" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('AXI_DMA_DWIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AXI4_STREAM_IF" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TSTRB</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="(id('AXI_DMA_DWIDTH') div 8) - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AXI4_STREAM_IF" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TKEEP</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="(id('AXI_DMA_DWIDTH') div 8) - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AXI4_STREAM_IF" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TLAST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AXI4_STREAM_IF" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('ID_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AXI4_STREAM_IF" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TDEST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="AXI4_STREAM_IF" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">26</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECC" spirit:name="ECC" spirit:prompt="ECC" spirit:dataType="boolean" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AXI_DMA_DWIDTH" spirit:name="AXI_DMA_DWIDTH" spirit:prompt="AXI4 data width" spirit:dataType="int" spirit:choiceRef="Choice_dma_data_width" spirit:configGroups="DMA Configuration" spirit:resolve="user">32</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ID_WIDTH" spirit:name="ID_WIDTH" spirit:prompt="AXI4 ID width" spirit:dataType="int" spirit:configGroups="DMA Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AXI4_STREAM_IF" spirit:name="AXI4_STREAM_IF" spirit:prompt="AXI4-Stream support" spirit:dataType="boolean" spirit:configGroups="DMA Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NUM_PRI_LVLS" spirit:name="NUM_PRI_LVLS" spirit:prompt="Number of priority levels" spirit:dataType="int" spirit:configGroups="Arbiter Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PRI_0_NUM_OF_BEATS" spirit:name="PRI_0_NUM_OF_BEATS" spirit:prompt="Priority 0 Maximum transfers" spirit:dataType="int" spirit:choiceRef="Choice_num_beats" spirit:configGroups="Arbiter Configuration" spirit:resolve="user">256</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PRI_1_NUM_OF_BEATS" spirit:name="PRI_1_NUM_OF_BEATS" spirit:prompt="Priority 1 Maximum transfers" spirit:dataType="int" spirit:choiceRef="Choice_num_beats" spirit:configGroups="Arbiter Configuration" spirit:resolve="user">128</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PRI_2_NUM_OF_BEATS" spirit:name="PRI_2_NUM_OF_BEATS" spirit:prompt="Priority 2 Maximum transfers" spirit:dataType="int" spirit:choiceRef="Choice_num_beats" spirit:configGroups="Arbiter Configuration" spirit:resolve="user">64</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PRI_3_NUM_OF_BEATS" spirit:name="PRI_3_NUM_OF_BEATS" spirit:prompt="Priority 3 Maximum transfers" spirit:dataType="int" spirit:choiceRef="Choice_num_beats" spirit:configGroups="Arbiter Configuration" spirit:resolve="user">32</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PRI_4_NUM_OF_BEATS" spirit:name="PRI_4_NUM_OF_BEATS" spirit:prompt="Priority 4 Maximum transfers" spirit:dataType="int" spirit:choiceRef="Choice_num_beats" spirit:configGroups="Arbiter Configuration" spirit:resolve="user">16</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PRI_5_NUM_OF_BEATS" spirit:name="PRI_5_NUM_OF_BEATS" spirit:prompt="Priority 5 Maximum transfers" spirit:dataType="int" spirit:choiceRef="Choice_num_beats" spirit:configGroups="Arbiter Configuration" spirit:resolve="user">8</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PRI_6_NUM_OF_BEATS" spirit:name="PRI_6_NUM_OF_BEATS" spirit:prompt="Priority 6 Maximum transfers" spirit:dataType="int" spirit:choiceRef="Choice_num_beats" spirit:configGroups="Arbiter Configuration" spirit:resolve="user">4</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PRI_7_NUM_OF_BEATS" spirit:name="PRI_7_NUM_OF_BEATS" spirit:prompt="Priority 7 Maximum transfers" spirit:dataType="int" spirit:choiceRef="Choice_num_beats" spirit:configGroups="Arbiter Configuration" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NUM_OF_INTS" spirit:name="NUM_OF_INTS" spirit:prompt="Number of interrupt outputs" spirit:dataType="int" spirit:configGroups="Interrupt Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="4">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INT_0_QUEUE_DEPTH" spirit:name="INT_0_QUEUE_DEPTH" spirit:prompt="Interrupt 0 queue depth" spirit:dataType="int" spirit:configGroups="Interrupt Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INT_1_QUEUE_DEPTH" spirit:name="INT_1_QUEUE_DEPTH" spirit:prompt="Interrupt 1 queue depth" spirit:dataType="int" spirit:configGroups="Interrupt Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INT_2_QUEUE_DEPTH" spirit:name="INT_2_QUEUE_DEPTH" spirit:prompt="Interrupt 2 queue depth" spirit:dataType="int" spirit:configGroups="Interrupt Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INT_3_QUEUE_DEPTH" spirit:name="INT_3_QUEUE_DEPTH" spirit:prompt="Interrupt 3 queue depth" spirit:dataType="int" spirit:configGroups="Interrupt Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NUM_INT_BDS" spirit:name="NUM_INT_BDS" spirit:prompt="Number of internal descriptors" spirit:dataType="int" spirit:choiceRef="Choice_num_int_bds" spirit:configGroups="Descriptor Configuration" spirit:resolve="user">4</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_0_INT_ASSOC" spirit:name="DSCRPTR_0_INT_ASSOC" spirit:prompt="Descriptor 0      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_0_PRI_LVL" spirit:name="DSCRPTR_0_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_1_INT_ASSOC" spirit:name="DSCRPTR_1_INT_ASSOC" spirit:prompt="Descriptor 1      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_1_PRI_LVL" spirit:name="DSCRPTR_1_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_2_INT_ASSOC" spirit:name="DSCRPTR_2_INT_ASSOC" spirit:prompt="Descriptor 2      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_2_PRI_LVL" spirit:name="DSCRPTR_2_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_3_INT_ASSOC" spirit:name="DSCRPTR_3_INT_ASSOC" spirit:prompt="Descriptor 3      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_3_PRI_LVL" spirit:name="DSCRPTR_3_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_4_INT_ASSOC" spirit:name="DSCRPTR_4_INT_ASSOC" spirit:prompt="Descriptor 4      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_4_PRI_LVL" spirit:name="DSCRPTR_4_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_5_INT_ASSOC" spirit:name="DSCRPTR_5_INT_ASSOC" spirit:prompt="Descriptor 5      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_5_PRI_LVL" spirit:name="DSCRPTR_5_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_6_INT_ASSOC" spirit:name="DSCRPTR_6_INT_ASSOC" spirit:prompt="Descriptor 6      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_6_PRI_LVL" spirit:name="DSCRPTR_6_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_7_INT_ASSOC" spirit:name="DSCRPTR_7_INT_ASSOC" spirit:prompt="Descriptor 7      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_7_PRI_LVL" spirit:name="DSCRPTR_7_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_8_INT_ASSOC" spirit:name="DSCRPTR_8_INT_ASSOC" spirit:prompt="Descriptor 8      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_8_PRI_LVL" spirit:name="DSCRPTR_8_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_9_INT_ASSOC" spirit:name="DSCRPTR_9_INT_ASSOC" spirit:prompt="Descriptor 9      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_9_PRI_LVL" spirit:name="DSCRPTR_9_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_10_INT_ASSOC" spirit:name="DSCRPTR_10_INT_ASSOC" spirit:prompt="Descriptor 10      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_10_PRI_LVL" spirit:name="DSCRPTR_10_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_11_INT_ASSOC" spirit:name="DSCRPTR_11_INT_ASSOC" spirit:prompt="Descriptor 11      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_11_PRI_LVL" spirit:name="DSCRPTR_11_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_12_INT_ASSOC" spirit:name="DSCRPTR_12_INT_ASSOC" spirit:prompt="Descriptor 12      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_12_PRI_LVL" spirit:name="DSCRPTR_12_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_13_INT_ASSOC" spirit:name="DSCRPTR_13_INT_ASSOC" spirit:prompt="Descriptor 13      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_13_PRI_LVL" spirit:name="DSCRPTR_13_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_14_INT_ASSOC" spirit:name="DSCRPTR_14_INT_ASSOC" spirit:prompt="Descriptor 14      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_14_PRI_LVL" spirit:name="DSCRPTR_14_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_15_INT_ASSOC" spirit:name="DSCRPTR_15_INT_ASSOC" spirit:prompt="Descriptor 15      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_15_PRI_LVL" spirit:name="DSCRPTR_15_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_16_INT_ASSOC" spirit:name="DSCRPTR_16_INT_ASSOC" spirit:prompt="Descriptor 16      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_16_PRI_LVL" spirit:name="DSCRPTR_16_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_17_INT_ASSOC" spirit:name="DSCRPTR_17_INT_ASSOC" spirit:prompt="Descriptor 17      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_17_PRI_LVL" spirit:name="DSCRPTR_17_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_18_INT_ASSOC" spirit:name="DSCRPTR_18_INT_ASSOC" spirit:prompt="Descriptor 18      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_18_PRI_LVL" spirit:name="DSCRPTR_18_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_19_INT_ASSOC" spirit:name="DSCRPTR_19_INT_ASSOC" spirit:prompt="Descriptor 19      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_19_PRI_LVL" spirit:name="DSCRPTR_19_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_20_INT_ASSOC" spirit:name="DSCRPTR_20_INT_ASSOC" spirit:prompt="Descriptor 20      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_20_PRI_LVL" spirit:name="DSCRPTR_20_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_21_INT_ASSOC" spirit:name="DSCRPTR_21_INT_ASSOC" spirit:prompt="Descriptor 21      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_21_PRI_LVL" spirit:name="DSCRPTR_21_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_22_INT_ASSOC" spirit:name="DSCRPTR_22_INT_ASSOC" spirit:prompt="Descriptor 22      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_22_PRI_LVL" spirit:name="DSCRPTR_22_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_23_INT_ASSOC" spirit:name="DSCRPTR_23_INT_ASSOC" spirit:prompt="Descriptor 23      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_23_PRI_LVL" spirit:name="DSCRPTR_23_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_24_INT_ASSOC" spirit:name="DSCRPTR_24_INT_ASSOC" spirit:prompt="Descriptor 24      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_24_PRI_LVL" spirit:name="DSCRPTR_24_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_25_INT_ASSOC" spirit:name="DSCRPTR_25_INT_ASSOC" spirit:prompt="Descriptor 25      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_25_PRI_LVL" spirit:name="DSCRPTR_25_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_26_INT_ASSOC" spirit:name="DSCRPTR_26_INT_ASSOC" spirit:prompt="Descriptor 26      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_26_PRI_LVL" spirit:name="DSCRPTR_26_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_27_INT_ASSOC" spirit:name="DSCRPTR_27_INT_ASSOC" spirit:prompt="Descriptor 27      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_27_PRI_LVL" spirit:name="DSCRPTR_27_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_28_INT_ASSOC" spirit:name="DSCRPTR_28_INT_ASSOC" spirit:prompt="Descriptor 28      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_28_PRI_LVL" spirit:name="DSCRPTR_28_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_29_INT_ASSOC" spirit:name="DSCRPTR_29_INT_ASSOC" spirit:prompt="Descriptor 29      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_29_PRI_LVL" spirit:name="DSCRPTR_29_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_30_INT_ASSOC" spirit:name="DSCRPTR_30_INT_ASSOC" spirit:prompt="Descriptor 30      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_30_PRI_LVL" spirit:name="DSCRPTR_30_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_31_INT_ASSOC" spirit:name="DSCRPTR_31_INT_ASSOC" spirit:prompt="Descriptor 31      Associated Interrupt" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DSCRPTR_31_PRI_LVL" spirit:name="DSCRPTR_31_PRI_LVL" spirit:prompt="Priority level" spirit:dataType="int" spirit:configGroups="2Cols:Descriptor Configuration" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="Testbench" spirit:name="Testbench" spirit:prompt="Testbench" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('DSCRPTR_0_INT_ASSOC', GtOrEq('NUM_INT_BDS', '4'));\
+Enable('DSCRPTR_0_PRI_LVL', GtOrEq('NUM_INT_BDS', '4'));\
+Enable('DSCRPTR_1_INT_ASSOC', GtOrEq('NUM_INT_BDS', '4'));\
+Enable('DSCRPTR_1_PRI_LVL', GtOrEq('NUM_INT_BDS', '4'));\
+Enable('DSCRPTR_2_INT_ASSOC', GtOrEq('NUM_INT_BDS', '4'));\
+Enable('DSCRPTR_2_PRI_LVL', GtOrEq('NUM_INT_BDS', '4'));\
+Enable('DSCRPTR_3_INT_ASSOC', GtOrEq('NUM_INT_BDS', '4'));\
+Enable('DSCRPTR_3_PRI_LVL', GtOrEq('NUM_INT_BDS', '4'));\
+Enable('DSCRPTR_4_INT_ASSOC', GtOrEq('NUM_INT_BDS', '8'));\
+Enable('DSCRPTR_4_PRI_LVL', GtOrEq('NUM_INT_BDS', '8'));\
+Enable('DSCRPTR_5_INT_ASSOC', GtOrEq('NUM_INT_BDS', '8'));\
+Enable('DSCRPTR_5_PRI_LVL', GtOrEq('NUM_INT_BDS', '8'));\
+Enable('DSCRPTR_6_INT_ASSOC', GtOrEq('NUM_INT_BDS', '8'));\
+Enable('DSCRPTR_6_PRI_LVL', GtOrEq('NUM_INT_BDS', '8'));\
+Enable('DSCRPTR_7_INT_ASSOC', GtOrEq('NUM_INT_BDS', '8'));\
+Enable('DSCRPTR_7_PRI_LVL', GtOrEq('NUM_INT_BDS', '8'));\
+Enable('DSCRPTR_8_INT_ASSOC', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_8_PRI_LVL', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_9_INT_ASSOC', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_9_PRI_LVL', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_10_INT_ASSOC', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_10_PRI_LVL', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_11_INT_ASSOC', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_11_PRI_LVL', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_12_INT_ASSOC', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_12_PRI_LVL', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_13_INT_ASSOC', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_13_PRI_LVL', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_14_INT_ASSOC', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_14_PRI_LVL', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_15_INT_ASSOC', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_15_PRI_LVL', GtOrEq('NUM_INT_BDS', '16'));\
+Enable('DSCRPTR_16_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_16_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_17_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_17_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_18_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_18_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_19_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_19_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_20_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_20_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_21_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_21_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_22_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_22_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_23_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_23_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_24_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_24_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_25_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_25_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_26_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_26_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_27_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_27_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_28_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_28_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_29_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_29_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_30_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_30_PRI_LVL', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_31_INT_ASSOC', GtOrEq('NUM_INT_BDS', '32'));\
+Enable('DSCRPTR_31_PRI_LVL', Eq('NUM_INT_BDS', '32'));\
+Enable('PRI_1_NUM_OF_BEATS', GtOrEq('NUM_PRI_LVLS', '2'));\
+Enable('PRI_2_NUM_OF_BEATS', GtOrEq('NUM_PRI_LVLS', '3'));\
+Enable('PRI_3_NUM_OF_BEATS', GtOrEq('NUM_PRI_LVLS', '4'));\
+Enable('PRI_4_NUM_OF_BEATS', GtOrEq('NUM_PRI_LVLS', '5'));\
+Enable('PRI_5_NUM_OF_BEATS', GtOrEq('NUM_PRI_LVLS', '6'));\
+Enable('PRI_6_NUM_OF_BEATS', GtOrEq('NUM_PRI_LVLS', '7'));\
+Enable('PRI_7_NUM_OF_BEATS', Eq('NUM_PRI_LVLS', '8'));\
+Enable('INT_1_QUEUE_DEPTH', GtOrEq('NUM_OF_INTS', '2'));\
+Enable('INT_2_QUEUE_DEPTH', GtOrEq('NUM_OF_INTS', '3'));\
+Enable('INT_3_QUEUE_DEPTH', Eq('NUM_OF_INTS', '4'));\
+Enable('ECC', And(Neq('FAMILY', 'SmartFusion2'), Neq('FAMILY', 'IGLOO2')));\
+Validate('Priority 0 number of beats must be 256 when the AXI4-Stream interface is enabled', Or(And(Eq('PRI_0_NUM_OF_BEATS', '256'), Eq('AXI4_STREAM_IF', '1')), Eq('AXI4_STREAM_IF', '0')));\
+Validate('Maximum transaction size of 4 KB on the DMA interface. Invalid AXI data width &amp; number of transfers combination', Less(Mul(Div('AXI_DMA_DWIDTH', '8'), 'PRI_0_NUM_OF_BEATS'), '4097'));\
+Validate('Maximum transaction size of 4 KB on the DMA interface. Invalid AXI data width &amp; number of transfers combination', Or(Less('NUM_PRI_LVLS', '2'), Less(Mul(Div('AXI_DMA_DWIDTH', '8'), 'PRI_1_NUM_OF_BEATS'), '4097')));\
+Validate('Maximum transaction size of 4 KB on the DMA interface. Invalid AXI data width &amp; number of transfers combination', Or(Less('NUM_PRI_LVLS', '3'), Less(Mul(Div('AXI_DMA_DWIDTH', '8'), 'PRI_2_NUM_OF_BEATS'), '4097')));\
+Validate('Maximum transaction size of 4 KB on the DMA interface. Invalid AXI data width &amp; number of transfers combination', Or(Less('NUM_PRI_LVLS', '4'), Less(Mul(Div('AXI_DMA_DWIDTH', '8'), 'PRI_3_NUM_OF_BEATS'), '4097')));\
+Validate('Maximum transaction size of 4 KB on the DMA interface. Invalid AXI data width &amp; number of transfers combination', Or(Less('NUM_PRI_LVLS', '5'), Less(Mul(Div('AXI_DMA_DWIDTH', '8'), 'PRI_4_NUM_OF_BEATS'), '4097')));\
+Validate('Maximum transaction size of 4 KB on the DMA interface. Invalid AXI data width &amp; number of transfers combination', Or(Less('NUM_PRI_LVLS', '6'), Less(Mul(Div('AXI_DMA_DWIDTH', '8'), 'PRI_5_NUM_OF_BEATS'), '4097')));\
+Validate('Maximum transaction size of 4 KB on the DMA interface. Invalid AXI data width &amp; number of transfers combination', Or(Less('NUM_PRI_LVLS', '7'), Less(Mul(Div('AXI_DMA_DWIDTH', '8'), 'PRI_6_NUM_OF_BEATS'), '4097')));\
+Validate('Maximum transaction size of 4 KB on the DMA interface. Invalid AXI data width &amp; number of transfers combination', Or(Less('NUM_PRI_LVLS', '8'), Less(Mul(Div('AXI_DMA_DWIDTH', '8'), 'PRI_7_NUM_OF_BEATS'), '4097')));\
+Validate('Maximum number of beats must be equal to or least than that of the preceeding prioirty level', Or(Less('NUM_PRI_LVLS', '2'), GtOrEq('PRI_0_NUM_OF_BEATS', 'PRI_1_NUM_OF_BEATS')));\
+Validate('Maximum number of beats must be equal to or least than that of the preceeding prioirty level', Or(Less('NUM_PRI_LVLS', '3'), GtOrEq('PRI_1_NUM_OF_BEATS', 'PRI_2_NUM_OF_BEATS')));\
+Validate('Maximum number of beats must be equal to or least than that of the preceeding prioirty level', Or(Less('NUM_PRI_LVLS', '4'), GtOrEq('PRI_2_NUM_OF_BEATS', 'PRI_3_NUM_OF_BEATS')));\
+Validate('Maximum number of beats must be equal to or least than that of the preceeding prioirty level', Or(Less('NUM_PRI_LVLS', '5'), GtOrEq('PRI_3_NUM_OF_BEATS', 'PRI_4_NUM_OF_BEATS')));\
+Validate('Maximum number of beats must be equal to or least than that of the preceeding prioirty level', Or(Less('NUM_PRI_LVLS', '6'), GtOrEq('PRI_4_NUM_OF_BEATS', 'PRI_5_NUM_OF_BEATS')));\
+Validate('Maximum number of beats must be equal to or least than that of the preceeding prioirty level', Or(Less('NUM_PRI_LVLS', '7'), GtOrEq('PRI_5_NUM_OF_BEATS', 'PRI_6_NUM_OF_BEATS')));\
+Validate('Maximum number of beats must be equal to or least than that of the preceeding prioirty level', Or(Less('NUM_PRI_LVLS', '8'), GtOrEq('PRI_6_NUM_OF_BEATS', 'PRI_7_NUM_OF_BEATS')));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_0_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_1_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_2_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_3_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_4_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_5_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_6_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_7_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_8_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_9_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_10_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_11_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_12_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_13_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_14_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_15_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_16_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_17_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_18_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_19_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_20_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_21_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_22_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_23_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_24_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_25_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_26_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_27_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_28_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_29_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_30_PRI_LVL'));\
+Validate('Out of range of number of priority levels specified.', Gt('NUM_PRI_LVLS', 'DSCRPTR_31_PRI_LVL'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_0_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_1_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_2_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_3_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_4_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_5_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_6_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_7_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_8_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_9_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_10_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_11_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_12_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_13_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_14_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_15_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_16_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_17_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_18_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_19_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_20_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_21_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_22_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_23_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_24_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_25_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_26_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_27_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_28_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_29_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_30_INT_ASSOC'));\
+Validate('Out of range of number of interrupt queues specified.', Gt('NUM_OF_INTS', 'DSCRPTR_31_INT_ASSOC'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>Generator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_GeneratorFileSet}/coreaxi4dmacontroller_mapping.tcl</spirit:generatorExe>
+      <spirit:apiType>TCL</spirit:apiType>
+      <spirit:group>Generator,Win32,Unix</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>WINCONFIGURATOR</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_fs-ConfiguratorWindows}/Standalone/tgi/executables/windows/CoreAXI4DMAConfigurator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>WINGENERATOR</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_fs-GeneratorWindows}/Standalone/tgi/executables/windows/CoreAXI4DMAGenerator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>LINCONFIGURATOR</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_fs-ConfiguratorLinux}/Standalone/tgi/executables/linux/CoreAXI4DMAConfigurator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>LINGENERATOR</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_fs-GeneratorLinux}/Standalone/tgi/executables/linux/CoreAXI4DMAGenerator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="PolarFire">26</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFireSoC">27</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_dma_data_width</spirit:name>
+      <spirit:enumeration spirit:text="512">512</spirit:enumeration>
+      <spirit:enumeration spirit:text="256">256</spirit:enumeration>
+      <spirit:enumeration spirit:text="128">128</spirit:enumeration>
+      <spirit:enumeration spirit:text="64">64</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_num_beats</spirit:name>
+      <spirit:enumeration spirit:text="256">256</spirit:enumeration>
+      <spirit:enumeration spirit:text="128">128</spirit:enumeration>
+      <spirit:enumeration spirit:text="64">64</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_num_int_bds</spirit:name>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_axi4_master_ctrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_axi4_stream_slave_ctrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_axi4_lite_slave_ctrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_ram_1k20_wrapper.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_buffer_descriptors.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_control_registers.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_utility_functions.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_cache.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_dma_arbiter.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_dma_controller.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_dma_start_ctrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_dma_tran_ctrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_dscrptr_src_mux.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_ext_dscrptr_fetch_fsm.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_fixed_priority_arbiter.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_int_controller.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_int_x_ctrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_int_error_ctrl_fsm.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_int_ext_dscrptr_cache.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_int_status_mux.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_rd_tran_ctrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_rd_tran_queue.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_round_robin_arbiter.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_ctrl_if_mux_cdc.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_round_robin_arbiter_w_ack.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_trans_ack.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_wr_tran_ctrl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coreaxi4dmacontroller_wr_tran_queue.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreAXI4DMAController_int_0_ControllerFIFO.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreAXI4DMAController_int_1_ControllerFIFO.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreAXI4DMAController_int_2_ControllerFIFO.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreAXI4DMAController_int_3_ControllerFIFO.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/coreaxi4dmacontroller_firmware_driver_model.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/coreaxi4dmacontroller_application.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_master.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_stream_master.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_stream_master_application.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_slave_ram.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_to_axi4_lite_bridge.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_interconnect_readAddressChannel.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_interconnect_readDataChannel.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_interconnect_writeAddressChannel.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_interconnect_writeDataChannel.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_interconnect_writeResponseChannel.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi4_interconnect.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/coreaxi4dmacontroller_testbench.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAXI4DMACONTROLLER_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>CoreAXI4DMAController_testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/axi_mstr_ram_init.mem</spirit:name>
+      <spirit:userFileType>MEM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/slave_0_ram_init.mem</spirit:name>
+      <spirit:userFileType>MEM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/slave_1_ram_init.mem</spirit:name>
+      <spirit:userFileType>MEM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/slave_2_ram_init.mem</spirit:name>
+      <spirit:userFileType>MEM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/stream_ram_init.mem</spirit:name>
+      <spirit:userFileType>MEM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL">
+    <spirit:file>
+      <spirit:name>CoreAXI4DMAController_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CoreAXI4DMAController_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="GeneratorFileSet">
+    <spirit:file>
+      <spirit:name>coreaxi4dmacontroller_mapping.tcl</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-ConfiguratorWindows">
+    <spirit:file>
+      <spirit:name>Standalone/tgi/executables/windows/CoreAXI4DMAConfigurator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-GeneratorWindows">
+    <spirit:file>
+      <spirit:name>Standalone/tgi/executables/windows/CoreAXI4DMAGenerator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-ConfiguratorLinux">
+    <spirit:file>
+      <spirit:name>Standalone/tgi/executables/linux/CoreAXI4DMAConfigurator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-GeneratorLinux">
+    <spirit:file>
+      <spirit:name>Standalone/tgi/executables/linux/CoreAXI4DMAGenerator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreAXI4DMAController</actel-cc:displayName>
+    <actel-cc:description>CoreAXI4DMAController is an AXI4 DMA controller designed to perform memory to memory style DMA (Direct Memory Access) transfers in an AXI system. In addition the core provides a bridge to AXI4 memory-mapped slaves for AXI4-Stream masters.</actel-cc:description>
+    <actel-cc:packageTimestamp>20210217190428</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="12.100.1.12">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="PolarFire">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFireSoC">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

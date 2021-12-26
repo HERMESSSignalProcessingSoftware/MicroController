@@ -1,0 +1,505 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREDDS</spirit:name>
+  <spirit:version>3.1.100</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>VerilogSource-Base</spirit:fileSetRef>
+        <spirit:fileSetRef>VerilogSource-Uniquify</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VerilogSource-Base"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VerilogSource-Uniquify"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>VhdlSource-Base</spirit:fileSetRef>
+        <spirit:fileSetRef>VhdlSource-Uniquify</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VhdlSource-Base"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VhdlSource-Uniquify"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>GeneratorFileSet</spirit:fileSetRef>
+        <spirit:fileSetRef>ConfiguratorFileSet</spirit:fileSetRef>
+        <spirit:fileSetRef>GeneratorLinuxFileSet</spirit:fileSetRef>
+        <spirit:fileSetRef>ConfiguratorLinuxFileSet</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="GeneratorFileSet"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ConfiguratorFileSet"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="GeneratorLinuxFileSet"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ConfiguratorLinuxFileSet"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>docsFileSet</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="docsFileSet"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>NGRST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FREQ_OFFSET</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('FREQ_OFFSET_BITS') - 1" spirit:resolve="dependent">2</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PH_INC_MODE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PH_INC_MODE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FREQ_OFFSET_WE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PH_INC_MODE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PH_INC_MODE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PH_OFFSET</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('PH_OFFSET_BITS') - 1" spirit:resolve="dependent">2</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PH_OFFSET_MODE" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PH_OFFSET_MODE" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PH_OFFSET_WE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PH_OFFSET_MODE" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PH_OFFSET_MODE" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SINE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('OUTPUT_BITS') - 1" spirit:resolve="dependent">17</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SIN_ON" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>COSINE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('OUTPUT_BITS') - 1" spirit:resolve="dependent">17</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="COS_ON" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RSTN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INIT</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INIT_OVER</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="PH_ACC_BITS" spirit:name="PH_ACC_BITS" spirit:prompt="PH_ACC_BITS" spirit:dataType="int" spirit:configGroups="Functional" spirit:resolve="user" spirit:minimum="4" spirit:maximum="32">24</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PH_INC_MODE" spirit:name="PH_INC_MODE" spirit:prompt="PH_INC_MODE" spirit:dataType="boolean" spirit:configGroups="Functional" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FPGA_FAMILY" spirit:name="FPGA_FAMILY" spirit:prompt="Family integer" spirit:dataType="int" spirit:resolve="user">26</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PH_INC" spirit:name="PH_INC" spirit:prompt="PH_INC:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="1" spirit:maximum="2147483648">1000000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SIN_ON" spirit:name="SIN_ON" spirit:prompt="SIN_ON:" spirit:dataType="boolean" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="COS_ON" spirit:name="COS_ON" spirit:prompt="COS_ON:" spirit:dataType="boolean" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SIN_POLARITY" spirit:name="SIN_POLARITY" spirit:prompt="SIN_POLARITY:" spirit:dataType="boolean" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="COS_POLARITY" spirit:name="COS_POLARITY" spirit:prompt="COS_POLARITY:" spirit:dataType="boolean" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FREQ_OFFSET_BITS" spirit:name="FREQ_OFFSET_BITS" spirit:prompt="FREQ_OFFSET_BITS:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="3" spirit:maximum="31">3</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PH_OFFSET_MODE" spirit:name="PH_OFFSET_MODE" spirit:prompt="PH_OFFSET_MODE:" spirit:dataType="int" spirit:choiceRef="Choice_PhOffsetMode" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PH_OFFSET_CONST" spirit:name="PH_OFFSET_CONST" spirit:prompt="PH_OFFSET_CONST:" spirit:dataType="int" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PH_OFFSET_BITS" spirit:name="PH_OFFSET_BITS" spirit:prompt="PH_OFFSET_BITS:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="3" spirit:maximum="32">3</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PH_CORRECTION" spirit:name="PH_CORRECTION" spirit:prompt="PH_CORRECTION:" spirit:dataType="int" spirit:choiceRef="Choice_PhCorrection" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="QUANTIZER_BITS" spirit:name="QUANTIZER_BITS" spirit:prompt="QUANTIZER_BITS:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="3" spirit:maximum="20">8</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="OUTPUT_BITS" spirit:name="OUTPUT_BITS" spirit:prompt="OUTPUT_BITS:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="4" spirit:maximum="32">18</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="LATENCY" spirit:name="LATENCY" spirit:prompt="LATENCY:" spirit:dataType="int" spirit:choiceRef="Choice_Latency" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="URAM_MAXDEPTH" spirit:name="URAM_MAXDEPTH" spirit:prompt="URAM_MAXDEPTH:" spirit:dataType="int" spirit:choiceRef="Choice_URAM_MAXDEPTH" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DIE_SIZE" spirit:name="DIE_SIZE" spirit:prompt="DIE_SIZE:" spirit:dataType="int" spirit:resolve="user">15</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="MAX_FULL_WAVE_LOGDEPTH" spirit:name="MAX_FULL_WAVE_LOGDEPTH" spirit:prompt="MAX_FULL_WAVE_LOGDEPTH:" spirit:dataType="int" spirit:resolve="user" spirit:minimum="8" spirit:maximum="9">9</spirit:hwParameter>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench" spirit:dataType="int" actel-cc:choiceRef="Choice_Testbench" spirit:resolve="user">1</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>DDSGenerator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_GeneratorFileSet}/gen/CoreDDSGenerator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>DDSConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_ConfiguratorFileSet}/gen/CoreDDSConfigurator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>DDS_LinuxGenerator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_GeneratorLinuxFileSet}/Linux/CoreDDSGenerator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Unix</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>DDS_LinuxConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_ConfiguratorLinuxFileSet}/Linux/CoreDDSConfigurator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFire">26</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFireSoC">27</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Latency</spirit:name>
+      <spirit:enumeration spirit:text="Minimal">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Small">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Moderate">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="Fully pipelined">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_PhCorrection</spirit:name>
+      <spirit:enumeration spirit:text="None">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Dithering">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Trigonometric">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_PhOffsetMode</spirit:name>
+      <spirit:enumeration spirit:text="No phase offset">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Constant phase offset">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="External phase offset">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_URAM_MAXDEPTH</spirit:name>
+      <spirit:enumeration spirit:text="0">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+      <spirit:enumeration spirit:text="64">64</spirit:enumeration>
+      <spirit:enumeration spirit:text="128">128</spirit:enumeration>
+      <spirit:enumeration spirit:text="256">256</spirit:enumeration>
+      <spirit:enumeration spirit:text="512">512</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="VerilogSource-Base">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/dds_kit.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/dds_module.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/dds_bhvKit.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/tb_dds.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/dds_bhvTestVectOut.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VerilogSource-Uniquify">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/lut.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/DDS_TOP.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VhdlSource-Base">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/dds_kit.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/dds_module.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/dds_rtl_pack.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VhdlSource-Uniquify">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/DDS_TOP.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/lut.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/dds_bhv_pack.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/dds_bhvKit.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/tb_dds.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREDDS_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="GeneratorFileSet">
+    <spirit:file>
+      <spirit:name>gen/CoreDDSGenerator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="ConfiguratorFileSet">
+    <spirit:file>
+      <spirit:name>gen/CoreDDSConfigurator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="docsFileSet">
+    <spirit:file>
+      <spirit:name>docs/docs/CoreDDS_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/docs/CoreDDS_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="GeneratorLinuxFileSet">
+    <spirit:file>
+      <spirit:name>Linux/CoreDDSGenerator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="ConfiguratorLinuxFileSet">
+    <spirit:file>
+      <spirit:name>Linux/CoreDDSConfigurator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreDDS</actel-cc:displayName>
+    <actel-cc:description>Direct digital synthesizer or Numerically controlled oscillator generates parameterizable sine and/or cosine digital sample train. The core supports phase accumulation up to 32 bits and up to 1048576 effective Look-up table depth. The output samples are up to 32-bit wide.  The core provides optional inputs for phase and frequency offsets, phase dithering and trigonometric phase correction.  The core supports user control over the design latency.
+</actel-cc:description>
+    <actel-cc:packageTimestamp>20201117181206</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.7">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="DSP">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFire">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFireSoC">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

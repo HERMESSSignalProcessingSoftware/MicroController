@@ -1,0 +1,718 @@
+;  ********************************************************************/
+;  Microsemi Corporation Proprietary and Confidential
+;   Copyright 2007-2014 Microsemi Corporation.  All rights reserved.
+;
+;  ANY USE OR REDISTRIBUTION IN PART OR IN WHOLE MUST BE HANDLED IN
+;  ACCORDANCE WITH THE ACTEL LICENSE AGREEMENT AND MUST BE APPROVED
+;  IN ADVANCE IN WRITING.
+;
+;  Filename: control_file_Actel_DirectCore_1.0.icf
+;
+;  Description:  Microsemi DirectCore supported device and OS platform
+;    metadata control file. Supplements/overrides core specific device/OS
+;    support metadata specified at packaging/CPZ creation time and contained
+;    in the core's ECN'd IP-XACT SPIRIT description.
+;
+;  Revision Information:
+;  Date     Description
+;
+;
+;  SVN Revision Information:
+;  SVN $Revision: 28169 $
+;  SVN $Date: 2016-12-13 09:47:42 +0000 (Tue, 13 Dec 2016) $
+;
+;  Resolved SARs
+;  SAR      Date     Who   Description
+;
+;  *********************************************************************/
+
+Version   1.313
+Timestamp 202008061517
+
+;----------------------------------------------------------------------
+; "Global" device family support mappings
+;----------------------------------------------------------------------
+
+; Map IGLOO, IGLOOe, IGLOO+, ProASIC3L, SmartFusion, SmartFusion2 to ProASIC3 
+; and IGLOO2 to SmartFusion2 for cores that do not explicitly support these
+; device families because the cores were not repackaged since these 
+; device families were introduced.
+; These are "global" mappings in that they are evaluated for every
+; core VLNV.
+; For a specific core 'X' the mapping of device family 'Y' to 'Z' applies 
+; UNLESS:
+; (a) core 'X' is already packaged to declare explicit support for device 
+; family 'Y' or
+; (b) core 'X' is not packaged to declare explicit support for device family
+; 'Z' or
+; (c) core 'X' has other rules in the ICF that override the mappings and
+; declaration of device family support
+
+VLNV Actel:DirectCore
+    map G3:IGLOO       => G3:ProASIC3
+    map G3:IGLOOe      => G3:ProASIC3
+    map G3:IGLOO+      => G3:ProASIC3
+    map G3:ProASIC3L   => G3:ProASIC3
+    map G3:SmartFusion => G3:ProASIC3
+    map PA4:IGLOO2     => PA4:SmartFusion2
+    map PA5:PolarFireSoC  => PA5:PolarFire
+
+;----------------------------------------------------------------------
+; SmartFusion2 & IGLOO2 mappings
+;----------------------------------------------------------------------
+
+; Map SmartFusion2 & IGLOO2 to ProASIC3 for cores that are generic RTL 
+; implementations that can work in mapped mode on these devices.
+
+VLNV Actel:DirectCore:CORE1553BRT:3.3.103
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CORE3DES:3.0.105
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CORECORDIC:3.0.196
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:COREDES:3.0.106
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreGPIO:3.0.120
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreInterrupt:1.1.101
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreMemCtrl:2.0.105
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:corepwm:4.1.106
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:COREQEI:2.0.111
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreRemap:1.1.101
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CORERSENC:3.1.101
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CORESDLC:3.0.121
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CORESPI:3.0.156
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreTimer:1.1.101
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreWatchdog:1.1.101
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+;----------------------------------------------------------------------
+; RTG4 mappings
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:COREAXITOAHBL:3.1.108
+    map PA4:RTG4         => PA4:SmartFusion2
+
+; Exclude cores that would otherwise appear for RTG4 but are not yet
+; validated on that device family
+
+VLNV Actel:DirectCore:COREI2C:6.0.104
+    include PA4:SmartFusion2
+    include PA4:IGLOO2
+    include G3:SmartFusion
+    include G3:Fusion
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:IGLOO+
+    include *:PA
+    include *:Axcelerator
+    include *:54SXA
+
+VLNV Actel:DirectCore:COREI2C:7.0.102
+    include PA4:SmartFusion2
+    include PA4:IGLOO2
+    include G3:SmartFusion
+    include G3:Fusion
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:IGLOO+
+    include *:PA
+    include *:Axcelerator
+    include *:54SXA
+
+VLNV Actel:DirectCore:CORELPC
+    include PA4:SmartFusion2
+    include PA4:IGLOO2
+    include G3:SmartFusion
+    include G3:Fusion
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:IGLOO+
+    include *:PA
+    include *:Axcelerator
+    include *:54SXA
+
+VLNV Actel:DirectCore:CORERSDEC:3.2.100
+    include PA4:SmartFusion2
+    include PA4:IGLOO2
+    include G3:SmartFusion
+    include G3:Fusion
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:IGLOO+
+    include *:PA
+    include *:Axcelerator
+
+VLNV Actel:DirectCore:CORERSENC:3.2.100
+    include PA4:SmartFusion2
+    include PA4:IGLOO2
+    include G3:SmartFusion
+    include G3:Fusion
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:IGLOO+
+    include *:PA
+    include *:Axcelerator
+
+;----------------------------------------------------------------------
+; PolarFire mappings
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CORE3DES:3.1.104
+    map PA5:PolarFire => G3:ProASIC3
+    map PA5:PolarFireSoC => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreAHBLite:5.2.100
+    map PA5:PolarFire => G3:ProASIC3
+    map PA5:PolarFireSoC => G3:ProASIC3
+
+VLNV Actel:DirectCore:COREAHBTOAPB3:3.1.100
+    map PA5:PolarFire => G3:ProASIC3
+    map PA5:PolarFireSoC => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreAPB3:4.1.100
+    map PA5:PolarFire => G3:ProASIC3
+    map PA5:PolarFireSoC => G3:ProASIC3
+
+VLNV Actel:DirectCore:COREBOOTSTRAP:2.0.100
+    map PA5:PolarFire => PA4:SmartFusion2
+    map PA5:PolarFireSoC => PA4:SmartFusion2
+
+VLNV Actel:DirectCore:COREDES:3.0.106
+    map PA5:PolarFire => G3:ProASIC3
+    map PA5:PolarFireSoC => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreGPIO:3.1.101
+    map PA5:PolarFire => G3:ProASIC3
+    map PA5:PolarFireSoC => G3:ProASIC3
+
+VLNV Actel:DirectCore:COREI2C:7.1.102
+    map PA5:PolarFire => G3:ProASIC3
+    map PA5:PolarFireSoC => G3:ProASIC3
+
+VLNV Actel:DirectCore:COREJTAGDEBUG:1.0.101
+    map PA5:PolarFire => PA4:SmartFusion2
+    map PA5:PolarFireSoC => PA4:SmartFusion2
+
+VLNV Actel:DirectCore:COREMDIO_APB:2.0.103
+    map PA5:PolarFire => PA4:SmartFusion2
+    map PA5:PolarFireSoC => PA4:SmartFusion2
+
+VLNV Actel:DirectCore:corepwm:4.3.101
+    map PA5:PolarFire => G3:ProASIC3
+    map PA5:PolarFireSoC => G3:ProASIC3
+
+VLNV Actel:DirectCore:CORESDR_AXI:2.1.100
+    map PA5:PolarFire => PA4:SmartFusion2
+    map PA5:PolarFireSoC => PA4:SmartFusion2
+
+VLNV Actel:DirectCore:CORESPI:5.1.104
+    map PA5:PolarFire => G3:ProASIC3
+    map PA5:PolarFireSoC => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreTimer:2.0.103
+    map PA5:PolarFire => PA4:SmartFusion2
+    map PA5:PolarFireSoC => PA4:SmartFusion2
+
+;----------------------------------------------------------------------
+; PolarFireSoC mappings Sept 12, 2019 (requested by Jerome)
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:COREAXI4INTERCONNECT:2.6.113
+    map PA5:PolarFireSoC => PA5:PolarFire
+	
+;----------------------------------------------------------------------
+; PolarFire & RTG4 mappings
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:COREAHBLTOAXI:2.1.101
+    map PA4:RTG4      => PA4:SmartFusion2
+    map PA5:PolarFire => PA4:SmartFusion2
+    map PA5:PolarFireSoC => PA4:SmartFusion2
+
+VLNV Actel:DirectCore:COREAXITOAHBL:3.0.101
+    map PA4:RTG4      => PA4:SmartFusion2
+    map PA5:PolarFire => PA4:SmartFusion2
+    map PA5:PolarFireSoC => PA4:SmartFusion2
+
+;----------------------------------------------------------------------
+; A7S (CoreMP7)
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:A7S:2.0
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreAHB
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreAHB:1.3.101
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreAHB2APB
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreAHB2APB:1.1.101
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreAhbSram
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreAhbSram:1.4.104
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreAPB
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreAPB:1.1.101
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreApbNvm
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:COREAPBNVM:2.0.108
+    max_libero_version 8.5.0
+
+;----------------------------------------------------------------------
+; CoreAPBSRAM
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:COREAPBSRAM:2.0.102
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreAXI
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:COREAXI:3.1.100
+    min_libero_version 11.4
+
+;----------------------------------------------------------------------
+; CoreCFI
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CORECFI:2.0
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreConfigMaster
+;----------------------------------------------------------------------
+
+; CoreConfigMaster is packaged with no FAMILY parameter so
+; by default will appear for all device families but we want to 
+; restrict it to SmartFusion2 and IGLOO2 only.
+VLNV Actel:DirectCore:CoreConfigMaster
+    include PA4:SmartFusion2
+    include PA4:IGLOO2
+
+;----------------------------------------------------------------------
+; CoreDDR
+;----------------------------------------------------------------------
+
+; Make CoreDDR available for ProASIC3L (in particular RT dies)
+VLNV Actel:DirectCore:COREDDR:4.0.129
+    map G3:ProASIC3L   => G3:ProASIC3E
+
+;----------------------------------------------------------------------
+; CoreFFT
+;----------------------------------------------------------------------
+
+; CoreFFT 6.1.101 is packaged with a min Libero version of 11 but since
+; it supports RTAX-S (which is only supported by Libero IDE 9.x (x >= 1)
+; the min Libero version needs to be overridden here.
+
+VLNV Actel:DirectCore:COREFFT:6.1.101
+    min_libero_version 9.1
+
+;----------------------------------------------------------------------
+; CoreFMEE
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:COREFMEE:2.0.123
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreFROM
+;----------------------------------------------------------------------
+
+; CoreFROM effectively depends on G3 NVM. It's not useful with 
+; SmartFusion MSS NVM. Device family support and selected mappings 
+; restated here to prevent global SmartFusion => ProASIC3 mapping taking 
+; effect.
+
+VLNV Actel:DirectCore:CoreFROM:1.0
+    ; Explicitly supports these device families
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:Fusion
+    ; Map these device families to ProASIC3
+    map G3:ProASIC3L => G3:ProASIC3
+    map G3:IGLOO     => G3:ProASIC3
+    map G3:IGLOOe    => G3:ProASIC3
+    map G3:IGLOO+    => G3:ProASIC3
+
+VLNV Actel:DirectCore:CoreFROM:1.1.101
+    ; Linux support
+    os pc linux
+    ; Explicitly supports these device families
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+    ; Map these device families to ProASIC3
+    map G3:ProASIC3L => G3:ProASIC3
+    map G3:IGLOO+    => G3:ProASIC3
+
+;----------------------------------------------------------------------
+; CoreInterrupt
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreInterrupt:1.1.101
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreMemCtrl
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreMemCtrl:2.1.115
+    min_libero_version 0
+
+;----------------------------------------------------------------------
+; CoreMP7Bridge
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreMP7Bridge
+    include *:*:M7*
+
+VLNV Actel:DirectCore:CoreMP7Bridge:2.1
+    os pc linux
+
+;----------------------------------------------------------------------
+; CorePCIF[_AHB]
+;----------------------------------------------------------------------
+
+; Override global mappings.
+; Redeclare native device support for CorePCIF[_AHB] v3.x to ensure that
+; global mappings don't apply because ProASIC3L/IGLOO+ to ProASIC3 mappings
+; do not work for these cores. Redeclare SmartFusion to ProASIC3 mapping so
+; that this does take effect.
+
+VLNV Actel:DirectCore:COREPCIF:3.*
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+    include *:PA
+    include *:Axcelerator
+    include *:54SXA
+    map G3:SmartFusion => G3:ProASIC3
+
+VLNV Actel:DirectCore:COREPCIF_AHB:3.*
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+    map G3:SmartFusion => G3:ProASIC3
+
+; Override global mappings.
+; CorePCIF[_AHB] v3.5.x adds explicit support for ProASIC3L so override v3.*
+; rules above while also ensuring that the global ProASIC3L to ProASIC3
+; mapping does not take effect. Redeclare SmartFusion to ProASIC3 mapping so
+; that this does take effect.
+
+VLNV Actel:DirectCore:COREPCIF:3.5.*
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+    include *:PA
+    include *:Axcelerator
+    include *:54SXA
+    map G3:SmartFusion => G3:ProASIC3
+
+VLNV Actel:DirectCore:COREPCIF_AHB:3.5.*
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+    map G3:SmartFusion => G3:ProASIC3
+
+; Override global mappings.
+; CorePCIF[_AHB] v3.6.x explicitly supports all G3 except IGLOO+ and 
+; SmartFusion. Override v3.x rules above while also ensuring that global
+; IGLOO+ to ProASIC3 mapping does not take effect and the SmartFusion to
+; ProASIC3 mapping does.
+
+VLNV Actel:DirectCore:COREPCIF:3.6.*
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+    include *:PA
+    include *:Axcelerator
+    include *:54SXA
+    map G3:SmartFusion => G3:ProASIC3
+
+VLNV Actel:DirectCore:COREPCIF_AHB:3.6.*
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+    map G3:SmartFusion => G3:ProASIC3
+
+; Override global mappings.
+; CorePCIF_AHB v3.7.x explicitly supports all G3 (including SmartFusion) but
+; not IGLOO+ so override v3.x rules above while also ensuring that global
+; IGLOO+ to ProASIC3 mapping does not take effect
+
+VLNV Actel:DirectCore:COREPCIF_AHB:3.7.*
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+    include G3:SmartFusion
+
+; Override rules for CorePCIF 4.0.x 
+; (1) Core is packaged with min Libero version (MLV) = 11.0 but supports some 
+; Libero IDE (9.0+) device families to restate MLV as 9.0 so that the core can
+; be used on these device families.
+; (2) Restate packaged device support to ensure that global mapping for IGLOO+
+; does not take effect.
+; (3) Map IGLOO2 to SmartFusion2
+
+VLNV Actel:DirectCore:COREPCIF:4.0.*
+    min_libero_version 9.0
+    include PA4:SmartFusion2
+    include G3:SmartFusion
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+    include *:PA
+    include *:Axcelerator
+    include *:54SXA
+    map PA4:IGLOO2     => PA4:SmartFusion2
+
+; Override rules for CorePCIF_AHB 4.0.x 
+; (1) Restate packaged device support to ensure that global mapping for IGLOO+
+; does not take effect.
+VLNV Actel:DirectCore:COREPCIF_AHB:4.0.*
+    include PA4:SmartFusion2
+    include PA4:IGLOO2
+    include G3:SmartFusion
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:IGLOO
+    include G3:IGLOOe
+    include G3:Fusion
+
+;----------------------------------------------------------------------
+; CorePWM
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:corepwm:4.1.106
+    min_libero_version 8.6.0
+
+;----------------------------------------------------------------------
+; CoreRemap
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreRemap:1.1.101
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreRSENC
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CORERSENC:3.3.111
+    min_libero_version 9.0.0
+
+;----------------------------------------------------------------------
+; CoreSDR[_AHB]
+;----------------------------------------------------------------------
+
+; Override global mappings.
+; Redeclare device family support specified in the SPIRIT descriptions
+; for CoreSDR[_AHB] to provide additional mappings and to ensure that
+; G3 IGLOO devices (as opposed to G4 IGLOO2) are NOT supported even if
+; support is declared in the CCZ/CPZ. This is because G3 IGLOO devices
+; are too slow to support the SDR cores. Also map SmartFusion, SmartFusion2
+; and IGLOO2 to ProASIC3 where relevant.
+
+VLNV Actel:DirectCore:CORESDR:3.0.115
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:Fusion
+    include *:Axcelerator
+    map G3:ProASIC3L     => G3:ProASIC3
+    map G3:SmartFusion   => G3:ProASIC3
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CORESDR:4.0.115
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:Fusion
+    include *:Axcelerator
+    map G3:SmartFusion   => G3:ProASIC3
+    map PA4:SmartFusion2 => G3:ProASIC3
+    map PA4:IGLOO2       => G3:ProASIC3
+
+VLNV Actel:DirectCore:CORESDR_AHB:4.0.142
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:Fusion
+    map G3:SmartFusion   => G3:ProASIC3
+
+VLNV Actel:DirectCore:CORESDR_AHB:4.1.102
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:Fusion
+    include G3:SmartFusion
+
+VLNV Actel:DirectCore:CORESDR_AHB:4.3.100
+    include G3:ProASIC3
+    include G3:ProASIC3E
+    include G3:ProASIC3L
+    include G3:Fusion
+    include G3:SmartFusion
+    include PA4:SmartFusion2
+    include PA4:IGLOO2
+    map G3:SmartFusion   => G3:ProASIC3
+
+;----------------------------------------------------------------------
+; CoreSF2Config
+;----------------------------------------------------------------------
+
+; Override global mappings.
+; Redeclare SmartFusion2 support so that IGLOO2 to SmartFusion2 mapping
+; does not apply.
+
+VLNV Actel:DirectCore:CoreSF2Config
+    include PA4:SmartFusion2
+
+;----------------------------------------------------------------------
+; CoreSF2Reset
+;----------------------------------------------------------------------
+
+; Override global mappings.
+; Redeclare SmartFusion2 support so that IGLOO2 to SmartFusion2 mapping
+; does not apply.
+
+VLNV Actel:DirectCore:CoreSF2Reset
+    include PA4:SmartFusion2
+
+;----------------------------------------------------------------------
+; CoreSMBus
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CORESMBUS:3.0
+    ; CoreSMBus superseded by CoreI2C which includes SMBus support so exclude
+    ; from catalog for projects of any device/family type
+    max_libero_version 0.0
+    exclude *
+
+;----------------------------------------------------------------------
+; CoreSPI
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CORESPI:3.0.156
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreTimer
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreTimer:1.1.101
+    os pc linux
+
+;----------------------------------------------------------------------
+; CoreWatchdog
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CoreWatchdog:1.1.101
+    os pc linux
+
+;----------------------------------------------------------------------
+; CORESYSSERVICES_PF
+;----------------------------------------------------------------------
+
+VLNV Actel:DirectCore:CORESYSSERVICES_PF:2.3.116
+max_libero_version 12.900.0
+
+VLNV Actel:DirectCore:CORESYSSERVICES_PF:2.2.102
+max_libero_version 12.900.0
