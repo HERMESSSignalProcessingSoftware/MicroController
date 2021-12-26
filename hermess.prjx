@@ -1592,8 +1592,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v2021.2\SynplifyPro\bin\synplify_pro.exe"
-PARAM=""
-BATCH=0
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -1840,8 +1840,11 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Run Programming Action:sb_PROGRAM.log
+HDL;hdl\STAMP.vhd;0
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+ACTIVEVIEW;hdl\STAMP.vhd
 ENDLIST
 LIST ModuleSubBlockList
 LIST "CORE16550_C0::work","component\work\CORE16550_C0\CORE16550_C0.vhd","TRUE","FALSE"

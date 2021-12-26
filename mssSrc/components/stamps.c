@@ -203,7 +203,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
         //as an alternative: add a waiting function here. Just set the bit in a status register and wait here until this bit toggled!
         // => much changes inner vhdl.. nothing sumulated yet.
         if (configflags == 0) {
-            delay(10);
+            delay(1000);
             // run offset calibration
             APB_STAMP_writeAdc(&stamps[i],
                     STAMP_REG_WRITE_DMS1,

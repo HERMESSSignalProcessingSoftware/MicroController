@@ -164,12 +164,12 @@ int main (void) {
              * Lets assume Tbit = 33us (boi its long)
              */
             while(mssSignals != MSS_SIGNAL_SPI_WRITE && ((telemetryCounter++) <= (FRAMESIZE - 1))) {
-                telemetryCounter++;
                 TransmitByte(*(telemetryFramePtr++));
             }
             if (telemetryCounter >= (FRAMESIZE - 1)) {
                 telemetryFramePtr = (uint8_t*)(&telemetryFrame);
                 mssSignals &= ~(MSS_SIGNAL_TELEMETRY);
+                telemetryCounter = 0;
             }
         }
 
