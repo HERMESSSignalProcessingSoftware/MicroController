@@ -199,6 +199,9 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
                 spuLog("TEMP configuration mismatch!");
             }
         } while (readTempConf && confTrials < 3);
+        //TODO: Fix problem with the inner VHDL waiting. Remove this shit and make it break able
+        //as an alternative: add a waiting function here. Just set the bit in a status register and wait here until this bit toggled!
+        // => much changes inner vhdl.. nothing sumulated yet.
         if (configflags == 0) {
             delay(10);
             // run offset calibration
