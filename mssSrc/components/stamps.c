@@ -72,7 +72,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
         stamps[i] = APB_STAMP_init(stampsAddresses[i], stampsIrqnBit[i]);
 
         // reset all ADCs and let it settle
-        APB_STAMP_writeAdc(&stamps[i],
+         APB_STAMP_writeAdc(&stamps[i],
                 STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
                 ADS_CMD_RESET,
                 STAMP_MOD_NONE);
