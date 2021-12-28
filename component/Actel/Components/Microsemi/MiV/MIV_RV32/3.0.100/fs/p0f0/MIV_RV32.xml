@@ -1,0 +1,1465 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Microsemi</spirit:vendor>
+  <spirit:library>MiV</spirit:library>
+  <spirit:name>MIV_RV32</spirit:name>
+  <spirit:version>3.0.100</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>DEBUG</spirit:name>
+    <spirit:busType spirit:vendor="Microsemi" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>JTAG_TRSTN</spirit:componentSignalName><spirit:busSignalName>JTAG_TRSTN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>JTAG_TCK</spirit:componentSignalName><spirit:busSignalName>JTAG_TCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>JTAG_TDI</spirit:componentSignalName><spirit:busSignalName>JTAG_TDI</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>JTAG_TMS</spirit:componentSignalName><spirit:busSignalName>JTAG_TMS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>JTAG_TDO</spirit:componentSignalName><spirit:busSignalName>JTAG_TDO</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>JTAG_TDO_DR</spirit:componentSignalName><spirit:busSignalName>JTAG_TDO_DR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>EXT_RESETN</spirit:componentSignalName><spirit:busSignalName>EXT_RESETN</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>IRQ</spirit:name>
+    <spirit:busType spirit:vendor="Microsemi" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>EXT_IRQ</spirit:componentSignalName><spirit:busSignalName>EXT_IRQ</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TMR_IRQ</spirit:componentSignalName><spirit:busSignalName>TMR_IRQ</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MSYS_EI</spirit:componentSignalName><spirit:busSignalName>MSYS_EI</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>ACCESS</spirit:name>
+    <spirit:busType spirit:vendor="Microsemi" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_CPU_ACCESS_DISABLE</spirit:componentSignalName><spirit:busSignalName>TCM_CPU_ACCESS_DISABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_TAS_ACCESS_DISABLE</spirit:componentSignalName><spirit:busSignalName>TCM_TAS_ACCESS_DISABLE</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AXI3_MSTR</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA3" spirit:name="AXI" spirit:version="r1p0_5"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWID</spirit:componentSignalName><spirit:busSignalName>AWID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWADDR</spirit:componentSignalName><spirit:busSignalName>AWADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWLEN</spirit:componentSignalName><spirit:busSignalName>AWLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWSIZE</spirit:componentSignalName><spirit:busSignalName>AWSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWBURST</spirit:componentSignalName><spirit:busSignalName>AWBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWLOCK</spirit:componentSignalName><spirit:busSignalName>AWLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWCACHE</spirit:componentSignalName><spirit:busSignalName>AWCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWPROT</spirit:componentSignalName><spirit:busSignalName>AWPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWVALID</spirit:componentSignalName><spirit:busSignalName>AWVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWREADY</spirit:componentSignalName><spirit:busSignalName>AWREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WID</spirit:componentSignalName><spirit:busSignalName>WID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WDATA</spirit:componentSignalName><spirit:busSignalName>WDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WSTRB</spirit:componentSignalName><spirit:busSignalName>WSTRB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WLAST</spirit:componentSignalName><spirit:busSignalName>WLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WVALID</spirit:componentSignalName><spirit:busSignalName>WVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WREADY</spirit:componentSignalName><spirit:busSignalName>WREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BID</spirit:componentSignalName><spirit:busSignalName>BID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BRESP</spirit:componentSignalName><spirit:busSignalName>BRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BVALID</spirit:componentSignalName><spirit:busSignalName>BVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BREADY</spirit:componentSignalName><spirit:busSignalName>BREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARID</spirit:componentSignalName><spirit:busSignalName>ARID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARADDR</spirit:componentSignalName><spirit:busSignalName>ARADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARLEN</spirit:componentSignalName><spirit:busSignalName>ARLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARSIZE</spirit:componentSignalName><spirit:busSignalName>ARSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARBURST</spirit:componentSignalName><spirit:busSignalName>ARBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARLOCK</spirit:componentSignalName><spirit:busSignalName>ARLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARCACHE</spirit:componentSignalName><spirit:busSignalName>ARCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARPROT</spirit:componentSignalName><spirit:busSignalName>ARPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARVALID</spirit:componentSignalName><spirit:busSignalName>ARVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARREADY</spirit:componentSignalName><spirit:busSignalName>ARREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RID</spirit:componentSignalName><spirit:busSignalName>RID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RDATA</spirit:componentSignalName><spirit:busSignalName>RDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RRESP</spirit:componentSignalName><spirit:busSignalName>RRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RLAST</spirit:componentSignalName><spirit:busSignalName>RLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RVALID</spirit:componentSignalName><spirit:busSignalName>RVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RREADY</spirit:componentSignalName><spirit:busSignalName>RREADY</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="AXI_MASTER_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="AXI_SLAVE_MIRROR" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AHBL_MSTR</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:master>
+      <spirit:addressSpaceRef spirit:addressSpaceRef="AHBL_Memory" /></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HADDR</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HTRANS</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HWRITE</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HSIZE</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HBURST</spirit:componentSignalName><spirit:busSignalName>HBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HPROT</spirit:componentSignalName><spirit:busSignalName>HPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HWDATA</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HRDATA</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HREADY</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HRESP</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HMASTLOCK</spirit:componentSignalName><spirit:busSignalName>HLOCK</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="AHB_MASTER_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="AHB_SLAVE_MIRROR" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>APB_MSTR</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="APB_MASTER_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="APB_SLAVE_MIRROR" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>TCM_APB_SLV</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_APB_SLV_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_APB_SLV_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_APB_SLV_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_APB_SLV_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_APB_SLV_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_APB_SLV_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_APB_SLV_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCM_APB_SLV_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="TCM_TAS_PRESENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AXI4_MSTR</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA4" spirit:name="AXI4" spirit:version="r0p0_0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWID</spirit:componentSignalName><spirit:busSignalName>AWID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWADDR</spirit:componentSignalName><spirit:busSignalName>AWADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWLEN</spirit:componentSignalName><spirit:busSignalName>AWLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWSIZE</spirit:componentSignalName><spirit:busSignalName>AWSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWBURST</spirit:componentSignalName><spirit:busSignalName>AWBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWLOCK</spirit:componentSignalName><spirit:busSignalName>AWLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWCACHE</spirit:componentSignalName><spirit:busSignalName>AWCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWPROT</spirit:componentSignalName><spirit:busSignalName>AWPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWVALID</spirit:componentSignalName><spirit:busSignalName>AWVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWREADY</spirit:componentSignalName><spirit:busSignalName>AWREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WDATA</spirit:componentSignalName><spirit:busSignalName>WDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WSTRB</spirit:componentSignalName><spirit:busSignalName>WSTRB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WLAST</spirit:componentSignalName><spirit:busSignalName>WLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WVALID</spirit:componentSignalName><spirit:busSignalName>WVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WREADY</spirit:componentSignalName><spirit:busSignalName>WREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BID</spirit:componentSignalName><spirit:busSignalName>BID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BRESP</spirit:componentSignalName><spirit:busSignalName>BRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BVALID</spirit:componentSignalName><spirit:busSignalName>BVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BREADY</spirit:componentSignalName><spirit:busSignalName>BREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARID</spirit:componentSignalName><spirit:busSignalName>ARID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARADDR</spirit:componentSignalName><spirit:busSignalName>ARADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARLEN</spirit:componentSignalName><spirit:busSignalName>ARLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARSIZE</spirit:componentSignalName><spirit:busSignalName>ARSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARBURST</spirit:componentSignalName><spirit:busSignalName>ARBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARLOCK</spirit:componentSignalName><spirit:busSignalName>ARLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARCACHE</spirit:componentSignalName><spirit:busSignalName>ARCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARPROT</spirit:componentSignalName><spirit:busSignalName>ARPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARVALID</spirit:componentSignalName><spirit:busSignalName>ARVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARREADY</spirit:componentSignalName><spirit:busSignalName>ARREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RID</spirit:componentSignalName><spirit:busSignalName>RID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RDATA</spirit:componentSignalName><spirit:busSignalName>RDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RRESP</spirit:componentSignalName><spirit:busSignalName>RRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RLAST</spirit:componentSignalName><spirit:busSignalName>RLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RVALID</spirit:componentSignalName><spirit:busSignalName>RVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RREADY</spirit:componentSignalName><spirit:busSignalName>RREADY</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="AXI_MASTER_TYPE" actel-cc:termValue="2"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="AXI_SLAVE_MIRROR" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AXI3_M_SLV</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA3" spirit:name="AXI" spirit:version="r1p0_5"/>
+    <spirit:mirroredSlave></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWID</spirit:componentSignalName><spirit:busSignalName>AWID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWADDR</spirit:componentSignalName><spirit:busSignalName>AWADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWLEN</spirit:componentSignalName><spirit:busSignalName>AWLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWSIZE</spirit:componentSignalName><spirit:busSignalName>AWSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWBURST</spirit:componentSignalName><spirit:busSignalName>AWBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWLOCK</spirit:componentSignalName><spirit:busSignalName>AWLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWCACHE</spirit:componentSignalName><spirit:busSignalName>AWCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWPROT</spirit:componentSignalName><spirit:busSignalName>AWPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWVALID</spirit:componentSignalName><spirit:busSignalName>AWVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWREADY</spirit:componentSignalName><spirit:busSignalName>AWREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WID</spirit:componentSignalName><spirit:busSignalName>WID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WDATA</spirit:componentSignalName><spirit:busSignalName>WDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WSTRB</spirit:componentSignalName><spirit:busSignalName>WSTRB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WLAST</spirit:componentSignalName><spirit:busSignalName>WLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WVALID</spirit:componentSignalName><spirit:busSignalName>WVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WREADY</spirit:componentSignalName><spirit:busSignalName>WREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BID</spirit:componentSignalName><spirit:busSignalName>BID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BRESP</spirit:componentSignalName><spirit:busSignalName>BRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BVALID</spirit:componentSignalName><spirit:busSignalName>BVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BREADY</spirit:componentSignalName><spirit:busSignalName>BREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARID</spirit:componentSignalName><spirit:busSignalName>ARID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARADDR</spirit:componentSignalName><spirit:busSignalName>ARADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARLEN</spirit:componentSignalName><spirit:busSignalName>ARLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARSIZE</spirit:componentSignalName><spirit:busSignalName>ARSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARBURST</spirit:componentSignalName><spirit:busSignalName>ARBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARLOCK</spirit:componentSignalName><spirit:busSignalName>ARLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARCACHE</spirit:componentSignalName><spirit:busSignalName>ARCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARPROT</spirit:componentSignalName><spirit:busSignalName>ARPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARVALID</spirit:componentSignalName><spirit:busSignalName>ARVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARREADY</spirit:componentSignalName><spirit:busSignalName>ARREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RID</spirit:componentSignalName><spirit:busSignalName>RID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RDATA</spirit:componentSignalName><spirit:busSignalName>RDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RRESP</spirit:componentSignalName><spirit:busSignalName>RRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RLAST</spirit:componentSignalName><spirit:busSignalName>RLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RVALID</spirit:componentSignalName><spirit:busSignalName>RVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RREADY</spirit:componentSignalName><spirit:busSignalName>RREADY</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="AXI_MASTER_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="AXI_SLAVE_MIRROR" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AXI4_M_SLV</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA4" spirit:name="AXI4" spirit:version="r0p0_0"/>
+    <spirit:mirroredSlave></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWID</spirit:componentSignalName><spirit:busSignalName>AWID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWADDR</spirit:componentSignalName><spirit:busSignalName>AWADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWLEN</spirit:componentSignalName><spirit:busSignalName>AWLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWSIZE</spirit:componentSignalName><spirit:busSignalName>AWSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWBURST</spirit:componentSignalName><spirit:busSignalName>AWBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWLOCK</spirit:componentSignalName><spirit:busSignalName>AWLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWCACHE</spirit:componentSignalName><spirit:busSignalName>AWCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWPROT</spirit:componentSignalName><spirit:busSignalName>AWPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWVALID</spirit:componentSignalName><spirit:busSignalName>AWVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_AWREADY</spirit:componentSignalName><spirit:busSignalName>AWREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WDATA</spirit:componentSignalName><spirit:busSignalName>WDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WSTRB</spirit:componentSignalName><spirit:busSignalName>WSTRB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WLAST</spirit:componentSignalName><spirit:busSignalName>WLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WVALID</spirit:componentSignalName><spirit:busSignalName>WVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_WREADY</spirit:componentSignalName><spirit:busSignalName>WREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BID</spirit:componentSignalName><spirit:busSignalName>BID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BRESP</spirit:componentSignalName><spirit:busSignalName>BRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BVALID</spirit:componentSignalName><spirit:busSignalName>BVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_BREADY</spirit:componentSignalName><spirit:busSignalName>BREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARID</spirit:componentSignalName><spirit:busSignalName>ARID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARADDR</spirit:componentSignalName><spirit:busSignalName>ARADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARLEN</spirit:componentSignalName><spirit:busSignalName>ARLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARSIZE</spirit:componentSignalName><spirit:busSignalName>ARSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARBURST</spirit:componentSignalName><spirit:busSignalName>ARBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARLOCK</spirit:componentSignalName><spirit:busSignalName>ARLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARCACHE</spirit:componentSignalName><spirit:busSignalName>ARCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARPROT</spirit:componentSignalName><spirit:busSignalName>ARPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARVALID</spirit:componentSignalName><spirit:busSignalName>ARVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_ARREADY</spirit:componentSignalName><spirit:busSignalName>ARREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RID</spirit:componentSignalName><spirit:busSignalName>RID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RDATA</spirit:componentSignalName><spirit:busSignalName>RDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RRESP</spirit:componentSignalName><spirit:busSignalName>RRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RLAST</spirit:componentSignalName><spirit:busSignalName>RLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RVALID</spirit:componentSignalName><spirit:busSignalName>RVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AXI_MSTR_RREADY</spirit:componentSignalName><spirit:busSignalName>RREADY</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="AXI_MASTER_TYPE" actel-cc:termValue="2"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="AXI_SLAVE_MIRROR" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>AHBL_M_SLV</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:mirroredSlave></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HADDR</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HTRANS</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HWRITE</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HSIZE</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HBURST</spirit:componentSignalName><spirit:busSignalName>HBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HPROT</spirit:componentSignalName><spirit:busSignalName>HPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HWDATA</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HMASTLOCK</spirit:componentSignalName><spirit:busSignalName>HMASTLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HRDATA</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HRESP</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HREADY</spirit:componentSignalName><spirit:busSignalName>HREADYOUT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AHB_MSTR_HSEL</spirit:componentSignalName><spirit:busSignalName>HSELx</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="AHB_MASTER_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="AHB_SLAVE_MIRROR" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>APB_M_SLV</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:mirroredSlave></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>APB_MSTR_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="APB_MASTER_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="APB_SLAVE_MIRROR" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:addressSpaces>
+    <spirit:addressSpace>
+      <spirit:name>AHBL_Memory</spirit:name>
+    <spirit:range>256M</spirit:range>
+    <spirit:width>32</spirit:width>
+    </spirit:addressSpace>
+  </spirit:addressSpaces>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-G5_LSRAM-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-G5_LSRAM-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="26"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>Documents</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="Documents"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>TIME_COUNT_IN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>63</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="INTERNAL_MTIME" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TMR_IRQ</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="INTERNAL_MTIME_IRQ" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EXT_IRQ</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>JTAG_TRSTN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="DEBUGGER" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>JTAG_TCK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="DEBUGGER" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>JTAG_TDI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="DEBUGGER" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>JTAG_TMS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="DEBUGGER" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>JTAG_TDO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="DEBUGGER" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>JTAG_TDO_DR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="DEBUGGER" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_MSTR_PADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_MSTR_PSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="APB_MASTER_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_MSTR_PENABLE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_MSTR_PWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_MSTR_PWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_MSTR_PREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_MSTR_PRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_MSTR_PSLVERR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_CPU_ACCESS_DISABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TCM_TAS_PRESENT" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TCM_PRESENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_TAS_ACCESS_DISABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TCM_TAS_PRESENT" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TCM_PRESENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_APB_SLV_PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_APB_SLV_PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_APB_SLV_PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_APB_SLV_PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_APB_SLV_PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_APB_SLV_PREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_APB_SLV_PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCM_APB_SLV_PSLVERR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARLEN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="(id('AXI_MASTER_TYPE') * 4) - 1" spirit:resolve="dependent">3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARSIZE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARBURST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARLOCK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="2 - id('AXI_MASTER_TYPE')" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARCACHE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_RRESP</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_RDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_RLAST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_RID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_RREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_RVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWLEN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="(id('AXI_MASTER_TYPE') * 4) - 1" spirit:resolve="dependent">3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWSIZE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWBURST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWLOCK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="2 - id('AXI_MASTER_TYPE')" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWCACHE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWPROT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_AWVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_WDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_WSTRB</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_WLAST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_WID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_WREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_WVALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_BRESP</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_BID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_BREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_BVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HBURST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HMASTLOCK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HPROT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HSIZE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HTRANS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HRESP</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AXI_MSTR_ARPROT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MSYS_EI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('NUM_EXT_IRQS') - 1" spirit:resolve="dependent">5</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_EXT_IRQS" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AHB_MSTR_HSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="AHB_MASTER_TYPE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="AHB_SLAVE_MIRROR" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EXT_RESETN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TIME_COUNT_OUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>63</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="INTERNAL_MTIME" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="GEN_DECODE_RV32" spirit:name="GEN_DECODE_RV32" spirit:prompt="RISC-V Extensions:" spirit:dataType="int" spirit:choiceRef="Choice_GEN_DECODE_RV32" spirit:configGroups="2Cols: Extension Options" spirit:resolve="user">3</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="GEN_MUL_TYPE" spirit:name="GEN_MUL_TYPE" spirit:prompt="Multipler:" spirit:dataType="int" spirit:choiceRef="Choice_GEN_MUL_TYPE" spirit:configGroups="2Cols: Extension Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">26</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AHB_MASTER_TYPE" spirit:name="AHB_MASTER_TYPE" spirit:prompt="AHB Master:" spirit:dataType="int" spirit:choiceRef="Choice_AHB_MASTER_TYPE" spirit:configGroups="2Cols: Interface Options" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AHB_SLAVE_MIRROR" spirit:name="AHB_SLAVE_MIRROR" spirit:prompt="AHB Mirrored I/F:" spirit:dataType="boolean" spirit:configGroups="2Cols: Interface Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="APB_MASTER_TYPE" spirit:name="APB_MASTER_TYPE" spirit:prompt="APB Master:" spirit:dataType="int" spirit:choiceRef="Choice_APB_MASTER_TYPE" spirit:configGroups="2Cols: Interface Options" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="APB_SLAVE_MIRROR" spirit:name="APB_SLAVE_MIRROR" spirit:prompt="APB Mirrored I/F:" spirit:dataType="boolean" spirit:configGroups="2Cols: Interface Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AXI_MASTER_TYPE" spirit:name="AXI_MASTER_TYPE" spirit:prompt="AXI Master:" spirit:dataType="int" spirit:choiceRef="Choice_AXI_MASTER_TYPE" spirit:configGroups="2Cols: Interface Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AXI_SLAVE_MIRROR" spirit:name="AXI_SLAVE_MIRROR" spirit:prompt="AXI Mirrored I/F:" spirit:dataType="boolean" spirit:configGroups="2Cols: Interface Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RESET_VECTOR_ADDR_1" spirit:name="RESET_VECTOR_ADDR_1" spirit:prompt="Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: Reset Vector Address" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x8000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RESET_VECTOR_ADDR_0" spirit:name="RESET_VECTOR_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: Reset Vector Address" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xfffc">0x0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BOOTROM_PRESENT" spirit:name="BOOTROM_PRESENT" spirit:prompt="BootROM:" spirit:dataType="boolean" spirit:configGroups="2Cols: BootROM Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RECONFIG_BOOTROM" spirit:name="RECONFIG_BOOTROM" spirit:prompt="Reconfigure BootROM:" spirit:dataType="boolean" spirit:configGroups="2Cols: BootROM Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TCM_PRESENT" spirit:name="TCM_PRESENT" spirit:prompt="TCM:" spirit:dataType="boolean" spirit:configGroups="2Cols: Tightly Coupled Memory (TCM) Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TCM_TAS_PRESENT" spirit:name="TCM_TAS_PRESENT" spirit:prompt="TCM APB Slave (TAS):" spirit:dataType="boolean" spirit:configGroups="2Cols: Tightly Coupled Memory (TCM) Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NUM_EXT_IRQS" spirit:name="NUM_EXT_IRQS" spirit:prompt="External System IRQs:" spirit:dataType="int" spirit:choiceRef="Choice_NUM_EXT_IRQS" spirit:configGroups="Interrupt Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="VECTORED_INTERRUPTS" spirit:name="VECTORED_INTERRUPTS" spirit:prompt="Vectored Interrupts:" spirit:dataType="boolean" spirit:configGroups="Interrupt Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INTERNAL_MTIME" spirit:name="INTERNAL_MTIME" spirit:prompt="Internal MTIME:" spirit:dataType="boolean" spirit:configGroups="2Cols: System Timer Options" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="MTIME_PRESCALER" spirit:name="MTIME_PRESCALER" spirit:prompt="MTIME Prescaler:" spirit:dataType="int" spirit:configGroups="2Cols: System Timer Options" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">100</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INTERNAL_MTIME_IRQ" spirit:name="INTERNAL_MTIME_IRQ" spirit:prompt="Internal MTIME IRQ:" spirit:dataType="boolean" spirit:configGroups="2Cols: System Timer Options" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AHB_START_ADDR_1" spirit:name="AHB_START_ADDR_1" spirit:prompt="Start Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: AHB Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x8000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AHB_START_ADDR_0" spirit:name="AHB_START_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: AHB Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xfffc">0x0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AHB_END_ADDR_1" spirit:name="AHB_END_ADDR_1" spirit:prompt="  End Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: AHB Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x8fff</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AHB_END_ADDR_0" spirit:name="AHB_END_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: AHB Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xffff">0xffff</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="APB_START_ADDR_1" spirit:name="APB_START_ADDR_1" spirit:prompt="Start Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: APB Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x7000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="APB_START_ADDR_0" spirit:name="APB_START_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: APB Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xfffc">0x0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="APB_END_ADDR_1" spirit:name="APB_END_ADDR_1" spirit:prompt="  End Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: APB Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x7fff</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="APB_END_ADDR_0" spirit:name="APB_END_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: APB Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xffff">0xffff</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AXI_START_ADDR_1" spirit:name="AXI_START_ADDR_1" spirit:prompt="Start Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: AXI Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x6000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AXI_START_ADDR_0" spirit:name="AXI_START_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: AXI Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xfffc">0x0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AXI_END_ADDR_1" spirit:name="AXI_END_ADDR_1" spirit:prompt="  End Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: AXI Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x6fff</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AXI_END_ADDR_0" spirit:name="AXI_END_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: AXI Master Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xffff">0xffff</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TCM_START_ADDR_1" spirit:name="TCM_START_ADDR_1" spirit:prompt="Start Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: TCM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x4000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TCM_START_ADDR_0" spirit:name="TCM_START_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: TCM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xfffc">0x0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TCM_END_ADDR_1" spirit:name="TCM_END_ADDR_1" spirit:prompt="  End Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: TCM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x4000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TCM_END_ADDR_0" spirit:name="TCM_END_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: TCM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xffff">0x3fff</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TAS_START_ADDR_1" spirit:name="TAS_START_ADDR_1" spirit:prompt="Start Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: TCM APB Slave Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x4000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TAS_START_ADDR_0" spirit:name="TAS_START_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: TCM APB Slave Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xfffc">0x0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TAS_END_ADDR_1" spirit:name="TAS_END_ADDR_1" spirit:prompt="  End Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: TCM APB Slave Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x4000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TAS_END_ADDR_0" spirit:name="TAS_END_ADDR_0" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: TCM APB Slave Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xffff">0x3fff</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DEBUGGER" spirit:name="DEBUGGER" spirit:prompt="Debug:" spirit:dataType="boolean" spirit:configGroups="2Cols: Other Options" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FWD_REGS" spirit:name="FWD_REGS" spirit:prompt="Register Forwarding:" spirit:dataType="boolean" spirit:configGroups="2Cols: Other Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECC_ENABLE" spirit:name="ECC_ENABLE" spirit:prompt="ECC:" spirit:dataType="boolean" spirit:configGroups="2Cols: Other Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="GPR_REGS" spirit:name="GPR_REGS" spirit:prompt="GPR Registers:" spirit:dataType="boolean" spirit:configGroups="2Cols: Other Options" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BOOTROM_SRC_START_ADDR_UPPER" spirit:name="BOOTROM_SRC_START_ADDR_UPPER" spirit:prompt="Source Start Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: BootROM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x8000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BOOTROM_SRC_START_ADDR_LOWER" spirit:name="BOOTROM_SRC_START_ADDR_LOWER" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: BootROM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xfffc">0x0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BOOTROM_SRC_END_ADDR_UPPER" spirit:name="BOOTROM_SRC_END_ADDR_UPPER" spirit:prompt="Source End Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: BootROM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x8000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BOOTROM_SRC_END_ADDR_LOWER" spirit:name="BOOTROM_SRC_END_ADDR_LOWER" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: BootROM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xffff">0x3fff</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BOOTROM_DEST_ADDR_UPPER" spirit:name="BOOTROM_DEST_ADDR_UPPER" spirit:prompt="Destination Address: Upper 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: BootROM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x1000" spirit:maximum="0xffff">0x4000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BOOTROM_DEST_ADDR_LOWER" spirit:name="BOOTROM_DEST_ADDR_LOWER" spirit:prompt="Lower 16bits (Hex):" spirit:dataType="int" spirit:configGroups="2Cols: BootROM Address @ Memory Map" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0xffff">0x0</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:script>Enable('APB_START_ADDR_1', Neq('APB_MASTER_TYPE', 'None'));\
+Enable('APB_END_ADDR_1', Neq('APB_MASTER_TYPE', 'None'));\
+Enable('APB_START_ADDR_0', Neq('APB_MASTER_TYPE', 'None'));\
+Enable('APB_END_ADDR_0', Neq('APB_MASTER_TYPE', 'None'));\
+Enable('TCM_TAS_PRESENT', Eq('TCM_PRESENT', '1'));\
+Info('TCM_TAS_PRESENT', 'This will enable an APB slave interface for reading
+and writing to the TCM from an external core', 'This will enable an APB slave interface for reading
+and writing to the TCM from an external core');\
+Enable('GEN_MUL_TYPE', Gt('GEN_DECODE_RV32', '1'));\
+Info('GEN_MUL_TYPE', 'When set to Fabric, multiply operations will complete in 32 clock cycles, using a fabric multiplier. 
+
+When set to MACC (Non-Pipelined), multiply operations will complete in the same clock cycle, using the fabric math blocks; 
+however, the maximum operating frequency of the processor will decrease compared to using the fabric multiplier. 
+  
+When set to MACC (Pipelined) option improves max frequency frequency compared to Non-Pipelined but completes in the next clock cycle.', 'When set to Fabric, multiply operations will complete in 32 clock cycles, using a fabric multiplier. 
+
+When set to MACC (Non-Pipelined), multiply operations will complete in the same clock cycle, using the fabric math blocks; 
+however, the maximum operating frequency of the processor will decrease compared to using the fabric multiplier. 
+  
+When set to MACC (Pipelined) option improves max frequency frequency compared to Non-Pipelined but completes in the next clock cycle.');\
+Enable('TCM_START_ADDR_1', Eq('TCM_PRESENT', '1'));\
+Enable('TCM_START_ADDR_0', Eq('TCM_PRESENT', '1'));\
+Enable('TAS_START_ADDR_1', And(Eq('TCM_TAS_PRESENT', '1'), Eq('TCM_PRESENT', '1')));\
+Enable('TAS_START_ADDR_0', And(Eq('TCM_TAS_PRESENT', '1'), Eq('TCM_PRESENT', '1')));\
+Enable('TAS_END_ADDR_1', And(Eq('TCM_TAS_PRESENT', '1'), Eq('TCM_PRESENT', '1')));\
+Enable('TAS_END_ADDR_0', And(Eq('TCM_TAS_PRESENT', '1'), Eq('TCM_PRESENT', '1')));\
+Enable('AXI_START_ADDR_1', Neq('AXI_MASTER_TYPE', 'None'));\
+Enable('AXI_START_ADDR_0', Neq('AXI_MASTER_TYPE', 'None'));\
+Enable('AXI_END_ADDR_1', Neq('AXI_MASTER_TYPE', 'None'));\
+Enable('AXI_END_ADDR_0', Neq('AXI_MASTER_TYPE', 'None'));\
+Enable('AHB_START_ADDR_1', Neq('AHB_MASTER_TYPE', 'None'));\
+Enable('AHB_START_ADDR_0', Neq('AHB_MASTER_TYPE', 'None'));\
+Enable('AHB_END_ADDR_1', Neq('AHB_MASTER_TYPE', 'None'));\
+Enable('AHB_END_ADDR_0', Neq('AHB_MASTER_TYPE', 'None'));\
+Enable('AXI_SLAVE_MIRROR', Neq('AXI_MASTER_TYPE', 'None'));\
+Info('AXI_SLAVE_MIRROR', 'This feature can be used to directly connect a single slave component (e.g. RAM) without the need of a bridge', 'This feature can be used to directly connect a single slave component (e.g. RAM) without the need of a bridge');\
+Enable('AHB_SLAVE_MIRROR', Neq('AHB_MASTER_TYPE', 'None'));\
+Info('AHB_SLAVE_MIRROR', 'This feature can be used to directly connect a single slave component (e.g. RAM) without the need of a bridge', 'This feature can be used to directly connect a single slave component (e.g. RAM) without the need of a bridge');\
+Enable('APB_SLAVE_MIRROR', Neq('APB_MASTER_TYPE', 'None'));\
+Info('APB_SLAVE_MIRROR', 'This feature can be used to directly connect a single slave component (e.g. RAM) without the need of a bridge', 'This feature can be used to directly connect a single slave component (e.g. RAM) without the need of a bridge');\
+Info('GEN_DECODE_RV32', 'This core includes the base RISC-V Integer (I) instruction set, 
+the optional Multiply and Divide (M) instruction set and
+the optional Compressed (C) instruction set.', 'This core includes the base RISC-V Integer (I) instruction set, 
+the optional Multiply and Divide (M) instruction set and
+the optional Compressed (C) instruction set.');\
+Info('NUM_EXT_IRQS', 'Up to 6 optional external interrupt inputs may be configured in addition to the standard
+RISC-V External, Software and Machine Timer interrupts included in this core.', 'Up to 6 optional external interrupt inputs may be configured in addition to the standard
+RISC-V External, Software and Machine Timer interrupts included in this core.');\
+Info('VECTORED_INTERRUPTS', 'Enabling vectored interrupts will create an individual interrupt vector for each interrupt in the system.', 'Enabling vectored interrupts will create an individual interrupt vector for each interrupt in the system.');\
+Info('TCM_PRESENT', 'Enable local system memory for better performance', 'Enable local system memory for better performance');\
+Info('FWD_REGS', 'Enabling this option will enable register forwarding. 
+This will increase area and decrease the maximum operating
+frequency of the system, while increasing core performance.', 'Enabling this option will enable register forwarding. 
+This will increase area and decrease the maximum operating
+frequency of the system, while increasing core performance.');\
+Info('ECC_ENABLE', 'Enabling ECC will instantiate fabric ECC encoding and decoding logic for the TCM and GPRs.', 'Enabling ECC will instantiate fabric ECC encoding and decoding logic for the TCM and GPRs.');\
+Info('DEBUGGER', 'Include JTAG debug feature', 'Include JTAG debug feature');\
+Enable('RESET_VECTOR_ADDR_0', Eq('BOOTROM_PRESENT', '0'));\
+Info('RESET_VECTOR_ADDR_0', '32 bit Reset Vector Address created from two 16 bit hex values. 
+
+The address value must be 32 bit (word) aligned when using I or M
+extension, but when using the C extension  the address value can
+be 16 bit (halfword) aligned if the first instruction is compressed.
+
+Default 0x8000 0x0000. Note : Leading zeros are suppressed.', '32 bit Reset Vector Address created from two 16 bit hex values. 
+
+The address value must be 32 bit (word) aligned when using I or M
+extension, but when using the C extension  the address value can
+be 16 bit (halfword) aligned if the first instruction is compressed.
+
+Default 0x8000 0x0000. Note : Leading zeros are suppressed.');\
+Info('INTERNAL_MTIME', 'Enabling this option will generate an internal MTIME counter and a MTIME output port.
+MTIME is a read/write register that is memory mapped to the address 0x0200_BFF8.', 'Enabling this option will generate an internal MTIME counter and a MTIME output port.
+MTIME is a read/write register that is memory mapped to the address 0x0200_BFF8.');\
+Info('INTERNAL_MTIME_IRQ', 'Enabling this option will generate an internal MTIME interrupt and a MTIME interrupt output port.
+It will also generate an MTIMECMP register which is memory mapped to the address 0x0200_4000.', 'Enabling this option will generate an internal MTIME interrupt and a MTIME interrupt output port.
+It will also generate an MTIMECMP register which is memory mapped to the address 0x0200_4000.');\
+Info('GPR_REGS', 'Enabling this option replaces RAM based registers with fabric based registers. 
+This improves throughput performance but will increase resources used and reduce the max operating frequency.', 'Enabling this option replaces RAM based registers with fabric based registers. 
+This improves throughput performance but will increase resources used and reduce the max operating frequency.');\
+Enable('MTIME_PRESCALER', Eq('INTERNAL_MTIME', '1'));\
+Info('MTIME_PRESCALER', 'The MTIME_PRESCALER decimal value divided by the CLK frequency derives an MTIME timebase, i.e. 
+MTIME timebase =  MTIME_PRESCALER/ CLK frequency (Hz) ', 'The MTIME_PRESCALER decimal value divided by the CLK frequency derives an MTIME timebase, i.e. 
+MTIME timebase =  MTIME_PRESCALER/ CLK frequency (Hz) ');\
+Info('BOOTROM_PRESENT', 'Enabling this option will enable the MIV Bootrom.
+The reset vector of the core will be set to the
+address of the bootrom', 'Enabling this option will enable the MIV Bootrom.
+The reset vector of the core will be set to the
+address of the bootrom');\
+Enable('RECONFIG_BOOTROM', Eq('BOOTROM_PRESENT', '1'));\
+Info('RECONFIG_BOOTROM', 'Enabling this option will make the bootrom source and destination addresses writeable', 'Enabling this option will make the bootrom source
+and destination addresses writeable');\
+Enable('RESET_VECTOR_ADDR_1', Eq('BOOTROM_PRESENT', '0'));\
+Enable('BOOTROM_SRC_START_ADDR_UPPER', Eq('BOOTROM_PRESENT', '1'));\
+Enable('BOOTROM_SRC_START_ADDR_LOWER', Eq('BOOTROM_PRESENT', '1'));\
+Enable('BOOTROM_SRC_END_ADDR_UPPER', Eq('BOOTROM_PRESENT', '1'));\
+Enable('BOOTROM_SRC_END_ADDR_LOWER', Eq('BOOTROM_PRESENT', '1'));\
+Enable('BOOTROM_DEST_ADDR_UPPER', Eq('BOOTROM_PRESENT', '1'));\
+Enable('BOOTROM_DEST_ADDR_LOWER', Eq('BOOTROM_PRESENT', '1'));\
+Enable('TCM_END_ADDR_1', Eq('TCM_PRESENT', '1'));\
+Enable('TCM_END_ADDR_0', Eq('TCM_PRESENT', '1'));\
+Validate('AXI Start Address Must Be Less than AXI End Address', Or(And(GtOrEq(Sum(Mul('AXI_END_ADDR_1', '0x10000'), 'AXI_END_ADDR_0'), Sum(Mul('AXI_START_ADDR_1', '0x10000'), 'AXI_START_ADDR_0')), Or(Eq('AXI_MASTER_TYPE', 'AXI3'), Eq('AXI_MASTER_TYPE', 'AXI4'))), Eq('AXI_MASTER_TYPE', 'None')));\
+Validate('APB Start Address Must Be Less Than APB End Address', Or(And(GtOrEq(Sum(Mul('APB_END_ADDR_1', '0x10000'), 'APB_END_ADDR_0'), Sum(Mul('APB_START_ADDR_1', '0x10000'), 'APB_START_ADDR_0')), Eq('APB_MASTER_TYPE', 'APB3')), Eq('APB_MASTER_TYPE', 'None')));\
+Validate('AXI &amp; APB Memory Map Overlapping&quot;', Or(Or(Eq('APB_MASTER_TYPE', 'None'), Eq('AXI_MASTER_TYPE', 'None')), Or(And(And(Gt('AXI_START_ADDR_1', 'APB_START_ADDR_1'), Gt('AXI_START_ADDR_1', 'APB_END_ADDR_1')), And(Gt('AXI_END_ADDR_1', 'APB_START_ADDR_1'), Gt('AXI_END_ADDR_1', 'APB_END_ADDR_1'))), And(And(Less('AXI_START_ADDR_1', 'APB_START_ADDR_1'), Less('AXI_START_ADDR_1', 'APB_END_ADDR_1')), And(Less('AXI_END_ADDR_1', 'APB_START_ADDR_1'), Less('AXI_END_ADDR_1', 'APB_END_ADDR_1'))))));\
+Validate('TAS Start Address Must Be Less than TAS End Address', Or(And(GtOrEq(Sum(Mul('TAS_END_ADDR_1', '0x10000'), 'TAS_END_ADDR_0'), Sum(Mul('TAS_START_ADDR_1', '0x10000'), 'TAS_START_ADDR_0')), And(Eq('TCM_TAS_PRESENT', '1'), Eq('TCM_PRESENT', '1'))), Or(Eq('TCM_PRESENT', '0'), Eq('TCM_TAS_PRESENT', '0'))));\
+Validate('AHB Start Address Must Be Less than AHB End Address', Or(And(GtOrEq(Sum(Mul('AHB_END_ADDR_1', '0x10000'), 'AHB_END_ADDR_0'), Sum(Mul('AHB_START_ADDR_1', '0x10000'), 'AHB_START_ADDR_0')), Eq('AHB_MASTER_TYPE', 'AHBLite')), Eq('AHB_MASTER_TYPE', 'None')));\
+Validate('AHB &amp; APB Memory Overlapping', Or(Or(Eq('APB_MASTER_TYPE', 'None'), Eq('AHB_MASTER_TYPE', 'None')), Or(And(And(Gt('AHB_START_ADDR_1', 'APB_START_ADDR_1'), Gt('AHB_START_ADDR_1', 'APB_END_ADDR_1')), And(Gt('AHB_END_ADDR_1', 'APB_START_ADDR_1'), Gt('AHB_END_ADDR_1', 'APB_END_ADDR_1'))), And(And(Less('AHB_START_ADDR_1', 'APB_START_ADDR_1'), Less('AHB_START_ADDR_1', 'APB_END_ADDR_1')), And(Less('AHB_END_ADDR_1', 'APB_START_ADDR_1'), Less('AHB_END_ADDR_1', 'APB_END_ADDR_1'))))));\
+Validate('AXI &amp; AHB Memory Overlapping', Or(Or(Eq('AXI_MASTER_TYPE', 'None'), Eq('AHB_MASTER_TYPE', 'None')), Or(And(And(Gt('AHB_START_ADDR_1', 'AXI_START_ADDR_1'), Gt('AHB_START_ADDR_1', 'AXI_END_ADDR_1')), And(Gt('AHB_END_ADDR_1', 'AXI_START_ADDR_1'), Gt('AHB_END_ADDR_1', 'AXI_END_ADDR_1'))), And(And(Less('AHB_START_ADDR_1', 'AXI_START_ADDR_1'), Less('AHB_START_ADDR_1', 'AXI_END_ADDR_1')), And(Less('AHB_END_ADDR_1', 'AXI_START_ADDR_1'), Less('AHB_END_ADDR_1', 'AXI_END_ADDR_1'))))));\
+Validate('TCM depth is greater than 256KB, change start and end address range', Or(And(Less(Sum(Mul('TCM_END_ADDR_1', '0x10000'), 'TCM_END_ADDR_0'), Sum('0x40000', Sum(Mul('TCM_START_ADDR_1', '0x10000'), 'TCM_START_ADDR_0'))), Eq('TCM_PRESENT', '1')), Eq('TCM_PRESENT', '0')));\
+Validate('BootROM Source Start Address Must Be Less than BootROM Source  End Address', Or(And(GtOrEq(Sum(Mul('BOOTROM_SRC_END_ADDR_UPPER', '0x10000'), 'BOOTROM_SRC_END_ADDR_LOWER'), Sum(Mul('BOOTROM_SRC_START_ADDR_UPPER', '0x10000'), 'BOOTROM_SRC_START_ADDR_LOWER')), Eq('BOOTROM_PRESENT', '1')), Eq('BOOTROM_PRESENT', '0')));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_AHB_MASTER_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="None">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="AHBLite">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_APB_MASTER_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="None">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="APB3">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_AXI_MASTER_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="None">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="AXI3">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="AXI4">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="PolarFire">26</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_GEN_DECODE_RV32</spirit:name>
+      <spirit:enumeration spirit:text="I">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="IC">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="IM">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="IMC">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_GEN_MUL_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="Fabric">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="MACC (Non-Pipelined)">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="MACC (Pipelined)">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_GPR_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="Fabric">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="RAM">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_MASTER_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="AXI3">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="AXI4">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="AHBLite">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_NUM_EXT_IRQS</spirit:name>
+      <spirit:enumeration spirit:text="0">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="3">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="5">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="6">6</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_TCM_RAM_DEPTH_SEL</spirit:name>
+      <spirit:enumeration spirit:text="4 KB">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="8 KB">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="16 KB">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="32 KB">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="64 KB">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="128 KB">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="256 KB">6</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_TIME_COUNT_WIDTH</spirit:name>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+      <spirit:enumeration spirit:text="64">64</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>miv_rv32_opsrv_cfg_pkg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>miv_rv32_opsrv_debug_pkg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>miv_rv32_opsrv_pkg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>miv_rv32_mnemonics_pkg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>miv_rv32_core_cfg_pkg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>miv_rv32_pkg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>miv_rv32.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>miv_rv32_bist_seq_pkg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>miv_rv32_bist_shared_pkg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>core_merged/miv_rv32_core_merged.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>opsrv_merged/miv_rv32_opsrv_merged.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-G5_LSRAM-U">
+    <spirit:file>
+      <spirit:name>opsrv/miv_rv32_ram_singleport_lp.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>opsrv/miv_rv32_ram_singleport_lp_ecc.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="Documents">
+    <spirit:file>
+      <spirit:name>HandBook/DS00003721A MIV_RV32 v3.0 Handbook.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>HandBook/RN0236_MIV_RV32_v3.0_Release_Notes.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>HandBook/Supplementary Resource Utilization and Performance (RUP) Tables.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Guides/PolarFire_MIV_RV32_v3.0_Quick_Start_Design_Guide.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Guides/DS00003723A MIV_RV32 Migration Guide.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Specs/riscv-debug-release v0.13.2.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Specs/riscv-privileged-20190608-1.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Specs/riscv-spec-20191213.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:cpus>
+    <spirit:cpu>
+      <spirit:name>MIV_RV32</spirit:name>
+      <spirit:addressSpaceRef spirit:addressSpaceRef="AHBL_Memory" />
+    </spirit:cpu>
+  </spirit:cpus>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>Mi-V RV32</actel-cc:displayName>
+    <actel-cc:description>The MIV_RV32 is a processor core designed to implement the RISC-V instruction set for use in Microchip FPGAs
+
+It includes the following features:   
+      Designed for low power FPGA soft-core implementations  
+      Supports the RISC-V standard RV32I ISA with optional Multiply and Divide (M) and Compressed (C) extensions   
+      Tightly coupled memory is available and size, up to 256Kb max, is defined by address range. 
+      BOOTROM feature which will copy an image from a source memory location to a destination memory location and then run code from the destination memory
+      TCM APB Slave (TAS) port to TCM  
+      External, Timer and Soft Interrupts  
+      Up to six optional external interrupts  
+      Vectored and non-vectored interrupt support 
+      Optional on-chip debug unit with a JTAG interface        
+      AHBL, APB3, and AXI3/AXI4 optional external bus interfaces</actel-cc:description>
+    <actel-cc:packageTimestamp>20201030104711</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="12.5">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Processors">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrail">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commerial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrail">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="PolarFire">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

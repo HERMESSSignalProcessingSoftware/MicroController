@@ -1,0 +1,372 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SgCore</spirit:library>
+  <spirit:name>TPSRAM</spirit:name>
+  <spirit:version>1.0.102</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>ADLTCL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ADLTCL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>WD</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('WWIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('WDEPTH'))) + ((id('WDEPTH') = 1) - 1)" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('RDEPTH'))) + ((id('RDEPTH') = 1) - 1)" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RD</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('RWIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WEN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="WE_POLARITY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WEN_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="WE_POLARITY" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>REN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RE_POLARITY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>REN_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RE_POLARITY" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RD_EN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RPMODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="A_DOUT_EN_POLARITY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RD_EN_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RPMODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="A_DOUT_EN_POLARITY" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RD_SRST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RPMODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="A_DOUT_SRST_POLARITY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RD_SRST_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RPMODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="A_DOUT_SRST_POLARITY" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RPMODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="ARST_N_POLARITY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARST_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RPMODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="ARST_N_POLARITY" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="CLKS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="CLK_EDGE" actel-cc:termValue="RISE"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CLK_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="CLKS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="CLK_EDGE" actel-cc:termValue="FALL"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="CLKS" actel-cc:termValue="2"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="WCLK_EDGE" actel-cc:termValue="RISE"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WCLK_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="CLKS" actel-cc:termValue="2"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="WCLK_EDGE" actel-cc:termValue="FALL"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="CLKS" actel-cc:termValue="2"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="RCLK_EDGE" actel-cc:termValue="RISE"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RCLK_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="CLKS" actel-cc:termValue="2"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="RCLK_EDGE" actel-cc:termValue="FALL"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SD_EXPORT_HIDDEN_PORTS" spirit:name="SD_EXPORT_HIDDEN_PORTS" spirit:prompt="Export Hidden Ports" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="LPMTYPE" spirit:name="LPMTYPE" spirit:prompt="LPMTYPE" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">LPM_RAM</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PTYPE" spirit:name="PTYPE" spirit:prompt="PTYPE" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CASCADE" spirit:name="CASCADE" spirit:prompt="Optimized for" spirit:dataType="int" actel-cc:choiceRef="CASCADE_CHOICES" spirit:choiceStyle="radio" spirit:configGroups="2Cols:Implementation" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="INIT_RAM" spirit:name="INIT_RAM" spirit:prompt="Initialize RAM" spirit:dataType="string" actel-cc:choiceRef="BOOL_CHOICES" spirit:choiceStyle="radio" spirit:configGroups="2Cols:Implementation" spirit:resolve="user">F</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="IMPORT_FILE" spirit:name="IMPORT_FILE" spirit:prompt="Import Memory File" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="2Cols:Implementation" spirit:resolve="user"></actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CLKS" spirit:name="CLKS" spirit:prompt="Clocks" spirit:dataType="string" actel-cc:choiceRef="NUM_CLOCK_CHOICES" spirit:configGroups="2Cols:Clocks" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CLK_EDGE" spirit:name="CLK_EDGE" spirit:prompt="Single Clock Edge" spirit:dataType="string" actel-cc:choiceRef="EDGE_CHOICES" spirit:choiceStyle="radio" spirit:configGroups="2Cols:Clock" spirit:resolve="user">RISE</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WWIDTH" spirit:name="WWIDTH" spirit:prompt="Write Width" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="2Cols:Write Port" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8496">18</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WDEPTH" spirit:name="WDEPTH" spirit:prompt="Write Depth" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="2Cols:Write Port" spirit:resolve="user" spirit:minimum="1" spirit:maximum="524288">1024</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WE_POLARITY" spirit:name="WE_POLARITY" spirit:prompt="Write Enable Polarity" spirit:dataType="int" actel-cc:choiceRef="POLARITY_USED_CHOICES" spirit:configGroups="2Cols:Write Port" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WCLK_EDGE" spirit:name="WCLK_EDGE" spirit:prompt="Write Clock Edge" spirit:dataType="string" actel-cc:choiceRef="EDGE_CHOICES" spirit:choiceStyle="radio" spirit:configGroups="2Cols:Write Port" spirit:resolve="user">RISE</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RWIDTH" spirit:name="RWIDTH" spirit:prompt="Read WIDTH" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="2Cols:Read Port" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8496">18</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RDEPTH" spirit:name="RDEPTH" spirit:prompt="Read DEPTH" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="2Cols:Read Port" spirit:resolve="user" spirit:minimum="1" spirit:maximum="524288">1024</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RE_POLARITY" spirit:name="RE_POLARITY" spirit:prompt="Read Enable POLARITY" spirit:dataType="int" actel-cc:choiceRef="POLARITY_USED_CHOICES" spirit:configGroups="2Cols:Read Port" spirit:resolve="user">2</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RPMODE" spirit:name="RPMODE" spirit:prompt="Read Pipeline" spirit:dataType="string" actel-cc:choiceRef="PMODE_CHOICES" spirit:choiceStyle="radio" spirit:configGroups="2Cols:Read Port" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RCLK_EDGE" spirit:name="RCLK_EDGE" spirit:prompt="Read Clock Edge" spirit:dataType="string" actel-cc:choiceRef="EDGE_CHOICES" spirit:choiceStyle="radio" spirit:configGroups="2Cols:Read Port" spirit:resolve="user">RISE</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A_DOUT_EN_POLARITY" spirit:name="A_DOUT_EN_POLARITY" spirit:prompt="A_DOUT_EN_POLARITY" spirit:dataType="int" actel-cc:choiceRef="POLARITY_USED_CHOICES" spirit:configGroups="2Cols:Read Port" spirit:resolve="user">2</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A_DOUT_SRST_POLARITY" spirit:name="A_DOUT_SRST_POLARITY" spirit:prompt="A_DOUT_SRST_POLARITY" spirit:dataType="int" actel-cc:choiceRef="POLARITY_USED_CHOICES" spirit:configGroups="2Cols:Read Port" spirit:resolve="user">2</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ARST_N_POLARITY" spirit:name="ARST_N_POLARITY" spirit:prompt="RESET_POLARITY" spirit:dataType="int" actel-cc:choiceRef="POLARITY_USED_CHOICES" spirit:configGroups="2Cols:Read Port" spirit:resolve="user">2</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ECC" spirit:name="ECC" spirit:prompt="ECC" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="2Cols:ECC" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WCLOCK_PN" spirit:name="WCLOCK_PN" spirit:prompt="WCLOCK_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">WCLK</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA_IN_PN" spirit:name="DATA_IN_PN" spirit:prompt="DATA_IN_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">WD</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WADDRESS_PN" spirit:name="WADDRESS_PN" spirit:prompt="WADDRESS_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">WADDR</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WE_PN" spirit:name="WE_PN" spirit:prompt="WE_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">WEN</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RCLOCK_PN" spirit:name="RCLOCK_PN" spirit:prompt="RCLOCK_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">RCLK</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA_OUT_PN" spirit:name="DATA_OUT_PN" spirit:prompt="DATA_OUT_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">RD</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RADDRESS_PN" spirit:name="RADDRESS_PN" spirit:prompt="RADDRESS_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">RADDR</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RE_PN" spirit:name="RE_PN" spirit:prompt="RE_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">REN</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A_DOUT_EN_PN" spirit:name="A_DOUT_EN_PN" spirit:prompt="A_DOUT_EN_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">RD_EN</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A_DOUT_SRST_PN" spirit:name="A_DOUT_SRST_PN" spirit:prompt="A_DOUT_SRST_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">RD_SRST_N</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CLOCK_PN" spirit:name="CLOCK_PN" spirit:prompt="CLOCK_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">CLK</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RESET_PN" spirit:name="RESET_PN" spirit:prompt="RESET_PN" actel-cc:choiceRef="" spirit:dataType="string" spirit:resolve="generated">ARST_N</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('CLK_EDGE', Eq('CLKS', 'Single Read/Write Clock'));\
+Enable('WCLK_EDGE', Eq('CLKS', 'Independent Read and Write Clocks'));\
+Enable('RCLK_EDGE', Eq('CLKS', 'Independent Read and Write Clocks'));\
+Enable('A_DOUT_EN_POLARITY', Eq('RPMODE', 'Yes'));\
+Set('A_DOUT_EN_POLARITY', Eq('RPMODE', 'No'), '2');\
+Enable('A_DOUT_SRST_POLARITY', Eq('RPMODE', 'Yes'));\
+Set('A_DOUT_SRST_POLARITY', Eq('RPMODE', 'No'), '2');\
+Enable('ARST_N_POLARITY', Eq('RPMODE', 'Yes'));\
+Set('ARST_N_POLARITY', Eq('RPMODE', 'No'), '2');\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>tgiactgeno</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4ramgui.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>tgiactgeno_UNIX</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4ramgui</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Unix</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>pa4ramgui</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4ramgui.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>pa4ramgui_UNIX</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4ramgui</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>BOOL_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="True">T</spirit:enumeration>
+      <spirit:enumeration spirit:text="False">F</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>CASCADE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Speed">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Power">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>EDGE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="RISE">RISE</spirit:enumeration>
+      <spirit:enumeration spirit:text="FALL">FALL</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>NUM_CLOCK_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Single Read/Write Clock">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Independent Read and Write Clocks">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>PMODE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="No">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Yes">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>POLARITY_USED_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Low">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="High">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Not Used">2</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="ADLTCL">
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>Two-Port Large SRAM</actel-cc:displayName>
+    <actel-cc:description>SmartFusion2 Two-Port Large SRAM</actel-cc:description>
+    <actel-cc:packageTimestamp>20210118064320</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Memory &amp; Controllers">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="2021.1.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:resources>
+      <actel-cc:resource doc_title="SmartFusion2 Two-Port Large SRAM Configurator" url="http://coredocs.actel-ip.com/Actel/SmartFusion2/TPSRAM/tpsram_config_ug_1.pdf">
+        <actel-cc:presentation></actel-cc:presentation></actel-cc:resource></actel-cc:resources>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

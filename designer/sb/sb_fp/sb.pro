@@ -1,6 +1,6 @@
 <project name="sb" version="1.2">
     <ProjectDirectory>
-        C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb_fp
+        C:\Users\RG\Documents\MicroController\designer\sb\sb_fp
     </ProjectDirectory>
     <View>
         ChainView
@@ -9,7 +9,7 @@
         M2S010
     </LiberoTargetDevice>
     <LogFile>
-        C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb\sb_fp\sb.log
+        C:\Users\RG\Documents\MicroController\designer\sb\sb_fp\sb.log
     </LogFile>
     <SerializationOption>
         Skip
@@ -19,10 +19,10 @@
     </ProgrammingInterface>
     <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="usb1.1">
         <name>
-            E2006EMQ0Y
+            E2005KXNA3
         </name>
         <id>
-            E2006EMQ0Y
+            E2005KXNA3
         </id>
     </programmer>
     <Server>
@@ -73,7 +73,7 @@
                     4000000
                 </TCK>
                 <ClkMode>
-                    FreeRunningClk
+                    DiscreteClk
                 </ClkMode>
             </FlashPro5>
             <FlashPro6>
@@ -84,7 +84,7 @@
                     20000000
                 </SCK>
                 <ClkMode>
-                    FreeRunningClk
+                    DiscreteClk
                 </ClkMode>
             </FlashPro6>
         </Hardware>

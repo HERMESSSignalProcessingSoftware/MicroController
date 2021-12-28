@@ -1,0 +1,6183 @@
+Section PCBITS_PARAM_CONFIGURATIONS_MSSDDR.
+
+
+
+; ======================================== 
+; CAN                                
+; ======================================== 
+
+
+begin_param .
+instance  CAN .
+param     RXBUS_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_14_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_14_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_14_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_14_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_14_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_14_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_14_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  CAN .
+param     RXBUS_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_14_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  3 3 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  CAN .
+param     TXBUS_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  CAN .
+param     TXBUS_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_13_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  CAN .
+param     TX_EBL_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  CAN .
+param     TX_EBL_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_15_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; CC                                
+; ======================================== 
+
+
+
+begin_param .
+instance    CC .
+param       CACHE_ENABLED .
+type        bool  .
+mapping     "CC_CONFIG:CC_CACHE_ENB"      .
+end_param .
+
+
+begin_param .
+instance    CC .
+param       CC_CACHE_REGION .
+type        map  .
+m_mapping     "CC_CACHEREGION:CC_CACHE_REGION"      .
+  begin_map .
+    map 128MB_0001 "'b0001" .
+    map 128MB_0010 "'b0010" .
+    map 128MB_0100 "'b0100" .
+    map 128MB_1000 "'b1000" .
+    map 256MB_0011 "'b0011" .
+    map 256MB_1100 "'b1100" .
+    map 512MB_1111 "'b1111" .
+  end_map .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; DDRB                                
+; ======================================== 
+
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_TIMER .
+type        hex  .
+mapping     "DDRB_BUF_TIMER:DDRB_TIMER"      .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_NB_ADDR .
+type        hex  .
+mapping     "DDRB_NB_ADR:DDRB_NB_ADDR"      .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_NB_SZ .
+type        map  .
+m_mapping     "DDRB_NB_SIZE:DDRB_NB_SZ"      .
+  begin_map .
+    map NONE "'b0000" .
+    map 64KB "'b0001" .
+    map 128KB "'b0010" .
+    map 256KB "'b0011" .
+    map 512KB "'b0100" .
+    map 1MB "'b0101" .
+    map 2MB "'b0110" .
+    map 4MB "'b0111" .
+    map 8MB "'b1000" .
+    map 16MB "'b1001" .
+    map 32MB "'b1010" .
+    map 64MB "'b1011" .
+    map 128MB "'b1100" .
+    map 256MB "'b1101" .
+    map 512MB "'b1110" .
+    map 1GB "'b1111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_DS_WEN .
+type        bool  .
+mapping     "DDRB_CONFIG:DDRB_DS_WEN"      .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_DS_REN .
+type        bool  .
+mapping     "DDRB_CONFIG:DDRB_DS_REN"      .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_HPD_WEN .
+type        bool  .
+mapping     "DDRB_CONFIG:DDRB_HPD_WEN"      .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_HPD_REN .
+type        bool  .
+mapping     "DDRB_CONFIG:DDRB_HPD_REN"      .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_SW_WEN .
+type        bool  .
+mapping     "DDRB_CONFIG:DDRB_SW_WEN"      .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_SW_REN .
+type        bool  .
+mapping     "DDRB_CONFIG:DDRB_SW_REN"      .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_IDC_REN .
+type        bool  .
+mapping     "DDRB_CONFIG:DDRB_IDC_EN"      .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_BUF_SZ .
+type        map  .
+m_mapping     "DDRB_CONFIG:DDRB_BUF_SZ"      .
+  begin_map .
+    map 16B 0 .
+    map 32B 1 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    DDRB .
+param       DDRB_HPD_ENABLE .
+type        rbool  .
+mapping     "SOFTRESET:HPDMA_SOFTRESET"      .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; EDAC                                
+; ======================================== 
+
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_ENABLE_ESRAM0_EDAC_EN .
+type        bool  .
+mapping     "EDAC_ENABLE:ESRAM0_EDAC_EN"      .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_ENABLE_ESRAM1_EDAC_EN .
+type        bool  .
+mapping     "EDAC_ENABLE:ESRAM1_EDAC_EN"      .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_ENABLE_CC_EDAC_EN .
+type        bool  .
+mapping     "EDAC_ENABLE:CC_EDAC_EN"      .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_ENABLE_MAC_EDACTX_EN .
+type        bool  .
+mapping     "EDAC_ENABLE:MAC_EDAC_TX_EN"      .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_ENABLE_MAC_EDACRX_EN .
+type        bool  .
+mapping     "EDAC_ENABLE:MAC_EDAC_RX_EN"      .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_ENABLE_USB_EDAC_EN .
+type        bool  .
+mapping     "EDAC_ENABLE:USB_EDAC_EN"      .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_ENABLE_CAN_EDAC_EN .
+type        bool  .
+mapping     "EDAC_ENABLE:CAN_EDAC_EN"      .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_INT_ENABLE_MDDR_ECC_INT_EN .
+type        bool  .
+mapping     "EDAC_INT_ENABLE:MDDR_ECC_INT_EN"      .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_INT_ENABLE_ESRAM0 .
+type        map  .
+m_mapping     "EDAC_INT_ENABLE:ESRAM0_EDAC_1E_EN"      .
+  begin_map .
+    map ENABLE_1E 1 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 0 .
+    map DISABLE_ALL 0 .
+  end_map .
+m_mapping     "EDAC_INT_ENABLE:ESRAM0_EDAC_2E_EN"      .
+  begin_map .
+    map ENABLE_1E 0 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 1 .
+    map DISABLE_ALL 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_INT_ENABLE_ESRAM1 .
+type        map  .
+m_mapping     "EDAC_INT_ENABLE:ESRAM1_EDAC_1E_EN"      .
+  begin_map .
+    map ENABLE_1E 1 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 0 .
+    map DISABLE_ALL 0 .
+  end_map .
+m_mapping     "EDAC_INT_ENABLE:ESRAM1_EDAC_2E_EN"      .
+  begin_map .
+    map ENABLE_1E 0 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 1 .
+    map DISABLE_ALL 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_INT_ENABLE_CC .
+type        map  .
+m_mapping     "EDAC_INT_ENABLE:CC_EDAC_1E_EN"      .
+  begin_map .
+    map ENABLE_1E 1 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 0 .
+    map DISABLE_ALL 0 .
+  end_map .
+m_mapping     "EDAC_INT_ENABLE:CC_EDAC_2E_EN"      .
+  begin_map .
+    map ENABLE_1E 0 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 1 .
+    map DISABLE_ALL 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_INT_ENABLE_MAC_EDACTX .
+type        map  .
+m_mapping     "EDAC_INT_ENABLE:MAC_EDAC_TX_1E_EN"      .
+  begin_map .
+    map ENABLE_1E 1 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 0 .
+    map DISABLE_ALL 0 .
+  end_map .
+m_mapping     "EDAC_INT_ENABLE:MAC_EDAC_TX_2E_EN"      .
+  begin_map .
+    map ENABLE_1E 0 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 1 .
+    map DISABLE_ALL 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_INT_ENABLE_MAC_EDACRX .
+type        map  .
+m_mapping     "EDAC_INT_ENABLE:MAC_EDAC_RX_1E_EN"      .
+  begin_map .
+    map ENABLE_1E 1 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 0 .
+    map DISABLE_ALL 0 .
+  end_map .
+m_mapping     "EDAC_INT_ENABLE:MAC_EDAC_RX_2E_EN"      .
+  begin_map .
+    map ENABLE_1E 0 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 1 .
+    map DISABLE_ALL 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_INT_ENABLE_USB .
+type        map  .
+m_mapping     "EDAC_INT_ENABLE:USB_EDAC_1E_EN"      .
+  begin_map .
+    map ENABLE_1E 1 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 0 .
+    map DISABLE_ALL 0 .
+  end_map .
+m_mapping     "EDAC_INT_ENABLE:USB_EDAC_2E_EN"      .
+  begin_map .
+    map ENABLE_1E 0 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 1 .
+    map DISABLE_ALL 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    EDAC .
+param       EDAC_INT_ENABLE_CAN .
+type        map  .
+m_mapping     "EDAC_INT_ENABLE:CAN_EDAC_1E_EN"      .
+  begin_map .
+    map ENABLE_1E 1 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 0 .
+    map DISABLE_ALL 0 .
+  end_map .
+m_mapping     "EDAC_INT_ENABLE:CAN_EDAC_2E_EN"      .
+  begin_map .
+    map ENABLE_1E 0 .
+    map ENABLE_1E_2E 1 .
+    map ENABLE_2E 1 .
+    map DISABLE_ALL 0 .
+  end_map .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; GPIO                                
+; ======================================== 
+
+
+
+begin_param .
+instance    GPIO .
+param       GPIO_31_24_SET_RESET_SRC .
+type        map  .
+m_mapping     "GPIO_SYSRESET_SEL:MSS_GPIO_31_24_SYSRESET_SEL"      .
+  begin_map .
+    map GPIO_SYSREG 1 .
+    map GPIO_FABRIC 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    GPIO .
+param       GPIO_23_16_SET_RESET_SRC .
+type        map  .
+m_mapping     "GPIO_SYSRESET_SEL:MSS_GPIO_23_16_SYSRESET_SEL"      .
+  begin_map .
+    map GPIO_SYSREG 1 .
+    map GPIO_FABRIC 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    GPIO .
+param       GPIO_15_8_SET_RESET_SRC .
+type        map  .
+m_mapping     "GPIO_SYSRESET_SEL:MSS_GPIO_15_8_SYSRESET_SEL"      .
+  begin_map .
+    map GPIO_SYSREG 1 .
+    map GPIO_FABRIC 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    GPIO .
+param       GPIO_7_0_SET_RESET_SRC .
+type        map  .
+m_mapping     "GPIO_SYSRESET_SEL:MSS_GPIO_7_0_SYSRESET_SEL"      .
+  begin_map .
+    map GPIO_SYSREG 1 .
+    map GPIO_FABRIC 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    GPIO .
+param       GPIO_31_24_SET_RESET_VAL .
+type        map  .
+m_mapping     "MSS_GPIO_DEF:MSS_GPIO_31_24_DEF"      .
+  begin_map .
+    map RESET_STATE_1 1 .
+    map RESET_STATE_0 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    GPIO .
+param       GPIO_23_16_SET_RESET_VAL .
+type        map  .
+m_mapping     "MSS_GPIO_DEF:MSS_GPIO_23_16_DEF"      .
+  begin_map .
+    map RESET_STATE_1 1 .
+    map RESET_STATE_0 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    GPIO .
+param       GPIO_15_8_SET_RESET_VAL .
+type        map  .
+m_mapping     "MSS_GPIO_DEF:MSS_GPIO_15_8_DEF"      .
+  begin_map .
+    map RESET_STATE_1 1 .
+    map RESET_STATE_0 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    GPIO .
+param       GPIO_7_0_SET_RESET_VAL .
+type        map  .
+m_mapping     "MSS_GPIO_DEF:MSS_GPIO_7_0_DEF"      .
+  begin_map .
+    map RESET_STATE_1 1 .
+    map RESET_STATE_0 0 .
+  end_map .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; I2C_0                                
+; ======================================== 
+
+
+begin_param .
+instance  I2C_0 .
+param     SCL_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_0 .
+param     SCL_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_0 .
+param     SCL_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_55_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  31 31 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_0 .
+param     SDA_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_0 .
+param     SDA_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_0 .
+param     SDA_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_54_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  30 30 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+; ======================================== 
+; I2C_1                                
+; ======================================== 
+
+
+begin_param .
+instance  I2C_1 .
+param     SCL_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_1 .
+param     SCL_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_1 .
+param     SCL_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_12_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  1 1 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_1 .
+param     SDA_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_1 .
+param     SDA_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  I2C_1 .
+param     SDA_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_11_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  0 0 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+
+
+; ======================================== 
+; MAC                                
+; ======================================== 
+
+
+
+begin_param .
+instance    MAC .
+param       LINE_SPEED .
+type        map  .
+m_mapping     "MAC_CONFIG:ETH_LINE_SPEED"      .
+  begin_map .
+    map LINE_SPEED_10 "'b00" .
+    map LINE_SPEED_100 "'b01" .
+    map LINE_SPEED_1000 "'b10" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    MAC .
+param       MANAGMENT .
+type        map  .
+rule        PHY_MODE "==" PHY_MODE_RMII  .
+m_mapping     "IOMUXCELL_0_CONFIG:MSS_IOMUXSEL0"      .
+  begin_map .
+    map true "'b1" .
+    map false "N/A" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    MAC .
+param       PHY_MODE .
+type        map  .
+m_mapping     "MAC_CONFIG:ETH_PHY_MODE"      .
+  begin_map .
+    map PHY_MODE_RMII "'b000" .
+    map PHY_MODE_RGMII "'b001" .
+    map PHY_MODE_TBI "'b010" .
+    map PHY_MODE_MII "'b011" .
+    map PHY_MODE_GMII "'b100" .
+  end_map .
+m_mapping     "IOMUXCELL_4_CONFIG:MSS_IOMUXSEL0"      .
+  begin_map .
+    map PHY_MODE_RMII "'b1" .
+    map PHY_MODE_RGMII "N/A" .
+    map PHY_MODE_TBI "N/A" .
+    map PHY_MODE_MII "N/A" .
+    map PHY_MODE_GMII "N/A" .
+  end_map .
+m_mapping     "IOMUXCELL_5_CONFIG:MSS_IOMUXSEL0"      .
+  begin_map .
+    map PHY_MODE_RMII "'b1" .
+    map PHY_MODE_RGMII "N/A" .
+    map PHY_MODE_TBI "N/A" .
+    map PHY_MODE_MII "N/A" .
+    map PHY_MODE_GMII "N/A" .
+  end_map .
+m_mapping     "IOMUXCELL_6_CONFIG:MSS_IOMUXSEL0"      .
+  begin_map .
+    map PHY_MODE_RMII "'b1" .
+    map PHY_MODE_RGMII "N/A" .
+    map PHY_MODE_TBI "N/A" .
+    map PHY_MODE_MII "N/A" .
+    map PHY_MODE_GMII "N/A" .
+  end_map .
+m_mapping     "IOMUXCELL_7_CONFIG:MSS_IOMUXSEL0"      .
+  begin_map .
+    map PHY_MODE_RMII "'b1" .
+    map PHY_MODE_RGMII "N/A" .
+    map PHY_MODE_TBI "N/A" .
+    map PHY_MODE_MII "N/A" .
+    map PHY_MODE_GMII "N/A" .
+  end_map .
+m_mapping     "IOMUXCELL_1_CONFIG:MSS_IOMUXSEL5UPPER"      .
+  begin_map .
+    map PHY_MODE_RMII "'b1" .
+    map PHY_MODE_RGMII "N/A" .
+    map PHY_MODE_TBI "N/A" .
+    map PHY_MODE_MII "N/A" .
+    map PHY_MODE_GMII "N/A" .
+  end_map .
+m_mapping     "IOMUXCELL_2_CONFIG:MSS_IOMUXSEL5UPPER"      .
+  begin_map .
+    map PHY_MODE_RMII "'b1" .
+    map PHY_MODE_RGMII "N/A" .
+    map PHY_MODE_TBI "N/A" .
+    map PHY_MODE_MII "N/A" .
+    map PHY_MODE_GMII "N/A" .
+  end_map .
+m_mapping     "IOMUXCELL_3_CONFIG:MSS_IOMUXSEL5UPPER"      .
+  begin_map .
+    map PHY_MODE_RMII "'b1" .
+    map PHY_MODE_RGMII "N/A" .
+    map PHY_MODE_TBI "N/A" .
+    map PHY_MODE_MII "N/A" .
+    map PHY_MODE_GMII "N/A" .
+  end_map .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; MMUART_0                                
+; ======================================== 
+
+
+begin_param .
+instance  MMUART_0 .
+param     CLK_CONNECTION .
+type      map .
+rule    MODE "==" MODE_SYNC .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     CLK_FAB_CAPT .
+type      bool .
+rule    MODE "==" MODE_SYNC .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     CLK_GPIO_CAPT .
+type      bool .
+rule    MODE "==" MODE_SYNC .
+m_mapping   "IOMUXCELL_53_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  29 29 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     RXD_CONNECTION .
+type      map .
+rule    MODE_DUPLEX "==" MODE_FULL .
+m_mapping   "IOMUXCELL_52_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_52_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_52_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_52_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_52_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_52_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_52_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     RXD_GPIO_CAPT .
+type      bool .
+rule    MODE_DUPLEX "==" MODE_FULL .
+m_mapping   "IOMUXCELL_52_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  28 28 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     TXD_CONNECTION .
+type      map .
+rule    MODE_DUPLEX "==" MODE_FULL .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     TXD_FAB_CAPT .
+type      bool .
+rule    MODE_DUPLEX "==" MODE_FULL .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     TXD_RXD_CONNECTION .
+type      map .
+rule    MODE_DUPLEX "==" MODE_HALF .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     TXD_RXD_FAB_CAPT .
+type      bool .
+rule    MODE_DUPLEX "==" MODE_HALF .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     TXD_RXD_GPIO_CAPT .
+type      bool .
+rule    MODE_DUPLEX "==" MODE_HALF .
+m_mapping   "IOMUXCELL_51_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  27 27 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     DCD_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_50_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_50_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_50_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_50_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_50_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_50_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_50_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     DCD_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_50_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  22 22 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     RI_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_49_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_49_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_49_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_49_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_49_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_49_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_49_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     RI_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_49_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  21 21 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     DSR_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_48_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_48_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_48_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_48_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_48_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_48_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_48_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     DSR_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_48_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  20 20 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     CTS_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_47_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_47_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_47_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_47_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_47_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_47_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_47_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     CTS_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_47_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  19 19 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     DTR_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     DTR_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_46_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     RTS_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_0 .
+param     RTS_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_45_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+; ======================================== 
+; MMUART_1                                
+; ======================================== 
+
+
+begin_param .
+instance  MMUART_1 .
+param     CLK_CONNECTION .
+type      map .
+rule    MODE "==" MODE_SYNC .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     CLK_FAB_CAPT .
+type      bool .
+rule    MODE "==" MODE_SYNC .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     CLK_GPIO_CAPT .
+type      bool .
+rule    MODE "==" MODE_SYNC .
+m_mapping   "IOMUXCELL_43_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  25 25 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     RXD_CONNECTION .
+type      map .
+rule    MODE_DUPLEX "==" MODE_FULL .
+m_mapping   "IOMUXCELL_44_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_44_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_44_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_44_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_44_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_44_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_44_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     RXD_GPIO_CAPT .
+type      bool .
+rule    MODE_DUPLEX "==" MODE_FULL .
+m_mapping   "IOMUXCELL_44_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  26 26 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     TXD_CONNECTION .
+type      map .
+rule    MODE_DUPLEX "==" MODE_FULL .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     TXD_FAB_CAPT .
+type      bool .
+rule    MODE_DUPLEX "==" MODE_FULL .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     TXD_RXD_CONNECTION .
+type      map .
+rule    MODE_DUPLEX "==" MODE_HALF .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     TXD_RXD_FAB_CAPT .
+type      bool .
+rule    MODE_DUPLEX "==" MODE_HALF .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     TXD_RXD_GPIO_CAPT .
+type      bool .
+rule    MODE_DUPLEX "==" MODE_HALF .
+m_mapping   "IOMUXCELL_42_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  24 24 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     DCD_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_41_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_41_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_41_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_41_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_41_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_41_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_41_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     DCD_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_41_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  16 16 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     RI_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_40_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_40_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_40_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_40_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_40_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_40_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_40_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     RI_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_40_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  15 15 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     DSR_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_39_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_39_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_39_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_39_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_39_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_39_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_39_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     DSR_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_39_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  14 14 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     CTS_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_38_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_38_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_38_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_38_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_38_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_38_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_38_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     CTS_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_38_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  13 13 .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     DTR_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     DTR_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_37_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     RTS_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  MMUART_1 .
+param     RTS_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_36_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+
+
+; ======================================== 
+; SPI_0                                
+; ======================================== 
+
+
+
+begin_param .
+instance    SPI_0 .
+param       CLK_CONNECTION .
+type        map  .
+m_mapping     "PERIPH_CLOCK_MUX_SEL:SPI0_SCK_FAB_SEL"      .
+  begin_map .
+    map CONNECTION_IO 0 .
+    map CONNECTION_FABRIC 1 .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     DI_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_16_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_16_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_16_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_16_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_16_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_16_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_16_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     DI_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_16_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  5 5 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     DO_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     DO_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_17_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS0_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS0_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS0_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_18_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  7 7 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS1_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 1 .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS1_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 1 .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_19_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS2_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 2 .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS2_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 2 .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_20_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS3_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 3 .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS3_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 3 .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_21_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS4_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 4 .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS4_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 4 .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_22_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS5_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 5 .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS5_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 5 .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_23_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS6_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 6 .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS6_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 6 .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_24_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS7_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 7 .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_0 .
+param     SS7_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 7 .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_25_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+; ======================================== 
+; SPI_1                                
+; ======================================== 
+
+
+
+begin_param .
+instance    SPI_1 .
+param       CLK_CONNECTION .
+type        map  .
+m_mapping     "PERIPH_CLOCK_MUX_SEL:SPI1_SCK_FAB_SEL"      .
+  begin_map .
+    map CONNECTION_IO 0 .
+    map CONNECTION_FABRIC 1 .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     DI_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_26_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_26_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_26_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_26_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_26_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_26_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_26_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     DI_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_26_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  11 11 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     DO_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     DO_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_27_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS0_CONNECTION .
+type      map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL0"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "'b0" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS0_FAB_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS0_GPIO_CAPT .
+type      bool .
+m_mapping   "IOMUXCELL_28_CONFIG:MSS_IOMUXSEL1"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "GPIN_SRC_SEL:MSS_GPINSOURCE"  13 13 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS1_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 1 .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS1_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 1 .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_29_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS2_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 2 .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS2_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 2 .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_30_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS3_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 3 .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS3_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 3 .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_31_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS4_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 4 .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS4_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 4 .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_32_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS5_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 5 .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS5_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 5 .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_33_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS6_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 6 .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS6_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 6 .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_34_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS7_CONNECTION .
+type      map .
+rule    NB_SLAVES ">" 7 .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  CONNECTION_IO      "N/A" .
+    map  CONNECTION_FABRIC  "'b1" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL4UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL4MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL4LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL5UPPER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b1" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL5MID"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL5LOWER"    .
+  begin_map .
+    map  CONNECTION_IO      "'b0" .
+    map  CONNECTION_FABRIC  "N/A" .
+    map  CONNECTION_NOTUSED "N/A" .
+  end_map .
+end_param .
+
+begin_param .
+instance  SPI_1 .
+param     SS7_FAB_CAPT .
+type      bool .
+rule    NB_SLAVES ">" 7 .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL2"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+m_mapping   "IOMUXCELL_35_CONFIG:MSS_IOMUXSEL3"    .
+  begin_map .
+    map  1   "'b1" .
+    map  0   "N/A" .
+  end_map .
+end_param .
+
+
+
+; ======================================== 
+; SWITCH                                
+; ======================================== 
+
+
+
+begin_param .
+instance    SWITCH .
+param       ENVM_REMAP_BASE_ADDRESS .
+type        hex  .
+mapping     "ENVM_REMAP_BASE:SW_ENVMREMAPBASE"      .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       ENVM_REMAP_FABRIC_BASE_ADDRESS .
+type        hex  .
+mapping     "ENVM_FAB_REMAP:SW_ENVMFABREMAPBASE"      .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       SW_WEIGHT_IC .
+type        map  .
+m_mapping     "MASTER_WEIGHT_CONFIG0:SW_WEIGHT_IC"      .
+  begin_map .
+    map 32 "'b00000" .
+    map 1 "'b00001" .
+    map 2 "'b00010" .
+    map 3 "'b00011" .
+    map 4 "'b00100" .
+    map 5 "'b00101" .
+    map 6 "'b00110" .
+    map 7 "'b00111" .
+    map 8 "'b01000" .
+    map 9 "'b01001" .
+    map 10 "'b01010" .
+    map 11 "'b01011" .
+    map 12 "'b01100" .
+    map 13 "'b01101" .
+    map 14 "'b01110" .
+    map 15 "'b01111" .
+    map 16 "'b10000" .
+    map 17 "'b10001" .
+    map 18 "'b10010" .
+    map 19 "'b10011" .
+    map 20 "'b10100" .
+    map 21 "'b10101" .
+    map 22 "'b10110" .
+    map 23 "'b10111" .
+    map 24 "'b11000" .
+    map 25 "'b11001" .
+    map 26 "'b11010" .
+    map 27 "'b11011" .
+    map 28 "'b11100" .
+    map 29 "'b11101" .
+    map 30 "'b11110" .
+    map 31 "'b11111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       SW_WEIGHT_S .
+type        map  .
+m_mapping     "MASTER_WEIGHT_CONFIG0:SW_WEIGHT_S"      .
+  begin_map .
+    map 32 "'b00000" .
+    map 1 "'b00001" .
+    map 2 "'b00010" .
+    map 3 "'b00011" .
+    map 4 "'b00100" .
+    map 5 "'b00101" .
+    map 6 "'b00110" .
+    map 7 "'b00111" .
+    map 8 "'b01000" .
+    map 9 "'b01001" .
+    map 10 "'b01010" .
+    map 11 "'b01011" .
+    map 12 "'b01100" .
+    map 13 "'b01101" .
+    map 14 "'b01110" .
+    map 15 "'b01111" .
+    map 16 "'b10000" .
+    map 17 "'b10001" .
+    map 18 "'b10010" .
+    map 19 "'b10011" .
+    map 20 "'b10100" .
+    map 21 "'b10101" .
+    map 22 "'b10110" .
+    map 23 "'b10111" .
+    map 24 "'b11000" .
+    map 25 "'b11001" .
+    map 26 "'b11010" .
+    map 27 "'b11011" .
+    map 28 "'b11100" .
+    map 29 "'b11101" .
+    map 30 "'b11110" .
+    map 31 "'b11111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       SW_WEIGHT_G .
+type        map  .
+m_mapping     "MASTER_WEIGHT_CONFIG1:SW_WEIGHT_G"      .
+  begin_map .
+    map 32 "'b00000" .
+    map 1 "'b00001" .
+    map 2 "'b00010" .
+    map 3 "'b00011" .
+    map 4 "'b00100" .
+    map 5 "'b00101" .
+    map 6 "'b00110" .
+    map 7 "'b00111" .
+    map 8 "'b01000" .
+    map 9 "'b01001" .
+    map 10 "'b01010" .
+    map 11 "'b01011" .
+    map 12 "'b01100" .
+    map 13 "'b01101" .
+    map 14 "'b01110" .
+    map 15 "'b01111" .
+    map 16 "'b10000" .
+    map 17 "'b10001" .
+    map 18 "'b10010" .
+    map 19 "'b10011" .
+    map 20 "'b10100" .
+    map 21 "'b10101" .
+    map 22 "'b10110" .
+    map 23 "'b10111" .
+    map 24 "'b11000" .
+    map 25 "'b11001" .
+    map 26 "'b11010" .
+    map 27 "'b11011" .
+    map 28 "'b11100" .
+    map 29 "'b11101" .
+    map 30 "'b11110" .
+    map 31 "'b11111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       SW_WEIGHT_FAB_0 .
+type        map  .
+m_mapping     "MASTER_WEIGHT_CONFIG0:SW_WEIGHT_FAB_0"      .
+  begin_map .
+    map 32 "'b00000" .
+    map 1 "'b00001" .
+    map 2 "'b00010" .
+    map 3 "'b00011" .
+    map 4 "'b00100" .
+    map 5 "'b00101" .
+    map 6 "'b00110" .
+    map 7 "'b00111" .
+    map 8 "'b01000" .
+    map 9 "'b01001" .
+    map 10 "'b01010" .
+    map 11 "'b01011" .
+    map 12 "'b01100" .
+    map 13 "'b01101" .
+    map 14 "'b01110" .
+    map 15 "'b01111" .
+    map 16 "'b10000" .
+    map 17 "'b10001" .
+    map 18 "'b10010" .
+    map 19 "'b10011" .
+    map 20 "'b10100" .
+    map 21 "'b10101" .
+    map 22 "'b10110" .
+    map 23 "'b10111" .
+    map 24 "'b11000" .
+    map 25 "'b11001" .
+    map 26 "'b11010" .
+    map 27 "'b11011" .
+    map 28 "'b11100" .
+    map 29 "'b11101" .
+    map 30 "'b11110" .
+    map 31 "'b11111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       SW_WEIGHT_FAB_1 .
+type        map  .
+m_mapping     "MASTER_WEIGHT_CONFIG0:SW_WEIGHT_FAB_1"      .
+  begin_map .
+    map 32 "'b00000" .
+    map 1 "'b00001" .
+    map 2 "'b00010" .
+    map 3 "'b00011" .
+    map 4 "'b00100" .
+    map 5 "'b00101" .
+    map 6 "'b00110" .
+    map 7 "'b00111" .
+    map 8 "'b01000" .
+    map 9 "'b01001" .
+    map 10 "'b01010" .
+    map 11 "'b01011" .
+    map 12 "'b01100" .
+    map 13 "'b01101" .
+    map 14 "'b01110" .
+    map 15 "'b01111" .
+    map 16 "'b10000" .
+    map 17 "'b10001" .
+    map 18 "'b10010" .
+    map 19 "'b10011" .
+    map 20 "'b10100" .
+    map 21 "'b10101" .
+    map 22 "'b10110" .
+    map 23 "'b10111" .
+    map 24 "'b11000" .
+    map 25 "'b11001" .
+    map 26 "'b11010" .
+    map 27 "'b11011" .
+    map 28 "'b11100" .
+    map 29 "'b11101" .
+    map 30 "'b11110" .
+    map 31 "'b11111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       SW_WEIGHT_PDMA .
+type        map  .
+m_mapping     "MASTER_WEIGHT_CONFIG0:SW_WEIGHT_PDMA"      .
+  begin_map .
+    map 32 "'b00000" .
+    map 1 "'b00001" .
+    map 2 "'b00010" .
+    map 3 "'b00011" .
+    map 4 "'b00100" .
+    map 5 "'b00101" .
+    map 6 "'b00110" .
+    map 7 "'b00111" .
+    map 8 "'b01000" .
+    map 9 "'b01001" .
+    map 10 "'b01010" .
+    map 11 "'b01011" .
+    map 12 "'b01100" .
+    map 13 "'b01101" .
+    map 14 "'b01110" .
+    map 15 "'b01111" .
+    map 16 "'b10000" .
+    map 17 "'b10001" .
+    map 18 "'b10010" .
+    map 19 "'b10011" .
+    map 20 "'b10100" .
+    map 21 "'b10101" .
+    map 22 "'b10110" .
+    map 23 "'b10111" .
+    map 24 "'b11000" .
+    map 25 "'b11001" .
+    map 26 "'b11010" .
+    map 27 "'b11011" .
+    map 28 "'b11100" .
+    map 29 "'b11101" .
+    map 30 "'b11110" .
+    map 31 "'b11111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       SW_WEIGHT_HPDMA .
+type        map  .
+m_mapping     "MASTER_WEIGHT_CONFIG1:SW_WEIGHT_HPDMA"      .
+  begin_map .
+    map 32 "'b00000" .
+    map 1 "'b00001" .
+    map 2 "'b00010" .
+    map 3 "'b00011" .
+    map 4 "'b00100" .
+    map 5 "'b00101" .
+    map 6 "'b00110" .
+    map 7 "'b00111" .
+    map 8 "'b01000" .
+    map 9 "'b01001" .
+    map 10 "'b01010" .
+    map 11 "'b01011" .
+    map 12 "'b01100" .
+    map 13 "'b01101" .
+    map 14 "'b01110" .
+    map 15 "'b01111" .
+    map 16 "'b10000" .
+    map 17 "'b10001" .
+    map 18 "'b10010" .
+    map 19 "'b10011" .
+    map 20 "'b10100" .
+    map 21 "'b10101" .
+    map 22 "'b10110" .
+    map 23 "'b10111" .
+    map 24 "'b11000" .
+    map 25 "'b11001" .
+    map 26 "'b11010" .
+    map 27 "'b11011" .
+    map 28 "'b11100" .
+    map 29 "'b11101" .
+    map 30 "'b11110" .
+    map 31 "'b11111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       SW_WEIGHT_USB .
+type        map  .
+m_mapping     "MASTER_WEIGHT_CONFIG1:SW_WEIGHT_USB"      .
+  begin_map .
+    map 32 "'b00000" .
+    map 1 "'b00001" .
+    map 2 "'b00010" .
+    map 3 "'b00011" .
+    map 4 "'b00100" .
+    map 5 "'b00101" .
+    map 6 "'b00110" .
+    map 7 "'b00111" .
+    map 8 "'b01000" .
+    map 9 "'b01001" .
+    map 10 "'b01010" .
+    map 11 "'b01011" .
+    map 12 "'b01100" .
+    map 13 "'b01101" .
+    map 14 "'b01110" .
+    map 15 "'b01111" .
+    map 16 "'b10000" .
+    map 17 "'b10001" .
+    map 18 "'b10010" .
+    map 19 "'b10011" .
+    map 20 "'b10100" .
+    map 21 "'b10101" .
+    map 22 "'b10110" .
+    map 23 "'b10111" .
+    map 24 "'b11000" .
+    map 25 "'b11001" .
+    map 26 "'b11010" .
+    map 27 "'b11011" .
+    map 28 "'b11100" .
+    map 29 "'b11101" .
+    map 30 "'b11110" .
+    map 31 "'b11111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       SW_WEIGHT_GIGE .
+type        map  .
+m_mapping     "MASTER_WEIGHT_CONFIG0:SW_WEIGHT_GIGE"      .
+  begin_map .
+    map 32 "'b00000" .
+    map 1 "'b00001" .
+    map 2 "'b00010" .
+    map 3 "'b00011" .
+    map 4 "'b00100" .
+    map 5 "'b00101" .
+    map 6 "'b00110" .
+    map 7 "'b00111" .
+    map 8 "'b01000" .
+    map 9 "'b01001" .
+    map 10 "'b01010" .
+    map 11 "'b01011" .
+    map 12 "'b01100" .
+    map 13 "'b01101" .
+    map 14 "'b01110" .
+    map 15 "'b01111" .
+    map 16 "'b10000" .
+    map 17 "'b10001" .
+    map 18 "'b10010" .
+    map 19 "'b10011" .
+    map 20 "'b10100" .
+    map 21 "'b10101" .
+    map 22 "'b10110" .
+    map 23 "'b10111" .
+    map 24 "'b11000" .
+    map 25 "'b11001" .
+    map 26 "'b11010" .
+    map 27 "'b11011" .
+    map 28 "'b11100" .
+    map 29 "'b11101" .
+    map 30 "'b11110" .
+    map 31 "'b11111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       ESRAM_MAX_LAT_SW_MAX_LATENCY_ESRAM0 .
+type        map  .
+m_mapping     "ESRAM_MAX_LAT:SW_MAX_LAT_ESRAM0"      .
+  begin_map .
+    map 8 "'b000" .
+    map 1 "'b001" .
+    map 2 "'b010" .
+    map 3 "'b011" .
+    map 4 "'b100" .
+    map 5 "'b101" .
+    map 6 "'b110" .
+    map 7 "'b111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       ESRAM_MAX_LAT_SW_MAX_LATENCY_ESRAM1 .
+type        map  .
+m_mapping     "ESRAM_MAX_LAT:SW_MAX_LAT_ESRAM1"      .
+  begin_map .
+    map 8 "'b000" .
+    map 1 "'b001" .
+    map 2 "'b010" .
+    map 3 "'b011" .
+    map 4 "'b100" .
+    map 5 "'b101" .
+    map 6 "'b110" .
+    map 7 "'b111" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       CORTEXM3_REMAP .
+type        map  .
+m_mapping     "ESRAM_CONFIG:SW_CC_ESRAMFWREMAP"      .
+  begin_map .
+    map ENVM 0 .
+    map ERAM 1 .
+    map MDDR 0 .
+  end_map .
+m_mapping     "ESRAM_CONFIG:SW_CC_ESRAM1FWREMAP"      .
+  begin_map .
+    map ENVM 0 .
+    map ERAM 0 .
+    map MDDR 0 .
+  end_map .
+m_mapping     "DDR_CONFIG:SW_CC_DDRFWREMAP"      .
+  begin_map .
+    map ENVM 0 .
+    map ERAM 0 .
+    map MDDR 1 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SWITCH .
+param       ENVM_REMAP_REGION_SIZE .
+type        map  .
+m_mapping     "ENVM_CONFIG:SW_ENVMREMAPSIZE"      .
+  begin_map .
+    map 16 "'b01101" .
+    map 32 "'b01110" .
+    map 64 "'b01111" .
+    map 128 "'b10000" .
+    map 256 "'b10001" .
+  end_map .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; USB                                
+; ======================================== 
+
+
+
+begin_param .
+instance    USB .
+param       USB_CONFIG .
+type        map  .
+m_mapping     "USB_IO_INPUT_SEL:USB_IO_INPUT_SEL"      .
+  begin_map .
+    map CONFIG_ULPI_A "'b00" .
+    map CONFIG_ULPI_B "'b01" .
+    map CONFIG_ULPI_C "'b10" .
+    map CONFIG_ULPI_D "'b11" .
+    map CONFIG_UTMI "N/A" .
+  end_map .
+m_mapping     "USB_CONFIG:USB_UTMI_SEL"      .
+  begin_map .
+    map CONFIG_ULPI_A "'b0" .
+    map CONFIG_ULPI_B "'b0" .
+    map CONFIG_ULPI_C "'b0" .
+    map CONFIG_ULPI_D "'b0" .
+    map CONFIG_UTMI "'b1" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    USB .
+param       DDR_SELECT .
+type        map  .
+m_mapping     "USB_CONFIG:USB_DDR_SELECT"      .
+  begin_map .
+    map DDR_SELECT_SDR "'b0" .
+    map DDR_SELECT_DDR "'b1" .
+  end_map .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+; ======================================== 
+; FIC32
+; - There are two instances.
+; ======================================== 
+
+; =====================================================================================================
+; USE_FAB_REGION_0, ... USE_FAB_REGION_5 they are mutualy exclusive between the FIC32_0 and FIC32_1
+; 0 : Region is associated with FIC32_0
+; 1 : Region is associated with FIC32_1
+; For now we are going to read the data from just FIC32_0.
+; If it's checked it means we are going to use FIC32_0, otherwise FIC32_1
+; Later we need to see how we can implement that because we don't want to set the same bit twice
+; for example.
+; =====================================================================================================
+
+; =============================================
+; FIC32_0
+; =============================================
+
+begin_param .
+instance FIC32_0 .
+param    INTERFACE_TYPE .
+type     map  .
+m_mapping "FAB_IF:FAB0_AHB_MODE" .
+  begin_map .
+    map INTERFACE_AHB "'b1" .
+    map INTERFACE_APB "'b0" .
+  end_map .
+end_param .
+
+begin_param .
+instance FIC32_0 .
+param    USE_BYPASS_MODE .
+type     bool  .
+mapping  "FAB_IF:FAB0_AHB_BYPASS" .
+end_param .
+
+; ==============
+; USE_FAB_REGION
+; ==============
+begin_param .
+instance  FIC32_0 .
+param     USE_FAB_REGION_0 .
+type      bool .
+m_mapping   "FAB_IF:SW_FIC_REG_SEL"  0 0 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "'b1" .
+  end_map .
+end_param .
+
+begin_param .
+instance  FIC32_0 .
+param     USE_FAB_REGION_1 .
+type      bool .
+m_mapping   "FAB_IF:SW_FIC_REG_SEL"  1 1 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "'b1" .
+  end_map .
+end_param .
+
+begin_param .
+instance  FIC32_0 .
+param     USE_FAB_REGION_2 .
+type      bool .
+m_mapping   "FAB_IF:SW_FIC_REG_SEL"  2 2 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "'b1" .
+  end_map .
+end_param .
+
+begin_param .
+instance  FIC32_0 .
+param     USE_FAB_REGION_3 .
+type      bool .
+m_mapping   "FAB_IF:SW_FIC_REG_SEL"  3 3 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "'b1" .
+  end_map .
+end_param .
+
+begin_param .
+instance  FIC32_0 .
+param     USE_FAB_REGION_4 .
+type      bool .
+m_mapping   "FAB_IF:SW_FIC_REG_SEL"  4 4 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "'b1" .
+  end_map .
+end_param .
+
+begin_param .
+instance  FIC32_0 .
+param     USE_FAB_REGION_5 .
+type      bool .
+m_mapping   "FAB_IF:SW_FIC_REG_SEL"  5 5 .
+  begin_map .
+    map  1   "'b0" .
+    map  0   "'b1" .
+  end_map .
+end_param .
+
+
+
+; =============================================
+; FIC32_1
+; =============================================
+begin_param .
+instance FIC32_1 .
+param    INTERFACE_TYPE .
+type     map  .
+m_mapping "FAB_IF:FAB1_AHB_MODE" .
+  begin_map .
+    map INTERFACE_AHB "'b1" .
+    map INTERFACE_APB "'b0" .
+  end_map .
+end_param .
+
+begin_param .
+instance FIC32_1 .
+param    USE_BYPASS_MODE .
+type     bool  .
+mapping  "FAB_IF:FAB1_AHB_BYPASS" .
+end_param .
+
+
+
+; ======================================== 
+; CFGM                                
+; ======================================== 
+
+
+
+begin_param .
+instance    CFGM .
+param       MDDR_CONFIG_LOCAL .
+type        map  .
+m_mapping     "MDDR_CONFIG:MDDR_CONFIG_LOCAL"      .
+  begin_map .
+    map 0 0 .
+    map 1 1 .
+  end_map .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; CCC                                
+; ======================================== 
+
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_DIVR .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_LOW:FACC_PLL_DIVR"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_DIVF .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_LOW:FACC_PLL_DIVF"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_DIVQ .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_LOW:FACC_PLL_DIVQ"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_RANGE .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_LOW:FACC_PLL_RANGE"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_LOCKWIN .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_LOW:FACC_PLL_LOCKWIN"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_LOCKCNT .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_LOW:FACC_PLL_LOCKCNT"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_MODE_1V2 .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_HIGH:FACC_PLL_MODE_1V2"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_MODE_3V3 .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_HIGH:FACC_PLL_MODE_3V3"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_FSE .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_HIGH:FACC_PLL_FSE"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_SSE .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_HIGH:FACC_PLL_SSE"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_SSMD .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_HIGH:FACC_PLL_SSMD"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_PLL_SSMF .
+type        int  .
+mapping     "MSSDDR_PLL_STATUS_HIGH:FACC_PLL_SSMF"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       DIVISOR_A .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_1:DIVISOR_A"      .
+  begin_map .
+    map 1 "'b00" .
+    map 2 "'b01" .
+    map 3 "'b10" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       PCLK0_DIVISOR .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_1:APB0_DIVISOR"      .
+  begin_map .
+    map 1 "'b000" .
+    map 2 "'b001" .
+    map 4 "'b010" .
+    map 8 "'b100" .
+    map 16 "'b101" .
+    map 32 "'b110" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       PCLK1_DIVISOR .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_1:APB1_DIVISOR"      .
+  begin_map .
+    map 1 "'b000" .
+    map 2 "'b001" .
+    map 4 "'b010" .
+    map 8 "'b100" .
+    map 16 "'b101" .
+    map 32 "'b110" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       DIVISOR_B .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_1:FCLK_DIVISOR"      .
+  begin_map .
+    map 1 "'b000" .
+    map 2 "'b001" .
+    map 4 "'b010" .
+    map 8 "'b100" .
+    map 16 "'b101" .
+    map 32 "'b110" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       REG_FIC32_0_DIVISOR .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_1:FIC32_0_DIVISOR"      .
+  begin_map .
+    map 1 "'b000" .
+    map 2 "'b001" .
+    map 4 "'b010" .
+    map 8 "'b100" .
+    map 16 "'b101" .
+    map 32 "'b110" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       REG_FIC32_1_DIVISOR .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_1:FIC32_1_DIVISOR"      .
+  begin_map .
+    map 1 "'b000" .
+    map 2 "'b001" .
+    map 4 "'b010" .
+    map 8 "'b100" .
+    map 16 "'b101" .
+    map 32 "'b110" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FIC64_DIVISOR .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_1:FIC64_DIVISOR"      .
+  begin_map .
+    map 1 "'b000" .
+    map 2 "'b001" .
+    map 4 "'b010" .
+    map 8 "'b100" .
+    map 16 "'b101" .
+    map 32 "'b110" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       DIVISOR_BASE_REGEN .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_1:BASE_DIVISOR"      .
+  begin_map .
+    map 1 "'b000" .
+    map 2 "'b001" .
+    map 4 "'b010" .
+    map 8 "'b100" .
+    map 16 "'b101" .
+    map 32 "'b110" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       REFCLK_SRC .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_1:FACC_FAB_REF_SEL"      .
+  begin_map .
+    map CLK_BASE 1 .
+    map RCOSC_25_50MHZ 0 .
+  end_map .
+m_mapping     "MSSDDR_PLL_STATUS_HIGH:FACC_PLL_PD"      .
+  begin_map .
+    map CLK_BASE 0 .
+    map RCOSC_25_50MHZ 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_SRC_SEL .
+type        int  .
+mapping     "MSSDDR_FACC_CONFIG_2:FACC_SRC_SEL"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       PERSIST_CC .
+type        int  .
+mapping     "MSSDDR_FACC_CONFIG_1:PERSIST_CC"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       CONTROLLER_PLL_INIT .
+type        int  .
+mapping     "MSSDDR_FACC_CONFIG_1:CONTROLLER_PLL_INIT"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FACC_GLMUX_SEL .
+type        int  .
+mapping     "MSSDDR_FACC_CONFIG_1:FACC_GLMUX_SEL"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       MPLL_LOCK_EN .
+type        bool  .
+mapping     "PLL_LOCK_EN:MPLL_LOCK_EN"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       MPLL_LOCK_LOST_EN .
+type        bool  .
+mapping     "PLL_LOCK_EN:MPLL_LOCK_LOST_EN"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FAB_PLL_LOCK_EN .
+type        bool  .
+mapping     "PLL_LOCK_EN:FAB_PLL_LOCK_EN"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       FAB_PLL_LOCK_LOST_EN .
+type        bool  .
+mapping     "PLL_LOCK_EN:FAB_PLL_LOCK_LOST_EN"      .
+end_param .
+
+
+begin_param .
+instance    CCC .
+param       NV_FREQRNG .
+type        int  .
+mapping     "ENVM_CONFIG:NV_FREQRNG"      .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; RESET                                
+; ======================================== 
+
+
+
+begin_param .
+instance    RESET .
+param       FPGA_RESET_N_USED .
+type        rbool  .
+mapping     "SOFTRESET:FPGA_SOFTRESET"      .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; INTR                                
+; ======================================== 
+
+
+
+begin_param .
+instance    INTR .
+param       SW_INTERRUPT_EN .
+type        hex  .
+mapping     "MSS_INTERRUPT_ENABLE:SW_INTERRUPT_EN"      .
+end_param .
+
+
+begin_param .
+instance    INTR .
+param       CC_INTERRUPT_EN .
+type        hex  .
+mapping     "MSS_INTERRUPT_ENABLE:CC_INTERRUPT_EN"      .
+end_param .
+
+
+begin_param .
+instance    INTR .
+param       DDRB_INTERRUPT_EN .
+type        hex  .
+mapping     "MSS_INTERRUPT_ENABLE:DDRB_INTERRUPT_EN"      .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; CM3                                
+; ======================================== 
+
+
+
+begin_param .
+instance    CM3 .
+param       MPU_USED .
+type        rbool  .
+mapping     "M3_CONFIG:M3_MPU_DISABLE"      .
+end_param .
+
+
+begin_param .
+instance    CM3 .
+param       STCALIB .
+type        hex  .
+mapping     "M3_CONFIG:STCALIB250"      .
+end_param .
+
+
+begin_param .
+instance    CM3 .
+param       STCLK_DIVISOR .
+type        map  .
+m_mapping     "M3_CONFIG:STCLK_DIVISOR"      .
+  begin_map .
+    map STCLK_DIVISOR_4 "'b00" .
+    map STCLK_DIVISOR_8 "'b01" .
+    map STCLK_DIVISOR_16 "'b10" .
+    map STCLK_DIVISOR_32 "'b11" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    CM3 .
+param       TRACECLK_DIV2_SEL .
+type        bool  .
+mapping     "PERIPH_CLOCK_MUX_SEL:TRACECLK_DIV2_SEL"      .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; RTC                                
+; ======================================== 
+
+
+
+begin_param .
+instance    RTC .
+param       CLK_SEL .
+type        map  .
+m_mapping     "MSSDDR_FACC_CONFIG_2:RTC_CLK_SEL"      .
+  begin_map .
+    map RTC_CLK_SEL_XTAL "'b00" .
+    map RTC_CLK_SEL_1MHZ "'b01" .
+    map RTC_CLK_SEL_50MHZ "'b10" .
+    map RTC_CLK_SEL_MAIN_CRYSTAL "'b00" .
+    map RTC_CLK_SEL_MAIN_CERAMIC_RESONATOR "'b00" .
+    map RTC_CLK_SEL_MAIN_RC_NETWORK "'b00" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    RTC .
+param       RTC_WAKEUP_M3 .
+type        bool  .
+mapping     "RTC_WAKEUP_CONFIG:RTC_WAKEUP_M3_EN"      .
+end_param .
+
+
+begin_param .
+instance    RTC .
+param       RTC_WAKEUP_FAB .
+type        bool  .
+mapping     "RTC_WAKEUP_CONFIG:RTC_WAKEUP_FAB_EN"      .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; WATCHDOG                                
+; ======================================== 
+
+
+
+begin_param .
+instance    WATCHDOG .
+param       WDOG_MODE .
+type        map  .
+m_mapping     "WDOGCONFIG:G4_TESTWDOGMODE"      .
+  begin_map .
+    map MODE_RESET "'b0" .
+    map MODE_INTERRUPT "'b1" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    WATCHDOG .
+param       WDOG_LOAD .
+type        hex  .
+mapping     "WDOGLOAD:G4_TESTWDOGLOAD"      .
+end_param .
+
+
+begin_param .
+instance    WATCHDOG .
+param       WDOG_MVRP .
+type        hex  .
+mapping     "WDOGMVRP:G4_TESTWDOGMVRP"      .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; SECURITY                                
+; ======================================== 
+
+
+
+begin_param .
+instance    SECURITY .
+param       FABRIC_MEMPROT_BASE_ADDRESS .
+type        hex  .
+rule        FABRIC_MEMPROT_IS_USED "==" true  .
+mapping     "FAB_PROT_BASE:SW_PROTREGIONBASE"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       FABRIC_MEMPROT_REGION_SIZE .
+type        map  .
+rule        FABRIC_MEMPROT_IS_USED "==" true  .
+m_mapping     "FAB_PROT_SIZE:SW_PROTREGIONSIZE"      .
+  begin_map .
+    map 128B "'b00110" .
+    map 2KB "'b01010" .
+    map 16KB "'b01101" .
+    map 32KB "'b01110" .
+    map 64KB "'b01111" .
+    map 128KB "'b10000" .
+    map 256KB "'b10001" .
+    map 512KB "'b10010" .
+    map 8MB "'b10110" .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_ENVM0_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:ENVM0_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_ENVM1_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:ENVM1_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_ESRAM0_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:ESRAM0_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_ESRAM1_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:ESRAM1_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MAC_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MAC_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_PDMA_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:PDMA_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_TIMER_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:TIMER_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MMUART0_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MMUART0_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MMUART1_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MMUART1_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_G4SPI0_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:G4SPI0_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_G4SPI1_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:G4SPI1_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_I2C0_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:I2C0_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_I2C1_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:I2C1_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_CAN_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:CAN_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_USB_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:USB_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_COMBLK_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:COMBLK_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_FPGA_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:FPGA_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_HPDMA_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:HPDMA_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_FIC32_0_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:FIC32_0_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_FIC32_1_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:FIC32_1_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MSS_GPIO_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MSS_GPIO_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MSS_GPOUT_7_0_SOFT_RESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MSS_GPOUT_7_0_SOFT_RESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MSS_GPOUT_15_8_SOFT_RESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MSS_GPOUT_15_8_SOFT_RESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MSS_GPOUT_23_16_SOFT_RESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MSS_GPOUT_23_16_SOFT_RESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MSS_GPOUT_31_24_SOFT_RESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MSS_GPOUT_31_24_SOFT_RESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MDDR_CTLR_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MDDR_CTLR_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFTRESET_MDDR_FIC64_SOFTRESET_OVERRIDE .
+type        bool  .
+s_mapping     "SOFTRESET:MDDR_FIC64_SOFTRESET"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       ESRAM_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "ESRAM_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       ESRAM_MAX_LAT_OVERRIDE .
+type        bool  .
+s_mapping     "ESRAM_MAX_LAT"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       DDR_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "DDR_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       ENVM_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "ENVM_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       ENVM_REMAP_BASE_OVERRIDE .
+type        bool  .
+s_mapping     "ENVM_REMAP_BASE"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       ENVM_FAB_REMAP_OVERRIDE .
+type        bool  .
+s_mapping     "ENVM_FAB_REMAP"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       CC_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "CC_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       CC_CACHEREGION_OVERRIDE .
+type        bool  .
+s_mapping     "CC_CACHEREGION"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       CC_LOCKBASEADDR_OVERRIDE .
+type        bool  .
+s_mapping     "CC_LOCKBASEADDR"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       CC_FLUSHINDX_OVERRIDE .
+type        bool  .
+s_mapping     "CC_FLUSHINDX"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       DDRB_BUF_TIMER_OVERRIDE .
+type        bool  .
+s_mapping     "DDRB_BUF_TIMER"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       DDRB_NB_ADR_OVERRIDE .
+type        bool  .
+s_mapping     "DDRB_NB_ADR"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       DDRB_NB_SIZE_OVERRIDE .
+type        bool  .
+s_mapping     "DDRB_NB_SIZE"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       DDRB_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "DDRB_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       EDAC_ENABLE_OVERRIDE .
+type        bool  .
+s_mapping     "EDAC_ENABLE"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MASTER_WEIGHT_CONFIG0_OVERRIDE .
+type        bool  .
+s_mapping     "MASTER_WEIGHT_CONFIG0"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MASTER_WEIGHT_CONFIG1_OVERRIDE .
+type        bool  .
+s_mapping     "MASTER_WEIGHT_CONFIG1"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SOFT_INTERRUPT_OVERRIDE .
+type        bool  .
+s_mapping     "SOFT_INTERRUPT"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       M3_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "M3_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       FAB_IF_OVERRIDE .
+type        bool  .
+s_mapping     "FAB_IF"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       LOOPBACK_CTRL_OVERRIDE .
+type        bool  .
+s_mapping     "LOOPBACK_CTRL"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       GPIO_SYSRESET_SEL_OVERRIDE .
+type        bool  .
+s_mapping     "GPIO_SYSRESET_SEL"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       GPIN_SRC_SEL_OVERRIDE .
+type        bool  .
+s_mapping     "GPIN_SRC_SEL"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MDDR_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "MDDR_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       USB_IO_INPUT_SEL_OVERRIDE .
+type        bool  .
+s_mapping     "USB_IO_INPUT_SEL"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       PERIPH_CLOCK_MUX_SEL_OVERRIDE .
+type        bool  .
+s_mapping     "PERIPH_CLOCK_MUX_SEL"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       WDOGCONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "WDOGCONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MDDR_IO_CALIB_OVERRIDE .
+type        bool  .
+s_mapping     "MDDR_IO_CALIB"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       SPARE_OUT_OVERRIDE .
+type        bool  .
+s_mapping     "SPARE_OUT"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       EDAC_INT_ENABLE_OVERRIDE .
+type        bool  .
+s_mapping     "EDAC_INT_ENABLE"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       USB_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "USB_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       ESRAM_PIPELINE_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "ESRAM_PIPELINE_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MSS_INTERRUPT_ENABLE_OVERRIDE .
+type        bool  .
+s_mapping     "MSS_INTERRUPT_ENABLE"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       RTC_WAKEUP_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "RTC_WAKEUP_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MAC_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "MAC_CONFIG"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MSSDDR_PLL_STATUS_LOW_OVERRIDE .
+type        bool  .
+s_mapping     "MSSDDR_PLL_STATUS_LOW"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MSSDDR_PLL_STATUS_HIGH_OVERRIDE .
+type        bool  .
+s_mapping     "MSSDDR_PLL_STATUS_HIGH"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MSSDDR_FACC_CONFIG_1_OVERRIDE .
+type        bool  .
+s_mapping     "MSSDDR_FACC_CONFIG_1"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MSSDDR_FACC_CONFIG_2_OVERRIDE .
+type        bool  .
+s_mapping     "MSSDDR_FACC_CONFIG_2"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       PLL_LOCK_EN_OVERRIDE .
+type        bool  .
+s_mapping     "PLL_LOCK_EN"      .
+end_param .
+
+
+begin_param .
+instance    SECURITY .
+param       MSSDDR_CLK_CALIB_CONFIG_OVERRIDE .
+type        bool  .
+s_mapping     "MSSDDR_CLK_CALIB_CONFIG"      .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+
+
+; ======================================== 
+; MDDR                                
+; ======================================== 
+
+
+
+begin_param .
+instance    MDDR .
+param       MODE .
+type        map  .
+m_mapping     "MDDR_CONFIG:SDR_MODE"      .
+  begin_map .
+    map MODE_DDR 0 .
+    map MODE_DDR_AXI64 0 .
+    map MODE_DDR_AHB0 0 .
+    map MODE_DDR_AHB1 0 .
+    map MODE_DDR_AHB0_AHB1 0 .
+    map MODE_SDR_AXI64 1 .
+    map MODE_SDR_AHB 1 .
+  end_map .
+m_mapping     "MDDR_CONFIG:F_AXI_AHB_MODE"      .
+  begin_map .
+    map MODE_DDR 1 .
+    map MODE_DDR_AXI64 1 .
+    map MODE_DDR_AHB0 0 .
+    map MODE_DDR_AHB1 0 .
+    map MODE_DDR_AHB0_AHB1 0 .
+    map MODE_SDR_AXI64 1 .
+    map MODE_SDR_AHB 0 .
+  end_map .
+end_param .
+
+
+begin_param .
+instance    MDDR .
+param       MEMORY_TYPE .
+type        map  .
+m_mapping     "MDDR_IO_CALIB:PCODE"      .
+  begin_map .
+    map LPDDR_NO_CALIBRATION 0x3d .
+    map LPDDR_LVCMOS18_NO_CALIBRATION 0x3d .
+    map LPDDR 0x0 .
+    map LPDDR_LVCMOS18 0x0 .
+    map DDR2 0x0 .
+    map DDR2_FULL_STRENGTH 0x0 .
+    map DDR3 0x0 .
+    map DDR3_FULL_STRENGTH 0x0 .
+  end_map .
+m_mapping     "MDDR_IO_CALIB:NCODE"      .
+  begin_map .
+    map LPDDR_NO_CALIBRATION 0x3a .
+    map LPDDR_LVCMOS18_NO_CALIBRATION 0x3a .
+    map LPDDR 0x0 .
+    map LPDDR_LVCMOS18 0x0 .
+    map DDR2 0x0 .
+    map DDR2_FULL_STRENGTH 0x0 .
+    map DDR3 0x0 .
+    map DDR3_FULL_STRENGTH 0x0 .
+  end_map .
+m_mapping     "MDDR_IO_CALIB:CALIB_TRIM"      .
+  begin_map .
+    map LPDDR_NO_CALIBRATION 1 .
+    map LPDDR_LVCMOS18_NO_CALIBRATION 1 .
+    map LPDDR 0 .
+    map LPDDR_LVCMOS18 0 .
+    map DDR2 0 .
+    map DDR2_FULL_STRENGTH 0 .
+    map DDR3 0 .
+    map DDR3_FULL_STRENGTH 0 .
+  end_map .
+end_param .
+
+; ======================================== 
+;                                 
+; ======================================== 
+
+
+End.
+
+Section PCBITS_REGISTERS_TO_SET_WHEN_INSTS_USED.
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+CAN   "SOFTRESET:CAN_SOFTRESET"     "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+;CC   "CC_CONFIG:CC_CACHE_ENB"     "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+GPIO   "SOFTRESET:MSS_GPIO_SOFTRESET"     "0" .
+
+; We should set the soft reset only when a gpio is used in the specific range we are setting.
+; For now just set all of them if the GPIO is enabled.
+GPIO   "SOFTRESET:MSS_GPOUT_7_0_SOFT_RESET"     "0" .
+GPIO   "SOFTRESET:MSS_GPOUT_15_8_SOFT_RESET"    "0" .
+GPIO   "SOFTRESET:MSS_GPOUT_23_16_SOFT_RESET"   "0" .
+GPIO   "SOFTRESET:MSS_GPOUT_31_24_SOFT_RESET"   "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+I2C_0   "SOFTRESET:I2C0_SOFTRESET"     "0" .
+I2C_1   "SOFTRESET:I2C1_SOFTRESET"     "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+MAC   "SOFTRESET:MAC_SOFTRESET"     "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+MMUART_0   "SOFTRESET:MMUART0_SOFTRESET"     "0" .
+MMUART_1   "SOFTRESET:MMUART1_SOFTRESET"     "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+SPI_0   "SOFTRESET:G4SPI0_SOFTRESET"     "0" .
+SPI_1   "SOFTRESET:G4SPI1_SOFTRESET"     "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+USB   "SOFTRESET:USB_SOFTRESET"     "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+FIC32_0   "SOFTRESET:FIC32_0_SOFTRESET"     "0" .
+FIC32_1   "SOFTRESET:FIC32_1_SOFTRESET"     "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+DMA "SOFTRESET:PDMA_SOFTRESET"     "0" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+WATCHDOG   "WDOGCONFIG:G4_TESTWDOGENABLE"     "1" .
+
+
+
+; ===============================================================================================
+; Set the registers that need to be set to a different value when the inst is used.
+; ===============================================================================================
+MDDR   "MSSDDR_FACC_CONFIG_1:DDR_CLK_EN"     "1" .
+MDDR   "SOFTRESET:MDDR_CTLR_SOFTRESET"       "0" .
+MDDR   "SOFTRESET:MDDR_FIC64_SOFTRESET"      "0" .
+
+End.
+
+
+
+
+
+; ===============================================================================================
+; GPIO PCBIT Data.
+; ===============================================================================================
+Section PCBITS_PARAM_GPIO.
+
+iomuxA  11  12  13  14  15  16  17  18  19  20  21  26  27  28  29  30  31  32  33  22  23  24  25  34  35  -1  -1  -1  -1  -1 -1  -1 .
+iomuxB  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  36  37  38  39  40  41  45  46  47  48  49  50  56  42  43  44  51  52  53  54 55 .
+
+instName       GPIO .
+
+usage          USAGE .
+type           TYPE .
+fabCapture     FAB_CAPT .
+
+typeNotUsed    NOT_USED .
+typeIOA        CONNECTION_IOA .
+typeIOB        CONNECTION_IOB .
+typeFabricA    CONNECTION_FABRICA .
+typeFabricB    CONNECTION_FABRICB .
+
+usageInput     USAGE_INPUT .
+usageOutput    USAGE_OUTPUT .
+usageInout     USAGE_BI .
+
+End.
+; ===============================================================================================
+
+
+
+; ===============================================================================================
+; USB PCBIT Data.
+; format: param dir iomuxA iomuxB iomuxC iomuxD   gpioA gpioB gpioC gpioD 
+; ===============================================================================================
+Section PCBITS_PARAM_USB.
+
+instName       USB .
+type           CONNECTION .
+gpioCapture    GPIO_CAPT .
+typeNotUsed    DIR_NOTUSED .
+
+param          DIR     IN      16   1   51   -1     5 A   -1 A  27 B  -1 A.
+param          NXT     IN      18   3   53   -1    7 A   -1 A  29 B  -1 A.
+param          STP     OUT     17   2   52   -1    6 A   -1 A  28 B  -1 A.
+param          DATA0   INOUT   13   4   54   -1    2 A   -1 A  30 B  -1 A.
+param          DATA1   INOUT   14   5   55   -1    3 A   -1 A  31 B  -1 A.
+param          DATA2   INOUT   15   6   42   -1    4 A   -1 A  24 B  -1 A.
+param          DATA3   INOUT   11   7   44   -1    0 A   -1 A  26 B  -1 A.
+param          DATA4   INOUT   12   8   43   -1    1 A   -1 A  25 B  -1 A.
+param          DATA5   INOUT   19   9   45   -1    8 A   -1 A  17 B  -1 A.
+param          DATA6   INOUT   20  10   46   -1    9 A   -1 A  18 B  -1 A.
+param          DATA7   INOUT   21   0   47   56    10 A  -1 A  19 B  23 B.
+
+End.
+; ===============================================================================================
+
+

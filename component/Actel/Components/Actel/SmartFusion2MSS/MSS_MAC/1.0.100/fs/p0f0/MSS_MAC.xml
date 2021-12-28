@@ -1,0 +1,963 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_MAC</spirit:name>
+  <spirit:version>1.0.100</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>RGMII_PADS</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_RXD</spirit:componentSignalName><spirit:busSignalName>RGMII_RXD</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_RX_CTL</spirit:componentSignalName><spirit:busSignalName>RGMII_RX_CTL</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_TXD</spirit:componentSignalName><spirit:busSignalName>RGMII_TXD</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_TX_CTL</spirit:componentSignalName><spirit:busSignalName>RGMII_TX_CTL</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_GTX_CLK</spirit:componentSignalName><spirit:busSignalName>RGMII_GTX_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_RX_CLK</spirit:componentSignalName><spirit:busSignalName>RGMII_RX_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_TX_CLK</spirit:componentSignalName><spirit:busSignalName>RGMII_TX_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_MDC</spirit:componentSignalName><spirit:busSignalName>RGMII_MDC</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_MDIO</spirit:componentSignalName><spirit:busSignalName>RGMII_MDIO</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>RGMII IO Interface</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>RMII_PADS</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_RXD</spirit:componentSignalName><spirit:busSignalName>RMII_RXD</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_RX_ER</spirit:componentSignalName><spirit:busSignalName>RMII_RX_ER</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_CRS_DV</spirit:componentSignalName><spirit:busSignalName>RMII_CRS_DV</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_TXD</spirit:componentSignalName><spirit:busSignalName>RMII_TXD</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_TX_EN</spirit:componentSignalName><spirit:busSignalName>RMII_TX_EN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_CLK</spirit:componentSignalName><spirit:busSignalName>RMII_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_MDC</spirit:componentSignalName><spirit:busSignalName>RMII_MDC</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_MDIO</spirit:componentSignalName><spirit:busSignalName>RMII_MDIO</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>RMII IO Interface</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>RGMII_FABRIC</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_TXD_M2F</spirit:componentSignalName><spirit:busSignalName>RGMII_TXD_M2F</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RGMII_TX_CTL_M2F</spirit:componentSignalName><spirit:busSignalName>RGMII_TX_CTL_M2F</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>RGMII Captute to the fabric </actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>RMII_FABRIC</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_TXD_M2F</spirit:componentSignalName><spirit:busSignalName>RMII_TXD_M2F</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RMII_TX_EN_M2F</spirit:componentSignalName><spirit:busSignalName>RMII_TX_EN_M2F</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>RMII Captute to the fabric </actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>TBI_FABRIC</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TBI_RCGF</spirit:componentSignalName><spirit:busSignalName>TBI_RCGF</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TBI_TCGF</spirit:componentSignalName><spirit:busSignalName>TBI_TCGF</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TBI_RX_CLKP0</spirit:componentSignalName><spirit:busSignalName>TBI_RX_CLKP0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TBI_RX_CLKP1</spirit:componentSignalName><spirit:busSignalName>TBI_RX_CLKP1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TBI_GTX_CLK</spirit:componentSignalName><spirit:busSignalName>TBI_GTX_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TBI_MDC</spirit:componentSignalName><spirit:busSignalName>TBI_MDC</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TBI_MDO_EN</spirit:componentSignalName><spirit:busSignalName>TBI_MDO_EN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TBI_MDO</spirit:componentSignalName><spirit:busSignalName>TBI_MDO</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TBI_MDI</spirit:componentSignalName><spirit:busSignalName>TBI_MDI</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>TBI Fabric interface </actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>GMII_FABRIC</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_TXD</spirit:componentSignalName><spirit:busSignalName>GMII_TXD</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_TX_EN</spirit:componentSignalName><spirit:busSignalName>GMII_TX_EN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_TX_ER</spirit:componentSignalName><spirit:busSignalName>GMII_TX_ER</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_RXD</spirit:componentSignalName><spirit:busSignalName>GMII_RXD</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_RX_ER</spirit:componentSignalName><spirit:busSignalName>GMII_RX_ER</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_RX_DV</spirit:componentSignalName><spirit:busSignalName>GMII_RX_DV</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_CRS</spirit:componentSignalName><spirit:busSignalName>GMII_CRS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_COL</spirit:componentSignalName><spirit:busSignalName>GMII_COL</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_RX_CLK</spirit:componentSignalName><spirit:busSignalName>GMII_RX_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_TX_CLK</spirit:componentSignalName><spirit:busSignalName>GMII_TX_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_GTX_CLK</spirit:componentSignalName><spirit:busSignalName>GMII_GTX_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_MDC</spirit:componentSignalName><spirit:busSignalName>GMII_MDC</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_MDO_EN</spirit:componentSignalName><spirit:busSignalName>GMII_MDO_EN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_MDO</spirit:componentSignalName><spirit:busSignalName>GMII_MDO</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>GMII_MDI</spirit:componentSignalName><spirit:busSignalName>GMII_MDI</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>GMII Fabric interface</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>MII_FABRIC</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_TXD</spirit:componentSignalName><spirit:busSignalName>MII_TXD</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_TX_EN</spirit:componentSignalName><spirit:busSignalName>MII_TX_EN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_TX_ER</spirit:componentSignalName><spirit:busSignalName>MII_TX_ER</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_RXD</spirit:componentSignalName><spirit:busSignalName>MII_RXD</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_RX_ER</spirit:componentSignalName><spirit:busSignalName>MII_RX_ER</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_RX_DV</spirit:componentSignalName><spirit:busSignalName>MII_RX_DV</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_CRS</spirit:componentSignalName><spirit:busSignalName>MII_CRS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_COL</spirit:componentSignalName><spirit:busSignalName>MII_COL</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_RX_CLK</spirit:componentSignalName><spirit:busSignalName>MII_RX_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_TX_CLK</spirit:componentSignalName><spirit:busSignalName>MII_TX_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_MDC</spirit:componentSignalName><spirit:busSignalName>MII_MDC</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_MDO_EN</spirit:componentSignalName><spirit:busSignalName>MII_MDO_EN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_MDO</spirit:componentSignalName><spirit:busSignalName>MII_MDO</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MII_MDI</spirit:componentSignalName><spirit:busSignalName>MII_MDI</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>MII Fabric interface</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>RGMII_RXD</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_RXD" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RGMII_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_RXD</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_RX_CTL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_RX_CTL" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RGMII_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_RX_CTL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_TXD</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_TXD" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RGMII_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_TXD</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_TX_CTL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_TX_CTL" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RGMII_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_TX_CTL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_GTX_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_GTX_CLK" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RGMII_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_GTX_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_RX_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_RX_CLK" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RGMII_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_RX_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_TX_CLK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_TX_CLK" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RGMII_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_TX_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_MDC</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_MDC" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RGMII_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_MDC</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_MDIO</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_MDIO" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RGMII_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_MDIO</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_TXD_M2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_TXD_M2F" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RGMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_TXD_M2F</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RGMII_TX_CTL_M2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RGMII_TX_CTL_M2F" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RGMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RGMII_TX_CTL_M2F</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_RXD</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_RXD" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_RXD</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_RX_ER</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_RX_ER" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_RX_ER</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_CRS_DV</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_CRS_DV" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_CRS_DV</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_TXD</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_TXD" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_TXD</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_TX_EN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_TX_EN" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_TX_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_CLK" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_MDC</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_MDC" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_MDC</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_MDIO</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_MDIO" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_MDIO</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_TXD_M2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_TXD_M2F" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MAC_1588" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_TXD_M2F</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RMII_TX_EN_M2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RMII_TX_EN_M2F" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="PHY_MODE" actel-cc:termValue="PHY_MODE_RMII"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MAC_1588" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RMII_TX_EN_M2F</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_RCGF</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>9</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TBI_RCGF" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="TBI_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>TBI_RCGF</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_TCGF</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>9</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TBI_TCGF" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="TBI_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>TBI_TCGF</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_RX_CLKP0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TBI_RX_CLKP0" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="TBI_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>TBI_RX_CLKP0</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_RX_CLKP1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TBI_RX_CLKP1" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="TBI_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>TBI_RX_CLKP1</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_GTX_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TBI_GTX_CLK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="TBI_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>TBI_GTX_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_MDC</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TBI_MDC" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TBI_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>TBI_MDC</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_MDO_EN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TBI_MDO_EN" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TBI_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>TBI_MDO_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_MDO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TBI_MDO" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TBI_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>TBI_MDO</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TBI_MDI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TBI_MDI" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TBI_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>TBI_MDI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_TXD</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_TXD" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_TXD</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_TX_EN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_TX_EN" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_TX_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_TX_ER</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_TX_ER" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_TX_ER</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_RXD</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_RXD" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_RXD</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_RX_ER</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_RX_ER" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_RX_ER</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_RX_DV</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_RX_DV" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_RX_DV</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_CRS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_CRS" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_CRS</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_COL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_COL" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_COL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_RX_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_RX_CLK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_RX_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_TX_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_TX_CLK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_TX_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_GTX_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_GTX_CLK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_GTX_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_MDC</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_MDC" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_MDC</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_MDO_EN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_MDO_EN" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_MDO_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_MDO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_MDO" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_MDO</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>GMII_MDI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="GMII_MDI" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="GMII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>GMII_MDI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_TXD</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_TXD" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_TXD</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_TX_EN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_TX_EN" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_TX_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_TX_ER</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_TX_ER" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_TX_ER</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_RXD</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_RXD" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_RXD</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_RX_ER</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_RX_ER" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_RX_ER</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_RX_DV</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_RX_DV" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_RX_DV</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_CRS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_CRS" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_CRS</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_COL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_COL" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_COL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_RX_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_RX_CLK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_RX_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_TX_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_TX_CLK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_TX_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_MDC</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_MDC" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_MDC</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_MDO_EN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_MDO_EN" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_MDO_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_MDO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_MDO" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_MDO</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MII_MDI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MII_MDI" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="MII_FABRIC_INTERFACE_EXPOSED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MANAGMENT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>MII_MDI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="LINE_SPEED" spirit:name="LINE_SPEED" spirit:prompt="Line Speed" spirit:dataType="string" actel-cc:choiceRef="LINE_SPEED_CHOICES" spirit:configGroups="3Cols:Options" spirit:resolve="user">LINE_SPEED_10</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PHY_MODE" spirit:name="PHY_MODE" spirit:prompt="Interface" spirit:dataType="string" actel-cc:choiceRef="PHY_MODE_CHOICES" spirit:configGroups="3Cols:Options" spirit:resolve="user">PHY_MODE_MII</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MANAGMENT" spirit:name="MANAGMENT" spirit:prompt="Managment Interface" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="3Cols:Options" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MAC_1588" spirit:name="MAC_1588" spirit:prompt="Monitor in Fabric RGMII/RMII" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="3Cols:Options" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RGMII_INTERFACE_EXPOSED" spirit:name="RGMII_INTERFACE_EXPOSED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RMII_INTERFACE_EXPOSED" spirit:name="RMII_INTERFACE_EXPOSED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RGMII_FABRIC_INTERFACE_EXPOSED" spirit:name="RGMII_FABRIC_INTERFACE_EXPOSED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RMII_FABRIC_INTERFACE_EXPOSED" spirit:name="RMII_FABRIC_INTERFACE_EXPOSED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="TBI_FABRIC_INTERFACE_EXPOSED" spirit:name="TBI_FABRIC_INTERFACE_EXPOSED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="GMII_FABRIC_INTERFACE_EXPOSED" spirit:name="GMII_FABRIC_INTERFACE_EXPOSED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MII_FABRIC_INTERFACE_EXPOSED" spirit:name="MII_FABRIC_INTERFACE_EXPOSED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('MAC_1588', Or(Eq('RGMII_INTERFACE_EXPOSED', '1'), Eq('RMII_INTERFACE_EXPOSED', '1')));\
+Set('MAC_1588', And(Eq('RGMII_INTERFACE_EXPOSED', '0'), Eq('RMII_INTERFACE_EXPOSED', '0')), '0');\
+Enable('MANAGMENT', Neq(ValueOf('PHY_MODE'), 'PHY_MODE_TBI'));\
+Set('RGMII_INTERFACE_EXPOSED', Eq(ValueOf('PHY_MODE'), 'PHY_MODE_RGMII'), '1');\
+Set('RGMII_INTERFACE_EXPOSED', Neq(ValueOf('PHY_MODE'), 'PHY_MODE_RGMII'), '0');\
+Set('RMII_INTERFACE_EXPOSED', Eq(ValueOf('PHY_MODE'), 'PHY_MODE_RMII'), '1');\
+Set('RMII_INTERFACE_EXPOSED', Neq(ValueOf('PHY_MODE'), 'PHY_MODE_RMII'), '0');\
+Set('RGMII_FABRIC_INTERFACE_EXPOSED', And(Eq(ValueOf('PHY_MODE'), 'PHY_MODE_RGMII'), Eq('MAC_1588', '1')), '1');\
+Set('RGMII_FABRIC_INTERFACE_EXPOSED', Or(Neq(ValueOf('PHY_MODE'), 'PHY_MODE_RGMII'), Neq('MAC_1588', '1')), '0');\
+Set('RMII_FABRIC_INTERFACE_EXPOSED', And(Eq(ValueOf('PHY_MODE'), 'PHY_MODE_RMII'), Eq('MAC_1588', '1')), '1');\
+Set('RMII_FABRIC_INTERFACE_EXPOSED', Or(Neq(ValueOf('PHY_MODE'), 'PHY_MODE_RMII'), Neq('MAC_1588', '1')), '0');\
+Set('TBI_FABRIC_INTERFACE_EXPOSED', Eq(ValueOf('PHY_MODE'), 'PHY_MODE_TBI'), '1');\
+Set('TBI_FABRIC_INTERFACE_EXPOSED', Neq(ValueOf('PHY_MODE'), 'PHY_MODE_TBI'), '0');\
+Set('GMII_FABRIC_INTERFACE_EXPOSED', Eq(ValueOf('PHY_MODE'), 'PHY_MODE_GMII'), '1');\
+Set('GMII_FABRIC_INTERFACE_EXPOSED', Neq(ValueOf('PHY_MODE'), 'PHY_MODE_GMII'), '0');\
+Set('MII_FABRIC_INTERFACE_EXPOSED', Eq(ValueOf('PHY_MODE'), 'PHY_MODE_MII'), '1');\
+Set('MII_FABRIC_INTERFACE_EXPOSED', Neq(ValueOf('PHY_MODE'), 'PHY_MODE_MII'), '0');\
+Validate('RMII and MII protocols dont support 1000 Speed', Or(Neq('LINE_SPEED', '1000'), And(Neq('PHY_MODE', 'RMII'), Neq('PHY_MODE', 'MII'))));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>winConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssmac.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>linConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssmac</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>IO_CHOICES</spirit:name>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>LINE_SPEED_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="10">LINE_SPEED_10</spirit:enumeration>
+      <spirit:enumeration spirit:text="100">LINE_SPEED_100</spirit:enumeration>
+      <spirit:enumeration spirit:text="1000">LINE_SPEED_1000</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>PHY_MODE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="RMII (IOs)">PHY_MODE_RMII</spirit:enumeration>
+      <spirit:enumeration spirit:text="MII  (Fabric)">PHY_MODE_MII</spirit:enumeration>
+      <spirit:enumeration spirit:text="GMII (Fabric)">PHY_MODE_GMII</spirit:enumeration>
+      <spirit:enumeration spirit:text="TBI  (Fabric)">PHY_MODE_TBI</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_MAC</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20130307092655</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

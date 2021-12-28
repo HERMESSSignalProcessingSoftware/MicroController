@@ -1,0 +1,377 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>Simulation</spirit:library>
+  <spirit:name>SimDRAM</spirit:name>
+  <spirit:version>1.0.102</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>DDR_PADS</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_CAS_N</spirit:componentSignalName><spirit:busSignalName>DRAM_CAS_N</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_CKE</spirit:componentSignalName><spirit:busSignalName>DRAM_CKE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_CLK</spirit:componentSignalName><spirit:busSignalName>DRAM_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_CLK_N</spirit:componentSignalName><spirit:busSignalName>DRAM_CLK_N</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_CS_N</spirit:componentSignalName><spirit:busSignalName>DRAM_CS_N</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_ODT</spirit:componentSignalName><spirit:busSignalName>DRAM_ODT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_RAS_N</spirit:componentSignalName><spirit:busSignalName>DRAM_RAS_N</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_RESET_N</spirit:componentSignalName><spirit:busSignalName>DRAM_RESET_N</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_WE_N</spirit:componentSignalName><spirit:busSignalName>DRAM_WE_N</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_ADDR</spirit:componentSignalName><spirit:busSignalName>DRAM_ADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_BA</spirit:componentSignalName><spirit:busSignalName>DRAM_BA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_DM_RDQS</spirit:componentSignalName><spirit:busSignalName>DRAM_DM_RDQS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_DQS</spirit:componentSignalName><spirit:busSignalName>DRAM_DQS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_DQS_N</spirit:componentSignalName><spirit:busSignalName>DRAM_DQS_N</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_DQ</spirit:componentSignalName><spirit:busSignalName>DRAM_DQ</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_DM</spirit:componentSignalName><spirit:busSignalName>DRAM_DM</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>DRAM_RDQS_N</spirit:componentSignalName><spirit:busSignalName>DRAM_RDQS_N</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>DDR_PADS</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERILOG_STIMULUS_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>VHDL_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDL_STIMULUS_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>DRAM_CAS_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>CAS Command input(Active low)</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_CKE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>Clock Enable</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>Clock Input</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_CLK_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>Inverted Clock Input</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_CS_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>Chip Select Input (Active low)</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_ODT</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="MEMORY" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MEMORY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>On-Die termination</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_RAS_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>RAS Command Input (Active low)</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_RESET_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MEMORY" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>Reset Input (Active low)</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_WE_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>Write Enable (Active low)</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_ADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>Input Address Bus</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_BA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>Input Bank Number</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_DM_RDQS</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:left spirit:dependency="(id('DQ_BITS') div 8) - 1" spirit:resolve="dependent">3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="MEMORY" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MEMORY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>Data Mask</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_DQS</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:left spirit:dependency="(id('DQ_BITS') div 8) - 1" spirit:resolve="dependent">3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>Data Strobe</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_DQS_N</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:left spirit:dependency="(id('DQ_BITS') div 8) - 1" spirit:resolve="dependent">3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="MEMORY" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MEMORY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>Inverted Data Strobe</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_DQ</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:left spirit:dependency="id('DQ_BITS') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:description>Data Bus</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_RDQS_N</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="(id('DQ_BITS') div 8) - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MEMORY" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DRAM_DM</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="(id('DQ_BITS') div 8) - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MEMORY" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="MEMORY" spirit:name="MEMORY" spirit:prompt="DRAM Memory Type" spirit:dataType="int" spirit:choiceRef="MEMORY_TYPE_CHOICES" spirit:configGroups="1Cols:Memory Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DQ_BITS" spirit:name="DQ_BITS" spirit:prompt="Data Width" spirit:dataType="int" spirit:choiceRef="MEMORY_WIDTH_CHOICES" spirit:configGroups="1Cols:Memory Configuration" spirit:resolve="user">32</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PARTIAL_REFRESH_EN" spirit:name="PARTIAL_REFRESH_EN" spirit:prompt="Self Refresh Enabled" spirit:dataType="int" spirit:choiceRef="YES_NO" spirit:configGroups="1Cols:Memory Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BL_BITS" spirit:name="BL_BITS" spirit:prompt="Burst Length (Bits)" spirit:dataType="int" spirit:choiceRef="BURST_LENGTH" spirit:configGroups="1Cols:Burst Configuration" spirit:resolve="user">4</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CL" spirit:name="CL" spirit:prompt="CAS Latency (Clks)" spirit:dataType="int" spirit:choiceRef="CL_CHOICES" spirit:configGroups="1Cols:Timing Configuration" spirit:resolve="user">5</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CWL" spirit:name="CWL" spirit:prompt="CAS Write Latency" spirit:dataType="int" spirit:choiceRef="CWL_CHOICES" spirit:configGroups="1Cols:Timing Configuration" spirit:resolve="user">5</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AL" spirit:name="AL" spirit:prompt="Additive CAS Latency (Clks)" spirit:dataType="int" spirit:choiceRef="AL_CHOICES" spirit:configGroups="1Cols:Timing Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="WR" spirit:name="WR" spirit:prompt="Write Recovery (Clks)" spirit:dataType="int" spirit:configGroups="1Cols:Timing Configuration" spirit:resolve="user">8</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TRFC" spirit:name="TRFC" spirit:prompt="RFC - Minimum time from refresh to refresh or activate" spirit:dataType="int" spirit:configGroups="1Cols:Timing Configuration" spirit:resolve="user">35</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RZQ" spirit:name="RZQ" spirit:prompt="Termination Resistance (Ohm)" spirit:dataType="int" spirit:configGroups="1Cols:Timing Configuration" spirit:resolve="user">240</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('CWL', Eq('MEMORY', 'DDR3'));\
+Enable('RZQ', Eq('MEMORY', 'DDR3'));\
+Enable('AL', Neq('MEMORY', 'LPDDR'));\
+Enable('WR', Neq('MEMORY', 'LPDDR'));\
+Validate(DynamicText('Burst length of 16 can not be used for DDR3/2 memories'), Or(Eq('MEMORY', 'LPDDR'), And(Eq('MEMORY', 'DDR2'), Neq('BL_BITS', '16')), And(Eq('MEMORY', 'DDR3'), Neq('BL_BITS', '16'))));\
+Validate(DynamicText('Valid CAS Latency values for DDR3 are: 5,6,7,8,9,10'), Or(And(Eq('MEMORY', 'DDR3'), GtOrEq('CL', '5')), Neq('MEMORY', 'DDR3')));\
+Validate(DynamicText('Valid CAS Latency values for DDR2 are: 3,4,5,6'), Or(And(Eq('MEMORY', 'DDR2'), GtOrEq('CL', '3'), Less('CL', '7')), Neq('MEMORY', 'DDR2')));\
+Validate(DynamicText('Valid CAS Latency values for LPDDR are: 2,3,4'), Or(And(Eq('MEMORY', 'LPDDR'), GtOrEq('CL', '2'), Less('CL', '5')), Neq('MEMORY', 'LPDDR')));\
+Validate(DynamicText('Valid Additive CAS Latency values for DDR3 are: 0, CL-1, CL-2'), Or(And(Eq('MEMORY', 'DDR3'), Less('AL', '3')), Neq('MEMORY', 'DDR3')));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>AL_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="0">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="3">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>BURST_LENGTH</spirit:name>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>CL_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="3">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="5">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="6">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="7">7</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="9">9</spirit:enumeration>
+      <spirit:enumeration spirit:text="10">10</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>CWL_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="5">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="6">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="7">7</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>MEMORY_ECC_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="YES">YES</spirit:enumeration>
+      <spirit:enumeration spirit:text="NO">NO</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>MEMORY_TYPE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="DDR3">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="DDR2">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="LPDDR">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>MEMORY_WIDTH_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>YES_NO</spirit:name>
+      <spirit:enumeration spirit:text="No">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Yes">1</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>data/SimDRAM.v</spirit:name>
+      <spirit:userFileType>VerilogSource</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDL_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>data/SimDRAM.vhd</spirit:name>
+      <spirit:userFileType>VHDLSource</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>Generic DDR Memory Simulation Model</actel-cc:displayName>
+    <actel-cc:description>A generic DDR memory simulation model that emulates DDR3/DDR2/LPDDR DRAM non-timing functionality.</actel-cc:description>
+    <actel-cc:packageTimestamp>20150909102618</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.6.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Memory &amp; Controllers">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Simulation_Core">
+      <actel-cc:category name="1">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

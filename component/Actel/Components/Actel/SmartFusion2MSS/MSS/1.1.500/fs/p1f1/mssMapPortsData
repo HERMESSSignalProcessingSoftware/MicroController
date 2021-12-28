@@ -1,0 +1,887 @@
+
+
+
+ 
+# ================================================================================================== 
+# CAN 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# Sometimes we will check the value of a parameter to connect a pin or not. 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+CAN:RX_F2M                          MSS_ADLIB_INST       CAN_RXBUS_F2H_SCP                                         
+CAN:RX_F2M                          MSS_ADLIB_INST       MGPIO3A_F2H_GPIN               RXBUS_GPIO_CAPT           true 
+CAN:TX_M2F                          MSS_ADLIB_INST       CAN_TXBUS_MGPIO2A_H2F_A                                   
+CAN:TX_EN_N_M2F                     MSS_ADLIB_INST       CAN_TX_EBL_MGPIO4A_H2F_A                                  
+ 
+ 
+# ================================================================================================== 
+# Unused pins. Just as Documentation 
+#  
+# Format: 
+# AdlibInstName     PinName 
+# ================================================================================================== 
+# MSS_ADLIB_INST    CAN_RXBUS_MGPIO3A_H2F_A 
+# MSS_ADLIB_INST    CAN_RXBUS_MGPIO3A_H2F_B 
+# MSS_ADLIB_INST    CAN_TX_EBL_F2H_SCP 
+# MSS_ADLIB_INST    CAN_TXBUS_F2H_SCP 
+ 
+
+
+ 
+# ================================================================================================== 
+# EDAC 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# Sometimes we will check the value of a parameter to connect a pin or not. 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+EDAC:EDAC_ERROR                     MSS_ADLIB_INST       EDAC_ERROR                                                
+ 
+
+
+# ==================================================================================================
+# GPIO                                                                                              
+# ==================================================================================================
+
+
+# Reset
+# ==================
+GPIO:GPIO_RESET_N		MSS_ADLIB_INST			USER_MSS_GPIO_RESET_N
+
+
+# GPIO0 
+# ==================
+GPIO:GPIO_0_F2M			MSS_ADLIB_INST			MGPIO0A_F2H_GPIN					GPIO0_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_0_M2F			MSS_ADLIB_INST			I2C1_SDA_MGPIO0A_H2F_B				GPIO0_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_0_M2F_OE		MSS_ADLIB_INST			I2C1_SDA_MGPIO0A_H2F_A				GPIO0_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO1 
+# ==================
+GPIO:GPIO_1_F2M			MSS_ADLIB_INST			MGPIO1A_F2H_GPIN					GPIO1_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_1_M2F			MSS_ADLIB_INST			I2C1_SCL_MGPIO1A_H2F_B				GPIO1_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_1_M2F_OE		MSS_ADLIB_INST			I2C1_SCL_MGPIO1A_H2F_A				GPIO1_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO2 
+# ==================
+GPIO:GPIO_2_F2M			MSS_ADLIB_INST			MGPIO2A_F2H_GPIN					GPIO2_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_2_M2F			MSS_ADLIB_INST			CAN_TXBUS_MGPIO2A_H2F_B				GPIO2_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_2_M2F_OE		MSS_ADLIB_INST			CAN_TXBUS_MGPIO2A_H2F_A				GPIO2_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO3 
+# ==================
+GPIO:GPIO_3_F2M			MSS_ADLIB_INST			MGPIO3A_F2H_GPIN					GPIO3_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_3_M2F			MSS_ADLIB_INST			CAN_RXBUS_MGPIO3A_H2F_B				GPIO3_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_3_M2F_OE		MSS_ADLIB_INST			CAN_RXBUS_MGPIO3A_H2F_A				GPIO3_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO4 
+# ==================
+GPIO:GPIO_4_F2M			MSS_ADLIB_INST			MGPIO4A_F2H_GPIN					GPIO4_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_4_M2F			MSS_ADLIB_INST			CAN_TX_EBL_MGPIO4A_H2F_B			GPIO4_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_4_M2F_OE		MSS_ADLIB_INST			CAN_TX_EBL_MGPIO4A_H2F_A			GPIO4_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO5 
+# ==================
+GPIO:GPIO_5_F2M			MSS_ADLIB_INST			MGPIO5A_F2H_GPIN					GPIO5_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_5_M2F			MSS_ADLIB_INST			SPI0_SDI_MGPIO5A_H2F_B				GPIO5_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_5_M2F_OE		MSS_ADLIB_INST			SPI0_SDI_MGPIO5A_H2F_A				GPIO5_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO6 
+# ==================
+GPIO:GPIO_6_F2M			MSS_ADLIB_INST			MGPIO6A_F2H_GPIN					GPIO6_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_6_M2F			MSS_ADLIB_INST			SPI0_SDO_MGPIO6A_H2F_B				GPIO6_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_6_M2F_OE		MSS_ADLIB_INST			SPI0_SDO_MGPIO6A_H2F_A				GPIO6_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO7 
+# ==================
+GPIO:GPIO_7_F2M			MSS_ADLIB_INST			MGPIO7A_F2H_GPIN					GPIO7_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_7_M2F			MSS_ADLIB_INST			SPI0_SS0_MGPIO7A_H2F_B				GPIO7_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_7_M2F_OE		MSS_ADLIB_INST			SPI0_SS0_MGPIO7A_H2F_A				GPIO7_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO8 
+# ==================
+GPIO:GPIO_8_F2M			MSS_ADLIB_INST			MGPIO8A_F2H_GPIN					GPIO8_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_8_M2F			MSS_ADLIB_INST			SPI0_SS1_MGPIO8A_H2F_B				GPIO8_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_8_M2F_OE		MSS_ADLIB_INST			SPI0_SS1_MGPIO8A_H2F_A				GPIO8_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO9 
+# ==================
+GPIO:GPIO_9_F2M			MSS_ADLIB_INST			MGPIO9A_F2H_GPIN					GPIO9_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_9_M2F			MSS_ADLIB_INST			SPI0_SS2_MGPIO9A_H2F_B				GPIO9_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_9_M2F_OE		MSS_ADLIB_INST			SPI0_SS2_MGPIO9A_H2F_A				GPIO9_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO10 
+# ==================
+GPIO:GPIO_10_F2M		MSS_ADLIB_INST			MGPIO10A_F2H_GPIN					GPIO10_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_10_M2F		MSS_ADLIB_INST			SPI0_SS3_MGPIO10A_H2F_B				GPIO10_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_10_M2F_OE		MSS_ADLIB_INST			SPI0_SS3_MGPIO10A_H2F_A				GPIO10_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO11 
+# ==================
+GPIO:GPIO_11_F2M		MSS_ADLIB_INST			MGPIO11A_F2H_GPIN					GPIO11_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_11_M2F		MSS_ADLIB_INST			SPI1_SDI_MGPIO11A_H2F_B				GPIO11_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_11_M2F_OE		MSS_ADLIB_INST			SPI1_SDI_MGPIO11A_H2F_A				GPIO11_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_11_F2M		MSS_ADLIB_INST			MGPIO11B_F2H_GPIN					GPIO11_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_11_M2F		MSS_ADLIB_INST			MMUART1_RTS_MGPIO11B_H2F_B			GPIO11_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_11_M2F_OE		MSS_ADLIB_INST			MMUART1_RTS_MGPIO11B_H2F_A			GPIO11_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO12 
+# ==================
+GPIO:GPIO_12_F2M		MSS_ADLIB_INST			MGPIO12A_F2H_GPIN					GPIO12_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_12_M2F		MSS_ADLIB_INST			SPI1_SDO_MGPIO12A_H2F_B				GPIO12_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_12_M2F_OE		MSS_ADLIB_INST			SPI1_SDO_MGPIO12A_H2F_A				GPIO12_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_12_M2F_OE		MSS_ADLIB_INST			MMUART1_DTR_MGPIO12B_H2F_A			GPIO12_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO13 
+# ==================
+GPIO:GPIO_13_F2M		MSS_ADLIB_INST			MGPIO13A_F2H_GPIN					GPIO13_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_13_M2F		MSS_ADLIB_INST			SPI1_SS0_MGPIO13A_H2F_B				GPIO13_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_13_M2F_OE		MSS_ADLIB_INST			SPI1_SS0_MGPIO13A_H2F_A				GPIO13_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO14 
+# ==================
+GPIO:GPIO_14_F2M		MSS_ADLIB_INST			MGPIO14A_F2H_GPIN					GPIO14_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_14_M2F		MSS_ADLIB_INST			SPI1_SS1_MGPIO14A_H2F_B				GPIO14_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_14_M2F_OE		MSS_ADLIB_INST			SPI1_SS1_MGPIO14A_H2F_A				GPIO14_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO15 
+# ==================
+GPIO:GPIO_15_F2M		MSS_ADLIB_INST			MGPIO15A_F2H_GPIN					GPIO15_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_15_M2F		MSS_ADLIB_INST			SPI1_SS2_MGPIO15A_H2F_B				GPIO15_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_15_M2F_OE		MSS_ADLIB_INST			SPI1_SS2_MGPIO15A_H2F_A				GPIO15_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO16 
+# ==================
+GPIO:GPIO_16_F2M		MSS_ADLIB_INST			MGPIO16A_F2H_GPIN					GPIO16_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_16_M2F		MSS_ADLIB_INST			SPI1_SS3_MGPIO16A_H2F_B				GPIO16_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_16_M2F_OE		MSS_ADLIB_INST			SPI1_SS3_MGPIO16A_H2F_A				GPIO16_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO17 
+# ==================
+GPIO:GPIO_17_M2F_OE		MSS_ADLIB_INST			SPI1_SS4_MGPIO17A_H2F_A				GPIO17_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_17_F2M		MSS_ADLIB_INST			MGPIO17B_F2H_GPIN					GPIO17_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_17_M2F		MSS_ADLIB_INST			MMUART0_RTS_MGPIO17B_H2F_B			GPIO17_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_17_M2F_OE		MSS_ADLIB_INST			MMUART0_RTS_MGPIO17B_H2F_A			GPIO17_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO18 
+# ==================
+GPIO:GPIO_18_M2F_OE		MSS_ADLIB_INST			SPI1_SS5_MGPIO18A_H2F_A				GPIO18_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_18_F2M		MSS_ADLIB_INST			MGPIO18B_F2H_GPIN					GPIO18_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_18_M2F		MSS_ADLIB_INST			MMUART0_DTR_MGPIO18B_H2F_B			GPIO18_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_18_M2F_OE		MSS_ADLIB_INST			MMUART0_DTR_MGPIO18B_H2F_A			GPIO18_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO19 
+# ==================
+GPIO:GPIO_19_M2F_OE		MSS_ADLIB_INST			SPI0_SS4_MGPIO19A_H2F_A				GPIO19_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_19_F2M		MSS_ADLIB_INST			MGPIO19B_F2H_GPIN					GPIO19_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_19_M2F		MSS_ADLIB_INST			MMUART0_CTS_MGPIO19B_H2F_B			GPIO19_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_19_M2F_OE		MSS_ADLIB_INST			MMUART0_CTS_MGPIO19B_H2F_A			GPIO19_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO20 
+# ==================
+GPIO:GPIO_20_M2F_OE		MSS_ADLIB_INST			SPI0_SS5_MGPIO20A_H2F_A				GPIO20_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_20_F2M		MSS_ADLIB_INST			MGPIO20B_F2H_GPIN					GPIO20_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_20_M2F		MSS_ADLIB_INST			MMUART0_DSR_MGPIO20B_H2F_B			GPIO20_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_20_M2F_OE		MSS_ADLIB_INST			MMUART0_DSR_MGPIO20B_H2F_A			GPIO20_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO21 
+# ==================
+GPIO:GPIO_21_M2F_OE		MSS_ADLIB_INST			SPI0_SS6_MGPIO21A_H2F_A				GPIO21_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_21_F2M		MSS_ADLIB_INST			MGPIO21B_F2H_GPIN					GPIO21_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_21_M2F		MSS_ADLIB_INST			MMUART0_RI_MGPIO21B_H2F_B			GPIO21_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_21_M2F_OE		MSS_ADLIB_INST			MMUART0_RI_MGPIO21B_H2F_A			GPIO21_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO22 
+# ==================
+GPIO:GPIO_22_M2F_OE		MSS_ADLIB_INST			SPI0_SS7_MGPIO22A_H2F_A				GPIO22_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_22_F2M		MSS_ADLIB_INST			MGPIO22B_F2H_GPIN					GPIO22_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_22_M2F		MSS_ADLIB_INST			MMUART0_DCD_MGPIO22B_H2F_B			GPIO22_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_22_M2F_OE		MSS_ADLIB_INST			MMUART0_DCD_MGPIO22B_H2F_A			GPIO22_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO23 
+# ==================
+GPIO:GPIO_23_M2F_OE		MSS_ADLIB_INST			SPI1_SS6_MGPIO23A_H2F_A				GPIO23_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+
+# GPIO24 
+# ==================
+GPIO:GPIO_24_M2F_OE		MSS_ADLIB_INST			SPI1_SS7_MGPIO24A_H2F_A				GPIO24_TYPE			CONNECTION_IOA  CONNECTION_FABRICA 
+GPIO:GPIO_24_F2M		MSS_ADLIB_INST			MGPIO24B_F2H_GPIN					GPIO24_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_24_M2F		MSS_ADLIB_INST			MMUART1_TXD_MGPIO24B_H2F_B			GPIO24_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_24_M2F_OE		MSS_ADLIB_INST			MMUART1_TXD_MGPIO24B_H2F_A			GPIO24_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO25 
+# ==================
+GPIO:GPIO_25_F2M		MSS_ADLIB_INST			MGPIO25B_F2H_GPIN					GPIO25_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_25_M2F		MSS_ADLIB_INST			MMUART1_SCK_MGPIO25B_H2F_B			GPIO25_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_25_M2F_OE		MSS_ADLIB_INST			MMUART1_SCK_MGPIO25B_H2F_A			GPIO25_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO26 
+# ==================
+GPIO:GPIO_26_F2M		MSS_ADLIB_INST			MGPIO26B_F2H_GPIN					GPIO26_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_26_M2F		MSS_ADLIB_INST			MMUART1_RXD_MGPIO26B_H2F_B			GPIO26_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_26_M2F_OE		MSS_ADLIB_INST			MMUART1_RXD_MGPIO26B_H2F_A			GPIO26_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO27 
+# ==================
+GPIO:GPIO_27_F2M		MSS_ADLIB_INST			MGPIO27B_F2H_GPIN					GPIO27_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_27_M2F		MSS_ADLIB_INST			MMUART0_TXD_MGPIO27B_H2F_B			GPIO27_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_27_M2F_OE		MSS_ADLIB_INST			MMUART0_TXD_MGPIO27B_H2F_A			GPIO27_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO28 
+# ==================
+GPIO:GPIO_28_F2M		MSS_ADLIB_INST			MGPIO28B_F2H_GPIN					GPIO28_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_28_M2F		MSS_ADLIB_INST			MMUART0_RXD_MGPIO28B_H2F_B			GPIO28_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_28_M2F_OE		MSS_ADLIB_INST			MMUART0_RXD_MGPIO28B_H2F_A			GPIO28_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO29 
+# ==================
+GPIO:GPIO_29_F2M		MSS_ADLIB_INST			MGPIO29B_F2H_GPIN					GPIO29_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_29_M2F		MSS_ADLIB_INST			MMUART0_SCK_MGPIO29B_H2F_B			GPIO29_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_29_M2F_OE		MSS_ADLIB_INST			MMUART0_SCK_MGPIO29B_H2F_A			GPIO29_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO30 
+# ==================
+GPIO:GPIO_30_F2M		MSS_ADLIB_INST			MGPIO30B_F2H_GPIN					GPIO30_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_30_M2F		MSS_ADLIB_INST			I2C0_SDA_MGPIO30B_H2F_B				GPIO30_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_30_M2F_OE		MSS_ADLIB_INST			I2C0_SDA_MGPIO30B_H2F_A				GPIO30_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+# GPIO31 
+# ==================
+GPIO:GPIO_31_F2M		MSS_ADLIB_INST			MGPIO31B_F2H_GPIN					GPIO31_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_31_M2F		MSS_ADLIB_INST			I2C0_SCL_MGPIO31B_H2F_B				GPIO31_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+GPIO:GPIO_31_M2F_OE		MSS_ADLIB_INST			I2C0_SCL_MGPIO31B_H2F_A				GPIO31_TYPE			CONNECTION_IOB  CONNECTION_FABRICB 
+
+
+ 
+# ================================================================================================== 
+# I2C 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# If the value of Param is true we will add also the next pin to the same net. 
+# Used when input drives also the GPIO 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+# I2C_0 
+I2C_0:SDA_F2M                       MSS_ADLIB_INST       I2C0_SDA_F2H_SCP                                          
+I2C_0:SDA_F2M                       MSS_ADLIB_INST       MGPIO30B_F2H_GPIN              SDA_GPIO_CAPT             true 
+I2C_0:SDA_M2F                       MSS_ADLIB_INST       I2C0_SDA_MGPIO30B_H2F_A                                   
+I2C_0:SDA_M2F_OE                    MSS_ADLIB_INST       I2C0_SDA_MGPIO30B_H2F_B                                   
+ 
+I2C_0:SCL_F2M                       MSS_ADLIB_INST       I2C0_SCL_F2H_SCP                                          
+I2C_0:SCL_F2M                       MSS_ADLIB_INST       MGPIO31B_F2H_GPIN              SCL_GPIO_CAPT             true 
+I2C_0:SCL_M2F                       MSS_ADLIB_INST       I2C0_SCL_MGPIO31B_H2F_A                                   
+I2C_0:SCL_M2F_OE                    MSS_ADLIB_INST       I2C0_SCL_MGPIO31B_H2F_B                                   
+ 
+I2C_0:BCLK                          MSS_ADLIB_INST       I2C0_BCLK                                                 
+I2C_0:SMBSUS_NI                     MSS_ADLIB_INST       SMBSUS_NI0                                                
+I2C_0:SMBALERT_NI                   MSS_ADLIB_INST       SMBALERT_NI0                                              
+I2C_0:SMBSUS_NO                     MSS_ADLIB_INST       SMBSUS_NO0                                                
+I2C_0:SMBALERT_NO                   MSS_ADLIB_INST       SMBALERT_NO0                                              
+ 
+ 
+# I2C_1 
+I2C_1:SDA_F2M                       MSS_ADLIB_INST       I2C1_SDA_F2H_SCP                                          
+I2C_1:SDA_F2M                       MSS_ADLIB_INST       MGPIO0A_F2H_GPIN               SDA_GPIO_CAPT             true 
+I2C_1:SDA_M2F                       MSS_ADLIB_INST       I2C1_SDA_MGPIO0A_H2F_A                                    
+I2C_1:SDA_M2F_OE                    MSS_ADLIB_INST       I2C1_SDA_MGPIO0A_H2F_B                                    
+ 
+I2C_1:SCL_F2M                       MSS_ADLIB_INST       I2C1_SCL_F2H_SCP                                          
+I2C_1:SCL_F2M                       MSS_ADLIB_INST       MGPIO1A_F2H_GPIN               SCL_GPIO_CAPT             true 
+I2C_1:SCL_M2F                       MSS_ADLIB_INST       I2C1_SCL_MGPIO1A_H2F_A                                    
+I2C_1:SCL_M2F_OE                    MSS_ADLIB_INST       I2C1_SCL_MGPIO1A_H2F_B                                    
+ 
+I2C_1:BCLK                          MSS_ADLIB_INST       I2C1_BCLK                                                 
+I2C_1:SMBSUS_NI                     MSS_ADLIB_INST       SMBSUS_NI1                                                
+I2C_1:SMBALERT_NI                   MSS_ADLIB_INST       SMBALERT_NI1                                              
+I2C_1:SMBSUS_NO                     MSS_ADLIB_INST       SMBSUS_NO1                                                
+I2C_1:SMBALERT_NO                   MSS_ADLIB_INST       SMBALERT_NO1                                              
+            
+                   
+                          
+
+
+
+# ==================================================================================================
+# MAC
+# ==================================================================================================
+
+# =======================================================================================================
+# Pin mapping between the cores and the MSS macro
+# Sometimes we will check the value of a parameter to connect a pin or not.
+# Format:
+# CorePinName               AdlibInstName       PinName                         [Param              value]
+# ========================================================================================================
+
+# MAC1588 for RGMII
+MAC:RGMII_TXD_M2F               MSS_ADLIB_INST      TXD_RIF
+MAC:RGMII_TX_CTL_M2F            MSS_ADLIB_INST      TXCTL_EN_RIF
+
+# MAC1588 for RMII
+MAC:RMII_TXD_M2F[1:0]           MSS_ADLIB_INST      TXD_RIF[1:0]
+MAC:RMII_TX_EN_M2F              MSS_ADLIB_INST      TXCTL_EN_RIF
+
+# TBI Interface
+MAC:TBI_RCGF                    MSS_ADLIB_INST      RCGF
+MAC:TBI_TCGF                    MSS_ADLIB_INST      TCGF
+
+MAC:TBI_RX_CLKP0                MSS_ADLIB_INST      RX_CLKPF
+MAC:TBI_RX_CLKP1                MSS_ADLIB_INST      TX_CLKPF
+MAC:TBI_GTX_CLK                 MSS_ADLIB_INST      GTX_CLKPF
+
+MAC:TBI_MDC                     MSS_ADLIB_INST      MDCF
+MAC:TBI_MDO_EN                  MSS_ADLIB_INST      MDOENF
+MAC:TBI_MDO                     MSS_ADLIB_INST      MDOF
+MAC:TBI_MDI                     MSS_ADLIB_INST      MDIF
+
+# GMII Interface
+MAC:GMII_TXD                    MSS_ADLIB_INST      TXDF
+MAC:GMII_TX_EN                  MSS_ADLIB_INST      TX_ENF
+MAC:GMII_TX_ER                  MSS_ADLIB_INST      TX_ERRF
+MAC:GMII_RXD                    MSS_ADLIB_INST      RXDF
+MAC:GMII_RX_ER                  MSS_ADLIB_INST      RX_ERRF
+MAC:GMII_RX_DV                  MSS_ADLIB_INST      RX_DVF
+MAC:GMII_CRS                    MSS_ADLIB_INST      CRSF
+MAC:GMII_COL                    MSS_ADLIB_INST      COLF
+
+MAC:GMII_RX_CLK                 MSS_ADLIB_INST      RX_CLKPF
+MAC:GMII_TX_CLK                 MSS_ADLIB_INST      TX_CLKPF
+MAC:GMII_GTX_CLK                MSS_ADLIB_INST      GTX_CLKPF
+
+MAC:GMII_MDC                    MSS_ADLIB_INST      MDCF
+MAC:GMII_MDO_EN                 MSS_ADLIB_INST      MDOENF
+MAC:GMII_MDO                    MSS_ADLIB_INST      MDOF
+MAC:GMII_MDI                    MSS_ADLIB_INST      MDIF
+
+# MII Interface
+MAC:MII_TXD[3:0]                MSS_ADLIB_INST      TXDF[3:0]
+MAC:MII_TX_EN                   MSS_ADLIB_INST      TX_ENF
+MAC:MII_TX_ER                   MSS_ADLIB_INST      TX_ERRF
+MAC:MII_RXD[3:0]                MSS_ADLIB_INST      RXDF[3:0]
+MAC:MII_RX_ER                   MSS_ADLIB_INST      RX_ERRF
+MAC:MII_RX_DV                   MSS_ADLIB_INST      RX_DVF
+MAC:MII_CRS                     MSS_ADLIB_INST      CRSF
+MAC:MII_COL                     MSS_ADLIB_INST      COLF
+
+MAC:MII_RX_CLK                  MSS_ADLIB_INST      RX_CLKPF
+MAC:MII_TX_CLK                  MSS_ADLIB_INST      TX_CLKPF
+
+MAC:MII_MDC                     MSS_ADLIB_INST      MDCF
+MAC:MII_MDO_EN                  MSS_ADLIB_INST      MDOENF
+MAC:MII_MDO                     MSS_ADLIB_INST      MDOF
+MAC:MII_MDI                     MSS_ADLIB_INST      MDIF
+
+
+ 
+# ================================================================================================== 
+# MMUART 
+# ================================================================================================== 
+ 
+# ======================================================================================================= 
+# Pin mapping between the cores and the MSS macro 
+# Sometimes we will check the value of a parameter to connect a pin or not. 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ======================================================================================================== 
+ 
+# MMUART_0 
+MMUART_0:TXD_M2F                    MSS_ADLIB_INST       MMUART0_TXD_MGPIO27B_H2F_A                                
+ 
+MMUART_0:RXD_F2M                    MSS_ADLIB_INST       MMUART0_RXD_F2H_SCP                                       
+MMUART_0:RXD_F2M                    MSS_ADLIB_INST       MGPIO28B_F2H_GPIN              RXD_GPIO_CAPT             true 
+ 
+MMUART_0:TXD_RXD_F2M                MSS_ADLIB_INST       MMUART0_TXD_F2H_SCP                                       
+MMUART_0:TXD_RXD_F2M                MSS_ADLIB_INST       MGPIO27B_F2H_GPIN              TXD_RXD_GPIO_CAPT         true 
+MMUART_0:TXD_RXD_M2F                MSS_ADLIB_INST       MMUART0_TXD_MGPIO27B_H2F_A                                
+MMUART_0:TXD_RXD_M2F_OE             MSS_ADLIB_INST       MMUART0_TXD_MGPIO27B_H2F_B                                
+ 
+MMUART_0:CLK_F2M                    MSS_ADLIB_INST       MMUART0_SCK_F2H_SCP                                       
+MMUART_0:CLK_F2M                    MSS_ADLIB_INST       MGPIO29B_F2H_GPIN              CLK_GPIO_CAPT             true 
+MMUART_0:CLK_M2F                    MSS_ADLIB_INST       MMUART0_SCK_MGPIO29B_H2F_A                                
+MMUART_0:CLK_M2F_OE                 MSS_ADLIB_INST       MMUART0_SCK_MGPIO29B_H2F_B                                
+ 
+MMUART_0:RTS_M2F                    MSS_ADLIB_INST       MMUART0_RTS_MGPIO17B_H2F_A                                
+ 
+MMUART_0:DTR_M2F                    MSS_ADLIB_INST       MMUART0_DTR_MGPIO18B_H2F_A                                
+ 
+MMUART_0:DSR_F2M                    MSS_ADLIB_INST       MMUART0_DSR_F2H_SCP                                       
+MMUART_0:DSR_F2M                    MSS_ADLIB_INST       MGPIO20B_F2H_GPIN              DSR_GPIO_CAPT             true 
+MMUART_0:CTS_F2M                    MSS_ADLIB_INST       MMUART0_CTS_F2H_SCP                                       
+MMUART_0:CTS_F2M                    MSS_ADLIB_INST       MGPIO19B_F2H_GPIN              CTS_GPIO_CAPT             true 
+MMUART_0:RI_F2M                     MSS_ADLIB_INST       MMUART0_RI_F2H_SCP                                        
+MMUART_0:RI_F2M                     MSS_ADLIB_INST       MGPIO21B_F2H_GPIN              RI_GPIO_CAPT              true 
+MMUART_0:DCD_F2M                    MSS_ADLIB_INST       MMUART0_DCD_F2H_SCP                                       
+MMUART_0:DCD_F2M                    MSS_ADLIB_INST       MGPIO22B_F2H_GPIN              DCD_GPIO_CAPT             true 
+              
+                                    
+ 
+# MMUART_1 
+MMUART_1:TXD_M2F                    MSS_ADLIB_INST       MMUART1_TXD_MGPIO24B_H2F_A                                
+ 
+MMUART_1:RXD_F2M                    MSS_ADLIB_INST       MMUART1_RXD_F2H_SCP                                       
+MMUART_1:RXD_F2M                    MSS_ADLIB_INST       MGPIO26B_F2H_GPIN              RXD_GPIO_CAPT             true 
+ 
+MMUART_1:TXD_RXD_F2M                MSS_ADLIB_INST       MMUART1_TXD_F2H_SCP                                       
+MMUART_1:TXD_RXD_F2M                MSS_ADLIB_INST       MGPIO24B_F2H_GPIN              TXD_RXD_GPIO_CAPT         true 
+MMUART_1:TXD_RXD_M2F                MSS_ADLIB_INST       MMUART1_TXD_MGPIO24B_H2F_A                                
+MMUART_1:TXD_RXD_M2F_OE             MSS_ADLIB_INST       MMUART1_TXD_MGPIO24B_H2F_B                                
+ 
+MMUART_1:CLK_F2M                    MSS_ADLIB_INST       MMUART1_SCK_F2H_SCP                                       
+MMUART_1:CLK_F2M                    MSS_ADLIB_INST       MGPIO25B_F2H_GPIN              CLK_GPIO_CAPT             true 
+MMUART_1:CLK_M2F                    MSS_ADLIB_INST       MMUART1_SCK_MGPIO25B_H2F_A                                
+MMUART_1:CLK_M2F_OE                 MSS_ADLIB_INST       MMUART1_SCK_MGPIO25B_H2F_B                                
+ 
+MMUART_1:RTS_M2F                    MSS_ADLIB_INST       MMUART1_RTS_MGPIO11B_H2F_A                                
+ 
+MMUART_1:DTR_M2F                    MSS_ADLIB_INST       MMUART1_DTR_MGPIO12B_H2F_A                                
+ 
+MMUART_1:DSR_F2M                    MSS_ADLIB_INST       MMUART1_DSR_F2H_SCP                                       
+MMUART_1:CTS_F2M                    MSS_ADLIB_INST       MMUART1_CTS_F2H_SCP                                       
+MMUART_1:RI_F2M                     MSS_ADLIB_INST       MMUART1_RI_F2H_SCP                                        
+MMUART_1:DCD_F2M                    MSS_ADLIB_INST       MMUART1_DCD_F2H_SCP                                       
+ 
+    
+# ============================== 
+# No ports for these 
+# ============================== 
+# MMUART_1:M2F_OE_DTR         MSS_ADLIB_INST      
+ 
+# MMUART_1:F2M_DSR            MSS_ADLIB_INST                                      DSR_GPIO_CAPT       true 
+# MMUART_1:F2M_CTS            MSS_ADLIB_INST                                      CTS_GPIO_CAPT       true 
+# MMUART_1:F2M_RI             MSS_ADLIB_INST                                      RI_GPIO_CAPT        true 
+# MMUART_1:F2M_DCD            MSS_ADLIB_INST                                      DCD_GPIO_CAPT       true 
+
+
+ 
+# ================================================================================================== 
+# SPI 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# If the value of Param is true we will add also the next pin to the same net. 
+# Used when input drives also the GPIO 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+# SPI_0 
+SPI_0:DI_F2M                        MSS_ADLIB_INST       SPI0_SDI_F2H_SCP                                          
+SPI_0:DI_F2M                        MSS_ADLIB_INST       MGPIO5A_F2H_GPIN               DI_GPIO_CAPT              true 
+ 
+SPI_0:DO_M2F                        MSS_ADLIB_INST       SPI0_SDO_MGPIO6A_H2F_A                                    
+ 
+SPI_0:CLK_F2M                       MSS_ADLIB_INST       SPI0_CLK_IN                                               
+SPI_0:CLK_M2F                       MSS_ADLIB_INST       SPI0_CLK_OUT                                              
+ 
+SPI_0:SS0_F2M                       MSS_ADLIB_INST       SPI0_SS0_F2H_SCP                                          
+SPI_0:SS0_F2M                       MSS_ADLIB_INST       MGPIO7A_F2H_GPIN               SS0_GPIO_CAPT             true 
+SPI_0:SS0_M2F                       MSS_ADLIB_INST       SPI0_SS0_MGPIO7A_H2F_A                                    
+SPI_0:SS0_M2F_OE                    MSS_ADLIB_INST       SPI0_SS0_MGPIO7A_H2F_B                                    
+ 
+SPI_0:SS1_M2F                       MSS_ADLIB_INST       SPI0_SS1_MGPIO8A_H2F_A                                    
+SPI_0:SS2_M2F                       MSS_ADLIB_INST       SPI0_SS2_MGPIO9A_H2F_A                                    
+SPI_0:SS3_M2F                       MSS_ADLIB_INST       SPI0_SS3_MGPIO10A_H2F_A                                   
+SPI_0:SS4_M2F                       MSS_ADLIB_INST       SPI0_SS4_MGPIO19A_H2F_A                                   
+SPI_0:SS5_M2F                       MSS_ADLIB_INST       SPI0_SS5_MGPIO20A_H2F_A                                   
+SPI_0:SS6_M2F                       MSS_ADLIB_INST       SPI0_SS6_MGPIO21A_H2F_A                                   
+SPI_0:SS7_M2F                       MSS_ADLIB_INST       SPI0_SS7_MGPIO22A_H2F_A                                   
+ 
+ 
+# SPI_1 
+SPI_1:DI_F2M                        MSS_ADLIB_INST       SPI1_SDI_F2H_SCP                                          
+SPI_1:DI_F2M                        MSS_ADLIB_INST       MGPIO11A_F2H_GPIN              DI_GPIO_CAPT              true 
+ 
+SPI_1:DO_M2F                        MSS_ADLIB_INST       SPI1_SDO_MGPIO12A_H2F_A                                   
+ 
+SPI_1:CLK_F2M                       MSS_ADLIB_INST       SPI1_CLK_IN                                               
+SPI_1:CLK_M2F                       MSS_ADLIB_INST       SPI1_CLK_OUT                                              
+ 
+SPI_1:SS0_F2M                       MSS_ADLIB_INST       SPI1_SS0_F2H_SCP                                          
+SPI_1:SS0_F2M                       MSS_ADLIB_INST       MGPIO13A_F2H_GPIN              SS0_GPIO_CAPT             true 
+SPI_1:SS0_M2F                       MSS_ADLIB_INST       SPI1_SS0_MGPIO13A_H2F_A                                   
+SPI_1:SS0_M2F_OE                    MSS_ADLIB_INST       SPI1_SS0_MGPIO13A_H2F_B                                   
+ 
+SPI_1:SS1_M2F                       MSS_ADLIB_INST       SPI1_SS1_MGPIO14A_H2F_A                                   
+SPI_1:SS2_M2F                       MSS_ADLIB_INST       SPI1_SS2_MGPIO15A_H2F_A                                   
+SPI_1:SS3_M2F                       MSS_ADLIB_INST       SPI1_SS3_MGPIO16A_H2F_A                                   
+SPI_1:SS4_M2F                       MSS_ADLIB_INST       SPI1_SS4_MGPIO17A_H2F_A                                   
+SPI_1:SS5_M2F                       MSS_ADLIB_INST       SPI1_SS5_MGPIO18A_H2F_A                                   
+SPI_1:SS6_M2F                       MSS_ADLIB_INST       SPI1_SS6_MGPIO23A_H2F_A                                   
+SPI_1:SS7_M2F                       MSS_ADLIB_INST       SPI1_SS7_MGPIO24A_H2F_A                                   
+ 
+           
+
+
+ 
+# ================================================================================================== 
+# USB 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# If the value of Param is true we will add also the next pin to the same net. 
+# Used when input drives also the GPIO 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               Pin2Name] 
+# ================================================================================================== 
+ 
+# IOMUX (ULPI Interface) 
+# No connection to the Fabric 
+ 
+ 
+# Pure Fabric (UTMI Interface) 
+USB:UTMI_CLK                        MSS_ADLIB_INST       XCLK_FAB                                                  
+ 
+ 
+USB:UTMI_LINE_STATE                 MSS_ADLIB_INST       FAB_LINESTATE                                             
+USB:UTMI_RX_DATA                    MSS_ADLIB_INST       FAB_XDATAIN                                               
+USB:UTMI_TX_READY                   MSS_ADLIB_INST       FAB_TXREADY                                               
+USB:UTMI_RX_VALID                   MSS_ADLIB_INST       FAB_RXVALID                                               
+USB:UTMI_RX_ACTIVE                  MSS_ADLIB_INST       FAB_RXACTIVE                                              
+ 
+USB:UTMI_RX_ERROR                   MSS_ADLIB_INST       FAB_RXERROR                                               
+USB:UTMI_VBUS_VALID                 MSS_ADLIB_INST       FAB_VBUSVALID                                             
+USB:UTMI_AVALID                     MSS_ADLIB_INST       FAB_AVALID                                                
+USB:UTMI_SESSION_END                MSS_ADLIB_INST       FAB_SESSEND                                               
+USB:UTMI_HOST_DISCONNECT            MSS_ADLIB_INST       FAB_HOSTDISCON                                            
+USB:UTMI_ID_DIG                     MSS_ADLIB_INST       FAB_IDDIG                                                 
+USB:UTMI_VSTATUS                    MSS_ADLIB_INST       FAB_VSTATUS                                               
+ 
+USB:UTMI_SUSPEND_MODE               MSS_ADLIB_INST       FAB_SUSPENDM                                              
+USB:UTMI_OP_MODE                    MSS_ADLIB_INST       FAB_OPMODE                                                
+USB:UTMI_TX_DATA                    MSS_ADLIB_INST       FAB_XDATAOUT                                              
+USB:UTMI_TX_VALID                   MSS_ADLIB_INST       FAB_TXVALID                                               
+USB:UTMI_XCVR_SELECT                MSS_ADLIB_INST       FAB_XCVRSEL                                               
+             
+USB:UTMI_TERM_SELECT                MSS_ADLIB_INST       FAB_TERMSEL                                               
+USB:UTMI_DRV_VBUS                   MSS_ADLIB_INST       FAB_DRVVBUS                                               
+USB:UTMI_CHARGE_VBUS                MSS_ADLIB_INST       FAB_CHRGVBUS                                              
+USB:UTMI_DISCHARGE_VBUS             MSS_ADLIB_INST       FAB_DISCHRGVBUS                                           
+USB:UTMI_DP_PULL_DOWN               MSS_ADLIB_INST       FAB_DPPULLDOWN                                            
+ 
+USB:UTMI_DM_PULL_DOWN               MSS_ADLIB_INST       FAB_DMPULLDOWN                                            
+USB:UTMI_ID_PULL_UP                 MSS_ADLIB_INST       FAB_IDPULLUP                                              
+USB:UTMI_VCONTROL                   MSS_ADLIB_INST       FAB_VCONTROL                                              
+USB:UTMI_VCONTROL_LOAD_MODE         MSS_ADLIB_INST       FAB_VCONTROLLOADM                                         
+                         
+
+
+
+# ==================================================================================================
+# FIC32
+# ==================================================================================================
+
+# ==================================================================================================
+# Pin mapping between the cores and the MSS macro
+# Sometimes we will check the value of a parameter to connect a pin or not.
+# Format:
+# CorePinName       AdlibInstName   PinName                     [Param              value]
+# ==================================================================================================
+
+# ==================================================================================================
+# We had to split the bif and to do port by port connection for AHB_SLAVE and AHB_MASTER
+# because of TRANS1 port and the fact that we need to have it as a bus in the MSS wrapper.
+#
+# Note1:
+#       AHB_S_HTRANS[0:0] need to be left floating since it's really just a port that we are adding
+#       that the BIF can connect correctly to the CoreAHB interface and others which has the
+#       TRANS port as a 2 bit bus.
+#       We need just to connect BIT 1 to the MSS bit.
+#       Since we are checking in the code to make sure all ports are mapped somewhere if we
+#       leave it without mapping it will fail.
+#       The temporary solution to don't have to change the code is to connect it to something else 
+#       (even this is not correct) which is processed after this.
+#       What will happen is that this pin will be disconnected in the end.
+#       We have to provide a correct fix in the code and remove this mapping later.
+# Note2:
+#       Connect this to GND since it's just to connect to the BIF interface.
+#       Since we are connecting a top port to a GND net, the netlist export will use the name
+#       of the port as the net name. The netlist will look strange since HM_TRANS1[0] will be
+#       the name of the GND net.
+#       The fucntionality is correct for now. We will fix this also later. 
+# ==================================================================================================
+
+FIC32_0:MASTER_ID        MSS_ADLIB_INST  FIC32_0_MASTER
+FIC32_1:MASTER_ID        MSS_ADLIB_INST  FIC32_1_MASTER
+
+#FIC32_0:AHB_SLAVE       MSS_ADLIB_INST  FIC32_0_AHB_SLAVE
+#FIC32_0:AHB_MASTER      MSS_ADLIB_INST  FIC32_0_AHB_MASTER
+FIC32_0:APB_SLAVE        MSS_ADLIB_INST  FIC32_0_APB_SLAVE
+FIC32_0:APB_MASTER       MSS_ADLIB_INST  FIC32_0_APB_MASTER
+
+#FIC32_1:AHB_SLAVE       MSS_ADLIB_INST  FIC32_1_AHB_SLAVE
+#FIC32_1:AHB_MASTER      MSS_ADLIB_INST  FIC32_1_AHB_MASTER
+FIC32_1:APB_SLAVE        MSS_ADLIB_INST  FIC32_1_APB_SLAVE
+FIC32_1:APB_MASTER       MSS_ADLIB_INST  FIC32_1_APB_MASTER
+
+# FIC32_0:AHB_SLAVE
+FIC32_0:AHB_S_HRDATA         MSS_ADLIB_INST  F_FM0_RDATA    
+FIC32_0:AHB_S_HADDR          MSS_ADLIB_INST  F_FM0_ADDR     
+FIC32_0:AHB_S_HWDATA         MSS_ADLIB_INST  F_FM0_WDATA    
+FIC32_0:AHB_S_HWRITE         MSS_ADLIB_INST  F_FM0_WRITE     
+FIC32_0:AHB_S_HRESP          MSS_ADLIB_INST  F_FM0_RESP      
+FIC32_0:AHB_S_HSEL           MSS_ADLIB_INST  F_FM0_SEL       
+FIC32_0:AHB_S_HREADYOUT      MSS_ADLIB_INST  F_FM0_READYOUT  
+FIC32_0:AHB_S_HREADY         MSS_ADLIB_INST  F_FM0_READY     
+FIC32_0:AHB_S_HSIZE          MSS_ADLIB_INST  F_FM0_SIZE     
+FIC32_0:AHB_S_HMASTLOCK      MSS_ADLIB_INST  F_FM0_MASTLOCK 
+FIC32_0:AHB_S_HTRANS[1:1]    MSS_ADLIB_INST  F_FM0_TRANS1  
+# See Note1 on the top on why this is connected like that. 
+FIC32_0:AHB_S_HTRANS[0:0]    MSS_ADLIB_INST  F_FM0_SEL   
+
+# FIC32_0:AHB_MASTER
+FIC32_0:AHB_M_HRDATA         MSS_ADLIB_INST  F_HM0_RDATA  
+FIC32_0:AHB_M_HREADY         MSS_ADLIB_INST  F_HM0_READY  
+FIC32_0:AHB_M_HADDR          MSS_ADLIB_INST  F_HM0_ADDR     
+FIC32_0:AHB_M_HWDATA         MSS_ADLIB_INST  F_HM0_WDATA   
+FIC32_0:AHB_M_HWRITE         MSS_ADLIB_INST  F_HM0_WRITE    
+FIC32_0:AHB_M_HRESP          MSS_ADLIB_INST  F_HM0_RESP   
+FIC32_0:AHB_M_HSIZE          MSS_ADLIB_INST  F_HM0_SIZE    
+FIC32_0:AHB_M_HTRANS[1:1]    MSS_ADLIB_INST  F_HM0_TRANS1 
+# See Note2 on the top on why this is connected like that. 
+FIC32_0:AHB_M_HTRANS[0:0]    GND             Y 
+
+
+# FIC32_1:AHB_SLAVE
+FIC32_1:AHB_S_HRDATA         MSS_ADLIB_INST  F_FM1_RDATA    
+FIC32_1:AHB_S_HADDR          MSS_ADLIB_INST  F_FM1_ADDR     
+FIC32_1:AHB_S_HWDATA         MSS_ADLIB_INST  F_FM1_WDATA    
+FIC32_1:AHB_S_HWRITE         MSS_ADLIB_INST  F_FM1_WRITE     
+FIC32_1:AHB_S_HRESP          MSS_ADLIB_INST  F_FM1_RESP      
+FIC32_1:AHB_S_HSEL           MSS_ADLIB_INST  F_FM1_SEL       
+FIC32_1:AHB_S_HREADYOUT      MSS_ADLIB_INST  F_FM1_READYOUT  
+FIC32_1:AHB_S_HREADY         MSS_ADLIB_INST  F_FM1_READY     
+FIC32_1:AHB_S_HSIZE          MSS_ADLIB_INST  F_FM1_SIZE     
+FIC32_1:AHB_S_HMASTLOCK      MSS_ADLIB_INST  F_FM1_MASTLOCK 
+FIC32_1:AHB_S_HTRANS[1:1]    MSS_ADLIB_INST  F_FM1_TRANS1  
+# See Note1 on the top on why this is connected like that. 
+FIC32_1:AHB_S_HTRANS[0:0]    MSS_ADLIB_INST  F_FM1_SEL   
+
+# FIC32_1:AHB_MASTER
+FIC32_1:AHB_M_HRDATA         MSS_ADLIB_INST  F_HM1_RDATA  
+FIC32_1:AHB_M_HREADY         MSS_ADLIB_INST  F_HM1_READY  
+FIC32_1:AHB_M_HADDR          MSS_ADLIB_INST  F_HM1_ADDR     
+FIC32_1:AHB_M_HWDATA         MSS_ADLIB_INST  F_HM1_WDATA   
+FIC32_1:AHB_M_HWRITE         MSS_ADLIB_INST  F_HM1_WRITE    
+FIC32_1:AHB_M_HRESP          MSS_ADLIB_INST  F_HM1_RESP   
+FIC32_1:AHB_M_HSIZE          MSS_ADLIB_INST  F_HM1_SIZE    
+FIC32_1:AHB_M_HTRANS[1:1]    MSS_ADLIB_INST  F_HM1_TRANS1 
+# See Note2 on the top on why this is connected like that. 
+FIC32_1:AHB_M_HTRANS[0:0]    GND             Y 
+
+
+ 
+# ================================================================================================== 
+# CFGM 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# Sometimes we will check the value of a parameter to connect a pin or not. 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+CFGM:FIC_2_APB_MASTER              MSS_ADLIB_INST       CFGM_APB_MASTER                                           
+CFGM:MDDR_APB_SLAVE                MSS_ADLIB_INST       DDR_APB16_SLAVE                                           
+CFGM:MDDR_APB_S_PRESET_N           MSS_ADLIB_INST       PRESET_N                                                  
+CFGM:MDDR_APB_S_PCLK               MSS_ADLIB_INST       CLK_MDDR_APB                                              
+CFGM:FIC_2_APB_M_PRESET_N          MSS_ADLIB_INST       CONFIG_PRESET_N                                           
+CFGM:FIC_2_APB_M_PCLK              MSS_ADLIB_INST       CLK_CONFIG_APB                                            
+
+
+ 
+# ============================================================================= 
+# CCC 
+# ============================================================================= 
+ 
+# ============================================================================= 
+# Pin mapping between the cores and the MSS macro 
+# Sometimes we will check the value of a parameter to connect a pin or not. 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ============================================================================= 
+ 
+CCC:MCCC_CLK_BASE                        MSS_ADLIB_INST       CLK_BASE                                                  
+CCC:MCCC_MPLL_LOCK                       MSS_ADLIB_INST       MPLL_LOCK                                                 
+CCC:MCCC_CLK_BASE_PLL_LOCK               MSS_ADLIB_INST       FAB_PLL_LOCK                                              
+CCC:MCCC_GLMUX_SEL                       MSS_ADLIB_INST       FACC_GLMUX_SEL                                            
+
+
+ 
+# ================================================================================================== 
+# RESET 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# If the value of Param is true we will add also the next pin to the same net. 
+# Used when input drives also the GPIO 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+RESET:MSS_RESET_N_F2M               MSS_ADLIB_INST       USER_MSS_RESET_N                                          
+RESET:MSS_RESET_N_M2F               MSS_ADLIB_INST       FPGA_RESET_N                                              
+RESET:M3_RESET_N                    MSS_ADLIB_INST       FAB_M3_RESET_N                                            
+
+
+ 
+# ================================================================================================== 
+# INTR 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# If the value of Param is true we will add also the next pin to the same net. 
+# Used when input drives also the GPIO 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+INTR:MSS_INT_M2F          MSS_ADLIB_INST       H2F_INTERRUPT                                             
+INTR:M3_NMI               MSS_ADLIB_INST       H2F_NMI                                                   
+INTR:MSS_INT_F2M          MSS_ADLIB_INST       F2H_INTERRUPT                                             
+INTR:COMM_BLK_INT         MSS_ADLIB_INST       COMMS_INT                                                 
+
+
+ 
+# ================================================================================================== 
+# CM3 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# Sometimes we will check the value of a parameter to connect a pin or not. 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+CM3:M3_RXEV                         MSS_ADLIB_INST       RX_EV                                                     
+CM3:M3_SLEEPING                     MSS_ADLIB_INST       SLEEPING                                                  
+CM3:M3_TRACECLK                     MSS_ADLIB_INST       TRACECLK                                                  
+CM3:M3_TXEV                         MSS_ADLIB_INST       TXEV                                                      
+CM3:M3_TRACEDATA                    MSS_ADLIB_INST       TRACEDATA                                                 
+ 
+CM3:M3_SLEEPHOLDREQ                 MSS_ADLIB_INST       SLEEPHOLDREQ                                              
+CM3:M3_SLEEPDEEP                    MSS_ADLIB_INST       SLEEPDEEP                                                 
+CM3:M3_SLEEPHOLDACK                 MSS_ADLIB_INST       SLEEPHOLDACK                                              
+
+
+ 
+# ================================================================================================== 
+# RTC 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# If the value of Param is true we will add also the next pin to the same net. 
+# Used when input drives also the GPIO 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+RTC:RTC_MATCH                       MSS_ADLIB_INST       RTC_MATCH                                                 
+
+
+
+# ==================================================================================================
+# DMA
+# ==================================================================================================
+
+# ==================================================================================================
+# Pin mapping between the cores and the MSS macro
+# Sometimes we will check the value of a parameter to connect a pin or not.
+# Format:
+# CorePinName       AdlibInstName   PinName                     [Param              value]
+# ==================================================================================================
+
+DMA:DMAREADY_FIC_0 MSS_ADLIB_INST F_DMAREADY
+DMA:DMAREADY_FIC_1 MSS_ADLIB_INST F2_DMAREADY
+
+
+
+ 
+# ================================================================================================== 
+# WATCHDOG 
+# ================================================================================================== 
+ 
+# ================================================================================================== 
+# Pin mapping between the cores and the MSS macro 
+# If the value of Param is true we will add also the next pin to the same net. 
+# Used when input drives also the GPIO 
+# Format: 
+# CorePinName             AdlibInstName        PinName                      [Param               value] 
+# ================================================================================================== 
+ 
+WATCHDOG:WD_TIMEOUT                 MSS_ADLIB_INST       WDOGTIMEOUT                                               
+ 
+
+
+ 
+# ================================================================================================== 
+# MDDR 
+# ================================================================================================== 
+ 
+ 
+MDDR:DDR_CORE_RESET_N               MSS_ADLIB_INST       FPGA_MDDR_ARESET_N                                        
+MDDR:DDR_AXI_S_RMW                  MSS_ADLIB_INST       F_RMW_AXI                                                 
+MDDR:DDR_AXI_SLAVE                  MSS_ADLIB_INST       DDR_AXI64_SLAVE                                           
+MDDR:SMC_AXI_MASTER                 MSS_ADLIB_INST       SDR_AXI64_MASTER                                          
+ 
+# MDDR:DDR_AHB0_SLAVE               MSS_ADLIB_INST      DDR_AHB0_SLAVE 
+# MDDR:DDR_AHB1_SLAVE               MSS_ADLIB_INST      DDR_AHB1_SLAVE 
+# MDDR:SDR_AHB_MASTER               MSS_ADLIB_INST      SDR_AHB_MASTER 
+ 
+MDDR:DDR_AHB0_S_HREADYOUT           MSS_ADLIB_INST       F_AWREADY_HREADYOUT0                                      
+MDDR:DDR_AHB0_S_HRESP               MSS_ADLIB_INST       F_BRESP_HRESP0[0:0]                                       
+MDDR:DDR_AHB0_S_HRDATA[31:0]        MSS_ADLIB_INST       F_RDATA_HRDATA01[31:0]                                    
+MDDR:DDR_AHB0_S_HSEL                MSS_ADLIB_INST       F_AWID_HSEL0[0:0]                                         
+MDDR:DDR_AHB0_S_HADDR               MSS_ADLIB_INST       F_AWADDR_HADDR0                                           
+MDDR:DDR_AHB0_S_HBURST[2:0]         MSS_ADLIB_INST       F_AWLEN_HBURST0[2:0]                                      
+MDDR:DDR_AHB0_S_HSIZE               MSS_ADLIB_INST       F_AWSIZE_HSIZE0                                           
+MDDR:DDR_AHB0_S_HTRANS              MSS_ADLIB_INST       F_AWBURST_HTRANS0                                         
+MDDR:DDR_AHB0_S_HMASTLOCK           MSS_ADLIB_INST       F_AWLOCK_HMASTLOCK0[0:0]                                  
+MDDR:DDR_AHB0_S_HWRITE              MSS_ADLIB_INST       F_AWVALID_HWRITE0                                         
+MDDR:DDR_AHB0_S_HREADY              MSS_ADLIB_INST       F_WID_HREADY01[0:0]                                       
+MDDR:DDR_AHB0_S_HWDATA[31:0]        MSS_ADLIB_INST       F_WDATA_HWDATA01[31:0]                                    
+ 
+# MDDR:DDR_AHB1_HREADYOUT             MSS_ADLIB_INST      F_RID[0:0] 
+MDDR:DDR_AHB1_S_HREADYOUT           MSS_ADLIB_INST       F_ARREADY_HREADYOUT1                                      
+MDDR:DDR_AHB1_S_HRESP               MSS_ADLIB_INST       F_RRESP_HRESP1[0:0]                                       
+MDDR:DDR_AHB1_S_HRDATA[31:0]        MSS_ADLIB_INST       F_RDATA_HRDATA01[63:32]                                   
+MDDR:DDR_AHB1_S_HREADY              MSS_ADLIB_INST       F_WID_HREADY01[1:1]                                       
+MDDR:DDR_AHB1_S_HWDATA[31:0]        MSS_ADLIB_INST       F_WDATA_HWDATA01[63:32]                                   
+MDDR:DDR_AHB1_S_HSEL                MSS_ADLIB_INST       F_ARID_HSEL1[0:0]                                         
+MDDR:DDR_AHB1_S_HADDR               MSS_ADLIB_INST       F_ARADDR_HADDR1                                           
+MDDR:DDR_AHB1_S_HBURST[2:0]         MSS_ADLIB_INST       F_ARLEN_HBURST1[2:0]                                      
+MDDR:DDR_AHB1_S_HSIZE               MSS_ADLIB_INST       F_ARSIZE_HSIZE1                                           
+MDDR:DDR_AHB1_S_HTRANS              MSS_ADLIB_INST       F_ARBURST_HTRANS1                                         
+MDDR:DDR_AHB1_S_HMASTLOCK           MSS_ADLIB_INST       F_ARLOCK_HMASTLOCK1[0:0]                                  
+MDDR:DDR_AHB1_S_HWRITE              MSS_ADLIB_INST       F_ARVALID_HWRITE1                                         
+ 
+MDDR:SMC_AHB_M_HBURST[2:0]          MSS_ADLIB_INST       F_BID[2:0]                                                
+MDDR:SMC_AHB_M_HTRANS               MSS_ADLIB_INST       F_BRESP_HRESP0                                            
+MDDR:SMC_AHB_M_HMASTLOCK            MSS_ADLIB_INST       F_BVALID                                                  
+MDDR:SMC_AHB_M_HWRITE               MSS_ADLIB_INST       F_ARREADY_HREADYOUT1                                      
+MDDR:SMC_AHB_M_HSIZE[1:0]           MSS_ADLIB_INST       F_RID[1:0]                                                
+MDDR:SMC_AHB_M_HWDATA[31:0]         MSS_ADLIB_INST       F_RDATA_HRDATA01[63:32]                                   
+MDDR:SMC_AHB_M_HADDR[31:0]          MSS_ADLIB_INST       F_RDATA_HRDATA01[31:0]                                    
+MDDR:SMC_AHB_M_HRESP                MSS_ADLIB_INST       F_AWLOCK_HMASTLOCK0[0:0]                                  
+MDDR:SMC_AHB_M_HRDATA[31:0]         MSS_ADLIB_INST       F_WDATA_HWDATA01[31:0]                                   
+MDDR:SMC_AHB_M_HREADY               MSS_ADLIB_INST       F_WLAST                                                   
+  
+
+

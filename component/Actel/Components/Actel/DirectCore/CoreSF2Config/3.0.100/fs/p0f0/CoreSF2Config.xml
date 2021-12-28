@@ -1,0 +1,914 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>CoreSF2Config</spirit:name>
+  <spirit:version>3.0.100</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>FIC_2_APBmmaster</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:mirroredMaster></spirit:mirroredMaster>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>FIC_2_APB_M_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FIC_2_APB_M_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FIC_2_APB_M_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FIC_2_APB_M_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FIC_2_APB_M_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FIC_2_APB_M_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FIC_2_APB_M_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FIC_2_APB_M_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicOrTerms>
+            <actel-cc:logicOrTerms>
+              <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+              <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+            <actel-cc:logicOrTerms>
+              <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+              <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+            <actel-cc:logicOrTerms>
+              <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+              <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>MDDR_APBmslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:mirroredSlave>
+      <spirit:baseAddresses>
+    <spirit:remapAddress>0x800</spirit:remapAddress>
+    <spirit:range>0x800</spirit:range>
+      </spirit:baseAddresses></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>MDDR_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MDDR_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MDDR_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MDDR_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MDDR_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MDDR_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MDDR_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>MDDR_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>FDDR_APBmslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:mirroredSlave>
+      <spirit:baseAddresses>
+    <spirit:remapAddress>0x1000</spirit:remapAddress>
+    <spirit:range>0x800</spirit:range>
+      </spirit:baseAddresses></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>FDDR_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FDDR_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FDDR_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FDDR_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FDDR_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FDDR_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FDDR_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>FDDR_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>SDIF0_APBmslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:mirroredSlave>
+      <spirit:baseAddresses>
+    <spirit:remapAddress>0x8000</spirit:remapAddress>
+    <spirit:range>0x2400</spirit:range>
+      </spirit:baseAddresses></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF0_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF0_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF0_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF0_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF0_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF0_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF0_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF0_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>SDIF1_APBmslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:mirroredSlave>
+      <spirit:baseAddresses>
+    <spirit:remapAddress>0xC000</spirit:remapAddress>
+    <spirit:range>0x2400</spirit:range>
+      </spirit:baseAddresses></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF1_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF1_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF1_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF1_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF1_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF1_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF1_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF1_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>SDIF2_APBmslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:mirroredSlave>
+      <spirit:baseAddresses>
+    <spirit:remapAddress>0x30000</spirit:remapAddress>
+    <spirit:range>0x2400</spirit:range>
+      </spirit:baseAddresses></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF2_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF2_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF2_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF2_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF2_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF2_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF2_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF2_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>SDIF3_APBmslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:mirroredSlave>
+      <spirit:baseAddresses>
+    <spirit:remapAddress>0x34000</spirit:remapAddress>
+    <spirit:range>0x2400</spirit:range>
+      </spirit:baseAddresses></spirit:mirroredSlave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF3_PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF3_PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF3_PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF3_PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF3_PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF3_PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF3_PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDIF3_PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:channels>
+    <spirit:channel>
+      <spirit:maxMasters>1</spirit:maxMasters>
+      <spirit:maxSlaves>6</spirit:maxSlaves>
+      <spirit:busInterfaceRef>FIC_2_APBmmaster</spirit:busInterfaceRef>
+      <spirit:busInterfaceRef>MDDR_APBmslave</spirit:busInterfaceRef>
+      <spirit:busInterfaceRef>FDDR_APBmslave</spirit:busInterfaceRef>
+      <spirit:busInterfaceRef>SDIF0_APBmslave</spirit:busInterfaceRef>
+      <spirit:busInterfaceRef>SDIF1_APBmslave</spirit:busInterfaceRef>
+      <spirit:busInterfaceRef>SDIF2_APBmslave</spirit:busInterfaceRef>
+      <spirit:busInterfaceRef>SDIF3_APBmslave</spirit:busInterfaceRef>
+    </spirit:channel>
+  </spirit:channels>
+  <spirit:memoryMaps>
+  <spirit:memoryMap>
+    <spirit:name>internal_registers</spirit:name>
+    <spirit:addressBlock>
+      <spirit:baseAddress>0x2000</spirit:baseAddress>
+      <spirit:range>0xc</spirit:range>
+      <spirit:width>32</spirit:width>
+      <spirit:register>
+        <spirit:name>Control Register 1</spirit:name>
+        <spirit:addressOffset>0x0</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>CONFIG_DONE</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Controls CONFIG_DONE output</spirit:description>
+          </spirit:field>
+        <spirit:description>Controls various core output signals</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>Status Register</spirit:name>
+        <spirit:addressOffset>0x4</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INIT_DONE</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Status of INIT_DONE input</spirit:description>
+          </spirit:field>
+        <spirit:description>Status of INIT_DONE input</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>Control Register 2</spirit:name>
+        <spirit:addressOffset>0x8</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>CLR_INIT_DONE</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Write '1' to pulse CLR_INIT_DONE output</spirit:description>
+          </spirit:field>
+        <spirit:description>Controls CLR_INIT_DONE output</spirit:description>
+      </spirit:register>
+    </spirit:addressBlock>
+    <spirit:bitsInLau>8</spirit:bitsInLau>
+  </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>docs</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="docs"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PRESET_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PCLK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>APB_S_PRESET_N</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="MDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FDDR_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF0_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF1_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF2_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="SDIF3_IN_USE" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INIT_DONE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CLR_INIT_DONE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CONFIG_DONE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>16</spirit:left>
+        <spirit:right>2</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FIC_2_APB_M_PSLVERR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MDDR_PSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MDDR_PENABLE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MDDR_PWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MDDR_PADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>2</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MDDR_PWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MDDR_PRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MDDR_PREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MDDR_PSLVERR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FDDR_PSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FDDR_PENABLE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FDDR_PWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FDDR_PADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>2</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FDDR_PWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FDDR_PRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FDDR_PREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>FDDR_PSLVERR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF0_PSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF0_PENABLE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF0_PWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF0_PADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>2</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF0_PWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF0_PRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF0_PREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF0_PSLVERR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF1_PSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF1_PENABLE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF1_PWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF1_PADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>2</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF1_PWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF1_PRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF1_PREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF1_PSLVERR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF2_PSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF2_PENABLE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF2_PWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF2_PADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>2</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF2_PWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF2_PRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF2_PREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF2_PSLVERR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF3_PSEL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF3_PENABLE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF3_PWRITE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF3_PADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>15</spirit:left>
+        <spirit:right>2</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF3_PWDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF3_PRDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF3_PREADY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDIF3_PSLVERR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="MDDR_IN_USE" spirit:name="MDDR_IN_USE" spirit:prompt="MDDR in use" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="FDDR_IN_USE" spirit:name="FDDR_IN_USE" spirit:prompt="FDDR in use" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SDIF0_IN_USE" spirit:name="SDIF0_IN_USE" spirit:prompt="SERDES_IF_0 in use" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SDIF1_IN_USE" spirit:name="SDIF1_IN_USE" spirit:prompt="SERDES_IF_1 in use" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SDIF2_IN_USE" spirit:name="SDIF2_IN_USE" spirit:prompt="SERDES_IF_2 in use" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SDIF3_IN_USE" spirit:name="SDIF3_IN_USE" spirit:prompt="SERDES_IF_3 in use" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="HDL_license" spirit:name="HDL_license" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:resolve="user">U</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="Obfuscated">O</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-O">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obfuscated/coresf2config.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coresf2config.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-O">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obfuscated/coresf2config.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/coresf2config.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="docs">
+    <spirit:file>
+      <spirit:name>CoreSF2Config_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CoreSF2Config_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreSF2Config</actel-cc:displayName>
+    <actel-cc:description>Facilitiates configuration of peripheral blocks (MDDR, FDDR and SERDESIF) in a SmartFusion2 device.</actel-cc:description>
+    <actel-cc:packageTimestamp>20130612115606</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="10.9">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Medical">
+      </actel-cc:category>
+      <actel-cc:category name="Consumer">
+      </actel-cc:category>
+      <actel-cc:category name="Multimedia">
+      </actel-cc:category>
+      <actel-cc:category name="Gaming">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Interface Type">
+      <actel-cc:category name="AmbaBus">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

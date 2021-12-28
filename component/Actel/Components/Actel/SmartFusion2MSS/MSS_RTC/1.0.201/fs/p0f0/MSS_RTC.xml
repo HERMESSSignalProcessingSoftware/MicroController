@@ -1,0 +1,100 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_RTC</spirit:name>
+  <spirit:version>1.0.201</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>RTC_MATCH</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RTC_MATCH" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RTC_MATCH_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RTC_MATCH</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CLK_SEL" spirit:name="CLK_SEL" spirit:prompt="Clock Source" spirit:dataType="string" actel-cc:choiceRef="RTC_CLK_SEL_CHOICES" spirit:configGroups="1Cols:Clock Source" spirit:resolve="user">RTC_CLK_SEL_XTAL</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="MAIN_XTLOSC_FREQ" spirit:name="MAIN_XTLOSC_FREQ" spirit:prompt="Main Crystal Frequency (MHz)" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="1Cols:Clock Source" spirit:resolve="user">20.00</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RTC_WAKEUP_M3" spirit:name="RTC_WAKEUP_M3" spirit:prompt="Enable WakeUp interrupt to Cortex-M3" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:WakeUp Interrupt" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RTC_WAKEUP_FAB" spirit:name="RTC_WAKEUP_FAB" spirit:prompt="Enable WakeUp interrupt to FPGA Fabric" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:WakeUp Interrupt" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RTC_MATCH_USED" spirit:name="RTC_MATCH_USED" spirit:prompt="Expose RTC_MATCH port to FPGA Fabric" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:RTC_MATCH" spirit:resolve="user">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>winConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssrtc.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>linConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssrtc</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>RTC_CLK_SEL_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="External 32 KHz RTC Crystal Oscillator">RTC_CLK_SEL_XTAL</spirit:enumeration>
+      <spirit:enumeration spirit:text="External Main Crystal (32KHz-20Mhz) Oscillator">RTC_CLK_SEL_MAIN_CRYSTAL</spirit:enumeration>
+      <spirit:enumeration spirit:text="External Main Ceramic Resonator (0.5MHz-20MHz) Oscillator">RTC_CLK_SEL_MAIN_CERAMIC_RESONATOR</spirit:enumeration>
+      <spirit:enumeration spirit:text="External Main RC Network (32KHz-4MHz) Oscillator">RTC_CLK_SEL_MAIN_RC_NETWORK</spirit:enumeration>
+      <spirit:enumeration spirit:text="On-chip 1 MHz RC Oscillator">RTC_CLK_SEL_1MHZ</spirit:enumeration>
+      <spirit:enumeration spirit:text="On-chip 25/50 MHz RC Oscillator">RTC_CLK_SEL_50MHZ</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_RTC</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20140922220517</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

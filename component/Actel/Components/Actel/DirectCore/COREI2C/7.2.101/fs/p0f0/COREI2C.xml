@@ -1,0 +1,872 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREI2C</spirit:name>
+  <spirit:version>7.2.101</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>APBslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:memoryMapRef spirit:memoryMapRef="RegisterMap" /></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  <spirit:memoryMap>
+    <spirit:name>RegisterMap</spirit:name>
+    <spirit:addressBlock>
+      <spirit:baseAddress>0x0</spirit:baseAddress>
+      <spirit:range>0x80</spirit:range>
+      <spirit:width>8</spirit:width>
+      <spirit:register>
+        <spirit:name>CTRL</spirit:name>
+        <spirit:addressOffset>0x00</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>cr2</spirit:name>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>ens1</spirit:name>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>sta</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>sto</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>si</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>aa</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>cr1</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>cr0</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+        <spirit:description>Control Register; used to configure the core.</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>STAT</spirit:name>
+        <spirit:addressOffset>0x04</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0xF8</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>status</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>8</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+        <spirit:description>Status Register; read-only value yields the current state of the core.</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>DATA</spirit:name>
+        <spirit:addressOffset>0x08</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>sd7</spirit:name>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>sd6</spirit:name>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>sd5</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>sd4</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>sd3</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>sd2</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>sd1</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>sd0</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+        <spirit:description>Data Register; read/write data to/from the serial IF.</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>ADDR0</spirit:name>
+        <spirit:addressOffset>0x0C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>adr6</spirit:name>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr5</spirit:name>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr4</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr3</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr2</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr1</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr0</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>gc</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+        <spirit:description>Slave0 Address Register; contains the default Slave0 programmable address of the core.</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>SMB</spirit:name>
+        <spirit:addressOffset>0x10</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x78</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>SMBus_Reset</spirit:name>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SMBSUS_NO</spirit:name>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SMBSUS_NI</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SMBALERT_NO</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SMBALERT_NI</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SMB_IPMI_EN</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SMBSUS_IE</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SMBALERT_IE</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+        <spirit:description>Optional SMBus/IPMI Register; configuration register for SMBus timeout reset condition and for the optional SMBus signals SMBALERT_N and SMBSUS_N.  Alternatively, enables/disables 3 ms IPMI SCL Low timeout. </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>ADDR1</spirit:name>
+        <spirit:addressOffset>0x1C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>adr6</spirit:name>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr5</spirit:name>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr4</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr3</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr2</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr1</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adr0</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>GC_or_EnAdr</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Refer to Handbook</spirit:description>
+          </spirit:field>
+        <spirit:description>Optional SLAVE1 Address Register; contains the optional SLAVE1 programmable address of the core.  When this SLAVE1 address is fixed, the register will have a R/W bit to enable/disable SLAVE0 comparisons.</spirit:description>
+      </spirit:register>
+    </spirit:addressBlock>
+    <spirit:bitsInLau>8</spirit:bitsInLau>
+  </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VHDL_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_Verilog_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_Verilog_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_Verilog_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_Verilog_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs_ALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>BCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="BCLK_ENABLED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="BCLK_ENABLED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>8</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SCLI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SCLO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDAI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDAO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBALERT_NI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBALERT_NO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBA_INT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBSUS_NI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBSUS_NO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBS_INT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('I2C_NUM') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SMB_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="I2C_NUM" spirit:name="I2C_NUM" spirit:prompt="Number of I2C Channels:" spirit:dataType="int" spirit:choiceRef="I2C_NUMValue" spirit:choiceStyle="combo" spirit:configGroups="General:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="OPERATING_MODE" spirit:name="OPERATING_MODE" spirit:prompt="Operating Mode:" spirit:dataType="int" spirit:choiceRef="Choice_OperatingMode" spirit:choiceStyle="combo" spirit:configGroups="General:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SMB_EN" spirit:name="SMB_EN" spirit:prompt="Generate SMBus Logic (Register, Timeouts, Bus Reset, and Alert/Suspend Signals):" spirit:dataType="boolean" spirit:configGroups="SMBus or IPMI Logic Options:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IPMI_EN" spirit:name="IPMI_EN" spirit:prompt="Generate IPMI Logic (Register, and 3 ms SCL Low Timeout):" spirit:dataType="boolean" spirit:configGroups="SMBus or IPMI Logic Options:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FREQUENCY" spirit:name="FREQUENCY" spirit:prompt="PCLK Frequency in MHz (Required to Calibrate Timeout Counters):" spirit:dataType="int" spirit:configGroups="SMBus or IPMI Logic Options:" spirit:resolve="user" spirit:minimum="1" spirit:maximum="255">30</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BAUD_RATE_FIXED" spirit:name="BAUD_RATE_FIXED" spirit:prompt="Fixed Baud Rate:" spirit:dataType="boolean" spirit:configGroups="2Cols:Baud Rate Options (for Tile Count Reduction):" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BAUD_RATE_VALUE" spirit:name="BAUD_RATE_VALUE" spirit:prompt="Fixed Baud Rate Value:" spirit:dataType="int" spirit:choiceRef="Choice_BaudValue" spirit:choiceStyle="combo" spirit:configGroups="2Cols:Baud Rate Options (for Tile Count Reduction):" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BCLK_ENABLED" spirit:name="BCLK_ENABLED" spirit:prompt="Enable BCLK Signal:" spirit:dataType="boolean" spirit:configGroups="2Cols:Baud Rate Options (for Tile Count Reduction):" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_SLAVE0_ADDR_EN" spirit:name="FIXED_SLAVE0_ADDR_EN" spirit:prompt="Fixed Slave0 Address:" spirit:dataType="boolean" spirit:configGroups="Slave Address Options (for Tile Count Reduction and to Enable 2nd Address Decode Value):" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_SLAVE0_ADDR_VALUE" spirit:name="FIXED_SLAVE0_ADDR_VALUE" spirit:prompt="Fixed Slave0 Address Value:" spirit:dataType="int" spirit:configGroups="Slave Address Options (for Tile Count Reduction and to Enable 2nd Address Decode Value):" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0x7f">0x0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ADD_SLAVE1_ADDRESS_EN" spirit:name="ADD_SLAVE1_ADDRESS_EN" spirit:prompt="Enable 2nd Address Decode (Slave1 Address):" spirit:dataType="boolean" spirit:configGroups="Slave Address Options (for Tile Count Reduction and to Enable 2nd Address Decode Value):" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_SLAVE1_ADDR_EN" spirit:name="FIXED_SLAVE1_ADDR_EN" spirit:prompt="Fixed Slave1 Address:" spirit:dataType="boolean" spirit:configGroups="Slave Address Options (for Tile Count Reduction and to Enable 2nd Address Decode Value):" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_SLAVE1_ADDR_VALUE" spirit:name="FIXED_SLAVE1_ADDR_VALUE" spirit:prompt="Fixed Slave1 Address Value:" spirit:dataType="int" spirit:configGroups="Slave Address Options (for Tile Count Reduction and to Enable 2nd Address Decode Value):" spirit:resolve="user" spirit:minimum="0x0" spirit:maximum="0x7f">0x0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="GLITCHREG_NUM" spirit:name="GLITCHREG_NUM" spirit:prompt="Supression Width:" spirit:dataType="int" spirit:choiceRef="Choice_GlitchRegLength" spirit:choiceStyle="combo" spirit:configGroups="2Cols:Spike/Glitch Suppression Option:" spirit:resolve="user">3</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:configGroups="2Cols:General:" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>
+Enable('SMB_EN',Eq('IPMI_EN','false'));Enable('IPMI_EN',Eq('SMB_EN','false'));Enable('FREQUENCY',Or('SMB_EN','IPMI_EN'));Enable('BAUD_RATE_VALUE','BAUD_RATE_FIXED');Enable('FIXED_SLAVE0_ADDR_VALUE','FIXED_SLAVE0_ADDR_EN');Enable('FIXED_SLAVE1_ADDR_EN','ADD_SLAVE1_ADDRESS_EN');Enable('FIXED_SLAVE1_ADDR_VALUE',And('FIXED_SLAVE1_ADDR_EN','ADD_SLAVE1_ADDRESS_EN'));
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_BaudValue</spirit:name>
+      <spirit:enumeration spirit:text="PCLK frequency / 256">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="PCLK frequency / 224">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="PCLK frequency / 192">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="PCLK frequency / 160">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="PCLK frequency / 960">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="PCLK frequency / 120">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="PCLK frequency / 60 ">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="BCLK frequency / 8  ">7</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_GlitchRegLength</spirit:name>
+      <spirit:enumeration spirit:text=" 3 PCLK Periods">3</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 4 PCLK Periods">4</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 5 PCLK Periods">5</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 6 PCLK Periods">6</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 7 PCLK Periods">7</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 8 PCLK Periods">8</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 9 PCLK Periods">9</spirit:enumeration>
+      <spirit:enumeration spirit:text="10 PCLK Periods">10</spirit:enumeration>
+      <spirit:enumeration spirit:text="11 PCLK Periods">11</spirit:enumeration>
+      <spirit:enumeration spirit:text="12 PCLK Periods">12</spirit:enumeration>
+      <spirit:enumeration spirit:text="13 PCLK Periods">13</spirit:enumeration>
+      <spirit:enumeration spirit:text="14 PCLK Periods">14</spirit:enumeration>
+      <spirit:enumeration spirit:text="15 PCLK Periods">15</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_OperatingMode</spirit:name>
+      <spirit:enumeration spirit:text="Full Master RX/TX, Slave RX/TX Modes (Largest Tile Count)">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Master TX, Slave RX Modes For Write-Only Applications">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="Slave RX/TX Modes For Slave-Only Applications">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Slave RX Mode For Slave RX-Only Applications (Smallest Tile Count)">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>I2C_NUMValue</spirit:name>
+      <spirit:enumeration spirit:text=" 1 Channel">1</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 2 Channels">2</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 3 Channels">3</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 4 Channels">4</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 5 Channels">5</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 6 Channels">6</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 7 Channels">7</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 8 Channels">8</spirit:enumeration>
+      <spirit:enumeration spirit:text=" 9 Channels">9</spirit:enumeration>
+      <spirit:enumeration spirit:text="10 Channels">10</spirit:enumeration>
+      <spirit:enumeration spirit:text="11 Channels">11</spirit:enumeration>
+      <spirit:enumeration spirit:text="12 Channels">12</spirit:enumeration>
+      <spirit:enumeration spirit:text="13 Channels">13</spirit:enumeration>
+      <spirit:enumeration spirit:text="14 Channels">14</spirit:enumeration>
+      <spirit:enumeration spirit:text="15 Channels">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="16 Channels">16</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corei2c.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREI2C_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corei2creal.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREI2C_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/corei2c_tb_pkg.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREI2C_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/i2c_spk.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREI2C_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/tb_user_corei2c.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREI2C_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREI2C_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/wave_usertb_vhdl.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corei2c.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corei2creal.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_Verilog_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/i2c_spk.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/tb_user_corei2c.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_Verilog_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/wave_usertb_vlog.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL">
+    <spirit:file>
+      <spirit:name>docs/CoreI2C_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreI2C_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreI2C</actel-cc:displayName>
+    <actel-cc:description>CoreI2C provides an APB-driven serial interface, supporting I2C, SMBus, PMBus, and IPMI data transfers. Verilog/VHDL parameters are available to configure operation modes and minimize FPGA fabric area for a given application.  CoreI2C allows for the generation of up to 16 I2C Channels per APB slot.</actel-cc:description>
+    <actel-cc:packageTimestamp>20170509183546</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="true"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="8.6.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Interface Type">
+      <actel-cc:category name="AmbaBus">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Medical">
+      </actel-cc:category>
+      <actel-cc:category name="Consumer">
+      </actel-cc:category>
+      <actel-cc:category name="Multimedia">
+      </actel-cc:category>
+      <actel-cc:category name="Gaming">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

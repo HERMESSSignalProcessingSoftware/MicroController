@@ -1,0 +1,488 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREAPBLSRAM</spirit:name>
+  <spirit:version>3.0.101</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>APBSlaveInterface</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSourceBase-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSourceBase1kx16-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSourceBase2kx08-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSourceBase512x32-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSourceBase-uSRAM64to2304x32-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSourceBase-uSRAM64to4608x16-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSourceBase-uSRAM128to9216x8-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSourceBase-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSourceBase1kx16-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSourceBase2kx08-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSourceBase512x32-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSourceBase-uSRAM64to2304x32-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSourceBase-uSRAM64to4608x16-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSourceBase-uSRAM128to9216x8-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>COMMON_USER_TB_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="Testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="COMMON_USER_TB_VERILOG_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="Testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSourceBase-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSourceBase1kx16-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSourceBase2kx8-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSourceBase512x32-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSourceBase-uSRAM64to2304x32-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSourceBase-uSRAM64to4608x16-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSourceBase-uSRAM128to9216x8-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSourceBase-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSourceBase1kx16-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSourceBase2kx8-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSourceBase512x32-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSourceBase-uSRAM64to2304x32-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSourceBase-uSRAM64to4608x16-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSourceBase-uSRAM128to9216x8-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="Testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs-ALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs-ALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>PCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>19</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('APB_DWIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('APB_DWIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSLVERR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="APB_DWIDTH" spirit:name="APB_DWIDTH" spirit:prompt="APB Data Width:" spirit:dataType="int" spirit:choiceRef="Choice_APB_DW" spirit:configGroups="APB Data Width" spirit:resolve="user">32</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SEL_SRAM_TYPE" spirit:name="SEL_SRAM_TYPE" spirit:prompt="Select SRAM Type:" spirit:dataType="int" spirit:choiceRef="Choice_SEL_SRAM_TYPE" spirit:choiceStyle="radio" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="LSRAM_NUM_LOCATIONS_DWIDTH" spirit:name="LSRAM_NUM_LOCATIONS_DWIDTH" spirit:prompt="Number of memory location for DWIDTH:" spirit:dataType="int" spirit:configGroups="LSRAM Depth" spirit:resolve="user">2048</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="USRAM_NUM_LOCATIONS_DWIDTH" spirit:name="USRAM_NUM_LOCATIONS_DWIDTH" spirit:prompt="Number of memory location for DWIDTH:" spirit:dataType="int" spirit:configGroups="USRAM Depth" spirit:resolve="user">128</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="HDL_License" spirit:name="HDL_License" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:choiceStyle="radio" spirit:resolve="user">U</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="Testbench" spirit:name="Testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_Testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('USRAM_NUM_LOCATIONS_DWIDTH', Eq('SEL_SRAM_TYPE', 'USRAM'));\
+Tooltip('USRAM_NUM_LOCATIONS_DWIDTH', 'For APB Data Width = 32 the valid range for USRAM Depth is 64 to 2304 in steps of 64. 
+For APB Data Width = 16 the valid range for USRAM Depth is 64 to 4608 in steps of 64. 
+For APB Data Width = 8 the valid range for USRAM Depth is 128 to 9216 in steps of 128. ');\
+Enable('LSRAM_NUM_LOCATIONS_DWIDTH', Eq('SEL_SRAM_TYPE', 'LSRAM'));\
+Tooltip('LSRAM_NUM_LOCATIONS_DWIDTH', 'For APB Data Width = 32 the valid range for LSRAM Depth is 512 to 35328 in steps of 512. 
+For APB Data Width = 16 the valid range for LSRAM Depth is 1024 to 70656 in steps of 1024. 
+For APB Data Width = 8 the valid range for LSRAM Depth is 2048 to 141312 in steps of 2048. ');\
+Validate('
+	LSRAM:
+	For APB Data Width = 32 the valid range for LSRAM Depth is 512 to 35328 in steps of 512. 
+	For APB Data Width = 16 the valid range for LSRAM Depth is 1024 to 70656 in steps of 1024. 
+	For APB Data Width =  8 the valid range for LSRAM Depth is 2048 to 141312 in steps of 2048. 
+
+	USRAM:
+	For APB Data Width = 32 the valid range for USRAM Depth is 64 to 2304 in steps of 64. 
+	For APB Data Width = 16 the valid range for USRAM Depth is 64 to 4608 in steps of 64, 
+	For APB Data Width =  8 the valid range for USRAM Depth is 128 to 9216 in steps of 128. 
+	
+	Refer to the handbook for more information', Or(Or(And(Eq('SEL_SRAM_TYPE', 'LSRAM'), Eq('APB_DWIDTH', '32'), And(GtOrEq('LSRAM_NUM_LOCATIONS_DWIDTH', '512'), Less('LSRAM_NUM_LOCATIONS_DWIDTH', '35329')), Not(Mod('LSRAM_NUM_LOCATIONS_DWIDTH', '512'))), And(Eq('SEL_SRAM_TYPE', 'LSRAM'), Eq('APB_DWIDTH', '16'), And(GtOrEq('LSRAM_NUM_LOCATIONS_DWIDTH', '1024'), Less('LSRAM_NUM_LOCATIONS_DWIDTH', '70657')), Not(Mod('LSRAM_NUM_LOCATIONS_DWIDTH', '1024'))), And(Eq('SEL_SRAM_TYPE', 'LSRAM'), Eq('APB_DWIDTH', '8'), And(GtOrEq('LSRAM_NUM_LOCATIONS_DWIDTH', '2048'), Less('LSRAM_NUM_LOCATIONS_DWIDTH', '141313')), Not(Mod('LSRAM_NUM_LOCATIONS_DWIDTH', '2048')))), Or(And(Eq('SEL_SRAM_TYPE', 'USRAM'), Eq('APB_DWIDTH', '32'), And(GtOrEq('USRAM_NUM_LOCATIONS_DWIDTH', '64'), Less('USRAM_NUM_LOCATIONS_DWIDTH', '2305')), Not(Mod('USRAM_NUM_LOCATIONS_DWIDTH', '64'))), And(Eq('SEL_SRAM_TYPE', 'USRAM'), Eq('APB_DWIDTH', '16'), And(GtOrEq('USRAM_NUM_LOCATIONS_DWIDTH', '64'), Less('USRAM_NUM_LOCATIONS_DWIDTH', '4609')), Not(Mod('USRAM_NUM_LOCATIONS_DWIDTH', '64'))), And(Eq('SEL_SRAM_TYPE', 'USRAM'), Eq('APB_DWIDTH', '8'), And(GtOrEq('USRAM_NUM_LOCATIONS_DWIDTH', '128'), Less('USRAM_NUM_LOCATIONS_DWIDTH', '9217')), Not(Mod('USRAM_NUM_LOCATIONS_DWIDTH', '128'))))));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_APB_DW</spirit:name>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_SEL_SRAM_TYPE</spirit:name>
+      <spirit:enumeration spirit:text="LSRAM">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="USRAM">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/tb.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="COMMON_USER_TB_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/compileList.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/run.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSourceBase-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreAPBLSRAM.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREAPBLSRAM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSourceBase1kx16-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/lsram_1024to70656x16.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREAPBLSRAM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSourceBase2kx08-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/lsram_2048to141312x8.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAPBLSRAM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSourceBase512x32-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/lsram_512to35328x32.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREAPBLSRAM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSourceBase-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/CoreAPBLSRAM.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/apblsram_pkg.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSourceBase1kx16-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/lsram_1024to70656x16.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSourceBase2kx8-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/lsram_2048to141312x8.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSourceBase512x32-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/lsram_512to35328x32.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSourceBase-uSRAM64to2304x32-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/usram_64to2304x32.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAPBLSRAM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSourceBase-uSRAM64to4608x16-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/usram_64to4608x16.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAPBLSRAM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSourceBase-uSRAM128to9216x8-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/usram_128to9216x8.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREAPBLSRAM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSourceBase-uSRAM64to2304x32-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/usram_64to2304x32.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSourceBase-uSRAM64to4608x16-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/usram_64to4608x16.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSourceBase-uSRAM128to9216x8-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/usram_128to9216x8.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/XHDL_misc.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/XHDL_std_logic.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/testbench.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs-ALL">
+    <spirit:file>
+      <spirit:name>docs/CoreAPBLSRAM_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreAPBLSRAM_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreAPBLSRAM</actel-cc:displayName>
+    <actel-cc:description>The CoreAPBLSRAM provides access to the embedded large SRAM blocks present on SmartFusion2 family devices through APB slave interface. It will facilitate convenient access to Fabric SRAM by APB masters. Read and write transactions on the APB are converted into corresponding transfers on the LSRAM and uSRAM.
+</actel-cc:description>
+    <actel-cc:packageTimestamp>20160106110615</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Memory &amp; Controllers">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

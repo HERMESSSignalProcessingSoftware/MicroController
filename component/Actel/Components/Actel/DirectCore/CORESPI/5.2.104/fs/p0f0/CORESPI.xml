@@ -1,0 +1,989 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>CORESPI</spirit:name>
+  <spirit:version>5.2.104</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>APB_bif</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  <spirit:memoryMap>
+    <spirit:name>RegisterMap</spirit:name>
+    <spirit:addressBlock>
+      <spirit:baseAddress>0x0</spirit:baseAddress>
+      <spirit:range>0x80</spirit:range>
+      <spirit:width>8</spirit:width>
+      <spirit:register>
+        <spirit:name>CONTROL</spirit:name>
+        <spirit:addressOffset>0x00</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>OENOFF</spirit:name>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>0: SPI output enable active as required
+1: The core will not assert the SPI output enable. This allows multiple slaves to be connected to a single master sharing a single slave select and software protocol implemented that can enable the slaves transmit data when a certain broadcast address SPI command is received</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>FRAMEURUN</spirit:name>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>0: Underruns are generated whenever a read is attempted from an empty transmit FIFO
+1: Under run condition will be ignored for the complete frame if the first data frame read resulted in a potential overflow, i.e. the slave was not ready to transmit any data. If the first data frame is read from the FIFO and transmitted then an under run will be generated if the FIFO becomes empty for any of  the remaining packet frames i.e. while SSEL is active
+Master operation will never create a transmit FIFO under run condition</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTTXURUN</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Interrupt on transmit under run
+0: Interrupt disabled 
+1: Interrupt enabled.</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTRXOVFLOW</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Interrupt on receive overflow
+0: Interrupt disabled 
+1: Interrupt enabled.</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTTXDATA</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Interrupt on transmit data. 
+0: Interrupt disabled 
+1: Interrupt enabled.</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTRXDATA</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Interrupt on receive data 
+0: Interrupt disabled 
+1: Interrupt enabled</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>MASTER</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>0: Run CoreSPI in slave mode
+1: Run CoreSPI in master mode</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>ENABLE</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>0: Core will not respond to external signals until this bit enabled. 
+     SPISCLKO driven to zero and SPIOE, SPISS (slave select) driven inactive
+1: Core is active</spirit:description>
+          </spirit:field>
+        <spirit:description>Control Register 1</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INTCLEAR</spirit:name>
+        <spirit:addressOffset>0x04</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>SSEND</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Writing a '1' clears the SSEND interrupt.</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>CMDINT</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Writing a '1' clears the CMDINT interrupt.</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TXUNDERRUN</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Writing a '1' clears the TXUNDERRUN interrupt.</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RXOVERFLOW</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Writing a '1' clears the RXOVERFLOW interrupt.</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RXDONE</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Writing a '1' clears the RXDONE interrupt.</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TXDONE</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Writing a '1' clears the TXDONE interrupt.</spirit:description>
+          </spirit:field>
+        <spirit:description>Interrupt Clear Register </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>RXDATA</spirit:name>
+        <spirit:addressOffset>0x08</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Receive Data Register
+Reading from this register reads one frame from the RX FIFO</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TXDATA
+</spirit:name>
+        <spirit:addressOffset>0x0C</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Transmit Data Register
+Writing to this register writes one frame to the TX FIFO</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INTMASK</spirit:name>
+        <spirit:addressOffset>0x10</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Masked Interrupt Status
+These bits indicate the masked interrupt status by ANDING the interrupt enables in the CONTROL registers with the raw interrupt register.
+When any of these bits are set the INTERRUPT output will be active.
+The bits are cleared by writing to the Interrupt clear register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INTRAW</spirit:name>
+        <spirit:addressOffset>0x14</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x80</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>SSEND</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Indicates that SSEL has gone inactive</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>CMDINT</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Indicates that the the number of frames set by the CMDSIZE register have been received as a single packet of frames (SSEL held active)</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TXUNDERRUN</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Indicates in slave mode that the data was not available when required in the transmit FIFO</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RXOVERFLOW</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Indicates that in master and slave mode the receive FIFO overflowed</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RXDONE</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Indicates that all frames have been received, data ready to be read</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TXDONE</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Indicates that all frames, including last frame (see Aliased TX Data Register), have been transmitted</spirit:description>
+          </spirit:field>
+        <spirit:description>Raw Interrupt Status</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CONTROL2</spirit:name>
+        <spirit:addressOffset>0x18</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INTEN_SSEND</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>0: No effect
+1: Enables the interrupt as SSEL goes high. SPI master and slave modes</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>INTEN_CMD</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>0: No effect
+1: Enables Interrupt after the number of frames set by CMDSIZE (above)  have been received as a single packet of frames (SSEL held active)</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>CMDSIZE</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>3</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description>Number of frames sent before interrupt is generated when INTEN_CMD is set (see above).</spirit:description>
+          </spirit:field>
+        <spirit:description>Control Register 2</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>COMMAND</spirit:name>
+        <spirit:addressOffset>0x1C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>TXFIFORST</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Writing a '1' will reset the TX FIFO.
+This bit always reads as zero</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RXFIFORST</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description>Writing a '1' will reset the RX FIFO
+This bit always reads as zero</spirit:description>
+          </spirit:field>
+        <spirit:description>Command Register (write-only)</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>STAT</spirit:name>
+        <spirit:addressOffset>0x20</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x44</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>ACTIVE</spirit:name>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Core is still transmitting data</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SSEL</spirit:name>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Current State of SSEL</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TXUNDERRUN</spirit:name>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Transmit FIFO under flowed</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RXOVFLOW</spirit:name>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Receive FIFO overflowed</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TXFULL</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Transmit FIFO is full, i.e. no space for more data</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RXEMPTY</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Receive FIFO is empty, i.e. no data available to read</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>DONE</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>No of requested frames have been transmitted and received.</spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>FIRSTFRAME</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description>Next frame in Receive FIFO was first received after SSEL went active (Command Frame)</spirit:description>
+          </spirit:field>
+        <spirit:description>Status Register (read-only)</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>SSEL</spirit:name>
+        <spirit:addressOffset>0x24</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Slave Select Register
+Specifies the slaves selected
+Default 0 (nothing selected). Write 1 each bit to select one or more slaves.
+Slave select output pin is active low.
+In TI mode the slave select outputs are inverted to become active high</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TXDATA_LAST</spirit:name>
+        <spirit:addressOffset>0x28</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>write-only</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Transmit Data Register
+Writing to this register writes one frame to the TX FIFO
+Also indicates to CoreSPI that this is the last frame in this packet before SSEL is supposed to go inactive, effectively allowing for the specification of the number of transmitted frames</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>CLK_DIV</spirit:name>
+        <spirit:addressOffset>0x2C</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x07</spirit:resetValue>
+        <spirit:description>Clock division configuration register</spirit:description>
+      </spirit:register>
+    </spirit:addressBlock>
+    <spirit:bitsInLau>8</spirit:bitsInLau>
+  </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Base-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VHDL_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs_ALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>PCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB System Clock; Reference clock for all internal logic </actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB active low asynchronous reset </actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="6" spirit:resolve="dependent">1</spirit:left>
+        <spirit:right spirit:dependency="0" spirit:resolve="dependent">0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB address bus; address internal registers.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB Slave Select; select signal for register for reads or writes </actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB Strobe. This signal indicates the second cycle of an APB transfer. </actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB Write/Read. If high, a write occurs when an APB transfer takes place. If low, a read takes place. </actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('APB_DWIDTH') - 1" spirit:resolve="dependent">1</spirit:left>
+        <spirit:right spirit:dependency="0" spirit:resolve="dependent">0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB write data </actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('APB_DWIDTH') - 1" spirit:resolve="dependent">1</spirit:left>
+        <spirit:right spirit:dependency="0" spirit:resolve="dependent">0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB read data </actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB ready
+Used to insert wait states.  Not used in CoreSPI but part of APB3 Interface.  Tied high (always ready).</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSLVERR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>APB Error
+Not used in CoreSPI but part of APB3 Interface.  Tied low.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPIINT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Interrupt Pending
+This active high output signal is the interrupt output signal from CoreSPI. It can be programmed to become active on certain events, informing the CPU that such an event has occurred. The CPU can then take appropriate action.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPIRXAVAIL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Indicates receive data available to be read.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPITXRFM</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Indicates transmit done - ready for more data.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPISSI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Slave select in: Used to address CoreSPI in slave mode.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPISDI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Serial data in: Shift data input, master or slave mode.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPICLKI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Serial clock in: Shift clock input, for slave mode operation.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPISS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="7" spirit:resolve="dependent">1</spirit:left>
+        <spirit:right spirit:dependency="0" spirit:resolve="dependent">0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Slave select: Generated by SPI in master mode.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPISCLKO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Serial clock out: Generated by SPI in master mode.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPIOEN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Data output enable: When de-asserted output pad for SPISDO tri-stated). This is active when the SPI is writing output data and deactivated when there is not data to write. This signal is active high.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPISDO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>Serial data out: Generated by SPI master.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SPIMODE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:description>CoreSPI mode indicator: When 1- master.  When 0 - slave.</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="APB_DWIDTH" spirit:name="APB_DWIDTH" spirit:prompt="APB Data Width:" spirit:dataType="int" spirit:choiceRef="Choice_APBDWIDTH" spirit:choiceStyle="radio" spirit:resolve="user">8</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_MODE" spirit:name="CFG_MODE" spirit:prompt="Mode:" spirit:dataType="int" spirit:choiceRef="Choice_mode" spirit:choiceStyle="radio" spirit:configGroups="SPI Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_FRAME_SIZE" spirit:name="CFG_FRAME_SIZE" spirit:prompt="Frame Size (4-32):" spirit:dataType="int" spirit:configGroups="SPI Configuration" spirit:resolve="user" spirit:minimum="4" spirit:maximum="32">4</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_FIFO_DEPTH" spirit:name="CFG_FIFO_DEPTH" spirit:prompt="FIFO Depth (1-32):" spirit:dataType="int" spirit:configGroups="SPI Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="32">4</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_CLK" spirit:name="CFG_CLK" spirit:prompt="Clock Rate (0-255):" spirit:dataType="int" spirit:configGroups="SPI Configuration" spirit:resolve="user" spirit:minimum="0" spirit:maximum="255">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_MOT_MODE" spirit:name="CFG_MOT_MODE" spirit:prompt="Mode:" spirit:dataType="int" spirit:choiceRef="Choice_Mot_mode" spirit:choiceStyle="radio" spirit:configGroups="Motorola Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_MOT_SSEL" spirit:name="CFG_MOT_SSEL" spirit:prompt="Keep SSEL active" spirit:dataType="boolean" spirit:configGroups="Motorola Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_TI_NSC_CUSTOM" spirit:name="CFG_TI_NSC_CUSTOM" spirit:prompt="Transfer Mode:" spirit:dataType="int" spirit:choiceRef="Choice_TI_NSC_custom" spirit:choiceStyle="radio" spirit:configGroups="TI/NSC Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_TI_NSC_FRC" spirit:name="CFG_TI_NSC_FRC" spirit:prompt="Free running clock" spirit:dataType="boolean" spirit:configGroups="TI/NSC Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_TI_JMB_FRAMES" spirit:name="CFG_TI_JMB_FRAMES" spirit:prompt="Jumbo frames" spirit:dataType="boolean" spirit:configGroups="TI/NSC Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_NSC_OPERATION" spirit:name="CFG_NSC_OPERATION" spirit:prompt="NSC Specific Configuration" spirit:dataType="int" spirit:choiceRef="Choice_NSC_operation" spirit:choiceStyle="combo" spirit:configGroups="TI/NSC Configuration" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="HDL_license" spirit:name="HDL_license" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:resolve="user">U</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:configGroups="General" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('CFG_MOT_MODE', Eq('CFG_MODE', 'Motorola Mode'));\
+Enable('CFG_MOT_SSEL', Eq('CFG_MODE', 'Motorola Mode'));\
+Enable('CFG_TI_NSC_CUSTOM', Or(Eq('CFG_MODE', 'TI Mode'), Eq('CFG_MODE', 'NSC Mode')));\
+Enable('CFG_TI_NSC_FRC', And(Or(Eq('CFG_MODE', 'TI Mode'), Eq('CFG_MODE', 'NSC Mode')), Eq('CFG_TI_NSC_CUSTOM', 'Custom')));\
+Enable('CFG_TI_JMB_FRAMES', And(Eq('CFG_MODE', 'TI Mode'), Eq('CFG_TI_NSC_CUSTOM', 'Custom')));\
+Enable('CFG_NSC_OPERATION', And(Eq('CFG_MODE', 'NSC Mode'), Eq('CFG_TI_NSC_CUSTOM', 'Custom')));\
+Validate('APB Data Width must be greater than or equal to the Frame Size.', GtOrEq('APB_DWIDTH', 'CFG_FRAME_SIZE'));\
+Validate('For NSC mode, the Frame size must be set to 9 + required data frame size. Minimum data frame size is 4 bits.', Or(Not(Eq('CFG_MODE', 'NSC Mode')), And(Eq('CFG_MODE', 'NSC Mode'), GtOrEq('CFG_FRAME_SIZE', '13'))));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_APBDWIDTH</spirit:name>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Mot_mode</spirit:name>
+      <spirit:enumeration spirit:text="Mode 0">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Mode 1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Mode 2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="Mode 3">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_NSC_operation</spirit:name>
+      <spirit:enumeration spirit:text="Standard">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Force Idle Cycles">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Large response frames">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_TI_NSC_custom</spirit:name>
+      <spirit:enumeration spirit:text="Normal">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Custom">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_mode</spirit:name>
+      <spirit:enumeration spirit:text="Motorola Mode">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="TI Mode">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="NSC Mode">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corespi.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corespi_pkg.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/spi.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/spi_chanctrl.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/spi_clockmux.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/spi_control.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/spi_fifo.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/spi_rf.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/misc.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/textio.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_package.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_ahbtoapb.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_apb.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/amba_bfm/bfm_main.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/testbench.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec_compile.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_tb.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corespi.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/spi.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/spi_chanctrl.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/spi_clockmux.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/spi_control.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/spi_fifo.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/spi_rf.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbtoapb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_apb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_main.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_package.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/testbench.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>CORESPI_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/bfmtovec_compile.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_tb.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL">
+    <spirit:file>
+      <spirit:name>docs/docs/CoreSPI_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/docs/CoreSPI_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreSPI</actel-cc:displayName>
+    <actel-cc:description>CoreSPI is a controller core designed for synchronous serial communication using the Motorola, TI, or NSC Serial Peripheral Interface (SPI).  The core is parameterized to allow user specification of clock phase, clock polarity, slave select behavior, FIFO depth, frame width, and mode.  Operation is fully synchronous and operates on the system clock as well as the external SPI clock for slave mode.
+</actel-cc:description>
+    <actel-cc:packageTimestamp>20180404115205</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="9.1.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Interface Type">
+      <actel-cc:category name="AmbaBus">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

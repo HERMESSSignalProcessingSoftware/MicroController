@@ -1,0 +1,314 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_I2C</spirit:name>
+  <spirit:version>1.0.100</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>FABRIC_SMBUS</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>SMBSUS_NI</spirit:componentSignalName><spirit:busSignalName>SMBSUS_NI</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SMBALERT_NI</spirit:componentSignalName><spirit:busSignalName>SMBALERT_NI</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SMBSUS_NO</spirit:componentSignalName><spirit:busSignalName>SMBSUS_NO</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SMBALERT_NO</spirit:componentSignalName><spirit:busSignalName>SMBALERT_NO</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>FABRIC_SMBUS</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>PADS</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDA</spirit:componentSignalName><spirit:busSignalName>SDA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SCL</spirit:componentSignalName><spirit:busSignalName>SCL</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>PADS</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>FABRIC</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDA_F2M</spirit:componentSignalName><spirit:busSignalName>SDA_F2M</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDA_M2F</spirit:componentSignalName><spirit:busSignalName>SDA_M2F</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDA_M2F_OE</spirit:componentSignalName><spirit:busSignalName>SDA_M2F_OE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SDA_I2F</spirit:componentSignalName><spirit:busSignalName>SDA_I2F</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SCL_F2M</spirit:componentSignalName><spirit:busSignalName>SCL_F2M</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SCL_M2F</spirit:componentSignalName><spirit:busSignalName>SCL_M2F</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SCL_M2F_OE</spirit:componentSignalName><spirit:busSignalName>SCL_M2F_OE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>SCL_I2F</spirit:componentSignalName><spirit:busSignalName>SCL_I2F</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>FABRIC</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>SDA</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SDA" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SDA_CONNECTION" actel-cc:termValue="CONNECTION_IO"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SDA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDA_F2M</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SDA_F2M" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SDA_CONNECTION" actel-cc:termValue="CONNECTION_FABRIC"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SDA_F2M</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDA_M2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SDA_M2F" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="SDA_CONNECTION" actel-cc:termValue="CONNECTION_FABRIC"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="SDA_FAB_CAPT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SDA_M2F</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDA_M2F_OE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SDA_M2F_OE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="SDA_CONNECTION" actel-cc:termValue="CONNECTION_FABRIC"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="SDA_FAB_CAPT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SDA_M2F_OE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDA_I2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SDA_I2F" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SDA_CONNECTION" actel-cc:termValue="CONNECTION_IO"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="SDA_FAB_CAPT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SDA_I2F</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SCL</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SCL" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SCL_CONNECTION" actel-cc:termValue="CONNECTION_IO"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SCL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SCL_F2M</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SCL_F2M" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SCL_CONNECTION" actel-cc:termValue="CONNECTION_FABRIC"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SCL_F2M</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SCL_M2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SCL_M2F" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCL_CONNECTION" actel-cc:termValue="CONNECTION_FABRIC"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="SCL_FAB_CAPT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SCL_M2F</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SCL_M2F_OE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SCL_M2F_OE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCL_CONNECTION" actel-cc:termValue="CONNECTION_FABRIC"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="SCL_FAB_CAPT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SCL_M2F_OE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SCL_I2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SCL_I2F" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCL_CONNECTION" actel-cc:termValue="CONNECTION_IO"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="SCL_FAB_CAPT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SCL_I2F</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>BCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="BCLK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USE_FABRIC_BCLK" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>BCLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBSUS_NI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SMBSUS_NI" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USE_FABRIC_SMBUS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SMBSUS_NI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBALERT_NI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SMBALERT_NI" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USE_FABRIC_SMBUS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SMBALERT_NI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBSUS_NO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SMBSUS_NO" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USE_FABRIC_SMBUS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SMBSUS_NO</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SMBALERT_NO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SMBALERT_NO" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USE_FABRIC_SMBUS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SMBALERT_NO</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USE_FABRIC_BCLK" spirit:name="USE_FABRIC_BCLK" spirit:prompt="Use Fabric Baud Clock (BCLK)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Options" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USE_FABRIC_SMBUS" spirit:name="USE_FABRIC_SMBUS" spirit:prompt="Use Fabric SMBus" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Options" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SDA_CONNECTION" spirit:name="SDA_CONNECTION" spirit:prompt="SDA (Inout)" spirit:dataType="string" actel-cc:choiceRef="CONNECTION_CHOICES" spirit:configGroups="3Cols:" spirit:resolve="user">CONNECTION_IO</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SDA_FAB_CAPT" spirit:name="SDA_FAB_CAPT" spirit:prompt="Connect to Fabric" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="3Cols:" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SDA_GPIO_CAPT" spirit:name="SDA_GPIO_CAPT" spirit:prompt="Connect to GPI" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="3Cols:" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SCL_CONNECTION" spirit:name="SCL_CONNECTION" spirit:prompt="SCL (Inout)" spirit:dataType="string" actel-cc:choiceRef="CONNECTION_CHOICES" spirit:configGroups="3Cols:" spirit:resolve="user">CONNECTION_IO</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SCL_FAB_CAPT" spirit:name="SCL_FAB_CAPT" spirit:prompt="Connect to Fabric" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="3Cols:" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SCL_GPIO_CAPT" spirit:name="SCL_GPIO_CAPT" spirit:prompt="Connect to GPI" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="3Cols:" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ADVANCED_OPTION" spirit:name="ADVANCED_OPTION" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Tooltip('SDA_CONNECTION', 'e30cmp1b48__i2c0_sda____mgpio30b__usbc_data0');\
+Tooltip('SCL_CONNECTION', 'e31amn1b48__i2c0_scl____mgpio31b__usbc_data1');\
+Enable('ADVANCED_OPTION', Eq('PARAM_IS_FALSE', '1'));\
+Enable('SDA_FAB_CAPT', Eq(ValueOf('SDA_CONNECTION'), 'CONNECTION_IO'));\
+Set('SDA_FAB_CAPT', Eq(ValueOf('SDA_CONNECTION'), 'CONNECTION_FABRIC'), '0');\
+Enable('SCL_FAB_CAPT', Eq(ValueOf('SCL_CONNECTION'), 'CONNECTION_IO'));\
+Set('SCL_FAB_CAPT', Eq(ValueOf('SCL_CONNECTION'), 'CONNECTION_FABRIC'), '0');\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>winConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssi2c.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>linConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssi2c</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>CONNECTION_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="IO">CONNECTION_IO</spirit:enumeration>
+      <spirit:enumeration spirit:text="Fabric">CONNECTION_FABRIC</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_I2C</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20130307092650</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

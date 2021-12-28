@@ -1,0 +1,696 @@
+
+
+
+ 
+# CAN 
+CAN:RX                       INBUF                Y:CAN_RXBUS_USBA_DATA1_MGPIO3A_IN                                                                                    RX_I2F                             
+CAN:TX                       TRIBUFF              D:CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT,E:CAN_TXBUS_USBA_DATA0_MGPIO2A_OE                                                                                    
+CAN:TX_EN_N                  TRIBUFF              D:CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT,E:CAN_TX_EBL_USBA_DATA2_MGPIO4A_OE                                                                                  
+
+
+# ================================================================================================== 
+# GPIO                                                                                               
+# ================================================================================================== 
+ 
+ 
+ 
+# GPIO0  
+# ================== 
+GPIO:GPIO_0_BI               BIBUF                Y:I2C1_SDA_USBA_DATA3_MGPIO0A_IN,D:I2C1_SDA_USBA_DATA3_MGPIO0A_OUT,E:I2C1_SDA_USBA_DATA3_MGPIO0A_OE                  GPIO_0_I2F       GPIO0_TYPE       CONNECTION_IOA 
+GPIO:GPIO_0_BI               BIBUF                Y:MGPIO0B_IN,D:MGPIO0B_OUT,E:MGPIO0B_OE                                                                              GPIO_0_I2F       GPIO0_TYPE       CONNECTION_IOB 
+GPIO:GPIO_0_IN               INBUF                Y:I2C1_SDA_USBA_DATA3_MGPIO0A_IN                                                                                     GPIO_0_I2F       GPIO0_TYPE       CONNECTION_IOA 
+GPIO:GPIO_0_IN               INBUF                Y:MGPIO0B_IN                                                                                                         GPIO_0_I2F       GPIO0_TYPE       CONNECTION_IOB 
+GPIO:GPIO_0_OUT              OUTBUF               D:I2C1_SDA_USBA_DATA3_MGPIO0A_OUT                                                                                    N/A              GPIO0_TYPE       CONNECTION_IOA 
+GPIO:GPIO_0_OUT              OUTBUF               D:MGPIO0B_OUT                                                                                                        N/A              GPIO0_TYPE       CONNECTION_IOB 
+GPIO:GPIO_0_TRI              TRIBUFF              D:I2C1_SDA_USBA_DATA3_MGPIO0A_OUT,E:I2C1_SDA_USBA_DATA3_MGPIO0A_OE                                                   N/A              GPIO0_TYPE       CONNECTION_IOA 
+GPIO:GPIO_0_TRI              TRIBUFF              D:MGPIO0B_OUT,E:MGPIO0B_OE                                                                                           N/A              GPIO0_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO1  
+# ================== 
+GPIO:GPIO_1_BI                  BIBUF                Y:I2C1_SCL_USBA_DATA4_MGPIO1A_IN,D:I2C1_SCL_USBA_DATA4_MGPIO1A_OUT,E:I2C1_SCL_USBA_DATA4_MGPIO1A_OE                  GPIO_1_I2F       GPIO1_TYPE       CONNECTION_IOA 
+GPIO:GPIO_1_BI                  BIBUF                Y:MGPIO1B_IN,D:MGPIO1B_OUT,E:MGPIO1B_OE                                                                              GPIO_1_I2F       GPIO1_TYPE       CONNECTION_IOB 
+GPIO:GPIO_1_IN               INBUF                Y:I2C1_SCL_USBA_DATA4_MGPIO1A_IN                                                                                     GPIO_1_I2F       GPIO1_TYPE       CONNECTION_IOA 
+GPIO:GPIO_1_IN               INBUF                Y:MGPIO1B_IN                                                                                                         GPIO_1_I2F       GPIO1_TYPE       CONNECTION_IOB 
+GPIO:GPIO_1_OUT              OUTBUF               D:I2C1_SCL_USBA_DATA4_MGPIO1A_OUT                                                                                    N/A              GPIO1_TYPE       CONNECTION_IOA 
+GPIO:GPIO_1_OUT              OUTBUF               D:MGPIO1B_OUT                                                                                                        N/A              GPIO1_TYPE       CONNECTION_IOB 
+GPIO:GPIO_1_TRI              TRIBUFF              D:I2C1_SCL_USBA_DATA4_MGPIO1A_OUT,E:I2C1_SCL_USBA_DATA4_MGPIO1A_OE                                                   N/A              GPIO1_TYPE       CONNECTION_IOA 
+GPIO:GPIO_1_TRI              TRIBUFF              D:MGPIO1B_OUT,E:MGPIO1B_OE                                                                                           N/A              GPIO1_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO2  
+# ================== 
+GPIO:GPIO_2_BI               BIBUF                Y:CAN_TXBUS_USBA_DATA0_MGPIO2A_IN,D:CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT,E:CAN_TXBUS_USBA_DATA0_MGPIO2A_OE               GPIO_2_I2F       GPIO2_TYPE       CONNECTION_IOA 
+GPIO:GPIO_2_BI               BIBUF                Y:MGPIO2B_IN,D:MGPIO2B_OUT,E:MGPIO2B_OE                                                                              GPIO_2_I2F       GPIO2_TYPE       CONNECTION_IOB 
+GPIO:GPIO_2_IN               INBUF                Y:CAN_TXBUS_USBA_DATA0_MGPIO2A_IN                                                                                    GPIO_2_I2F       GPIO2_TYPE       CONNECTION_IOA 
+GPIO:GPIO_2_IN               INBUF                Y:MGPIO2B_IN                                                                                                         GPIO_2_I2F       GPIO2_TYPE       CONNECTION_IOB 
+GPIO:GPIO_2_OUT              OUTBUF               D:CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT                                                                                   N/A              GPIO2_TYPE       CONNECTION_IOA 
+GPIO:GPIO_2_OUT              OUTBUF               D:MGPIO2B_OUT                                                                                                        N/A              GPIO2_TYPE       CONNECTION_IOB 
+GPIO:GPIO_2_TRI              TRIBUFF              D:CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT,E:CAN_TXBUS_USBA_DATA0_MGPIO2A_OE                                                 N/A              GPIO2_TYPE       CONNECTION_IOA 
+GPIO:GPIO_2_TRI              TRIBUFF              D:MGPIO2B_OUT,E:MGPIO2B_OE                                                                                           N/A              GPIO2_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO3  
+# ================== 
+GPIO:GPIO_3_BI               BIBUF                Y:CAN_RXBUS_USBA_DATA1_MGPIO3A_IN,D:CAN_RXBUS_USBA_DATA1_MGPIO3A_OUT,E:CAN_RXBUS_USBA_DATA1_MGPIO3A_OE               GPIO_3_I2F       GPIO3_TYPE       CONNECTION_IOA 
+GPIO:GPIO_3_BI               BIBUF                Y:MGPIO3B_IN,D:MGPIO3B_OUT,E:MGPIO3B_OE                                                                              GPIO_3_I2F       GPIO3_TYPE       CONNECTION_IOB 
+GPIO:GPIO_3_IN               INBUF                Y:CAN_RXBUS_USBA_DATA1_MGPIO3A_IN                                                                                    GPIO_3_I2F       GPIO3_TYPE       CONNECTION_IOA 
+GPIO:GPIO_3_IN               INBUF                Y:MGPIO3B_IN                                                                                                         GPIO_3_I2F       GPIO3_TYPE       CONNECTION_IOB 
+GPIO:GPIO_3_OUT              OUTBUF               D:CAN_RXBUS_USBA_DATA1_MGPIO3A_OUT                                                                                   N/A              GPIO3_TYPE       CONNECTION_IOA 
+GPIO:GPIO_3_OUT              OUTBUF               D:MGPIO3B_OUT                                                                                                        N/A              GPIO3_TYPE       CONNECTION_IOB 
+GPIO:GPIO_3_TRI              TRIBUFF              D:CAN_RXBUS_USBA_DATA1_MGPIO3A_OUT,E:CAN_RXBUS_USBA_DATA1_MGPIO3A_OE                                                 N/A              GPIO3_TYPE       CONNECTION_IOA 
+GPIO:GPIO_3_TRI              TRIBUFF              D:MGPIO3B_OUT,E:MGPIO3B_OE                                                                                           N/A              GPIO3_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO4  
+# ================== 
+GPIO:GPIO_4_BI               BIBUF                Y:CAN_TX_EBL_USBA_DATA2_MGPIO4A_IN,D:CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT,E:CAN_TX_EBL_USBA_DATA2_MGPIO4A_OE            GPIO_4_I2F       GPIO4_TYPE       CONNECTION_IOA 
+GPIO:GPIO_4_BI               BIBUF                Y:MGPIO4B_IN,D:MGPIO4B_OUT,E:MGPIO4B_OE                                                                              GPIO_4_I2F       GPIO4_TYPE       CONNECTION_IOB 
+GPIO:GPIO_4_IN               INBUF                Y:CAN_TX_EBL_USBA_DATA2_MGPIO4A_IN                                                                                   GPIO_4_I2F       GPIO4_TYPE       CONNECTION_IOA 
+GPIO:GPIO_4_IN               INBUF                Y:MGPIO4B_IN                                                                                                         GPIO_4_I2F       GPIO4_TYPE       CONNECTION_IOB 
+GPIO:GPIO_4_OUT              OUTBUF               D:CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT                                                                                  N/A              GPIO4_TYPE       CONNECTION_IOA 
+GPIO:GPIO_4_OUT              OUTBUF               D:MGPIO4B_OUT                                                                                                        N/A              GPIO4_TYPE       CONNECTION_IOB 
+GPIO:GPIO_4_TRI              TRIBUFF              D:CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT,E:CAN_TX_EBL_USBA_DATA2_MGPIO4A_OE                                               N/A              GPIO4_TYPE       CONNECTION_IOA 
+GPIO:GPIO_4_TRI              TRIBUFF              D:MGPIO4B_OUT,E:MGPIO4B_OE                                                                                           N/A              GPIO4_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO5  
+# ================== 
+GPIO:GPIO_5_BI               BIBUF                Y:SPI0_SDI_USBA_DIR_MGPIO5A_IN,D:SPI0_SDI_USBA_DIR_MGPIO5A_OUT,E:SPI0_SDI_USBA_DIR_MGPIO5A_OE                        GPIO_5_I2F       GPIO5_TYPE       CONNECTION_IOA 
+GPIO:GPIO_5_BI               BIBUF                Y:MGPIO5B_IN,D:MGPIO5B_OUT,E:MGPIO5B_OE                                                                              GPIO_5_I2F       GPIO5_TYPE       CONNECTION_IOB 
+GPIO:GPIO_5_IN               INBUF                Y:SPI0_SDI_USBA_DIR_MGPIO5A_IN                                                                                       GPIO_5_I2F       GPIO5_TYPE       CONNECTION_IOA 
+GPIO:GPIO_5_IN               INBUF                Y:MGPIO5B_IN                                                                                                         GPIO_5_I2F       GPIO5_TYPE       CONNECTION_IOB 
+GPIO:GPIO_5_OUT              OUTBUF               D:SPI0_SDI_USBA_DIR_MGPIO5A_OUT                                                                                      N/A              GPIO5_TYPE       CONNECTION_IOA 
+GPIO:GPIO_5_OUT              OUTBUF               D:MGPIO5B_OUT                                                                                                        N/A              GPIO5_TYPE       CONNECTION_IOB 
+GPIO:GPIO_5_TRI              TRIBUFF              D:SPI0_SDI_USBA_DIR_MGPIO5A_OUT,E:SPI0_SDI_USBA_DIR_MGPIO5A_OE                                                       N/A              GPIO5_TYPE       CONNECTION_IOA 
+GPIO:GPIO_5_TRI              TRIBUFF              D:MGPIO5B_OUT,E:MGPIO5B_OE                                                                                           N/A              GPIO5_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO6  
+# ================== 
+GPIO:GPIO_6_BI               BIBUF                Y:SPI0_SDO_USBA_STP_MGPIO6A_IN,D:SPI0_SDO_USBA_STP_MGPIO6A_OUT,E:SPI0_SDO_USBA_STP_MGPIO6A_OE                        GPIO_6_I2F       GPIO6_TYPE       CONNECTION_IOA 
+GPIO:GPIO_6_BI               BIBUF                Y:MGPIO6B_IN,D:MGPIO6B_OUT,E:MGPIO6B_OE                                                                              GPIO_6_I2F       GPIO6_TYPE       CONNECTION_IOB 
+GPIO:GPIO_6_IN               INBUF                Y:SPI0_SDO_USBA_STP_MGPIO6A_IN                                                                                       GPIO_6_I2F       GPIO6_TYPE       CONNECTION_IOA 
+GPIO:GPIO_6_IN               INBUF                Y:MGPIO6B_IN                                                                                                         GPIO_6_I2F       GPIO6_TYPE       CONNECTION_IOB 
+GPIO:GPIO_6_OUT              OUTBUF               D:SPI0_SDO_USBA_STP_MGPIO6A_OUT                                                                                      N/A              GPIO6_TYPE       CONNECTION_IOA 
+GPIO:GPIO_6_OUT              OUTBUF               D:MGPIO6B_OUT                                                                                                        N/A              GPIO6_TYPE       CONNECTION_IOB 
+GPIO:GPIO_6_TRI              TRIBUFF              D:SPI0_SDO_USBA_STP_MGPIO6A_OUT,E:SPI0_SDO_USBA_STP_MGPIO6A_OE                                                       N/A              GPIO6_TYPE       CONNECTION_IOA 
+GPIO:GPIO_6_TRI              TRIBUFF              D:MGPIO6B_OUT,E:MGPIO6B_OE                                                                                           N/A              GPIO6_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO7  
+# ================== 
+GPIO:GPIO_7_BI               BIBUF                Y:SPI0_SS0_USBA_NXT_MGPIO7A_IN,D:SPI0_SS0_USBA_NXT_MGPIO7A_OUT,E:SPI0_SS0_USBA_NXT_MGPIO7A_OE                        GPIO_7_I2F       GPIO7_TYPE       CONNECTION_IOA 
+GPIO:GPIO_7_BI               BIBUF                Y:MGPIO7B_IN,D:MGPIO7B_OUT,E:MGPIO7B_OE                                                                              GPIO_7_I2F       GPIO7_TYPE       CONNECTION_IOB 
+GPIO:GPIO_7_IN               INBUF                Y:SPI0_SS0_USBA_NXT_MGPIO7A_IN                                                                                       GPIO_7_I2F       GPIO7_TYPE       CONNECTION_IOA 
+GPIO:GPIO_7_IN               INBUF                Y:MGPIO7B_IN                                                                                                         GPIO_7_I2F       GPIO7_TYPE       CONNECTION_IOB 
+GPIO:GPIO_7_OUT              OUTBUF               D:SPI0_SS0_USBA_NXT_MGPIO7A_OUT                                                                                      N/A              GPIO7_TYPE       CONNECTION_IOA 
+GPIO:GPIO_7_OUT              OUTBUF               D:MGPIO7B_OUT                                                                                                        N/A              GPIO7_TYPE       CONNECTION_IOB 
+GPIO:GPIO_7_TRI              TRIBUFF              D:SPI0_SS0_USBA_NXT_MGPIO7A_OUT,E:SPI0_SS0_USBA_NXT_MGPIO7A_OE                                                       N/A              GPIO7_TYPE       CONNECTION_IOA 
+GPIO:GPIO_7_TRI              TRIBUFF              D:MGPIO7B_OUT,E:MGPIO7B_OE                                                                                           N/A              GPIO7_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO8  
+# ================== 
+GPIO:GPIO_8_BI               BIBUF                Y:SPI0_SS1_USBA_DATA5_MGPIO8A_IN,D:SPI0_SS1_USBA_DATA5_MGPIO8A_OUT,E:SPI0_SS1_USBA_DATA5_MGPIO8A_OE                  GPIO_8_I2F       GPIO8_TYPE       CONNECTION_IOA 
+GPIO:GPIO_8_BI               BIBUF                Y:MGPIO8B_IN,D:MGPIO8B_OUT,E:MGPIO8B_OE                                                                              GPIO_8_I2F       GPIO8_TYPE       CONNECTION_IOB 
+GPIO:GPIO_8_IN               INBUF                Y:SPI0_SS1_USBA_DATA5_MGPIO8A_IN                                                                                     GPIO_8_I2F       GPIO8_TYPE       CONNECTION_IOA 
+GPIO:GPIO_8_IN               INBUF                Y:MGPIO8B_IN                                                                                                         GPIO_8_I2F       GPIO8_TYPE       CONNECTION_IOB 
+GPIO:GPIO_8_OUT              OUTBUF               D:SPI0_SS1_USBA_DATA5_MGPIO8A_OUT                                                                                    N/A              GPIO8_TYPE       CONNECTION_IOA 
+GPIO:GPIO_8_OUT              OUTBUF               D:MGPIO8B_OUT                                                                                                        N/A              GPIO8_TYPE       CONNECTION_IOB 
+GPIO:GPIO_8_TRI              TRIBUFF              D:SPI0_SS1_USBA_DATA5_MGPIO8A_OUT,E:SPI0_SS1_USBA_DATA5_MGPIO8A_OE                                                   N/A              GPIO8_TYPE       CONNECTION_IOA 
+GPIO:GPIO_8_TRI              TRIBUFF              D:MGPIO8B_OUT,E:MGPIO8B_OE                                                                                           N/A              GPIO8_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO9  
+# ================== 
+GPIO:GPIO_9_BI               BIBUF                Y:SPI0_SS2_USBA_DATA6_MGPIO9A_IN,D:SPI0_SS2_USBA_DATA6_MGPIO9A_OUT,E:SPI0_SS2_USBA_DATA6_MGPIO9A_OE                  GPIO_9_I2F       GPIO9_TYPE       CONNECTION_IOA 
+GPIO:GPIO_9_BI               BIBUF                Y:MGPIO9B_IN,D:MGPIO9B_OUT,E:MGPIO9B_OE                                                                              GPIO_9_I2F       GPIO9_TYPE       CONNECTION_IOB 
+GPIO:GPIO_9_IN               INBUF                Y:SPI0_SS2_USBA_DATA6_MGPIO9A_IN                                                                                     GPIO_9_I2F       GPIO9_TYPE       CONNECTION_IOA 
+GPIO:GPIO_9_IN               INBUF                Y:MGPIO9B_IN                                                                                                         GPIO_9_I2F       GPIO9_TYPE       CONNECTION_IOB 
+GPIO:GPIO_9_OUT              OUTBUF               D:SPI0_SS2_USBA_DATA6_MGPIO9A_OUT                                                                                    N/A              GPIO9_TYPE       CONNECTION_IOA 
+GPIO:GPIO_9_OUT              OUTBUF               D:MGPIO9B_OUT                                                                                                        N/A              GPIO9_TYPE       CONNECTION_IOB 
+GPIO:GPIO_9_TRI              TRIBUFF              D:SPI0_SS2_USBA_DATA6_MGPIO9A_OUT,E:SPI0_SS2_USBA_DATA6_MGPIO9A_OE                                                   N/A              GPIO9_TYPE       CONNECTION_IOA 
+GPIO:GPIO_9_TRI              TRIBUFF              D:MGPIO9B_OUT,E:MGPIO9B_OE                                                                                           N/A              GPIO9_TYPE       CONNECTION_IOB 
+ 
+ 
+# GPIO10  
+# ================== 
+GPIO:GPIO_10_BI              BIBUF                Y:SPI0_SS3_USBA_DATA7_MGPIO10A_IN,D:SPI0_SS3_USBA_DATA7_MGPIO10A_OUT,E:SPI0_SS3_USBA_DATA7_MGPIO10A_OE               GPIO_10_I2F      GPIO10_TYPE      CONNECTION_IOA 
+GPIO:GPIO_10_BI              BIBUF                Y:MGPIO10B_IN,D:MGPIO10B_OUT,E:MGPIO10B_OE                                                                           GPIO_10_I2F      GPIO10_TYPE      CONNECTION_IOB 
+GPIO:GPIO_10_IN              INBUF                Y:SPI0_SS3_USBA_DATA7_MGPIO10A_IN                                                                                    GPIO_10_I2F      GPIO10_TYPE      CONNECTION_IOA 
+GPIO:GPIO_10_IN              INBUF                Y:MGPIO10B_IN                                                                                                        GPIO_10_I2F      GPIO10_TYPE      CONNECTION_IOB 
+GPIO:GPIO_10_OUT             OUTBUF               D:SPI0_SS3_USBA_DATA7_MGPIO10A_OUT                                                                                   N/A              GPIO10_TYPE      CONNECTION_IOA 
+GPIO:GPIO_10_OUT             OUTBUF               D:MGPIO10B_OUT                                                                                                       N/A              GPIO10_TYPE      CONNECTION_IOB 
+GPIO:GPIO_10_TRI             TRIBUFF              D:SPI0_SS3_USBA_DATA7_MGPIO10A_OUT,E:SPI0_SS3_USBA_DATA7_MGPIO10A_OE                                                 N/A              GPIO10_TYPE      CONNECTION_IOA 
+GPIO:GPIO_10_TRI             TRIBUFF              D:MGPIO10B_OUT,E:MGPIO10B_OE                                                                                         N/A              GPIO10_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO11  
+# ================== 
+GPIO:GPIO_11_BI              BIBUF                Y:SPI1_SDI_MGPIO11A_IN,D:SPI1_SDI_MGPIO11A_OUT,E:SPI1_SDI_MGPIO11A_OE                                                GPIO_11_I2F      GPIO11_TYPE      CONNECTION_IOA 
+GPIO:GPIO_11_BI              BIBUF                Y:MMUART1_RTS_MGPIO11B_IN,D:MMUART1_RTS_MGPIO11B_OUT,E:MMUART1_RTS_MGPIO11B_OE                                       GPIO_11_I2F      GPIO11_TYPE      CONNECTION_IOB 
+GPIO:GPIO_11_IN              INBUF                Y:SPI1_SDI_MGPIO11A_IN                                                                                               GPIO_11_I2F      GPIO11_TYPE      CONNECTION_IOA 
+GPIO:GPIO_11_IN              INBUF                Y:MMUART1_RTS_MGPIO11B_IN                                                                                            GPIO_11_I2F      GPIO11_TYPE      CONNECTION_IOB 
+GPIO:GPIO_11_OUT             OUTBUF               D:SPI1_SDI_MGPIO11A_OUT                                                                                              N/A              GPIO11_TYPE      CONNECTION_IOA 
+GPIO:GPIO_11_OUT             OUTBUF               D:MMUART1_RTS_MGPIO11B_OUT                                                                                           N/A              GPIO11_TYPE      CONNECTION_IOB 
+GPIO:GPIO_11_TRI             TRIBUFF              D:SPI1_SDI_MGPIO11A_OUT,E:SPI1_SDI_MGPIO11A_OE                                                                       N/A              GPIO11_TYPE      CONNECTION_IOA 
+GPIO:GPIO_11_TRI             TRIBUFF              D:MMUART1_RTS_MGPIO11B_OUT,E:MMUART1_RTS_MGPIO11B_OE                                                                 N/A              GPIO11_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO12  
+# ================== 
+GPIO:GPIO_12_BI              BIBUF                Y:SPI1_SDO_MGPIO12A_IN,D:SPI1_SDO_MGPIO12A_OUT,E:SPI1_SDO_MGPIO12A_OE                                                GPIO_12_I2F      GPIO12_TYPE      CONNECTION_IOA 
+GPIO:GPIO_12_BI              BIBUF                Y:MMUART1_DTR_MGPIO12B_IN,D:MMUART1_DTR_MGPIO12B_OUT,E:MMUART1_DTR_MGPIO12B_OE                                       GPIO_12_I2F      GPIO12_TYPE      CONNECTION_IOB 
+GPIO:GPIO_12_IN              INBUF                Y:SPI1_SDO_MGPIO12A_IN                                                                                               GPIO_12_I2F      GPIO12_TYPE      CONNECTION_IOA 
+GPIO:GPIO_12_IN              INBUF                Y:MMUART1_DTR_MGPIO12B_IN                                                                                            GPIO_12_I2F      GPIO12_TYPE      CONNECTION_IOB 
+GPIO:GPIO_12_OUT             OUTBUF               D:SPI1_SDO_MGPIO12A_OUT                                                                                              N/A              GPIO12_TYPE      CONNECTION_IOA 
+GPIO:GPIO_12_OUT             OUTBUF               D:MMUART1_DTR_MGPIO12B_OUT                                                                                           N/A              GPIO12_TYPE      CONNECTION_IOB 
+GPIO:GPIO_12_TRI             TRIBUFF              D:SPI1_SDO_MGPIO12A_OUT,E:SPI1_SDO_MGPIO12A_OE                                                                       N/A              GPIO12_TYPE      CONNECTION_IOA 
+GPIO:GPIO_12_TRI             TRIBUFF              D:MMUART1_DTR_MGPIO12B_OUT,E:MMUART1_DTR_MGPIO12B_OE                                                                 N/A              GPIO12_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO13  
+# ================== 
+GPIO:GPIO_13_BI              BIBUF                Y:SPI1_SS0_MGPIO13A_IN,D:SPI1_SS0_MGPIO13A_OUT,E:SPI1_SS0_MGPIO13A_OE                                                GPIO_13_I2F      GPIO13_TYPE      CONNECTION_IOA 
+GPIO:GPIO_13_BI              BIBUF                Y:MMUART1_CTS_MGPIO13B_IN,D:MMUART1_CTS_MGPIO13B_OUT,E:MMUART1_CTS_MGPIO13B_OE                                       GPIO_13_I2F      GPIO13_TYPE      CONNECTION_IOB 
+GPIO:GPIO_13_IN              INBUF                Y:SPI1_SS0_MGPIO13A_IN                                                                                               GPIO_13_I2F      GPIO13_TYPE      CONNECTION_IOA 
+GPIO:GPIO_13_IN              INBUF                Y:MMUART1_CTS_MGPIO13B_IN                                                                                            GPIO_13_I2F      GPIO13_TYPE      CONNECTION_IOB 
+GPIO:GPIO_13_OUT             OUTBUF               D:SPI1_SS0_MGPIO13A_OUT                                                                                              N/A              GPIO13_TYPE      CONNECTION_IOA 
+GPIO:GPIO_13_OUT             OUTBUF               D:MMUART1_CTS_MGPIO13B_OUT                                                                                           N/A              GPIO13_TYPE      CONNECTION_IOB 
+GPIO:GPIO_13_TRI             TRIBUFF              D:SPI1_SS0_MGPIO13A_OUT,E:SPI1_SS0_MGPIO13A_OE                                                                       N/A              GPIO13_TYPE      CONNECTION_IOA 
+GPIO:GPIO_13_TRI             TRIBUFF              D:MMUART1_CTS_MGPIO13B_OUT,E:MMUART1_CTS_MGPIO13B_OE                                                                 N/A              GPIO13_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO14  
+# ================== 
+GPIO:GPIO_14_BI              BIBUF                Y:SPI1_SS1_MGPIO14A_IN,D:SPI1_SS1_MGPIO14A_OUT,E:SPI1_SS1_MGPIO14A_OE                                                GPIO_14_I2F      GPIO14_TYPE      CONNECTION_IOA 
+GPIO:GPIO_14_BI              BIBUF                Y:MMUART1_DSR_MGPIO14B_IN,D:MMUART1_DSR_MGPIO14B_OUT,E:MMUART1_DSR_MGPIO14B_OE                                       GPIO_14_I2F      GPIO14_TYPE      CONNECTION_IOB 
+GPIO:GPIO_14_IN              INBUF                Y:SPI1_SS1_MGPIO14A_IN                                                                                               GPIO_14_I2F      GPIO14_TYPE      CONNECTION_IOA 
+GPIO:GPIO_14_IN              INBUF                Y:MMUART1_DSR_MGPIO14B_IN                                                                                            GPIO_14_I2F      GPIO14_TYPE      CONNECTION_IOB 
+GPIO:GPIO_14_OUT             OUTBUF               D:SPI1_SS1_MGPIO14A_OUT                                                                                              N/A              GPIO14_TYPE      CONNECTION_IOA 
+GPIO:GPIO_14_OUT             OUTBUF               D:MMUART1_DSR_MGPIO14B_OUT                                                                                           N/A              GPIO14_TYPE      CONNECTION_IOB 
+GPIO:GPIO_14_TRI             TRIBUFF              D:SPI1_SS1_MGPIO14A_OUT,E:SPI1_SS1_MGPIO14A_OE                                                                       N/A              GPIO14_TYPE      CONNECTION_IOA 
+GPIO:GPIO_14_TRI             TRIBUFF              D:MMUART1_DSR_MGPIO14B_OUT,E:MMUART1_DSR_MGPIO14B_OE                                                                 N/A              GPIO14_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO15  
+# ================== 
+GPIO:GPIO_15_BI              BIBUF                Y:SPI1_SS2_MGPIO15A_IN,D:SPI1_SS2_MGPIO15A_OUT,E:SPI1_SS2_MGPIO15A_OE                                                GPIO_15_I2F      GPIO15_TYPE      CONNECTION_IOA 
+GPIO:GPIO_15_BI              BIBUF                Y:MMUART1_RI_MGPIO15B_IN,D:MMUART1_RI_MGPIO15B_OUT,E:MMUART1_RI_MGPIO15B_OE                                          GPIO_15_I2F      GPIO15_TYPE      CONNECTION_IOB 
+GPIO:GPIO_15_IN              INBUF                Y:SPI1_SS2_MGPIO15A_IN                                                                                               GPIO_15_I2F      GPIO15_TYPE      CONNECTION_IOA 
+GPIO:GPIO_15_IN              INBUF                Y:MMUART1_RI_MGPIO15B_IN                                                                                             GPIO_15_I2F      GPIO15_TYPE      CONNECTION_IOB 
+GPIO:GPIO_15_OUT             OUTBUF               D:SPI1_SS2_MGPIO15A_OUT                                                                                              N/A              GPIO15_TYPE      CONNECTION_IOA 
+GPIO:GPIO_15_OUT             OUTBUF               D:MMUART1_RI_MGPIO15B_OUT                                                                                            N/A              GPIO15_TYPE      CONNECTION_IOB 
+GPIO:GPIO_15_TRI             TRIBUFF              D:SPI1_SS2_MGPIO15A_OUT,E:SPI1_SS2_MGPIO15A_OE                                                                       N/A              GPIO15_TYPE      CONNECTION_IOA 
+GPIO:GPIO_15_TRI             TRIBUFF              D:MMUART1_RI_MGPIO15B_OUT,E:MMUART1_RI_MGPIO15B_OE                                                                   N/A              GPIO15_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO16  
+# ================== 
+GPIO:GPIO_16_BI              BIBUF                Y:SPI1_SS3_MGPIO16A_IN,D:SPI1_SS3_MGPIO16A_OUT,E:SPI1_SS3_MGPIO16A_OE                                                GPIO_16_I2F      GPIO16_TYPE      CONNECTION_IOA 
+GPIO:GPIO_16_BI              BIBUF                Y:MMUART1_DCD_MGPIO16B_IN,D:MMUART1_DCD_MGPIO16B_OUT,E:MMUART1_DCD_MGPIO16B_OE                                       GPIO_16_I2F      GPIO16_TYPE      CONNECTION_IOB 
+GPIO:GPIO_16_IN              INBUF                Y:SPI1_SS3_MGPIO16A_IN                                                                                               GPIO_16_I2F      GPIO16_TYPE      CONNECTION_IOA 
+GPIO:GPIO_16_IN              INBUF                Y:MMUART1_DCD_MGPIO16B_IN                                                                                            GPIO_16_I2F      GPIO16_TYPE      CONNECTION_IOB 
+GPIO:GPIO_16_OUT             OUTBUF               D:SPI1_SS3_MGPIO16A_OUT                                                                                              N/A              GPIO16_TYPE      CONNECTION_IOA 
+GPIO:GPIO_16_OUT             OUTBUF               D:MMUART1_DCD_MGPIO16B_OUT                                                                                           N/A              GPIO16_TYPE      CONNECTION_IOB 
+GPIO:GPIO_16_TRI             TRIBUFF              D:SPI1_SS3_MGPIO16A_OUT,E:SPI1_SS3_MGPIO16A_OE                                                                       N/A              GPIO16_TYPE      CONNECTION_IOA 
+GPIO:GPIO_16_TRI             TRIBUFF              D:MMUART1_DCD_MGPIO16B_OUT,E:MMUART1_DCD_MGPIO16B_OE                                                                 N/A              GPIO16_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO17  
+# ================== 
+GPIO:GPIO_17_BI              BIBUF                Y:SPI1_SS4_MGPIO17A_IN,D:SPI1_SS4_MGPIO17A_OUT,E:SPI1_SS4_MGPIO17A_OE                                                GPIO_17_I2F      GPIO17_TYPE      CONNECTION_IOA 
+GPIO:GPIO_17_BI              BIBUF                Y:MMUART0_RTS_USBC_DATA5_MGPIO17B_IN,D:MMUART0_RTS_USBC_DATA5_MGPIO17B_OUT,E:MMUART0_RTS_USBC_DATA5_MGPIO17B_OE      GPIO_17_I2F      GPIO17_TYPE      CONNECTION_IOB 
+GPIO:GPIO_17_IN              INBUF                Y:SPI1_SS4_MGPIO17A_IN                                                                                               GPIO_17_I2F      GPIO17_TYPE      CONNECTION_IOA 
+GPIO:GPIO_17_IN              INBUF                Y:MMUART0_RTS_USBC_DATA5_MGPIO17B_IN                                                                                 GPIO_17_I2F      GPIO17_TYPE      CONNECTION_IOB 
+GPIO:GPIO_17_OUT             OUTBUF               D:SPI1_SS4_MGPIO17A_OUT                                                                                              N/A              GPIO17_TYPE      CONNECTION_IOA 
+GPIO:GPIO_17_OUT             OUTBUF               D:MMUART0_RTS_USBC_DATA5_MGPIO17B_OUT                                                                                N/A              GPIO17_TYPE      CONNECTION_IOB 
+GPIO:GPIO_17_TRI             TRIBUFF              D:SPI1_SS4_MGPIO17A_OUT,E:SPI1_SS4_MGPIO17A_OE                                                                       N/A              GPIO17_TYPE      CONNECTION_IOA 
+GPIO:GPIO_17_TRI             TRIBUFF              D:MMUART0_RTS_USBC_DATA5_MGPIO17B_OUT,E:MMUART0_RTS_USBC_DATA5_MGPIO17B_OE                                           N/A              GPIO17_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO18  
+# ================== 
+GPIO:GPIO_18_BI              BIBUF                Y:SPI1_SS5_MGPIO18A_IN,D:SPI1_SS5_MGPIO18A_OUT,E:SPI1_SS5_MGPIO18A_OE                                                GPIO_18_I2F      GPIO18_TYPE      CONNECTION_IOA 
+GPIO:GPIO_18_BI              BIBUF                Y:MMUART0_DTR_USBC_DATA6_MGPIO18B_IN,D:MMUART0_DTR_USBC_DATA6_MGPIO18B_OUT,E:MMUART0_DTR_USBC_DATA6_MGPIO18B_OE      GPIO_18_I2F      GPIO18_TYPE      CONNECTION_IOB 
+GPIO:GPIO_18_IN              INBUF                Y:SPI1_SS5_MGPIO18A_IN                                                                                               GPIO_18_I2F      GPIO18_TYPE      CONNECTION_IOA 
+GPIO:GPIO_18_IN              INBUF                Y:MMUART0_DTR_USBC_DATA6_MGPIO18B_IN                                                                                 GPIO_18_I2F      GPIO18_TYPE      CONNECTION_IOB 
+GPIO:GPIO_18_OUT             OUTBUF               D:SPI1_SS5_MGPIO18A_OUT                                                                                              N/A              GPIO18_TYPE      CONNECTION_IOA 
+GPIO:GPIO_18_OUT             OUTBUF               D:MMUART0_DTR_USBC_DATA6_MGPIO18B_OUT                                                                                N/A              GPIO18_TYPE      CONNECTION_IOB 
+GPIO:GPIO_18_TRI             TRIBUFF              D:SPI1_SS5_MGPIO18A_OUT,E:SPI1_SS5_MGPIO18A_OE                                                                       N/A              GPIO18_TYPE      CONNECTION_IOA 
+GPIO:GPIO_18_TRI             TRIBUFF              D:MMUART0_DTR_USBC_DATA6_MGPIO18B_OUT,E:MMUART0_DTR_USBC_DATA6_MGPIO18B_OE                                           N/A              GPIO18_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO19  
+# ================== 
+GPIO:GPIO_19_BI              BIBUF                Y:SPI0_SS4_MGPIO19A_IN,D:SPI0_SS4_MGPIO19A_OUT,E:SPI0_SS4_MGPIO19A_OE                                                GPIO_19_I2F      GPIO19_TYPE      CONNECTION_IOA 
+GPIO:GPIO_19_BI              BIBUF                Y:MMUART0_CTS_USBC_DATA7_MGPIO19B_IN,D:MMUART0_CTS_USBC_DATA7_MGPIO19B_OUT,E:MMUART0_CTS_USBC_DATA7_MGPIO19B_OE      GPIO_19_I2F      GPIO19_TYPE      CONNECTION_IOB 
+GPIO:GPIO_19_IN              INBUF                Y:SPI0_SS4_MGPIO19A_IN                                                                                               GPIO_19_I2F      GPIO19_TYPE      CONNECTION_IOA 
+GPIO:GPIO_19_IN              INBUF                Y:MMUART0_CTS_USBC_DATA7_MGPIO19B_IN                                                                                 GPIO_19_I2F      GPIO19_TYPE      CONNECTION_IOB 
+GPIO:GPIO_19_OUT             OUTBUF               D:SPI0_SS4_MGPIO19A_OUT                                                                                              N/A              GPIO19_TYPE      CONNECTION_IOA 
+GPIO:GPIO_19_OUT             OUTBUF               D:MMUART0_CTS_USBC_DATA7_MGPIO19B_OUT                                                                                N/A              GPIO19_TYPE      CONNECTION_IOB 
+GPIO:GPIO_19_TRI             TRIBUFF              D:SPI0_SS4_MGPIO19A_OUT,E:SPI0_SS4_MGPIO19A_OE                                                                       N/A              GPIO19_TYPE      CONNECTION_IOA 
+GPIO:GPIO_19_TRI             TRIBUFF              D:MMUART0_CTS_USBC_DATA7_MGPIO19B_OUT,E:MMUART0_CTS_USBC_DATA7_MGPIO19B_OE                                           N/A              GPIO19_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO20  
+# ================== 
+GPIO:GPIO_20_BI              BIBUF                Y:SPI0_SS5_MGPIO20A_IN,D:SPI0_SS5_MGPIO20A_OUT,E:SPI0_SS5_MGPIO20A_OE                                                GPIO_20_I2F      GPIO20_TYPE      CONNECTION_IOA 
+GPIO:GPIO_20_BI              BIBUF                Y:MMUART0_DSR_MGPIO20B_IN,D:MMUART0_DSR_MGPIO20B_OUT,E:MMUART0_DSR_MGPIO20B_OE                                       GPIO_20_I2F      GPIO20_TYPE      CONNECTION_IOB 
+GPIO:GPIO_20_IN              INBUF                Y:SPI0_SS5_MGPIO20A_IN                                                                                               GPIO_20_I2F      GPIO20_TYPE      CONNECTION_IOA 
+GPIO:GPIO_20_IN              INBUF                Y:MMUART0_DSR_MGPIO20B_IN                                                                                            GPIO_20_I2F      GPIO20_TYPE      CONNECTION_IOB 
+GPIO:GPIO_20_OUT             OUTBUF               D:SPI0_SS5_MGPIO20A_OUT                                                                                              N/A              GPIO20_TYPE      CONNECTION_IOA 
+GPIO:GPIO_20_OUT             OUTBUF               D:MMUART0_DSR_MGPIO20B_OUT                                                                                           N/A              GPIO20_TYPE      CONNECTION_IOB 
+GPIO:GPIO_20_TRI             TRIBUFF              D:SPI0_SS5_MGPIO20A_OUT,E:SPI0_SS5_MGPIO20A_OE                                                                       N/A              GPIO20_TYPE      CONNECTION_IOA 
+GPIO:GPIO_20_TRI             TRIBUFF              D:MMUART0_DSR_MGPIO20B_OUT,E:MMUART0_DSR_MGPIO20B_OE                                                                 N/A              GPIO20_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO21  
+# ================== 
+GPIO:GPIO_21_BI              BIBUF                Y:SPI0_SS6_MGPIO21A_IN,D:SPI0_SS6_MGPIO21A_OUT,E:SPI0_SS6_MGPIO21A_OE                                                GPIO_21_I2F      GPIO21_TYPE      CONNECTION_IOA 
+GPIO:GPIO_21_BI              BIBUF                Y:MMUART0_RI_MGPIO21B_IN,D:MMUART0_RI_MGPIO21B_OUT,E:MMUART0_RI_MGPIO21B_OE                                          GPIO_21_I2F      GPIO21_TYPE      CONNECTION_IOB 
+GPIO:GPIO_21_IN              INBUF                Y:SPI0_SS6_MGPIO21A_IN                                                                                               GPIO_21_I2F      GPIO21_TYPE      CONNECTION_IOA 
+GPIO:GPIO_21_IN              INBUF                Y:MMUART0_RI_MGPIO21B_IN                                                                                             GPIO_21_I2F      GPIO21_TYPE      CONNECTION_IOB 
+GPIO:GPIO_21_OUT             OUTBUF               D:SPI0_SS6_MGPIO21A_OUT                                                                                              N/A              GPIO21_TYPE      CONNECTION_IOA 
+GPIO:GPIO_21_OUT             OUTBUF               D:MMUART0_RI_MGPIO21B_OUT                                                                                            N/A              GPIO21_TYPE      CONNECTION_IOB 
+GPIO:GPIO_21_TRI             TRIBUFF              D:SPI0_SS6_MGPIO21A_OUT,E:SPI0_SS6_MGPIO21A_OE                                                                       N/A              GPIO21_TYPE      CONNECTION_IOA 
+GPIO:GPIO_21_TRI             TRIBUFF              D:MMUART0_RI_MGPIO21B_OUT,E:MMUART0_RI_MGPIO21B_OE                                                                   N/A              GPIO21_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO22  
+# ================== 
+GPIO:GPIO_22_BI                 BIBUF                Y:SPI0_SS7_MGPIO22A_IN,D:SPI0_SS7_MGPIO22A_OUT,E:SPI0_SS7_MGPIO22A_OE                                                GPIO_22_I2F      GPIO22_TYPE      CONNECTION_IOA 
+GPIO:GPIO_22_BI                 BIBUF                Y:MMUART0_DCD_MGPIO22B_IN,D:MMUART0_DCD_MGPIO22B_OUT,E:MMUART0_DCD_MGPIO22B_OE                                       GPIO_22_I2F      GPIO22_TYPE      CONNECTION_IOB 
+GPIO:GPIO_22_IN              INBUF                Y:SPI0_SS7_MGPIO22A_IN                                                                                               GPIO_22_I2F      GPIO22_TYPE      CONNECTION_IOA 
+GPIO:GPIO_22_IN              INBUF                Y:MMUART0_DCD_MGPIO22B_IN                                                                                            GPIO_22_I2F      GPIO22_TYPE      CONNECTION_IOB 
+GPIO:GPIO_22_OUT             OUTBUF               D:SPI0_SS7_MGPIO22A_OUT                                                                                              N/A              GPIO22_TYPE      CONNECTION_IOA 
+GPIO:GPIO_22_OUT             OUTBUF               D:MMUART0_DCD_MGPIO22B_OUT                                                                                           N/A              GPIO22_TYPE      CONNECTION_IOB 
+GPIO:GPIO_22_TRI             TRIBUFF              D:SPI0_SS7_MGPIO22A_OUT,E:SPI0_SS7_MGPIO22A_OE                                                                       N/A              GPIO22_TYPE      CONNECTION_IOA 
+GPIO:GPIO_22_TRI             TRIBUFF              D:MMUART0_DCD_MGPIO22B_OUT,E:MMUART0_DCD_MGPIO22B_OE                                                                 N/A              GPIO22_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO23  
+# ================== 
+GPIO:GPIO_23_BI              BIBUF                Y:SPI1_SS6_MGPIO23A_IN,D:SPI1_SS6_MGPIO23A_OUT,E:SPI1_SS6_MGPIO23A_OE                                                GPIO_23_I2F      GPIO23_TYPE      CONNECTION_IOA 
+GPIO:GPIO_23_BI              BIBUF                Y:USBD_DATA7_MGPIO23B_IN,D:USBD_DATA7_MGPIO23B_OUT,E:USBD_DATA7_MGPIO23B_OE                                          GPIO_23_I2F      GPIO23_TYPE      CONNECTION_IOB 
+GPIO:GPIO_23_IN              INBUF                Y:SPI1_SS6_MGPIO23A_IN                                                                                               GPIO_23_I2F      GPIO23_TYPE      CONNECTION_IOA 
+GPIO:GPIO_23_IN              INBUF                Y:USBD_DATA7_MGPIO23B_IN                                                                                             GPIO_23_I2F      GPIO23_TYPE      CONNECTION_IOB 
+GPIO:GPIO_23_OUT             OUTBUF               D:SPI1_SS6_MGPIO23A_OUT                                                                                              N/A              GPIO23_TYPE      CONNECTION_IOA 
+GPIO:GPIO_23_OUT             OUTBUF               D:USBD_DATA7_MGPIO23B_OUT                                                                                            N/A              GPIO23_TYPE      CONNECTION_IOB 
+GPIO:GPIO_23_TRI             TRIBUFF              D:SPI1_SS6_MGPIO23A_OUT,E:SPI1_SS6_MGPIO23A_OE                                                                       N/A              GPIO23_TYPE      CONNECTION_IOA 
+GPIO:GPIO_23_TRI             TRIBUFF              D:USBD_DATA7_MGPIO23B_OUT,E:USBD_DATA7_MGPIO23B_OE                                                                   N/A              GPIO23_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO24  
+# ================== 
+GPIO:GPIO_24_BI              BIBUF                Y:SPI1_SS7_MGPIO24A_IN,D:SPI1_SS7_MGPIO24A_OUT,E:SPI1_SS7_MGPIO24A_OE                                                GPIO_24_I2F      GPIO24_TYPE      CONNECTION_IOA 
+GPIO:GPIO_24_BI              BIBUF                Y:MMUART1_TXD_USBC_DATA2_MGPIO24B_IN,D:MMUART1_TXD_USBC_DATA2_MGPIO24B_OUT,E:MMUART1_TXD_USBC_DATA2_MGPIO24B_OE      GPIO_24_I2F      GPIO24_TYPE      CONNECTION_IOB 
+GPIO:GPIO_24_IN              INBUF                Y:SPI1_SS7_MGPIO24A_IN                                                                                               GPIO_24_I2F      GPIO24_TYPE      CONNECTION_IOA 
+GPIO:GPIO_24_IN              INBUF                Y:MMUART1_TXD_USBC_DATA2_MGPIO24B_IN                                                                                 GPIO_24_I2F      GPIO24_TYPE      CONNECTION_IOB 
+GPIO:GPIO_24_OUT             OUTBUF               D:SPI1_SS7_MGPIO24A_OUT                                                                                              N/A              GPIO24_TYPE      CONNECTION_IOA 
+GPIO:GPIO_24_OUT             OUTBUF               D:MMUART1_TXD_USBC_DATA2_MGPIO24B_OUT                                                                                N/A              GPIO24_TYPE      CONNECTION_IOB 
+GPIO:GPIO_24_TRI             TRIBUFF              D:SPI1_SS7_MGPIO24A_OUT,E:SPI1_SS7_MGPIO24A_OE                                                                       N/A              GPIO24_TYPE      CONNECTION_IOA 
+GPIO:GPIO_24_TRI             TRIBUFF              D:MMUART1_TXD_USBC_DATA2_MGPIO24B_OUT,E:MMUART1_TXD_USBC_DATA2_MGPIO24B_OE                                           N/A              GPIO24_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO25  
+# ================== 
+GPIO:GPIO_25_BI              BIBUF                Y:MGPIO25A_IN,D:MGPIO25A_OUT,E:MGPIO25A_OE                                                                           GPIO_25_I2F      GPIO25_TYPE      CONNECTION_IOA 
+GPIO:GPIO_25_BI              BIBUF                Y:MMUART1_SCK_USBC_DATA4_MGPIO25B_IN,D:MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT,E:MMUART1_SCK_USBC_DATA4_MGPIO25B_OE      GPIO_25_I2F      GPIO25_TYPE      CONNECTION_IOB 
+GPIO:GPIO_25_IN              INBUF                Y:MGPIO25A_IN                                                                                                        GPIO_25_I2F      GPIO25_TYPE      CONNECTION_IOA 
+GPIO:GPIO_25_IN              INBUF                Y:MMUART1_SCK_USBC_DATA4_MGPIO25B_IN                                                                                 GPIO_25_I2F      GPIO25_TYPE      CONNECTION_IOB 
+GPIO:GPIO_25_OUT             OUTBUF               D:MGPIO25A_OUT                                                                                                       N/A              GPIO25_TYPE      CONNECTION_IOA 
+GPIO:GPIO_25_OUT             OUTBUF               D:MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT                                                                                N/A              GPIO25_TYPE      CONNECTION_IOB 
+GPIO:GPIO_25_TRI             TRIBUFF              D:MGPIO25A_OUT,E:MGPIO25A_OE                                                                                         N/A              GPIO25_TYPE      CONNECTION_IOA 
+GPIO:GPIO_25_TRI             TRIBUFF              D:MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT,E:MMUART1_SCK_USBC_DATA4_MGPIO25B_OE                                           N/A              GPIO25_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO26  
+# ================== 
+GPIO:GPIO_26_BI              BIBUF                Y:MGPIO26A_IN,D:MGPIO26A_OUT,E:MGPIO26A_OE                                                                           GPIO_26_I2F      GPIO26_TYPE      CONNECTION_IOA 
+GPIO:GPIO_26_BI              BIBUF                Y:MMUART1_RXD_USBC_DATA3_MGPIO26B_IN,D:MMUART1_RXD_USBC_DATA3_MGPIO26B_OUT,E:MMUART1_RXD_USBC_DATA3_MGPIO26B_OE      GPIO_26_I2F      GPIO26_TYPE      CONNECTION_IOB 
+GPIO:GPIO_26_IN              INBUF                Y:MGPIO26A_IN                                                                                                        GPIO_26_I2F      GPIO26_TYPE      CONNECTION_IOA 
+GPIO:GPIO_26_IN              INBUF                Y:MMUART1_RXD_USBC_DATA3_MGPIO26B_IN                                                                                 GPIO_26_I2F      GPIO26_TYPE      CONNECTION_IOB 
+GPIO:GPIO_26_OUT             OUTBUF               D:MGPIO26A_OUT                                                                                                       N/A              GPIO26_TYPE      CONNECTION_IOA 
+GPIO:GPIO_26_OUT             OUTBUF               D:MMUART1_RXD_USBC_DATA3_MGPIO26B_OUT                                                                                N/A              GPIO26_TYPE      CONNECTION_IOB 
+GPIO:GPIO_26_TRI             TRIBUFF              D:MGPIO26A_OUT,E:MGPIO26A_OE                                                                                         N/A              GPIO26_TYPE      CONNECTION_IOA 
+GPIO:GPIO_26_TRI             TRIBUFF              D:MMUART1_RXD_USBC_DATA3_MGPIO26B_OUT,E:MMUART1_RXD_USBC_DATA3_MGPIO26B_OE                                           N/A              GPIO26_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO27  
+# ================== 
+GPIO:GPIO_27_BI              BIBUF                Y:MGPIO27A_IN,D:MGPIO27A_OUT,E:MGPIO27A_OE                                                                           GPIO_27_I2F      GPIO27_TYPE      CONNECTION_IOA 
+GPIO:GPIO_27_BI              BIBUF                Y:MMUART0_TXD_USBC_DIR_MGPIO27B_IN,D:MMUART0_TXD_USBC_DIR_MGPIO27B_OUT,E:MMUART0_TXD_USBC_DIR_MGPIO27B_OE            GPIO_27_I2F      GPIO27_TYPE      CONNECTION_IOB 
+GPIO:GPIO_27_IN              INBUF                Y:MGPIO27A_IN                                                                                                        GPIO_27_I2F      GPIO27_TYPE      CONNECTION_IOA 
+GPIO:GPIO_27_IN              INBUF                Y:MMUART0_TXD_USBC_DIR_MGPIO27B_IN                                                                                   GPIO_27_I2F      GPIO27_TYPE      CONNECTION_IOB 
+GPIO:GPIO_27_OUT             OUTBUF               D:MGPIO27A_OUT                                                                                                       N/A              GPIO27_TYPE      CONNECTION_IOA 
+GPIO:GPIO_27_OUT             OUTBUF               D:MMUART0_TXD_USBC_DIR_MGPIO27B_OUT                                                                                  N/A              GPIO27_TYPE      CONNECTION_IOB 
+GPIO:GPIO_27_TRI             TRIBUFF              D:MGPIO27A_OUT,E:MGPIO27A_OE                                                                                         N/A              GPIO27_TYPE      CONNECTION_IOA 
+GPIO:GPIO_27_TRI             TRIBUFF              D:MMUART0_TXD_USBC_DIR_MGPIO27B_OUT,E:MMUART0_TXD_USBC_DIR_MGPIO27B_OE                                               N/A              GPIO27_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO28  
+# ================== 
+GPIO:GPIO_28_BI              BIBUF                Y:MGPIO28A_IN,D:MGPIO28A_OUT,E:MGPIO28A_OE                                                                           GPIO_28_I2F      GPIO28_TYPE      CONNECTION_IOA 
+GPIO:GPIO_28_BI              BIBUF                Y:MMUART0_RXD_USBC_STP_MGPIO28B_IN,D:MMUART0_RXD_USBC_STP_MGPIO28B_OUT,E:MMUART0_RXD_USBC_STP_MGPIO28B_OE            GPIO_28_I2F      GPIO28_TYPE      CONNECTION_IOB 
+GPIO:GPIO_28_IN              INBUF                Y:MGPIO28A_IN                                                                                                        GPIO_28_I2F      GPIO28_TYPE      CONNECTION_IOA 
+GPIO:GPIO_28_IN              INBUF                Y:MMUART0_RXD_USBC_STP_MGPIO28B_IN                                                                                   GPIO_28_I2F      GPIO28_TYPE      CONNECTION_IOB 
+GPIO:GPIO_28_OUT             OUTBUF               D:MGPIO28A_OUT                                                                                                       N/A              GPIO28_TYPE      CONNECTION_IOA 
+GPIO:GPIO_28_OUT             OUTBUF               D:MMUART0_RXD_USBC_STP_MGPIO28B_OUT                                                                                  N/A              GPIO28_TYPE      CONNECTION_IOB 
+GPIO:GPIO_28_TRI             TRIBUFF              D:MGPIO28A_OUT,E:MGPIO28A_OE                                                                                         N/A              GPIO28_TYPE      CONNECTION_IOA 
+GPIO:GPIO_28_TRI             TRIBUFF              D:MMUART0_RXD_USBC_STP_MGPIO28B_OUT,E:MMUART0_RXD_USBC_STP_MGPIO28B_OE                                               N/A              GPIO28_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO29  
+# ================== 
+GPIO:GPIO_29_BI              BIBUF                Y:MGPIO29A_IN,D:MGPIO29A_OUT,E:MGPIO29A_OE                                                                           GPIO_29_I2F      GPIO29_TYPE      CONNECTION_IOA 
+GPIO:GPIO_29_BI              BIBUF                Y:MMUART0_SCK_USBC_NXT_MGPIO29B_IN,D:MMUART0_SCK_USBC_NXT_MGPIO29B_OUT,E:MMUART0_SCK_USBC_NXT_MGPIO29B_OE            GPIO_29_I2F      GPIO29_TYPE      CONNECTION_IOB 
+GPIO:GPIO_29_IN              INBUF                Y:MGPIO29A_IN                                                                                                        GPIO_29_I2F      GPIO29_TYPE      CONNECTION_IOA 
+GPIO:GPIO_29_IN              INBUF                Y:MMUART0_SCK_USBC_NXT_MGPIO29B_IN                                                                                   GPIO_29_I2F      GPIO29_TYPE      CONNECTION_IOB 
+GPIO:GPIO_29_OUT             OUTBUF               D:MGPIO29A_OUT                                                                                                       N/A              GPIO29_TYPE      CONNECTION_IOA 
+GPIO:GPIO_29_OUT             OUTBUF               D:MMUART0_SCK_USBC_NXT_MGPIO29B_OUT                                                                                  N/A              GPIO29_TYPE      CONNECTION_IOB 
+GPIO:GPIO_29_TRI             TRIBUFF              D:MGPIO29A_OUT,E:MGPIO29A_OE                                                                                         N/A              GPIO29_TYPE      CONNECTION_IOA 
+GPIO:GPIO_29_TRI             TRIBUFF              D:MMUART0_SCK_USBC_NXT_MGPIO29B_OUT,E:MMUART0_SCK_USBC_NXT_MGPIO29B_OE                                               N/A              GPIO29_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO30  
+# ================== 
+GPIO:GPIO_30_BI              BIBUF                Y:MGPIO30A_IN,D:MGPIO30A_OUT,E:MGPIO30A_OE                                                                           GPIO_30_I2F      GPIO30_TYPE      CONNECTION_IOA 
+GPIO:GPIO_30_BI              BIBUF                Y:I2C0_SDA_USBC_DATA0_MGPIO30B_IN,D:I2C0_SDA_USBC_DATA0_MGPIO30B_OUT,E:I2C0_SDA_USBC_DATA0_MGPIO30B_OE               GPIO_30_I2F      GPIO30_TYPE      CONNECTION_IOB 
+GPIO:GPIO_30_IN              INBUF                Y:MGPIO30A_IN                                                                                                        GPIO_30_I2F      GPIO30_TYPE      CONNECTION_IOA 
+GPIO:GPIO_30_IN              INBUF                Y:I2C0_SDA_USBC_DATA0_MGPIO30B_IN                                                                                    GPIO_30_I2F      GPIO30_TYPE      CONNECTION_IOB 
+GPIO:GPIO_30_OUT             OUTBUF               D:MGPIO30A_OUT                                                                                                       N/A              GPIO30_TYPE      CONNECTION_IOA 
+GPIO:GPIO_30_OUT             OUTBUF               D:I2C0_SDA_USBC_DATA0_MGPIO30B_OUT                                                                                   N/A              GPIO30_TYPE      CONNECTION_IOB 
+GPIO:GPIO_30_TRI             TRIBUFF              D:MGPIO30A_OUT,E:MGPIO30A_OE                                                                                         N/A              GPIO30_TYPE      CONNECTION_IOA 
+GPIO:GPIO_30_TRI             TRIBUFF              D:I2C0_SDA_USBC_DATA0_MGPIO30B_OUT,E:I2C0_SDA_USBC_DATA0_MGPIO30B_OE                                                 N/A              GPIO30_TYPE      CONNECTION_IOB 
+ 
+ 
+# GPIO31  
+# ================== 
+GPIO:GPIO_31_BI              BIBUF                Y:MGPIO31A_IN,D:MGPIO31A_OUT,E:MGPIO31A_OE                                                                           GPIO_31_I2F      GPIO31_TYPE      CONNECTION_IOA 
+GPIO:GPIO_31_BI              BIBUF                Y:I2C0_SCL_USBC_DATA1_MGPIO31B_IN,D:I2C0_SCL_USBC_DATA1_MGPIO31B_OUT,E:I2C0_SCL_USBC_DATA1_MGPIO31B_OE               GPIO_31_I2F      GPIO31_TYPE      CONNECTION_IOB 
+GPIO:GPIO_31_IN              INBUF                Y:MGPIO31A_IN                                                                                                        GPIO_31_I2F      GPIO31_TYPE      CONNECTION_IOA 
+GPIO:GPIO_31_IN              INBUF                Y:I2C0_SCL_USBC_DATA1_MGPIO31B_IN                                                                                    GPIO_31_I2F      GPIO31_TYPE      CONNECTION_IOB 
+GPIO:GPIO_31_OUT             OUTBUF               D:MGPIO31A_OUT                                                                                                       N/A              GPIO31_TYPE      CONNECTION_IOA 
+GPIO:GPIO_31_OUT             OUTBUF               D:I2C0_SCL_USBC_DATA1_MGPIO31B_OUT                                                                                   N/A              GPIO31_TYPE      CONNECTION_IOB 
+GPIO:GPIO_31_TRI             TRIBUFF              D:MGPIO31A_OUT,E:MGPIO31A_OE                                                                                         N/A              GPIO31_TYPE      CONNECTION_IOA 
+GPIO:GPIO_31_TRI             TRIBUFF              D:I2C0_SCL_USBC_DATA1_MGPIO31B_OUT,E:I2C0_SCL_USBC_DATA1_MGPIO31B_OE                                                 N/A              GPIO31_TYPE      CONNECTION_IOB 
+ 
+
+
+ 
+# I2C_0 
+I2C_0:SDA                    BIBUF                Y:I2C0_SDA_USBC_DATA0_MGPIO30B_IN,D:I2C0_SDA_USBC_DATA0_MGPIO30B_OUT,E:I2C0_SDA_USBC_DATA0_MGPIO30B_OE               SDA_I2F                            
+I2C_0:SCL                    BIBUF                Y:I2C0_SCL_USBC_DATA1_MGPIO31B_IN,D:I2C0_SCL_USBC_DATA1_MGPIO31B_OUT,E:I2C0_SCL_USBC_DATA1_MGPIO31B_OE               SCL_I2F                            
+ 
+# I2C_1 
+I2C_1:SDA                    BIBUF                Y:I2C1_SDA_USBA_DATA3_MGPIO0A_IN,D:I2C1_SDA_USBA_DATA3_MGPIO0A_OUT,E:I2C1_SDA_USBA_DATA3_MGPIO0A_OE                  SDA_I2F                            
+I2C_1:SCL                    BIBUF                Y:I2C1_SCL_USBA_DATA4_MGPIO1A_IN,D:I2C1_SCL_USBA_DATA4_MGPIO1A_OUT,E:I2C1_SCL_USBA_DATA4_MGPIO1A_OE                  SCL_I2F                            
+
+
+
+# RGMII MAC Interface
+MAC:RGMII_RXD[0]       INBUF        Y:RGMII_RXD0_RMII_RXD0_USBB_DATA0_IN                                                                               
+MAC:RGMII_RXD[1]       INBUF        Y:RGMII_RXD1_RMII_RXD1_USBB_DATA1_IN                                                                               
+MAC:RGMII_RXD[2]       INBUF        Y:RGMII_RXD2_RMII_RX_ER_USBB_DATA3_IN                                                                              
+MAC:RGMII_RXD[3]       INBUF        Y:RGMII_RXD3_USBB_DATA4_IN                                                                                         
+MAC:RGMII_RX_CTL       INBUF        Y:RGMII_RX_CTL_RMII_CRS_DV_USBB_DATA2_IN                                                                           
+
+MAC:RGMII_TXD[0]       TRIBUFF      D:RGMII_TXD0_RMII_TXD0_USBB_DIR_OUT,E:RGMII_TXD0_RMII_TXD0_USBB_DIR_OE
+MAC:RGMII_TXD[1]       TRIBUFF      D:RGMII_TXD1_RMII_TXD1_USBB_STP_OUT,E:RGMII_TXD1_RMII_TXD1_USBB_STP_OE
+MAC:RGMII_TXD[2]       TRIBUFF      D:RGMII_TXD2_USBB_DATA5_OUT,E:RGMII_TXD2_USBB_DATA5_OE
+MAC:RGMII_TXD[3]       TRIBUFF      D:RGMII_TXD3_USBB_DATA6_OUT,E:RGMII_TXD3_USBB_DATA6_OE
+MAC:RGMII_TX_CTL       TRIBUFF      D:RGMII_TX_CTL_RMII_TX_EN_USBB_NXT_OUT,E:RGMII_TX_CTL_RMII_TX_EN_USBB_NXT_OE
+
+MAC:RGMII_GTX_CLK      INBUF        Y:RGMII_GTX_CLK_RMII_CLK_USBB_XCLK_IN                                                                              
+MAC:RGMII_RX_CLK       INBUF        Y:RGMII_RX_CLK_IN                                                                                                  
+MAC:RGMII_TX_CLK       TRIBUFF      D:RGMII_TX_CLK_OUT,E:RGMII_TX_CLK_OE
+
+MAC:RGMII_MDC          TRIBUFF      D:RGMII_MDC_RMII_MDC_OUT,E:RGMII_MDC_RMII_MDC_OE
+MAC:RGMII_MDIO         BIBUF        Y:RGMII_MDIO_RMII_MDIO_USBB_DATA7_IN,D:RGMII_MDIO_RMII_MDIO_USBB_DATA7_OUT,E:RGMII_MDIO_RMII_MDIO_USBB_DATA7_OE    
+
+# RMII MAC Interface
+
+MAC:RMII_RXD[0]        INBUF        Y:RGMII_RXD0_RMII_RXD0_USBB_DATA0_IN                                                                               
+MAC:RMII_RXD[1]        INBUF        Y:RGMII_RXD1_RMII_RXD1_USBB_DATA1_IN                                                                               
+MAC:RMII_RX_ER         INBUF        Y:RGMII_RXD2_RMII_RX_ER_USBB_DATA3_IN                                                                              
+MAC:RMII_CRS_DV        INBUF        Y:RGMII_RX_CTL_RMII_CRS_DV_USBB_DATA2_IN                                                                           
+
+MAC:RMII_TXD[0]        TRIBUFF      D:RGMII_TXD0_RMII_TXD0_USBB_DIR_OUT,E:RGMII_TXD0_RMII_TXD0_USBB_DIR_OE
+MAC:RMII_TXD[1]        TRIBUFF      D:RGMII_TXD1_RMII_TXD1_USBB_STP_OUT,E:RGMII_TXD1_RMII_TXD1_USBB_STP_OE
+MAC:RMII_TX_EN         TRIBUFF      D:RGMII_TX_CTL_RMII_TX_EN_USBB_NXT_OUT,E:RGMII_TX_CTL_RMII_TX_EN_USBB_NXT_OE
+
+MAC:RMII_CLK           INBUF        Y:RGMII_GTX_CLK_RMII_CLK_USBB_XCLK_IN                                                                              
+
+MAC:RMII_MDC           TRIBUFF      D:RGMII_MDC_RMII_MDC_OUT,E:RGMII_MDC_RMII_MDC_OE
+MAC:RMII_MDIO          BIBUF        Y:RGMII_MDIO_RMII_MDIO_USBB_DATA7_IN,D:RGMII_MDIO_RMII_MDIO_USBB_DATA7_OUT,E:RGMII_MDIO_RMII_MDIO_USBB_DATA7_OE    
+                        
+
+
+ 
+# MMUART_0 
+MMUART_0:TXD                 TRIBUFF              D:MMUART0_TXD_USBC_DIR_MGPIO27B_OUT,E:MMUART0_TXD_USBC_DIR_MGPIO27B_OE                                                                                  
+MMUART_0:RXD                 INBUF                Y:MMUART0_RXD_USBC_STP_MGPIO28B_IN                                                                                   RXD_I2F                            
+MMUART_0:TXD_RXD             BIBUF                Y:MMUART0_TXD_USBC_DIR_MGPIO27B_IN,D:MMUART0_TXD_USBC_DIR_MGPIO27B_OUT,E:MMUART0_TXD_USBC_DIR_MGPIO27B_OE            TXD_RXD_I2F                        
+MMUART_0:CLK                 BIBUF                Y:MMUART0_SCK_USBC_NXT_MGPIO29B_IN,D:MMUART0_SCK_USBC_NXT_MGPIO29B_OUT,E:MMUART0_SCK_USBC_NXT_MGPIO29B_OE            CLK_I2F                            
+MMUART_0:RTS                 TRIBUFF              D:MMUART0_RTS_USBC_DATA5_MGPIO17B_OUT,E:MMUART0_RTS_USBC_DATA5_MGPIO17B_OE                                                                              
+MMUART_0:DTR                 TRIBUFF              D:MMUART0_DTR_USBC_DATA6_MGPIO18B_OUT,E:MMUART0_DTR_USBC_DATA6_MGPIO18B_OE                                                                              
+MMUART_0:DSR                 INBUF                Y:MMUART0_DSR_MGPIO20B_IN                                                                                            DSR_I2F                            
+MMUART_0:CTS                 INBUF                Y:MMUART0_CTS_USBC_DATA7_MGPIO19B_IN                                                                                 CTS_I2F                            
+MMUART_0:RI                  INBUF                Y:MMUART0_RI_MGPIO21B_IN                                                                                             RI_I2F                             
+MMUART_0:DCD                 INBUF                Y:MMUART0_DCD_MGPIO22B_IN                                                                                            DCD_I2F                            
+ 
+# MMUART_1 
+MMUART_1:TXD                 TRIBUFF              D:MMUART1_TXD_USBC_DATA2_MGPIO24B_OUT,E:MMUART1_TXD_USBC_DATA2_MGPIO24B_OE                                                                              
+MMUART_1:RXD                 INBUF                Y:MMUART1_RXD_USBC_DATA3_MGPIO26B_IN                                                                                 RXD_I2F                            
+MMUART_1:TXD_RXD             BIBUF                Y:MMUART1_TXD_USBC_DATA2_MGPIO24B_IN,D:MMUART1_TXD_USBC_DATA2_MGPIO24B_OUT,E:MMUART1_TXD_USBC_DATA2_MGPIO24B_OE      TXD_RXD_I2F                        
+MMUART_1:CLK                 BIBUF                Y:MMUART1_SCK_USBC_DATA4_MGPIO25B_IN,D:MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT,E:MMUART1_SCK_USBC_DATA4_MGPIO25B_OE      CLK_I2F                            
+MMUART_1:RTS                 TRIBUFF              D:MMUART1_RTS_MGPIO11B_OUT,E:MMUART1_RTS_MGPIO11B_OE                                                                                                    
+MMUART_1:DTR                 TRIBUFF              D:MMUART1_DTR_MGPIO12B_OUT,E:MMUART1_DTR_MGPIO12B_OE                                                                                                    
+MMUART_1:DSR                 INBUF                Y:MMUART1_DSR_MGPIO14B_IN                                                                                            DSR_I2F                            
+MMUART_1:CTS                 INBUF                Y:MMUART1_CTS_MGPIO13B_IN                                                                                            CTS_I2F                            
+MMUART_1:RI                  INBUF                Y:MMUART1_RI_MGPIO15B_IN                                                                                             RI_I2F                             
+MMUART_1:DCD                 INBUF                Y:MMUART1_DCD_MGPIO16B_IN                                                                                            DCD_I2F                            
+
+
+ 
+# SPI_0 
+SPI_0:CLK                    BIBUF                Y:SPI0_SCK_USBA_XCLK_IN,D:SPI0_SCK_USBA_XCLK_OUT,E:SPI0_SCK_USBA_XCLK_OE                                             CLK_I2F                            
+SPI_0:DI                     INBUF                Y:SPI0_SDI_USBA_DIR_MGPIO5A_IN                                                                                       DI_I2F                             
+SPI_0:DO                     TRIBUFF              D:SPI0_SDO_USBA_STP_MGPIO6A_OUT,E:SPI0_SDO_USBA_STP_MGPIO6A_OE                                                                                          
+SPI_0:SS0                    BIBUF                D:SPI0_SS0_USBA_NXT_MGPIO7A_OUT,E:SPI0_SS0_USBA_NXT_MGPIO7A_OE,Y:SPI0_SS0_USBA_NXT_MGPIO7A_IN                        SS0_I2F                            
+SPI_0:SS1                    TRIBUFF              D:SPI0_SS1_USBA_DATA5_MGPIO8A_OUT,E:SPI0_SS1_USBA_DATA5_MGPIO8A_OE                                                                                      
+SPI_0:SS2                    TRIBUFF              D:SPI0_SS2_USBA_DATA6_MGPIO9A_OUT,E:SPI0_SS2_USBA_DATA6_MGPIO9A_OE                                                                                      
+SPI_0:SS3                    TRIBUFF              D:SPI0_SS3_USBA_DATA7_MGPIO10A_OUT,E:SPI0_SS3_USBA_DATA7_MGPIO10A_OE                                                                                    
+SPI_0:SS4                    TRIBUFF              D:SPI0_SS4_MGPIO19A_OUT,E:SPI0_SS4_MGPIO19A_OE                                                                                                          
+SPI_0:SS5                    TRIBUFF              D:SPI0_SS5_MGPIO20A_OUT,E:SPI0_SS5_MGPIO20A_OE                                                                                                          
+SPI_0:SS6                    TRIBUFF              D:SPI0_SS6_MGPIO21A_OUT,E:SPI0_SS6_MGPIO21A_OE                                                                                                          
+SPI_0:SS7                    TRIBUFF              D:SPI0_SS7_MGPIO22A_OUT,E:SPI0_SS7_MGPIO22A_OE                                                                                                          
+ 
+# SPI_1 
+SPI_1:CLK                    BIBUF                Y:SPI1_SCK_IN,D:SPI1_SCK_OUT,E:SPI1_SCK_OE                                                                           CLK_I2F                            
+SPI_1:DI                     INBUF                Y:SPI1_SDI_MGPIO11A_IN                                                                                               DI_I2F                             
+SPI_1:DO                     TRIBUFF              D:SPI1_SDO_MGPIO12A_OUT,E:SPI1_SDO_MGPIO12A_OE                                                                                                          
+SPI_1:SS0                    BIBUF                D:SPI1_SS0_MGPIO13A_OUT,E:SPI1_SS0_MGPIO13A_OE,Y:SPI1_SS0_MGPIO13A_IN                                                SS0_I2F                            
+SPI_1:SS1                    TRIBUFF              D:SPI1_SS1_MGPIO14A_OUT,E:SPI1_SS1_MGPIO14A_OE                                                                                                          
+SPI_1:SS2                    TRIBUFF              D:SPI1_SS2_MGPIO15A_OUT,E:SPI1_SS2_MGPIO15A_OE                                                                                                          
+SPI_1:SS3                    TRIBUFF              D:SPI1_SS3_MGPIO16A_OUT,E:SPI1_SS3_MGPIO16A_OE                                                                                                          
+SPI_1:SS4                    TRIBUFF              D:SPI1_SS4_MGPIO17A_OUT,E:SPI1_SS4_MGPIO17A_OE                                                                                                          
+SPI_1:SS5                    TRIBUFF              D:SPI1_SS5_MGPIO18A_OUT,E:SPI1_SS5_MGPIO18A_OE                                                                                                          
+SPI_1:SS6                    TRIBUFF              D:SPI1_SS6_MGPIO23A_OUT,E:SPI1_SS6_MGPIO23A_OE                                                                                                          
+SPI_1:SS7                    TRIBUFF              D:SPI1_SS7_MGPIO24A_OUT,E:SPI1_SS7_MGPIO24A_OE                                                                                                          
+
+
+ 
+# USB. Each port has 4 choices A, B, C and D 
+ 
+# DIR 
+USB:ULPI_DIR                 INBUF                Y:SPI0_SDI_USBA_DIR_MGPIO5A_IN                                                                                       N/A              USB_CONFIG   CONFIG_ULPI_A 
+USB:ULPI_DIR                 INBUF                Y:RGMII_TXD0_RMII_TXD0_USBB_DIR_IN                                                                                   N/A              USB_CONFIG   CONFIG_ULPI_B 
+USB:ULPI_DIR                 INBUF                Y:MMUART0_TXD_USBC_DIR_MGPIO27B_IN                                                                                   N/A              USB_CONFIG   CONFIG_ULPI_C 
+USB:ULPI_DIR                 INBUF                Y:USBD_DIR_IN                                                                                                        N/A              USB_CONFIG   CONFIG_ULPI_D 
+ 
+# NXT 
+USB:ULPI_NXT                 INBUF                Y:SPI0_SS0_USBA_NXT_MGPIO7A_IN                                                                                       N/A              USB_CONFIG   CONFIG_ULPI_A 
+USB:ULPI_NXT                 INBUF                Y:RGMII_TX_CTL_RMII_TX_EN_USBB_NXT_IN                                                                                N/A              USB_CONFIG   CONFIG_ULPI_B 
+USB:ULPI_NXT                 INBUF                Y:MMUART0_SCK_USBC_NXT_MGPIO29B_IN                                                                                   N/A              USB_CONFIG   CONFIG_ULPI_C 
+USB:ULPI_NXT                 INBUF                Y:USBD_NXT_IN                                                                                                        N/A              USB_CONFIG   CONFIG_ULPI_D 
+ 
+# STP 
+USB:ULPI_STP                 TRIBUFF              D:SPI0_SDO_USBA_STP_MGPIO6A_OUT,E:SPI0_SDO_USBA_STP_MGPIO6A_OE                                                       N/A              USB_CONFIG   CONFIG_ULPI_A 
+USB:ULPI_STP                 TRIBUFF              D:RGMII_TXD1_RMII_TXD1_USBB_STP_OUT,E:RGMII_TXD1_RMII_TXD1_USBB_STP_OE                                               N/A              USB_CONFIG   CONFIG_ULPI_B 
+USB:ULPI_STP                 TRIBUFF              D:MMUART0_RXD_USBC_STP_MGPIO28B_OUT,E:MMUART0_RXD_USBC_STP_MGPIO28B_OE                                               N/A              USB_CONFIG   CONFIG_ULPI_C 
+USB:ULPI_STP                 TRIBUFF              D:USBD_STP_OUT,E:USBD_STP_OE                                                                                         N/A              USB_CONFIG   CONFIG_ULPI_D 
+ 
+# XCLK 
+USB:ULPI_XCLK                INBUF                Y:SPI0_SCK_USBA_XCLK_IN                                                                                              N/A              USB_CONFIG  CONFIG_ULPI_A 
+USB:ULPI_XCLK                INBUF                Y:RGMII_GTX_CLK_RMII_CLK_USBB_XCLK_IN                                                                                N/A              USB_CONFIG  CONFIG_ULPI_B 
+USB:ULPI_XCLK                INBUF                Y:USBC_XCLK_IN                                                                                                       N/A              USB_CONFIG  CONFIG_ULPI_C 
+USB:ULPI_XCLK                INBUF                Y:USBD_XCLK_IN                                                                                                       N/A              USB_CONFIG  CONFIG_ULPI_D 
+ 
+# DATA0 
+USB:ULPI_DATA[0]             BIBUF                Y:CAN_TXBUS_USBA_DATA0_MGPIO2A_IN,D:CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT,E:CAN_TXBUS_USBA_DATA0_MGPIO2A_OE               N/A              USB_CONFIG CONFIG_ULPI_A 
+USB:ULPI_DATA[0]             BIBUF                Y:RGMII_RXD0_RMII_RXD0_USBB_DATA0_IN,D:RGMII_RXD0_RMII_RXD0_USBB_DATA0_OUT,E:RGMII_RXD0_RMII_RXD0_USBB_DATA0_OE      N/A              USB_CONFIG CONFIG_ULPI_B 
+USB:ULPI_DATA[0]             BIBUF                Y:I2C0_SDA_USBC_DATA0_MGPIO30B_IN,D:I2C0_SDA_USBC_DATA0_MGPIO30B_OUT,E:I2C0_SDA_USBC_DATA0_MGPIO30B_OE               N/A              USB_CONFIG CONFIG_ULPI_C 
+USB:ULPI_DATA[0]             BIBUF                Y:USBD_DATA0_IN,D:USBD_DATA0_OUT,E:USBD_DATA0_OE                                                                     N/A              USB_CONFIG CONFIG_ULPI_D 
+ 
+# DATA1 
+USB:ULPI_DATA[1]             BIBUF                Y:CAN_RXBUS_USBA_DATA1_MGPIO3A_IN,D:CAN_RXBUS_USBA_DATA1_MGPIO3A_OUT,E:CAN_RXBUS_USBA_DATA1_MGPIO3A_OE               N/A              USB_CONFIG CONFIG_ULPI_A 
+USB:ULPI_DATA[1]             BIBUF                Y:RGMII_RXD1_RMII_RXD1_USBB_DATA1_IN,D:RGMII_RXD1_RMII_RXD1_USBB_DATA1_OUT,E:RGMII_RXD1_RMII_RXD1_USBB_DATA1_OE      N/A              USB_CONFIG CONFIG_ULPI_B 
+USB:ULPI_DATA[1]             BIBUF                Y:I2C0_SCL_USBC_DATA1_MGPIO31B_IN,D:I2C0_SCL_USBC_DATA1_MGPIO31B_OUT,E:I2C0_SCL_USBC_DATA1_MGPIO31B_OE               N/A              USB_CONFIG CONFIG_ULPI_C 
+USB:ULPI_DATA[1]             BIBUF                Y:USBD_DATA1_IN,D:USBD_DATA1_OUT,E:USBD_DATA1_OE                                                                     N/A              USB_CONFIG CONFIG_ULPI_D 
+ 
+# DATA2 
+USB:ULPI_DATA[2]             BIBUF                Y:CAN_TX_EBL_USBA_DATA2_MGPIO4A_IN,D:CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT,E:CAN_TX_EBL_USBA_DATA2_MGPIO4A_OE            N/A              USB_CONFIG CONFIG_ULPI_A 
+USB:ULPI_DATA[2]             BIBUF                Y:RGMII_RX_CTL_RMII_CRS_DV_USBB_DATA2_IN,D:RGMII_RX_CTL_RMII_CRS_DV_USBB_DATA2_OUT,E:RGMII_RX_CTL_RMII_CRS_DV_USBB_DATA2_OE N/A       USB_CONFIG CONFIG_ULPI_B 
+USB:ULPI_DATA[2]             BIBUF                Y:MMUART1_TXD_USBC_DATA2_MGPIO24B_IN,D:MMUART1_TXD_USBC_DATA2_MGPIO24B_OUT,E:MMUART1_TXD_USBC_DATA2_MGPIO24B_OE      N/A              USB_CONFIG CONFIG_ULPI_C 
+USB:ULPI_DATA[2]             BIBUF                Y:USBD_DATA2_IN,D:USBD_DATA2_OUT,E:USBD_DATA2_OE                                                                     N/A              USB_CONFIG CONFIG_ULPI_D 
+ 
+# DATA3 
+USB:ULPI_DATA[3]             BIBUF                Y:I2C1_SDA_USBA_DATA3_MGPIO0A_IN,D:I2C1_SDA_USBA_DATA3_MGPIO0A_OUT,E:I2C1_SDA_USBA_DATA3_MGPIO0A_OE                  N/A              USB_CONFIG CONFIG_ULPI_A 
+USB:ULPI_DATA[3]             BIBUF                Y:RGMII_RXD2_RMII_RX_ER_USBB_DATA3_IN,D:RGMII_RXD2_RMII_RX_ER_USBB_DATA3_OUT,E:RGMII_RXD2_RMII_RX_ER_USBB_DATA3_OE   N/A              USB_CONFIG CONFIG_ULPI_B 
+USB:ULPI_DATA[3]             BIBUF                Y:MMUART1_RXD_USBC_DATA3_MGPIO26B_IN,D:MMUART1_RXD_USBC_DATA3_MGPIO26B_OUT,E:MMUART1_RXD_USBC_DATA3_MGPIO26B_OE      N/A              USB_CONFIG CONFIG_ULPI_C 
+USB:ULPI_DATA[3]             BIBUF                Y:USBD_DATA3_IN,D:USBD_DATA3_OUT,E:USBD_DATA3_OE                                                                     N/A              USB_CONFIG CONFIG_ULPI_D 
+ 
+# DATA4 
+USB:ULPI_DATA[4]             BIBUF                Y:I2C1_SCL_USBA_DATA4_MGPIO1A_IN,D:I2C1_SCL_USBA_DATA4_MGPIO1A_OUT,E:I2C1_SCL_USBA_DATA4_MGPIO1A_OE                  N/A              USB_CONFIG CONFIG_ULPI_A 
+USB:ULPI_DATA[4]             BIBUF                Y:RGMII_RXD3_USBB_DATA4_IN,D:RGMII_RXD3_USBB_DATA4_OUT,E:RGMII_RXD3_USBB_DATA4_OE                                    N/A              USB_CONFIG CONFIG_ULPI_B 
+USB:ULPI_DATA[4]             BIBUF                Y:MMUART1_SCK_USBC_DATA4_MGPIO25B_IN,D:MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT,E:MMUART1_SCK_USBC_DATA4_MGPIO25B_OE      N/A              USB_CONFIG CONFIG_ULPI_C 
+USB:ULPI_DATA[4]             BIBUF                Y:USBD_DATA4_IN,D:USBD_DATA4_OUT,E:USBD_DATA4_OE                                                                     N/A              USB_CONFIG CONFIG_ULPI_D 
+ 
+# DATA5 
+USB:ULPI_DATA[5]             BIBUF                Y:SPI0_SS1_USBA_DATA5_MGPIO8A_IN,D:SPI0_SS1_USBA_DATA5_MGPIO8A_OUT,E:SPI0_SS1_USBA_DATA5_MGPIO8A_OE                  N/A              USB_CONFIG CONFIG_ULPI_A 
+USB:ULPI_DATA[5]             BIBUF                Y:RGMII_TXD2_USBB_DATA5_IN,D:RGMII_TXD2_USBB_DATA5_OUT,E:RGMII_TXD2_USBB_DATA5_OE                                    N/A              USB_CONFIG CONFIG_ULPI_B 
+USB:ULPI_DATA[5]             BIBUF                Y:MMUART0_RTS_USBC_DATA5_MGPIO17B_IN,D:MMUART0_RTS_USBC_DATA5_MGPIO17B_OUT,E:MMUART0_RTS_USBC_DATA5_MGPIO17B_OE      N/A              USB_CONFIG CONFIG_ULPI_C 
+USB:ULPI_DATA[5]             BIBUF                Y:USBD_DATA5_IN,D:USBD_DATA5_OUT,E:USBD_DATA5_OE                                                                     N/A              USB_CONFIG CONFIG_ULPI_D 
+ 
+# DATA6 
+USB:ULPI_DATA[6]             BIBUF                Y:SPI0_SS2_USBA_DATA6_MGPIO9A_IN,D:SPI0_SS2_USBA_DATA6_MGPIO9A_OUT,E:SPI0_SS2_USBA_DATA6_MGPIO9A_OE                  N/A              USB_CONFIG CONFIG_ULPI_A 
+USB:ULPI_DATA[6]             BIBUF                Y:RGMII_TXD3_USBB_DATA6_IN,D:RGMII_TXD3_USBB_DATA6_OUT,E:RGMII_TXD3_USBB_DATA6_OE                                    N/A              USB_CONFIG CONFIG_ULPI_B 
+USB:ULPI_DATA[6]             BIBUF                Y:MMUART0_DTR_USBC_DATA6_MGPIO18B_IN,D:MMUART0_DTR_USBC_DATA6_MGPIO18B_OUT,E:MMUART0_DTR_USBC_DATA6_MGPIO18B_OE      N/A              USB_CONFIG CONFIG_ULPI_C 
+USB:ULPI_DATA[6]             BIBUF                Y:USBD_DATA6_IN,D:USBD_DATA6_OUT,E:USBD_DATA6_OE                                                                     N/A              USB_CONFIG CONFIG_ULPI_D 
+ 
+# DATA7 
+USB:ULPI_DATA[7]             BIBUF                Y:SPI0_SS3_USBA_DATA7_MGPIO10A_IN,D:SPI0_SS3_USBA_DATA7_MGPIO10A_OUT,E:SPI0_SS3_USBA_DATA7_MGPIO10A_OE               N/A              USB_CONFIG CONFIG_ULPI_A 
+USB:ULPI_DATA[7]             BIBUF                Y:RGMII_MDIO_RMII_MDIO_USBB_DATA7_IN,D:RGMII_MDIO_RMII_MDIO_USBB_DATA7_OUT,E:RGMII_MDIO_RMII_MDIO_USBB_DATA7_OE      N/A              USB_CONFIG CONFIG_ULPI_B 
+USB:ULPI_DATA[7]             BIBUF                Y:MMUART0_CTS_USBC_DATA7_MGPIO19B_IN,D:MMUART0_CTS_USBC_DATA7_MGPIO19B_OUT,E:MMUART0_CTS_USBC_DATA7_MGPIO19B_OE      N/A              USB_CONFIG CONFIG_ULPI_C 
+USB:ULPI_DATA[7]             BIBUF                Y:USBD_DATA7_MGPIO23B_IN,D:USBD_DATA7_MGPIO23B_OUT,E:USBD_DATA7_MGPIO23B_OE                                          N/A              USB_CONFIG CONFIG_ULPI_D 
+                   
+                   
+
+
+# =======================================================================================
+# MDDR
+# =======================================================================================
+
+MDDR:CAS_N                   OUTBUF               D:DRAM_CASN
+MDDR:CKE                     OUTBUF               D:DRAM_CKE
+MDDR:CLK                     OUTBUF_DIFF:PADP     D:DRAM_CLK
+MDDR:CLK_N                   OUTBUF_DIFF:PADN     D:DRAM_CLK
+MDDR:CS_N                    OUTBUF               D:DRAM_CSN
+MDDR:ODT                     OUTBUF               D:DRAM_ODT
+MDDR:RAS_N                   OUTBUF               D:DRAM_RASN
+MDDR:RESET_N                 OUTBUF               D:DRAM_RSTN
+MDDR:WE_N                    OUTBUF               D:DRAM_WEN
+
+# DRAM_ADDR
+MDDR:ADDR[0]                 OUTBUF               D:DRAM_ADDR[0]
+MDDR:ADDR[1]                 OUTBUF               D:DRAM_ADDR[1]
+MDDR:ADDR[2]                 OUTBUF               D:DRAM_ADDR[2]
+MDDR:ADDR[3]                 OUTBUF               D:DRAM_ADDR[3]
+MDDR:ADDR[4]                 OUTBUF               D:DRAM_ADDR[4]
+MDDR:ADDR[5]                 OUTBUF               D:DRAM_ADDR[5]
+MDDR:ADDR[6]                 OUTBUF               D:DRAM_ADDR[6]
+MDDR:ADDR[7]                 OUTBUF               D:DRAM_ADDR[7]
+MDDR:ADDR[8]                 OUTBUF               D:DRAM_ADDR[8]
+MDDR:ADDR[9]                 OUTBUF               D:DRAM_ADDR[9]
+MDDR:ADDR[10]                OUTBUF               D:DRAM_ADDR[10]
+MDDR:ADDR[11]                OUTBUF               D:DRAM_ADDR[11]
+MDDR:ADDR[12]                OUTBUF               D:DRAM_ADDR[12]
+MDDR:ADDR[13]                OUTBUF               D:DRAM_ADDR[13]
+MDDR:ADDR[14]                OUTBUF               D:DRAM_ADDR[14]
+MDDR:ADDR[15]                OUTBUF               D:DRAM_ADDR[15]
+
+# DRAM_BA
+MDDR:BA[0]                   OUTBUF               D:DRAM_BA[0]
+MDDR:BA[1]                   OUTBUF               D:DRAM_BA[1]
+MDDR:BA[2]                   OUTBUF               D:DRAM_BA[2]
+
+# DRAM_DM (note the different mapping for small device (width <= 16); we have a different MSS pin out)
+MDDR:DM_RDQS[0]              BIBUF                Y:DM_IN[0],D:DRAM_DM_RDQS_OUT[0],E:DM_OE[0]
+MDDR:DM_RDQS[1]              BIBUF                Y:DM_IN[1],D:DRAM_DM_RDQS_OUT[1],E:DM_OE[1]
+MDDR:DM_RDQS[2]              BIBUF                Y:DM_IN[2],D:DRAM_DM_RDQS_OUT[2],E:DM_OE[2]
+MDDR:DM_RDQS[3]              BIBUF                Y:DM_IN[3],D:DRAM_DM_RDQS_OUT[3],E:DM_OE[3]
+MDDR:DM_RDQS_ECC             BIBUF                Y:DM_IN[4],D:DRAM_DM_RDQS_OUT[4],E:DM_OE[4]
+MDDR:DM_RDQS_ECC:16          BIBUF                Y:DM_IN[2],D:DRAM_DM_RDQS_OUT[2],E:DM_OE[2]
+
+# DRAM_DQS (note the different mapping for small device (width <= 16); we have a different MSS pin out)
+MDDR:DQS[0]                  BIBUF_DIFF:PADP      Y:DRAM_DQS_IN[0],D:DRAM_DQS_OUT[0],E:DRAM_DQS_OE[0]
+MDDR:DQS[1]                  BIBUF_DIFF:PADP      Y:DRAM_DQS_IN[1],D:DRAM_DQS_OUT[1],E:DRAM_DQS_OE[1]
+MDDR:DQS[2]                  BIBUF_DIFF:PADP      Y:DRAM_DQS_IN[2],D:DRAM_DQS_OUT[2],E:DRAM_DQS_OE[2]
+MDDR:DQS[3]                  BIBUF_DIFF:PADP      Y:DRAM_DQS_IN[3],D:DRAM_DQS_OUT[3],E:DRAM_DQS_OE[3]
+MDDR:DQS_ECC                 BIBUF_DIFF:PADP      Y:DRAM_DQS_IN[4],D:DRAM_DQS_OUT[4],E:DRAM_DQS_OE[4]
+MDDR:DQS_ECC:16              BIBUF_DIFF:PADP      Y:DRAM_DQS_IN[2],D:DRAM_DQS_OUT[2],E:DRAM_DQS_OE[2]
+
+MDDR:DQS_N[0]                BIBUF_DIFF:PADN      Y:DRAM_DQS_IN[0],D:DRAM_DQS_OUT[0],E:DRAM_DQS_OE[0]
+MDDR:DQS_N[1]                BIBUF_DIFF:PADN      Y:DRAM_DQS_IN[1],D:DRAM_DQS_OUT[1],E:DRAM_DQS_OE[1]
+MDDR:DQS_N[2]                BIBUF_DIFF:PADN      Y:DRAM_DQS_IN[2],D:DRAM_DQS_OUT[2],E:DRAM_DQS_OE[2]
+MDDR:DQS_N[3]                BIBUF_DIFF:PADN      Y:DRAM_DQS_IN[3],D:DRAM_DQS_OUT[3],E:DRAM_DQS_OE[3]
+MDDR:DQS_ECC_N               BIBUF_DIFF:PADN      Y:DRAM_DQS_IN[4],D:DRAM_DQS_OUT[4],E:DRAM_DQS_OE[4]
+MDDR:DQS_ECC_N:16            BIBUF_DIFF:PADN      Y:DRAM_DQS_IN[2],D:DRAM_DQS_OUT[2],E:DRAM_DQS_OE[2]
+
+# DRAM_DQ (note the different mapping for small device (width <= 16); we have a different MSS pin out)
+MDDR:DQ[0]                   BIBUF                Y:DRAM_DQ_IN[0],D:DRAM_DQ_OUT[0],E:DRAM_DQ_OE[0]
+MDDR:DQ[1]                   BIBUF                Y:DRAM_DQ_IN[1],D:DRAM_DQ_OUT[1],E:DRAM_DQ_OE[1]
+MDDR:DQ[2]                   BIBUF                Y:DRAM_DQ_IN[2],D:DRAM_DQ_OUT[2],E:DRAM_DQ_OE[2]
+MDDR:DQ[3]                   BIBUF                Y:DRAM_DQ_IN[3],D:DRAM_DQ_OUT[3],E:DRAM_DQ_OE[3]
+MDDR:DQ[4]                   BIBUF                Y:DRAM_DQ_IN[4],D:DRAM_DQ_OUT[4],E:DRAM_DQ_OE[4]
+MDDR:DQ[5]                   BIBUF                Y:DRAM_DQ_IN[5],D:DRAM_DQ_OUT[5],E:DRAM_DQ_OE[5]
+MDDR:DQ[6]                   BIBUF                Y:DRAM_DQ_IN[6],D:DRAM_DQ_OUT[6],E:DRAM_DQ_OE[6]
+MDDR:DQ[7]                   BIBUF                Y:DRAM_DQ_IN[7],D:DRAM_DQ_OUT[7],E:DRAM_DQ_OE[7]
+MDDR:DQ[8]                   BIBUF                Y:DRAM_DQ_IN[8],D:DRAM_DQ_OUT[8],E:DRAM_DQ_OE[8]
+MDDR:DQ[9]                   BIBUF                Y:DRAM_DQ_IN[9],D:DRAM_DQ_OUT[9],E:DRAM_DQ_OE[9]
+MDDR:DQ[10]                  BIBUF                Y:DRAM_DQ_IN[10],D:DRAM_DQ_OUT[10],E:DRAM_DQ_OE[10]
+MDDR:DQ[11]                  BIBUF                Y:DRAM_DQ_IN[11],D:DRAM_DQ_OUT[11],E:DRAM_DQ_OE[11]
+MDDR:DQ[12]                  BIBUF                Y:DRAM_DQ_IN[12],D:DRAM_DQ_OUT[12],E:DRAM_DQ_OE[12]
+MDDR:DQ[13]                  BIBUF                Y:DRAM_DQ_IN[13],D:DRAM_DQ_OUT[13],E:DRAM_DQ_OE[13]
+MDDR:DQ[14]                  BIBUF                Y:DRAM_DQ_IN[14],D:DRAM_DQ_OUT[14],E:DRAM_DQ_OE[14]
+MDDR:DQ[15]                  BIBUF                Y:DRAM_DQ_IN[15],D:DRAM_DQ_OUT[15],E:DRAM_DQ_OE[15]
+MDDR:DQ[16]                  BIBUF                Y:DRAM_DQ_IN[16],D:DRAM_DQ_OUT[16],E:DRAM_DQ_OE[16]
+MDDR:DQ[17]                  BIBUF                Y:DRAM_DQ_IN[17],D:DRAM_DQ_OUT[17],E:DRAM_DQ_OE[17]
+MDDR:DQ[18]                  BIBUF                Y:DRAM_DQ_IN[18],D:DRAM_DQ_OUT[18],E:DRAM_DQ_OE[18]
+MDDR:DQ[19]                  BIBUF                Y:DRAM_DQ_IN[19],D:DRAM_DQ_OUT[19],E:DRAM_DQ_OE[19]
+MDDR:DQ[20]                  BIBUF                Y:DRAM_DQ_IN[20],D:DRAM_DQ_OUT[20],E:DRAM_DQ_OE[20]
+MDDR:DQ[21]                  BIBUF                Y:DRAM_DQ_IN[21],D:DRAM_DQ_OUT[21],E:DRAM_DQ_OE[21]
+MDDR:DQ[22]                  BIBUF                Y:DRAM_DQ_IN[22],D:DRAM_DQ_OUT[22],E:DRAM_DQ_OE[22]
+MDDR:DQ[23]                  BIBUF                Y:DRAM_DQ_IN[23],D:DRAM_DQ_OUT[23],E:DRAM_DQ_OE[23]
+MDDR:DQ[24]                  BIBUF                Y:DRAM_DQ_IN[24],D:DRAM_DQ_OUT[24],E:DRAM_DQ_OE[24]
+MDDR:DQ[25]                  BIBUF                Y:DRAM_DQ_IN[25],D:DRAM_DQ_OUT[25],E:DRAM_DQ_OE[25]
+MDDR:DQ[26]                  BIBUF                Y:DRAM_DQ_IN[26],D:DRAM_DQ_OUT[26],E:DRAM_DQ_OE[26]
+MDDR:DQ[27]                  BIBUF                Y:DRAM_DQ_IN[27],D:DRAM_DQ_OUT[27],E:DRAM_DQ_OE[27]
+MDDR:DQ[28]                  BIBUF                Y:DRAM_DQ_IN[28],D:DRAM_DQ_OUT[28],E:DRAM_DQ_OE[28]
+MDDR:DQ[29]                  BIBUF                Y:DRAM_DQ_IN[29],D:DRAM_DQ_OUT[29],E:DRAM_DQ_OE[29]
+MDDR:DQ[30]                  BIBUF                Y:DRAM_DQ_IN[30],D:DRAM_DQ_OUT[30],E:DRAM_DQ_OE[30]
+MDDR:DQ[31]                  BIBUF                Y:DRAM_DQ_IN[31],D:DRAM_DQ_OUT[31],E:DRAM_DQ_OE[31]
+MDDR:DQ_ECC[0]               BIBUF                Y:DRAM_DQ_IN[32],D:DRAM_DQ_OUT[32],E:DRAM_DQ_OE[32]
+MDDR:DQ_ECC[1]               BIBUF                Y:DRAM_DQ_IN[33],D:DRAM_DQ_OUT[33],E:DRAM_DQ_OE[33]
+MDDR:DQ_ECC[2]               BIBUF                Y:DRAM_DQ_IN[34],D:DRAM_DQ_OUT[34],E:DRAM_DQ_OE[34]
+MDDR:DQ_ECC[3]               BIBUF                Y:DRAM_DQ_IN[35],D:DRAM_DQ_OUT[35],E:DRAM_DQ_OE[35]
+MDDR:DQ_ECC[0]:16            BIBUF                Y:DRAM_DQ_IN[16],D:DRAM_DQ_OUT[16],E:DRAM_DQ_OE[16]
+MDDR:DQ_ECC[1]:16            BIBUF                Y:DRAM_DQ_IN[17],D:DRAM_DQ_OUT[17],E:DRAM_DQ_OE[17]
+
+# DRAM_FIFO_WE_IN (note the different mapping for small device (width <= 16); we have a different MSS pin out)
+MDDR:DQS_TMATCH_0_IN         INBUF                Y:DRAM_FIFO_WE_IN[0]
+MDDR:DQS_TMATCH_1_IN         INBUF                Y:DRAM_FIFO_WE_IN[1]
+MDDR:DQS_TMATCH_ECC_IN       INBUF                Y:DRAM_FIFO_WE_IN[2]
+MDDR:DQS_TMATCH_ECC_IN:16    INBUF                Y:DRAM_FIFO_WE_IN[1]
+
+# DRAM_FIFO_WE_OUT (note the different mapping for small device (width <= 16); we have a different MSS pin out)
+MDDR:DQS_TMATCH_0_OUT        OUTBUF               D:DRAM_FIFO_WE_OUT[0]
+MDDR:DQS_TMATCH_1_OUT        OUTBUF               D:DRAM_FIFO_WE_OUT[1]
+MDDR:DQS_TMATCH_ECC_OUT      OUTBUF               D:DRAM_FIFO_WE_OUT[2]
+MDDR:DQS_TMATCH_ECC_OUT:16   OUTBUF               D:DRAM_FIFO_WE_OUT[1]
+
+
+

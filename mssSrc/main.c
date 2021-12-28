@@ -34,7 +34,7 @@ int main (void) {
 
     // initialize the DAPI
     dapiInit();
-
+    InitTelemetry();
     // check, if the start of this application is the result of
     // the watchdog triggering
     MSS_WD_enable_timeout_irq(); // just for debugging using timeouts instead of resets
@@ -163,13 +163,13 @@ int main (void) {
              *
              * Lets assume Tbit = 33us (boi its long)
              */
-            while(mssSignals != MSS_SIGNAL_SPI_WRITE) {
-                telemetryCounter++;
+            while(mssSignals != MSS_SIGNAL_SPI_WRITE && ((telemetryCounter++) <= (FRAMESIZE - 1))) {
                 TransmitByte(*(telemetryFramePtr++));
             }
-            if (telemetryCounter == FRAMESIZE - 1) {
+            if (telemetryCounter >= (FRAMESIZE - 1)) {
                 telemetryFramePtr = (uint8_t*)(&telemetryFrame);
                 mssSignals &= ~(MSS_SIGNAL_TELEMETRY);
+                telemetryCounter = 0;
             }
         }
 

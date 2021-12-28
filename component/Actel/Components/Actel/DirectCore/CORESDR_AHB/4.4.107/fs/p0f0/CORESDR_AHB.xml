@@ -1,0 +1,594 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>CORESDR_AHB</spirit:name>
+  <spirit:version>4.4.107</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>AHBSlave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>HADDR</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HTRANS</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWRITE</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HBURST</spirit:componentSignalName><spirit:busSignalName>HBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSIZE</spirit:componentSignalName><spirit:busSignalName>HSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWDATA</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSEL</spirit:componentSignalName><spirit:busSignalName>HSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRDATA</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADYIN</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADY</spirit:componentSignalName><spirit:busSignalName>HREADYOUT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRESP</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET-U"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>HADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADYIN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESP</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSIZE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HTRANS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>OE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RAS_N</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CAS_N</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>13</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>BA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CS_N</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('SDRAM_CHIPS') - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WE_N</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DQM</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="floor(id('SDRAM_DQSIZE') div 8) - 1" spirit:resolve="dependent">3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DQ</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:left spirit:dependency="id('SDRAM_DQSIZE') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CKE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDRCLK_OUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HBURST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDRCLK_IN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SDRCLK_RESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">17</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="BURST_SUPPORT" spirit:name="BURST_SUPPORT" spirit:prompt="Burst Support Enable" spirit:dataType="int" spirit:choiceRef="Choice_Burst_Support" spirit:choiceStyle="combo" spirit:configGroups="2Cols:Design Configuration" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ECC" spirit:name="ECC" spirit:prompt="ECC Support Enable" spirit:dataType="int" spirit:choiceRef="Choice_ECC" spirit:choiceStyle="combo" spirit:configGroups="2Cols:Design Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SYS_FREQ" spirit:name="SYS_FREQ" spirit:prompt="System Frequency" spirit:dataType="int" spirit:choiceRef="Choice_SYS_FREQ" spirit:choiceStyle="combo" spirit:configGroups="2Cols:Design Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SDRAM_CHIPS" spirit:name="SDRAM_CHIPS" spirit:prompt="SDRAM Chip Select" spirit:dataType="int" spirit:configGroups="2Cols:Design Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="8">8</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SDRAM_COLBITS" spirit:name="SDRAM_COLBITS" spirit:prompt="No. of Column bits" spirit:dataType="int" spirit:configGroups="2Cols:Design Configuration" spirit:resolve="user" spirit:minimum="8" spirit:maximum="12">12</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SDRAM_ROWBITS" spirit:name="SDRAM_ROWBITS" spirit:prompt="No. of Row bits" spirit:dataType="int" spirit:configGroups="2Cols:Design Configuration" spirit:resolve="user" spirit:minimum="11" spirit:maximum="14">14</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SDRAM_CHIPBITS" spirit:name="SDRAM_CHIPBITS" spirit:prompt="No. of Chip bits" spirit:dataType="int" spirit:configGroups="2Cols:Design Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="3">3</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SDRAM_BANKSTATMODULES" spirit:name="SDRAM_BANKSTATMODULES" spirit:prompt="No. of bank status modules used" spirit:dataType="int" spirit:configGroups="2Cols:Design Configuration" spirit:resolve="user" spirit:minimum="4" spirit:maximum="8">4</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SDRAM_RASIZE" spirit:name="SDRAM_RASIZE" spirit:prompt="Local address bus size" spirit:dataType="int" spirit:resolve="generated" spirit:minimum="8" spirit:maximum="31">31</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SDRAM_DQSIZE" spirit:name="SDRAM_DQSIZE" spirit:prompt="Memory Width" spirit:dataType="int" spirit:choiceRef="Choice_SDRAM_DQSIZE" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user">32</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RAS" spirit:name="RAS" spirit:prompt="Active to Precharge (RAS)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="10">2</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RCD" spirit:name="RCD" spirit:prompt="Active to read or write delay (RCD)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="5">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RRD" spirit:name="RRD" spirit:prompt="Active bank a to bank b (RRD)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="3">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RP" spirit:name="RP" spirit:prompt="Precharge command period (RP)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="4">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RC" spirit:name="RC" spirit:prompt="active to active command period (RC)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="3" spirit:maximum="12">3</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RFC" spirit:name="RFC" spirit:prompt="Auto-refresh command period (RFC)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="2" spirit:maximum="14">10</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="MRD" spirit:name="MRD" spirit:prompt="Load mode register command (MRD)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="7">2</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CL" spirit:name="CL" spirit:prompt="CAS Latency (CL)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="4">2</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="WR" spirit:name="WR" spirit:prompt="Write recovery time (WR)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="3">2</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DELAY" spirit:name="DELAY" spirit:prompt="Initialization Delay" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="10" spirit:maximum="65535">26700</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="REF" spirit:name="REF" spirit:prompt="Auto-refresh period (REF)" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="10" spirit:maximum="65535">26700</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="COLBITS" spirit:name="COLBITS" spirit:prompt="No. of bits in the column address" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="3" spirit:maximum="7">7</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROWBITS" spirit:name="ROWBITS" spirit:prompt="No. of bits in the row address" spirit:dataType="int" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user" spirit:minimum="0" spirit:maximum="3">3</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="REGDIMM" spirit:name="REGDIMM" spirit:prompt="Buffered/Unbuffered DIMM" spirit:dataType="int" spirit:choiceRef="Choice_REGDIMM" spirit:choiceStyle="combo" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="AUTO_PCH" spirit:name="AUTO_PCH" spirit:prompt="Auto Precharge Enabled/Disabled" spirit:dataType="int" spirit:choiceRef="Choice_AUTO_PCH" spirit:choiceStyle="combo" spirit:configGroups="2Cols:Timing Configuration" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="HDL_license" spirit:name="HDL_license" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:resolve="user">U</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('SYS_FREQ', Eq('BURST_SUPPORT', 'NO'));\
+Enable('ECC', And(Or(Eq('FAMILY', 'RTG4'), Eq('FAMILY', 'PolarFire'), Eq('FAMILY', 'PolarFireSoC')), Eq('BURST_SUPPORT', 'YES')));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_AUTO_PCH</spirit:name>
+      <spirit:enumeration spirit:text="Auto Precharge Enabled">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Auto Precharge Disabled">0</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Burst_Support</spirit:name>
+      <spirit:enumeration spirit:text="YES">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="NO">0</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_ECC</spirit:name>
+      <spirit:enumeration spirit:text="ECC enable">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="ECC disable">0</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="ProASIC3">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3E">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3L">22</spirit:enumeration>
+      <spirit:enumeration spirit:text="Fusion">17</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion">18</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFire">26</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFireSoC">27</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_REGDIMM</spirit:name>
+      <spirit:enumeration spirit:text="Buffered DIMM">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Unbuffered DIMM">0</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_SDRAM_DQSIZE</spirit:name>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_SYS_FREQ</spirit:name>
+      <spirit:enumeration spirit:text="SDRCLK_IN is 4 times HCLK">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="SDRCLK_IN is 2 times HCLK">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="SDRCLK_IN is equal to HCLK">0</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coresdrahb_coresdr_ahb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CoreSync_pulse_cdc.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/pulse_cdc_sync.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/pulse_cdc.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/pulse_gen_sync.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/pulse_gen.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coresdrahb_coresdr.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coresdrahb_fastinit.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coresdrahb_fastsdram.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coresdrahb_openbank.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coresdrahb_coresdr_ahb_burst_16dq.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coresdrahb_coresdr_ahb_burst_32dq.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_FIFO.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_grayCodeCounter.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_rdCtrl.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_synchronizer.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/CDC_wrCtrl.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/Bin2Gray.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/RAM_BLOCK_ECC.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/RAM_BLOCK.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/coresdrahb_coresdr_ahb_single.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET-U">
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/bfm_main.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/bfm_ahbl.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/testbench.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/mt48lc4m16a2.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/mt48lc16m16a2.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/bfm_package.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/master.vec</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/wave_vlog.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec_compile.tcl</spirit:name>
+      <spirit:fileType>tclSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/master.bfm</spirit:name>
+      <spirit:userFileType>BFM</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/time.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs">
+    <spirit:file>
+      <spirit:name>docs/CoreSDR_AHB_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreSDR_AHB_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreSDR_AHB</actel-cc:displayName>
+    <actel-cc:description>CoreSDR_AHB provides a high performance interface to single data rate(SDR) synchronous dynamic random access memory(SDRAM) devices. CoreSDR_AHB accepts read and write commands using the AHB bus slave interface, and translates these requests to the command sequences required by SDRAM devices. CoreSDR_AHB also performs all initialization and refresh functions. CoreSDR_AHB uses bank management techniques to monitor the status of each SDRAM bank. Banks are only opened or closed when necessary, minimizing access delays. Up to four banks can be managed at one time.</actel-cc:description>
+    <actel-cc:packageTimestamp>20200929095514</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="10.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+      <actel-cc:category name="Memory &amp; Controllers">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Medical">
+      </actel-cc:category>
+      <actel-cc:category name="Consumer">
+      </actel-cc:category>
+      <actel-cc:category name="Multimedia">
+      </actel-cc:category>
+      <actel-cc:category name="Gaming">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Interface Type">
+      <actel-cc:category name="AmbaBus">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="ProASIC3">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3E">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3L">
+      </actel-cc:category>
+      <actel-cc:category name="Fusion">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFire">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFireSoC">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

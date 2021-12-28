@@ -1,0 +1,371 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SgCore</spirit:library>
+  <spirit:name>OSC</spirit:name>
+  <spirit:version>2.0.101</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>RCOSC_25_50MHZ_CCC_OUT</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="busdef.clock" spirit:name="RCOSC_25_50MHZ_CCC" spirit:version="1.0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>RCOSC_25_50MHZ_CCC</spirit:componentSignalName><spirit:busSignalName>RCOSC_25_50MHZ_CCC</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="RCOSC_25_50MHZ_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="RCOSC_25_50MHZ_DRIVES_CCC" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>RCOSC_1MHZ_CCC_OUT</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="busdef.clock" spirit:name="RCOSC_1MHZ_CCC" spirit:version="1.0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>RCOSC_1MHZ_CCC</spirit:componentSignalName><spirit:busSignalName>RCOSC_1MHZ_CCC</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="RCOSC_1MHZ_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="RCOSC_1MHZ_DRIVES_CCC" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>XTLOSC_CCC_OUT</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="busdef.clock" spirit:name="XTLOSC_CCC" spirit:version="1.0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>XTLOSC_CCC</spirit:componentSignalName><spirit:busSignalName>XTLOSC_CCC</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicAndTerms>
+            <actel-cc:logicTerm spirit:referenceId="XTLOSC_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm>
+            <actel-cc:logicTerm spirit:referenceId="XTLOSC_DRIVES_CCC" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>ADLTCL</spirit:fileSetRef>
+        <spirit:fileSetRef>PREVIEWS</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ADLTCL"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="PREVIEWS"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSynthesis</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>VERILOG_SYNPLIFY_SYNTHESIS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>VERILOG_PRECISION_SYNTHESIS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERILOG_SYNPLIFY_SYNTHESIS_FILESET"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERILOG_PRECISION_SYNTHESIS_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VhdlSynthesis</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>VHDL_SYNPLIFY_SYNTHESIS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>VHDL_PRECISION_SYNTHESIS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDL_SYNPLIFY_SYNTHESIS_FILESET"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDL_PRECISION_SYNTHESIS_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>XTL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="XTLOSC_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RCOSC_25_50MHZ_CCC</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RCOSC_25_50MHZ_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="RCOSC_25_50MHZ_DRIVES_CCC" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RCOSC_25_50MHZ_O2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RCOSC_25_50MHZ_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="RCOSC_25_50MHZ_DRIVES_FAB" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RCOSC_1MHZ_CCC</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RCOSC_1MHZ_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="RCOSC_1MHZ_DRIVES_CCC" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RCOSC_1MHZ_O2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="RCOSC_1MHZ_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="RCOSC_1MHZ_DRIVES_FAB" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>XTLOSC_CCC</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="XTLOSC_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="XTLOSC_DRIVES_CCC" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>XTLOSC_O2F</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="XTLOSC_IS_USED" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="XTLOSC_DRIVES_FAB" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="XTLOSC_IS_USED" spirit:name="XTLOSC_IS_USED" spirit:prompt="Use Main Crystal Oscillator" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RCOSC_25_50MHZ_IS_USED" spirit:name="RCOSC_25_50MHZ_IS_USED" spirit:prompt="Use 25_50 MHz RC Oscillator" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RCOSC_1MHZ_IS_USED" spirit:name="RCOSC_1MHZ_IS_USED" spirit:prompt="Use 1 MHz RC Oscillator" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="XTLOSC_SRC" spirit:name="XTLOSC_SRC" spirit:prompt="Source" spirit:dataType="string" actel-cc:choiceRef="XTLOSC_SRC_CHOICES" spirit:configGroups="Main Crystal Oscillator" spirit:resolve="user">CRYSTAL</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="XTLOSC_FREQ" spirit:name="XTLOSC_FREQ" spirit:prompt="Frequency (MHz)" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="Main Crystal Oscillator" spirit:resolve="user">20.00</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="XTLOSC_DRIVES_CCC" spirit:name="XTLOSC_DRIVES_CCC" spirit:prompt="Drives CCC(s)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="Main Crystal Oscillator" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="XTLOSC_DRIVES_FAB" spirit:name="XTLOSC_DRIVES_FAB" spirit:prompt="Drives Fabric" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="Main Crystal Oscillator" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RCOSC_25_50MHZ_DRIVES_CCC" spirit:name="RCOSC_25_50MHZ_DRIVES_CCC" spirit:prompt="Drives CCC(s)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="25/50Mhz RC Oscillator" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RCOSC_25_50MHZ_DRIVES_FAB" spirit:name="RCOSC_25_50MHZ_DRIVES_FAB" spirit:prompt="Drives Fabric" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="25/50Mhz RC Oscillator" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RCOSC_1MHZ_DRIVES_CCC" spirit:name="RCOSC_1MHZ_DRIVES_CCC" spirit:prompt="Drives CCC(s)" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Mhz RC Oscillator" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RCOSC_1MHZ_DRIVES_FAB" spirit:name="RCOSC_1MHZ_DRIVES_FAB" spirit:prompt="Drives Fabric" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Mhz RC Oscillator" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="VOLTAGE_IS_1_2" spirit:name="VOLTAGE_IS_1_2" spirit:prompt="VOLTAGE_IS_1_2" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="PARAM_IS_FALSE" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('XTLOSC_SRC', Eq(ValueOf('XTLOSC_IS_USED'), 'true'));\
+Enable('XTLOSC_FREQ', Eq(ValueOf('XTLOSC_IS_USED'), 'true'));\
+Enable('XTLOSC_DRIVES_CCC', Eq(ValueOf('XTLOSC_IS_USED'), 'true'));\
+Set('XTLOSC_DRIVES_CCC', Eq(ValueOf('XTLOSC_IS_USED'), 'false'), '0');\
+Enable('XTLOSC_DRIVES_FAB', Eq(ValueOf('XTLOSC_IS_USED'), 'true'));\
+Set('XTLOSC_DRIVES_FAB', Eq(ValueOf('XTLOSC_IS_USED'), 'false'), '0');\
+Enable('RCOSC_25_50MHZ_DRIVES_CCC', Eq(ValueOf('RCOSC_25_50MHZ_IS_USED'), 'true'));\
+Set('RCOSC_25_50MHZ_DRIVES_CCC', Eq(ValueOf('RCOSC_25_50MHZ_IS_USED'), 'false'), '0');\
+Enable('RCOSC_25_50MHZ_DRIVES_FAB', Eq(ValueOf('RCOSC_25_50MHZ_IS_USED'), 'true'));\
+Set('RCOSC_25_50MHZ_DRIVES_FAB', Eq(ValueOf('RCOSC_25_50MHZ_IS_USED'), 'false'), '0');\
+Enable('RCOSC_1MHZ_DRIVES_CCC', Eq(ValueOf('RCOSC_1MHZ_IS_USED'), 'true'));\
+Set('RCOSC_1MHZ_DRIVES_CCC', Eq(ValueOf('RCOSC_1MHZ_IS_USED'), 'false'), '0');\
+Enable('RCOSC_1MHZ_DRIVES_FAB', Eq(ValueOf('RCOSC_1MHZ_IS_USED'), 'true'));\
+Set('RCOSC_1MHZ_DRIVES_FAB', Eq(ValueOf('RCOSC_1MHZ_IS_USED'), 'false'), '0');\
+Validate('At least one target - CCC or Fabric - must be selected', Or(Eq(ValueOf('XTLOSC_IS_USED'), '0'), Eq(ValueOf('XTLOSC_DRIVES_CCC'), '1'), Eq(ValueOf('XTLOSC_DRIVES_FAB'), '1')));\
+Validate('At least one target - CCC or Fabric - must be selected', Or(Eq(ValueOf('RCOSC_25_50MHZ_IS_USED'), '0'), Eq(ValueOf('RCOSC_25_50MHZ_DRIVES_CCC'), '1'), Eq(ValueOf('RCOSC_25_50MHZ_DRIVES_FAB'), '1')));\
+Validate('At least one target - CCC or Fabric - must be selected', Or(Eq(ValueOf('RCOSC_1MHZ_IS_USED'), '0'), Eq(ValueOf('RCOSC_1MHZ_DRIVES_CCC'), '1'), Eq(ValueOf('RCOSC_1MHZ_DRIVES_FAB'), '1')));\
+Validate('Value must be a double number', IsDouble('XTLOSC_FREQ'));\
+Validate('Illegal Range For Main Crystal Oscillator Frequency', Or(Eq(ValueOf('XTLOSC_IS_USED'), '0'), And(Eq(ValueOf('XTLOSC_SRC'), 'CRYSTAL'), Not(Gt(CeilDouble(MulDouble('1000000', ValueOf('XTLOSC_FREQ'))), '20000000')), GtOrEq(FloorDouble(MulDouble('1000000', ValueOf('XTLOSC_FREQ'))), '32768')), And(Eq(ValueOf('XTLOSC_SRC'), 'CERAMIC_RESONATOR'), Not(Gt(CeilDouble(MulDouble('1000000', ValueOf('XTLOSC_FREQ'))), '20000000')), GtOrEq(FloorDouble(MulDouble('1000000', ValueOf('XTLOSC_FREQ'))), '500000')), And(Eq(ValueOf('XTLOSC_SRC'), 'RC_NETWORK'), Not(Gt(CeilDouble(MulDouble('1000000', ValueOf('XTLOSC_FREQ'))), '4000000')), GtOrEq(FloorDouble(MulDouble('1000000', ValueOf('XTLOSC_FREQ'))), '32768'))));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>pa4oscgen</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4oscgen.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>pa4oscgen_UNIX</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4oscgen</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Unix</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>pa4oscgui</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4oscgui.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>g4oscgui_UNIX</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4oscgui</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>XTLOSC_SRC_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Crystal (32KHz-20Mhz)">CRYSTAL</spirit:enumeration>
+      <spirit:enumeration spirit:text="Ceramic Resonator (0.5MHz-20MHz)">CERAMIC_RESONATOR</spirit:enumeration>
+      <spirit:enumeration spirit:text="RC Network (32KHz-4MHz)">RC_NETWORK</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="ADLTCL">
+    <spirit:file>
+      <spirit:name>core.tcl</spirit:name>
+      <spirit:fileType>tclSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VERILOG_SYNPLIFY_SYNTHESIS_FILESET">
+    <spirit:file>
+      <spirit:name>osc_comps.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VERILOG_PRECISION_SYNTHESIS_FILESET">
+    <spirit:file>
+      <spirit:name>osc_comps_pre.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDL_SYNPLIFY_SYNTHESIS_FILESET">
+    <spirit:file>
+      <spirit:name>osc_comps.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDL_PRECISION_SYNTHESIS_FILESET">
+    <spirit:file>
+      <spirit:name>osc_comps_pre.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="PREVIEWS">
+    <spirit:file>
+      <spirit:name>OSC.html</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC_XTLOSC_MSS.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC_XTLOSC_CCC.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC_XTLOSC_FAB.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC_RCOSC_50_MSS.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC_RCOSC_50_CCC.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC_RCOSC_50_FAB.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC_RCOSC_1_MSS.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC_RCOSC_1_CCC.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>OSC_RCOSC_1_FAB.png</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>Chip Oscillators</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20140919110159</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.6.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Clock &amp; Management">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:resources>
+      <actel-cc:resource doc_title="User's Guide" url="http://coredocs.actel-ip.com/Actel/SmartFusion2/OSC/osc_config_ug_1.pdf">
+        <actel-cc:presentation></actel-cc:presentation></actel-cc:resource></actel-cc:resources>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>
