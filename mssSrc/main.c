@@ -5,7 +5,7 @@
  */
 
 #include <stdint.h>
-#include "hw_platform.h"
+#include "sb_hw_platform.h"
 #include "status.h"
 #include "CMSIS/system_m2sxxx.h"
 #include "drivers/mss_watchdog/mss_watchdog.h"
@@ -14,9 +14,12 @@
 #include "components/stamps.h"
 #include "components/dapi.h"
 #include "components/telemetry.h"
-#include "drivers/apb_memory/Memory.h"
+#include "drivers/apb_memory/memory.h"
 #include "drivers/mss_spi/mss_spi.h"
-#include "drivers/mss_gpio/mss_gpio.h"
+#include "HERMESS.h"
+
+
+volatile SysConfig_t system = { 0 };
 
 /**
  * @brief Use this 32 bit value to add the missing three bits into the SR1 from the fabric before saving them.
@@ -24,17 +27,19 @@
 static volatile uint32_t StatusRegisterLocals = 0x0;
 uint32_t mssSignals = 0;
 
+
 int main (void) {
     uint32_t csr = 0;
     uint32_t telemetryCounter = 0;
-    uint8_t *telemetryFramePtr = (uint8_t*)(&telemetryFrame);;
+    uint8_t *telemetryFramePtr = (uint8_t*)(&telemetryFrame);
     // Initialize driver components
-    SystemInit();
+    //SystemInit();
     MSS_WD_init();
     MSS_GPIO_init();
 
     // initialize the DAPI
     dapiInit();
+    delay(1);
     InitTelemetry();
     // check, if the start of this application is the result of
     // the watchdog triggering
@@ -62,7 +67,7 @@ int main (void) {
     MSS_GPIO_set_output(OUT_RESET_N, 0);
     delay(1);
     MSS_GPIO_set_output(OUT_RESET_N, 1);
-    /* run the memory test */
+    // run the memory test
     InitMemorySynchronizer(DO_NOT_ERASE, AUTO_START_OFF);
     //FastMemoryTest();
     MemoryConfig MemConfig = Recovery();
@@ -86,6 +91,8 @@ int main (void) {
     SPI_Values metaDevice;
     metaDevice.CS_Pin = FLASH_CS1;
     metaDevice.spihandle = &g_mss_spi0;
+
+    InitHeartbeat(1000); //heartbeat at 1s
     for (;;) {
         /*Start recording here*/
         if ((mssSignals & MSS_SIGNAL_SODS) | (mssSignals & MSS_SIGNAL_SOE)) {
@@ -113,7 +120,7 @@ int main (void) {
         if (mssSignals & MSS_SIGNAL_LO) {
             StatusRegisterLocals |= (MSS_SIGNAL_LO);
         }
-
+//
         /*Write Meta data to FLASH_CS1 connected device*/
         if ((mssSignals & MSS_SIGNAL_UPDATE_META)
                 && ((mssSignals & MSS_SIGNAL_SPI_WRITE) == 0)) {
@@ -173,7 +180,7 @@ int main (void) {
                 telemetryCounter = 0;
             }
         }
-
+//
         // do nothing but toggle an led once in a while
         if (mssSignals & TIM2_HEARTBEAT_SIGNAL) {
             heartbeat = (~heartbeat) & 1U;

@@ -9,6 +9,7 @@ extern "C" {
 
 #include <stdint.h>
 #include "../status.h"
+#include "../../drivers/apb_memory/memory.h"
 
 /**
  * Wait for at least the specified time in milliseconds. This function
@@ -32,6 +33,33 @@ void delay (uint32_t ms);
  * Null-terminated ASCII string
  */
 void spuLog (char message[]);
+
+/**
+ * Create Timer2 as heartbeat timer
+ * @param delay in ms to be counted down
+ */
+void InitHeartbeat(uint32_t delay);
+/**
+ * Stops timer 2
+ * disabels interrupt
+ */
+void StopHeartbeat(void);
+
+/**
+ *
+ * @param ptr
+ * @param value
+ * @param size
+ */
+void ResetBuffer(uint8_t *ptr, uint32_t value, uint32_t size);
+
+/**
+ * Tests the Metaaddress update algorithm
+ *
+ * @param dev SPI_Value the device to be used as meta data storage
+ * @return 0 if ok, > 0 for each error in 64 values written
+ */
+uint32_t TestMetaWriter(SPI_Values dev);
 
 #ifdef __cplusplus
 }

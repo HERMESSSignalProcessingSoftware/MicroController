@@ -6,6 +6,8 @@ extern "C" {
 #include "../status.h"
 #include "../drivers/mss_uart/mss_uart.h"
 #include "../drivers/apb_memory/memory.h"
+#include "../HERMESS.h"
+#include "tools.h"
 
 #define DAPI_RX_BUFF_SIZE 64
 
@@ -45,7 +47,7 @@ void dapiExecutePendingCommand (void) {
     if (rxIdx && (mssSignals & MSS_SIGNAL_DAPI_CMD)) {
         switch (rxBuff[0]) {
         case 0x01: {
-            uint32_t pages = 2 * PAGE_COUNT;
+            uint32_t pages = PAGE_COUNT;
             uint8_t txBuff[] = { 0x01,
                                  (pages & 0xFF000000) >> 24,
                                  (pages & 0x00FF0000) >> 16,
@@ -53,7 +55,7 @@ void dapiExecutePendingCommand (void) {
                                  (pages & 0x000000FF)};
             uint8_t txEndBuffer[] = {0x0F, 0x17, 0xF0};
             MSS_UART_polled_tx(&g_mss_uart0, txBuff, 5);
-            //!!! TODO: Determine maximal page count before writing everything tu serial interface
+            //!!! TODO: Determine maximal page count before writing everything to serial interface
             for (int address = 0x200; address < PAGE_COUNT; address++) {
                 device.CS_Pin = FLASH_CS1;
                 readPage(buffer, address, device);
@@ -73,6 +75,32 @@ void dapiExecutePendingCommand (void) {
             txBuffer[5] = test;
             MSS_UART_polled_tx(&g_mss_uart0, txBuffer, 9);
         } break;
+        case 0x11: //meta
+        {
+            uint8_t answer[] = {0x11, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0F, 0x17, 0xF0}; //#12
+            MemoryConfig MemConfig = Recovery();
+            answer[5] = (uint8_t)((MemConfig.CurrentPage & 0xFF000000) >> 24);
+            answer[6] = (uint8_t)((MemConfig.CurrentPage & 0x00FF0000) >> 16);
+            answer[7] = (uint8_t)((MemConfig.CurrentPage & 0x0000FF00) >> 8);
+            answer[8] = (uint8_t)(MemConfig.CurrentPage  & 0x000000FF);
+            MSS_UART_polled_tx(&g_mss_uart0, answer, 12);
+        } break;
+        case 0x13: {
+            uint8_t answer[] = {0x13, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0xF0};
+            uint32_t offset = system.metaAddressOffset;
+            uint32_t page = system.metaAddress;
+            system.metaAddress = 0;
+            system.metaAddressOffset = 0;
+            device.CS_Pin = FLASH_CS1;
+            device.spihandle = &g_mss_spi0;
+            uint32_t result = TestMetaWriter(device);
+            if (result == 0) {
+                answer[5] = (1 << 0);
+            }
+            system.metaAddress = page;
+            system.metaAddressOffset = offset;
+            MSS_UART_polled_tx(&g_mss_uart0, answer, 8);
+        }break;
         case 0xAA: {
             // empty the chip
             chipErase(device);

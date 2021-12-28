@@ -2,7 +2,7 @@
 <device>
   <name>sb</name>
   <version>1.0</version>
-  <description>CMSIS description for sb.  Created by Microsemi SmartDesign on Mon Mar  1 10:58:25 2021</description>
+  <description>CMSIS description for sb.  Created by Microsemi SmartDesign on Tue Dec 28 12:59:59 2021</description>
   <addressUnitBits>8</addressUnitBits>
   <width>32</width>
   <peripherals>
@@ -43,28 +43,32 @@
       <baseAddress>0x6001F400</baseAddress>
     </peripheral>
     <peripheral>
-      <name>STAMP_0</name>
+      <name>MemorySynchronizer_0</name>
       <baseAddress>0x50000000%0x30000000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>CoreAPB3_0</name>
+      <name>STAMP_1</name>
       <baseAddress>0x50001000%0x30001000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>CoreAPB3_0</name>
+      <name>STAMP_2</name>
       <baseAddress>0x50002000%0x30002000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>CoreAPB3_0</name>
+      <name>STAMP_3</name>
       <baseAddress>0x50003000%0x30003000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>CoreAPB3_0</name>
+      <name>STAMP_4</name>
       <baseAddress>0x50004000%0x30004000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>CoreAPB3_0</name>
+      <name>STAMP_5</name>
       <baseAddress>0x50005000%0x30005000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>STAMP_6</name>
+      <baseAddress>0x50006000%0x30006000</baseAddress>
     </peripheral>
     <peripheral>
       <name>CACHE_BACKDOOR</name>

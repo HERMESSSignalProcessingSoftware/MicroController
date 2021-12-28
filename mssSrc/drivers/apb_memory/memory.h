@@ -14,11 +14,11 @@ extern "C" {
 
 #include "../../drivers/mss_gpio/mss_gpio.h"
 #include "../../hal.h"
-#include "../../hw_platform.h"
+#include "../../sb_hw_platform.h"
 #include "../../drivers/mss_spi/mss_spi.h"
-#include "../../components/tools.h"
 #include "../../components/telemetry.h"
 #include "MemorySyncAPB.h"
+#include "../../HERMESS.h"
 
 #define c_WRDI 0x04
 #define c_READSTATUSREG1 0x05
@@ -245,6 +245,13 @@ void Write32Bit(uint32_t value, uint32_t address, SPI_Values device);
  */
 uint32_t testMemory(void);
 
+/**
+ *
+ * @param pageAddr
+ * @param dev
+ * @return
+ */
+uint32_t UpdateMetadata(uint32_t pageAddr, SPI_Values dev);
 
 
 

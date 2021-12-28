@@ -1,11 +1,19 @@
+/*
+ * status.h
+ *
+ *  Created on: 28.12.2021
+ *      Author: RG
+ */
+
+#ifndef STATUS_H_
+#define STATUS_H_
+
+
 /**
  * @file status.h
  * Enables the use of the global status register used for inter process
  * communication checked in the main loop
  */
-
-#ifndef STATUS_H_
-#define STATUS_H_
 
 #ifdef __cplusplus
 extern "C" {

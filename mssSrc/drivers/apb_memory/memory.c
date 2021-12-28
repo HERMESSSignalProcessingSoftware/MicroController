@@ -9,9 +9,11 @@
 #include "MemorySyncAPB.h"
 #include <stdio.h>
 #include "../../drivers/mss_gpio/mss_gpio.h"
-#include "../../hw_platform.h"
+#include "../../sb_hw_platform.h"
 #include "../../drivers/mss_spi/mss_spi.h"
 #include "../../components/telemetry.h"
+#include "../../HERMESS.h"
+#include "../../components/tools.h"
 
 /**
  * Creating a pointer to save the data internally and than process SPI actions
@@ -129,14 +131,15 @@ MemoryConfig Recovery(void) {
 
         if (nextOneHits != 0) {
             uint32_t value = ptr[nextOneHits];
-//            uint32_t reverse = (value >> 24) & 0x000000FF;
-//            reverse |= (value >> 8) & 0x0000FF00;
-//            reverse |= (value << 8) & 0x00FF0000;
-//            reverse |= (value << 16) & 0xFF000000;
-            mC.CurrentPage = value + 125;
-            mC.StartPage = value + 125;
-            mC.MetaAddress = pageCounter + nextOneHits + 4;
-            mC.RecoverySuccess = 1;
+            if (value < 0x200) {
+                mC.RecoverySuccess = 0;
+            } else {
+                mC.CurrentPage = value + 1;
+                mC.StartPage = value + 1;
+                mC.MetaAddress = pageCounter + nextOneHits + 4;
+                mC.RecoverySuccess = 1;
+            }
+
             break;
         }
         pageCounter++;
@@ -421,6 +424,36 @@ int readBytes(uint8_t *data, uint32_t address, int count, SPI_Values spi_val) {
     MSS_GPIO_set_output(spi_val.CS_Pin, 1);
 
     return 0;
+}
+
+uint32_t UpdateMetadata(uint32_t pageAddr, SPI_Values dev) {
+    uint8_t buffer[PAGESIZE] = { 0 };
+    uint32_t *ptr = (uint32_t*)buffer;
+    uint32_t value = 0;
+    uint32_t page;
+    writeReady(dev);
+    /*Iterate over all pages*/
+    for (uint32_t i = 0; i < 0x200; i++) {
+        readPage(buffer, i, dev);
+        ptr = (uint32_t*)(buffer ); //Reset the ptr to the start of the buffer
+        for (uint32_t index = 0; index < 128;index++) {
+            value = *(ptr);
+            if (value == 0xFFFFFFFF) {
+                //system.metaAddressOffset = index;
+                break;
+            } else {
+                ptr++;
+            }
+
+        }
+        if (value == 0xFFFFFFFF) {
+            *ptr = pageAddr; //Pointer was added due to search function implemented above, remove one
+            writePage(buffer, i, dev);
+            page = i;
+            break;
+        }
+    }
+    return page;
 }
 
 /**

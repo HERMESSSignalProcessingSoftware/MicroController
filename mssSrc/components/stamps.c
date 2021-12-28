@@ -6,7 +6,7 @@ extern "C" {
 
 
 
-#include "../hw_platform.h"
+#include "../sb_hw_platform.h"
 #include "../drivers/mss_gpio/mss_gpio.h"
 #include "../drivers/apb_stamp/apb_stamp.h"
 #include "tools.h"
@@ -202,24 +202,32 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
         //TODO: Fix problem with the inner VHDL waiting. Remove this shit and make it break able
         //as an alternative: add a waiting function here. Just set the bit in a status register and wait here until this bit toggled!
         // => much changes inner vhdl.. nothing sumulated yet.
+        uint32_t statusReg = HW_get_32bit_reg(stamps[i].baseAddr | STAMP_REG_READ_TMPSR);
+        if (statusReg & (1 << 9)) {
+            configflags = 1;
+        }
+        //check stamp4
         if (configflags == 0) {
+            if (i == 4) {
+                statusReg = HW_get_32bit_reg(stamps[i].baseAddr | STAMP_REG_READ_TMPSR);
+            }
             delay(1000);
             // run offset calibration
             APB_STAMP_writeAdc(&stamps[i],
                     STAMP_REG_WRITE_DMS1,
                     ADS_CMD_SYSOCAL,
-                    STAMP_MOD_DATA_READY);
-            delay(10);
+                    STAMP_MOD_NONE);
+            delay(500);
             APB_STAMP_writeAdc(&stamps[i],
                     STAMP_REG_WRITE_DMS2,
                     ADS_CMD_SYSOCAL,
-                    STAMP_MOD_DATA_READY);
-            delay(10);
+                    STAMP_MOD_NONE);
+            delay(500);
             APB_STAMP_writeAdc(&stamps[i],
                     STAMP_REG_WRITE_TEMP,
                     ADS_CMD_SYSOCAL,
-                    STAMP_MOD_DATA_READY);
-            delay(10);
+                    STAMP_MOD_NONE);
+            delay(500);
             // start continuous data conversion by ADC
             APB_STAMP_writeAdc(&stamps[i],
                     STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
