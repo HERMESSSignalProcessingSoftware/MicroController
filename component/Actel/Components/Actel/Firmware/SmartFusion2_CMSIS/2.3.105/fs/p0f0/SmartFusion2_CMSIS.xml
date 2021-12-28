@@ -1,0 +1,526 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>Firmware</spirit:library>
+  <spirit:name>SmartFusion2_CMSIS</spirit:name>
+  <spirit:version>2.3.105</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>SoftwareDriver</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-source-code</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-cm3-gcc-startup</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-cm3-ewarm-startup</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-cm3-keil-startup</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-default-config</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-HAL_Base</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-HAL_GNU</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-HAL_EWARM</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-HAL_Keil</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-source-code"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-cm3-gcc-startup">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="ToolChain" actel-cc:termValue="SoftConsole"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-cm3-ewarm-startup">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="ToolChain" actel-cc:termValue="IAR EWARM"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-cm3-keil-startup">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="ToolChain" actel-cc:termValue="Keil"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-default-config">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="GenerateDefaultConfig" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-HAL_Base"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-HAL_GNU">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="ToolChain" actel-cc:termValue="SoftConsole"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-HAL_EWARM">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="ToolChain" actel-cc:termValue="IAR EWARM"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-HAL_Keil">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="ToolChain" actel-cc:termValue="Keil"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-docs</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-docs"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Sample</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-SoftConsole_GDB_scripts</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-IAR_debugger_scripts</spirit:fileSetRef>
+        <spirit:fileSetRef>fs_Keil_debugger_scripts</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-SoftConsole_GDB_scripts"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-IAR_debugger_scripts"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs_Keil_debugger_scripts"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="ToolChain" spirit:name="ToolChain" spirit:prompt="Software Tool Chain:" spirit:dataType="string" actel-cc:choiceRef="ToolChainChoice" spirit:resolve="user">SoftConsole</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EnableToolChainSelection" spirit:name="EnableToolChainSelection" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="Processor" spirit:name="Processor" spirit:prompt="Processor" spirit:dataType="string" actel-cc:choiceRef="ProcessorChoice" spirit:resolve="generated">Cortex-M3</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="GenerateDefaultConfig" spirit:name="GenerateDefaultConfig" spirit:prompt="Generate Default Configuration" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">1</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('ToolChain', Eq('EnableToolChainSelection', '1'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>ProcessorChoice</spirit:name>
+      <spirit:enumeration spirit:text="Cortex-M3">Cortex-M3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>ToolChainChoice</spirit:name>
+      <spirit:enumeration spirit:text="IAR Embedded Workbench" spirit:help="IAR Embedded Workbench">IAR EWARM</spirit:enumeration>
+      <spirit:enumeration spirit:text="Keil" spirit:help="Keil MDK">Keil</spirit:enumeration>
+      <spirit:enumeration spirit:text="SoftConsole" spirit:help="Actel's SoftConsole">SoftConsole</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-source-code">
+    <spirit:file>
+      <spirit:name>CMSIS/hw_reg_io.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/mss_assert.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/m2sxxx.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/sys_init_cfg_types.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/system_m2sxxx.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/system_m2sxxx.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-cm3-gcc-startup">
+    <spirit:file>
+      <spirit:name>CMSIS/startup_gcc/debug-in-microsemi-smartfusion2-envm.ld</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_gcc/debug-in-microsemi-smartfusion2-esram.ld</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_gcc/newlib_stubs.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_gcc/debug-in-microsemi-smartfusion2-external-ram.ld</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_gcc/production-smartfusion2-execute-in-place.ld</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_gcc/production-smartfusion2-relocate-to-external-ram.ld</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_gcc/startup_m2sxxx.S</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-cm3-ewarm-startup">
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/startup_m2sxxx.s</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/read.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/write.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/default_irqs.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/low_level_init.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/smartfusion2_envm.icf</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/smartfusion2_envm_to_mddr.icf</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/smartfusion2_esram_debug.icf</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/smartfusion2_mddr_debug.icf</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_iar/vector_table.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-cm3-keil-startup">
+    <spirit:file>
+      <spirit:name>CMSIS/startup_arm/startup_m2sxxx.s</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_arm/retarget.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_arm/smartfusion2_esram_debug.sct</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_arm/smartfusion2_execute_in_place.sct</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_arm/smartfusion2_mddr_debug.sct</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_arm/smartfusion2_relocate_to_external_ram.sct</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CMSIS/startup_arm/low_level_init.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-docs">
+    <spirit:file>
+      <spirit:name>docs/SmartFusion2_CMSIS_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/SmartFusion2_CMSIS_UG.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-default-config">
+    <spirit:file>
+      <spirit:name>drivers_config/sys_config/sys_config.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>drivers_config/sys_config/sys_config.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-HAL_Base">
+    <spirit:file>
+      <spirit:name>hal/hal.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/hal_assert.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/hw_reg_access.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/cortex_nvic.c</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/cortex_nvic.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-HAL_GNU">
+    <spirit:file>
+      <spirit:name>hal/CortexM3/GNU/cpu_types.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/GNU/hal.S</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/GNU/hw_macros.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/GNU/hw_reg_access.S</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-HAL_EWARM">
+    <spirit:file>
+      <spirit:name>hal/CortexM3/EWARM/cpu_types.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/EWARM/hal.s</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/EWARM/hw_macros.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/EWARM/hw_reg_access.s</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-HAL_Keil">
+    <spirit:file>
+      <spirit:name>hal/CortexM3/Keil/cpu_types.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/Keil/hal.s</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/Keil/hw_macros.h</spirit:name>
+      <spirit:fileType>cSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>hal/CortexM3/Keil/hw_reg_access.s</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-SoftConsole_GDB_scripts">
+    <spirit:file>
+      <spirit:name>gdb_init_scripts/microsemi-cortex-m3-target-gdbinit</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>gdb_init_scripts/microsemi-smartfusion2-dev-kit-ddr-ecc-init</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>gdb_init_scripts/microsemi-smartfusion2-dev-kit-ddr-init</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>gdb_init_scripts/microsemi-smartfusion2-no-ddr-init</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>gdb_init_scripts/microsemi-smartfusion2-starter-kit-ddr-init</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>gdb_init_scripts/microsemi-smartfusion2-eval-kit-ddr-init</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>SoftConsole/GDB Initialization Scripts</actel-cc:displayName></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-IAR_debugger_scripts">
+    <spirit:file>
+      <spirit:name>IAR_debugger_init_scripts/M2Sxxx_Dev_Kit_run_from_mddr.mac</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>IAR_debugger_init_scripts/M2Sxxx_Eval_Kit_run_from_mddr.mac</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>IAR_debugger_init_scripts/M2Sxxx_run_from_esram.mac</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>IAR_debugger_init_scripts/M2Sxxx_Starter_Kit_run_from_mddr.mac</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>IAR_debugger_init_scripts/M2Sxxx_run_from_envm.mac</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>IAR_debugger_init_scripts/M2Sxxx.svd</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>IAR Embedded Workbench/Debugger Macro Files</actel-cc:displayName></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs_Keil_debugger_scripts">
+    <spirit:file>
+      <spirit:name>Keil-MDK_debugger_init_scripts/M2Sxxx_mddr_dev_kit.ini</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Keil-MDK_debugger_init_scripts/M2Sxxx_mddr_eval_kit.ini</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Keil-MDK_debugger_init_scripts/M2Sxxx_mddr_starter_kit.ini</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Keil-MDK_debugger_init_scripts/M2Sxxx_esram.ini</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Keil-MDK_debugger_init_scripts/M2Sxxx_envm.ini</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>Keil-MDK_debugger_init_scripts/M2Sxxx.SFR</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>Keil-MDK/Debugger Initialization Files</actel-cc:displayName></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>SmartFusion2 CMSIS Hardware Abstraction Layer</actel-cc:displayName>
+    <actel-cc:description>SmartFusion2 Cortex Microcontroller Software Interface Standard (CMSIS).
+
+The firmware package provides:
+- Cortex-M3 startup code for Softconsole, Keil-MDK and IAR Workbench.
+- CMSIS standard naming for exception and interrupt handlers.
+- CMSIS standard functions for controlling the Cortex-M3 Nested Vectored Interrupt Controller (NVIC).
+- peripherals registers description.
+- hardware abstraction layer (HAL) for FPGA fabric soft-IP peripherirals.
+
+These files are required by the SmartFusion2 bare metal peripheral drivers to build correctly.
+
+The firmware package also provides:
+- Debugging scripts for Softconsole, Keil-MDK and IAR Workbench, which can 
+  be obtained using the sample project menu option.
+</actel-cc:description>
+    <actel-cc:packageTimestamp>20150918162419</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="Firmware"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.4">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:compatibleCores>
+      <actel-cc:compatibleCore>
+        <spirit:componentRef spirit:vendor="Actel" spirit:library="SmartFusion2MSS" spirit:name="MSS" spirit:min_version="0.0.645" spirit:max_version=""/>
+      </actel-cc:compatibleCore>
+    </actel-cc:compatibleCores>
+  </spirit:vendorExtensions>
+</spirit:component>

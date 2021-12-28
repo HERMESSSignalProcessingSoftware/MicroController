@@ -16,6 +16,7 @@
 #include "components/telemetry.h"
 #include "drivers/apb_memory/Memory.h"
 #include "drivers/mss_spi/mss_spi.h"
+#include "drivers/mss_gpio/mss_gpio.h"
 
 /**
  * @brief Use this 32 bit value to add the missing three bits into the SR1 from the fabric before saving them.
