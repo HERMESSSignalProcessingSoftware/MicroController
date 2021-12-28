@@ -1,4 +1,4 @@
-# Sun Dec 26 10:21:23 2021
+# Tue Dec 28 12:41:43 2021
 
 
 Copyright (C) 1994-2021 Synopsys, Inc.
@@ -17,22 +17,22 @@ Implementation : synthesis
 Synopsys Generic Technology Mapper, Version map202103act, Build 060R, Built Jun 17 2021 11:00:42, @
 
 
-Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 120MB peak: 120MB)
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 119MB peak: 119MB)
 
 @N: MF916 |Option synthesis_strategy=base is enabled. 
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 123MB peak: 132MB)
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 122MB peak: 131MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 123MB peak: 132MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 123MB peak: 131MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 124MB peak: 132MB)
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 124MB peak: 131MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 126MB peak: 132MB)
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 125MB peak: 131MB)
 
 
 
@@ -46,7 +46,7 @@ Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapse
 @W: FA239 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
 @N: MO106 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 7 bits.
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 177MB peak: 177MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 177MB peak: 177MB)
 
 Encoding state machine MemorySyncState[0:5] (in view: work.MemorySynchronizer(arch))
 original code -> new code
@@ -81,18 +81,18 @@ original code -> new code
 @W: MO161 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[1] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
 @W: MO161 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Register bit clk_ratio[0] (in view view:work.spi_master(logic)) is always 1. To keep the instance, apply syn_preserve=1 on the instance.
 
-Starting factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 182MB peak: 182MB)
+Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 182MB peak: 182MB)
 
 Auto Dissolve of spi (inst of view:work.spi_master(logic))
 
-Finished factoring (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 199MB peak: 199MB)
+Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 199MB peak: 199MB)
 
 
 Available hyper_sources - for debug and ip models
 	None Found
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 210MB peak: 247MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 209MB peak: 246MB)
 
 @N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_1.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_2.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
@@ -101,32 +101,32 @@ Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:07s; CP
 @N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_5.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_6.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 212MB peak: 247MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 212MB peak: 246MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 215MB peak: 247MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 215MB peak: 246MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:11s; Memory used current: 215MB peak: 247MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:10s; Memory used current: 215MB peak: 246MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 217MB peak: 247MB)
+Finished preparing to map (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:11s; Memory used current: 216MB peak: 246MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 273MB peak: 273MB)
+Finished technology mapping (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 273MB peak: 273MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:14s		    -6.54ns		5186 /      2752
-   2		0h:00m:15s		    -6.46ns		5051 /      2752
+   1		0h:00m:13s		    -6.54ns		5186 /      2752
+   2		0h:00m:13s		    -6.46ns		5051 /      2752
 
-   3		0h:00m:15s		    -6.46ns		5052 /      2752
-   4		0h:00m:15s		    -4.53ns		5056 /      2752
-   5		0h:00m:15s		    -4.34ns		5057 /      2752
-   6		0h:00m:15s		    -4.36ns		5060 /      2752
-   7		0h:00m:15s		    -4.16ns		5061 /      2752
-   8		0h:00m:16s		    -3.88ns		5062 /      2752
-   9		0h:00m:16s		    -3.88ns		5062 /      2752
+   3		0h:00m:14s		    -6.46ns		5052 /      2752
+   4		0h:00m:14s		    -4.53ns		5056 /      2752
+   5		0h:00m:14s		    -4.34ns		5057 /      2752
+   6		0h:00m:14s		    -4.36ns		5060 /      2752
+   7		0h:00m:14s		    -4.16ns		5061 /      2752
+   8		0h:00m:14s		    -3.88ns		5062 /      2752
+   9		0h:00m:15s		    -3.88ns		5062 /      2752
 @N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[1] (in view: work.sb(rtl)) with 6 loads 1 time to improve timing.
 @N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[0] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
 @N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[2] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
@@ -150,12 +150,12 @@ Added 18 Registers via timing driven replication
 Added 0 LUTs via timing driven replication
 
 
-  10		0h:00m:17s		    -3.56ns		5077 /      2770
-  11		0h:00m:18s		    -3.49ns		5078 /      2770
-  12		0h:00m:18s		    -3.49ns		5078 /      2770
-  13		0h:00m:19s		    -3.49ns		5078 /      2770
-  14		0h:00m:19s		    -3.49ns		5078 /      2770
-  15		0h:00m:20s		    -3.49ns		5078 /      2770
+  10		0h:00m:15s		    -3.56ns		5077 /      2770
+  11		0h:00m:16s		    -3.49ns		5078 /      2770
+  12		0h:00m:17s		    -3.49ns		5078 /      2770
+  13		0h:00m:17s		    -3.49ns		5078 /      2770
+  14		0h:00m:18s		    -3.49ns		5078 /      2770
+  15		0h:00m:18s		    -3.49ns		5078 /      2770
 @N: FP130 |Promoting Net AND2_0_Y_arst on CLKINT  MemorySynchronizer_0.un120_in_enable_0_I_1_1618 
 
 Added 0 Buffers
@@ -163,10 +163,10 @@ Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:21s; Memory used current: 277MB peak: 277MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 276MB peak: 276MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 277MB peak: 278MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 276MB peak: 278MB)
 
 
 
@@ -252,11 +252,11 @@ Clock Tree ID     Driving Element                                               
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 229MB peak: 278MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:20s; Memory used current: 229MB peak: 278MB)
 
 Writing Analyst data base C:\Users\RG\Documents\MicroController\synthesis\synwork\sb_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:23s; Memory used current: 267MB peak: 278MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:21s; Memory used current: 267MB peak: 278MB)
 
 Writing Verilog Simulation files
 @W: BW110 :|Renaming port spi_master_5 due to collision with Verilog/ System Verilog reserved word 
@@ -274,20 +274,20 @@ Writing Verilog Simulation files
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 
-Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:24s; CPU Time elapsed 0h:00m:24s; Memory used current: 268MB peak: 278MB)
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:22s; Memory used current: 268MB peak: 278MB)
 
 
-Finished Writing Netlists (Real Time elapsed 0h:00m:25s; CPU Time elapsed 0h:00m:24s; Memory used current: 268MB peak: 278MB)
+Finished Writing Netlists (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:22s; Memory used current: 268MB peak: 278MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:25s; CPU Time elapsed 0h:00m:24s; Memory used current: 261MB peak: 278MB)
+Start final timing analysis (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:22s; Memory used current: 260MB peak: 278MB)
 
 @W: MT246 :"c:\users\rg\documents\microcontroller\component\work\sb_sb\ccc_0\sb_sb_ccc_0_fccc.vhd":106:4:106:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
 @W: MT420 |Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on net sb_sb_0.CCC_0.GL0_net.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sun Dec 26 10:21:49 2021
+# Timing report written on Tue Dec 28 12:42:07 2021
 #
 
 
@@ -1387,10 +1387,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:25s; CPU Time elapsed 0h:00m:25s; Memory used current: 263MB peak: 278MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:23s; Memory used current: 263MB peak: 278MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:25s; CPU Time elapsed 0h:00m:25s; Memory used current: 263MB peak: 278MB)
+Finished timing report (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:23s; Memory used current: 263MB peak: 278MB)
 
 ---------------------------------------
 Resource Usage Report for sb 
@@ -1441,9 +1441,9 @@ Total number of LUTs after P&R:  4584 + 0 + 0 + 0 = 4584;
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:26s; CPU Time elapsed 0h:00m:25s; Memory used current: 80MB peak: 278MB)
+At Mapper Exit (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:23s; Memory used current: 79MB peak: 278MB)
 
-Process took 0h:00m:26s realtime, 0h:00m:25s cputime
-# Sun Dec 26 10:21:49 2021
+Process took 0h:00m:24s realtime, 0h:00m:23s cputime
+# Tue Dec 28 12:42:07 2021
 
 ###########################################################]

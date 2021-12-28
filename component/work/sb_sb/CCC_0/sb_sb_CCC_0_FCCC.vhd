@@ -1,4 +1,4 @@
--- Version: v12.6 12.900.20.24
+-- Version: v2021.2 2021.2.0.11
 
 library ieee;
 use ieee.std_logic_1164.all;

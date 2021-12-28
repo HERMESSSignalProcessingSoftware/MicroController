@@ -1,4 +1,4 @@
-# Sun Dec 26 10:21:20 2021
+# Tue Dec 28 12:41:41 2021
 
 
 Copyright (C) 1994-2021 Synopsys, Inc.
@@ -17,10 +17,10 @@ Implementation : synthesis
 Synopsys Generic Technology Pre-mapping, Version map202103act, Build 060R, Built Jun 17 2021 11:00:42, @
 
 
-Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 120MB peak: 120MB)
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 119MB peak: 119MB)
 
 
-Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 127MB peak: 132MB)
+Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 126MB peak: 131MB)
 
 Reading constraint file: C:\Users\RG\Documents\MicroController\designer\sb\synthesis.fdc
 @L: C:\Users\RG\Documents\MicroController\synthesis\sb_scck.rpt 
@@ -136,7 +136,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 @N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":553:8:553:9|Removing sequential instance POWER_ON_RESET_N_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: FX1184 |Applying syn_allowed_resources blockrams=21 on top level netlist sb 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 182MB peak: 182MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 182MB peak: 182MB)
 
 
 
@@ -170,7 +170,7 @@ sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     2784      sb_sb_0.CCC_0.CCC_INST.GL0
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file C:\Users\RG\Documents\MicroController\synthesis\sb.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 180MB peak: 183MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 179MB peak: 182MB)
 
 Encoding state machine MemorySyncState[0:5] (in view: work.MemorySynchronizer(arch))
 original code -> new code
@@ -237,13 +237,13 @@ original code -> new code
 Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 184MB peak: 184MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 186MB peak: 186MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 186MB peak: 186MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 98MB peak: 187MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 98MB peak: 187MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:02s cputime
-# Sun Dec 26 10:21:22 2021
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Dec 28 12:41:43 2021
 
 ###########################################################]

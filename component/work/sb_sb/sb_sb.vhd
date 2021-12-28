@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Mon Dec 13 15:59:22 2021
--- Version: v12.6 12.900.20.24
+-- Created by SmartDesign Tue Dec 28 12:41:19 2021
+-- Version: v2021.2 2021.2.0.11
 ----------------------------------------------------------------------
 
 ----------------------------------------------------------------------
@@ -315,17 +315,6 @@ end component;
 ----------------------------------------------------------------------
 -- Signal declarations
 ----------------------------------------------------------------------
-signal APBmslave0_7_PADDR                                 : std_logic_vector(31 downto 0);
-signal APBmslave0_7_PENABLE                               : std_logic;
-signal APBmslave0_7_PSELx                                 : std_logic;
-signal APBmslave0_7_PWDATA                                : std_logic_vector(31 downto 0);
-signal APBmslave0_7_PWRITE                                : std_logic;
-signal APBmslave1_0_PSELx                                 : std_logic;
-signal APBmslave2_0_PSELx                                 : std_logic;
-signal APBmslave3_0_PSELx                                 : std_logic;
-signal APBmslave4_0_PSELx                                 : std_logic;
-signal APBmslave5_0_PSELx                                 : std_logic;
-signal APBmslave6_0_PSELx                                 : std_logic;
 signal CORERESETP_0_RESET_N_F2M                           : std_logic;
 signal FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC : std_logic;
 signal FABOSC_0_RCOSC_25_50MHZ_O2F                        : std_logic;
@@ -339,6 +328,11 @@ signal GPIO_29_M2F_net_0                                  : std_logic;
 signal GPIO_30_M2F_net_0                                  : std_logic;
 signal GPIO_31_M2F_net_0                                  : std_logic;
 signal INIT_DONE_net_0                                    : std_logic;
+signal MemSync_PADDR                                      : std_logic_vector(31 downto 0);
+signal MemSync_PENABLE                                    : std_logic;
+signal MemSync_PSELx                                      : std_logic;
+signal MemSync_PWDATA                                     : std_logic_vector(31 downto 0);
+signal MemSync_PWRITE                                     : std_logic;
 signal MMUART_0_TXD_M2F_net_0                             : std_logic;
 signal MMUART_1_TXD_M2F_net_0                             : std_logic;
 signal MSS_READY_net_0                                    : std_logic;
@@ -357,43 +351,49 @@ signal SPI_0_CLK_M2F_net_0                                : std_logic;
 signal SPI_0_DO_M2F_net_0                                 : std_logic;
 signal SPI_0_SS0_M2F_net_0                                : std_logic;
 signal SPI_0_SS0_M2F_OE_net_0                             : std_logic;
+signal STAMP_PSELx                                        : std_logic;
+signal STAMP_1_PSELx                                      : std_logic;
+signal STAMP_2_PSELx                                      : std_logic;
+signal STAMP_3_PSELx                                      : std_logic;
+signal STAMP_4_PSELx                                      : std_logic;
+signal STAMP_5_PSELx                                      : std_logic;
 signal POWER_ON_RESET_N_net_1                             : std_logic;
 signal INIT_DONE_net_1                                    : std_logic;
-signal APBmslave0_7_PADDR_net_0                           : std_logic_vector(31 downto 0);
-signal APBmslave0_7_PSELx_net_0                           : std_logic;
-signal APBmslave0_7_PENABLE_net_0                         : std_logic;
-signal APBmslave0_7_PWRITE_net_0                          : std_logic;
-signal APBmslave0_7_PWDATA_net_0                          : std_logic_vector(31 downto 0);
-signal APBmslave0_7_PADDR_net_1                           : std_logic_vector(31 downto 0);
-signal APBmslave1_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_7_PENABLE_net_1                         : std_logic;
-signal APBmslave0_7_PWRITE_net_1                          : std_logic;
-signal APBmslave0_7_PWDATA_net_1                          : std_logic_vector(31 downto 0);
-signal APBmslave0_7_PADDR_net_2                           : std_logic_vector(31 downto 0);
-signal APBmslave2_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_7_PENABLE_net_2                         : std_logic;
-signal APBmslave0_7_PWRITE_net_2                          : std_logic;
-signal APBmslave0_7_PWDATA_net_2                          : std_logic_vector(31 downto 0);
-signal APBmslave0_7_PADDR_net_3                           : std_logic_vector(31 downto 0);
-signal APBmslave3_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_7_PENABLE_net_3                         : std_logic;
-signal APBmslave0_7_PWRITE_net_3                          : std_logic;
-signal APBmslave0_7_PWDATA_net_3                          : std_logic_vector(31 downto 0);
-signal APBmslave0_7_PADDR_net_4                           : std_logic_vector(31 downto 0);
-signal APBmslave4_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_7_PENABLE_net_4                         : std_logic;
-signal APBmslave0_7_PWRITE_net_4                          : std_logic;
-signal APBmslave0_7_PWDATA_net_4                          : std_logic_vector(31 downto 0);
-signal APBmslave0_7_PADDR_net_5                           : std_logic_vector(31 downto 0);
-signal APBmslave5_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_7_PENABLE_net_5                         : std_logic;
-signal APBmslave0_7_PWRITE_net_5                          : std_logic;
-signal APBmslave0_7_PWDATA_net_5                          : std_logic_vector(31 downto 0);
-signal APBmslave0_7_PADDR_net_6                           : std_logic_vector(31 downto 0);
-signal APBmslave6_0_PSELx_net_0                           : std_logic;
-signal APBmslave0_7_PENABLE_net_6                         : std_logic;
-signal APBmslave0_7_PWRITE_net_6                          : std_logic;
-signal APBmslave0_7_PWDATA_net_6                          : std_logic_vector(31 downto 0);
+signal MemSync_PADDR_net_0                                : std_logic_vector(31 downto 0);
+signal MemSync_PSELx_net_0                                : std_logic;
+signal MemSync_PENABLE_net_0                              : std_logic;
+signal MemSync_PWRITE_net_0                               : std_logic;
+signal MemSync_PWDATA_net_0                               : std_logic_vector(31 downto 0);
+signal MemSync_PADDR_net_1                                : std_logic_vector(31 downto 0);
+signal STAMP_PSELx_net_0                                  : std_logic;
+signal MemSync_PENABLE_net_1                              : std_logic;
+signal MemSync_PWRITE_net_1                               : std_logic;
+signal MemSync_PWDATA_net_1                               : std_logic_vector(31 downto 0);
+signal MemSync_PADDR_net_2                                : std_logic_vector(31 downto 0);
+signal STAMP_1_PSELx_net_0                                : std_logic;
+signal MemSync_PENABLE_net_2                              : std_logic;
+signal MemSync_PWRITE_net_2                               : std_logic;
+signal MemSync_PWDATA_net_2                               : std_logic_vector(31 downto 0);
+signal MemSync_PADDR_net_3                                : std_logic_vector(31 downto 0);
+signal STAMP_2_PSELx_net_0                                : std_logic;
+signal MemSync_PENABLE_net_3                              : std_logic;
+signal MemSync_PWRITE_net_3                               : std_logic;
+signal MemSync_PWDATA_net_3                               : std_logic_vector(31 downto 0);
+signal MemSync_PADDR_net_4                                : std_logic_vector(31 downto 0);
+signal STAMP_3_PSELx_net_0                                : std_logic;
+signal MemSync_PENABLE_net_4                              : std_logic;
+signal MemSync_PWRITE_net_4                               : std_logic;
+signal MemSync_PWDATA_net_4                               : std_logic_vector(31 downto 0);
+signal MemSync_PADDR_net_5                                : std_logic_vector(31 downto 0);
+signal STAMP_4_PSELx_net_0                                : std_logic;
+signal MemSync_PENABLE_net_5                              : std_logic;
+signal MemSync_PWRITE_net_5                               : std_logic;
+signal MemSync_PWDATA_net_5                               : std_logic_vector(31 downto 0);
+signal MemSync_PADDR_net_6                                : std_logic_vector(31 downto 0);
+signal STAMP_5_PSELx_net_0                                : std_logic;
+signal MemSync_PENABLE_net_6                              : std_logic;
+signal MemSync_PWRITE_net_6                               : std_logic;
+signal MemSync_PWDATA_net_6                               : std_logic_vector(31 downto 0);
 signal FIC_0_CLK_net_1                                    : std_logic;
 signal FIC_0_LOCK_net_1                                   : std_logic;
 signal MSS_READY_net_1                                    : std_logic;
@@ -466,76 +466,76 @@ begin
  POWER_ON_RESET_N             <= POWER_ON_RESET_N_net_1;
  INIT_DONE_net_1              <= INIT_DONE_net_0;
  INIT_DONE                    <= INIT_DONE_net_1;
- APBmslave0_7_PADDR_net_0     <= APBmslave0_7_PADDR;
- MemSync_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_0;
- APBmslave0_7_PSELx_net_0     <= APBmslave0_7_PSELx;
- MemSync_PSELS0               <= APBmslave0_7_PSELx_net_0;
- APBmslave0_7_PENABLE_net_0   <= APBmslave0_7_PENABLE;
- MemSync_PENABLES             <= APBmslave0_7_PENABLE_net_0;
- APBmslave0_7_PWRITE_net_0    <= APBmslave0_7_PWRITE;
- MemSync_PWRITES              <= APBmslave0_7_PWRITE_net_0;
- APBmslave0_7_PWDATA_net_0    <= APBmslave0_7_PWDATA;
- MemSync_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_0;
- APBmslave0_7_PADDR_net_1     <= APBmslave0_7_PADDR;
- STAMP_PADDRS(31 downto 0)    <= APBmslave0_7_PADDR_net_1;
- APBmslave1_0_PSELx_net_0     <= APBmslave1_0_PSELx;
- STAMP_PSELS1                 <= APBmslave1_0_PSELx_net_0;
- APBmslave0_7_PENABLE_net_1   <= APBmslave0_7_PENABLE;
- STAMP_PENABLES               <= APBmslave0_7_PENABLE_net_1;
- APBmslave0_7_PWRITE_net_1    <= APBmslave0_7_PWRITE;
- STAMP_PWRITES                <= APBmslave0_7_PWRITE_net_1;
- APBmslave0_7_PWDATA_net_1    <= APBmslave0_7_PWDATA;
- STAMP_PWDATAS(31 downto 0)   <= APBmslave0_7_PWDATA_net_1;
- APBmslave0_7_PADDR_net_2     <= APBmslave0_7_PADDR;
- STAMP_1_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_2;
- APBmslave2_0_PSELx_net_0     <= APBmslave2_0_PSELx;
- STAMP_1_PSELS2               <= APBmslave2_0_PSELx_net_0;
- APBmslave0_7_PENABLE_net_2   <= APBmslave0_7_PENABLE;
- STAMP_1_PENABLES             <= APBmslave0_7_PENABLE_net_2;
- APBmslave0_7_PWRITE_net_2    <= APBmslave0_7_PWRITE;
- STAMP_1_PWRITES              <= APBmslave0_7_PWRITE_net_2;
- APBmslave0_7_PWDATA_net_2    <= APBmslave0_7_PWDATA;
- STAMP_1_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_2;
- APBmslave0_7_PADDR_net_3     <= APBmslave0_7_PADDR;
- STAMP_2_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_3;
- APBmslave3_0_PSELx_net_0     <= APBmslave3_0_PSELx;
- STAMP_2_PSELS3               <= APBmslave3_0_PSELx_net_0;
- APBmslave0_7_PENABLE_net_3   <= APBmslave0_7_PENABLE;
- STAMP_2_PENABLES             <= APBmslave0_7_PENABLE_net_3;
- APBmslave0_7_PWRITE_net_3    <= APBmslave0_7_PWRITE;
- STAMP_2_PWRITES              <= APBmslave0_7_PWRITE_net_3;
- APBmslave0_7_PWDATA_net_3    <= APBmslave0_7_PWDATA;
- STAMP_2_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_3;
- APBmslave0_7_PADDR_net_4     <= APBmslave0_7_PADDR;
- STAMP_3_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_4;
- APBmslave4_0_PSELx_net_0     <= APBmslave4_0_PSELx;
- STAMP_3_PSELS4               <= APBmslave4_0_PSELx_net_0;
- APBmslave0_7_PENABLE_net_4   <= APBmslave0_7_PENABLE;
- STAMP_3_PENABLES             <= APBmslave0_7_PENABLE_net_4;
- APBmslave0_7_PWRITE_net_4    <= APBmslave0_7_PWRITE;
- STAMP_3_PWRITES              <= APBmslave0_7_PWRITE_net_4;
- APBmslave0_7_PWDATA_net_4    <= APBmslave0_7_PWDATA;
- STAMP_3_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_4;
- APBmslave0_7_PADDR_net_5     <= APBmslave0_7_PADDR;
- STAMP_4_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_5;
- APBmslave5_0_PSELx_net_0     <= APBmslave5_0_PSELx;
- STAMP_4_PSELS5               <= APBmslave5_0_PSELx_net_0;
- APBmslave0_7_PENABLE_net_5   <= APBmslave0_7_PENABLE;
- STAMP_4_PENABLES             <= APBmslave0_7_PENABLE_net_5;
- APBmslave0_7_PWRITE_net_5    <= APBmslave0_7_PWRITE;
- STAMP_4_PWRITES              <= APBmslave0_7_PWRITE_net_5;
- APBmslave0_7_PWDATA_net_5    <= APBmslave0_7_PWDATA;
- STAMP_4_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_5;
- APBmslave0_7_PADDR_net_6     <= APBmslave0_7_PADDR;
- STAMP_5_PADDRS(31 downto 0)  <= APBmslave0_7_PADDR_net_6;
- APBmslave6_0_PSELx_net_0     <= APBmslave6_0_PSELx;
- STAMP_5_PSELS6               <= APBmslave6_0_PSELx_net_0;
- APBmslave0_7_PENABLE_net_6   <= APBmslave0_7_PENABLE;
- STAMP_5_PENABLES             <= APBmslave0_7_PENABLE_net_6;
- APBmslave0_7_PWRITE_net_6    <= APBmslave0_7_PWRITE;
- STAMP_5_PWRITES              <= APBmslave0_7_PWRITE_net_6;
- APBmslave0_7_PWDATA_net_6    <= APBmslave0_7_PWDATA;
- STAMP_5_PWDATAS(31 downto 0) <= APBmslave0_7_PWDATA_net_6;
+ MemSync_PADDR_net_0          <= MemSync_PADDR;
+ MemSync_PADDRS(31 downto 0)  <= MemSync_PADDR_net_0;
+ MemSync_PSELx_net_0          <= MemSync_PSELx;
+ MemSync_PSELS0               <= MemSync_PSELx_net_0;
+ MemSync_PENABLE_net_0        <= MemSync_PENABLE;
+ MemSync_PENABLES             <= MemSync_PENABLE_net_0;
+ MemSync_PWRITE_net_0         <= MemSync_PWRITE;
+ MemSync_PWRITES              <= MemSync_PWRITE_net_0;
+ MemSync_PWDATA_net_0         <= MemSync_PWDATA;
+ MemSync_PWDATAS(31 downto 0) <= MemSync_PWDATA_net_0;
+ MemSync_PADDR_net_1          <= MemSync_PADDR;
+ STAMP_PADDRS(31 downto 0)    <= MemSync_PADDR_net_1;
+ STAMP_PSELx_net_0            <= STAMP_PSELx;
+ STAMP_PSELS1                 <= STAMP_PSELx_net_0;
+ MemSync_PENABLE_net_1        <= MemSync_PENABLE;
+ STAMP_PENABLES               <= MemSync_PENABLE_net_1;
+ MemSync_PWRITE_net_1         <= MemSync_PWRITE;
+ STAMP_PWRITES                <= MemSync_PWRITE_net_1;
+ MemSync_PWDATA_net_1         <= MemSync_PWDATA;
+ STAMP_PWDATAS(31 downto 0)   <= MemSync_PWDATA_net_1;
+ MemSync_PADDR_net_2          <= MemSync_PADDR;
+ STAMP_1_PADDRS(31 downto 0)  <= MemSync_PADDR_net_2;
+ STAMP_1_PSELx_net_0          <= STAMP_1_PSELx;
+ STAMP_1_PSELS2               <= STAMP_1_PSELx_net_0;
+ MemSync_PENABLE_net_2        <= MemSync_PENABLE;
+ STAMP_1_PENABLES             <= MemSync_PENABLE_net_2;
+ MemSync_PWRITE_net_2         <= MemSync_PWRITE;
+ STAMP_1_PWRITES              <= MemSync_PWRITE_net_2;
+ MemSync_PWDATA_net_2         <= MemSync_PWDATA;
+ STAMP_1_PWDATAS(31 downto 0) <= MemSync_PWDATA_net_2;
+ MemSync_PADDR_net_3          <= MemSync_PADDR;
+ STAMP_2_PADDRS(31 downto 0)  <= MemSync_PADDR_net_3;
+ STAMP_2_PSELx_net_0          <= STAMP_2_PSELx;
+ STAMP_2_PSELS3               <= STAMP_2_PSELx_net_0;
+ MemSync_PENABLE_net_3        <= MemSync_PENABLE;
+ STAMP_2_PENABLES             <= MemSync_PENABLE_net_3;
+ MemSync_PWRITE_net_3         <= MemSync_PWRITE;
+ STAMP_2_PWRITES              <= MemSync_PWRITE_net_3;
+ MemSync_PWDATA_net_3         <= MemSync_PWDATA;
+ STAMP_2_PWDATAS(31 downto 0) <= MemSync_PWDATA_net_3;
+ MemSync_PADDR_net_4          <= MemSync_PADDR;
+ STAMP_3_PADDRS(31 downto 0)  <= MemSync_PADDR_net_4;
+ STAMP_3_PSELx_net_0          <= STAMP_3_PSELx;
+ STAMP_3_PSELS4               <= STAMP_3_PSELx_net_0;
+ MemSync_PENABLE_net_4        <= MemSync_PENABLE;
+ STAMP_3_PENABLES             <= MemSync_PENABLE_net_4;
+ MemSync_PWRITE_net_4         <= MemSync_PWRITE;
+ STAMP_3_PWRITES              <= MemSync_PWRITE_net_4;
+ MemSync_PWDATA_net_4         <= MemSync_PWDATA;
+ STAMP_3_PWDATAS(31 downto 0) <= MemSync_PWDATA_net_4;
+ MemSync_PADDR_net_5          <= MemSync_PADDR;
+ STAMP_4_PADDRS(31 downto 0)  <= MemSync_PADDR_net_5;
+ STAMP_4_PSELx_net_0          <= STAMP_4_PSELx;
+ STAMP_4_PSELS5               <= STAMP_4_PSELx_net_0;
+ MemSync_PENABLE_net_5        <= MemSync_PENABLE;
+ STAMP_4_PENABLES             <= MemSync_PENABLE_net_5;
+ MemSync_PWRITE_net_5         <= MemSync_PWRITE;
+ STAMP_4_PWRITES              <= MemSync_PWRITE_net_5;
+ MemSync_PWDATA_net_5         <= MemSync_PWDATA;
+ STAMP_4_PWDATAS(31 downto 0) <= MemSync_PWDATA_net_5;
+ MemSync_PADDR_net_6          <= MemSync_PADDR;
+ STAMP_5_PADDRS(31 downto 0)  <= MemSync_PADDR_net_6;
+ STAMP_5_PSELx_net_0          <= STAMP_5_PSELx;
+ STAMP_5_PSELS6               <= STAMP_5_PSELx_net_0;
+ MemSync_PENABLE_net_6        <= MemSync_PENABLE;
+ STAMP_5_PENABLES             <= MemSync_PENABLE_net_6;
+ MemSync_PWRITE_net_6         <= MemSync_PWRITE;
+ STAMP_5_PWRITES              <= MemSync_PWRITE_net_6;
+ MemSync_PWDATA_net_6         <= MemSync_PWDATA;
+ STAMP_5_PWDATAS(31 downto 0) <= MemSync_PWDATA_net_6;
  FIC_0_CLK_net_1              <= FIC_0_CLK_net_0;
  FIC_0_CLK                    <= FIC_0_CLK_net_1;
  FIC_0_LOCK_net_1             <= FIC_0_LOCK_net_0;
@@ -690,17 +690,17 @@ CoreAPB3_0 : entity COREAPB3_LIB.CoreAPB3
         PRDATA     => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA,
         PREADY     => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PREADY,
         PSLVERR    => sb_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSLVERR,
-        PADDRS     => APBmslave0_7_PADDR,
-        PWRITES    => APBmslave0_7_PWRITE,
-        PENABLES   => APBmslave0_7_PENABLE,
-        PWDATAS    => APBmslave0_7_PWDATA,
-        PSELS0     => APBmslave0_7_PSELx,
-        PSELS1     => APBmslave1_0_PSELx,
-        PSELS2     => APBmslave2_0_PSELx,
-        PSELS3     => APBmslave3_0_PSELx,
-        PSELS4     => APBmslave4_0_PSELx,
-        PSELS5     => APBmslave5_0_PSELx,
-        PSELS6     => APBmslave6_0_PSELx,
+        PADDRS     => MemSync_PADDR,
+        PWRITES    => MemSync_PWRITE,
+        PENABLES   => MemSync_PENABLE,
+        PWDATAS    => MemSync_PWDATA,
+        PSELS0     => MemSync_PSELx,
+        PSELS1     => STAMP_PSELx,
+        PSELS2     => STAMP_1_PSELx,
+        PSELS3     => STAMP_2_PSELx,
+        PSELS4     => STAMP_3_PSELx,
+        PSELS5     => STAMP_4_PSELx,
+        PSELS6     => STAMP_5_PSELx,
         PSELS7     => OPEN,
         PSELS8     => OPEN,
         PSELS9     => OPEN,
