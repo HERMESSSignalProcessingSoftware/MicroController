@@ -16,10 +16,8 @@
 #include "components/telemetry.h"
 #include "drivers/apb_memory/memory.h"
 #include "drivers/mss_spi/mss_spi.h"
-#include "HERMESS.h"
+#include "components/HERMESS.h"
 
-
-volatile SysConfig_t system = { 0 };
 
 /**
  * @brief Use this 32 bit value to add the missing three bits into the SR1 from the fabric before saving them.
@@ -27,6 +25,8 @@ volatile SysConfig_t system = { 0 };
 static volatile uint32_t StatusRegisterLocals = 0x0;
 uint32_t mssSignals = 0;
 
+/*TODO: Update recovery behaviour, its not implemented right. Searching works but we need to rewirte the whole page, so just update the page number
+ * SAVE it to the system variable*/
 
 int main (void) {
     uint32_t csr = 0;

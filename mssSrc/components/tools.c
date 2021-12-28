@@ -68,20 +68,18 @@ uint32_t TestMetaWriter(SPI_Values dev) {
     uint32_t *ptr = (uint32_t*)buffer;
     uint32_t result = 0;
     uint32_t pageNumber = 0;
-    for (uint32_t i = 0; i < 64; i++) {
+    for (uint32_t i = 1; i <= 64; i++) {
+        /* Write value to memory */
         pageNumber = UpdateMetadata(i, dev);
+        /* Wait until page is valid */
+        writeReady(dev);
+        /* Read back the page */
         readPage(buffer, pageNumber, dev);
         if (*ptr != i) {
             result++;
         }
         ptr++;
         ResetBuffer(buffer, 0, PAGESIZE);
-    }
-    ResetBuffer(buffer, 0xFF, PAGESIZE);
-    /*Reset Page*/
-    for (uint32_t i = 0; i < pageNumber; i++) {
-        writePage(buffer, i, dev);
-        writeReady(dev);
     }
     return result;
 

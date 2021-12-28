@@ -12,7 +12,7 @@
 #include "../../sb_hw_platform.h"
 #include "../../drivers/mss_spi/mss_spi.h"
 #include "../../components/telemetry.h"
-#include "../../HERMESS.h"
+#include "../../components/HERMESS.h"
 #include "../../components/tools.h"
 
 /**

@@ -6,7 +6,7 @@ extern "C" {
 #include "../status.h"
 #include "../drivers/mss_uart/mss_uart.h"
 #include "../drivers/apb_memory/memory.h"
-#include "../HERMESS.h"
+#include "HERMESS.h"
 #include "tools.h"
 
 #define DAPI_RX_BUFF_SIZE 64
@@ -87,18 +87,14 @@ void dapiExecutePendingCommand (void) {
         } break;
         case 0x13: {
             uint8_t answer[] = {0x13, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0xF0};
-            uint32_t offset = system.metaAddressOffset;
-            uint32_t page = system.metaAddress;
-            system.metaAddress = 0;
-            system.metaAddressOffset = 0;
+
             device.CS_Pin = FLASH_CS1;
             device.spihandle = &g_mss_spi0;
             uint32_t result = TestMetaWriter(device);
             if (result == 0) {
                 answer[5] = (1 << 0);
             }
-            system.metaAddress = page;
-            system.metaAddressOffset = offset;
+            /*TODO: implement other tests here*/
             MSS_UART_polled_tx(&g_mss_uart0, answer, 8);
         }break;
         case 0xAA: {

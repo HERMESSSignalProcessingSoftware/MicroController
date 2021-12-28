@@ -1,4 +1,5 @@
 import serial 
+import time 
 ser = serial.Serial("COM6", 115200)
 ser.close()
 ser.open()
@@ -17,6 +18,8 @@ CMD_WRITE_Page  = b"\x12\x00\x17\xF0" # not impelemented yet!
 CMD_TEST        = b"\x13\x00\x17\xF0" # 
 
 def Read(): 
+    start = time.time()
+    startCont = time.time()
     ser.write(CMD_READ)
     rx = ser.read(5)
     pages = int.from_bytes(rx[1:],"big")
@@ -24,50 +27,55 @@ def Read():
     for i in range(pages):
         content = ser.read(512)
         if (i % 1000 == 0):
-            print("{} von {}".format(i, pages))
+            print("{} von {} (Took {0:.2f}s)".format(i, pages, time.time() - startCont))
+            startCont = time.time()
+    print("Finised readback! Took {0:.2f}s".format(time.time() - start))
 
 def Test():
+    start = time.time()
     ser.write(CMD_TEST)
     rx = ser.read(8)
     if (rx[5] & (1 << 0)):
-        pass
+        print("Memory: Meta data writer: passed")
     else:
-        print("TEST 1 failed!")
+        print("TEST 1 failed! (not implemented yet)")
     if (rx[5] & (1 << 1)):
         pass
     else:
-        print("TEST 2 failed!")
+        print("TEST 2 failed! (not implemented yet)")
     if (rx[5] & (1 << 2)):
         pass
     else:
-        print("TEST 3 failed!")
+        print("TEST 3 failed! (not implemented yet)")
     if (rx[5] & (1 << 3)):
         pass
     else:
-        print("TEST 4 failed!")
+        print("TEST 4 failed! (not implemented yet)")
     if (rx[5] & (1 << 4)):
         pass
     else:
-        print("TEST 5 failed!")
+        print("TEST 5 failed! (not implemented yet)")
     if (rx[5] & (1 << 5)):
         pass
     else:
-        print("TEST 6 failed!")
+        print("TEST 6 failed! (not implemented yet)")
     if (rx[5] & (1 << 6)):
         pass
     else:
-        print("TEST 7 failed!")
+        print("TEST 7 failed! (not implemented yet)")
     if (rx[5] & (1 << 7)):
         pass
     else:
-        print("TEST 8 failed!")
+        print("TEST 8 failed! (not implemented yet)")
+    print("Finised, took {0:.2f}s".format(time.time() - start))
 
 
 def Erase():
+    start = time.time()
     print("Erase:")
     ser.write(CMD_ERASE)
     ser.read(8)
-    print("DONE")
+    print("DONE, Took {0:.2f}".format(time.time() - start))
 
 def Help():
     print("May the force be with you\n")

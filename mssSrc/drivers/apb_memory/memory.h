@@ -18,7 +18,7 @@ extern "C" {
 #include "../../drivers/mss_spi/mss_spi.h"
 #include "../../components/telemetry.h"
 #include "MemorySyncAPB.h"
-#include "../../HERMESS.h"
+#include "../../components/HERMESS.h"
 
 #define c_WRDI 0x04
 #define c_READSTATUSREG1 0x05
