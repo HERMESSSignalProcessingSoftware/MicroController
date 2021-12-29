@@ -70,7 +70,7 @@ uint32_t TestMetaWriter(SPI_Values dev) {
     uint32_t pageNumber = 0;
     for (uint32_t i = 1; i <= 64; i++) {
         /* Write value to memory */
-        pageNumber = UpdateMetadata(i, dev);
+        pageNumber = UpdateMetadata(i, 0, dev);
         /* Wait until page is valid */
         writeReady(dev);
         /* Read back the page */

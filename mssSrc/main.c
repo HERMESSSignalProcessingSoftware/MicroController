@@ -131,7 +131,7 @@ int main (void) {
              * Its very unlikely to do that in a about 800s time space
              * */
             if (MemConfig.MetaAddress < START_OF_DATA_SEGMENT) {
-                MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage, MemConfig.MetaAddress, dev);
+                MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage, MemConfig.MetaAddress, metaDevice);
             }
             mssSignals &= ~(MSS_SIGNAL_UPDATE_META);
         }
