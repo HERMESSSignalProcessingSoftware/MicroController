@@ -118,31 +118,28 @@ MemoryConfig Recovery(void) {
     uint32_t *ptr = (uint32_t*)buffer;
     uint32_t nextOneHits = 0;
     uint32_t pageCounter = 0;
-    for (int i = 0; i < 0x200; i++) {
+    for (int i = 0; i < START_OF_DATA_SEGMENT; i++) {
         readPage(buffer, i, dev);
         /* Look at every 4 bytes*/
         for (int j = 0; j < 128; j++) {
             if (ptr[j] == 0xFFFFFFFF) { /* the value before is the last, saved page address*/
-                 uint32_t t = ptr[j];
+                 pageCounter = i;
                  nextOneHits = j - 1;
                  break;
             }
         }
-
         if (nextOneHits != 0) {
             uint32_t value = ptr[nextOneHits];
-            if (value < 0x200) {
+            if (value < START_OF_DATA_SEGMENT) {
                 mC.RecoverySuccess = 0;
             } else {
-                mC.CurrentPage = value + 1;
-                mC.StartPage = value + 1;
-                mC.MetaAddress = pageCounter + nextOneHits + 4;
                 mC.RecoverySuccess = 1;
             }
-
+            mC.CurrentPage = value;
+            mC.StartPage = value;
+            mC.MetaAddress = pageCounter;
             break;
         }
-        pageCounter++;
     }
 
     return mC;
@@ -426,14 +423,14 @@ int readBytes(uint8_t *data, uint32_t address, int count, SPI_Values spi_val) {
     return 0;
 }
 
-uint32_t UpdateMetadata(uint32_t pageAddr, SPI_Values dev) {
+uint32_t UpdateMetadata(uint32_t pageAddr, uint32_t metaAddress, SPI_Values dev) {
     uint8_t buffer[PAGESIZE] = { 0 };
     uint32_t *ptr = (uint32_t*)buffer;
     uint32_t value = 0;
     uint32_t page;
     writeReady(dev);
     /*Iterate over all pages*/
-    for (uint32_t i = 0; i < 0x200; i++) {
+    for (uint32_t i = metaAddress; i < START_OF_DATA_SEGMENT; i++) {
         readPage(buffer, i, dev);
         ptr = (uint32_t*)(buffer ); //Reset the ptr to the start of the buffer
         for (uint32_t index = 0; index < 128;index++) {
@@ -453,6 +450,7 @@ uint32_t UpdateMetadata(uint32_t pageAddr, SPI_Values dev) {
             break;
         }
     }
+    writeReady(dev);
     return page;
 }
 

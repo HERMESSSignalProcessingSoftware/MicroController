@@ -25,9 +25,11 @@ def Read():
     pages = int.from_bytes(rx[1:],"big")
     print("Reading: {} pages...".format(pages))
     for i in range(pages):
-        content = ser.read(512)
+        with open("dump.bin", "ab") as f:
+            content = ser.read(512)
+            f.write(content)
         if (i % 1000 == 0):
-            print("{} von {} (Took {0:.2f}s)".format(i, pages, time.time() - startCont))
+            print("{} von {} (Took {:.2f}s)".format(i, pages, time.time() - startCont))
             startCont = time.time()
     print("Finised readback! Took {0:.2f}s".format(time.time() - start))
 

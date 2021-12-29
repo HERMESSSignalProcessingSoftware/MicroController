@@ -25,7 +25,9 @@
 static volatile uint32_t StatusRegisterLocals = 0x0;
 uint32_t mssSignals = 0;
 
-/*TODO: Update recovery behaviour, its not implemented right. Searching works but we need to rewirte the whole page, so just update the page number
+/*TODO: Update recovery behaviour,
+ * its not implemented right. Searching works but we need to
+ * rewirte the whole page, so just update the page number
  * SAVE it to the system variable*/
 
 int main (void) {
@@ -71,12 +73,12 @@ int main (void) {
     InitMemorySynchronizer(DO_NOT_ERASE, AUTO_START_OFF);
     //FastMemoryTest();
     MemoryConfig MemConfig = Recovery();
-    if (!MemConfig.RecoverySuccess) {
-        MemConfig.StartPage = 0x200;
-        MemConfig.CurrentPage = 0x200;
+    if (MemConfig.RecoverySuccess == 0) {
+        MemConfig.StartPage = START_OF_DATA_SEGMENT;
+        MemConfig.CurrentPage = START_OF_DATA_SEGMENT;
         MemConfig.StartChipSelect = FLASH_CS1;
         MemConfig.CurrentChipSelect = FLASH_CS1;
-        MemConfig.MetaAddress = 0x0;
+        MemConfig.MetaAddress = START_OF_META_SEGMENT;
     }
 
     // initialize the stamps
@@ -128,11 +130,9 @@ int main (void) {
              *
              * Its very unlikely to do that in a about 800s time space
              * */
-            if (MemConfig.MetaAddress < MemConfig.StartPage)
-                Write32Bit(MemConfig.CurrentPage, MemConfig.MetaAddress,
-                        metaDevice);
-
-            MemConfig.MetaAddress += 4;
+            if (MemConfig.MetaAddress < START_OF_DATA_SEGMENT) {
+                MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage, MemConfig.MetaAddress, dev);
+            }
             mssSignals &= ~(MSS_SIGNAL_UPDATE_META);
         }
 
@@ -151,9 +151,11 @@ int main (void) {
             /* Just reset a signal bit */
             mssSignals &= ~(MSS_SIGNAL_SPI_WRITE);
             if (mssSignals & MSS_SIGNAL_WRITE_AND_KILL) {
-                if (MemConfig.MetaAddress < MemConfig.StartPage)
-                    Write32Bit(MemConfig.CurrentPage, MemConfig.MetaAddress,
-                            metaDevice);
+                if (MemConfig.MetaAddress < MemConfig.StartPage) {
+                    /* TODO: implement and test killing behaviour*/
+                }
+                    /*Write32Bit(MemConfig.CurrentPage, MemConfig.MetaAddress,
+                            metaDevice);*/
                 /* Request killing the system */
                 // !!! TODO: Kill system here
             }

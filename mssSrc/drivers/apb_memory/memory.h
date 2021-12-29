@@ -214,7 +214,7 @@ int chipErase(SPI_Values);
  */
 void writeReady(SPI_Values);
 
-/*
+/**
  * Copies the registers Stamp1Shadow1 - Stamp6Shadow2, SR, SR2, Timestamp to the internal memory
  * @param puffer pointer to a memory region of 512 byte
  * @param telFrame pointer to typedef struct for telemetry
@@ -247,11 +247,12 @@ uint32_t testMemory(void);
 
 /**
  *
- * @param pageAddr
- * @param dev
- * @return
+ * @param pageAddr the address to be saved on page 0 - 0x199
+ * @param metaAddress the page  address of the current meta page
+ * @param dev the device to be safed on
+ * @return uint32_t page address of the current page
  */
-uint32_t UpdateMetadata(uint32_t pageAddr, SPI_Values dev);
+uint32_t UpdateMetadata(uint32_t pageAddr, uint32_t metaAddress, SPI_Values dev);
 
 
 
