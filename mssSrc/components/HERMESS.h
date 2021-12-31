@@ -17,7 +17,7 @@ typedef struct {
 
 extern volatile SysConfig_t system;
 
-#define START_OF_DATA_SEGMENT 0x200
-#define START_OF_META_SEGMENT 0x00
+#define START_OF_DATA_SEGMENT 0x200U
+#define START_OF_META_SEGMENT 0x00U
 
 #endif /* COMPONENTS_HERMESS_H_ */

@@ -116,7 +116,7 @@ MemoryConfig Recovery(void) {
     dev.spihandle = &g_mss_spi0;
     dev.CS_Pin = FLASH_CS1;
     uint32_t *ptr = (uint32_t*)buffer;
-    uint32_t nextOneHits = 0;
+    uint32_t indexLastItemOnMemory = 0xFFFFFFFF;
     uint32_t pageCounter = 0;
     for (int i = 0; i < START_OF_DATA_SEGMENT; i++) {
         readPage(buffer, i, dev);
@@ -124,24 +124,34 @@ MemoryConfig Recovery(void) {
         for (int j = 0; j < 128; j++) {
             if (ptr[j] == 0xFFFFFFFF) { /* the value before is the last, saved page address*/
                  pageCounter = i;
-                 nextOneHits = j - 1;
+                 if (j > 0)
+                     indexLastItemOnMemory = j - 1;
+                 else if (j == 0)
+                     indexLastItemOnMemory = j;
                  break;
             }
         }
-        if (nextOneHits != 0) {
-            uint32_t value = ptr[nextOneHits];
-            if (value < START_OF_DATA_SEGMENT) {
+        if (indexLastItemOnMemory != 0xFFFFFFFF) {
+            uint32_t value = ptr[indexLastItemOnMemory];
+            if (value == 0xFFFFFFFF || value < START_OF_DATA_SEGMENT) {
                 mC.RecoverySuccess = 0;
             } else {
                 mC.RecoverySuccess = 1;
             }
-            mC.CurrentPage = value;
-            mC.StartPage = value;
-            mC.MetaAddress = pageCounter;
+            if (value == 0xFFFFFFFF) {
+                mC.CurrentPage = START_OF_DATA_SEGMENT;
+                mC.StartPage = START_OF_DATA_SEGMENT;
+                mC.MetaAddress = START_OF_META_SEGMENT;
+            } else {
+                mC.CurrentPage = value;
+                mC.StartPage = value;
+                mC.MetaAddress = pageCounter;
+            }
             break;
         }
     }
-
+    mC.StartChipSelect = FLASH_CS1;
+    mC.CurrentChipSelect = FLASH_CS1;
     return mC;
 }
 

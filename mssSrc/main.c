@@ -48,7 +48,7 @@ int main (void) {
     MSS_WD_enable_timeout_irq(); // just for debugging using timeouts instead of resets
     if (MSS_WD_timeout_occured()) {
         MSS_WD_clear_timeout_event();
-        spuLog("Watchdog timed out");
+        spuLog("Watchdog timed out\n");
     }
 
     // configure the GPIOs
@@ -73,12 +73,13 @@ int main (void) {
     InitMemorySynchronizer(DO_NOT_ERASE, AUTO_START_OFF);
     //FastMemoryTest();
     MemoryConfig MemConfig = Recovery();
+    /*Should not be happen, recovery shall configure the struct correctly*/
     if (MemConfig.RecoverySuccess == 0) {
         MemConfig.StartPage = START_OF_DATA_SEGMENT;
         MemConfig.CurrentPage = START_OF_DATA_SEGMENT;
+        MemConfig.MetaAddress = START_OF_META_SEGMENT;
         MemConfig.StartChipSelect = FLASH_CS1;
         MemConfig.CurrentChipSelect = FLASH_CS1;
-        MemConfig.MetaAddress = START_OF_META_SEGMENT;
     }
 
     // initialize the stamps
@@ -95,6 +96,8 @@ int main (void) {
     metaDevice.spihandle = &g_mss_spi0;
 
     InitHeartbeat(1000); //heartbeat at 1s
+    spuLog("Textmode test");
+    spuLog("Textmode test\n");
     for (;;) {
         /*Start recording here*/
         if ((mssSignals & MSS_SIGNAL_SODS) | (mssSignals & MSS_SIGNAL_SOE)) {
@@ -222,10 +225,10 @@ void FabricIrq0_IRQHandler(void) {
             mssSignals |= MSS_SIGNAL_SPI_WRITE;
             MemoryPtrWatermark32Bit = 0; /* ! Reset the watermark to prevent a buffer overflow */
 
-        } else if (MemoryInterruptCounter % 33 == 0) {
+        } else if (MemoryInterruptCounter % 40 == 0) {
             mssSignals |= MSS_SIGNAL_TELEMETRY;
 
-        } else if (MemoryInterruptCounter == 67) {
+        } else if (MemoryInterruptCounter >= 1000) {
             mssSignals |= MSS_SIGNAL_UPDATE_META;
             MemoryInterruptCounter = 1;
         }

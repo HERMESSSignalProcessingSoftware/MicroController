@@ -67,6 +67,20 @@ void dapiExecutePendingCommand (void) {
             MSS_UART_polled_tx(&g_mss_uart0, txEndBuffer, 3);
             // answer the request with the response
             } break;
+        case 0x02: { // Read until,
+            uint32_t pagesPerChip = (rxBuff[1] << 24) | (rxBuff[2] << 16) |
+                             (rxBuff[3] << 8)  | (rxBuff[4]);
+            uint8_t answer[] = {0x02, 0xFF, 0xFF, 0xFF, 0xFF, 0x17, 0xF0};
+            MSS_UART_polled_tx(&g_mss_uart0, answer, 7);
+            for (uint32_t i = 0; i < pagesPerChip; i++) {
+                device.CS_Pin = FLASH_CS1;
+                readPage(buffer, 0x200 + i, device);
+                MSS_UART_polled_tx(&g_mss_uart0, buffer, PAGESIZE);
+                device.CS_Pin = FLASH_CS2;
+                readPage(buffer, 0x200 + i, device);
+                MSS_UART_polled_tx(&g_mss_uart0, buffer, PAGESIZE);
+            }
+        } break;
         case 0x20: {
             uint8_t test = (uint8_t)(FastTest(device)) << 1;
             device.CS_Pin = FLASH_CS2;

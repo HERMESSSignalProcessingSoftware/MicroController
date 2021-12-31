@@ -3,6 +3,7 @@
 #include "../drivers/mss_watchdog/mss_watchdog.h"
 #include "../status.h"
 #include "../../drivers/apb_memory/memory.h"
+#include <string.h>
 
 static volatile uint32_t delayCompleted = 0;
 static volatile uint32_t delayCounter = 0;
@@ -82,6 +83,17 @@ uint32_t TestMetaWriter(SPI_Values dev) {
         ResetBuffer(buffer, 0, PAGESIZE);
     }
     return result;
+
+}
+
+void spuLogStampMismatch(uint32_t stampid, uint32_t sgrId) {
+    uint8_t outputBuffer[64] = { 0 };
+    if (sgrId > 2) {
+        sprintf(outputBuffer, "STAMP %d TEMP mismatch\n", stampid);
+    } else {
+        sprintf(outputBuffer, "STAMP %d SGR %d Mismatch\n", stampid, sgrId);
+    }
+    spuLog(outputBuffer);
 
 }
 

@@ -109,7 +109,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
             readConf = APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE);
             if (readConf != sgrConf) {
                 configflags = 1;
-                 spuLog("SGR1 configuration mismatch!");
+                 spuLogStampMismatch(i, 1);
             }
         } while (readConf != sgrConf && confTrials < 3);
         confTrials = 0;
@@ -127,7 +127,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
             readConf = APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE);
             if (readConf != sgrConf) {
                 configflags = 1;
-                spuLog("SGR2 configuration mismatch!");
+                spuLogStampMismatch(i, 2);
             }
         } while (readConf != sgrConf && confTrials < 3);
 
@@ -171,7 +171,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
             readTempConf = APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE)
                     ^ 0x0A00U;
             if (readTempConf) {
-                spuLog("TEMP configuration mismatch!");
+                spuLogStampMismatch(i, 3);
                 continue;
             }
             APB_STAMP_writeAdc(&stamps[i],
@@ -196,7 +196,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
                     & 0x0FFFU) ^ 0x0603U);
             if (readTempConf) {
                 configflags = 1;
-                spuLog("TEMP configuration mismatch!");
+                spuLogStampMismatch(i, 3);
             }
         } while (readTempConf && confTrials < 3);
         //TODO: Fix problem with the inner VHDL waiting. Remove this shit and make it break able
@@ -208,9 +208,6 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
         }
         //check stamp4
         if (configflags == 0) {
-            if (i == 4) {
-                statusReg = HW_get_32bit_reg(stamps[i].baseAddr | STAMP_REG_READ_TMPSR);
-            }
             delay(1000);
             // run offset calibration
             APB_STAMP_writeAdc(&stamps[i],

@@ -25,10 +25,17 @@ extern "C" {
  */
 void delay (uint32_t ms);
 
+/**
+ * Creates a string with the stamp id and the sgr id for the mismatched ADS
+ * Note: sgrID = 3 -> Temp
+ * @param stampid
+ * @param sgrId
+ */
+void spuLogStampMismatch(uint32_t stampid, uint32_t sgrId);
 
 /**
  * !!! Currently only logs to DAPI. This is not the intended future behavior.
- *
+ * So what is the intended behaviour? We do not have enough space on memory
  * @param message
  * Null-terminated ASCII string
  */

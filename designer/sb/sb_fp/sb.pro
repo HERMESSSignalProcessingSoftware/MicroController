@@ -17,7 +17,7 @@
     <ProgrammingInterface>
         JTAGMode
     </ProgrammingInterface>
-    <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="usb1.1">
+    <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="UndefConn">
         <name>
             E2005KXNA3
         </name>
