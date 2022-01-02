@@ -25,13 +25,10 @@
 static volatile uint32_t StatusRegisterLocals = 0x0;
 uint32_t mssSignals = 0;
 
-/*TODO: Update recovery behaviour,
- * its not implemented right. Searching works but we need to
- * rewirte the whole page, so just update the page number
- * SAVE it to the system variable*/
+/*TODO:
+ * Add Recovery behaviour after erase*/
 
 int main (void) {
-    uint32_t csr = 0;
     uint32_t telemetryCounter = 0;
     uint8_t *telemetryFramePtr = (uint8_t*)(&telemetryFrame);
     // Initialize driver components
@@ -139,9 +136,17 @@ int main (void) {
             mssSignals &= ~(MSS_SIGNAL_UPDATE_META);
         }
 
+        if (mssSignals & MSS_MEMORY_ERASE) {
+            MemConfig.CurrentChipSelect = FLASH_CS1;
+            MemConfig.CurrentPage = 0x200;
+            device.CS_Pin = FLASH_CS1;
+            mssSignals &= ~(MSS_MEMORY_ERASE);
+        }
+        /*TODO: Take a look at the reading buffer, the writing buffer. Things on the memoryptr buffer do not apper on the dump file. Why*/
         /*Write data to device*/
         if ((mssSignals & MSS_SIGNAL_SPI_WRITE)
                 || (mssSignals & MSS_SIGNAL_WRITE_AND_KILL)) {
+            writeReady(device);
             writePage(MemoryPtr, MemConfig.CurrentPage, device);
             if (MemConfig.CurrentChipSelect == FLASH_CS2) {
                 MemConfig.CurrentPage++;
@@ -151,6 +156,7 @@ int main (void) {
                 MemConfig.CurrentChipSelect = FLASH_CS2;
                 device.CS_Pin = FLASH_CS2;
             }
+
             /* Just reset a signal bit */
             mssSignals &= ~(MSS_SIGNAL_SPI_WRITE);
             if (mssSignals & MSS_SIGNAL_WRITE_AND_KILL) {

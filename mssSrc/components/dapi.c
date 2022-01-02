@@ -71,7 +71,6 @@ void dapiExecutePendingCommand (void) {
             uint32_t pagesPerChip = (rxBuff[1] << 24) | (rxBuff[2] << 16) |
                              (rxBuff[3] << 8)  | (rxBuff[4]);
             uint8_t answer[] = {0x02, 0xFF, 0xFF, 0xFF, 0xFF, 0x17, 0xF0};
-            MSS_UART_polled_tx(&g_mss_uart0, answer, 7);
             for (uint32_t i = 0; i < pagesPerChip; i++) {
                 device.CS_Pin = FLASH_CS1;
                 readPage(buffer, 0x200 + i, device);
@@ -80,6 +79,7 @@ void dapiExecutePendingCommand (void) {
                 readPage(buffer, 0x200 + i, device);
                 MSS_UART_polled_tx(&g_mss_uart0, buffer, PAGESIZE);
             }
+            MSS_UART_polled_tx(&g_mss_uart0, answer, 7);
         } break;
         case 0x20: {
             uint8_t test = (uint8_t)(FastTest(device)) << 1;
@@ -118,6 +118,7 @@ void dapiExecutePendingCommand (void) {
             chipErase(device);
             uint8_t txBuff[] = {0xAA, 0x00, 0x00, 0x00, 0x00, 0x0F, 0x17, 0xF0};
             MSS_UART_polled_tx(&g_mss_uart0, txBuff, 8);
+            mssSignals |= MSS_MEMORY_ERASE;
             } break;
 
         default: {

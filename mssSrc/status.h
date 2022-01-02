@@ -36,6 +36,7 @@ extern "C" {
 #define MSS_SIGNAL_LO_RESET         (1 << 9)
 /*DAPI signals */
 #define MSS_SIGNAL_DAPI_CMD         (1 << 15)
+#define MSS_MEMORY_ERASE            (1 << 16)
 
 #define MSS_SIGNAL_WRITE_AND_KILL   (1 << 20)
 

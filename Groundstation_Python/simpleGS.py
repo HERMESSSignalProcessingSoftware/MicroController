@@ -2,13 +2,32 @@ import serial
 import time 
 import signal
 from ctypes import *
+import os 
 
 DEFAULT_COM = "COM4"
 DEFAULT_BAUD = 115200
+conntected = False 
 
-ser = serial.Serial(DEFAULT_COM, DEFAULT_BAUD, timeout = 1)
-ser.close()
-ser.open()
+def Connect(port, baud, timeout = None):
+    ser = None
+    if (timeout == None):
+        try:
+            ser = serial.Serial(port, baud)
+            ser.close()
+            ser.open()
+        except Exception as e:
+            print(e)
+    else:
+        try:
+            ser = serial.Serial(port, baud, timeout = timeout)
+            ser.close()
+            ser.open()
+        except Exception as e:
+            print(e)
+    return ser 
+
+ser = Connect(DEFAULT_COM, DEFAULT_BAUD, timeout = 1)
+    
 run = True 
 textModeRun = True 
 
@@ -37,7 +56,9 @@ cmds = {"Read": "Read the complet memory",
         "text": "Reads serial line",
         "textmode": "Reads serial line",
         "flush": "Resets serial RX buffer",
-        "read until": "Read until a page number is reached"}
+        "read until": "Read until a page number is reached",
+        "resetfiles": "Removes the memory dump file (dump.bin)",
+        "conntect": "Conntect to the default COM on default BAUD"}
 
 
 CMD_ERASE       = b"\xAA\x00\x17\xF0"
@@ -157,7 +178,10 @@ def Help():
 def Print():
     pass 
 
-
+def Disconnect(ser):
+    ser.close()
+    print("Disconnected!")
+    return None
 
 def Meta(quite = False ):
     if (quite == False):
@@ -187,6 +211,8 @@ def TestMemory():
 
 def ReadUntil(pages):
     global ser 
+    ser.close()
+    ser = Connect(DEFAULT_COM, DEFAULT_BAUD)
     pages = pages - 0x200
     b = pages.to_bytes(4, byteorder='big')
     ser.write(CMD_READ_UNTIL)
@@ -195,50 +221,62 @@ def ReadUntil(pages):
     content = b''
     print("Starting Download!")
     start = time.time()
-    rx = ser.read(7) # ignore the default answer.
-    ser.close()
-    ser = serial.Serial(DEFAULT_COM, DEFAULT_BAUD) # open again without timeout
-    ser.close()
-    ser.open()
     for i in range(pages):
         content = ser.read(1024)
         with open("dump.bin", "ab") as f:
             f.write(content)
             f.close()
-    print("Finished! {:.2}s".format(time.time() - start))
+    rx = ser.read(7) # ignore the default answer.
+    print("Finished! {:.2f}s".format(time.time() - start))
+    ser.close()
+    ser = Connect(DEFAULT_COM, DEFAULT_BAUD, timeout=1)
 
 while (run == True ):
-    ser.flush()
     readInput = input("Enter CMD: (help for all commands) ").lower()
-    if (readInput == "read"):
-        Read()
-    elif (readInput in ["readu", "ru", "read until"]):
-        rInput = input("Page Addr? (number(hex) or auto) ")
-        endPage = 0
-        if (rInput == "auto"):
-            endPage = Meta(quite = True)
+    if (ser != None and ser.isOpen() == True):
+        ser.flush()
+        if (readInput == "read"):
+            Read()
+        elif (readInput in ["readu", "ru", "read until"]):
+            rInput = input("Page Addr? (number(hex) or auto) ")
+            endPage = 0
+            if (rInput == "auto"):
+                endPage = Meta(quite = True)
+            else:
+                endPage = int(rInput, 16)
+            ReadUntil(endPage)
+        elif (readInput == "erase"):
+            Erase()
+        elif (readInput == "testmemory"):
+            TestMemory()
+        elif (readInput in ["exit", "terminate", "halt"]):
+            run = False
+        elif (readInput == "meta"):
+            Meta(quite = False)
+        elif (readInput == "test"):
+            Test()
+        elif (readInput == "flush"):
+            FlushAndEval()
+            ser.reset_input_buffer()
+        elif (readInput in ["text", "textmode"]):
+            TextMode()
+        elif (readInput == "print"):
+            Print()
+        elif (readInput == "resetfiles"):
+            if os.path.exists("./dump.bin"):
+                os.remove("./dump.bin")
+            print("Removed dump!")
+        elif (readInput == "connecet"):
+            pass 
+        elif (readInput == "disconnect"):
+            ser = Disconnect(ser)
         else:
-            endPage = int(rInput, 16)
-        ReadUntil(endPage)
-    elif (readInput == "erase"):
-        Erase()
-    elif (readInput == "testmemory"):
-        TestMemory()
-    elif (readInput in ["exit", "terminate", "halt"]):
-        run = False
-    elif (readInput == "meta"):
-        Meta( quite = False)
-    elif (readInput == "test"):
-        Test()
-    elif (readInput == "flush"):
-        FlushAndEval()
-        ser.reset_input_buffer()
-    elif (readInput in ["text", "textmode"]):
-        TextMode()
-    elif (readInput == "print"):
-        Print()
+            Help()
     else:
-        Help()
+        if (readInput == "connect"):
+            ser = Connect(DEFAULT_COM, DEFAULT_BAUD, timeout= 1)
+        elif (readInput == "disconnect"):
+            ser = Disconnect(ser)
 
 print("FINISHED APPLICATION")
 ser.close()

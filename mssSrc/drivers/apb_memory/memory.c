@@ -26,12 +26,12 @@ uint8_t MemoryPtr[PAGESIZE];
  */
 uint32_t MemoryPtrWatermark32Bit = 0x0;
 
-/*
+/**
  * The number of interrupts is an indicator for the frame, transmitted by telemetry
  */
 uint32_t MemoryInterruptCounter = 0x0;
 
-/*
+/**
  * Continuous counts the datasets of the SPU starting with 0 on STARTPAGE at nCSx with x defined by the user
  */
 uint32_t MemoryDatasetCounter = 0x0;
@@ -80,7 +80,7 @@ void InitMemorySynchronizer(uint32_t Erase, uint32_t start) {
 
     /* Setup the memory */
 
-    for (int i = 0; i < PAGESIZE; i++) {
+    for (uint32_t i = 0; i < PAGESIZE; i++) {
         MemoryPtr[i] = 0;
     }
 
@@ -118,10 +118,10 @@ MemoryConfig Recovery(void) {
     uint32_t *ptr = (uint32_t*)buffer;
     uint32_t indexLastItemOnMemory = 0xFFFFFFFF;
     uint32_t pageCounter = 0;
-    for (int i = 0; i < START_OF_DATA_SEGMENT; i++) {
+    for (uint32_t i = 0; i < START_OF_DATA_SEGMENT; i++) {
         readPage(buffer, i, dev);
         /* Look at every 4 bytes*/
-        for (int j = 0; j < 128; j++) {
+        for (uint32_t j = 0; j < 128; j++) {
             if (ptr[j] == 0xFFFFFFFF) { /* the value before is the last, saved page address*/
                  pageCounter = i;
                  if (j > 0)
@@ -204,7 +204,7 @@ uint32_t FastTest(SPI_Values spi_val) {
     uint32_t adresse = 1;
     volatile uint8_t SR1;
     //Testdaten initialisieren
-    for (int i = 0; i < PAGESIZE; i++) {
+    for (uint32_t i = 0; i < PAGESIZE; i++) {
         writeBuffer[i] = i;
     }
 
@@ -283,7 +283,6 @@ int writeByte(uint8_t data, SPI_Values spi_val) {
  * @return 0: ok
  */
 int writePage(uint8_t *data, uint32_t address, SPI_Values spi_val) {
-    uint8_t recBuffer[PAGESIZE] = { 0 };
     uint8_t command = c_WRITEPAGE;
     uint8_t tmp_add;
 
@@ -311,7 +310,7 @@ int writePage(uint8_t *data, uint32_t address, SPI_Values spi_val) {
     tmp_add = (uint8_t) (address & 0x000000FF);
     MSS_SPI_transfer_frame(&g_mss_spi0, tmp_add);
     //Daten schicken
-    for (int i = 0; i < PAGESIZE; i++) {
+    for (uint32_t i = 0; i < PAGESIZE; i++) {
         MSS_SPI_transfer_frame(&g_mss_spi0, data[i]);
 
     }
@@ -368,7 +367,7 @@ int readPage(uint8_t *data, uint32_t address, SPI_Values spi_val) {
     MSS_SPI_transfer_frame(&g_mss_spi0, tmp_add);
 
 //Daten lesen+
-    for (int i = 0; i < PAGESIZE; i++) {
+    for (uint32_t i = 0; i < PAGESIZE; i++) {
         data[i] = MSS_SPI_transfer_frame(&g_mss_spi0,  0x00);
     }
 
@@ -423,7 +422,7 @@ int readBytes(uint8_t *data, uint32_t address, int count, SPI_Values spi_val) {
     MSS_SPI_transfer_frame(&g_mss_spi0, tmp_add);
 
     //Daten lesen
-    for (int i = 0; i < count; i++) {
+    for (uint32_t i = 0; i < count; i++) {
         data[i] = MSS_SPI_transfer_frame(&g_mss_spi0, 0x00);
     }
 
@@ -545,7 +544,7 @@ void Write32Bit(uint32_t value, uint32_t address, SPI_Values device) {
     MSS_SPI_transfer_frame(device.spihandle, tmp_add);
 
     uint8_t *ptr= (uint8_t*)&value;
-    for (int i = 0; i < 4; i++) {
+    for (uint32_t i = 0; i < 4; i++) {
         MSS_SPI_transfer_frame(device.spihandle,ptr[i]);
     }
 
@@ -588,7 +587,7 @@ void WriteBytes(uint8_t *data, uint32_t size, uint32_t address,
         tmp_add = (uint8_t) (address & 0x000000FF);
         MSS_SPI_transfer_frame(device.spihandle, tmp_add);
 
-        for (int i = 0; i < size; i++) {
+        for (uint32_t i = 0; i < size; i++) {
             MSS_SPI_transfer_frame(device.spihandle, data[i]);
 
         }
