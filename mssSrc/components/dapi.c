@@ -30,7 +30,7 @@ static void dapiUartRxHandler (mss_uart_instance_t *this_uart) {
 
 
 void dapiInit (void) {
-    MSS_UART_init(&g_mss_uart0, MSS_UART_115200_BAUD,
+    MSS_UART_init(&g_mss_uart0, MSS_UART_921600_BAUD,
             MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
     MSS_UART_set_tx_endian(&g_mss_uart0, MSS_UART_LITTLEEND);
     MSS_UART_set_rx_handler(&g_mss_uart0, dapiUartRxHandler,

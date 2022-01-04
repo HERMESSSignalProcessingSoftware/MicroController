@@ -5,7 +5,7 @@ from ctypes import *
 import os 
 
 DEFAULT_COM = "COM4"
-DEFAULT_BAUD = 115200
+DEFAULT_BAUD = 921600
 conntected = False 
 
 def Connect(port, baud, timeout = None):

@@ -26,7 +26,10 @@ static volatile uint32_t StatusRegisterLocals = 0x0;
 uint32_t mssSignals = 0;
 
 /*TODO:
- * Add Recovery behaviour after erase*/
+ * Fix 32 bit writing, byte order messed up!
+ * Fix writing of data to memory, messed up addressing!
+ *
+ * */
 
 int main (void) {
     uint32_t telemetryCounter = 0;
@@ -93,8 +96,33 @@ int main (void) {
     metaDevice.spihandle = &g_mss_spi0;
 
     InitHeartbeat(1000); //heartbeat at 1s
-    spuLog("Textmode test");
-    spuLog("Textmode test\n");
+    spuLog("Init DONE!\n");
+    /**
+     * Lessons Learned:
+     * Addressing "pages" with address shifted by 9 bit
+     * (512 byte per page == Programming buffer by the Cypress device)
+     * 8 bit shift possible, just think about the page increasement by two each step
+     *
+     * Data will be stored in an other byte order
+     */
+    uint32_t val = 0xFF12FF34;
+    uint32_t *ptr = (uint32_t*)MemoryPtr;
+    Write32Bit(val, 0x00, metaDevice);
+    Write32Bit(val, 0x04, metaDevice);
+    Write32Bit(val, 0x0C, metaDevice);
+    Write32Bit(val, 0x100, metaDevice);
+    Write32Bit(val, 0x108, metaDevice);
+    readPage(MemoryPtr, 0x00, metaDevice);
+    for (uint32_t i = 0; i < 128; i++) {
+        uint32_t value = ptr[i];
+        if (value != 0xFF12FF34) {
+            spuLog("Error During readback!\n");
+        }
+    }
+    readPage(MemoryPtr, 0x01, metaDevice);
+    readPage(MemoryPtr, 0x02, metaDevice);
+    readPage(MemoryPtr, 0x100, metaDevice);
+    readPage(MemoryPtr, 0x200, metaDevice);
     for (;;) {
         /*Start recording here*/
         if ((mssSignals & MSS_SIGNAL_SODS) | (mssSignals & MSS_SIGNAL_SOE)) {
@@ -131,6 +159,7 @@ int main (void) {
              * Its very unlikely to do that in a about 800s time space
              * */
             if (MemConfig.MetaAddress < START_OF_DATA_SEGMENT) {
+                writeReady(metaDevice);
                 MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage, MemConfig.MetaAddress, metaDevice);
             }
             mssSignals &= ~(MSS_SIGNAL_UPDATE_META);
@@ -276,6 +305,7 @@ void GPIO_HANDLER(IN_RXSM_LO) (void) {
 void GPIO_HANDLER(IN_RXSM_SODS) (void) {
     if (MSS_GPIO_get_inputs() & (1 << IN_RXSM_SODS)) {
         mssSignals |= MSS_SIGNAL_SODS_RESET;
+        mssSignals |= MSS_SIGNAL_UPDATE_META;
     } else {
         mssSignals |= MSS_SIGNAL_SODS;
     }
@@ -290,6 +320,7 @@ void GPIO_HANDLER(IN_RXSM_SODS) (void) {
 void GPIO_HANDLER(IN_RXSM_SOE) (void) {
     if (MSS_GPIO_get_inputs() & (1 << IN_RXSM_SOE)) {
         mssSignals |= MSS_SIGNAL_SOE_RESET;
+        mssSignals |= MSS_SIGNAL_UPDATE_META;
     } else {
         mssSignals |= MSS_SIGNAL_SOE;
     }

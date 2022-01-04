@@ -51,7 +51,7 @@ void InitMemorySynchronizer(uint32_t Erase, uint32_t start) {
     /* Do the SPI init */
     MSS_SPI_init(&g_mss_spi0);
     MSS_SPI_configure_master_mode(&g_mss_spi0, MSS_SPI_SLAVE_0, MSS_SPI_MODE0,
-            16u, MSS_SPI_BLOCK_TRANSFER_FRAME_SIZE);
+            2u, MSS_SPI_BLOCK_TRANSFER_FRAME_SIZE);
     /* Do set the nCSx signals to high */
     MSS_GPIO_set_output(FLASH_CS1, 1);
     MSS_GPIO_set_output(FLASH_CS2, 1);
@@ -436,8 +436,8 @@ uint32_t UpdateMetadata(uint32_t pageAddr, uint32_t metaAddress, SPI_Values dev)
     uint8_t buffer[PAGESIZE] = { 0 };
     uint32_t *ptr = (uint32_t*)buffer;
     uint32_t value = 0;
+    uint32_t offset = 0;
     uint32_t page;
-    writeReady(dev);
     /*Iterate over all pages*/
     for (uint32_t i = metaAddress; i < START_OF_DATA_SEGMENT; i++) {
         readPage(buffer, i, dev);
@@ -445,6 +445,7 @@ uint32_t UpdateMetadata(uint32_t pageAddr, uint32_t metaAddress, SPI_Values dev)
         for (uint32_t index = 0; index < 128;index++) {
             value = *(ptr);
             if (value == 0xFFFFFFFF) {
+                offset = index;
                 //system.metaAddressOffset = index;
                 break;
             } else {
@@ -454,7 +455,8 @@ uint32_t UpdateMetadata(uint32_t pageAddr, uint32_t metaAddress, SPI_Values dev)
         }
         if (value == 0xFFFFFFFF) {
             *ptr = pageAddr; //Pointer was added due to search function implemented above, remove one
-            writePage(buffer, i, dev);
+            Write32Bit(pageAddr, i + offset , dev);
+            //writePage(buffer, i, dev);
             page = i;
             break;
         }
@@ -545,21 +547,9 @@ void Write32Bit(uint32_t value, uint32_t address, SPI_Values device) {
 
     uint8_t *ptr= (uint8_t*)&value;
     for (uint32_t i = 0; i < 4; i++) {
-        MSS_SPI_transfer_frame(device.spihandle,ptr[i]);
+        MSS_SPI_transfer_frame(device.spihandle, ptr[i]);
     }
 
-// /* Transmit the value MSB to LSB*/
-//    tmp_add = (uint8_t) ((value >> 24) & 0x000000FF);
-//    MSS_SPI_transfer_frame(device.spihandle, tmp_add);
-//
-//    tmp_add = (uint8_t) ((value >> 16) & 0x000000FF);
-//    MSS_SPI_transfer_frame(device.spihandle, tmp_add);
-//
-//    tmp_add = (uint8_t) ((value >> 8) & 0x000000FF);
-//    MSS_SPI_transfer_frame(device.spihandle, tmp_add);
-//
-//    tmp_add = (uint8_t) (value & 0x000000FF);
-//    MSS_SPI_transfer_frame(device.spihandle, tmp_add);
     MSS_GPIO_set_output(device.CS_Pin, 1);
     //Write disable
     writeByte(c_WRDI, device);
