@@ -118,6 +118,7 @@ int main (void) {
         /* Ignored LO signal does nothing */
         if (mssSignals & MSS_SIGNAL_LO) {
             StatusRegisterLocals |= (MSS_SIGNAL_LO);
+            mssSignals &= ~(MSS_SIGNAL_LO);
         }
 //
         /*Write Meta data to FLASH_CS1 connected device*/
@@ -136,7 +137,8 @@ int main (void) {
 
         if (mssSignals & MSS_MEMORY_ERASE) {
             MemConfig.CurrentChipSelect = FLASH_CS1;
-            MemConfig.CurrentPage = 0x200;
+            MemConfig.CurrentPage = START_OF_DATA_SEGMENT;
+            MemConfig.StartPage = START_OF_DATA_SEGMENT;
             device.CS_Pin = FLASH_CS1;
             mssSignals &= ~(MSS_MEMORY_ERASE);
         }

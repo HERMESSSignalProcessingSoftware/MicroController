@@ -8,6 +8,7 @@ extern "C" {
 #include "../drivers/apb_memory/memory.h"
 #include "HERMESS.h"
 #include "tools.h"
+#include "../drivers/mss_watchdog/mss_watchdog.h"
 
 #define DAPI_RX_BUFF_SIZE 64
 
@@ -58,11 +59,12 @@ void dapiExecutePendingCommand (void) {
             //!!! TODO: Determine maximal page count before writing everything to serial interface
             for (int address = 0x200; address < PAGE_COUNT; address++) {
                 device.CS_Pin = FLASH_CS1;
-                readPage(buffer, address, device);
+                readPage(buffer, PAGEADDR(address), device);
                 MSS_UART_polled_tx(&g_mss_uart0, buffer, PAGESIZE);
                 device.CS_Pin = FLASH_CS2;
-                readPage(buffer, address, device);
+                readPage(buffer, PAGEADDR(address), device);
                 MSS_UART_polled_tx(&g_mss_uart0, buffer, PAGESIZE);
+                MSS_WD_reload();
             }
             MSS_UART_polled_tx(&g_mss_uart0, txEndBuffer, 3);
             // answer the request with the response
@@ -73,11 +75,12 @@ void dapiExecutePendingCommand (void) {
             uint8_t answer[] = {0x02, 0xFF, 0xFF, 0xFF, 0xFF, 0x17, 0xF0};
             for (uint32_t i = 0; i < pagesPerChip; i++) {
                 device.CS_Pin = FLASH_CS1;
-                readPage(buffer, 0x200 + i, device);
+                readPage(buffer, PAGEADDR(0x200 + i), device);
                 MSS_UART_polled_tx(&g_mss_uart0, buffer, PAGESIZE);
                 device.CS_Pin = FLASH_CS2;
-                readPage(buffer, 0x200 + i, device);
+                readPage(buffer, PAGEADDR(0x200 + i), device);
                 MSS_UART_polled_tx(&g_mss_uart0, buffer, PAGESIZE);
+                MSS_WD_reload();
             }
             MSS_UART_polled_tx(&g_mss_uart0, answer, 7);
         } break;

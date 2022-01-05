@@ -4,6 +4,8 @@
 #include "../status.h"
 #include "../../drivers/apb_memory/memory.h"
 #include <string.h>
+#include <stdio.h>
+#include "tools.h"
 
 static volatile uint32_t delayCompleted = 0;
 static volatile uint32_t delayCounter = 0;

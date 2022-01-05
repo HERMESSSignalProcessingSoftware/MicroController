@@ -99,7 +99,7 @@
                                 								
                                 <option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.other.1610083363" name="Other compiler flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.other" useByScannerDiscovery="true" value="--specs=cmsis.specs" valueType="string"/>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths.406314492" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths" useByScannerDiscovery="true" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths.406314492" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths" useByScannerDiscovery="true" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/hal/CortexM3/GNU}&quot;"/>
                                     									
@@ -257,6 +257,8 @@
                             							
                             <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm.1608203809" name="Remove command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm" value="rm" valueType="string"/>
                             							
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.id.308274145" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.id" value="1287942917" valueType="string"/>
+                            							
                             <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform.304160453" isAbstract="false" osList="all" superClass="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform"/>
                             							
                             <builder buildPath="${workspace_loc:/HERMESS_MSS2}/Release" id="ilg.gnuarmeclipse.managedbuild.cross.builder.1484270004" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="ilg.gnuarmeclipse.managedbuild.cross.builder"/>
@@ -271,6 +273,16 @@
                             							
                             <tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.746185135" name="GNU ARM Cross C Compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler">
                                 								
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.other.1427830408" name="Other compiler flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.other" useByScannerDiscovery="true" value="--specs=cmsis.specs" valueType="string"/>
+                                								
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths.907273535" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths" useByScannerDiscovery="true" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/hal/CortexM3/GNU}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/hal/CortexM3}&quot;"/>
+                                    								
+                                </option>
+                                								
                                 <inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.1001563322" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input"/>
                                 							
                             </tool>
@@ -280,6 +292,14 @@
                             <tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.349028834" name="GNU ARM Cross C Linker" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker">
                                 								
                                 <option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections.581092454" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections" value="true" valueType="boolean"/>
+                                								
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.usenewlibnano.1916557875" name="Use newlib-nano (--specs=nano.specs)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.usenewlibnano" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                								
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.scriptfile.653819058" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.scriptfile" useByScannerDiscovery="false" valueType="stringList">
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS/startup_gcc/production-smartfusion2-execute-in-place.ld}&quot;"/>
+                                    								
+                                </option>
                                 								
                                 <inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.input.1056588740" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.input">
                                     									
@@ -361,7 +381,21 @@
     	
     <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
     	
-    <storageModule moduleId="refreshScope"/>
+    <storageModule moduleId="refreshScope" versionNumber="2">
+        		
+        <configuration configurationName="Debug">
+            			
+            <resource resourceType="PROJECT" workspacePath="/HERMESS-MSS"/>
+            		
+        </configuration>
+        		
+        <configuration configurationName="Release">
+            			
+            <resource resourceType="PROJECT" workspacePath="/HERMESS-MSS"/>
+            		
+        </configuration>
+        	
+    </storageModule>
     	
     <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
     

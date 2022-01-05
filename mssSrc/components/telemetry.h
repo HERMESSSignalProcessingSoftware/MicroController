@@ -27,8 +27,6 @@ extern "C" {
 
 typedef struct {
     uint32_t timestamp;
-    uint32_t statusReg1;
-    uint32_t statusReg2;
     uint32_t stamp11;
     uint32_t stamp12;
     uint32_t stamp21;
@@ -41,6 +39,8 @@ typedef struct {
     uint32_t stamp52;
     uint32_t stamp61;
     uint32_t stamp62;
+    uint32_t statusReg1;
+    uint32_t statusReg2;
 }Telemmetry_t;
 
 extern Telemmetry_t telemetryFrame;

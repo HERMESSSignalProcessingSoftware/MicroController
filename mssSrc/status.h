@@ -27,10 +27,13 @@ extern "C" {
 #define MSS_SIGNAL_UPDATE_META      (1 << 2)
 /*Living indicator*/
 #define TIM2_HEARTBEAT_SIGNAL       (1 << 3)
-/*RXSM signals*/
-#define MSS_SIGNAL_SODS             (1 << 4)
-#define MSS_SIGNAL_SOE              (1 << 5)
-#define MSS_SIGNAL_LO               (1 << 6)
+/*RXSM signals
+ * do not change shifting, it will be ored with  the status reg of the synchronizer
+ * */
+#define MSS_SIGNAL_SODS             (1 << 27)
+#define MSS_SIGNAL_SOE              (1 << 26)
+#define MSS_SIGNAL_LO               (1 << 29)
+
 #define MSS_SIGNAL_SODS_RESET       (1 << 7)
 #define MSS_SIGNAL_SOE_RESET        (1 << 8)
 #define MSS_SIGNAL_LO_RESET         (1 << 9)

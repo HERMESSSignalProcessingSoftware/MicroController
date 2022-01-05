@@ -279,10 +279,31 @@ while (run == True ):
             ser = Disconnect(ser)
         elif (readInput in  ["exti", "terminate", "close"]):
             run = False
-            
+
         
 
 print("FINISHED APPLICATION")
 ser.close()
 
 
+#signal SynchStatusReg           : std_logic_vector(31 downto 0);
+#    --     31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0
+#    --	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+#	--  |PS|PR|U |AE|  |  |O6|O5|O4|O3|O2|O1|RE|RE|RE|RE|RE|RE|RE|RE|R6|R5|R4|R3|R2|R1|M6|M5|M4|M3|M2|M1|
+#	--  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+#    -- M1 - M6: Bitmask for every stamp which has not provied a newAvails signal
+#    -- R1 - R6: Bitmask for every stamp which is requesting a Resync 
+#    -- RE: 8 bit counter: the number of ResyncEvents 
+#    -- O1 - O6: StatusReg2 overflow marker. Means that the difference to the timestamp register is bigger than the size of 5 bits
+#    -- AE: APB Error Address not known
+#    -- U: Unused
+#    -- PR: Pending Reading Interrupt
+#    -- PS: Pending Synchronizer Interrupt
+#    -- Timer and Prescaler
+#    signal SynchStatusReg2          : std_logic_vector(31 downto 0);
+#    --     31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0
+#    --	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+#	--  |U |U |S6|S6|S6|S6|S6|S5|S5|S5|S5|S5|S4|S4|S4|S4|S4|S3|S3|S3|S3|S3|S2|S2|S2|S2|S2|S1|S1|S1|S1|S1|
+#	--  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+#    -- U: Unused 
+#    -- S1 5 bit counter; relative distance to the Timestamp value
