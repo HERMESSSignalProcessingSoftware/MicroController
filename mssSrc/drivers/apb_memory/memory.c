@@ -19,7 +19,7 @@
  * Creating a pointer to save the data internally and than process SPI actions
  *
  * */
-uint8_t MemoryPtr[PAGESIZE];
+uint8_t MemoryPtr[PAGESIZE] = { 0 };
 
 /**
  * The numer of used bytes in the memory area referred by MemoryPtr
@@ -51,7 +51,7 @@ void InitMemorySynchronizer(uint32_t Erase, uint32_t start) {
     /* Do the SPI init */
     MSS_SPI_init(&g_mss_spi0);
     MSS_SPI_configure_master_mode(&g_mss_spi0, MSS_SPI_SLAVE_0, MSS_SPI_MODE0,
-            2u, MSS_SPI_BLOCK_TRANSFER_FRAME_SIZE);
+            4u, MSS_SPI_BLOCK_TRANSFER_FRAME_SIZE);
     /* Do set the nCSx signals to high */
     MSS_GPIO_set_output(FLASH_CS1, 1);
     MSS_GPIO_set_output(FLASH_CS2, 1);
@@ -119,7 +119,7 @@ MemoryConfig Recovery(void) {
     uint32_t indexLastItemOnMemory = 0xFFFFFFFF;
     uint32_t pageCounter = 0;
     for (uint32_t i = 0; i < START_OF_DATA_SEGMENT; i++) {
-        readPage(buffer, i, dev);
+        readPage(buffer, PAGEADDR(i), dev);
         /* Look at every 4 bytes*/
         for (uint32_t j = 0; j < 128; j++) {
             if (ptr[j] == 0xFFFFFFFF) { /* the value before is the last, saved page address*/
@@ -285,7 +285,7 @@ int writeByte(uint8_t data, SPI_Values spi_val) {
 int writePage(uint8_t *data, uint32_t address, SPI_Values spi_val) {
     uint8_t command = c_WRITEPAGE;
     uint8_t tmp_add;
-
+    uint32_t i = 0;
 //Write enable
     writeByte(c_WREN, spi_val);
 
@@ -310,7 +310,7 @@ int writePage(uint8_t *data, uint32_t address, SPI_Values spi_val) {
     tmp_add = (uint8_t) (address & 0x000000FF);
     MSS_SPI_transfer_frame(&g_mss_spi0, tmp_add);
     //Daten schicken
-    for (uint32_t i = 0; i < PAGESIZE; i++) {
+    for (i = 0; i < PAGESIZE; i++) {
         MSS_SPI_transfer_frame(&g_mss_spi0, data[i]);
 
     }
@@ -319,7 +319,7 @@ int writePage(uint8_t *data, uint32_t address, SPI_Values spi_val) {
 
     //Write disable
     writeByte(c_WRDI, spi_val);
-    return 0;
+    return i;
 }
 
 /**
@@ -440,9 +440,9 @@ uint32_t UpdateMetadata(uint32_t pageAddr, uint32_t metaAddress, SPI_Values dev)
     uint32_t page;
     /*Iterate over all pages*/
     for (uint32_t i = metaAddress; i < START_OF_DATA_SEGMENT; i++) {
-        readPage(buffer, i, dev);
+        readPage(buffer, PAGEADDR(i), dev);
         ptr = (uint32_t*)(buffer ); //Reset the ptr to the start of the buffer
-        for (uint32_t index = 0; index < 128;index++) {
+        for (uint32_t index = 0; index < 128; index++) {
             value = *(ptr);
             if (value == 0xFFFFFFFF) {
                 offset = index;
@@ -455,7 +455,7 @@ uint32_t UpdateMetadata(uint32_t pageAddr, uint32_t metaAddress, SPI_Values dev)
         }
         if (value == 0xFFFFFFFF) {
             *ptr = pageAddr; //Pointer was added due to search function implemented above, remove one
-            Write32Bit(pageAddr, i + offset , dev);
+            Write32Bit(pageAddr, PAGEADDR(i) + offset*4 , dev);
             //writePage(buffer, i, dev);
             page = i;
             break;

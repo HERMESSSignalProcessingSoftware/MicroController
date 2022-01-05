@@ -277,6 +277,10 @@ while (run == True ):
             ser = Connect(DEFAULT_COM, DEFAULT_BAUD, timeout= 1)
         elif (readInput == "disconnect"):
             ser = Disconnect(ser)
+        elif (readInput in  ["exti", "terminate", "close"]):
+            run = False
+            
+        
 
 print("FINISHED APPLICATION")
 ser.close()

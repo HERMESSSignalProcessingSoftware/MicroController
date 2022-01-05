@@ -25,11 +25,6 @@
 static volatile uint32_t StatusRegisterLocals = 0x0;
 uint32_t mssSignals = 0;
 
-/*TODO:
- * Fix 32 bit writing, byte order messed up!
- * Fix writing of data to memory, messed up addressing!
- *
- * */
 
 int main (void) {
     uint32_t telemetryCounter = 0;
@@ -97,32 +92,6 @@ int main (void) {
 
     InitHeartbeat(1000); //heartbeat at 1s
     spuLog("Init DONE!\n");
-    /**
-     * Lessons Learned:
-     * Addressing "pages" with address shifted by 9 bit
-     * (512 byte per page == Programming buffer by the Cypress device)
-     * 8 bit shift possible, just think about the page increasement by two each step
-     *
-     * Data will be stored in an other byte order
-     */
-    uint32_t val = 0xFF12FF34;
-    uint32_t *ptr = (uint32_t*)MemoryPtr;
-    Write32Bit(val, 0x00, metaDevice);
-    Write32Bit(val, 0x04, metaDevice);
-    Write32Bit(val, 0x0C, metaDevice);
-    Write32Bit(val, 0x100, metaDevice);
-    Write32Bit(val, 0x108, metaDevice);
-    readPage(MemoryPtr, 0x00, metaDevice);
-    for (uint32_t i = 0; i < 128; i++) {
-        uint32_t value = ptr[i];
-        if (value != 0xFF12FF34) {
-            spuLog("Error During readback!\n");
-        }
-    }
-    readPage(MemoryPtr, 0x01, metaDevice);
-    readPage(MemoryPtr, 0x02, metaDevice);
-    readPage(MemoryPtr, 0x100, metaDevice);
-    readPage(MemoryPtr, 0x200, metaDevice);
     for (;;) {
         /*Start recording here*/
         if ((mssSignals & MSS_SIGNAL_SODS) | (mssSignals & MSS_SIGNAL_SOE)) {
@@ -171,12 +140,11 @@ int main (void) {
             device.CS_Pin = FLASH_CS1;
             mssSignals &= ~(MSS_MEMORY_ERASE);
         }
-        /*TODO: Take a look at the reading buffer, the writing buffer. Things on the memoryptr buffer do not apper on the dump file. Why*/
         /*Write data to device*/
         if ((mssSignals & MSS_SIGNAL_SPI_WRITE)
                 || (mssSignals & MSS_SIGNAL_WRITE_AND_KILL)) {
             writeReady(device);
-            writePage(MemoryPtr, MemConfig.CurrentPage, device);
+            writePage(MemoryPtr, PAGEADDR(MemConfig.CurrentPage), device);
             if (MemConfig.CurrentChipSelect == FLASH_CS2) {
                 MemConfig.CurrentPage++;
                 MemConfig.CurrentChipSelect = FLASH_CS1;

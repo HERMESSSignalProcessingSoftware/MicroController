@@ -1,8 +1,13 @@
-/*
+/**
  * memory.h
  *
  *  Created on: 18.06.2021
  *      Author: Robin Grimsmann
+ * @brief Cypress NOR Flash (S70FL01GS) with 2 x S25FL512S 512 Mbit memory controller
+ * for the combined device: 1024 Mbit (1Gbit) => 128Mbyte
+ * Programming buffer of 512 byte -> Page size of 512 byte
+ * 128Mbyte / 512 byte = 250000 pages -> 125000 pages on one device
+ * Page addressing: first page at 0x00 + 512 byte (0x200)
  */
 
 #ifndef DRIVERS_APB_MEMORY_H_
@@ -34,6 +39,8 @@ extern "C" {
 #define c_CE 0xC7
 
 #define PAGE_COUNT 125000
+
+#define PAGEADDR(i) (i << 9)
 
 #define PAGESIZE 512
 /*
