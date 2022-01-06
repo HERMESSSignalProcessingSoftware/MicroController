@@ -22,6 +22,8 @@
 #define OUT_ADC_START                   3
 #define OUT_RESET_N                     4
 #define IN_WP                           5
+#define LED_HEARTBEAT_MEMSYNC           25
+#define LED_FPGA_LOADED                 26
 #define LED_RECORDING                   30
 #define LED_HEARTBEAT                   31
 /*Needed because of the nCS falling - rising behaviour after each byte */

@@ -68,6 +68,14 @@ void ResetBuffer(uint8_t *ptr, uint32_t value, uint32_t size);
  */
 uint32_t TestMetaWriter(SPI_Values dev);
 
+/**
+ * Sets a block of memory to a given value
+ * @param ptr the start address of the block of memory
+ * @param value the value to be used
+ * @param len the length of the block
+ */
+void SetMemory(uint8_t *ptr, uint32_t value, size_t len);
+
 #ifdef __cplusplus
 }
 #endif

@@ -102,3 +102,12 @@ void spuLogStampMismatch(uint32_t stampid, uint32_t sgrId) {
 void spuLog (char message[]) {
     MSS_UART_polled_tx_string(&g_mss_uart0, message);
 }
+
+
+void SetMemory(uint8_t *ptr, uint32_t value, size_t len) {
+    if (ptr) {
+        for (uint32_t index = 0; index < len; index++) {
+            ptr[index] = (uint8_t)value;
+        }
+    }
+}

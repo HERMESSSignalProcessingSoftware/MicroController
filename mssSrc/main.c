@@ -24,11 +24,25 @@
  */
 static volatile uint32_t StatusRegisterLocals = 0x0;
 uint32_t mssSignals = 0;
-
-
+/**
+ * SODS: T - 120s <-> T + 500s = 620s  (critical)
+ * SOE: T - 180s <-> T + 500s = 680s
+ * LO: T = 0 <-> T + 500s = 500s
+ *
+ */
+/**
+ * TODO:
+ * - Implement LED_FPGA_LOADED behaviour
+ * - Test telemetry, 19200 BAUD, 8n1
+ * - Implement SOE / LO handling
+ * - Fix VHDL Stamp component
+ * - Stamp1 SGR 1 failing
+ * - Stamp2 SGR 1 missing
+ * */
 int main (void) {
     uint32_t telemetryCounter = 0;
     uint8_t *telemetryFramePtr = (uint8_t*)(&telemetryFrame);
+    uint32_t memSyncHeartbeatValue = 1;
     // Initialize driver components
     //SystemInit();
     MSS_WD_init();
@@ -51,15 +65,22 @@ int main (void) {
     MSS_GPIO_config(OUT_RESET_N, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(LED_RECORDING, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(LED_HEARTBEAT, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(LED_HEARTBEAT_MEMSYNC, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(LED_FPGA_LOADED, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(FLASH_CS1, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(FLASH_CS2, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(OUT_ENABLE_MEM_SYNC, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(IN_RXSM_LO, MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_BOTH);
     MSS_GPIO_config(IN_RXSM_SODS, MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_BOTH);
     MSS_GPIO_config(IN_RXSM_SOE, MSS_GPIO_INPUT_MODE | MSS_GPIO_IRQ_EDGE_BOTH);
+
+    /* Enable GPIO Irqs */
     MSS_GPIO_enable_irq(IN_RXSM_LO);
     MSS_GPIO_enable_irq(IN_RXSM_SODS);
     MSS_GPIO_enable_irq(IN_RXSM_SOE);
+    /* Set up LEDS */
+    MSS_GPIO_set_output(LED_HEARTBEAT_MEMSYNC, 1);
+    MSS_GPIO_set_output(LED_FPGA_LOADED, 1);
     // reset the peripherals
     MSS_GPIO_set_output(OUT_RESET_N, 0);
     delay(1);
@@ -92,21 +113,35 @@ int main (void) {
 
     InitHeartbeat(1000); //heartbeat at 1s
     spuLog("Init DONE!\n");
+    MSS_GPIO_set_output(LED_HEARTBEAT_MEMSYNC, 0);
     for (;;) {
+        if (mssSignals & MSS_SIGNAL_SOE) {
+            StatusRegisterLocals |= (MSS_SIGNAL_SOE);
+            mssSignals &= ~( MSS_SIGNAL_SOE);
+            telemetryFrame.statusReg1 |= StatusRegisterLocals;
+            mssSignals |= MSS_SIGNAL_TELEMETRY;
+        }
+        if (mssSignals & MSS_SIGNAL_SOE_RESET) {
+            StatusRegisterLocals &= ~(MSS_SIGNAL_SOE);
+            mssSignals &= ~( MSS_SIGNAL_SOE_RESET);
+            telemetryFrame.statusReg1 &= ~(StatusRegisterLocals);
+        }
         /*Start recording here*/
-        if ((mssSignals & MSS_SIGNAL_SODS) | (mssSignals & MSS_SIGNAL_SOE)) {
-            mssSignals &= ~(MSS_SIGNAL_SOE | MSS_SIGNAL_SODS);
-            StatusRegisterLocals |= ((MSS_SIGNAL_SOE) | (MSS_SIGNAL_SODS));
+        if ((mssSignals & MSS_SIGNAL_SODS)) {
+            mssSignals &= ~(MSS_SIGNAL_SODS);
+            StatusRegisterLocals |=  (MSS_SIGNAL_SODS);
             StartMemorySync();
             MSS_GPIO_set_output(LED_RECORDING, 1);
             delay(1);
         }
         /* Stop action here */
-        if ((mssSignals & MSS_SIGNAL_SODS_RESET) | (mssSignals & MSS_SIGNAL_SOE_RESET) | (mssSignals & MSS_SIGNAL_LO_RESET)) {
-            mssSignals &= ~(MSS_SIGNAL_SOE_RESET | MSS_SIGNAL_SODS_RESET | MSS_SIGNAL_LO_RESET);
-            StatusRegisterLocals &= ~((MSS_SIGNAL_SOE) | (MSS_SIGNAL_SODS) | (MSS_SIGNAL_LO));
+        if ((mssSignals & MSS_SIGNAL_SODS_RESET)) {
+            mssSignals &= ~(MSS_SIGNAL_SODS_RESET);
+            StatusRegisterLocals &= ~(MSS_SIGNAL_SODS);
             StopMemorySync();
             MSS_GPIO_set_output(LED_RECORDING, 0);
+            writeReady(metaDevice);
+            MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage, MemConfig.MetaAddress, metaDevice);
             delay(1);
         }
 
@@ -120,6 +155,10 @@ int main (void) {
             StatusRegisterLocals |= (MSS_SIGNAL_LO);
             mssSignals &= ~(MSS_SIGNAL_LO);
         }
+        if (mssSignals & MSS_SIGNAL_LO_RESET) {
+            StatusRegisterLocals &= ~(MSS_SIGNAL_LO);
+            mssSignals &= ~( MSS_SIGNAL_LO_RESET);
+        }
 //
         /*Write Meta data to FLASH_CS1 connected device*/
         if ((mssSignals & MSS_SIGNAL_UPDATE_META)
@@ -131,6 +170,9 @@ int main (void) {
             if (MemConfig.MetaAddress < START_OF_DATA_SEGMENT) {
                 writeReady(metaDevice);
                 MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage, MemConfig.MetaAddress, metaDevice);
+                /* Memory synchronizer LED */
+                MSS_GPIO_set_output(LED_HEARTBEAT_MEMSYNC, memSyncHeartbeatValue);
+                memSyncHeartbeatValue = ~(memSyncHeartbeatValue);
             }
             mssSignals &= ~(MSS_SIGNAL_UPDATE_META);
         }
@@ -159,6 +201,7 @@ int main (void) {
             /* Just reset a signal bit */
             mssSignals &= ~(MSS_SIGNAL_SPI_WRITE);
             if (mssSignals & MSS_SIGNAL_WRITE_AND_KILL) {
+                /*Note: MetaAddress is the page counter >> 9*/
                 if (MemConfig.MetaAddress < MemConfig.StartPage) {
                     /* TODO: implement and test killing behaviour*/
                 }
@@ -172,20 +215,12 @@ int main (void) {
         }
 
         if (mssSignals & MSS_SIGNAL_TELEMETRY) {
-            /* See Issue number 9 on github
-             *
-             * TODO: Transmit data to Earth here
-             * Be careful! Do not transmit all the data at once,
-             * it may blocks the loop here and signals with higher
-             * priority will be left unseen causing a critical delay
-             *
-             * Lets assume Tbit = 33us (boi its long)
-             */
             while(mssSignals != MSS_SIGNAL_SPI_WRITE && ((telemetryCounter++) <= (FRAMESIZE - 1))) {
                 TransmitByte(*(telemetryFramePtr++));
             }
             if (telemetryCounter >= (FRAMESIZE - 1)) {
                 telemetryFramePtr = (uint8_t*)(&telemetryFrame);
+                SetMemory((uint8_t*)&telemetryFrame, 0, sizeof(Telemmetry_t));
                 mssSignals &= ~(MSS_SIGNAL_TELEMETRY);
                 telemetryCounter = 0;
             }
@@ -237,11 +272,6 @@ void FabricIrq0_IRQHandler(void) {
             mssSignals |= MSS_SIGNAL_UPDATE_META;
             MemoryInterruptCounter = 1;
         }
-
-        /* TODO:
-         * - save updated current page value to memory if telemetry is hitting.
-         *
-         * */
     }
     if (SR1 & PENDING_APB_ADDRESS_ERROR) {
         HW_set_32bit_reg(MEMORY_REG(SynchStatusReg), 0x00); // Just write something to the SR Register (it does not care about the content)

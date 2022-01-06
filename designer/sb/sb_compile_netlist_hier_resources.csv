@@ -1,22 +1,22 @@
 Detailed Resource Usage
-Module Name,Fabric 4LUT,Fabric DFF,Single-Ended I/O,PLLs and CCCs,Chip Globals,MSS,CAN,HS USB,Multi-Mode UART,RCOSC_50MHZ
-MemorySynchronizer_0/Primitives,1566,888,0,0,1,0,0,0,0,0
-MemorySynchronizer_0/TimeStampGen/Primitives,43,38,0,0,0,0,0,0,0,0
-Primitives/Primitives,2,0,72,0,0,0,0,0,0,0
-STAMP_1/Primitives,95,235,0,0,0,0,0,0,0,0
-STAMP_1/spi/Primitives,365,93,0,0,0,0,0,0,0,0
-STAMP_2/Primitives,94,235,0,0,0,0,0,0,0,0
-STAMP_2/spi/Primitives,360,93,0,0,0,0,0,0,0,0
-STAMP_3/Primitives,94,235,0,0,0,0,0,0,0,0
-STAMP_3/spi/Primitives,363,93,0,0,0,0,0,0,0,0
-STAMP_4/Primitives,94,235,0,0,0,0,0,0,0,0
-STAMP_4/spi/Primitives,360,93,0,0,0,0,0,0,0,0
-STAMP_5/Primitives,94,235,0,0,0,0,0,0,0,0
-STAMP_5/spi/Primitives,363,93,0,0,0,0,0,0,0,0
-STAMP_6/Primitives,94,235,0,0,0,0,0,0,0,0
-STAMP_6/spi/Primitives,360,93,0,0,0,0,0,0,0,0
-sb_sb_0/CCC_0/Primitives,0,0,0,1,1,0,0,0,0,0
-sb_sb_0/CoreAPB3_0/Primitives,8,0,0,0,0,0,0,0,0,0
-sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/Primitives,169,0,0,0,0,0,0,0,0,0
-sb_sb_0/FABOSC_0/Primitives,0,0,0,0,0,0,0,0,0,1
-sb_sb_0/sb_sb_MSS_0/Primitives,0,0,0,0,0,1,0,0,0,0
+Module Name,Fabric 4LUT,Fabric DFF,Single-Ended I/O,PLLs and CCCs,Chip Globals,MSS,10/100/1000 Ethernet,Multi-Mode UART,RCOSC_50MHZ
+MemorySynchronizer_0/Primitives,1566,888,0,0,1,0,0,0,0
+MemorySynchronizer_0/TimeStampGen/Primitives,43,38,0,0,0,0,0,0,0
+Primitives/Primitives,2,0,72,0,0,0,0,0,0
+STAMP_1/Primitives,95,235,0,0,0,0,0,0,0
+STAMP_1/spi/Primitives,365,93,0,0,0,0,0,0,0
+STAMP_2/Primitives,94,235,0,0,0,0,0,0,0
+STAMP_2/spi/Primitives,360,93,0,0,0,0,0,0,0
+STAMP_3/Primitives,94,235,0,0,0,0,0,0,0
+STAMP_3/spi/Primitives,363,93,0,0,0,0,0,0,0
+STAMP_4/Primitives,94,235,0,0,0,0,0,0,0
+STAMP_4/spi/Primitives,360,93,0,0,0,0,0,0,0
+STAMP_5/Primitives,94,235,0,0,0,0,0,0,0
+STAMP_5/spi/Primitives,363,93,0,0,0,0,0,0,0
+STAMP_6/Primitives,94,235,0,0,0,0,0,0,0
+STAMP_6/spi/Primitives,360,93,0,0,0,0,0,0,0
+sb_sb_0/CCC_0/Primitives,0,0,0,1,1,0,0,0,0
+sb_sb_0/CoreAPB3_0/Primitives,8,0,0,0,0,0,0,0,0
+sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/Primitives,169,0,0,0,0,0,0,0,0
+sb_sb_0/FABOSC_0/Primitives,0,0,0,0,0,0,0,0,1
+sb_sb_0/sb_sb_MSS_0/Primitives,0,0,0,0,0,1,0,0,0
