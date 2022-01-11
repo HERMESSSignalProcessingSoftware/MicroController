@@ -1,7 +1,6 @@
 import serial 
 import time 
 import signal
-from ctypes import *
 import os 
 
 DEFAULT_COM = "COM4"
@@ -57,8 +56,9 @@ cmds = {"Read": "Read the complet memory",
         "textmode": "Reads serial line",
         "flush": "Resets serial RX buffer",
         "read until": "Read until a page number is reached",
+        "ru": "Read until a page number is reached",
         "resetfiles": "Removes the memory dump file (dump.bin)",
-        "conntect": "Conntect to the default COM on default BAUD"}
+        "connect": "Connect to the default COM on default BAUD"}
 
 
 CMD_ERASE       = b"\xAA\x00\x17\xF0"
@@ -92,6 +92,7 @@ def Read():
         with open("dump.bin", "ab") as f:
             content = ser.read(512)
             f.write(content)
+            f.close()
         if (i % 1000 == 0):
             print("{} von {} (Took {:.2f}s)".format(i, pages, time.time() - startCont))
             startCont = time.time()
@@ -249,7 +250,7 @@ while (run == True ):
             Erase()
         elif (readInput == "testmemory"):
             TestMemory()
-        elif (readInput in ["exit", "terminate", "halt"]):
+        elif (readInput in ["exit", "terminate", "halt", "close"]):
             run = False
         elif (readInput == "meta"):
             Meta(quite = False)
@@ -277,33 +278,10 @@ while (run == True ):
             ser = Connect(DEFAULT_COM, DEFAULT_BAUD, timeout= 1)
         elif (readInput == "disconnect"):
             ser = Disconnect(ser)
-        elif (readInput in  ["exti", "terminate", "close"]):
+        elif (readInput in  ["exit", "terminate", "halt", "close"]):
             run = False
 
         
 
 print("FINISHED APPLICATION")
 ser.close()
-
-
-#signal SynchStatusReg           : std_logic_vector(31 downto 0);
-#    --     31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0
-#    --	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-#	--  |PS|PR|U |AE|  |  |O6|O5|O4|O3|O2|O1|RE|RE|RE|RE|RE|RE|RE|RE|R6|R5|R4|R3|R2|R1|M6|M5|M4|M3|M2|M1|
-#	--  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-#    -- M1 - M6: Bitmask for every stamp which has not provied a newAvails signal
-#    -- R1 - R6: Bitmask for every stamp which is requesting a Resync 
-#    -- RE: 8 bit counter: the number of ResyncEvents 
-#    -- O1 - O6: StatusReg2 overflow marker. Means that the difference to the timestamp register is bigger than the size of 5 bits
-#    -- AE: APB Error Address not known
-#    -- U: Unused
-#    -- PR: Pending Reading Interrupt
-#    -- PS: Pending Synchronizer Interrupt
-#    -- Timer and Prescaler
-#    signal SynchStatusReg2          : std_logic_vector(31 downto 0);
-#    --     31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0
-#    --	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-#	--  |U |U |S6|S6|S6|S6|S6|S5|S5|S5|S5|S5|S4|S4|S4|S4|S4|S3|S3|S3|S3|S3|S2|S2|S2|S2|S2|S1|S1|S1|S1|S1|
-#	--  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-#    -- U: Unused 
-#    -- S1 5 bit counter; relative distance to the Timestamp value
