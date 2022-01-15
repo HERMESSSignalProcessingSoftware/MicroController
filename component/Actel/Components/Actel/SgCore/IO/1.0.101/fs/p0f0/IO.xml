@@ -1,0 +1,361 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SgCore</spirit:library>
+  <spirit:name>IO</spirit:name>
+  <spirit:version>1.0.101</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>ADLTCL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ADLTCL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>PAD_IN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PAD_IN" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="INBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="SINGLE"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PAD_IN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PAD_OUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PAD_OUT" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="OUTBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="SINGLE"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PAD_OUT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PAD_TRI</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PAD_TRI" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="TRIBUFF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="SINGLE"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PAD_TRI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PAD_BI</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PAD_BI" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="BIBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="SINGLE"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PAD_BI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADP_IN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PADP_IN" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="INBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="DIFF"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PADP_IN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADP_OUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PADP_OUT" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="OUTBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="DIFF"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PADP_OUT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADP_TRI</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PADP_TRI" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="TRIBUFF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="DIFF"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PADP_TRI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADP_BI</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PADP_BI" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="BIBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="DIFF"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PADP_BI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADN_IN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PADN_IN" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="INBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="DIFF"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PADN_IN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADN_OUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PADN_OUT" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="OUTBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="DIFF"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PADN_OUT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADN_TRI</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PADN_TRI" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="TRIBUFF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="DIFF"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PADN_TRI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADN_BI</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="PADN_BI" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="BIBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="VARIATION" actel-cc:termValue="DIFF"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>PADN_BI</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>Y</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="Y" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="INBUF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="BIBUF"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>Y</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>D</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="D" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:operation="notEqual" actel-cc:termValue="INBUF"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>D</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>E</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('WIDTH') - 1" spirit:resolve="dependent">1300</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="E" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="TRIBUFF"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="IO_TYPE" actel-cc:termValue="BIBUF"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>E</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="IO_TYPE" spirit:name="IO_TYPE" spirit:prompt="Type" spirit:dataType="string" actel-cc:choiceRef="TYPE_CHOICES" spirit:configGroups="Type" spirit:resolve="user">INBUF</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WIDTH" spirit:name="WIDTH" spirit:prompt="Width" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="Width" spirit:resolve="user" spirit:minimum="1" spirit:maximum="1300">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="VARIATION" spirit:name="VARIATION" spirit:prompt="Variation" spirit:dataType="string" actel-cc:choiceRef="VARIATION_CHOICES" spirit:configGroups="Single Ended/Differential" spirit:resolve="user">SINGLE</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="IOSTD" spirit:name="IOSTD" spirit:prompt="Technology" spirit:dataType="string" actel-cc:choiceRef="IOSTD_CHOICES" spirit:configGroups="IO Standard" spirit:resolve="user">NONE</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SD_EXPORT_HIDDEN_PORTS" spirit:name="SD_EXPORT_HIDDEN_PORTS" spirit:prompt="Export Hidden Ports" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SINGLE_IOSTD_OK" spirit:name="SINGLE_IOSTD_OK" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DIFF_IOSTD_OK" spirit:name="DIFF_IOSTD_OK" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Set('DIFF_IOSTD_OK', Or(Eq(ValueOf('IOSTD'), 'NONE'), Eq(ValueOf('IOSTD'), 'LVPECL'), Eq(ValueOf('IOSTD'), 'LVDS'), Eq(ValueOf('IOSTD'), 'LVDS33'), Eq(ValueOf('IOSTD'), 'RSDS'), Eq(ValueOf('IOSTD'), 'BUSLVDS'), Eq(ValueOf('IOSTD'), 'MLVDS'), Eq(ValueOf('IOSTD'), 'MINILVDS'), Eq(ValueOf('IOSTD'), 'SSTL2I'), Eq(ValueOf('IOSTD'), 'SSTL2II'), Eq(ValueOf('IOSTD'), 'SSTL18I'), Eq(ValueOf('IOSTD'), 'SSTL18I'), Eq(ValueOf('IOSTD'), 'SSTL15I'), Eq(ValueOf('IOSTD'), 'SSTL15II'), Eq(ValueOf('IOSTD'), 'HSTLI'), Eq(ValueOf('IOSTD'), 'HSTLII'), Eq(ValueOf('IOSTD'), 'LPDDRI'), Eq(ValueOf('IOSTD'), 'LPDDRII')), '1');\
+Set('DIFF_IOSTD_OK', And(Neq(ValueOf('IOSTD'), 'NONE'), Neq(ValueOf('IOSTD'), 'LVPECL'), Neq(ValueOf('IOSTD'), 'LVDS'), Neq(ValueOf('IOSTD'), 'LVDS33'), Neq(ValueOf('IOSTD'), 'RSDS'), Neq(ValueOf('IOSTD'), 'BUSLVDS'), Neq(ValueOf('IOSTD'), 'MLVDS'), Neq(ValueOf('IOSTD'), 'MINILVDS'), Neq(ValueOf('IOSTD'), 'SSTL2I'), Neq(ValueOf('IOSTD'), 'SSTL2II'), Neq(ValueOf('IOSTD'), 'SSTL18I'), Neq(ValueOf('IOSTD'), 'SSTL18II'), Neq(ValueOf('IOSTD'), 'SSTL15I'), Neq(ValueOf('IOSTD'), 'SSTL15II'), Neq(ValueOf('IOSTD'), 'HSTLI'), Neq(ValueOf('IOSTD'), 'HSTLII'), Neq(ValueOf('IOSTD'), 'LPDDRI'), Neq(ValueOf('IOSTD'), 'LPDDRII')), '0');\
+Set('SINGLE_IOSTD_OK', Or(Eq(ValueOf('IOSTD'), 'NONE'), Eq(ValueOf('IOSTD'), 'LVTTL'), Eq(ValueOf('IOSTD'), 'PCI'), Eq(ValueOf('IOSTD'), 'LVCMOS12'), Eq(ValueOf('IOSTD'), 'LVCMOS15'), Eq(ValueOf('IOSTD'), 'LVCMOS18'), Eq(ValueOf('IOSTD'), 'LVCMOS25'), Eq(ValueOf('IOSTD'), 'LVCMOS33'), Eq(ValueOf('IOSTD'), 'SSTL2I'), Eq(ValueOf('IOSTD'), 'SSTL2II'), Eq(ValueOf('IOSTD'), 'SSTL18I'), Eq(ValueOf('IOSTD'), 'SSTL18II'), Eq(ValueOf('IOSTD'), 'SSTL15I'), Eq(ValueOf('IOSTD'), 'SSTL15II'), Eq(ValueOf('IOSTD'), 'HSTLI'), Eq(ValueOf('IOSTD'), 'HSTLII'), Eq(ValueOf('IOSTD'), 'LPDDRI'), Eq(ValueOf('IOSTD'), 'LPDDRII')), '1');\
+Set('SINGLE_IOSTD_OK', And(Neq(ValueOf('IOSTD'), 'NONE'), Neq(ValueOf('IOSTD'), 'LVTTL'), Neq(ValueOf('IOSTD'), 'PCI'), Neq(ValueOf('IOSTD'), 'LVCMOS12'), Neq(ValueOf('IOSTD'), 'LVCMOS15'), Neq(ValueOf('IOSTD'), 'LVCMOS18'), Neq(ValueOf('IOSTD'), 'LVCMOS25'), Neq(ValueOf('IOSTD'), 'LVCMOS33'), Neq(ValueOf('IOSTD'), 'SSTL2I'), Neq(ValueOf('IOSTD'), 'SSTL2II'), Neq(ValueOf('IOSTD'), 'SSTL18I'), Neq(ValueOf('IOSTD'), 'SSTL18II'), Neq(ValueOf('IOSTD'), 'SSTL15I'), Neq(ValueOf('IOSTD'), 'SSTL15II'), Neq(ValueOf('IOSTD'), 'HSTLI'), Neq(ValueOf('IOSTD'), 'HSTLII'), Neq(ValueOf('IOSTD'), 'LPDDRI'), Neq(ValueOf('IOSTD'), 'LPDDRII')), '0');\
+Validate('Cannot set this IO Technolgy for this variation of IO', Or(And(Eq(ValueOf('VARIATION'), 'DIFF'), Eq(ValueOf('DIFF_IOSTD_OK'), '1')), And(Eq(ValueOf('VARIATION'), 'SINGLE'), Eq(ValueOf('SINGLE_IOSTD_OK'), '1'))));\
+Validate('LVPECL is supported only for Inoput Buffer IOs', Or(And(Eq(ValueOf('IO_TYPE'), 'INBUF'), Eq(ValueOf('IOSTD'), 'LVPECL')), Neq(ValueOf('IOSTD'), 'LVPECL')));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>WIN_ADLTCL</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/tgiadltcl.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>LIN_ADLTCL</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/tgiadltcl</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>IOSTD_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="NONE">NONE</spirit:enumeration>
+      <spirit:enumeration spirit:text="LVTTL">LVTTL</spirit:enumeration>
+      <spirit:enumeration spirit:text="PCI">PCI</spirit:enumeration>
+      <spirit:enumeration spirit:text="LVCMOS33">LVCMOS33</spirit:enumeration>
+      <spirit:enumeration spirit:text="LVCMOS25">LVCMOS25</spirit:enumeration>
+      <spirit:enumeration spirit:text="LVCMOS18">LVCMOS18</spirit:enumeration>
+      <spirit:enumeration spirit:text="LVCMOS15">LVCMOS15</spirit:enumeration>
+      <spirit:enumeration spirit:text="LVCMOS12">LVCMOS12</spirit:enumeration>
+      <spirit:enumeration spirit:text="HSTLI">HSTLI</spirit:enumeration>
+      <spirit:enumeration spirit:text="HSTLII">HSTLII</spirit:enumeration>
+      <spirit:enumeration spirit:text="SSTL2I (DDR1)">SSTL2I</spirit:enumeration>
+      <spirit:enumeration spirit:text="SSTL2II (DDR1)">SSTL2II</spirit:enumeration>
+      <spirit:enumeration spirit:text="SSTL18I (DDR2)">SSTL18I</spirit:enumeration>
+      <spirit:enumeration spirit:text="SSTL18II (DDR2)">SSTL18II</spirit:enumeration>
+      <spirit:enumeration spirit:text="SSTL15I (DDR3)">SSTL15I</spirit:enumeration>
+      <spirit:enumeration spirit:text="SSTL15II (DDR3)">SSTL15II</spirit:enumeration>
+      <spirit:enumeration spirit:text="LPDDRI (LPDDR)">LPDDRI</spirit:enumeration>
+      <spirit:enumeration spirit:text="LPDDRII (LPDDR)">LPDDRII</spirit:enumeration>
+      <spirit:enumeration spirit:text="LVPECL">LVPECL</spirit:enumeration>
+      <spirit:enumeration spirit:text="LVDS">LVDS</spirit:enumeration>
+      <spirit:enumeration spirit:text="RSDS">RSDS</spirit:enumeration>
+      <spirit:enumeration spirit:text="BUSLVDS">BUSLVDS</spirit:enumeration>
+      <spirit:enumeration spirit:text="MLVDS">MLVDS</spirit:enumeration>
+      <spirit:enumeration spirit:text="MINILVDS">MINILVDS</spirit:enumeration>
+      <spirit:enumeration spirit:text="LVDS33">LVDS33</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>TYPE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Input Buffer">INBUF</spirit:enumeration>
+      <spirit:enumeration spirit:text="Output Buffer">OUTBUF</spirit:enumeration>
+      <spirit:enumeration spirit:text="Tristate Buffer">TRIBUFF</spirit:enumeration>
+      <spirit:enumeration spirit:text="Bi-directional Buffer">BIBUF</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>VARIATION_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Single Ended">SINGLE</spirit:enumeration>
+      <spirit:enumeration spirit:text="Differential">DIFF</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="ADLTCL">
+    <spirit:file>
+      <spirit:name>core.tcl</spirit:name>
+      <spirit:fileType>tclSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>I/O</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20130710122852</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="I/O">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

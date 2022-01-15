@@ -1,6 +1,6 @@
 DESIGN=sb
-DESDIR=C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb
-TARGET_DIR=C:\Users\jl\source\repos\hermess\hermess-MicroController\designer\sb
+DESDIR=C:\Users\RG\Documents\MicroController\designer\sb
+TARGET_DIR=C:\Users\RG\Documents\MicroController\designer\sb
 FAM=SmartFusion2
 DIE=PA4M1000_N
 PACKAGE=tq144

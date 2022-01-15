@@ -1,0 +1,612 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SgCore</spirit:library>
+  <spirit:name>HARD_MULT_ADDSUB</spirit:name>
+  <spirit:version>1.0.100</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>ADLTCL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ADLTCL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>A0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('A0_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="A0_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>A0</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>A0_ACLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="A0_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="A0_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>A0_ACLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>A0_SCLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="A0_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="NORMAL"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="A0_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>A0_SCLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>A0_EN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="A0_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="NORMAL"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="A0_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>A0_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>B0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('B0_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:description>B0</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>B0_SCLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="B0_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="NORMAL"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>B0_SCLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>B0_ACLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="B0_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="NORMAL"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>B0_ACLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>B0_EN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="B0_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicOrTerms>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="NORMAL"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>B0_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>A1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('A1_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="A1_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>A1</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>A1_ACLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="A1_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="A1_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>A1_ACLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>A1_SCLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="A1_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="A1_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>A1_SCLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>A1_EN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="A1_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="A1_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>A1_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>B1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('B1_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>B1</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>B1_ACLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="B1_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>B1_ACLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>B1_SCLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="B1_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>B1_SCLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>B1_EN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="B1_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>B1_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>C</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('C_WIDTH') - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="C_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>C</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>C_ACLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="C_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="C_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>C_ACLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>C_SCLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="C_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="C_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>C_SCLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>C_EN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="C_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="C_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>C_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARSHFT17</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="ARSHFT17_IS_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ARSHFT17</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARSHFT17_ACLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="ARSHFT17_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ARSHFT17_ACLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARSHFT17_SCLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="ARSHFT17_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ARSHFT17_SCLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARSHFT17_EN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="ARSHFT17_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ARSHFT17_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SUB</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="OP_FUNCTION" actel-cc:termValue="MULTADDSUB"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SUB</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SUB_ACLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SUB_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SUB_ACLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SUB_SCLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SUB_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SUB_SCLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SUB_EN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SUB_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>SUB_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>P</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="((id('OP_MODE') = NORMAL) * (id('CDSEL') = CDINROUTED) * 43) + ((id('OP_MODE') = NORMAL) * (id('CDSEL') = CDINCONST) * min(43, 1 + max(id('C_WIDTH') - 1, id('A0_WIDTH') + (id('B0_WIDTH') - 1)))) + ((id('OP_MODE') = DOTP) * (id('CDSEL') = CDINCONST) * min(34, 1 + max(id('C_WIDTH') - 1, 1 + max(id('A0_WIDTH') + (id('B0_WIDTH') - 1), id('A1_WIDTH') + (id('B1_WIDTH') - 1))))) + ((id('OP_MODE') = DOTP) * (id('CDSEL') = CDINROUTED) * 34)" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:description>P</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>P_ACLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="P_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>P_ACLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>P_SCLR_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="P_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>P_SCLR_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>P_EN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="P_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>P_EN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="A0_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="A0_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="A1_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicAndTerms>
+                    <actel-cc:logicTerm spirit:referenceId="A1_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm>
+                    <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicAndTerms>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="C_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="C_IS_CONST" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="P_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="ARSHFT17_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="B0_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="B1_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="B1_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="SUB_IS_REGISTERED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CDIN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>43</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="CDSEL" actel-cc:termValue="CDINROUTED"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>CDIN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CDOUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>43</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="NORMAL"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="OP_MODE" actel-cc:termValue="DOTP"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>CDOUT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>OVERFLOW</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="OVERFLOW_COUT" actel-cc:termValue="OVERFLOW"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>OVERFLOW</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CARRYOUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="OVERFLOW_COUT" actel-cc:termValue="COUT"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>CARRYOUT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CARRYIN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="CIN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>CARRYIN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="OP_MODE" spirit:name="OP_MODE" spirit:prompt="Operation Mode" spirit:dataType="string" actel-cc:choiceRef="MODE_CHOICES" spirit:choiceStyle="radio" spirit:resolve="user">NORMAL</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="OP_FUNCTION" spirit:name="OP_FUNCTION" spirit:prompt="Function" spirit:dataType="string" actel-cc:choiceRef="FUNCTION_CHOICES" spirit:configGroups="1Cols:Multiplier Functions" spirit:resolve="user">MULTADD</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A0_IS_CONST" spirit:name="A0_IS_CONST" spirit:prompt="Use A0 Constant" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:A0 and A1 Inputs" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A1_IS_CONST" spirit:name="A1_IS_CONST" spirit:prompt="Use A1 Constant" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:A0 and A1 Inputs" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A0_CONST" spirit:name="A0_CONST" spirit:prompt="A0 Constant value (Hex)" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="2Cols:A0 and A1 Inputs" spirit:resolve="user">0x1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A1_CONST" spirit:name="A1_CONST" spirit:prompt="A1 Constant value (Hex)" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="2Cols:A0 and A1 Inputs" spirit:resolve="user">0x1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A0_WIDTH" spirit:name="A0_WIDTH" spirit:prompt="A0 Width" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="2Cols:A0 and A1 Inputs" spirit:resolve="user">18</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A1_WIDTH" spirit:name="A1_WIDTH" spirit:prompt="A1 Width" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="2Cols:A0 and A1 Inputs" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A0_IS_REGISTERED" spirit:name="A0_IS_REGISTERED" spirit:prompt="Register Ports A0" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:A0 and A1 Inputs" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="A1_IS_REGISTERED" spirit:name="A1_IS_REGISTERED" spirit:prompt="Register Ports A1" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:A0 and A1 Inputs" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="B0_WIDTH" spirit:name="B0_WIDTH" spirit:prompt="B0 Width" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="2Cols:B0 and B1 Inputs" spirit:resolve="user">18</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="B1_WIDTH" spirit:name="B1_WIDTH" spirit:prompt="B1 Width" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="2Cols:B0 and B1 Inputs" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="B0_IS_REGISTERED" spirit:name="B0_IS_REGISTERED" spirit:prompt="Register Ports B0" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:B0 and B1 Inputs" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="B1_IS_REGISTERED" spirit:name="B1_IS_REGISTERED" spirit:prompt="Register Ports B1" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:B0 and B1 Inputs" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="C_IS_CONST" spirit:name="C_IS_CONST" spirit:prompt="Use Constant" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Input Port C to Adder" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="C_CONST" spirit:name="C_CONST" spirit:prompt="Constant value (Hex)" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="2Cols:Input Port C to Adder" spirit:resolve="user">0x0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="C_WIDTH" spirit:name="C_WIDTH" spirit:prompt="Width" actel-cc:choiceRef="" spirit:dataType="int" spirit:configGroups="2Cols:Input Port C to Adder" spirit:resolve="user">44</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CIN" spirit:name="CIN" spirit:prompt="Carry In" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Input Port C to Adder" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="C_IS_REGISTERED" spirit:name="C_IS_REGISTERED" spirit:prompt="Register Port" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Input Port C to Adder" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CDSEL" spirit:name="CDSEL" spirit:prompt="Function" spirit:dataType="string" actel-cc:choiceRef="CDIN_CHOICES" spirit:configGroups="1Cols:Input Port D to Adder" spirit:resolve="user">CDINCONST</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ARSHFT17_IS_USED" spirit:name="ARSHFT17_IS_USED" spirit:prompt="Right shift of cascade input" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Input Port ARSHFT17" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ARSHFT17_IS_REGISTERED" spirit:name="ARSHFT17_IS_REGISTERED" spirit:prompt="Register Port" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Input Port ARSHFT17" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SUB_IS_REGISTERED" spirit:name="SUB_IS_REGISTERED" spirit:prompt="Register Port " actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Input Port SUB" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="P_IS_REGISTERED" spirit:name="P_IS_REGISTERED" spirit:prompt="Register Port P" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Output Port P" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="OVERFLOW_COUT" spirit:name="OVERFLOW_COUT" spirit:prompt="Overflow/CarryOut" spirit:dataType="string" actel-cc:choiceRef="OVF_CHOICES" spirit:configGroups="2Cols:Output Port P" spirit:resolve="user">NONE</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SD_EXPORT_HIDDEN_PORTS" spirit:name="SD_EXPORT_HIDDEN_PORTS" spirit:prompt="export hidden ports" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Tooltip('OP_MODE', 'Normal: P = D + (CARRYIN + C) +/- (A0 * B0)
+  DOTP: P = D + (CARRYIN + C) + (A0 * B0) + (A1 * B1)');\
+Enable('SUB_IS_REGISTERED', And(Eq(ValueOf('OP_FUNCTION'), 'MULTADDSUB'), Eq(ValueOf('OP_MODE'), 'NORMAL')));\
+Set('SUB_IS_REGISTERED', Eq(ValueOf('OP_MODE'), 'DOTP'), '0');\
+Set('SUB_IS_REGISTERED', Eq(ValueOf('OP_FUNCTION'), 'MULTADD'), '0');\
+Set('SUB_IS_REGISTERED', Eq(ValueOf('OP_FUNCTION'), 'MULTSUB'), '0');\
+Enable('ARSHFT17_IS_REGISTERED', And(Eq(ValueOf('ARSHFT17_IS_USED'), '1'), Eq(ValueOf('CDSEL'), 'CDINROUTED')));\
+Set('ARSHFT17_IS_REGISTERED', Eq(ValueOf('ARSHFT17_IS_USED'), '0'), '0');\
+Set('ARSHFT17_IS_REGISTERED', Eq(ValueOf('CDSEL'), 'CDINCONST'), '0');\
+Enable('ARSHFT17_IS_USED', And(Eq(ValueOf('OP_MODE'), 'NORMAL'), Eq(ValueOf('CDSEL'), 'CDINROUTED')));\
+Set('ARSHFT17_IS_USED', Eq(ValueOf('OP_MODE'), 'DOTP'), '0');\
+Set('ARSHFT17_IS_USED', Eq(ValueOf('CDSEL'), 'CDINCONST'), '0');\
+Enable('A0_CONST', Eq(ValueOf('A0_IS_CONST'), '1'));\
+Enable('A0_IS_REGISTERED', Eq(ValueOf('A0_IS_CONST'), '0'));\
+Set('A0_IS_REGISTERED', Eq(ValueOf('A0_IS_CONST'), '1'), '0');\
+Enable('A1_WIDTH', Eq(ValueOf('OP_MODE'), 'DOTP'));\
+Set('A1_WIDTH', Eq(ValueOf('OP_MODE'), 'NORMAL'), '1');\
+Set('A1_WIDTH', And(Eq(ValueOf('OP_MODE'), 'DOTP'), Eq(ValueOf('A1_WIDTH'), '1')), '9');\
+Set('A1_WIDTH', And(Eq(ValueOf('OP_MODE'), 'DOTP'), Gt(ValueOf('A1_WIDTH'), '9')), '9');\
+Enable('A1_IS_CONST', Eq(ValueOf('OP_MODE'), 'DOTP'));\
+Set('A1_IS_CONST', Eq(ValueOf('OP_MODE'), 'NORMAL'), '0');\
+Enable('B1_WIDTH', Eq(ValueOf('OP_MODE'), 'DOTP'));\
+Set('B1_WIDTH', Eq(ValueOf('OP_MODE'), 'NORMAL'), '1');\
+Set('B1_WIDTH', And(Eq(ValueOf('OP_MODE'), 'DOTP'), Eq(ValueOf('B1_WIDTH'), '1')), '9');\
+Set('B1_WIDTH', And(Eq(ValueOf('OP_MODE'), 'DOTP'), Gt(ValueOf('B1_WIDTH'), '9')), '9');\
+Enable('A1_CONST', And(Eq(ValueOf('OP_MODE'), 'DOTP'), Eq(ValueOf('A1_IS_CONST'), '1')));\
+Enable('C_CONST', Eq(ValueOf('C_IS_CONST'), '1'));\
+Enable('C_IS_REGISTERED', Eq(ValueOf('C_IS_CONST'), '0'));\
+Set('C_IS_REGISTERED', Eq(ValueOf('C_IS_CONST'), '1'), '0');\
+Enable('A1_IS_REGISTERED', And(Eq(ValueOf('OP_MODE'), 'DOTP'), Eq(ValueOf('A1_IS_CONST'), '0')));\
+Set('A1_IS_REGISTERED', Eq(ValueOf('A1_IS_CONST'), '1'), '0');\
+Set('A1_IS_REGISTERED', Eq(ValueOf('OP_MODE'), 'NORMAL'), '0');\
+Enable('B1_IS_REGISTERED', Eq(ValueOf('OP_MODE'), 'DOTP'));\
+Set('B1_IS_REGISTERED', Eq(ValueOf('OP_MODE'), 'NORMAL'), '0');\
+Enable('OP_FUNCTION', Eq(ValueOf('OP_MODE'), 'NORMAL'));\
+Set('OP_FUNCTION', Eq(ValueOf('OP_MODE'), 'DOTP'), '0');\
+Enable('CIN', Eq(ValueOf('C_IS_CONST'), '0'));\
+Set('CIN', Eq(ValueOf('C_IS_CONST'), '1'), '0');\
+Set('C_WIDTH', And(Eq(ValueOf('OP_MODE'), 'DOTP'), Gt(ValueOf('C_WIDTH'), '35')), '35');\
+Set('A0_WIDTH', And(Eq(ValueOf('OP_MODE'), 'DOTP'), Gt(ValueOf('A0_WIDTH'), '9')), '9');\
+Set('B0_WIDTH', And(Eq(ValueOf('OP_MODE'), 'DOTP'), Gt(ValueOf('B0_WIDTH'), '9')), '9');\
+Validate('Value must be an hexadecimal number less than 2^(A0_WIDTH)', IsHexOfWidth('A0_CONST', 'A0_WIDTH'));\
+Validate('Value must be an hexadecimal number less than 2^(A1_WIDTH)', Or(And(IsHexOfWidth('A1_CONST', 'A1_WIDTH'), Eq(ValueOf('OP_MODE'), 'DOTP')), Eq(ValueOf('OP_MODE'), 'NORMAL')));\
+Validate('In Normal mode A0_WIDTH width must be in between 2 and 18', InRange('2', CeilDouble('A0_WIDTH'), '18'));\
+Validate('A1_WIDTH width must be in between 2 and 9', Or(And(InRange('2', CeilDouble('A1_WIDTH'), '9'), Eq(ValueOf('OP_MODE'), 'DOTP')), Eq(ValueOf('OP_MODE'), 'NORMAL')));\
+Validate('In Normal mode  B0_WIDTH width must be in between 2 and 18', InRange('2', CeilDouble('B0_WIDTH'), '18'));\
+Validate('B1_WIDTH width must be in between 2 and 9', Or(And(InRange('2', CeilDouble('B1_WIDTH'), '9'), Eq(ValueOf('OP_MODE'), 'DOTP')), Eq(ValueOf('OP_MODE'), 'NORMAL')));\
+Validate('Value must be an hexadecimal number less than 2^(C_WIDTH)', IsHexOfWidth('C_CONST', 'C_WIDTH'));\
+Validate('C_WIDTH width must be in between 2 and 44', InRange('2', CeilDouble('C_WIDTH'), '44'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>ADLTCL</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/tgiadltcl.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>ADLTCL_UNIX</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/tgiadltcl</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>CDIN_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Constant 0x0">CDINCONST</spirit:enumeration>
+      <spirit:enumeration spirit:text="CDIN form previous math block">CDINROUTED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>FUNCTION_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Multipier with Adder">MULTADD</spirit:enumeration>
+      <spirit:enumeration spirit:text="Multiplier with Subtractor">MULTSUB</spirit:enumeration>
+      <spirit:enumeration spirit:text="Multiplier with Adder/Subtractor">MULTADDSUB</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>MODE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Normal">NORMAL</spirit:enumeration>
+      <spirit:enumeration spirit:text="Dot Product">DOTP</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>OVF_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="None">NONE</spirit:enumeration>
+      <spirit:enumeration spirit:text="OverFlow">OVERFLOW</spirit:enumeration>
+      <spirit:enumeration spirit:text="CarryOut">COUT</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="ADLTCL">
+    <spirit:file>
+      <spirit:name>core_MultAddSubDOTP.tcl</spirit:name>
+      <spirit:fileType>tclSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>Hard Multiplier AddSub</actel-cc:displayName>
+    <actel-cc:description>SmartFusion2 Hard Multiplier AddSub</actel-cc:description>
+    <actel-cc:packageTimestamp>20130307093308</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Arithmetic">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:resources>
+      <actel-cc:resource doc_title="SmartFusion2 Hard Multiplier AddSub Configurator" url="http://coredocs.actel-ip.com/Actel/SmartFusion2/HARD_MULT_ADDSUB/hardmultaddsub_config_ug_1.pdf">
+        <actel-cc:presentation></actel-cc:presentation></actel-cc:resource></actel-cc:resources>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

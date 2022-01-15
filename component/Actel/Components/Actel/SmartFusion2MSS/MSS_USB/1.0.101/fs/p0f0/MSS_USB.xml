@@ -1,0 +1,704 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_USB</spirit:name>
+  <spirit:version>1.0.101</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>ULPI_PADS</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>ULPI_DIR</spirit:componentSignalName><spirit:busSignalName>ULPI_DIR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ULPI_NXT</spirit:componentSignalName><spirit:busSignalName>ULPI_NXT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ULPI_STP</spirit:componentSignalName><spirit:busSignalName>ULPI_STP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ULPI_XCLK</spirit:componentSignalName><spirit:busSignalName>ULPI_XCLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ULPI_DATA</spirit:componentSignalName><spirit:busSignalName>ULPI_DATA</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>USB ULPI PADS   Interface</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>UTMI_FABRIC</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_LINE_STATE</spirit:componentSignalName><spirit:busSignalName>UTMI_LINE_STATE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_RX_DATA</spirit:componentSignalName><spirit:busSignalName>UTMI_RX_DATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_TX_READY</spirit:componentSignalName><spirit:busSignalName>UTMI_TX_READY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_RX_VALID</spirit:componentSignalName><spirit:busSignalName>UTMI_RX_VALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_RX_ACTIVE</spirit:componentSignalName><spirit:busSignalName>UTMI_RX_ACTIVE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_RX_ERROR</spirit:componentSignalName><spirit:busSignalName>UTMI_RX_ERROR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_VBUS_VALID</spirit:componentSignalName><spirit:busSignalName>UTMI_VBUS_VALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_AVALID</spirit:componentSignalName><spirit:busSignalName>UTMI_AVALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_SESSION_END</spirit:componentSignalName><spirit:busSignalName>UTMI_SESSION_END</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_HOST_DISCONNECT</spirit:componentSignalName><spirit:busSignalName>UTMI_HOST_DISCONNECT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_ID_DIG</spirit:componentSignalName><spirit:busSignalName>UTMI_ID_DIG</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_VSTATUS</spirit:componentSignalName><spirit:busSignalName>UTMI_VSTATUS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_CLK</spirit:componentSignalName><spirit:busSignalName>UTMI_CLK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_SUSPEND_MODE</spirit:componentSignalName><spirit:busSignalName>UTMI_SUSPEND_MODE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_OP_MODE</spirit:componentSignalName><spirit:busSignalName>UTMI_OP_MODE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_TX_DATA</spirit:componentSignalName><spirit:busSignalName>UTMI_TX_DATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_TX_VALID</spirit:componentSignalName><spirit:busSignalName>UTMI_TX_VALID</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_XCVR_SELECT</spirit:componentSignalName><spirit:busSignalName>UTMI_XCVR_SELECT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_TERM_SELECT</spirit:componentSignalName><spirit:busSignalName>UTMI_TERM_SELECT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_DRV_VBUS</spirit:componentSignalName><spirit:busSignalName>UTMI_DRV_VBUS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_CHARGE_VBUS</spirit:componentSignalName><spirit:busSignalName>UTMI_CHARGE_VBUS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_DISCHARGE_VBUS</spirit:componentSignalName><spirit:busSignalName>UTMI_DISCHARGE_VBUS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_DP_PULL_DOWN</spirit:componentSignalName><spirit:busSignalName>UTMI_DP_PULL_DOWN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_DM_PULL_DOWN</spirit:componentSignalName><spirit:busSignalName>UTMI_DM_PULL_DOWN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_ID_PULL_UP</spirit:componentSignalName><spirit:busSignalName>UTMI_ID_PULL_UP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_VCONTROL</spirit:componentSignalName><spirit:busSignalName>UTMI_VCONTROL</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMI_VCONTROL_LOAD_MODE</spirit:componentSignalName><spirit:busSignalName>UTMI_VCONTROL_LOAD_MODE</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:description>USB UTMI FABRIC Interface</actel-cc:description></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>ULPI_DIR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="ULPI_DIR" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:operation="notEqual" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ULPI_DIR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ULPI_NXT</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="ULPI_NXT" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:operation="notEqual" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ULPI_NXT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ULPI_STP</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="ULPI_STP" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:operation="notEqual" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ULPI_STP</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ULPI_XCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="ULPI_XCLK" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:operation="notEqual" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ULPI_XCLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ULPI_DATA</spirit:name>
+        <spirit:direction>inout</spirit:direction>
+        <spirit:left spirit:dependency="id('DATA_WIDTH')" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="ULPI_DATA" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:pad>true</actel-cc:pad>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:operation="notEqual" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ULPI_DATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_LINE_STATE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_LINE_STATE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_LINE_STATE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_RX_DATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_RX_DATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_RX_DATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_TX_READY</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_TX_READY" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_TX_READY</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_RX_VALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_RX_VALID" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_RX_VALID</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_RX_ACTIVE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_RX_ACTIVE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_RX_ACTIVE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_RX_ERROR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_RX_ERROR" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_RX_ERROR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_VBUS_VALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_VBUS_VALID" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_VBUS_VALID</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_AVALID</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_AVALID" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_AVALID</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_SESSION_END</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_SESSION_END" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_SESSION_END</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_HOST_DISCONNECT</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_HOST_DISCONNECT" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_HOST_DISCONNECT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_ID_DIG</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_ID_DIG" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_ID_DIG</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_VSTATUS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_VSTATUS" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_VSTATUS</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_CLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_CLK" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_CLK</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_SUSPEND_MODE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_SUSPEND_MODE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_SUSPEND_MODE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_OP_MODE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_OP_MODE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_OP_MODE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_TX_DATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_TX_DATA" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_TX_DATA</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_TX_VALID</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_TX_VALID" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_TX_VALID</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_XCVR_SELECT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_XCVR_SELECT" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_XCVR_SELECT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_TERM_SELECT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_TERM_SELECT" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_TERM_SELECT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_DRV_VBUS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_DRV_VBUS" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_DRV_VBUS</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_CHARGE_VBUS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_CHARGE_VBUS" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_CHARGE_VBUS</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_DISCHARGE_VBUS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_DISCHARGE_VBUS" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_DISCHARGE_VBUS</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_DP_PULL_DOWN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_DP_PULL_DOWN" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_DP_PULL_DOWN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_DM_PULL_DOWN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_DM_PULL_DOWN" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_DM_PULL_DOWN</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_ID_PULL_UP</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_ID_PULL_UP" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_ID_PULL_UP</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_VCONTROL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_VCONTROL" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_VCONTROL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMI_VCONTROL_LOAD_MODE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="UTMI_VCONTROL_LOAD_MODE" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USB_CONFIG" actel-cc:termValue="CONFIG_UTMI"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>UTMI_VCONTROL_LOAD_MODE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="USB_CONFIG" spirit:name="USB_CONFIG" spirit:prompt="Interface" spirit:dataType="string" actel-cc:choiceRef="CONFIG_CHOICES" spirit:configGroups="2Cols:Options" spirit:resolve="user">CONFIG_ULPI_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DDR_SELECT" spirit:name="DDR_SELECT" spirit:prompt="Data Rate Select" spirit:dataType="string" actel-cc:choiceRef="DDR_SELECT_CHOICES" spirit:configGroups="2Cols:Options" spirit:resolve="user">DDR_SELECT_SDR</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DIR_CONNECTION" spirit:name="DIR_CONNECTION" spirit:prompt="DIR (Input) " spirit:dataType="string" actel-cc:choiceRef="DIR_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">DIR_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="NXT_CONNECTION" spirit:name="NXT_CONNECTION" spirit:prompt="NXT (Input) " spirit:dataType="string" actel-cc:choiceRef="NXT_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">NXT_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="STP_CONNECTION" spirit:name="STP_CONNECTION" spirit:prompt="STP (Output) " spirit:dataType="string" actel-cc:choiceRef="STP_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">STP_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="XCLK_CONNECTION" spirit:name="XCLK_CONNECTION" spirit:prompt="XCLK (Input) " spirit:dataType="string" actel-cc:choiceRef="XCLK_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">XCLK_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA0_CONNECTION" spirit:name="DATA0_CONNECTION" spirit:prompt="DATA0 (Inout) " spirit:dataType="string" actel-cc:choiceRef="DATA0_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">DATA0_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA1_CONNECTION" spirit:name="DATA1_CONNECTION" spirit:prompt="DATA1 (Inout) " spirit:dataType="string" actel-cc:choiceRef="DATA1_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">DATA1_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA2_CONNECTION" spirit:name="DATA2_CONNECTION" spirit:prompt="DATA2 (Inout) " spirit:dataType="string" actel-cc:choiceRef="DATA2_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">DATA2_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA3_CONNECTION" spirit:name="DATA3_CONNECTION" spirit:prompt="DATA3 (Inout) " spirit:dataType="string" actel-cc:choiceRef="DATA3_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">DATA3_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA4_CONNECTION" spirit:name="DATA4_CONNECTION" spirit:prompt="DATA4 (Inout) " spirit:dataType="string" actel-cc:choiceRef="DATA4_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">DATA4_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA5_CONNECTION" spirit:name="DATA5_CONNECTION" spirit:prompt="DATA5 (Inout) " spirit:dataType="string" actel-cc:choiceRef="DATA5_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">DATA5_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA6_CONNECTION" spirit:name="DATA6_CONNECTION" spirit:prompt="DATA6 (Inout) " spirit:dataType="string" actel-cc:choiceRef="DATA6_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">DATA6_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA7_CONNECTION" spirit:name="DATA7_CONNECTION" spirit:prompt="DATA7 (Inout) " spirit:dataType="string" actel-cc:choiceRef="DATA7_CHOICES" spirit:configGroups="3Cols:ULPI (IOs)" spirit:resolve="user">DATA7_D</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ULPI_SELECTED" spirit:name="ULPI_SELECTED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ULPI_DDR_SELECTED" spirit:name="ULPI_DDR_SELECTED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DATA_WIDTH" spirit:name="DATA_WIDTH" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="int" spirit:resolve="generated" spirit:minimum="0" spirit:maximum="7">3</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('DDR_SELECT', Eq('ULPI_SELECTED', '1'));\
+Enable('DATA_WIDTH', Eq('PARAM_IS_FALSE', '1'));\
+Set('DATA_WIDTH', Eq('ULPI_DDR_SELECTED', '1'), '7');\
+Set('DATA_WIDTH', Eq('ULPI_DDR_SELECTED', '0'), '3');\
+Enable('DIR_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('DIR_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), '0');\
+Set('DIR_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), '1');\
+Set('DIR_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), '2');\
+Set('DIR_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), '3');\
+Set('DIR_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '4');\
+Enable('NXT_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('NXT_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), '0');\
+Set('NXT_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), '1');\
+Set('NXT_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), '2');\
+Set('NXT_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), '3');\
+Set('NXT_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '4');\
+Enable('STP_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('STP_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), '0');\
+Set('STP_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), '1');\
+Set('STP_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), '2');\
+Set('STP_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), '3');\
+Set('STP_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '4');\
+Enable('XCLK_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('XCLK_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), '0');\
+Set('XCLK_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), '1');\
+Set('XCLK_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), '2');\
+Set('XCLK_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), '3');\
+Set('XCLK_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '4');\
+Enable('DATA0_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('DATA0_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), '0');\
+Set('DATA0_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), '1');\
+Set('DATA0_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), '2');\
+Set('DATA0_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), '3');\
+Set('DATA0_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '4');\
+Enable('DATA1_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('DATA1_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), '0');\
+Set('DATA1_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), '1');\
+Set('DATA1_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), '2');\
+Set('DATA1_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), '3');\
+Set('DATA1_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '4');\
+Enable('DATA2_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('DATA2_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), '0');\
+Set('DATA2_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), '1');\
+Set('DATA2_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), '2');\
+Set('DATA2_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), '3');\
+Set('DATA2_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '4');\
+Enable('DATA3_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('DATA3_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), '0');\
+Set('DATA3_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), '1');\
+Set('DATA3_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), '2');\
+Set('DATA3_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), '3');\
+Set('DATA3_CONNECTION', Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '4');\
+Enable('DATA4_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('DATA4_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), Eq('ULPI_DDR_SELECTED', '1')), '0');\
+Set('DATA4_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), Eq('ULPI_DDR_SELECTED', '1')), '1');\
+Set('DATA4_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), Eq('ULPI_DDR_SELECTED', '1')), '2');\
+Set('DATA4_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), Eq('ULPI_DDR_SELECTED', '1')), '3');\
+Set('DATA4_CONNECTION', Or(Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), Eq('ULPI_DDR_SELECTED', '0')), '4');\
+Enable('DATA5_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('DATA5_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), Eq('ULPI_DDR_SELECTED', '1')), '0');\
+Set('DATA5_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), Eq('ULPI_DDR_SELECTED', '1')), '1');\
+Set('DATA5_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), Eq('ULPI_DDR_SELECTED', '1')), '2');\
+Set('DATA5_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), Eq('ULPI_DDR_SELECTED', '1')), '3');\
+Set('DATA5_CONNECTION', Or(Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), Eq('ULPI_DDR_SELECTED', '0')), '4');\
+Enable('DATA6_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('DATA6_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), Eq('ULPI_DDR_SELECTED', '1')), '0');\
+Set('DATA6_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), Eq('ULPI_DDR_SELECTED', '1')), '1');\
+Set('DATA6_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), Eq('ULPI_DDR_SELECTED', '1')), '2');\
+Set('DATA6_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), Eq('ULPI_DDR_SELECTED', '1')), '3');\
+Set('DATA6_CONNECTION', Or(Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), Eq('ULPI_DDR_SELECTED', '0')), '4');\
+Enable('DATA7_CONNECTION', Eq('PARAM_IS_FALSE', '1'));\
+Set('DATA7_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_D'), Eq('ULPI_DDR_SELECTED', '1')), '0');\
+Set('DATA7_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_C'), Eq('ULPI_DDR_SELECTED', '1')), '1');\
+Set('DATA7_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_B'), Eq('ULPI_DDR_SELECTED', '1')), '2');\
+Set('DATA7_CONNECTION', And(Eq(ValueOf('USB_CONFIG'), 'CONFIG_ULPI_A'), Eq('ULPI_DDR_SELECTED', '1')), '3');\
+Set('DATA7_CONNECTION', Or(Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), Eq('ULPI_DDR_SELECTED', '0')), '4');\
+Set('ULPI_SELECTED', Neq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '1');\
+Set('ULPI_SELECTED', Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), '0');\
+Set('ULPI_DDR_SELECTED', And(Neq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), Eq(ValueOf('DDR_SELECT'), 'DDR_SELECT_SDR')), '1');\
+Set('ULPI_DDR_SELECTED', Or(Eq(ValueOf('USB_CONFIG'), 'CONFIG_UTMI'), Neq(ValueOf('DDR_SELECT'), 'DDR_SELECT_SDR')), '0');\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>winConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssusb.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>linConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/pa4mssusb</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>CONFIG_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="ULPI (IOs) A">CONFIG_ULPI_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="ULPI (IOs) B">CONFIG_ULPI_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="ULPI (IOs) C">CONFIG_ULPI_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="ULPI (IOs) D">CONFIG_ULPI_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="UTMI (Fabric)">CONFIG_UTMI</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DATA0_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_DATA0">DATA0_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="I2C0_SDA_USBC_DATA0_MGPIO30B">DATA0_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_RXD0_RMII_RXD0_USBB_DATA0">DATA0_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="CAN_TXBUS_USBA_DATA0_MGPIO2A">DATA0_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DATA1_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_DATA1">DATA1_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="I2C0_SCL_USBC_DATA1_MGPIO31B">DATA1_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_RXD1_RMII_RXD1_USBB_DATA1">DATA1_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="CAN_RXBUS_USBA_DATA1_MGPIO3A">DATA1_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DATA2_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_DATA2">DATA2_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="MMUART1_TXD_USBC_DATA2_MGPIO24B">DATA2_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_RX_CTL_RMII_CRS_DV_USBB_DATA2">DATA2_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="CAN_TX_EBL_USBA_DATA2_MGPIO4A">DATA2_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DATA3_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_DATA3">DATA3_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="MMUART1_RXD_USBC_DATA3_MGPIO26B">DATA3_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_RXD2_RMII_RX_ER_USBB_DATA3">DATA3_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="I2C1_SDA_USBA_DATA3_MGPIO0A">DATA3_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DATA4_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_DATA4">DATA4_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="MMUART1_SCK_USBC_DATA4_MGPIO25B">DATA4_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_RXD3_USBB_DATA4">DATA4_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="I2C1_SCL_USBA_DATA4_MGPIO1A">DATA4_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DATA5_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_DATA5">DATA5_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="MMUART0_RTS_USBC_DATA5_MGPIO17B">DATA5_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_TXD2_USBB_DATA5">DATA5_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="SPI0_SS1_USBA_DATA5_MGPIO8A">DATA5_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DATA6_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_DATA6">DATA6_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="MMUART0_DTR_USBC_DATA6_MGPIO18B">DATA6_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_TXD3_USBB_DATA6">DATA6_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="SPI0_SS2_USBA_DATA6_MGPIO9A">DATA6_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DATA7_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_DATA7_MGPIO23B">DATA7_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="MMUART0_CTS_USBC_DATA7_MGPIO19B">DATA7_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="MDIO_USBB_DATA7">DATA7_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="SPI0_SS3_USBA_DATA7_MGPIO10A">DATA7_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DDR_SELECT_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Single">DDR_SELECT_SDR</spirit:enumeration>
+      <spirit:enumeration spirit:text="Double">DDR_SELECT_DDR</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>DIR_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_DIR">DIR_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="MMUART0_TXD_USBC_DIR_MGPIO27B">DIR_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_TXD0_RMII_TXD0_USBB_DIR">DIR_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="SPI0_SDI_USBA_DIR_MGPIO5A">DIR_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>NXT_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_NXT">NXT_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="MMUART0_SCK_USBC_NXT_MGPIO29B">NXT_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_TX_CTL_RMII_TX_EN_USBB_NXT">NXT_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="SPI0_SS0_USBA_NXT_MGPIO7A">NXT_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>STP_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_STP">STP_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="MMUART0_RXD_USBC_STP_MGPIO28B">STP_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_TXD1_RMII_TXD1_USBB_STP">STP_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="SPI0_SDO_USBA_STP_MGPIO6A">STP_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>XCLK_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="USBD_XCLK">XCLK_D</spirit:enumeration>
+      <spirit:enumeration spirit:text="USBC_XCLK">XCLK_C</spirit:enumeration>
+      <spirit:enumeration spirit:text="RGMII_GTX_CLK_RMII_CLK_USBB_XCLK">XCLK_B</spirit:enumeration>
+      <spirit:enumeration spirit:text="SPI0_SCK_USBA_XCLK">XCLK_A</spirit:enumeration>
+      <spirit:enumeration spirit:text="NotUsed">DIR_NOTUSED</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_USB</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20140327160251</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

@@ -1,0 +1,68 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_CC</spirit:name>
+  <spirit:version>1.0.100</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+    </spirit:views>
+    <spirit:signals>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CACHE_ENABLED" spirit:name="CACHE_ENABLED" spirit:prompt="Enable Cache" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CC_CACHE_REGION" spirit:name="CC_CACHE_REGION" spirit:prompt="Cache Region Size" spirit:dataType="string" actel-cc:choiceRef="CC_CACHE_REGION_CHOICES" spirit:resolve="user">128MB_0001</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('CC_CACHE_REGION', Eq('CACHE_ENABLED', '1'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>CC_CACHE_REGION_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="128 MB (0-128 MB)">128MB_0001</spirit:enumeration>
+      <spirit:enumeration spirit:text="128 MB (128-256 MB)">128MB_0010</spirit:enumeration>
+      <spirit:enumeration spirit:text="128 MB (256-384 MB)">128MB_0100</spirit:enumeration>
+      <spirit:enumeration spirit:text="128 MB (384-512 MB)">128MB_1000</spirit:enumeration>
+      <spirit:enumeration spirit:text="256 MB (0-256 MB)">256MB_0011</spirit:enumeration>
+      <spirit:enumeration spirit:text="256 MB (256-512 MB)">256MB_1100</spirit:enumeration>
+      <spirit:enumeration spirit:text="512 MB (0-512 MB)">512MB_1111</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_CC</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20130307092632</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

@@ -1,0 +1,826 @@
+; -------------------------------------------------------
+; Section BUSINFO_LIST 
+; NAME  <busname>
+; End.
+; --------------------------------------------------------
+Section BUSINFO_LIST
+NAME SWITCH.
+NAME APB_P0.
+NAME APB_P1.
+End.
+
+; -------------------------------------------------------
+; Section BUSINFO_< name >
+; MASTER     <core>  <instname>  <> <> <> <> <> <>
+; PERIPHERAL <core>  <instname>  <> <> <> <memmap reference> <address offset> <address range>
+; BRIDGE     <core>  <instname>  <from_bif> <to_bif> <from_bus> <> <address offset> <address range>
+; End.
+; --------------------------------------------------------
+Section BUSINFO_SWITCH. 
+MASTER     CortexM3                     CM3                         -                   -                   -       -                    0x00000000  0x0. ; offset is don't care
+PERIPHERAL FIC32_REGION5                FIC32_REGION5               -                   -                   -       -                    0xF0000000  0x10000000.
+PERIPHERAL DDR_0_SPACE_3                DDR_0_SPACE_3               -                   -                   -       -                    0xD0000000  0x10000000.
+PERIPHERAL DDR_0_SPACE_2				DDR_0_SPACE_2               -                   -                   -       -                    0xC0000000  0x10000000.
+PERIPHERAL DDR_0_SPACE_1                DDR_0_SPACE_1               -                   -                   -       -                    0xB0000000  0x10000000.
+PERIPHERAL DDR_0_SPACE_0                DDR_0_SPACE_0               -                   -                   -       -                    0xA0000000  0x10000000.
+PERIPHERAL FIC32_REGION4                FIC32_REGION4               -                   -                   -       -                    0x90000000  0x10000000.
+PERIPHERAL FIC32_REGION3                FIC32_REGION3               -                   -                   -       -                    0x80000000  0x10000000.
+BRIDGE     MSSFIC1TOFABRIC_AHB_BRIDGE   FIC32_1                     DUMMY_AHB_SLAVE     AHB_MASTER          -       -                    0x70000000  0x10000000.
+BRIDGE     MSSFIC1TOFABRIC_APB_BRIDGE   FIC32_1                     DUMMY_APB_SLAVE     APB_MASTER          -       -                    0x70000000  0x10000000.
+BRIDGE     FABRICTOMSSFIC1_AHB_BRIDGE   FIC32_1                     AHB_SLAVE           DUMMY_AHB_MASTER    SWITCH  -                    0x00000000  -.
+BRIDGE     FABRICTOMSSFIC1_APB_BRIDGE   FIC32_1                     APB_SLAVE           DUMMY_APB_MASTER    SWITCH  -                    0x00000000  -.
+PERIPHERAL AHB2ENVM1_REGISTERS          AHB2EVM1_REGISTERS          -                   -                   -       -                    0x600C0000  0x00040000.
+PERIPHERAL AHB2ENVM0_REGISTERS          AH2ENVM0_REGISTERS          -                   -                   -       -                    0x60080000  0x00040000.
+PERIPHERAL ENVM1                        ENVM1                       -                   -                   -       -                    0x60040000  0x00040000.
+PERIPHERAL ENVM0                        ENVM0                       -                   -                   -       -                    0x60000000  0x00040000.
+PERIPHERAL FIC32_REGION1                FIC32_REGION1               -                   -                   -       -                    0x50000000  0x10000000.
+PERIPHERAL CACHE_BACKDOOR               CACHE_BACKDOOR              -                   -                   -       -                    0x40400000  0x00010000.
+PERIPHERAL USB                          USB                         -                   -                   -       USB                  0x40043000  0x00001000.
+PERIPHERAL MAC                          MAC                         -                   -                   -       MAC                  0x40041000  0x00001000.
+PERIPHERAL SYSREG                       SYSTEM_REGISTER             -                   -                   -       SYSREG               0x40038000  0x00001000.
+BRIDGE     MSSFIC2TOFABRIC              CFGM                        DUMMY_FIC_2_APB_SLAVE FIC_2_APB_MASTER    -       -                  0x40020000  0x00010000.
+BRIDGE     FABRIC2MSSFIC2               CFGM                        MDDR_APB_SLAVE      DUMMY_MDDR_APB_MASTER SWITCH  -                  0x00000000  -.
+BRIDGE     AHB2APB_P1                   -                           -                   -                   APB_P1  -                    0x40010000  -.
+BRIDGE     AHB2APB_P0                   -                           -                   -                   APB_P0  -                    0x40000000  -.
+BRIDGE     MSSFIC0TOFABRIC_AHB_BRIDGE   FIC32_0                     DUMMY_AHB_SLAVE     AHB_MASTER          -       -                    0x30000000  0x10000000.
+BRIDGE     MSSFIC0TOFABRIC_APB_BRIDGE   FIC32_0                     DUMMY_APB_SLAVE     APB_MASTER          -       -                    0x30000000  0x10000000.
+BRIDGE     FABRICTOMSSFIC0_AHB_BRIDGE   FIC32_0                     AHB_SLAVE           DUMMY_AHB_MASTER    SWITCH  -                    0x00000000  -.
+BRIDGE     FABRICTOMSSFIC0_APB_BRIDGE   FIC32_0                     APB_SLAVE           DUMMY_APB_MASTER    SWITCH  -                    0x00000000  -.
+PERIPHERAL RECYCLED_ESRAM1              RECYCLED_ESRAM1             -                   -                   -       -                    0x20012000  0x00002000.
+PERIPHERAL RECYCLED_ESRAM0              RECYCLED_ESRAM0             -                   -                   -       -                    0x20010000  0x00002000.
+PERIPHERAL ESRAM1                       ESRAM1                      -                   -                   -       -                    0x20008000  0x00008000.
+PERIPHERAL ESRAM0                       ESRAM0                      -                   -                   -       -                    0x20000000  0x00008000.
+End.
+
+
+Section BUSINFO_APB_P0.
+PERIPHERAL H2FINTERRUPT         H2F_INTERRUPT_CONTROL               -                   -                   -       H2FINTERRUPT        0x00006000  0x1000.
+PERIPHERAL WATCHDOG             WATCHDOG                            -                   -                   -       WATCHDOG            0x00005000  0x1000.
+PERIPHERAL TIMER                TIMER                               -                   -                   -       TIMER               0x00004000  0x1000.
+PERIPHERAL PDMA                 DMA                                 -                   -                   -       PDMA                0x00003000  0x1000.
+PERIPHERAL I2C_0                I2C_0                               -                   -                   -       I2C                 0x00002000  0x1000.
+PERIPHERAL SPI_0                SPI_0                               -                   -                   -       SPI                 0x00001000  0x1000.
+PERIPHERAL MMUART_0             MMUART_0                            -                   -                   -       MMUART              0x00000000  0x1000.
+End
+
+Section BUSINFO_APB_P1.
+PERIPHERAL RTC                  RTC                                 -                   -                   -       RTC                 0x00007000  0x1000.
+PERIPHERAL COMBLK               COMBLK                              -                   -                   -       COMBLK              0x00006000  0x1000.
+PERIPHERAL CAN                  CAN                                 -                   -                   -       CAN                 0x00005000  0x1000.
+PERIPHERAL HDMA                 HDMA                                -                   -                   -       HDMA                0x00004000  0x1000.
+PERIPHERAL GPIO                 GPIO                                -                   -                   -       GPIO                0x00003000  0x1000.
+PERIPHERAL I2C_1                I2C_1                               -                   -                   -       I2C                 0x00002000  0x1000.
+PERIPHERAL SPI_1                SPI_1                               -                   -                   -       SPI                 0x00001000  0x1000.
+PERIPHERAL MMUART_1             MMUART_1                            -                   -                   -       MMUART              0x00000000  0x1000.
+End
+
+; ------------------------------------------------------------------------------
+; Section MEMMAP_SEGMENTS.
+;   [REGISTER <segment name> <segment base name> <segment base address>.]*
+;   [MEMORY   <segment name> <segment base address> <segment size>.]* 
+; End.
+; ------------------------------------------------------------------------------
+Section MEMMAP_SEGMENTS.
+REGISTER SYSREG SYSREG 0xE0042000.
+End.
+
+
+; ------------------------------------------------------------------------------
+; Section MEMMAP_SEGMENT_SYSREG.
+; [begin_register <register name> <DEF|address> <register width>.
+;   [field <field name> <offset> <access> <width> <default value>.]*
+; end_register.]*
+; end.
+; ------------------------------------------------------------------------------
+Section MEMMAP_SEGMENT_SYSREG.
+
+begin_register ESRAM_CR 0x00 32.
+field SW_CC_ESRAMFWREMAP    0 RW 1 0.
+field SW_CC_ERSAM1FWREMAP   1 RW 1 0.
+end_register.
+
+begin_register ESRAM_MAX_LAT 0x04 32.
+field SW_MAX_LAT_ESRAM0     0 RW 3 1.
+field SW_MAX_LAT_ESRAM1     3 RW 3 1.
+end_register.
+
+begin_register DDR_CR 0x08 32.
+field SW_CC_DDRFWREMAP      0 RW 1 0.
+end_register.
+
+begin_register ENVM_CR 0x0C 32.
+field SW_ENVMREMAPSIZE      0 RW 5 0x11.
+field NV_FREQRNG            5 RW 3 0x7.
+field NV_DPD0              13 RW 1 0.
+field NV_DPD1              14 RW 1 0.
+field ENVM_PERSIST         15 RW 1 0.
+field ENVM_SENSE_ON        16 RW 1 0.
+end_register.
+
+begin_register ENVM_REMAP_BASE_CR 0x10 32.
+field SW_ENVMREMAPENABLE    0 RW 1 0.
+field SW_ENVMREMAPBASE      1 RW 18 0.
+end_register.
+
+begin_register ENVM_REMAP_FAB_CR 0x14 32.
+field SW_ENVMFABREMAPENABLE 0 RW 1 0.
+field SW_ENVMFABREMAPBASE   1 RW 18 0.
+end_register.
+
+begin_register CC_CR 0x18 32.
+field CC_CACHE_ENB          0 RW 1 0.
+field CC_SBUS_WR_MODE       1 RW 1 0.
+field CC_CACHE_LOCK         2 RW 1 0.
+end_register.
+
+begin_register CC_REGION_CR 0x1C 32.
+field CC_CACHE_REGION       0 RW 4 0.
+end_register.
+
+begin_register CC_LOCK_BASE_ADDR_CR 0x20 32.
+field CC_LOCK_BASEADD       0 RW 19 0.
+end_register.
+
+begin_register CC_FLUSH_INDX_CR 0x24 32.
+field CC_FLUSH_INDEX        0 RW 6 0.
+end_register.
+
+begin_register DDRB_BUF_TIMER_CR 0x28 32.
+field DDRB_TIMER            0 RW 10 0x3FF.
+end_register.
+
+begin_register DDRB_NB_ADDR_CR 0x2C 32.
+field DDRB_NB_ADDR          0 RW 16 0xA000.
+end_register.
+
+begin_register DDRB_NB_SIZE_CR 0x30 32.
+field DDRB_NB_SZ		    0 RW 4 0x1.
+end_register.
+
+begin_register DDRB_CR 0x34 32.
+field DDRB_DS_WEN			0 RW 1 1.
+field DDRB_DS_REN			1 RW 1 1.
+field DDRB_HPD_WEN			2 RW 1 1.
+field DDRB_HPD_REN			3 RW 1 1.
+field DDRB_SW_WEN			4 RW 1 1.
+field DDRB_SW_REN			5 RW 1 1.
+field DDRB_IDC_EN			6 RW 1 1.
+field DDR_BUF_SZ			7 RW 1 1.
+field DDR_DS_MAP			8 RW 4 0.
+field DDR_HPD_MAP			12 RW 4 0.
+field DDR_SW_MAP			16 RW 4 0.
+field DDR_IDC_MAP			20 RW 4 0.
+end_register.
+
+begin_register EDAC_CR 0x38 32.
+field ESRAM0_EDAC_EN		0 RW 1 0.
+field ESRAM1_EDAC_EN		1 RW 1 0.
+field MAC_EDAC_TX_EN		3 RW 1 0.
+field MAC_EDAC_RX_EN		4 RW 1 0.
+field USB_EDAC_EN			5 RW 1 0.
+field CAN_EDAC_EN			6 RW 1 0.
+end_register.
+
+begin_register MASTER_WEIGHT0_CR 0x3C 32.
+field SW_WEIGHT_IC			0 RW 5 0.
+field SW_WEIGHT_S			5 RW 5 0.
+field SW_WEIGHT_GIGE		10 RW 5 0.
+field SW_WEIGHT_FAB_0		15 RW 5 0.
+field SW_WEIGHT_FAB_1		20 RW 5 0.
+field SW_WEIGHT_PDMA		25 RW 5 0.
+end_register.
+
+begin_register MASTER_WEIGHT1_CR 0x40 32.
+field SW_WEIGHT_HPMDA		0 RW 5 0.
+field SW_WEIGHT_USB			5 RW 5 0.
+field SW_WEIGHT_G			10 RW 5 0.
+end_register.
+
+begin_register SOFT_IRQ_CR 0x44 32.
+field SOFTINTERRUPT			0 RW 1 0.
+end_register.
+
+begin_register SOFT_RESET_CR 0x48 32.
+field ENVM0_SOFTRESET		0 RW 1 0.
+field ENVM1_SOFTRESET		1 RW 1 0.
+field ESRAM0_SOFTRESET		2 RW 1 0.
+field ESRAM1_SOFTRESET		3 RW 1 0.
+field MAC_SOFTRESET			4 RW 1 1.
+field PDMA_SOFTRESET		5 RW 1 1.
+field TIMER_SOFTRESET		6 RW 1 1.
+field MMUART0_SOFTRESET		7 RW 1 1.
+field MMUART1_SOFTRESET		8 RW 1 1.
+field SPI0_SOFTRESET		9 RW 1 1.
+field SPI1_SOFTRESET		10 RW 1 1.
+field I2C0_SOFTRESET		11 RW 1 1.
+field I2C1_SOFTRESET		12 RW 1 1.
+field CAN_SOFTRESET			13 RW 1 1.
+field USB_SOFTRESET			14 RW 1 1.
+field COMBLK_SOFTRESET		15 RW 1 0.
+field FPGA_SOFTRESET		16 RW 1 1.
+field HPDMA_SOFTRESET		17 RW 1 1.
+field FIC_0_SOFTRESET		18 RW 1 1.
+field FIC_1_SOFTRESET		19 RW 1 1.
+field MSS_GPIO_SOFTRESET    20 RW 1 1.
+field MSS_GPOUT_7_0_SOFTRESET	21 RW 1 1.
+field MSS_GPOUT_15_8_SOFTRESET  22 RW 1 1.
+field MSS_GPOUT_23_16_SOFTRESET 23 RW 1 1.
+field MSS_GPOUT_31_24_SOFTRESET 24 RW 1 1.
+field MDDR_CTLR_SOFTRESET	25 RW 1 1.
+field MDDR_DDRFIC_SOFTRESET	26 RW 1 1.
+end_register.
+
+begin_register M3_CR 0x4C 32.
+field STCALIB				0 RW 26 0x2000000.
+field STCLK_DIVISOR			26 RW 2 0x3.
+field M3_MPU_DISABLE		28 RW 1 0.
+end_register.
+
+begin_register FAB_IF_CR 0x50 32.
+field FAB0_AHB_BYPASS		0 RW 1 0.
+field FAB1_AHB_BYPASS		1 RW 1 0.
+field FAB0_AHB_MODE			2 RW 1 0.
+field FAB1_AHB_MODE			3 RW 1 0.
+field SW_FIC_REG_SEL		4 RW 6 0x38.
+end_register.
+
+begin_register LOOPBACK_CR 0x54 32.
+field MSS_MMUARTLOOPBACK	0 RW 1 0.
+field MSS_SPILOOPBACK		1 RW 1 0.
+field MSS_I2CLOOPBACK		2 RW 1 0.
+field MSS_GPIOLOOPBACK		3 RW 1 0.
+end_register.
+
+begin_register GPIO_SYSRESET_SEL_CR 0x58 32.
+field MSS_GPIO_7_0_SYSRESET_SEL 0 RW 1 0.
+field MSS_GPIO_15_8_SYSRESET_SEL 1 RW 1 0.
+field MSS_GPIO_23_16_SYSRESET_SEL 2 RW 1 0.
+field MSS_GPIO_31_24_SYSRESET_SEL 3 RW 1 0.
+end_register.
+
+begin_register GPIN_SRC_SEL_CR 0x5C 32.
+field MSS_GPINSOURCE 0 RW 32 0.
+end_register.
+
+begin_register MDDR_CR 0x60 32.
+field MDDR_CONFIG_LOCAL			0 RW 1 1.
+field SDR_MODE					1 RW 1 0.
+field F_AXI_AHB_MODE			2 RW 1 0.
+field PHY_SELF_REF_EN			3 RW 1 0.
+end_register.
+
+begin_register USB_IO_INPUT_SEL_CR 0x64 32.
+field USB_IO_INPUT_SEL			0 RW 2 0.
+end_register.
+
+begin_register PERIPH_CLK_MUX_SEL_CR 0x68 32.
+field SPI0_SCK_FAB_SEL			0 RW 1 0.
+field SPI1_SCK_FAB_SEL			1 RW 1 0.
+field TRACECLK_DIV2_SEL			2 RW 1 0.
+end_register.
+
+begin_register WDOG_CR 0x6C 32.
+field WDOGENABLE				0 RW 1 0.
+field WDOGMODE					1 RW 1 0.
+end_register.
+
+begin_register MDDR_IO_CALIB_CR 0x70 32.
+field PCODE						0 RW 6 0.
+field NCODE						6 RW 6 0.
+field CALIB_TRIM				12 RW 1 -. 
+field CALIB_START				13 RW 1 0.
+field CALIB_LOCK				14 RW 1 0.
+end_register.
+
+begin_register RESERVED 0x74 32.
+end_register.
+
+begin_register EDAC_IRQ_ENABLE_CR 0x78 32.
+field ESRAM0_EDAC_1E_EN			0 RW 1 0.
+field ESRAM0_EDAC_2E_EN			1 RW 1 0.
+field ESRAM1_EDAC_1E_EN			2 RW 1 0.
+field ESRAM1_EDAC_2E_EN			3 RW 1 0.
+field MAC_EDAC_TX_1E_EN			6 RW 1 0.
+field MAC_EDAC_TX_2E_EN			7 RW 1 0.
+field MAC_EDAC_RX_1E_EN			8 RW 1 0.
+field MAC_EDAC_RX_2E_EN			9 RW 1 0.
+field USB_EDAC_1E_EN			10 RW 1 0.
+field USB_EDAC_2E_EN			11 RW 1 0.
+field CAN_EDAC_1E_EN			12 RW 1 0.
+field CAN_EDAC_2E_EN			13 RW 1 0.
+field MDDR_ECC_INT_EN			14 RW 1 0.
+end_register.
+
+begin_register USB_CR 0x7C 32.
+field USB_UTMI_SEL				0 RW 1 0.
+field USB_DDR_SELECT			1 RW 1 0.
+end_register.
+
+begin_register ESRAM_PIPELINE_CR 0x80 32.
+field ESRAM_PIPELINE_ENABLE		0 RW 1 1.
+end_register.
+
+begin_register MSS_IRQ_ENABLE_CR 0x84 32.
+field SW_INTERRUPT_EN			0 RW 7 0x7F.
+field CC_INTERRUPT_EN			7 RW 3 0x7.
+field DDRB_INTERRUPT_EN			10 RW 10 0x3FF.
+end_register.
+
+begin_register RTC_WAKEUP_CR 0x88 32.
+field RTC_WAKEUP_M3_EN			0 RW 1 0.
+field RTC_WAKEUP_FAB_EN			1 RW 1 0.
+field RTC_WAKEUP_C_EN			2 RW 1 0.
+end_register.
+
+begin_register MAC_CR 0x8C 32.
+field ETH_LINE_SPEED			0 RW 2 0.
+field ETH_PHY_MODE				2 RW 2 0.
+field RGMII_TXC_DELAY_SEL		5 RW 4 0.
+end_register.
+
+begin_register MSSDDR_PLL_STATUS_LOW_CR 0x90 32.
+field FACC_PLL_DIVR				0 RW 6 0x1.
+field FACC_PLL_DIVF				6 RW 10 0x2.
+field FACC_PLL_DIVQ				16 RW 4 0x2.
+field FACC_PLL_RANGE			19 RW 4 0.
+field FACC_PLL_LOCKWIN			23 RW 3 0.
+field FACC_PLL_LOCKCNT			26 RW 4 0.
+end_register.
+
+begin_register MSSDDR_PLL_STATUS_HIGH_CR 0x94 32.
+field FACC_PLL_BYPASS			0 RW 1 0.
+field FACC_PLL_MODE_1V2			1 RW 1 1.
+field FACC_PLL_MODE_3V3			2 RW 1 1.
+field FACC_PLL_FSE				3 RW 1 0.
+field FACC_PLL_PD				4 RW 1 0.
+field FACC_PLL_SSE				5 RW 1 0.
+field FACC_PLL_SSMD				6 RW 2 0.
+field FACC_PLL_SSMF				8 RW 5 0.
+end_register.
+
+begin_register MSSDDR_FACC1_CR 0x98 32.
+field DIVISOR_A					0 RW 2 0.
+field APB0_DIVISOR				2 RW 3 0.
+field APB1_DIVISOR				5 RW 3 0.
+field DDR_CLK_EN				8 RW 1 0.
+field M3_CLK_DIVISOR			9 RW 3 0.
+field FACC_GLMUX_SEL			12 RW 1 0.
+field FIC_0_DIVISOR				13 RW 3 0.
+field FIC_1_DIVISOR				16 RW 3 0.
+field DDR_FIC_DIVISOR			19 RW 3 0.
+field BASE_DIVISOR				22 RW 3 0.
+field PERSIST_CC				25 RW 1 0.
+field CONTROLLER_PLLT_INT		26 RW 1 1.
+field FACC_FAB_REF_SEL			27 RW 1 0.
+end_register.
+
+begin_register MSSDDR_FACC2_CR 0x9C 32.
+field RTC_CLK_SEL				0 RW 2 0.
+field FACC_SRC_SEL				2 RW 3 0.
+field FACC_PRE_SRC_SEL			5 RW 1 0.
+field FACC_STANDBY_SEL			6 RW 3 0.
+field MSS_25_50MHZ_EN			9 RW 1 1.
+field MSS_1MHZ_EN				10 RW 1 1.
+field MSS_CLK_ENVM_EN			11 RW 1 1.
+field MSS_XTAL_EN				12 RW 1 1.
+field MSS_XTAL_RTC_EN			13 RW 1 1.
+end_register.
+
+begin_register PLL_LOCK_EN_CR 0xA0 32.
+field MPLL_LOCK_EN				0 RW 1 0.
+field MPLL_LOCK_LOST_EN			1 RW 1 0.
+field FAB_PLL_LOCK_EN			2 RW 1 0.
+field FAB_PLL_LOCK_LOST_EN		3 RW 1 0.
+end_register.
+
+begin_register MSSDDR_CLK_CALIB_CR 0xA4 32.
+field FAB_CALIB_START			0 RW 1 0.
+end_register.
+
+begin_register PLL_DELAY_LINE_SEL_CR 0xA8 32.
+field PLL_REF_DEL_SEL			0 RW 2 0.
+field PLL_REF_DEL_SEL			2 RW 2 0.
+end_register.
+
+begin_register MAC_STAT_CLRONRD_CR 0xAC 32.
+field MAC_STAT_CLRONRD			1 RW 1 0.
+end_register.
+
+begin_register RESET_SOURCE_CR 0xB0 32.
+field P0_RESET_DETECT			0 R 1 1.
+field CONTROLLER_RESET_DETECT	1 R 1 1.
+field CONTROLLER_M3_RESET_DETECT 2 R 1 1.
+field SOFT_RESET_DETECT			3 R 1 1.
+field LOCKUP_RESET_DETECT		4 R 1 1.
+field WDOG_RESET_DETECT			5 R 1 1.
+field USER_RESET_DETECT			6 R 1 1.
+field USER_M3_RESET_DETECT		7 R 1 1.
+end_register.
+
+begin_register CC_DC_ERR_ADDR_SR 0xB4 32.
+field CC_DC_ERR_ADDR			0 R 32 0.
+end_register.
+
+begin_register CC_IC_ERR_ADDR_SR 0xB8 32.
+field CC_IC_ERR_ADDR			0 R 32 0.
+end_register.
+
+begin_register CC_SB_ERR_ADDR_SR 0xBC 32.
+field CC_SB_ERR_ADDR			0 R 32 0.
+end_register.
+
+begin_register RESERVED 0xC0 32.
+end_register.
+
+begin_register CC_IC_MISS_CNTR_SR 0xC4 32.
+field CC_IC_MISS_CNT			0 R 32 0.
+end_register.
+
+begin_register CC_IC_HIT_CNTR_SR 0xC8 32.
+field CC_IC_HIT_CNT				0 R 32 0.
+end_register.
+
+begin_register CC_DC_MISS_CNTR_SR 0xCC 32.
+field CC_DC_MISS_CNT			0 R 32 0.
+end_register.
+
+begin_register CC_DC_HIT_CNTR_SR 0xD0 32.
+field CC_DC_HIT_CNT				0 R 32 0.
+end_register.
+
+begin_register CC_IC_TRANS_CNTR_SR 0xD4 32.
+field CC_IC_TRANS_CNT			0 R 32 0.
+end_register.
+
+begin_register CC_DC_TRANS_CNTR_SR 0xD8 32.
+field CC_DC_TRANS_CNT			0 R 32 0.
+end_register.
+
+begin_register DDRB_DS_ERR_ADR_SR 0xDC 32.
+field DDRB_DS_ERR_ADD			0 R 32 0.
+end_register.
+
+begin_register DDRB_HPD_ERR_ADR_SR 0xE0 32.
+field DDRB_HPD_ERR_ADD			0 R 32 0.
+end_register.
+
+begin_register DDRB_SW_ERR_ADDR_SR 0xE4 32.
+field DDRB_SW_ERR_ADD			0 R 32 0.
+end_register.
+
+begin_register DDRB_BUF_EMPTY_SR 0xE8 32.
+field DDRB_DS_WBEMPTY			0 R 1 0.
+field DDRB_DS_RBEMPTY			1 R 1 0.
+field DDRB_SW_EBEMPTY			2 R 1 0.
+field DDRB_SW_RBEMPTY			3 R 1 0.
+field DDRB_HPD_WBEMPTY			4 R 1 0.
+field DDRB_HPD_RBEMPTY			5 R 1 0.
+field DDRB_IDC_RBEMPTY			6 R 1 0.
+end_register.
+
+begin_register DDRB_DSBL_DN_SR 0xEC 32.
+field DDRB_DS_WDSBL_DN			0 R 1 0.
+field DDRB_DS_RDSBL_DN			1 R 1 0.
+field DDRB_SW_WDSBL_DN			2 R 1 0.
+field DDRB_SW_RDSBL_DN			3 R 1 0.
+field DDRB_HPD_WDSBL_DN			4 R 1 0.
+field DDRB_HPD_RDSBL_DN			5 R 1 0.
+field DDRB_IDC_DSBL_DN			6 R 1 0.
+end_register.
+
+begin_register ESRAM0_EDAC_CNT 0xF0 32.
+field ESRAM0_EDAC_CNT_1E		0 R 16 0.
+field ESRAM0_EDAC_CNT_2E		16 R 16 0.
+end_register.
+
+begin_register ERAM1_EDDAC_CNT 0xF4 32.
+field ESRAM1_EDAC_CNT_1E		0 R 16 0.
+field ESRAM1_EDAC_CNT_2E		16 R 16 0.
+end_register.
+
+begin_register CC_EDAC_CNT 0xF8 32.
+field CC_EDAC_CNT_1E			0 R 16 0.
+field CC_EDAC_CNT_2E			16 R 16 0.
+end_register.
+
+begin_register MAC_EDAC_TX_CNT 0xFC 32.
+field MAC_EDAC_TX_CNT_1E		0 R 16 0.
+field MAC_EDAC_TX_CNT_2E		16 R 16 0.
+end_register.
+
+begin_register MAC_EDAC_RX_CNT 0x100 32.
+field MAC_EDAC_RX_CNT_1E		0 R 16 0.
+field MAC_EDAC_RX_CNT_2E		16 R 16 0.
+end_register.
+
+begin_register USB_EDAC_CNT 0x104 32.
+field USB_EDAC_CNT_1E			0 R 16 0.
+field USB_EDAC_CNT_2E			16 R 16 0.
+end_register.
+
+begin_register CAN_EDAC_CNT 0x108 32.
+field CAN_EDAC_CNT_1E			0 R 16 0.	
+field CAN_EDAC_CNT_2E			16 R 16 0.
+end_register.
+
+begin_register ESRAM0_EDAC_ADR 0x10C 32.
+field ESRAM0_EDAC_1E_AD			0 R 13 0.
+field ESRAM0_EDAC_2E_AD			13 R 13 0.
+end_register.
+
+begin_register ERSAM1_EDAC_ADR 0x110 32.
+field ESRAM1_EDAC_1E_AD			0 R 13 0.
+field ESRAM1_EDAC_2E_AD			13 R 13 0.
+end_register.
+
+begin_register MAC_EDAC_RX_ADR 0x114 32.
+field MAC_EDAC_RX_1E_AD			0 R 13 0.
+field MAC_EDAC_RX_2E_AD			13 R 13 0.
+end_register.
+
+begin_register MAC_EDAC_TX_ADR 0x118 32.
+field MAC_EDAC_TX_1E_AD			0 R 13 0.
+field MAC_EDAC_TX_2E_AD			13 R 13 0.
+end_register.
+
+begin_register CAN_EDAC_ADR 0x11C 32.
+field CAN_EDAC_1E_AD			0 R 13 0.
+field CAN_EDAC_2E_AD			13 R 13 0.
+end_register.
+
+begin_register USB_EDAC_ADR 0x120 32.
+field USB_EDAC_1E_AD			0 R 13 0.
+field USB_EDAC_2E_AD			13 R 13 0.
+end_register.
+
+begin_register MM0_1_2_SECURITY 0x124 32.
+field MM0_1_2_MS0_ALLOWED_R		0 R 1 1.
+field MM0_1_2_MS0_ALLOWED_W		1 R 1 1.
+field MM0_1_2_MS1_ALLOWED_R		2 R 1 1.
+field MM0_1_2_MS1_ALLOWED_W		3 R 1 1.
+field MM0_1_2_MS2_ALLOWED_R		4 R 1 1.
+field MM0_1_2_MS2_ALLOWED_W		5 R 1 1.
+field MM0_1_2_MS3_ALLOWED_R		6 R 1 1.
+field MM0_1_2_MS3_ALLOWED_W		7 R 1 1.
+field MM0_1_2_MS6_ALLOWED_R		8 R 1 1.
+field MM0_1_2_MS6_ALLOWED_W		9 R 1 1.
+end_register.
+
+begin_register MM4_5_DDR_FIC_SECURITY/MM_4_5_FIC64_SECURITY 0x128 32.
+field MM4_5_DDR_FIC_MS0_ALLOWED_R	0 R 1 1.
+field MM4_5_DDR_FIC_MS0_ALLOWED_W	1 R 1 1.
+field MM4_5_DDR_FIC_MS1_ALLOWED_R	2 R 1 1.
+field MM4_5_DDR_FIC_MS1_ALLOWED_W	3 R 1 1.
+field MM4_5_DDR_FIC_MS2_ALLOWED_R	4 R 1 1.
+field MM4_5_DDR_FIC_MS2_ALLOWED_W	5 R 1 1.
+field MM4_5_DDR_FIC_MS3_ALLOWED_R	6 R 1 1.
+field MM4_5_DDR_FIC_MS3_ALLOWED_W	7 R 1 1.
+field MM4_5_DDR_FIC_MS6_ALLOWED_R	8 R 1 1.
+field MM4_5_DDR_FIC_MS6_ALLOWED_W	9 R 1 1.
+end_register.
+
+begin_register MM3_6_7_8_SECURITY 0x12C 32.
+field MM3_6_7_8_MS0_ALLOWED_R		0 R 1 1.
+field MM3_6_7_8_MS0_ALLOWED_W		1 R 1 1.
+field MM3_6_7_8_MS1_ALLOWED_R		2 R 1 1.
+field MM3_6_7_8_MS1_ALLOWED_W		3 R 1 1.
+field MM3_6_7_8_MS2_ALLOWED_R		4 R 1 1.
+field MM3_6_7_8_MS2_ALLOWED_W		5 R 1 1.
+field MM3_6_7_8_MS3_ALLOWED_R		6 R 1 1.
+field MM3_6_7_8_MS3_ALLOWED_W		7 R 1 1.
+field MM3_6_7_8_MS6_ALLOWED_R		8 R 1 1.
+field MM3_6_7_8_MS6_ALLOWED_W		9 R 1 1.
+end_register.
+
+begin_register MM9_SECURITY 0x130 32.
+field MM9_MS0_ALLOWED_R				0 R 1 1.
+field MM9_MS0_ALLOWED_W				1 R 1 1.
+field MM9_MS1_ALLOWED_R				2 R 1 1.
+field MM9_MS1_ALLOWED_W 			3 R 1 1.
+field MM9_MS2_ALLOWED_R				4 R 1 1.
+field MM9_MS2_ALLOWED_W				5 R 1 1.
+field MM9_MS3_ALLOWED_R				6 R 1 1.
+field MM9_MS3_ALLOWED_W				7 R 1 1.
+field MM9_MS6_ALLOWED_R				8 R 1 1.
+field MM9_MS6_ALLOWED_W				9 R 1 1.
+end_register.
+
+begin_register M3_SR 0x134 32.
+field CURRPRI						0 R 8 0.
+end_register.
+
+begin_register ETM_COUNT_LOW 0x138 32.
+field ETMCOUNT_31_0					0 R 32 0.
+end_register.
+
+begin_register ETM_COUNT_HIGH 0x13C 32.
+field ETMCOUNT_47_32				0 R 16 0.
+field ETMINTNUM						16 R 9 0.
+field ETMINTSTAT					25 R 3 0.
+end_register.
+
+begin_register DEVICE_SR 0x140 32.
+field CORE_UP_SYNC					0 R 1 0.
+field VIRGIN_PART					1 R 1 1.
+field FF_IN_PROGRESS_SYNC			2 R 1 0.
+field WATCHDOG_FREEZE_SYNC			3 R 1 0.
+field FLASH_VALID_SYNC				4 R 1 0.
+field M3_DISABLE					5 R 1 0.
+field M3_DEBUG_ENABLE				6 R 1 1.
+end_register.
+
+begin_register ENVM_PROTECT_USER 0x144 32.
+field NVM0_LOWER_M3ACCESS			0 R 1 1.
+field NVM0_LOWER_FABRIC_ACCESS		1 R 1 1.
+field NVM0_LOWER_OTHERS_ACCESS		2 R 1 1.
+field NVM0_LOWER_WRITE_ALLOWED		3 R 1 1.
+field NVM0_UPPER_M3ACCESS			4 R 1 1.
+field NVM0_UPPER_FABRIC_ACCESS		5 R 1 1.
+field NVM0_UPPER_OTHERS_ACCESS		6 R 1 1.
+field NVM0_UPPER_WRITE_ALLOWED		7 R 1 1.
+field NVM1_LOWER_M3ACCESS			8 R 1 1.
+field NVM1_LOWER_FABRIC_ACCESS		9 R 1 1.
+field NVM1_LOWER_OTHERS_ACCESS		10 R 1 1.
+field NVM1_LOWER_WRITE_ALLOWED		11 R 1 1.
+field NVM1_UPPER_M3ACCESS			12 R 1 1.
+field NVM1_UPPER_FABRIC_ACCESS		13 R 1 1.
+field NVM1_UPPER_OTHERS_ACCESS		14 R 1 1.
+field NVM1_UPPER_WRITE_ALLOWED		15 R 1 1.
+end_register.
+
+begin_register ENVM_STATUS 0x148 32.
+field CODE_SHADOW_EN				0 R 1 0.
+end_register.
+
+begin_register DEVICE_VERSION 0x14C 32.
+field IDP							0 R 16 0.
+field IDV							16 R 4 0.
+end_register.
+
+begin_register MSSDDR_PLL_STATUS 0x150 32.
+field FAB_PLL_LOCK					0 R 1 0.
+field MPLL_LOCK						1 R 1 0.
+field RCOSC_DIV2					2 R 1 0.
+end_register.
+
+begin_register USB_SR 0x154 32.
+field POWERDN						0 R 1 0.
+field LPI_CARKIT_EN					1 R 1 0.
+end_register.
+
+begin_register ENVM_SR 0x158 32.
+field ENVM_BUSY						0 R 2 0.
+end_register.
+
+begin_register RESERVED 0x15C 32.
+end_register.
+
+begin_register DDRB_STATUS 0x160 32.
+field DDRB_DEBUG_STATUS				0 R 32 0.
+end_register.
+
+begin_register MDDR_IO_CALIB_STATUS 0x164 32.
+field CALIB_STATUS					0 R 1 0.
+field CALIB_NCODE					1 R 5 0x3F.
+field CALIB_PCODE					6 R 7 0x3F.
+field CALIB_NCOMP					13 R 1 1.
+field CALIB_PCOMP					14 R 1 1.
+end_register.
+
+begin_register MSSDDR_CLK_CALIB_STATUS 0x168 32.
+field FAB_CALIB_FAIL				0 R 1 0.
+end_register.
+
+begin_register WDOGLOAD 0x16C 32.
+field WDOGLOAD						0 R 26 0x1800000.
+end_register.
+
+begin_register WDOGMVRP 0x170 32.
+field WDOGMVRP						0 R 32 0xFFFFFFFF.
+end_register.
+
+begin_register USERCONFIG0 0x174 32.
+field CONFIG_REG0					0 R 32 0.
+end_register.
+
+begin_register USERCONFIG1 0x178 32.
+field CONFIG_REG1					0 R 32 0.
+end_register.
+
+begin_register USERCONFIG2 0x17C 32.
+field CONFIG_REG2					0 R 32 0.
+end_register.
+
+begin_register USERCONFIG3 0x180 32.
+field CONFIG_REG4					0 R 32 0.
+end_register.
+
+begin_register FAB_PROT_SIZE 0x184 32.
+field SW_PROTREGIONSIZE				0 R 6 0x1E.
+end_register.
+
+begin_register FAB_PROT_BASE 0x188 32.
+field SW_PROTREGIONBASE				0 R 32 0.
+end_register.
+
+begin_register MSS_GPIO_DEF 0x18C 32.
+field MSS_GPIO_7_0_DEF				0 R 1 1.
+field MSS_GPIO_15_8_DEF				1 R 1 1.
+field MSS_GPIO_23_16_DEF			2 R 1 1.
+field MSS_GPIO_31_24_DEF			3 R 1 1.
+end_register.
+
+begin_register EDAC_SR 0x190 32.
+field ESRAM0_EDAC_1E				0 R 1 0.
+field ESRAM0_EDAC_2E				1 R 1 0.
+field ESRAM1_EDAC_1E				2 R 1 0.
+field ESRAM1_EDAC_2E				3 R 1 0.
+field MAC_EDAC_TX_1E				6 R 1 0.
+field MAC_EDAC_TX_2E				7 R 1 0.
+field MAC_EDAC_RX_1E				8 R 1 0.
+field MAC_EDAC_RX_2E				9 R 1 0.
+field USB_EDAC_1E					10 R 1 0.
+field USB_EDAC_2E					11 R 1 0.
+field CAN_EDAC_1E					12 R 1 0.
+field CAN_EDAC_2E					13 R 1 0.
+end_register.
+
+begin_register MSS_INTERNAL_SR 0x194 32.
+field MPLL_LOCK_INT					0 R 1 0.
+field MPLL_LOCKLOST_INT				1 R 1 0.
+field FAB_PLL_LOCK_INT				2 R 1 0.
+field FAB_PLL_LOCKLOST_INT			3 R 1 0.
+field MDDR_IO_CALIB_INT				4 R 1 0.
+field MDDR_ECC_INT					5 R 1 0.
+field DDR_FIC_INT					6 R 1 0.
+end_register.
+
+begin_register MSS_EXTERNAL_SR 0x198 32.
+field SW_ERRORSTATUS				0 R 7 0.
+field DDRB_RDWR_ERR_REG				7 R 6 0.
+field DDRB_DS_WR_ERR				13 R 1 0.
+field DDRB_SW_WR_ERR				14 R 1 0.
+field DDRB_HPD_WR_ERR				15 R 1 0.
+field DDRB_LCKOUT					16 R 1 0.
+field DDRB_LOCK_MID					17 R 1 0.
+field CC_HRESP_ERR					18 R 1 0.
+end_register.
+
+begin_register WDOGTIMEOUTEVENT 0x19C 32.
+field WDOGTIMEOUTEVENT				0 R 1 0.
+end_register.
+
+begin_register CLR_MSS_COUNTERS 0x1A0 32.
+field CC_IC_MISS_CNTCLR				0 W 1 0.
+field CC_IC_HIT_CNTCLR				1 W 1 0.
+field CC_DC_MISS_CNTCLR				2 W 1 0.
+field CC_DC_HIT_CNTCLR				3 W 1 0.
+field CC_IC_TRANS_CNTCLR			4 W 1 0.
+field CC_DC_TRANS_CNTCLR			5 W 1 0.
+end_register.
+
+begin_register CLR_EDAC_COUNTERS 0x1A4 32.
+field ESRAM0_EDAC_CNTCLR_1E			0 W 1 0.
+field ESRAM0_EDAC_CNTCLR_2E			1 W 1 0.
+field ESRAM1_EDAC_CNTCLR_1E			2 W 1 0.
+field ESRAM1_EDAC_CNTCLR_2E			3 W 1 0.
+field MAC_EDAC_TX_CNTCLR_1E			6 W 1 0.
+field MAC_EDAC_TX_CNTCLR_2E			7 W 1 0.
+field MAC_EDAC_RX_CNTCLR_1E			8 W 1 0.
+field MAC_EDAC_RX_CNTCLR_2E			9 W 1 0.
+field USB_EDAC_CNTCLR_1E			10 W 1 0.
+field USB_EDAC_CNTCLR_2E			11 W 1 0.
+field CAN_EDAC_CNTCLR_1E			12 W 1 0.
+field CAN_EDAC_CNTCLR_2E			13 W 1 0.
+end_register.
+
+begin_register FLUSH_CR 0x1A8 32.
+field CC_FLUSH_CACHE				0 W 1 0.
+field CC_FLUSH_CHLINE				1 W 1 0.
+field DDRB_FLSHDS					2 W 1 0.
+field DDRB_FLSHHPD					3 W 1 0.
+field DDRB_FLSHSW					4 W 1 0.
+field DDRB_INVALID_DS				5 W 1 0.
+field DDRB_INVALID_SW				6 W 1 0.
+field DDRB_INVALID_HPD				7 W 1 0.
+field DDRB_INVALID_IDC				8 W 1 0.
+end_register.
+
+begin_register MAC_STAT_CLR_CR 0x1AC 32.
+field MAC_STAT_CLR					0 W 1 0.
+end_register.
+
+begin_register IOMUXCELL_CONFIG[n] 0x1B0-0x290 32.
+field MSS_IOMUXSEL0[N]				0 RW 1 0.
+field MSS_IOMUXSEL1[N]				1 RW 1 0.
+field MSS_IOMUXSEL2[N]				2 RW 1 0.
+field MSS_IOMUXSEL3[N]				3 RW 1 0.
+field MSS_IOMUXSEL4UPPER[N]			4 RW 2 0.
+field MSS_IOMUXSEL5UPPER[N]			6 RW 1 0.
+field MSS_IOMUXSEL5MID[N]			7 RW 1 0.
+field MSS_IOMUXSEL5LOWER[N]			9 RW 1 0.
+end_register.
+
+
+End.
+

@@ -1,0 +1,1915 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREJTAGDEBUG</spirit:name>
+  <spirit:version>4.0.100</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>JTAG_HEADER</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TRSTB</spirit:componentSignalName><spirit:busSignalName>TRSTB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TCK</spirit:componentSignalName><spirit:busSignalName>TCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TMS</spirit:componentSignalName><spirit:busSignalName>TMS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TDI</spirit:componentSignalName><spirit:busSignalName>TDI</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TDO</spirit:componentSignalName><spirit:busSignalName>TDO</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTRSTB_SEC</spirit:componentSignalName><spirit:busSignalName>UTRSTB_SEC</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>EN_SEC</spirit:componentSignalName><spirit:busSignalName>EN_SEC</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TDI_SEC</spirit:componentSignalName><spirit:busSignalName>TDI_SEC</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTRSTB</spirit:componentSignalName><spirit:busSignalName>UTRSTB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UTMS</spirit:componentSignalName><spirit:busSignalName>UTMS</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_0</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_0</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_0</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_0</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_0</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_0</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_0</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_0</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_1</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_1</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_1</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_1</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_1</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_1</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_1</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_1</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_2</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_2</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_2</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_2</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_2</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_2</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_2</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_2</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_2</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_2</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_2</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_2</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_2</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_3</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_3</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_3</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_3</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_3</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_3</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_3</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_3</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_3</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_3</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_3</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_3</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_3</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_4</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_4</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_4</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_4</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_4</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_4</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_4</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_4</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_4</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_4</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_4</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_4</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_4</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_5</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_5</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_5</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_5</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_5</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_5</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_5</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_5</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_5</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_5</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_5</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_5</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_5</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_6</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_6</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_6</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_6</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_6</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_6</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_6</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_6</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_6</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_6</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_6</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_6</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_6</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_7</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_7</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_7</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_7</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_7</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_7</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_7</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_7</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_7</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_7</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_7</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_7</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_7</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_8</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_8</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_8</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_8</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_8</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_8</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_8</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_8</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_8</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_8</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_8</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_8</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_8</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_9</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_9</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_9</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_9</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_9</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_9</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_9</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_9</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_9</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_9</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_9</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_9</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_9</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_10</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_10</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_10</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_10</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_10</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_10</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_10</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_10</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_10</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_10</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_10</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_10</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_10</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_11</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_11</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_11</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_11</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_11</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_11</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_11</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_11</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_11</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_11</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_11</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_11</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_11</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_12</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_12</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_12</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_12</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_12</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_12</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_12</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_12</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_12</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_12</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_12</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_12</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_12</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_13</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_13</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_13</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_13</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_13</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_13</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_13</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_13</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_13</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_13</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_13</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_13</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_13</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_14</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_14</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_14</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_14</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_14</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_14</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_14</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_14</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_14</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_14</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_14</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_14</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_14</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>DEBUG_TARGET_15</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRST_15</spirit:componentSignalName><spirit:busSignalName>TGT_TRST_15</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TCK_15</spirit:componentSignalName><spirit:busSignalName>TGT_TCK_15</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TMS_15</spirit:componentSignalName><spirit:busSignalName>TGT_TMS_15</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDI_15</spirit:componentSignalName><spirit:busSignalName>TGT_TDI_15</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TDO_15</spirit:componentSignalName><spirit:busSignalName>TGT_TDO_15</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>TGT_TRSTN_15</spirit:componentSignalName><spirit:busSignalName>TGT_TRSTN_15</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>UJTAG_BYPASS_0</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TMS_0</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TMS_0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TCK_0</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TCK_0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TDI_0</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TDI_0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TRSTB_0</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TRSTB_0</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TDO_0</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TDO_0</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>UJTAG_BYPASS_1</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TCK_1</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TCK_1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TMS_1</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TMS_1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TDI_1</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TDI_1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TRSTB_1</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TRSTB_1</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TDO_1</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TDO_1</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>UJTAG_BYPASS_2</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TCK_2</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TCK_2</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TMS_2</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TMS_2</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TDI_2</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TDI_2</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TRSTB_2</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TRSTB_2</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TDO_2</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TDO_2</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>UJTAG_BYPASS_3</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="GROUP" spirit:name="GROUP" spirit:version="0"/>
+    <spirit:slave></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TCK_3</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TCK_3</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TMS_3</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TMS_3</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TDI_3</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TDI_3</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TRSTB_3</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TRSTB_3</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>UJTAG_BYPASS_TDO_3</spirit:componentSignalName><spirit:busSignalName>UJTAG_BYPASS_TDO_3</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VerilogSource-Base-U"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="Testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="Testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs_ALL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>TRSTB</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TCK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TMS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TDI</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TDO</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_0" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_1</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_1" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_1</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_1</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_1</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_2</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_2" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_2</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_2</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_2</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_3</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_3" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_3</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_3</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_3</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_4</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="5"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_4" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_4</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="5"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_4</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="5"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_4</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="5"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_4</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="5"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_5</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="6"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_5" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_5</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="6"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_5</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="6"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_5</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="6"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_5</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="6"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_6</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="7"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_6" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_6</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="7"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_6</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="7"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_6</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="7"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_6</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="7"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_7</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="8"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_7" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_7</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="8"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_7</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="8"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_7</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="8"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_7</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="8"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_8</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="9"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_8" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_8</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="9"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_8</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="9"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_8</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="9"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_8</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="9"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_9</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="10"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_9" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_9</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="10"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_9</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="10"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_9</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="10"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_9</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="10"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_10</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="11"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_10" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_10</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="11"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_10</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="11"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_10</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="11"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_10</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="11"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_11</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="12"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_11" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_11</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_11</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_11</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_11</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_12</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="13"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_12" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_12</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="13"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_12</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="13"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_12</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="13"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_12</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="13"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_13</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="14"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_13" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_13</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="14"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_13</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="14"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_13</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="14"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_13</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="14"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_14</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="15"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_14" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_14</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="15"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_14</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="15"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_14</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="15"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_14</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="15"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRST_15</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="16"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_15" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TCK_15</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="16"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TMS_15</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="16"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDI_15</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="16"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TDO_15</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="16"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TCK_0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TMS_0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TDI_0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TRSTB_0</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TCK_1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TMS_1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TDI_1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TRSTB_1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TDO_1</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TCK_2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TMS_2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TDI_2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TRSTB_2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TDO_2</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TCK_3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TMS_3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TDI_3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TRSTB_3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TDO_3</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UJTAG_BYPASS_TDO_0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_0</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_0" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_1</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="2"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_1" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_2</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="3"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_2" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_3</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="4"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_3" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_4</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="5"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_4" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_5</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="6"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_5" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_6</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="7"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_6" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_7</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="8"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_7" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_8</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="9"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_8" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_9</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="10"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_9" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_10</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="11"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_10" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_11</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="12"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_11" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_12</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="13"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_12" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_13</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="14"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_13" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_14</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="15"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_14" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TGT_TRSTN_15</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="NUM_DEBUG_TGTS" actel-cc:operation="greaterOrEqual" actel-cc:termValue="16"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TGT_ACTIVE_HIGH_RESET_15" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTRSTB_SEC</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_SEC_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>EN_SEC</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_SEC_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TDI_SEC</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_SEC_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTRSTB</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_SEC_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>UTMS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_BYPASS" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="UJTAG_SEC_EN" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">26</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="NUM_DEBUG_TGTS" spirit:name="NUM_DEBUG_TGTS" spirit:prompt="Number of Debug Targets" spirit:dataType="int" spirit:configGroups="General Configuration" spirit:resolve="user" spirit:minimum="1" spirit:maximum="16">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_0" spirit:name="IR_CODE_TGT_0" spirit:prompt="Target 0 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_0" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x55</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_0" spirit:name="TGT_ACTIVE_HIGH_RESET_0" spirit:prompt="Active-high target reset Target 0" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_0" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_1" spirit:name="IR_CODE_TGT_1" spirit:prompt="Target 1 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_1" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x56</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_1" spirit:name="TGT_ACTIVE_HIGH_RESET_1" spirit:prompt="Active-high target reset Target 1" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_1" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_2" spirit:name="IR_CODE_TGT_2" spirit:prompt="Target 2 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_2" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x57</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_2" spirit:name="TGT_ACTIVE_HIGH_RESET_2" spirit:prompt="Active-high target reset Target 2" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_2" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_3" spirit:name="IR_CODE_TGT_3" spirit:prompt="Target 3 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_3" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x58</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_3" spirit:name="TGT_ACTIVE_HIGH_RESET_3" spirit:prompt="Active-high target reset Target 3" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_3" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_4" spirit:name="IR_CODE_TGT_4" spirit:prompt="Target 4 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_4" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x59</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_4" spirit:name="TGT_ACTIVE_HIGH_RESET_4" spirit:prompt="Active-high target reset Target 4" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_4" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_5" spirit:name="IR_CODE_TGT_5" spirit:prompt="Target 5 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_5" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x5a</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_5" spirit:name="TGT_ACTIVE_HIGH_RESET_5" spirit:prompt="Active-high target reset Target 5" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_5" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_6" spirit:name="IR_CODE_TGT_6" spirit:prompt="Target 6 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_6" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x5b</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_6" spirit:name="TGT_ACTIVE_HIGH_RESET_6" spirit:prompt="Active-high target reset Target 6" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_6" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_7" spirit:name="IR_CODE_TGT_7" spirit:prompt="Target 7 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_7" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x5c</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_7" spirit:name="TGT_ACTIVE_HIGH_RESET_7" spirit:prompt="Active-high target reset Target 7" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_7" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_8" spirit:name="IR_CODE_TGT_8" spirit:prompt="Target 8 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_8" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x5d</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_8" spirit:name="TGT_ACTIVE_HIGH_RESET_8" spirit:prompt="Active-high target reset Target 8" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_8" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_9" spirit:name="IR_CODE_TGT_9" spirit:prompt="Target 9 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_9" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x5e</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_9" spirit:name="TGT_ACTIVE_HIGH_RESET_9" spirit:prompt="Active-high target reset Target 9" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_9" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_10" spirit:name="IR_CODE_TGT_10" spirit:prompt="Target 10 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_10" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x5f</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_10" spirit:name="TGT_ACTIVE_HIGH_RESET_10" spirit:prompt="Active-high target reset Target 10" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_10" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_11" spirit:name="IR_CODE_TGT_11" spirit:prompt="Target 11 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_11" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x60</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_11" spirit:name="TGT_ACTIVE_HIGH_RESET_11" spirit:prompt="Active-high target reset Target 11" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_11" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_12" spirit:name="IR_CODE_TGT_12" spirit:prompt="Target 12 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_12" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x61</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_12" spirit:name="TGT_ACTIVE_HIGH_RESET_12" spirit:prompt="Active-high target reset Target 12" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_12" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_13" spirit:name="IR_CODE_TGT_13" spirit:prompt="Target 13 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_13" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x62</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_13" spirit:name="TGT_ACTIVE_HIGH_RESET_13" spirit:prompt="Active-high target reset Target 13" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_13" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_14" spirit:name="IR_CODE_TGT_14" spirit:prompt="Target 14 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_14" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x63</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_14" spirit:name="TGT_ACTIVE_HIGH_RESET_14" spirit:prompt="Active-high target reset Target 14" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_14" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="IR_CODE_TGT_15" spirit:name="IR_CODE_TGT_15" spirit:prompt="Target 15 IR Code" spirit:dataType="int" spirit:configGroups="2Cols:Debug_Target_15" spirit:resolve="user" spirit:minimum="0x55" spirit:maximum="0x64">0x64</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TGT_ACTIVE_HIGH_RESET_15" spirit:name="TGT_ACTIVE_HIGH_RESET_15" spirit:prompt="Active-high target reset Target 15" spirit:dataType="boolean" spirit:configGroups="2Cols:Debug_Target_15" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="UJTAG_BYPASS" spirit:name="UJTAG_BYPASS" spirit:prompt="UJTAG_BYPASS" spirit:dataType="boolean" spirit:configGroups="General Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="UJTAG_SEC_EN" spirit:name="UJTAG_SEC_EN" spirit:prompt="Use UJTAG_SEC " spirit:dataType="boolean" spirit:configGroups="PolarFire Configuration" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="Testbench" spirit:name="Testbench" spirit:prompt="Testbench" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('IR_CODE_TGT_0', And(GtOrEq('NUM_DEBUG_TGTS', '1'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_0', GtOrEq('NUM_DEBUG_TGTS', '1'));\
+Enable('IR_CODE_TGT_1', And(GtOrEq('NUM_DEBUG_TGTS', '2'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_1', GtOrEq('NUM_DEBUG_TGTS', '2'));\
+Enable('IR_CODE_TGT_2', And(GtOrEq('NUM_DEBUG_TGTS', '3'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_2', GtOrEq('NUM_DEBUG_TGTS', '3'));\
+Enable('IR_CODE_TGT_3', And(GtOrEq('NUM_DEBUG_TGTS', '4'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_3', GtOrEq('NUM_DEBUG_TGTS', '4'));\
+Enable('IR_CODE_TGT_4', And(GtOrEq('NUM_DEBUG_TGTS', '5'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_4', And(GtOrEq('NUM_DEBUG_TGTS', '5'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_5', And(GtOrEq('NUM_DEBUG_TGTS', '6'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_5', And(GtOrEq('NUM_DEBUG_TGTS', '6'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_6', And(GtOrEq('NUM_DEBUG_TGTS', '7'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_6', And(GtOrEq('NUM_DEBUG_TGTS', '7'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_7', And(GtOrEq('NUM_DEBUG_TGTS', '8'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_7', And(GtOrEq('NUM_DEBUG_TGTS', '8'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_8', And(GtOrEq('NUM_DEBUG_TGTS', '9'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_8', And(GtOrEq('NUM_DEBUG_TGTS', '9'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_9', And(GtOrEq('NUM_DEBUG_TGTS', '10'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_9', And(GtOrEq('NUM_DEBUG_TGTS', '10'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_10', And(GtOrEq('NUM_DEBUG_TGTS', '11'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_10', And(GtOrEq('NUM_DEBUG_TGTS', '11'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_11', And(GtOrEq('NUM_DEBUG_TGTS', '12'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_11', And(GtOrEq('NUM_DEBUG_TGTS', '12'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_12', And(GtOrEq('NUM_DEBUG_TGTS', '13'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_12', And(GtOrEq('NUM_DEBUG_TGTS', '13'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_13', And(GtOrEq('NUM_DEBUG_TGTS', '14'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_13', And(GtOrEq('NUM_DEBUG_TGTS', '14'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_14', And(GtOrEq('NUM_DEBUG_TGTS', '15'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_14', And(GtOrEq('NUM_DEBUG_TGTS', '15'), Eq('UJTAG_BYPASS', '0')));\
+Enable('IR_CODE_TGT_15', And(GtOrEq('NUM_DEBUG_TGTS', '16'), Eq('UJTAG_BYPASS', '0')));\
+Enable('TGT_ACTIVE_HIGH_RESET_15', And(GtOrEq('NUM_DEBUG_TGTS', '16'), Eq('UJTAG_BYPASS', '0')));\
+Enable('UJTAG_SEC_EN', And(Eq('UJTAG_BYPASS', '0'), Eq('FAMILY', 'PolarFire')));\
+Info('UJTAG_SEC_EN', 'UJTAG_SEC Option is only available for PolarFire', 'UJTAG_SEC Option is only available for PolarFire');\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_1'), Less('NUM_DEBUG_TGTS', '2')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_2'), Less('NUM_DEBUG_TGTS', '3')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_3'), Less('NUM_DEBUG_TGTS', '4')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_4'), Less('NUM_DEBUG_TGTS', '5')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_5'), Less('NUM_DEBUG_TGTS', '6')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_6'), Less('NUM_DEBUG_TGTS', '7')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_7'), Less('NUM_DEBUG_TGTS', '8')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_8'), Less('NUM_DEBUG_TGTS', '9')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_9'), Less('NUM_DEBUG_TGTS', '10')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '1'), Neq('IR_CODE_TGT_0', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_2'), Less('NUM_DEBUG_TGTS', '3')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_3'), Less('NUM_DEBUG_TGTS', '4')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_4'), Less('NUM_DEBUG_TGTS', '5')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_5'), Less('NUM_DEBUG_TGTS', '6')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_6'), Less('NUM_DEBUG_TGTS', '7')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_7'), Less('NUM_DEBUG_TGTS', '8')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_8'), Less('NUM_DEBUG_TGTS', '9')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_9'), Less('NUM_DEBUG_TGTS', '10')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '2'), Neq('IR_CODE_TGT_1', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_3'), Less('NUM_DEBUG_TGTS', '4')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_4'), Less('NUM_DEBUG_TGTS', '5')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_5'), Less('NUM_DEBUG_TGTS', '6')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_6'), Less('NUM_DEBUG_TGTS', '7')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_7'), Less('NUM_DEBUG_TGTS', '8')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_8'), Less('NUM_DEBUG_TGTS', '9')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_9'), Less('NUM_DEBUG_TGTS', '10')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '3'), Neq('IR_CODE_TGT_2', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_4'), Less('NUM_DEBUG_TGTS', '5')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_5'), Less('NUM_DEBUG_TGTS', '6')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_6'), Less('NUM_DEBUG_TGTS', '7')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_7'), Less('NUM_DEBUG_TGTS', '8')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_8'), Less('NUM_DEBUG_TGTS', '9')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_9'), Less('NUM_DEBUG_TGTS', '10')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '4'), Neq('IR_CODE_TGT_3', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_5'), Less('NUM_DEBUG_TGTS', '6')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_6'), Less('NUM_DEBUG_TGTS', '7')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_7'), Less('NUM_DEBUG_TGTS', '8')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_8'), Less('NUM_DEBUG_TGTS', '9')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_9'), Less('NUM_DEBUG_TGTS', '10')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '5'), Neq('IR_CODE_TGT_4', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_6'), Less('NUM_DEBUG_TGTS', '7')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_7'), Less('NUM_DEBUG_TGTS', '8')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_8'), Less('NUM_DEBUG_TGTS', '9')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_9'), Less('NUM_DEBUG_TGTS', '10')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '6'), Neq('IR_CODE_TGT_5', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '7'), Neq('IR_CODE_TGT_6', 'IR_CODE_TGT_7'), Less('NUM_DEBUG_TGTS', '8')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '7'), Neq('IR_CODE_TGT_6', 'IR_CODE_TGT_8'), Less('NUM_DEBUG_TGTS', '9')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '7'), Neq('IR_CODE_TGT_6', 'IR_CODE_TGT_9'), Less('NUM_DEBUG_TGTS', '10')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '7'), Neq('IR_CODE_TGT_6', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '7'), Neq('IR_CODE_TGT_6', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '7'), Neq('IR_CODE_TGT_6', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '7'), Neq('IR_CODE_TGT_6', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '7'), Neq('IR_CODE_TGT_6', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '7'), Neq('IR_CODE_TGT_6', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '8'), Neq('IR_CODE_TGT_7', 'IR_CODE_TGT_8'), Less('NUM_DEBUG_TGTS', '9')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '8'), Neq('IR_CODE_TGT_7', 'IR_CODE_TGT_9'), Less('NUM_DEBUG_TGTS', '10')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '8'), Neq('IR_CODE_TGT_7', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '8'), Neq('IR_CODE_TGT_7', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '8'), Neq('IR_CODE_TGT_7', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '8'), Neq('IR_CODE_TGT_7', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '8'), Neq('IR_CODE_TGT_7', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '8'), Neq('IR_CODE_TGT_7', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '9'), Neq('IR_CODE_TGT_8', 'IR_CODE_TGT_9'), Less('NUM_DEBUG_TGTS', '10')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '9'), Neq('IR_CODE_TGT_8', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '9'), Neq('IR_CODE_TGT_8', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '9'), Neq('IR_CODE_TGT_8', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '9'), Neq('IR_CODE_TGT_8', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '9'), Neq('IR_CODE_TGT_8', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '9'), Neq('IR_CODE_TGT_8', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '10'), Neq('IR_CODE_TGT_9', 'IR_CODE_TGT_10'), Less('NUM_DEBUG_TGTS', '11')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '10'), Neq('IR_CODE_TGT_9', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '10'), Neq('IR_CODE_TGT_9', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '10'), Neq('IR_CODE_TGT_9', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '10'), Neq('IR_CODE_TGT_9', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '10'), Neq('IR_CODE_TGT_9', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '11'), Neq('IR_CODE_TGT_10', 'IR_CODE_TGT_11'), Less('NUM_DEBUG_TGTS', '12')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '11'), Neq('IR_CODE_TGT_10', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '11'), Neq('IR_CODE_TGT_10', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '11'), Neq('IR_CODE_TGT_10', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '11'), Neq('IR_CODE_TGT_10', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '12'), Neq('IR_CODE_TGT_11', 'IR_CODE_TGT_12'), Less('NUM_DEBUG_TGTS', '13')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '12'), Neq('IR_CODE_TGT_11', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '12'), Neq('IR_CODE_TGT_11', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '12'), Neq('IR_CODE_TGT_11', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '13'), Neq('IR_CODE_TGT_12', 'IR_CODE_TGT_13'), Less('NUM_DEBUG_TGTS', '14')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '13'), Neq('IR_CODE_TGT_12', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '13'), Neq('IR_CODE_TGT_12', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '14'), Neq('IR_CODE_TGT_13', 'IR_CODE_TGT_14'), Less('NUM_DEBUG_TGTS', '15')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '14'), Neq('IR_CODE_TGT_13', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('IR code already chosen for a different Debug Target', Or(Less('NUM_DEBUG_TGTS', '15'), Neq('IR_CODE_TGT_14', 'IR_CODE_TGT_15'), Less('NUM_DEBUG_TGTS', '16')));\
+Validate('Number of Debug Targets must be less than 5 in UJTAG Bypass mode', Or(Eq('UJTAG_BYPASS', '0'), And(Eq('UJTAG_BYPASS', '1'), Less('NUM_DEBUG_TGTS', '5'))));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="ProASIC3">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3E">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3L">22</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO">20</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOOe">21</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO+">23</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion">18</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFire">26</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="VerilogSource-Base-U">
+    <spirit:file>
+      <spirit:name>core/corejtagdebug.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREJTAGDEBUG_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>core/corejtagdebug_ujtag_wrapper.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREJTAGDEBUG_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>core/corejtagdebug_uj_jtag.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREJTAGDEBUG_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>core/corejtagdebug_bufd.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREJTAGDEBUG_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/corejtagdebug_host_emulator.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREJTAGDEBUG_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/corejtagdebug_jtag_tap.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREJTAGDEBUG_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/corejtagdebug_testbench.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+      <spirit:logicalName>COREJTAGDEBUG_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>COREJTAGDEBUG_TESTBENCH</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/corejtagdebug_wave.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL">
+    <spirit:file>
+      <spirit:name>CoreJTAGDebug_UG.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>CoreJTAGDebug_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreJTAGDebug</actel-cc:displayName>
+    <actel-cc:description>CoreJTAGDebug facilitates the connection of JTAG (Joint Test Action Group) compatible soft core processors to the JTAG header for debugging.</actel-cc:description>
+    <actel-cc:packageTimestamp>20210428152320</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="12.5">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Processors">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Interface Type">
+      <actel-cc:category name="JTAG">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="ProASIC3">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3E">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3L">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOOe">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO+">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFire">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

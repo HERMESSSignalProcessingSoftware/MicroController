@@ -1,0 +1,1057 @@
+; ********************************************************************/
+; Actel Corporation Proprietary and Confidential
+; Copyright 2007 Actel Corporation. All rights reserved.
+;
+; ANY USE OR REDISTRIBUTION IN PART OR IN WHOLE MUST BE HANDLED IN
+; ACCORDANCE WITH THE ACTEL LICENSE AGREEMENT AND MUST BE APPROVED
+; IN ADVANCE IN WRITING.
+;
+; Filename: control_file_Actel_SgCore_1.icf
+;
+; Description: Actel SgCore supported device and OS platform
+; metadata control file. Supplements/overrides core specific device/OS
+; support metadata specified at packaging/CCZ creation time and contained
+; in the core's ECN'd IP-XACT SPIRIT description.
+;
+; Revision Information:
+; Date Description
+;
+; Resolved SARs
+; SAR Date Who Description
+;
+; *********************************************************************/
+
+Version 1.271
+Timestamp 202111222222
+
+;----------------------------------------------------------------------
+; "Global" device family support mappings
+;----------------------------------------------------------------------
+
+; Map IGLOO2 to SmartFusion2 to cater
+; for cores that do not support these explicitly because they were not
+; (re)packaged since these device families appeared. The relevant mappings
+; do not apply if (a) the core already declares explicit support for IGLOO2,
+; i.e. has the relevant FAMILY or
+; deviceFamily configuration option) or (b) the core does not have explicit
+; support for SmartFusion2 (i.e. a SmartFusion2 FAMILY or deviceFamily configuration
+; option) or (c) the core has other rules in this file which override this
+; mapping.
+
+VLNV Actel:SgCore:*:*
+map PA4:IGLOO2 => PA4:SmartFusion2
+map PA5:PolarFireSoC => PA5:PolarFire
+
+VLNV Actel:SgCore:IO:1.*
+map PA4:IGLOO2 => PA4:SmartFusion2
+map PA4:RTG4 => PA4:SmartFusion2
+map PA4:PA4RT => PA4:SmartFusion2
+
+VLNV Actel:SgCore:HARD_MULT:1.*
+map PA4:IGLOO2 => PA4:SmartFusion2
+map PA4:RTG4 => PA4:SmartFusion2
+map PA4:PA4RT => PA4:SmartFusion2
+
+VLNV Actel:SgCore:HARD_MULT_ACC:1.*
+map PA4:IGLOO2 => PA4:SmartFusion2
+map PA4:RTG4 => PA4:SmartFusion2
+map PA4:PA4RT => PA4:SmartFusion2
+
+VLNV Actel:SgCore:HARD_MULT_ADDSUB:1.*
+map PA4:IGLOO2 => PA4:SmartFusion2
+map PA4:RTG4 => PA4:SmartFusion2
+map PA4:PA4RT => PA4:SmartFusion2
+
+VLNV Actel:SgCore:RTG4TPSRAM:1.1.104
+max_libero_version 11.6.100
+
+VLNV Actel:SgCore:RTG4TPSRAM:1.1.105
+min_libero_version 11.7.0
+max_libero_version 11.8.4
+
+VLNV Actel:SgCore:RTG4FCCC:1.1.204
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:RTG4FCCC:1.1.206
+max_libero_version 11.6.100
+
+VLNV Actel:SgCore:RTG4FDDRC:1.2.402
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:NPSS_SERDES_IF:1.1.208
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:NPSS_SERDES_IF:1.1.215
+max_libero_version 11.6.100
+
+VLNV Actel:SgCore:PCIE_SERDES_IF:1.1.207
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:PCIE_SERDES_IF:1.1.215
+max_libero_version 11.6.100
+
+VLNV Actel:SgCore:FDDRC:1.1.204
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:FDDRC:1.1.205
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:SERDES_IF:1.2.103
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:SERDES_IF:1.2.201
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:SERDES_IF:1.2.206
+max_libero_version 11.6.100
+
+VLNV Actel:SgCore:SERDES_IF2:1.2.208
+max_libero_version 11.6.100
+
+VLNV Actel:SgCore:SERDES_IF2:1.2.204
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:SERDES_IF2:1.2.202
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:SERDES_IF2:1.2.105
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:SERDES_IF3:1.2.207
+max_libero_version 11.6.100
+
+VLNV Actel:SgCore:SERDES_IF3:1.2.202
+max_libero_version 11.5.7
+
+VLNV Actel:SgCore:SERDES_IF3:1.2.103
+max_libero_version 11.5.7
+
+;----------------------------------------------------------------------
+; Polar Fire EAP2 specific mapping
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_CCC:0.0.202
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_DDR3_UI:0.0.261
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_DDR3PHY_UI:1.0.005
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_IOD:0.0.042
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_IOD_TRAINING:1.0.025
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_LANECTRL:0.0.036
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_PCIE:1.0.123
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_TX_PLL:0.0.110
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_XCVR:1.0.132
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_XCVR_REF_CLK:0.0.009
+max_libero_version 12.0.0
+
+VLNV Actel:SystemBuilder:PF_DDR3:0.0.262
+max_libero_version 12.0.0
+
+VLNV Actel:SgCore:PF_DDR3PHY:1.0.013
+max_libero_version 12.0.0
+
+;----------------------------------------------------------------------
+; Polar Fire EAP3 specific mapping
+;----------------------------------------------------------------------
+
+VLNV Actel:SystemBuilder:PF_DDR3:0.0.435
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SystemBuilder:PF_IOD_CDR:0.0.011
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SystemBuilder:PF_IOD_GENERIC:0.0.004
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_XCVR:1.0.145
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_PCIE:1.0.135
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_CCC:0.0.261
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_XCVR_REF_CLK:0.0.012
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_TX_PLL:0.0.127
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_TPSRAM:1.1.106
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_DPSRAM:1.1.108
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_URAM:1.1.105
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_IOD:0.0.061
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+VLNV Actel:SgCore:PF_LANECTRL:0.0.050
+min_libero_version 12.100.1
+max_libero_version 12.100.6
+
+;----------------------------------------------------------------------
+; PolarFire EAP4 specific mapping
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_CLK_DIV:1.0.100
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_DRI:1.0.100
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_INIT_MONITOR:1.0.100
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_NGMUX:1.0.100
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_XCVR_REF_CLK:1.0.100
+min_libero_version 12.100.7
+max_libero_version 12.100.8
+
+VLNV Actel:SgCore:PF_OSC:1.0.100
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_TX_PLL:1.0.100
+min_libero_version 12.100.7
+max_libero_version 12.100.8
+
+VLNV Actel:SgCore:PF_XCVR:1.0.210
+min_libero_version 12.100.7
+max_libero_version 12.100.7
+
+VLNV Actel:SgCore:PF_PCIE:1.0.213
+min_libero_version 12.100.7
+max_libero_version 12.100.7
+
+VLNV Actel:SgCore:PF_DPSRAM:1.1.109
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_TPSRAM:1.1.107
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_URAM:1.1.106
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_UPROM:1.0.107
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_CCC:1.0.101
+min_libero_version 12.100.7
+max_libero_version 12.100.7
+
+;----------------------------------------------------------------------
+; Dependent PolarFire EAP4 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_DDR3_UI:0.0.655
+min_libero_version 12.100.7
+
+VLNV Actel:SgCore:PF_DDR_CFG_INIT:1.0.10
+min_libero_version 12.100.7
+
+VLNV Actel:SgCore:PF_DDR3PHY_UI:1.0.011
+min_libero_version 12.100.7
+
+VLNV Actel:SgCore:PF_IOD:0.0.078
+min_libero_version 12.100.7
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_LANECTRL:0.0.064
+min_libero_version 12.100.7
+
+VLNV Actel:SgCore:PF_DDR4_UI:0.0.655
+min_libero_version 12.100.7
+
+VLNV Actel:SgCore:PF_DDR4PHY_UI:1.0.011
+min_libero_version 12.100.7
+
+VLNV Actel:SgCore:PF_IOD_CDR_UI:0.0.011
+min_libero_version 12.100.7
+
+VLNV Actel:SgCore:PF_IOD_GENERIC_UI:0.0.012
+min_libero_version 12.100.7
+
+;----------------------------------------------------------------------
+; Libero 11.8 cores
+;----------------------------------------------------------------------
+VLNV Actel:SgCore:SERDES_IF3:1.2.211
+max_libero_version 11.7.3
+
+VLNV Actel:SgCore:SERDES_IF3:1.2.212
+min_libero_version 11.8.0
+
+VLNV Actel:SgCore:RTG4FCCC:1.1.216
+max_libero_version 11.7.3
+
+VLNV Actel:SgCore:RTG4FCCC:1.1.217
+min_libero_version 11.8.0
+max_libero_version 11.8.4
+
+VLNV Actel:SgCore:RTG4CCCAPB_IF:1.1.105
+max_libero_version 11.7.3
+
+VLNV Actel:SgCore:RTG4CCCAPB_IF:1.1.106
+min_libero_version 11.8.0
+
+VLNV Actel:SgCore:RTG4UPROM:1.0.105
+min_libero_version 11.6.0
+max_libero_version 11.8.1
+
+VLNV Actel:SgCore:RTG4UPROM:1.0.106
+min_libero_version 11.8.1
+max_libero_version 12.600.0
+
+;----------------------------------------------------------------------
+; Libero PolarFire EAP4 SPA cores
+;----------------------------------------------------------------------
+VLNV Actel:SgCore:PF_CCC:1.0.104
+min_libero_version 12.100.8
+max_libero_version 12.100.8
+
+VLNV Actel:SgCore:PF_PCIE:1.0.214
+min_libero_version 12.100.8
+max_libero_version 12.100.8
+
+VLNV Actel:SgCore:PF_XCVR:1.0.211
+min_libero_version 12.100.8
+max_libero_version 12.100.8
+
+;----------------------------------------------------------------------
+; Libero PolarFire EAP4 SP1 cores
+;----------------------------------------------------------------------
+VLNV Actel:SgCore:PF_CCC:1.0.107
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_CRYPTO:1.0.100
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_OSC:1.0.101
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_PCIE:1.0.217
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_TAMPER:1.0.101
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_TX_PLL:1.0.105
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_XCVR:1.0.214
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_XCVR_REF_CLK:1.0.101
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+# hidden
+VLNV Actel:SgCore:PF_DDR_CFG_INIT:1.0.12
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_DDR3_UI:0.0.701
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_DDR3PHY_UI:1.0.013
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_DDR4_UI:0.0.701
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_DDR4PHY_UI:1.0.012
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_IOD:0.0.105
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_IOD_CDR_UI:0.0.012
+min_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_IOD_GENERIC_UI:0.0.012
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:PF_LANECTRL:0.0.102
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+VLNV Actel:SgCore:SRAM_AHB_AXI_UI:1.1.117
+min_libero_version 12.100.9
+max_libero_version 12.100.9
+
+;----------------------------------------------------------------------
+; Libero PolarFire v2.0 cores
+;----------------------------------------------------------------------
+VLNV Actel:SgCore:PF_XCVR_APBLINK:0.0.002
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_CCC:1.0.112
+min_libero_version 12.200.0
+max_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_CLK_DIV:1.0.101
+min_libero_version 12.200.0
+max_libero_version 12.600.0
+
+VLNV Actel:SgCore:PF_TAMPER:1.0.102
+min_libero_version 12.200.0
+max_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_CRYPTO:1.0.101
+min_libero_version 12.200.0
+max_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_NGMUX:1.0.101
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_INIT_MONITOR:2.0.101
+min_libero_version 12.200.0
+max_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_OSC:1.0.102
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_PCIE:1.0.230
+min_libero_version 12.200.0
+max_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_TX_PLL:1.0.109
+min_libero_version 12.200.0
+max_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_XCVR:1.0.223
+min_libero_version 12.200.0
+max_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_XCVR_REF_CLK:1.0.103
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_DPSRAM:1.1.110
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_TPSRAM:1.1.108
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_URAM:1.1.107
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_UPROM:1.0.108
+min_libero_version 12.200.0
+max_libero_version 12.600.0
+
+VLNV Actel:SgCore:PF_DRI:1.0.101
+min_libero_version 12.200.0
+max_libero_version 12.800.1
+
+# hidden
+
+VLNV Actel:SgCore:PF_DDR_CFG_INIT:1.0.16
+min_libero_version 12.200.0
+max_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_DDR3_UI:2.0.104
+min_libero_version 12.200.0
+max_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_DDR3PHY_UI:2.0.100
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_DDR4_UI:2.0.105
+min_libero_version 12.200.0
+max_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_DDR4PHY_UI:2.0.100
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_IOD:1.0.102
+min_libero_version 12.200.0
+
+# VLNV Actel:SgCore:PF_IOD_CDR_UI:0.0.012
+# min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_LANECTRL:1.0.102
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_RGMII_TO_GMII_UI:1.0.103
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:SB_GEN_CHKR:0.0.20
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:SB_SMARTBERT_UI:0.0.8
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:SB_VER_GEN:0.0.18
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_IOD_LVDS7_RX_UI:1.0.101
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_IOD_LVDS7_TX_UI:1.0.101
+min_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_IOD_GENERIC_RX_UI:1.0.103
+min_libero_version 12.200.0
+max_libero_version 12.200.0
+
+VLNV Actel:SgCore:PF_IOD_GENERIC_TX_UI:1.0.103
+min_libero_version 12.200.0
+max_libero_version 12.200.0
+
+VLNV Actel:SgCore:SRAM_AHB_AXI_UI:1.1.121
+min_libero_version 12.200.0
+max_libero_version 12.200.0
+
+#dependent hidden DirectCores
+
+VLNV Actel:DirectCore:COREDDR_TIP:1.3.100
+max_libero_version 12.200.0
+
+VLNV Actel:DirectCore:CoreDDRMemCtrlr:2.1.105
+max_libero_version 12.200.0
+
+;----------------------------------------------------------------------
+; Libero PolarFire v2.1 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_CLK_DIV:1.0.102
+min_libero_version 12.200.10
+max_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_PCIE:1.0.234
+min_libero_version 12.200.10
+max_libero_version 12.200.10
+
+# hidden
+
+VLNV Actel:SgCore:PF_DDR3_UI:2.0.105
+min_libero_version 12.200.10
+max_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_DDR_CFG_INIT:1.0.100
+min_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_DDR4_UI:2.0.106
+min_libero_version 12.200.10
+max_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_IOD:1.0.203
+min_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_IOD_GENERIC_RX_UI:1.0.201
+min_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_IOD_GENERIC_TX_UI:1.0.104
+min_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_LANECTRL:1.0.202
+min_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_LPDDR3_UI:2.0.107
+min_libero_version 12.200.10
+max_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_LPDDR3PHY_UI:2.0.100
+min_libero_version 12.200.10
+
+VLNV Actel:SgCore:SRAM_AHB_AXI_UI:1.1.123
+min_libero_version 12.200.10
+max_libero_version 12.200.10
+
+VLNV Actel:SgCore:PF_CLK_DIV_DELAY:1.0.102
+min_libero_version 12.200.10
+max_libero_version 12.200.30
+
+#dependent hidden DirectCores
+
+VLNV Actel:DirectCore:COREDDR_TIP:1.4.101
+min_libero_version 12.200.10
+max_libero_version 12.200.10
+
+VLNV Actel:DirectCore:CoreDDRMemCtrlr:2.2.100
+min_libero_version 12.200.10
+max_libero_version 12.200.10
+
+VLNV Actel:DirectCore:CoreDDRMemCtrlr_LPDDR3:2.2.100
+min_libero_version 12.200.10
+max_libero_version 12.200.10
+
+;----------------------------------------------------------------------
+; Libero PolarFire v2.2 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_CCC:1.0.113
+min_libero_version 12.200.30
+max_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_CRYPTO:1.0.105
+min_libero_version 12.200.30
+max_libero_version 12.200.35
+
+VLNV Actel:SgCore:PF_INIT_MONITOR:2.0.103
+min_libero_version 12.200.30
+max_libero_version 12.700.0
+
+VLNV Actel:SgCore:PF_PCIE:1.0.242
+min_libero_version 12.200.30
+max_libero_version 12.200.35
+
+VLNV Actel:SgCore:PF_TAMPER:1.0.105
+min_libero_version 12.200.30
+max_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_TVS:1.0.105
+min_libero_version 12.200.30
+max_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_TX_PLL:1.0.112
+min_libero_version 12.200.30
+max_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_XCVR:1.0.231
+min_libero_version 12.200.30
+max_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_SYSTEM_SERVICES:2.2.104
+min_libero_version 12.200.30
+max_libero_version 12.200.30
+
+# hidden
+
+VLNV Actel:SgCore:PF_DDR3_UI:2.0.108
+min_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_DDR4_UI:2.0.109
+min_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_IOD:1.0.204
+min_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_IOD_GENERIC_RX_UI:1.0.204
+min_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_LPDDR3_UI:2.0.109
+min_libero_version 12.200.30
+
+VLNV Actel:SgCore:SRAM_AHB_AXI_UI:1.1.125
+min_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_QDR_UI:1.0.207
+min_libero_version 12.200.30
+
+VLNV Actel:SgCore:PF_QDR_PHY_UI:1.0.102
+min_libero_version 12.200.30
+
+#dependent hidden DirectCores
+
+VLNV Actel:DirectCore:COREAXI4SRAM:2.3.100
+min_libero_version 12.200.30
+
+VLNV Actel:DirectCore:COREDDR_TIP:1.5.100
+min_libero_version 12.200.30
+
+VLNV Actel:DirectCore:CoreDDRMemCtrlr:2.3.101
+min_libero_version 12.200.30
+
+VLNV Actel:DirectCore:COREQDR_PF:2.1.107
+min_libero_version 12.200.30
+
+;----------------------------------------------------------------------
+; Libero SoC 11.x cores
+;----------------------------------------------------------------------
+VLNV Actel:SgCore:RTG4TPSRAM:1.1.107
+min_libero_version 11.9.0
+max_libero_version 11.9.5
+
+VLNV Actel:SgCore:RTG4DPSRAM:1.1.105
+max_libero_version 11.9.5
+
+VLNV Actel:SgCore:RTG4FDDRC:1.2.405
+min_libero_version 11.6.0
+max_libero_version 12.800.1
+
+VLNV Actel:SgCore:NPSS_SERDES_IF:1.1.220
+min_libero_version 11.7.0
+max_libero_version 12.800.1
+
+VLNV Actel:SgCore:PCIE_SERDES_IF:1.1.220
+min_libero_version 11.7.0
+max_libero_version 12.800.1
+
+VLNV Actel:SgCore:RTG4FCCC:1.1.226
+min_libero_version 11.9.0
+
+VLNV Actel:SgCore:RTG4FCCC:2.0.101
+min_libero_version 11.9.4
+max_libero_version 11.9.4
+
+;----------------------------------------------------------------------
+; Libero SoC 11.9 SP5 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:RTG4FCCC:2.0.104
+min_libero_version 11.9.5
+max_libero_version 11.9.999
+
+VLNV Actel:SgCore:RTG4FCCCECALIB:2.1.009
+min_libero_version 11.9.5
+max_libero_version 11.9.999
+
+VLNV Actel:SgCore:RTG4FDDRC:2.0.100
+min_libero_version 11.9.5
+max_libero_version 2021.1.0
+
+VLNV Actel:SgCore:NPSS_SERDES_IF:2.0.100
+min_libero_version 11.9.5
+
+VLNV Actel:SgCore:PCIE_SERDES_IF:2.0.100
+min_libero_version 11.9.5
+
+VLNV Actel:SgCore:RTG4CCCAPB_IF:1.1.109
+min_libero_version 11.9.5
+
+;----------------------------------------------------------------------
+; Libero SoC 11.9 SP6 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:RTG4UPROM:2.0.100
+min_libero_version 11.9.6
+max_libero_version 11.9.999
+
+;----------------------------------------------------------------------
+; Libero PolarFire v2.3 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_XCVR:1.0.233
+min_libero_version 12.200.35
+max_libero_version 12.200.35
+
+VLNV Actel:SgCore:PF_TX_PLL:1.0.114
+min_libero_version 12.200.35
+max_libero_version 12.200.35
+
+VLNV Actel:SgCore:PF_CCC:1.0.115
+min_libero_version 12.200.35
+max_libero_version 12.500.0
+
+VLNV Actel:SgCore:PF_TAMPER:1.0.107
+min_libero_version 12.200.35
+max_libero_version 12.600.0
+
+VLNV Actel:SgCore:PF_SYSTEM_SERVICES:2.2.107
+min_libero_version 12.200.35
+max_libero_version 12.200.35
+
+VLNV Actel:SgCore:PF_CLK_DIV:1.0.103
+min_libero_version 12.200.35
+
+VLNV Actel:SgCore:PF_CLK_DIV_DELAY:1.0.103
+min_libero_version 12.200.35
+
+VLNV Actel:SgCore:PF_TVS:1.0.106
+min_libero_version 12.200.35
+max_libero_version 12.800.1
+
+;----------------------------------------------------------------------
+; Libero 12.0 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_CRYPTO:1.0.106
+min_libero_version 12.500.0
+
+VLNV Actel:SgCore:PF_PCIE:2.0.100
+min_libero_version 12.500.0
+max_libero_version 12.500.0
+
+VLNV Actel:SgCore:PF_TX_PLL:2.0.002
+min_libero_version 12.500.0
+max_libero_version 12.500.0
+
+VLNV Actel:SgCore:PF_SYSTEM_SERVICES:2.2.201
+min_libero_version 12.500.0
+max_libero_version 12.600.0
+
+VLNV Actel:SgCore:RTG4TPSRAM:1.1.109
+min_libero_version 11.9.6
+
+VLNV Actel:SgCore:RTG4DPSRAM:1.1.106
+min_libero_version 11.9.6
+
+;----------------------------------------------------------------------
+; Libero 12.1 cores
+;----------------------------------------------------------------------
+VLNV Actel:SgCore:PF_PCIE:2.0.102
+min_libero_version 12.600.0
+max_libero_version 12.600.0
+
+VLNV Actel:SgCore:PF_TX_PLL:2.0.005
+min_libero_version 12.600.0
+max_libero_version 12.600.0
+
+VLNV Actel:SgCore:PF_CCC:1.1.101
+min_libero_version 12.600.0
+max_libero_version 12.600.0
+
+VLNV Actel:SgCore:PF_XCVR:2.0.107
+min_libero_version 12.600.0
+max_libero_version 12.600.0
+
+;----------------------------------------------------------------------
+; Libero 12.2 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_CCC:2.1.104
+min_libero_version 12.700.0
+
+VLNV Actel:SgCore:PF_IO:1.0.103
+min_libero_version 12.700.0
+max_libero_version 12.700.0
+
+VLNV Actel:SgCore:PF_PCIE:2.0.103
+min_libero_version 12.700.0
+max_libero_version 12.800.1
+
+VLNV Actel:SgCore:PF_SYSTEM_SERVICES:3.0.100
+min_libero_version 12.700.0
+max_libero_version 2021.2.0
+
+VLNV Actel:SgCore:PF_TAMPER:1.0.200
+min_libero_version 12.700.0
+max_libero_version 2021.2.0
+
+VLNV Actel:SgCore:PF_TX_PLL:2.0.006
+min_libero_version 12.700.0
+max_libero_version 12.700.0
+
+VLNV Actel:SgCore:PF_UPROM:1.0.109
+min_libero_version 12.700.0
+
+VLNV Actel:SgCore:PF_XCVR:2.0.109
+min_libero_version 12.700.0
+max_libero_version 12.800.1
+
+VLNV Actel:SgCore:RTG4UPROM:1.0.107
+min_libero_version 12.700.0
+max_libero_version 12.800.1
+
+VLNV Actel:SgCore:RTG4_SRAM_AHB_AXI_UI:1.0.107
+min_libero_version 12.700.0
+
+VLNV Actel:SgCore:SRAM_AHB_AXI_UI:1.2.101
+min_libero_version 12.700.0
+
+VLNV Actel:SgCore:PF_LANECTRL:2.0.102
+min_libero_version 12.700.0
+
+VLNV Actel:SgCore:RTG4FCCC:2.0.200
+min_libero_version 12.700.0
+max_libero_version 12.700.0
+
+;----------------------------------------------------------------------
+; Libero 12.3 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_CCC:2.2.100
+min_libero_version 12.800.0
+
+VLNV Actel:SgCore:PF_INIT_MONITOR:2.0.104
+min_libero_version 12.800.0
+max_libero_version 12.800.1
+
+VLNV Actel:SgCore:PF_IO:1.0.104
+min_libero_version 12.800.0
+max_libero_version 12.900.20
+
+VLNV Actel:SgCore:PF_TX_PLL:2.0.200
+min_libero_version 12.800.0
+max_libero_version 12.800.1
+
+VLNV Actel:SgCore:RTG4FCCC:2.0.201
+min_libero_version 12.800.0
+
+VLNV Actel:SgCore:RTG4FCCCECALIB:2.1.010
+min_libero_version 12.800.0
+max_libero_version 2021.1.0
+
+;----------------------------------------------------------------------
+; Libero 12.4 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_DRI:1.0.102
+min_libero_version 12.900.0
+max_libero_version 12.900.19
+
+VLNV Actel:SgCore:PF_INIT_MONITOR:2.0.105
+min_libero_version 12.900.0
+max_libero_version 12.900.19
+
+VLNV Actel:SgCore:PF_PCIE:2.0.104
+min_libero_version 12.900.0
+max_libero_version 2021.2.0
+
+VLNV Actel:SgCore:PF_TVS:1.0.110
+min_libero_version 12.900.0
+
+VLNV Actel:SgCore:PF_TX_PLL:2.0.202
+min_libero_version 12.900.0
+max_libero_version 12.900.19
+
+VLNV Actel:SgCore:RTG4UPROM:2.1.100
+min_libero_version 12.900.0
+
+# Hidden
+
+VLNV Actel:SgCore:PF_XCVR:2.0.110
+min_libero_version 12.900.0
+max_libero_version 12.900.20
+
+;----------------------------------------------------------------------
+; Libero 12.6 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_DRI:1.1.100
+min_libero_version 12.900.20
+max_libero_version 2021.1.0
+
+VLNV Actel:SgCore:PF_INIT_MONITOR:2.0.203
+min_libero_version 12.900.20
+max_libero_version 12.900.20
+
+VLNV Actel:SgCore:PF_TX_PLL:2.0.300
+min_libero_version 12.900.20
+
+VLNV Actel:SgCore:TPSRAM:1.0.100
+max_libero_version 12.900.20
+
+VLNV Actel:SgCore:DPSRAM:1.0.100
+max_libero_version 12.900.20
+
+VLNV Actel:SgCore:URAM:1.0.100
+max_libero_version 12.900.20
+
+VLNV Actel:SgCore:TPSRAM:1.0.101
+max_libero_version 12.900.20
+
+VLNV Actel:SgCore:DPSRAM:1.0.101
+max_libero_version 12.900.20
+
+VLNV Actel:SgCore:URAM:1.0.101
+max_libero_version 12.900.20
+
+;----------------------------------------------------------------------
+; Libero 2021.1 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:TPSRAM:1.0.102
+min_libero_version 2021.1.0
+
+VLNV Actel:SgCore:DPSRAM:1.0.102
+min_libero_version 2021.1.0
+
+VLNV Actel:SgCore:URAM:1.0.102
+min_libero_version 2021.1.0
+
+VLNV Actel:SgCore:PF_INIT_MONITOR:2.0.204
+min_libero_version 2021.1.0
+max_libero_version 2021.2.0
+
+VLNV Actel:SgCore:PF_IO:2.0.102
+min_libero_version 2021.1.0
+max_libero_version 2021.1.0
+
+VLNV Actel:SgCore:FDDRC:1.1.301
+max_libero_version 2021.1.0
+
+# Hidden
+
+VLNV Actel:SgCore:PF_XCVR:2.1.101
+min_libero_version 2021.1.0
+
+;----------------------------------------------------------------------
+; Libero 2021.2 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_DRI:1.1.104
+min_libero_version 2021.2.0
+
+VLNV Actel:SgCore:PF_IO:2.0.104
+min_libero_version 2021.2.0
+
+VLNV Actel:SgCore:RTG4FDDRC:2.0.102
+min_libero_version 2021.2.0
+
+VLNV Actel:SgCore:FDDRC:2.0.101
+min_libero_version 2021.2.0
+
+VLNV Actel:SgCore:RTG4FCCCECALIB:2.2.005
+min_libero_version 2021.2.0
+
+;----------------------------------------------------------------------
+; Libero 2021.3 cores
+;----------------------------------------------------------------------
+
+VLNV Actel:SgCore:PF_INIT_MONITOR:2.0.205
+min_libero_version 2021.3.0
+
+VLNV Actel:SgCore:PF_PCIE:2.0.106
+min_libero_version 2021.3.0
+
+VLNV Actel:SgCore:PF_SYSTEM_SERVICES:3.0.101
+min_libero_version 2021.3.0
+
+VLNV Actel:SgCore:PF_TAMPER:1.0.203
+min_libero_version 2021.3.0

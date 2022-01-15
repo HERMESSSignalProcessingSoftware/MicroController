@@ -1,0 +1,279 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SgCore</spirit:library>
+  <spirit:name>TAMPER</spirit:name>
+  <spirit:version>2.1.300</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSynthesis</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>VERILOG_SYNPLIFY_SYNTHESIS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>VERILOG_PRECISION_SYNTHESIS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERILOG_SYNPLIFY_SYNTHESIS_FILESET"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERILOG_PRECISION_SYNTHESIS_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VhdlSynthesis</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>VHDL_SYNPLIFY_SYNTHESIS_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>VHDL_PRECISION_SYNTHESIS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDL_SYNPLIFY_SYNTHESIS_FILESET"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDL_PRECISION_SYNTHESIS_FILESET"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>ADLTCL</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ADLTCL"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>LOCKDOWN_ALL_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="LOCKDOWN_ALL_N" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="LOCKDOWN_ALL_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>LOCKDOWN_ALL_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DISABLE_ALL_IOS_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="DISABLE_ALL_IOS_N" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="DISABLE_ALL_IOS_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>DISABLE_ALL_IOS_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RESET_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="RESET_N" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="RESET_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>RESET_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ZEROIZE_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="ZEROIZE_N" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="ZEROIZE_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>ZEROIZE_N</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>JTAG_ACTIVE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="JTAG_ACTIVE" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:description>JTAG_ACTIVE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>LOCK_TAMPER_DETECT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="LOCK_TAMPER_DETECT" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:description>LOCK_TAMPER_DETECT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MESH_SHORT_ERROR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="MESH_SHORT_ERROR" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:description>MESH_SHORT_ERROR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DETECT_CATEGORY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="DETECT_CATEGORY" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:description>DETECT_CATEGORY</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DETECT_ATTEMPT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="DETECT_ATTEMPT" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:description>DETECT_ATTEMPT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DETECT_FAIL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="DETECT_FAIL" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:description>DETECT_FAIL</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DIGEST_ERROR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="DIGEST_ERROR" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:description>DIGEST_ERROR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>POWERUP_DIGEST_ERROR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="POWERUP_DIGEST_ERROR" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="POR_DIGEST_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>POWERUP_DIGEST_ERROR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SC_ROM_DIGEST_ERROR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="SC_ROM_DIGEST_ERROR" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:description>SC_ROM_DIGEST_ERROR</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TAMPER_CHANGE_STROBE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="TAMPER_CHANGE_STROBE" spirit:resolve="user">false</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:description>TAMPER_CHANGE_STROBE</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="LOCKDOWN_ALL_USED" spirit:name="LOCKDOWN_ALL_USED" spirit:prompt="Enable LOCKDOWN_ALL Function" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DISABLE_ALL_IOS_USED" spirit:name="DISABLE_ALL_IOS_USED" spirit:prompt="Enable DISABLE_ALL_IOS Function" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="RESET_USED" spirit:name="RESET_USED" spirit:prompt="Enable RESET Function" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ZEROIZE_USED" spirit:name="ZEROIZE_USED" spirit:prompt="Enable ZEROIZE Function" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Zeroization" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="ZEROIZE_CONFIG" spirit:name="ZEROIZE_CONFIG" spirit:prompt="Configuration" spirit:dataType="string" actel-cc:choiceRef="ZEROIZE_CHOICES" spirit:configGroups="1Cols:Zeroization" spirit:resolve="user">LIKE_NEW</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DIGEST_FABRIC_USED" spirit:name="DIGEST_FABRIC_USED" spirit:prompt="FABRIC digest check on power Up" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Digest check on power up" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DIGEST_ENVM0_USED" spirit:name="DIGEST_ENVM0_USED" spirit:prompt="ENVM_0 digest check on power Up" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Digest check on power up" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="SD_EXPORT_HIDDEN_PORTS" spirit:name="SD_EXPORT_HIDDEN_PORTS" spirit:prompt="Export Hidden Ports" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="POR_DIGEST_USED" spirit:name="POR_DIGEST_USED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="CLK_ERROR_USED" spirit:name="CLK_ERROR_USED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="DIGEST_ENVM1_USED" spirit:name="DIGEST_ENVM1_USED" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('ZEROIZE_CONFIG', Eq(ValueOf('ZEROIZE_USED'), 'true'));\
+Set('POR_DIGEST_USED', Or(Eq('DIGEST_FABRIC_USED', '1'), Eq('DIGEST_ENVM0_USED', '1')), '1');\
+Set('POR_DIGEST_USED', And(Eq('DIGEST_FABRIC_USED', '0'), Eq('DIGEST_ENVM0_USED', '0')), '0');\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>WIN_ADLTCL</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/tgiadltcl.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>LIN_ADLTCL</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_SW_DIR}/bin/tgiadltcl</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>ZEROIZE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Like New">LIKE_NEW</spirit:enumeration>
+      <spirit:enumeration spirit:text="Recoverable">RECOVERABLE</spirit:enumeration>
+      <spirit:enumeration spirit:text="Non Recoverable">NON_RECOVERABLE</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="VERILOG_SYNPLIFY_SYNTHESIS_FILESET">
+    <spirit:file>
+      <spirit:name>tamper_comps.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDL_SYNPLIFY_SYNTHESIS_FILESET">
+    <spirit:file>
+      <spirit:name>tamper_comps.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VERILOG_PRECISION_SYNTHESIS_FILESET">
+    <spirit:file>
+      <spirit:name>tamper_comps.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDL_PRECISION_SYNTHESIS_FILESET">
+    <spirit:file>
+      <spirit:name>tamper_comps.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="ADLTCL">
+    <spirit:file>
+      <spirit:name>core.tcl</spirit:name>
+      <spirit:fileType>tclSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>Tamper</actel-cc:displayName>
+    <actel-cc:description>Tamper</actel-cc:description>
+    <actel-cc:packageTimestamp>20150416172007</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Tamper">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.4.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

@@ -1,11 +1,19 @@
+/*
+ * status.h
+ *
+ *  Created on: 28.12.2021
+ *      Author: RG
+ */
+
+#ifndef STATUS_H_
+#define STATUS_H_
+
+
 /**
  * @file status.h
  * Enables the use of the global status register used for inter process
  * communication checked in the main loop
  */
-
-#ifndef STATUS_H_
-#define STATUS_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -19,15 +27,19 @@ extern "C" {
 #define MSS_SIGNAL_UPDATE_META      (1 << 2)
 /*Living indicator*/
 #define TIM2_HEARTBEAT_SIGNAL       (1 << 3)
-/*RXSM signals*/
-#define MSS_SIGNAL_SODS             (1 << 4)
-#define MSS_SIGNAL_SOE              (1 << 5)
-#define MSS_SIGNAL_LO               (1 << 6)
+/*RXSM signals
+ * do not change shifting, it will be ored with  the status reg of the synchronizer
+ * */
+#define MSS_SIGNAL_SODS             (1 << 27)
+#define MSS_SIGNAL_SOE              (1 << 26)
+#define MSS_SIGNAL_LO               (1 << 29)
+
 #define MSS_SIGNAL_SODS_RESET       (1 << 7)
 #define MSS_SIGNAL_SOE_RESET        (1 << 8)
 #define MSS_SIGNAL_LO_RESET         (1 << 9)
 /*DAPI signals */
 #define MSS_SIGNAL_DAPI_CMD         (1 << 15)
+#define MSS_MEMORY_ERASE            (1 << 16)
 
 #define MSS_SIGNAL_WRITE_AND_KILL   (1 << 20)
 

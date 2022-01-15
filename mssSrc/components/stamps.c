@@ -6,7 +6,7 @@ extern "C" {
 
 
 
-#include "../hw_platform.h"
+#include "../sb_hw_platform.h"
 #include "../drivers/mss_gpio/mss_gpio.h"
 #include "../drivers/apb_stamp/apb_stamp.h"
 #include "tools.h"
@@ -72,7 +72,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
         stamps[i] = APB_STAMP_init(stampsAddresses[i], stampsIrqnBit[i]);
 
         // reset all ADCs and let it settle
-        APB_STAMP_writeAdc(&stamps[i],
+         APB_STAMP_writeAdc(&stamps[i],
                 STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
                 ADS_CMD_RESET,
                 STAMP_MOD_NONE);
@@ -109,7 +109,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
             readConf = APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE);
             if (readConf != sgrConf) {
                 configflags = 1;
-                 spuLog("SGR1 configuration mismatch!");
+                 spuLogStampMismatch(i, 1);
             }
         } while (readConf != sgrConf && confTrials < 3);
         confTrials = 0;
@@ -127,7 +127,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
             readConf = APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE);
             if (readConf != sgrConf) {
                 configflags = 1;
-                spuLog("SGR2 configuration mismatch!");
+                spuLogStampMismatch(i, 2);
             }
         } while (readConf != sgrConf && confTrials < 3);
 
@@ -171,7 +171,7 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
             readTempConf = APB_STAMP_readAdc(&stamps[i], STAMP_MOD_NONE)
                     ^ 0x0A00U;
             if (readTempConf) {
-                spuLog("TEMP configuration mismatch!");
+                spuLogStampMismatch(i, 3);
                 continue;
             }
             APB_STAMP_writeAdc(&stamps[i],
@@ -196,35 +196,43 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
                     & 0x0FFFU) ^ 0x0603U);
             if (readTempConf) {
                 configflags = 1;
-                spuLog("TEMP configuration mismatch!");
+                spuLogStampMismatch(i, 3);
             }
         } while (readTempConf && confTrials < 3);
-        if (configflags == 1) {
-            configflags = 0;
-            continue;
+        //TODO: Fix problem with the inner VHDL waiting. Remove this shit and make it break able
+        //as an alternative: add a waiting function here. Just set the bit in a status register and wait here until this bit toggled!
+        // => much changes inner vhdl.. nothing sumulated yet.
+        uint32_t statusReg = HW_get_32bit_reg(stamps[i].baseAddr | STAMP_REG_READ_TMPSR);
+        if (statusReg & (1 << 9)) {
+            configflags = 1;
         }
-        delay(10);
-        // run offset calibration
-        APB_STAMP_writeAdc(&stamps[i],
-                STAMP_REG_WRITE_DMS1,
-                ADS_CMD_SYSOCAL,
-                STAMP_MOD_DATA_READY);
-        delay(10);
-        APB_STAMP_writeAdc(&stamps[i],
-                STAMP_REG_WRITE_DMS2,
-                ADS_CMD_SYSOCAL,
-                STAMP_MOD_DATA_READY);
-        delay(10);
-        APB_STAMP_writeAdc(&stamps[i],
-                STAMP_REG_WRITE_TEMP,
-                ADS_CMD_SYSOCAL,
-                STAMP_MOD_DATA_READY);
-        delay(10);
-        // start continuous data conversion by ADC
-        APB_STAMP_writeAdc(&stamps[i],
-                STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
-                ADS_CMD_RDATAC,
-                STAMP_MOD_NONE);
+        //check stamp4
+        if (configflags == 0) {
+            delay(1000);
+            // run offset calibration
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_DMS1,
+                    ADS_CMD_SYSOCAL,
+                    STAMP_MOD_NONE);
+            delay(500);
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_DMS2,
+                    ADS_CMD_SYSOCAL,
+                    STAMP_MOD_NONE);
+            delay(500);
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_TEMP,
+                    ADS_CMD_SYSOCAL,
+                    STAMP_MOD_NONE);
+            delay(500);
+            // start continuous data conversion by ADC
+            APB_STAMP_writeAdc(&stamps[i],
+                    STAMP_REG_WRITE_DMS1 | STAMP_REG_WRITE_DMS2 | STAMP_REG_WRITE_TEMP,
+                    ADS_CMD_RDATAC,
+                    STAMP_MOD_NONE);
+        } else {
+            configflags = 0;
+        }
         MSS_WD_reload();
     }
 
@@ -232,8 +240,10 @@ void stampsInit (uint8_t pgaSgr, uint8_t spsSgr,
     MSS_GPIO_set_output(OUT_ADC_START, 0);
     stamp_config_t conf = {.reset = 0, .continuous = 1, .asyncThreshold = 16,
             .empty = 0, .stampId = 0};
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 6; i++) {
+        conf.stampId = i;
         APB_STAMP_writeConfig(&stamps[i], &conf, STAMP_MOD_NONE);
+    }
     MSS_GPIO_set_output(OUT_ADC_START, 1);
 }
 

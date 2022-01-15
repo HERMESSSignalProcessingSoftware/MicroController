@@ -1,0 +1,96 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_EDAC</spirit:name>
+  <spirit:version>1.0.101</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>EDAC_ERROR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:export spirit:configGroups="export" spirit:prompt="EDAC_ERROR" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="EXPOSE_EDAC_ERROR" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EXPOSE_EDAC_ERROR" spirit:name="EXPOSE_EDAC_ERROR" spirit:prompt="Expose EDAC_ERROR bus" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:EDAC Errors" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_ENABLE_ESRAM0_EDAC_EN" spirit:name="EDAC_ENABLE_ESRAM0_EDAC_EN" spirit:prompt="Enable EDAC" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:eSRAM_0" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_INT_ENABLE_ESRAM0" spirit:name="EDAC_INT_ENABLE_ESRAM0" spirit:prompt="Enable EDAC Interrupt(s)" spirit:dataType="string" actel-cc:choiceRef="STATUS_UPDATE_CHOICES" spirit:configGroups="2Cols:eSRAM_0" spirit:resolve="user">DISABLE_ALL</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_ENABLE_ESRAM1_EDAC_EN" spirit:name="EDAC_ENABLE_ESRAM1_EDAC_EN" spirit:prompt="Enable EDAC" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:eSRAM_1" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_INT_ENABLE_ESRAM1" spirit:name="EDAC_INT_ENABLE_ESRAM1" spirit:prompt="Enable EDAC Interrupt(s)" spirit:dataType="string" actel-cc:choiceRef="STATUS_UPDATE_CHOICES" spirit:configGroups="2Cols:eSRAM_1" spirit:resolve="user">DISABLE_ALL</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_ENABLE_MAC_EDACTX_EN" spirit:name="EDAC_ENABLE_MAC_EDACTX_EN" spirit:prompt="Enable EDAC" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Ethernet TX RAM" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_INT_ENABLE_MAC_EDACTX" spirit:name="EDAC_INT_ENABLE_MAC_EDACTX" spirit:prompt="Enable EDAC Interrupt(s)" spirit:dataType="string" actel-cc:choiceRef="STATUS_UPDATE_CHOICES" spirit:configGroups="2Cols:Ethernet TX RAM" spirit:resolve="user">DISABLE_ALL</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_ENABLE_MAC_EDACRX_EN" spirit:name="EDAC_ENABLE_MAC_EDACRX_EN" spirit:prompt="Enable EDAC" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:Ethernet RX RAM" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_INT_ENABLE_MAC_EDACRX" spirit:name="EDAC_INT_ENABLE_MAC_EDACRX" spirit:prompt="Enable EDAC Interrupt(s)" spirit:dataType="string" actel-cc:choiceRef="STATUS_UPDATE_CHOICES" spirit:configGroups="2Cols:Ethernet RX RAM" spirit:resolve="user">DISABLE_ALL</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_ENABLE_USB_EDAC_EN" spirit:name="EDAC_ENABLE_USB_EDAC_EN" spirit:prompt="Enable EDAC" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:USB" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_INT_ENABLE_USB" spirit:name="EDAC_INT_ENABLE_USB" spirit:prompt="Enable EDAC Interrupt(s)" spirit:dataType="string" actel-cc:choiceRef="STATUS_UPDATE_CHOICES" spirit:configGroups="2Cols:USB" spirit:resolve="user">DISABLE_ALL</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_ENABLE_CAN_EDAC_EN" spirit:name="EDAC_ENABLE_CAN_EDAC_EN" spirit:prompt="Enable EDAC" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="2Cols:CAN" spirit:resolve="user">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_INT_ENABLE_CAN" spirit:name="EDAC_INT_ENABLE_CAN" spirit:prompt="Enable EDAC Interrupt(s)" spirit:dataType="string" actel-cc:choiceRef="STATUS_UPDATE_CHOICES" spirit:configGroups="2Cols:CAN" spirit:resolve="user">DISABLE_ALL</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_INT_ENABLE_MDDR_ECC_INT_EN" spirit:name="EDAC_INT_ENABLE_MDDR_ECC_INT_EN" spirit:prompt="Enable MDDR ECC Interrupt" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="MDDR" spirit:resolve="user">1</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_ENABLE_CC_EDAC_EN" spirit:name="EDAC_ENABLE_CC_EDAC_EN" spirit:prompt="Enable EDAC" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="EDAC_INT_ENABLE_CC" spirit:name="EDAC_INT_ENABLE_CC" spirit:prompt="Enable EDAC Interrupt(s)" spirit:dataType="string" actel-cc:choiceRef="STATUS_UPDATE_CHOICES" spirit:resolve="generated">DISABLE_ALL</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('EDAC_INT_ENABLE_ESRAM0', Eq('EDAC_ENABLE_ESRAM0_EDAC_EN', '1'));\
+Enable('EDAC_INT_ENABLE_ESRAM1', Eq('EDAC_ENABLE_ESRAM1_EDAC_EN', '1'));\
+Enable('EDAC_INT_ENABLE_MAC_EDACTX', Eq('EDAC_ENABLE_MAC_EDACTX_EN', '1'));\
+Enable('EDAC_INT_ENABLE_MAC_EDACRX', Eq('EDAC_ENABLE_MAC_EDACRX_EN', '1'));\
+Enable('EDAC_INT_ENABLE_USB', Eq('EDAC_ENABLE_USB_EDAC_EN', '1'));\
+Enable('EDAC_INT_ENABLE_CAN', Eq('EDAC_ENABLE_CAN_EDAC_EN', '1'));\
+Enable('EDAC_INT_ENABLE_CC', Eq('EDAC_ENABLE_CC_EDAC_EN', '1'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>STATUS_UPDATE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="None">DISABLE_ALL</spirit:enumeration>
+      <spirit:enumeration spirit:text="1-bit error">ENABLE_1E</spirit:enumeration>
+      <spirit:enumeration spirit:text="2-bit error">ENABLE_2E</spirit:enumeration>
+      <spirit:enumeration spirit:text="1-bit and 2-bit errors">ENABLE_1E_2E</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_EDAC</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20140327224543</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

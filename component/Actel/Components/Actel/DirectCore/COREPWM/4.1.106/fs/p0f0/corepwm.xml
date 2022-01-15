@@ -1,0 +1,1451 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>corepwm</spirit:name>
+  <spirit:version>4.1.106</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>APBslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA3" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:memoryMapRef spirit:memoryMapRef="RegisterMap" /></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PREADY</spirit:componentSignalName><spirit:busSignalName>PREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSLVERR</spirit:componentSignalName><spirit:busSignalName>PSLVERR</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  <spirit:memoryMap>
+    <spirit:name>RegisterMap</spirit:name>
+    <spirit:addressBlock>
+      <spirit:baseAddress>0x0</spirit:baseAddress>
+      <spirit:range>0x100</spirit:range>
+      <spirit:width>8</spirit:width>
+      <spirit:register>
+        <spirit:name>PRESCALE</spirit:name>
+        <spirit:addressOffset>0x00</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x08</spirit:resetValue>
+        <spirit:description>The system clock cycle is multiplied by the PRESCALE value, resulting in the minimum PERIOD count timebase  </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PERIOD</spirit:name>
+        <spirit:addressOffset>0x04</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x08</spirit:resetValue>
+        <spirit:description>The PRESCALE value is multiplied by the PERIOD value, yielding the PWM waveform cycle.  Example: system clock = 40 ns, PRESCALE register = 255, PERIOD register = 127.  The PWM waveforms will repeat every 40 ns / 256 x 128 = 1.31 ms. The resolution of the PWM waveforms will be 1.31ms / 128 = 10.23 micros.  This is a R/W register with a reset value of 0h08</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>ENABLE_0_7</spirit:name>
+        <spirit:addressOffset>0x08</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>'1' enables each PWM output. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>ENABLE_8_15</spirit:name>
+        <spirit:addressOffset>0x0C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>'1' masks each respective bit in the INTERRUPT register. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM1_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x10</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of each PWM1 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM1_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x14</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of each PWM1 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM2_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x18</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM2 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM2_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x1C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM2 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM3_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x20</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM3 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM3_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x24</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM3 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM4_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x28</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM4 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM4_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x2C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM4 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM5_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x30</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM5 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM5_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x34</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM5 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM6_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x38</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM6 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM6_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x3C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM6 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM7_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x40</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM7 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM7_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x44</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM7 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM8_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x48</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM8 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM8_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x4C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM8 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM9_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x50</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM9 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM9_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x54</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM9 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM10_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x58</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM10 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM10_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x5C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM10 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM11_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x60</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM11 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM11_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x64</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM11 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM12_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x68</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM12 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM12_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x6C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM12 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM13_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x70</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM13 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM13_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x74</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM13 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM14_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x78</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM14 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM14_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x7C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM14 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM15_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x80</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM15 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM15_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x84</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM15 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM16_POSEDGE</spirit:name>
+        <spirit:addressOffset>0x88</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets positive edge of the PWM16 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM16_NEGEDGE_DACLEV</spirit:name>
+        <spirit:addressOffset>0x8C</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Sets negative edge or DACLevelOut of the PWM16 output with respect to the PERIOD resolution. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>PWM_STRETCH</spirit:name>
+        <spirit:addressOffset>0x90</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>When 0, the state of PWMx is determined by PWMx_POS/NEGEDGE register settings. When 1, PWMx is set to PWM_STRETCH_VALUEx. This is a R/W register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPRESCALE</spirit:name>
+        <spirit:addressOffset>0x94</spirit:addressOffset>
+        <spirit:size>8</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00</spirit:resetValue>
+        <spirit:description>Clock prescale setting. Determines effective clock rate for the counter based on PCLK: 0000 = divide by 1 (default) 0001 = divide by 2 0010 = divide by 4 0011 = divide by 8 0100 = divide by 16 0101 = divide by 32 0110 = divide by 64 0111 = divide by 128 1000 = divide by 256 1001 = divide by 512 1010 = divide by 1,024 1011 = divide by 2,048 Others = divide by 2,048. This is a R/W register with a reset value of 0h00</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHSTATUS</spirit:name>
+        <spirit:addressOffset>0x98</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This is a TACH status register which contains one bit per TACH input, indicating whether the respective TACHPULSEDUR register has been updated at least once since the bit was cleared. The bits in this register gets cleared by writing a &quot;1&quot; and &quot;0&quot; doesn't have any effect. This is a R/W1C register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHIRQMASK</spirit:name>
+        <spirit:addressOffset>0x9C</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This is a TACH interrupt mask register with one bit per tachometer signal, indicating whether CorePWM needs to assert an interrupt if the respective bit in TACHSTATUS register is asserted. This is a R/W register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHMODE</spirit:name>
+        <spirit:addressOffset>0xA0</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>Sets the measurement mode used for each TACH input.  When 0: TACH input is continuously measured and stored in the respective TACHPULSEDUR register When 1:  A one-time measurement is performed only if the respective bit in TACHSTATUS register is cleared. This is a R/W register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_0</spirit:name>
+        <spirit:addressOffset>0xA4</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[0]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_1</spirit:name>
+        <spirit:addressOffset>0xA8</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[1]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_2</spirit:name>
+        <spirit:addressOffset>0xAC</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[2]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_3</spirit:name>
+        <spirit:addressOffset>0xB0</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[3]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_4</spirit:name>
+        <spirit:addressOffset>0xB4</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[4]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_5</spirit:name>
+        <spirit:addressOffset>0xB8</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[5]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_6</spirit:name>
+        <spirit:addressOffset>0xBC</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[6]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_7</spirit:name>
+        <spirit:addressOffset>0xC0</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[7]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_8</spirit:name>
+        <spirit:addressOffset>0xC4</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[8]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_9</spirit:name>
+        <spirit:addressOffset>0xC8</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[9]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_10</spirit:name>
+        <spirit:addressOffset>0xCC</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[10]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_11</spirit:name>
+        <spirit:addressOffset>0xD0</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[11]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_12</spirit:name>
+        <spirit:addressOffset>0xD4</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[12]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_13</spirit:name>
+        <spirit:addressOffset>0xD8</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[13]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_14</spirit:name>
+        <spirit:addressOffset>0xDC</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[14]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>TACHPULSEDUR_15</spirit:name>
+        <spirit:addressOffset>0xE0</spirit:addressOffset>
+        <spirit:size>16</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x0000</spirit:resetValue>
+        <spirit:description>This register stores the number of timer ticks between two successive positive (or negative) edges from the TACHIN[15]. The edge to be used is configurable.  If the number of timer ticks exceeds the maximum register value, the value of 0 shall be stored instead. This is a Read only register with a reset value of 0h0000</spirit:description>
+      </spirit:register>
+    </spirit:addressBlock>
+    <spirit:bitsInLau>8</spirit:bitsInLau>
+  </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-Base-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-Base-O</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Base-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Base-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VHDL_STIMULUS_FILESET-O</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VHDL_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>VHDL_PRECOMPILED_LIB_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>VHDL_PRECOMPILED_LIB_FILESET-O</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_STIMULUS_FILESET-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDL_PRECOMPILED_LIB_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDL_PRECOMPILED_LIB_FILESET-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-Base-O</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_STIMULUS_FILESET-O</spirit:fileSetRef>
+        <spirit:fileSetRef>USER_TB_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>VERILOG_PRECOMPILED_LIB_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>VERILOG_PRECOMPILED_LIB_FILESET-O</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_STIMULUS_FILESET-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERILOG_PRECOMPILED_LIB_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERILOG_PRECOMPILED_LIB_FILESET-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs_ALL-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-Docs_ALL-U</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs_ALL-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('APB_DWIDTH') - 1" spirit:resolve="dependent">15</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('APB_DWIDTH') - 1" spirit:resolve="dependent">15</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSLVERR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TACHINT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TACHIN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('TACH_NUM')" spirit:resolve="dependent">16</spirit:left>
+        <spirit:right>1</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWM</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('PWM_NUM')" spirit:resolve="dependent">16</spirit:left>
+        <spirit:right>1</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">17</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CONFIG_MODE" spirit:name="CONFIG_MODE" spirit:prompt="Configuration Mode:" spirit:dataType="int" spirit:choiceRef="Choice_Config" spirit:configGroups="Global Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_NUM" spirit:name="PWM_NUM" spirit:prompt="Number of PWM Channels:" spirit:dataType="int" spirit:choiceRef="Choice_PwmNum" spirit:configGroups="Global Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="APB_DWIDTH" spirit:name="APB_DWIDTH" spirit:prompt="APB Data Bus Width  / Resolution:" spirit:dataType="int" spirit:choiceRef="Choice_8to32" spirit:configGroups="Global Configuration:" spirit:resolve="user">8</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PRESCALE_EN" spirit:name="FIXED_PRESCALE_EN" spirit:prompt="Fixed Prescale:" spirit:dataType="boolean" spirit:configGroups="2Cols:Global PWM Mode Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PRESCALE" spirit:name="FIXED_PRESCALE" spirit:prompt="Fixed Value:" spirit:dataType="int" spirit:configGroups="2Cols:Global PWM Mode Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PERIOD_EN" spirit:name="FIXED_PERIOD_EN" spirit:prompt="Fixed Period:" spirit:dataType="boolean" spirit:configGroups="2Cols:Global PWM Mode Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PERIOD" spirit:name="FIXED_PERIOD" spirit:prompt="Fixed Value:" spirit:dataType="int" spirit:configGroups="2Cols:Global PWM Mode Configuration:" spirit:resolve="user" spirit:minimum="1" spirit:maximum="65535">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE1" spirit:name="DAC_MODE1" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 1 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN1" spirit:name="SHADOW_REG_EN1" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 1 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN1" spirit:name="FIXED_PWM_POS_EN1" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 1 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE1" spirit:name="FIXED_PWM_POSEDGE1" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 1 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN1" spirit:name="FIXED_PWM_NEG_EN1" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 1 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE1" spirit:name="FIXED_PWM_NEGEDGE1" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 1 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE1" spirit:name="PWM_STRETCH_VALUE1" spirit:prompt="Channel1 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 1 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE2" spirit:name="DAC_MODE2" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 2 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN2" spirit:name="SHADOW_REG_EN2" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 2 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN2" spirit:name="FIXED_PWM_POS_EN2" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 2 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE2" spirit:name="FIXED_PWM_POSEDGE2" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 2 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN2" spirit:name="FIXED_PWM_NEG_EN2" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 2 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE2" spirit:name="FIXED_PWM_NEGEDGE2" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 2 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE2" spirit:name="PWM_STRETCH_VALUE2" spirit:prompt="Channel2 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 2 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE3" spirit:name="DAC_MODE3" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 3 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN3" spirit:name="SHADOW_REG_EN3" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 3 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN3" spirit:name="FIXED_PWM_POS_EN3" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 3 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE3" spirit:name="FIXED_PWM_POSEDGE3" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 3 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN3" spirit:name="FIXED_PWM_NEG_EN3" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 3 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE3" spirit:name="FIXED_PWM_NEGEDGE3" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 3 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE3" spirit:name="PWM_STRETCH_VALUE3" spirit:prompt="Channel3 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 3 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE4" spirit:name="DAC_MODE4" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 4 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN4" spirit:name="SHADOW_REG_EN4" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 4 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN4" spirit:name="FIXED_PWM_POS_EN4" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 4 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE4" spirit:name="FIXED_PWM_POSEDGE4" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 4 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN4" spirit:name="FIXED_PWM_NEG_EN4" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 4 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE4" spirit:name="FIXED_PWM_NEGEDGE4" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 4 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE4" spirit:name="PWM_STRETCH_VALUE4" spirit:prompt="Channel4 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 4 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE5" spirit:name="DAC_MODE5" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 5 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN5" spirit:name="SHADOW_REG_EN5" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 5 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN5" spirit:name="FIXED_PWM_POS_EN5" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 5 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE5" spirit:name="FIXED_PWM_POSEDGE5" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 5 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN5" spirit:name="FIXED_PWM_NEG_EN5" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 5 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE5" spirit:name="FIXED_PWM_NEGEDGE5" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 5 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE5" spirit:name="PWM_STRETCH_VALUE5" spirit:prompt="Channel5 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 5 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE6" spirit:name="DAC_MODE6" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 6 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN6" spirit:name="SHADOW_REG_EN6" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 6 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN6" spirit:name="FIXED_PWM_POS_EN6" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 6 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE6" spirit:name="FIXED_PWM_POSEDGE6" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 6 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN6" spirit:name="FIXED_PWM_NEG_EN6" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 6 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE6" spirit:name="FIXED_PWM_NEGEDGE6" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 6 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE6" spirit:name="PWM_STRETCH_VALUE6" spirit:prompt="Channel6 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 6 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE7" spirit:name="DAC_MODE7" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 7 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN7" spirit:name="SHADOW_REG_EN7" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 7 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN7" spirit:name="FIXED_PWM_POS_EN7" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 7 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE7" spirit:name="FIXED_PWM_POSEDGE7" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 7 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN7" spirit:name="FIXED_PWM_NEG_EN7" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 7 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE7" spirit:name="FIXED_PWM_NEGEDGE7" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 7 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE7" spirit:name="PWM_STRETCH_VALUE7" spirit:prompt="Channel7 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 7 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE8" spirit:name="DAC_MODE8" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 8 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN8" spirit:name="SHADOW_REG_EN8" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 8 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN8" spirit:name="FIXED_PWM_POS_EN8" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 8 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE8" spirit:name="FIXED_PWM_POSEDGE8" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 8 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN8" spirit:name="FIXED_PWM_NEG_EN8" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 8 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE8" spirit:name="FIXED_PWM_NEGEDGE8" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 8 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE8" spirit:name="PWM_STRETCH_VALUE8" spirit:prompt="Channel8 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 8 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE9" spirit:name="DAC_MODE9" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 9 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN9" spirit:name="SHADOW_REG_EN9" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 9 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN9" spirit:name="FIXED_PWM_POS_EN9" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 9 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE9" spirit:name="FIXED_PWM_POSEDGE9" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 9 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN9" spirit:name="FIXED_PWM_NEG_EN9" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 9 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE9" spirit:name="FIXED_PWM_NEGEDGE9" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 9 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE9" spirit:name="PWM_STRETCH_VALUE9" spirit:prompt="Channel9 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 9 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE10" spirit:name="DAC_MODE10" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 10 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN10" spirit:name="SHADOW_REG_EN10" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 10 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN10" spirit:name="FIXED_PWM_POS_EN10" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 10 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE10" spirit:name="FIXED_PWM_POSEDGE10" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 10 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN10" spirit:name="FIXED_PWM_NEG_EN10" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 10 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE10" spirit:name="FIXED_PWM_NEGEDGE10" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 10 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE10" spirit:name="PWM_STRETCH_VALUE10" spirit:prompt="Channel10 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 10 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE11" spirit:name="DAC_MODE11" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 11 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN11" spirit:name="SHADOW_REG_EN11" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 11 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN11" spirit:name="FIXED_PWM_POS_EN11" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 11 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE11" spirit:name="FIXED_PWM_POSEDGE11" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 11 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN11" spirit:name="FIXED_PWM_NEG_EN11" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 11 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE11" spirit:name="FIXED_PWM_NEGEDGE11" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 11 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE11" spirit:name="PWM_STRETCH_VALUE11" spirit:prompt="Channel11 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 11 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE12" spirit:name="DAC_MODE12" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 12 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN12" spirit:name="SHADOW_REG_EN12" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 12 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN12" spirit:name="FIXED_PWM_POS_EN12" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 12 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE12" spirit:name="FIXED_PWM_POSEDGE12" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 12 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN12" spirit:name="FIXED_PWM_NEG_EN12" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 12 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE12" spirit:name="FIXED_PWM_NEGEDGE12" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 12 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE12" spirit:name="PWM_STRETCH_VALUE12" spirit:prompt="Channel12 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 12 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE13" spirit:name="DAC_MODE13" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 13 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN13" spirit:name="SHADOW_REG_EN13" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 13 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN13" spirit:name="FIXED_PWM_POS_EN13" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 13 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE13" spirit:name="FIXED_PWM_POSEDGE13" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 13 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN13" spirit:name="FIXED_PWM_NEG_EN13" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 13 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE13" spirit:name="FIXED_PWM_NEGEDGE13" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 13 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE13" spirit:name="PWM_STRETCH_VALUE13" spirit:prompt="Channel13 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 13 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE14" spirit:name="DAC_MODE14" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 14 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN14" spirit:name="SHADOW_REG_EN14" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 14 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN14" spirit:name="FIXED_PWM_POS_EN14" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 14 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE14" spirit:name="FIXED_PWM_POSEDGE14" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 14 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN14" spirit:name="FIXED_PWM_NEG_EN14" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 14 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE14" spirit:name="FIXED_PWM_NEGEDGE14" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 14 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE14" spirit:name="PWM_STRETCH_VALUE14" spirit:prompt="Channel14 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 14 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE15" spirit:name="DAC_MODE15" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 15 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN15" spirit:name="SHADOW_REG_EN15" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 15 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN15" spirit:name="FIXED_PWM_POS_EN15" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 15 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE15" spirit:name="FIXED_PWM_POSEDGE15" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 15 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN15" spirit:name="FIXED_PWM_NEG_EN15" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 15 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE15" spirit:name="FIXED_PWM_NEGEDGE15" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 15 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE15" spirit:name="PWM_STRETCH_VALUE15" spirit:prompt="Channel15 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 15 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PWM_STRETCH_VALUE16" spirit:name="PWM_STRETCH_VALUE16" spirit:prompt="Channel16 PWM stretch level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 16 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAC_MODE16" spirit:name="DAC_MODE16" spirit:prompt="Low Ripple DAC mode:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 16 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SHADOW_REG_EN16" spirit:name="SHADOW_REG_EN16" spirit:prompt="Shadow Update Register:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 16 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POS_EN16" spirit:name="FIXED_PWM_POS_EN16" spirit:prompt="Fixed PWM PosEdge:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 16 Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_POSEDGE16" spirit:name="FIXED_PWM_POSEDGE16" spirit:prompt="Fixed PWM PosEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 16 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEG_EN16" spirit:name="FIXED_PWM_NEG_EN16" spirit:prompt="Fixed PWM NegEdge / DAC LevelOut:" spirit:dataType="boolean" spirit:configGroups="2Cols:Channel 16 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="FIXED_PWM_NEGEDGE16" spirit:name="FIXED_PWM_NEGEDGE16" spirit:prompt="Fixed PWM NegEdge Value:" spirit:dataType="int" spirit:configGroups="2Cols:Channel 16 Configuration:" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_NUM" spirit:name="TACH_NUM" spirit:prompt="Number of TACH INPUTS:" spirit:dataType="int" spirit:choiceRef="Choice_PwmNum" spirit:configGroups="Global TACH Mode Configuration:" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACHINT_ACT_LEVEL" spirit:name="TACHINT_ACT_LEVEL" spirit:prompt="TACHINT interrupt active level (HIGH when selected)" spirit:dataType="boolean" spirit:configGroups="Global TACH Mode Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE1" spirit:name="TACH_EDGE1" spirit:prompt="TACH Input1 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input1 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE2" spirit:name="TACH_EDGE2" spirit:prompt="TACH Input2 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input2 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE3" spirit:name="TACH_EDGE3" spirit:prompt="TACH Input3 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input3 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE4" spirit:name="TACH_EDGE4" spirit:prompt="TACH Input4 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input4 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE5" spirit:name="TACH_EDGE5" spirit:prompt="TACH Input5 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input5 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE6" spirit:name="TACH_EDGE6" spirit:prompt="TACH Input6 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input6 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE7" spirit:name="TACH_EDGE7" spirit:prompt="TACH Input7 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input7 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE8" spirit:name="TACH_EDGE8" spirit:prompt="TACH Input8 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input8 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE9" spirit:name="TACH_EDGE9" spirit:prompt="TACH Input9 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input9 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE10" spirit:name="TACH_EDGE10" spirit:prompt="TACH Input10 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input10 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE11" spirit:name="TACH_EDGE11" spirit:prompt="TACH Input11 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input11 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE12" spirit:name="TACH_EDGE12" spirit:prompt="TACH Input12 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input12 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE13" spirit:name="TACH_EDGE13" spirit:prompt="TACH Input13 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input13 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE14" spirit:name="TACH_EDGE14" spirit:prompt="TACH Input14 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input14 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE15" spirit:name="TACH_EDGE15" spirit:prompt="TACH Input15 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input15 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TACH_EDGE16" spirit:name="TACH_EDGE16" spirit:prompt="TACH Input16 edge configuration (RISING when selected)" spirit:dataType="boolean" spirit:configGroups="TACH Input16 Configuration:" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="HDL_license" spirit:name="HDL_license" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:resolve="user">U</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('PWM_NUM', Less('CONFIG_MODE', '2'));\
+Enable('FIXED_PRESCALE_EN', And(GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PERIOD_EN', And(GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PRESCALE', And('FIXED_PRESCALE_EN', GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PERIOD', And('FIXED_PERIOD_EN', GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN1', And(GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE1', And(GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN1', And(GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE1', And('FIXED_PWM_NEG_EN1', GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN1', And(Eq('DAC_MODE1', '0'), GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE1', And('FIXED_PWM_POS_EN1', Eq('DAC_MODE1', '0'), GtOrEq('PWM_NUM', '1'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN2', And(GtOrEq('PWM_NUM', '2'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE2', And(GtOrEq('PWM_NUM', '2'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN2', And(GtOrEq('PWM_NUM', '2'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE2', And('FIXED_PWM_NEG_EN2', GtOrEq('PWM_NUM', '2'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN2', And(Eq('DAC_MODE2', '0'), GtOrEq('PWM_NUM', '2'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE2', And('FIXED_PWM_POS_EN2', Eq('DAC_MODE2', '0'), GtOrEq('PWM_NUM', '2'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN3', And(GtOrEq('PWM_NUM', '3'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE3', And(GtOrEq('PWM_NUM', '3'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN3', And(GtOrEq('PWM_NUM', '3'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE3', And('FIXED_PWM_NEG_EN3', GtOrEq('PWM_NUM', '3'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN3', And(Eq('DAC_MODE3', '0'), GtOrEq('PWM_NUM', '3'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE3', And('FIXED_PWM_POS_EN3', Eq('DAC_MODE3', '0'), GtOrEq('PWM_NUM', '3'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN4', And(GtOrEq('PWM_NUM', '4'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE4', And(GtOrEq('PWM_NUM', '4'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN4', And(GtOrEq('PWM_NUM', '4'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE4', And('FIXED_PWM_NEG_EN4', GtOrEq('PWM_NUM', '4'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN4', And(Eq('DAC_MODE4', '0'), GtOrEq('PWM_NUM', '4'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE4', And('FIXED_PWM_POS_EN4', Eq('DAC_MODE4', '0'), GtOrEq('PWM_NUM', '4'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN5', And(GtOrEq('PWM_NUM', '5'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE5', And(GtOrEq('PWM_NUM', '5'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN5', And(GtOrEq('PWM_NUM', '5'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE5', And('FIXED_PWM_NEG_EN5', GtOrEq('PWM_NUM', '5'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN5', And(Eq('DAC_MODE5', '0'), GtOrEq('PWM_NUM', '5'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE5', And('FIXED_PWM_POS_EN5', Eq('DAC_MODE5', '0'), GtOrEq('PWM_NUM', '5'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN6', And(GtOrEq('PWM_NUM', '6'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE6', And(GtOrEq('PWM_NUM', '6'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN6', And(GtOrEq('PWM_NUM', '6'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE6', And('FIXED_PWM_NEG_EN6', GtOrEq('PWM_NUM', '6'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN6', And(Eq('DAC_MODE6', '0'), GtOrEq('PWM_NUM', '6'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE6', And('FIXED_PWM_POS_EN6', Eq('DAC_MODE6', '0'), GtOrEq('PWM_NUM', '6'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN7', And(GtOrEq('PWM_NUM', '7'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE7', And(GtOrEq('PWM_NUM', '7'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN7', And(GtOrEq('PWM_NUM', '7'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE7', And('FIXED_PWM_NEG_EN7', GtOrEq('PWM_NUM', '7'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN7', And(Eq('DAC_MODE7', '0'), GtOrEq('PWM_NUM', '7'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE7', And('FIXED_PWM_POS_EN7', Eq('DAC_MODE7', '0'), GtOrEq('PWM_NUM', '7'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN8', And(GtOrEq('PWM_NUM', '8'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE8', And(GtOrEq('PWM_NUM', '8'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN8', And(GtOrEq('PWM_NUM', '8'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE8', And('FIXED_PWM_NEG_EN8', GtOrEq('PWM_NUM', '8'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN8', And(Eq('DAC_MODE8', '0'), GtOrEq('PWM_NUM', '8'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE8', And('FIXED_PWM_POS_EN8', Eq('DAC_MODE8', '0'), GtOrEq('PWM_NUM', '8'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN9', And(GtOrEq('PWM_NUM', '9'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE9', And(GtOrEq('PWM_NUM', '9'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN9', And(GtOrEq('PWM_NUM', '9'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE9', And('FIXED_PWM_NEG_EN9', GtOrEq('PWM_NUM', '9'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN9', And(Eq('DAC_MODE9', '0'), GtOrEq('PWM_NUM', '9'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE9', And('FIXED_PWM_POS_EN9', Eq('DAC_MODE9', '0'), GtOrEq('PWM_NUM', '9'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN10', And(GtOrEq('PWM_NUM', '10'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE10', And(GtOrEq('PWM_NUM', '10'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN10', And(GtOrEq('PWM_NUM', '10'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE10', And('FIXED_PWM_NEG_EN10', GtOrEq('PWM_NUM', '10'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN10', And(Eq('DAC_MODE10', '0'), GtOrEq('PWM_NUM', '10'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE10', And('FIXED_PWM_POS_EN10', Eq('DAC_MODE10', '0'), GtOrEq('PWM_NUM', '10'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN11', And(GtOrEq('PWM_NUM', '11'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE11', And(GtOrEq('PWM_NUM', '11'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN11', And(GtOrEq('PWM_NUM', '11'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE11', And('FIXED_PWM_NEG_EN11', GtOrEq('PWM_NUM', '11'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN11', And(Eq('DAC_MODE11', '0'), GtOrEq('PWM_NUM', '11'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE11', And('FIXED_PWM_POS_EN11', Eq('DAC_MODE11', '0'), GtOrEq('PWM_NUM', '11'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN12', And(GtOrEq('PWM_NUM', '12'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE12', And(GtOrEq('PWM_NUM', '12'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN12', And(GtOrEq('PWM_NUM', '12'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE12', And('FIXED_PWM_NEG_EN12', GtOrEq('PWM_NUM', '12'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN12', And(Eq('DAC_MODE12', '0'), GtOrEq('PWM_NUM', '12'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE12', And('FIXED_PWM_POS_EN12', Eq('DAC_MODE12', '0'), GtOrEq('PWM_NUM', '12'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN13', And(GtOrEq('PWM_NUM', '13'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE13', And(GtOrEq('PWM_NUM', '13'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN13', And(GtOrEq('PWM_NUM', '13'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE13', And('FIXED_PWM_NEG_EN13', GtOrEq('PWM_NUM', '13'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN13', And(Eq('DAC_MODE13', '0'), GtOrEq('PWM_NUM', '13'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE13', And('FIXED_PWM_POS_EN13', Eq('DAC_MODE13', '0'), GtOrEq('PWM_NUM', '13'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN14', And(GtOrEq('PWM_NUM', '14'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE14', And(GtOrEq('PWM_NUM', '14'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN14', And(GtOrEq('PWM_NUM', '14'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE14', And('FIXED_PWM_NEG_EN14', GtOrEq('PWM_NUM', '14'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN14', And(Eq('DAC_MODE14', '0'), GtOrEq('PWM_NUM', '14'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE14', And('FIXED_PWM_POS_EN14', Eq('DAC_MODE14', '0'), GtOrEq('PWM_NUM', '14'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN15', And(GtOrEq('PWM_NUM', '15'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE15', And(GtOrEq('PWM_NUM', '15'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN15', GtOrEq('PWM_NUM', '15'));\
+Enable('FIXED_PWM_NEGEDGE15', And('FIXED_PWM_NEG_EN15', GtOrEq('PWM_NUM', '15'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN15', And(Eq('DAC_MODE15', '0'), GtOrEq('PWM_NUM', '15'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE15', And('FIXED_PWM_POS_EN15', Eq('DAC_MODE15', '0'), GtOrEq('PWM_NUM', '15'), Less('CONFIG_MODE', '2')));\
+Enable('SHADOW_REG_EN16', And(GtOrEq('PWM_NUM', '16'), Less('CONFIG_MODE', '2')));\
+Enable('DAC_MODE16', And(GtOrEq('PWM_NUM', '16'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEG_EN16', And(GtOrEq('PWM_NUM', '16'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_NEGEDGE16', And('FIXED_PWM_NEG_EN16', GtOrEq('PWM_NUM', '16'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POS_EN16', And(Eq('DAC_MODE16', '0'), GtOrEq('PWM_NUM', '16'), Less('CONFIG_MODE', '2')));\
+Enable('FIXED_PWM_POSEDGE16', And('FIXED_PWM_POS_EN16', Eq('DAC_MODE16', '0'), GtOrEq('PWM_NUM', '16'), Less('CONFIG_MODE', '2')));\
+Enable('TACH_NUM', Gt('CONFIG_MODE', '0'));\
+Enable('TACHINT_ACT_LEVEL', And(GtOrEq('TACH_NUM', '1'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE1', And(GtOrEq('PWM_NUM', '1'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE1', And(GtOrEq('TACH_NUM', '1'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE2', And(GtOrEq('PWM_NUM', '2'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE2', And(GtOrEq('TACH_NUM', '2'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE3', And(GtOrEq('PWM_NUM', '3'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE3', And(GtOrEq('TACH_NUM', '3'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE4', And(GtOrEq('PWM_NUM', '4'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE4', And(GtOrEq('TACH_NUM', '4'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE5', And(GtOrEq('PWM_NUM', '5'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE5', And(GtOrEq('TACH_NUM', '5'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE6', And(GtOrEq('PWM_NUM', '6'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE6', And(GtOrEq('TACH_NUM', '6'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE7', And(GtOrEq('PWM_NUM', '7'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE7', And(GtOrEq('TACH_NUM', '7'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE8', And(GtOrEq('PWM_NUM', '8'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE8', And(GtOrEq('TACH_NUM', '8'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE9', And(GtOrEq('PWM_NUM', '9'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE9', And(GtOrEq('TACH_NUM', '9'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE10', And(GtOrEq('PWM_NUM', '10'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE10', And(GtOrEq('TACH_NUM', '10'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE11', And(GtOrEq('PWM_NUM', '11'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE11', And(GtOrEq('TACH_NUM', '11'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE12', And(GtOrEq('PWM_NUM', '12'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE12', And(GtOrEq('TACH_NUM', '12'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE13', And(GtOrEq('PWM_NUM', '13'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE13', And(GtOrEq('TACH_NUM', '13'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE14', And(GtOrEq('PWM_NUM', '14'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE14', And(GtOrEq('TACH_NUM', '14'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE15', And(GtOrEq('PWM_NUM', '15'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE15', And(GtOrEq('TACH_NUM', '15'), Gt('CONFIG_MODE', '0')));\
+Enable('PWM_STRETCH_VALUE16', And(GtOrEq('PWM_NUM', '16'), Gt('CONFIG_MODE', '0')));\
+Enable('TACH_EDGE16', And(GtOrEq('TACH_NUM', '16'), Gt('CONFIG_MODE', '0')));\
+Validate('FIXED PRESCALE must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PRESCALE')));\
+Validate('FIXED PERIOD must be between 1 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PERIOD')));\
+Validate('FIXED PWM NEGEDGE of channel1 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE1')));\
+Validate('FIXED PWM POSEDGE of channel1 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE1')));\
+Validate('FIXED PWM NEGEDGE of channel2 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE2')));\
+Validate('FIXED PWM POSEDGE of channel2 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE2')));\
+Validate('FIXED PWM NEGEDGE of channel3 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE3')));\
+Validate('FIXED PWM POSEDGE of channel3 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE3')));\
+Validate('FIXED PWM NEGEDGE of channel4 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE4')));\
+Validate('FIXED PWM POSEDGE of channel4 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE4')));\
+Validate('FIXED PWM NEGEDGE of channel5 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE5')));\
+Validate('FIXED PWM POSEDGE of channel5 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE5')));\
+Validate('FIXED PWM NEGEDGE of channel6 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE6')));\
+Validate('FIXED PWM POSEDGE of channel6 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE6')));\
+Validate('FIXED PWM NEGEDGE of channel7 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE7')));\
+Validate('FIXED PWM POSEDGE of channel7 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE7')));\
+Validate('FIXED PWM NEGEDGE of channel8 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE8')));\
+Validate('FIXED PWM POSEDGE of channel8 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE8')));\
+Validate('FIXED PWM NEGEDGE of channel9 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE9')));\
+Validate('FIXED PWM POSEDGE of channel9 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE9')));\
+Validate('FIXED PWM NEGEDGE of channel10 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE10')));\
+Validate('FIXED PWM POSEDGE of channel10 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE10')));\
+Validate('FIXED PWM NEGEDGE of channel11 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE11')));\
+Validate('FIXED PWM POSEDGE of channel11 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE11')));\
+Validate('FIXED PWM NEGEDGE of channel12 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE12')));\
+Validate('FIXED PWM POSEDGE of channel12 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE12')));\
+Validate('FIXED PWM NEGEDGE of channel13 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE13')));\
+Validate('FIXED PWM POSEDGE of channel13 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE13')));\
+Validate('FIXED PWM NEGEDGE of channel14 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE14')));\
+Validate('FIXED PWM POSEDGE of channel14 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE14')));\
+Validate('FIXED PWM NEGEDGE of channel15 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE15')));\
+Validate('FIXED PWM POSEDGE of channel15 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE15')));\
+Validate('FIXED PWM NEGEDGE of channel16 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_NEGEDGE16')));\
+Validate('FIXED PWM POSEDGE of channel16 must be between 0 and ((2^APB_DWIDTH)-1)', GtOrEq('APB_DWIDTH', WidthOfDepth('FIXED_PWM_POSEDGE16')));\
+Validate('APB_DWIDTH must be 16 or 32', Or(Eq('CONFIG_MODE', '0 - PWM Only Mode'), And(Neq('CONFIG_MODE', '0 - PWM Only Mode'), Neq('APB_DWIDTH', '8'))));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_8to32</spirit:name>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Config</spirit:name>
+      <spirit:enumeration spirit:text="0 - PWM Only Mode">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="1 - PWM and TACH Mode">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2 - TACH Only Mode">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="Axcelerator">11</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTAX-S">12</spirit:enumeration>
+      <spirit:enumeration spirit:text="PA">14</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3E">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3L">22</spirit:enumeration>
+      <spirit:enumeration spirit:text="Fusion">17</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO">20</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOOe">21</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="Obfuscated">O</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+      <spirit:enumeration spirit:text="Eval">E</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_PwmNum</spirit:name>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="3">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="5">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="6">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="7">7</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="9">9</spirit:enumeration>
+      <spirit:enumeration spirit:text="10">10</spirit:enumeration>
+      <spirit:enumeration spirit:text="11">11</spirit:enumeration>
+      <spirit:enumeration spirit:text="12">12</spirit:enumeration>
+      <spirit:enumeration spirit:text="13">13</spirit:enumeration>
+      <spirit:enumeration spirit:text="14">14</spirit:enumeration>
+      <spirit:enumeration spirit:text="15">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Base-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/reg_if.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/tach_if.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/pwm_gen.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/timebase.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corepwm.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/components.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Base-O">
+    <spirit:group>Obfuscated</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obfuscated/reg_if.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obfuscated/tach_if.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obfuscated/pwm_gen.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obfuscated/timebase.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obfuscated/corepwm.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obfuscated/components.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/corepwm_pkg.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/tb_user_corepwm.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>tb_user_corepwm</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_STIMULUS_FILESET-O">
+    <spirit:group>Obfuscated</spirit:group>
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/corepwm_pkg.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/tb_user_corepwm.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREPWM_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>tb_user_corepwm</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VHDL_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/wave_usertb_vhdl.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDL_PRECOMPILED_LIB_FILESET-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>mti/lib_vhdl_rtl/COREPWM_LIB/_info</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:library>
+      <actel-cc:name>COREPWM_LIB</actel-cc:name>
+      <actel-cc:path>mti/lib_vhdl_rtl/COREPWM_LIB</actel-cc:path>
+    </actel-cc:library></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDL_PRECOMPILED_LIB_FILESET-O">
+    <spirit:group>Obfuscated</spirit:group>
+    <spirit:file>
+      <spirit:name>mti/lib_vhdl_obs/COREPWM_LIB/_info</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:library>
+      <actel-cc:name>COREPWM_LIB</actel-cc:name>
+      <actel-cc:path>mti/lib_vhdl_obs/COREPWM_LIB</actel-cc:path>
+    </actel-cc:library></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/reg_if.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/tach_if.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/pwm_gen.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/timebase.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corepwm.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-O">
+    <spirit:group>Obfuscated</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obfuscated/reg_if.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obfuscated/tach_if.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obfuscated/pwm_gen.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obfuscated/timebase.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obfuscated/corepwm.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/tb_user_corepwm.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>tb_user_corepwm</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_STIMULUS_FILESET-O">
+    <spirit:group>Obfuscated</spirit:group>
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/tb_user_corepwm.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>tb_user_corepwm</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="USER_TB_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/wave_usertb_vlog.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VERILOG_PRECOMPILED_LIB_FILESET-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>mti/lib_vlog_rtl/COREPWM_LIB/_info</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:library>
+      <actel-cc:name>COREPWM_LIB</actel-cc:name>
+      <actel-cc:path>mti/lib_vlog_rtl/COREPWM_LIB</actel-cc:path>
+    </actel-cc:library></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VERILOG_PRECOMPILED_LIB_FILESET-O">
+    <spirit:group>Obfuscated</spirit:group>
+    <spirit:file>
+      <spirit:name>mti/lib_vlog_obs/COREPWM_LIB/_info</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:library>
+      <actel-cc:name>COREPWM_LIB</actel-cc:name>
+      <actel-cc:path>mti/lib_vlog_obs/COREPWM_LIB</actel-cc:path>
+    </actel-cc:library></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL-O">
+    <spirit:group>Obfuscated</spirit:group>
+    <spirit:file>
+      <spirit:name>docs/CorePWM_RN_41.pdf</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CorePWM_HB.pdf</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs_ALL-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>docs/CorePWM_RN_41.pdf</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CorePWM_HB.pdf</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+<spirit:vendorExtensions>
+  <actel-cc:displayName>CorePWM</actel-cc:displayName>
+  <actel-cc:description>CorePWM is a general purpose multi channel Pulse Width Modulator (PWM) module for Motor Control, Tone Generation, Battery Charging, Heating Elements, etc. In addition, there is a special 'Low Ripple DAC' mode that creates a pulse train that does not modulate the width of the pulses.  Instead, the algorithm for generating the pulses is such that when used with a low pass filter (such as a simple RC circuit), a DAC can be created with far better bandwidth and ripple performance than could be achieved with a standard PWM algorithm. This type of DAC is ideally suited for fine tuning of power supply output levels.</actel-cc:description>
+  <actel-cc:packageTimestamp>20100330100850</actel-cc:packageTimestamp>
+  <actel-cc:type typeName="IP"/>
+  <actel-cc:categories categoryName="OS" style="hidden">
+    <actel-cc:category name="PC">
+    </actel-cc:category>
+    <actel-cc:category name="Linux">
+    </actel-cc:category>
+  </actel-cc:categories>
+  <actel-cc:categories categoryName="min_libero_version" style="hidden">
+    <actel-cc:category name="">
+    </actel-cc:category>
+  </actel-cc:categories>
+  <actel-cc:categories categoryName="Core Provider">
+    <actel-cc:category name="Actel">
+    </actel-cc:category>
+  </actel-cc:categories>
+  <actel-cc:categories categoryName="Functional Category">
+    <actel-cc:category name="Peripherals">
+    </actel-cc:category>
+  </actel-cc:categories>
+  <actel-cc:categories categoryName="Market Segment">
+    <actel-cc:category name="Aerospace">
+    </actel-cc:category>
+    <actel-cc:category name="Automotive">
+    </actel-cc:category>
+    <actel-cc:category name="Military">
+    </actel-cc:category>
+    <actel-cc:category name="Industrial">
+    </actel-cc:category>
+    <actel-cc:category name="Medical">
+    </actel-cc:category>
+    <actel-cc:category name="Consumer">
+    </actel-cc:category>
+    <actel-cc:category name="Multimedia">
+    </actel-cc:category>
+    <actel-cc:category name="Gaming">
+    </actel-cc:category>
+  </actel-cc:categories>
+  <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+    <actel-cc:category name="Automotive">
+    </actel-cc:category>
+    <actel-cc:category name="Commercial">
+    </actel-cc:category>
+    <actel-cc:category name="Industrial">
+    </actel-cc:category>
+    <actel-cc:category name="Military">
+    </actel-cc:category>
+  </actel-cc:categories>
+  <actel-cc:categories categoryName="Interface Type">
+    <actel-cc:category name="AmbaBus">
+    </actel-cc:category>
+  </actel-cc:categories>
+  <actel-cc:categories categoryName="Product Family" style="checkbox">
+    <actel-cc:category name="Axcelerator">
+    </actel-cc:category>
+    <actel-cc:category name="RTAX-S">
+    </actel-cc:category>
+    <actel-cc:category name="PA">
+    </actel-cc:category>
+    <actel-cc:category name="ProASIC3">
+    </actel-cc:category>
+    <actel-cc:category name="ProASIC3E">
+    </actel-cc:category>
+    <actel-cc:category name="ProASIC3L">
+    </actel-cc:category>
+    <actel-cc:category name="Fusion">
+    </actel-cc:category>
+    <actel-cc:category name="IGLOO">
+    </actel-cc:category>
+    <actel-cc:category name="IGLOOe">
+    </actel-cc:category>
+  </actel-cc:categories>
+  <actel-cc:resources>
+    <actel-cc:resource doc_title="CorePWM Handbook" url="http://www.actel.com/ipdocs/CorePWM_HB.PDF"/>
+    <actel-cc:resource doc_title="CorePWM Release Notes" url="http://www.actel.com/ipdocs/CorePWM_RN.PDF"/></actel-cc:resources></spirit:vendorExtensions>
+</spirit:component>

@@ -1,8 +1,13 @@
-/*
- * MemoryRev2.h
+/**
+ * memory.h
  *
  *  Created on: 18.06.2021
  *      Author: Robin Grimsmann
+ * @brief Cypress NOR Flash (S70FL01GS) with 2 x S25FL512S 512 Mbit memory controller
+ * for the combined device: 1024 Mbit (1Gbit) => 128Mbyte
+ * Programming buffer of 512 byte -> Page size of 512 byte
+ * 128Mbyte / 512 byte = 250000 pages -> 125000 pages on one device
+ * Page addressing: first page at 0x00 + 512 byte (0x200)
  */
 
 #ifndef DRIVERS_APB_MEMORY_H_
@@ -14,11 +19,11 @@ extern "C" {
 
 #include "../../drivers/mss_gpio/mss_gpio.h"
 #include "../../hal.h"
-#include "../../hw_platform.h"
+#include "../../sb_hw_platform.h"
 #include "../../drivers/mss_spi/mss_spi.h"
-#include "../../components/tools.h"
 #include "../../components/telemetry.h"
 #include "MemorySyncAPB.h"
+#include "../../components/HERMESS.h"
 
 #define c_WRDI 0x04
 #define c_READSTATUSREG1 0x05
@@ -34,6 +39,8 @@ extern "C" {
 #define c_CE 0xC7
 
 #define PAGE_COUNT 125000
+
+#define PAGEADDR(i) (i << 9)
 
 #define PAGESIZE 512
 /*
@@ -214,7 +221,7 @@ int chipErase(SPI_Values);
  */
 void writeReady(SPI_Values);
 
-/*
+/**
  * Copies the registers Stamp1Shadow1 - Stamp6Shadow2, SR, SR2, Timestamp to the internal memory
  * @param puffer pointer to a memory region of 512 byte
  * @param telFrame pointer to typedef struct for telemetry
@@ -245,6 +252,14 @@ void Write32Bit(uint32_t value, uint32_t address, SPI_Values device);
  */
 uint32_t testMemory(void);
 
+/**
+ *
+ * @param pageAddr the address to be saved on page 0 - 0x199
+ * @param metaAddress the page  address of the current meta page
+ * @param dev the device to be safed on
+ * @return uint32_t page address of the current page
+ */
+uint32_t UpdateMetadata(uint32_t pageAddr, uint32_t metaAddress, SPI_Values dev);
 
 
 

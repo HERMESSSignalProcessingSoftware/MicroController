@@ -1,0 +1,314 @@
+Section PA4M_IOMUX_PORT_DATA.
+
+
+; =================================================================== 
+; Iomux Indexes are from 0 to 56. 
+; If an index is more than 56 it means it's just 
+; an index we are using to represent the sharing. 
+; In some cases 2 IOs are shared even if they are not using an IoMux 
+; Example: USBA:XCLK and SPI0:SCK 
+; Make sure the other blocks are not using the same indexes if  
+; there is no sharing. 
+; =================================================================== 
+ 
+14   SERIAL     "CAN:RX"             IN. 
+13   SERIAL     "CAN:TX"             . 
+15   SERIAL     "CAN:TX_EN_N"        . 
+ 
+ 
+
+
+ 
+; =================================================================== 
+; Iomux Indexes are from 0 to 56. 
+; If an index is more than 56 it means it's just 
+; an index we are using to represent the sharing. 
+; In some cases 2 IOs are shared even if they are not using an IoMux 
+; Example: USBA:XCLK and SPI0:SCK 
+; Make sure the other blocks are not using the same indexes if  
+; there is no sharing. 
+; =================================================================== 
+ 
+; GPIOA 
+11   GPIOA      "GPIO:GPIO_0"        . 
+12   GPIOA      "GPIO:GPIO_1"        . 
+13   GPIOA      "GPIO:GPIO_2"        . 
+14   GPIOA      "GPIO:GPIO_3"        . 
+15   GPIOA      "GPIO:GPIO_4"        . 
+16   GPIOA      "GPIO:GPIO_5"        . 
+17   GPIOA      "GPIO:GPIO_6"        . 
+18   GPIOA      "GPIO:GPIO_7"        . 
+19   GPIOA      "GPIO:GPIO_8"        . 
+20   GPIOA      "GPIO:GPIO_9"        . 
+21   GPIOA      "GPIO:GPIO_10"       . 
+26   GPIOA      "GPIO:GPIO_11"       . 
+27   GPIOA      "GPIO:GPIO_12"       . 
+28   GPIOA      "GPIO:GPIO_13"       . 
+29   GPIOA      "GPIO:GPIO_14"       . 
+30   GPIOA      "GPIO:GPIO_15"       . 
+31   GPIOA      "GPIO:GPIO_16"       . 
+32   GPIOA      "GPIO:GPIO_17"       . 
+33   GPIOA      "GPIO:GPIO_18"       . 
+22   GPIOA      "GPIO:GPIO_19"       . 
+23   GPIOA      "GPIO:GPIO_20"       . 
+24   GPIOA      "GPIO:GPIO_21"       . 
+25   GPIOA      "GPIO:GPIO_22"       . 
+34   GPIOA      "GPIO:GPIO_23"       . 
+35   GPIOA      "GPIO:GPIO_24"       . 
+ 
+100  GPIOA      "GPIO:GPIO_25"       . 
+101  GPIOA      "GPIO:GPIO_26"       . 
+102  GPIOA      "GPIO:GPIO_27"       . 
+103  GPIOA      "GPIO:GPIO_28"       . 
+104  GPIOA      "GPIO:GPIO_29"       . 
+105  GPIOA      "GPIO:GPIO_30"       . 
+106  GPIOA      "GPIO:GPIO_31"       . 
+ 
+; GPIOB 
+107  GPIOB      "GPIO:GPIO_0"        . 
+108  GPIOB      "GPIO:GPIO_1"        . 
+109  GPIOB      "GPIO:GPIO_2"        . 
+110  GPIOB      "GPIO:GPIO_3"        . 
+111  GPIOB      "GPIO:GPIO_4"        . 
+112  GPIOB      "GPIO:GPIO_5"        . 
+113  GPIOB      "GPIO:GPIO_6"        . 
+114  GPIOB      "GPIO:GPIO_7"        . 
+115  GPIOB      "GPIO:GPIO_8"        . 
+116  GPIOB      "GPIO:GPIO_9"        . 
+117  GPIOB      "GPIO:GPIO_10"       . 
+ 
+36   GPIOB      "GPIO:GPIO_11"       . 
+37   GPIOB      "GPIO:GPIO_12"       . 
+38   GPIOB      "GPIO:GPIO_13"       . 
+39   GPIOB      "GPIO:GPIO_14"       . 
+40   GPIOB      "GPIO:GPIO_15"       . 
+41   GPIOB      "GPIO:GPIO_16"       . 
+45   GPIOB      "GPIO:GPIO_17"       . 
+46   GPIOB      "GPIO:GPIO_18"       . 
+47   GPIOB      "GPIO:GPIO_19"       . 
+48   GPIOB      "GPIO:GPIO_20"       . 
+49   GPIOB      "GPIO:GPIO_21"       . 
+50   GPIOB      "GPIO:GPIO_22"       . 
+56   GPIOB      "GPIO:GPIO_23"       . 
+42   GPIOB      "GPIO:GPIO_24"       . 
+43   GPIOB      "GPIO:GPIO_25"       . 
+44   GPIOB      "GPIO:GPIO_26"       . 
+51   GPIOB      "GPIO:GPIO_27"       . 
+52   GPIOB      "GPIO:GPIO_28"       . 
+53   GPIOB      "GPIO:GPIO_29"       . 
+54   GPIOB      "GPIO:GPIO_30"       . 
+55   GPIOB      "GPIO:GPIO_31"       . 
+
+
+; =================================================================== 
+; Iomux Indexes are from 0 to 56. 
+; If an index is more than 56 it means it's just 
+; an index we are using to represent the sharing. 
+; In some cases 2 IOs are shared even if they are not using an IoMux 
+; Example: USBA:XCLK and SPI0:SCK 
+; Make sure the other blocks are not using the same indexes if  
+; there is no sharing. 
+; =================================================================== 
+ 
+54   SERIAL     "I2C_0:SDA"          . 
+55   SERIAL     "I2C_0:SCL"          . 
+ 
+11   SERIAL     "I2C_1:SDA"          . 
+12   SERIAL     "I2C_1:SCL"          . 
+ 
+
+
+
+; ===================================================================
+; Iomux Indexes are from 0 to 56.
+; If an index is more than 56 it means it's just
+; an index we are using to represent the sharing.
+; In some cases 2 IOs are shared even if they are not using an IoMux
+; Example: USBA:XCLK and SPI0:SCK
+; Make sure the other blocks are not using the same indexes if 
+; there is no sharing.
+; ===================================================================
+
+; RGMII Interface
+4    SERIAL      "MAC:RGMII_RXD[0]"     IN.
+5    SERIAL      "MAC:RGMII_RXD[1]"     IN.
+7    SERIAL      "MAC:RGMII_RXD[2]"     IN.
+8    SERIAL      "MAC:RGMII_RXD[3]"     IN.
+6    SERIAL      "MAC:RGMII_RX_CTL"     IN.
+
+1    SERIAL      "MAC:RGMII_TXD[0]"       .
+2    SERIAL      "MAC:RGMII_TXD[1]"       .
+9    SERIAL      "MAC:RGMII_TXD[2]"       .
+10   SERIAL      "MAC:RGMII_TXD[3]"       .
+3    SERIAL      "MAC:RGMII_TX_CTL"       .
+
+132  SERIAL      "MAC:RGMII_GTX_CLK"    IN.
+135  SERIAL      "MAC:RGMII_RX_CLK"     IN.
+134  SERIAL      "MAC:RGMII_TX_CLK"       .
+
+133  SERIAL      "MAC:RGMII_MDC"          .
+0    SERIAL      "MAC:RGMII_MDIO"         .
+
+; RMII Interface
+4    SERIAL      "MAC:RMII_RXD[0]"      IN.
+5    SERIAL      "MAC:RMII_RXD[1]"      IN.
+7    SERIAL      "MAC:RMII_RX_ER"       IN.
+6    SERIAL      "MAC:RMII_CRS_DV"      IN.
+
+1    SERIAL      "MAC:RMII_TXD[0]"        .
+2    SERIAL      "MAC:RMII_TXD[1]"        .
+3    SERIAL      "MAC:RMII_TX_EN"         .
+
+132  SERIAL      "MAC:RMII_CLK"         IN.
+
+133  SERIAL      "MAC:RMII_MDC"           .
+0    SERIAL      "MAC:RMII_MDIO"          .
+
+
+; =================================================================== 
+; Iomux Indexes are from 0 to 56. 
+; If an index is more than 56 it means it's just 
+; an index we are using to represent the sharing. 
+; In some cases 2 IOs are shared even if they are not using an IoMux 
+; Example: USBA:XCLK and SPI0:SCK 
+; Make sure the other blocks are not using the same indexes if  
+; there is no sharing. 
+; =================================================================== 
+ 
+53   SERIAL     "MMUART_0:CLK"       . 
+52   SERIAL     "MMUART_0:RXD"       IN. 
+51   SERIAL     "MMUART_0:TXD"       . 
+51   SERIAL     "MMUART_0:TXD_RXD"   . 
+50   SERIAL     "MMUART_0:DCD"       IN. 
+49   SERIAL     "MMUART_0:RI"        IN. 
+48   SERIAL     "MMUART_0:DSR"       IN. 
+47   SERIAL     "MMUART_0:CTS"       IN. 
+46   SERIAL     "MMUART_0:DTR"       . 
+45   SERIAL     "MMUART_0:RTS"       . 
+ 
+43   SERIAL     "MMUART_1:CLK"       . 
+44   SERIAL     "MMUART_1:RXD"       IN. 
+42   SERIAL     "MMUART_1:TXD"       . 
+42   SERIAL     "MMUART_1:TXD_RXD"   . 
+41   SERIAL     "MMUART_1:DCD"       IN. 
+40   SERIAL     "MMUART_1:RI"        IN. 
+39   SERIAL     "MMUART_1:DSR"       IN. 
+38   SERIAL     "MMUART_1:CTS"       IN. 
+37   SERIAL     "MMUART_1:DTR"       . 
+36   SERIAL     "MMUART_1:RTS"       . 
+
+
+ 
+; =================================================================== 
+; Iomux Indexes are from 0 to 56. 
+; If an index is more than 56 it means it's just 
+; an index we are using to represent the sharing. 
+; In some cases 2 IOs are shared even if they are not using an IoMux 
+; Example: USBA:XCLK and SPI0:SCK 
+; Make sure the other blocks are not using the same indexes if  
+; there is no sharing. 
+; =================================================================== 
+ 
+16   SERIAL     "SPI_0:DI"           IN. 
+17   SERIAL     "SPI_0:DO"           . 
+18   SERIAL     "SPI_0:SS0"          . 
+19   SERIAL     "SPI_0:SS1"          . 
+20   SERIAL     "SPI_0:SS2"          . 
+21   SERIAL     "SPI_0:SS3"          . 
+22   SERIAL     "SPI_0:SS4"          . 
+23   SERIAL     "SPI_0:SS5"          . 
+24   SERIAL     "SPI_0:SS6"          . 
+25   SERIAL     "SPI_0:SS7"          . 
+ 
+131  SERIAL     "SPI_0:CLK"          . 
+ 
+26   SERIAL     "SPI_1:DI"           IN. 
+27   SERIAL     "SPI_1:DO"           . 
+28   SERIAL     "SPI_1:SS0"          . 
+29   SERIAL     "SPI_1:SS1"          . 
+30   SERIAL     "SPI_1:SS2"          . 
+31   SERIAL     "SPI_1:SS3"          . 
+32   SERIAL     "SPI_1:SS4"          . 
+33   SERIAL     "SPI_1:SS5"          . 
+34   SERIAL     "SPI_1:SS6"          . 
+35   SERIAL     "SPI_1:SS7"          . 
+ 
+130  SERIAL     "SPI_1:CLK"          . 
+ 
+
+
+ 
+; =================================================================== 
+; Iomux Indexes are from 0 to 56. 
+; If an index is more than 56 it means it's just 
+; an index we are using to represent the sharing. 
+; In some cases 2 IOs are shared even if they are not using an IoMux 
+; Example: USBA:XCLK and SPI0:SCK 
+; Make sure the other blocks are not using the same indexes if  
+; there is no sharing. 
+; =================================================================== 
+; USBA 
+13   USBA       "USB:ULPI_DATA[0]"   . 
+14   USBA       "USB:ULPI_DATA[1]"   . 
+15   USBA       "USB:ULPI_DATA[2]"   . 
+11   USBA       "USB:ULPI_DATA[3]"   . 
+12   USBA       "USB:ULPI_DATA[4]"   . 
+19   USBA       "USB:ULPI_DATA[5]"   . 
+20   USBA       "USB:ULPI_DATA[6]"   . 
+21   USBA       "USB:ULPI_DATA[7]"   . 
+ 
+16   USBA       "USB:ULPI_DIR"       IN. 
+18   USBA       "USB:ULPI_NXT"       IN. 
+ 
+17   USBA       "USB:ULPI_STP"       . 
+131  USBA       "USB:ULPI_XCLK"      . 
+ 
+; USBB 
+4    USBB       "USB:ULPI_DATA[0]"   . 
+5    USBB       "USB:ULPI_DATA[1]"   . 
+6    USBB       "USB:ULPI_DATA[2]"   . 
+7    USBB       "USB:ULPI_DATA[3]"   . 
+8    USBB       "USB:ULPI_DATA[4]"   . 
+9    USBB       "USB:ULPI_DATA[5]"   . 
+10   USBB       "USB:ULPI_DATA[6]"   . 
+0    USBB       "USB:ULPI_DATA[7]"   . 
+ 
+1    USBB       "USB:ULPI_DIR"       IN. 
+3    USBB       "USB:ULPI_NXT"       IN. 
+ 
+2    USBB       "USB:ULPI_STP"       . 
+132  USBB       "USB:ULPI_XCLK"      . 
+ 
+; USBC 
+54   USBC       "USB:ULPI_DATA[0]"   . 
+55   USBC       "USB:ULPI_DATA[1]"   . 
+42   USBC       "USB:ULPI_DATA[2]"   . 
+44   USBC       "USB:ULPI_DATA[3]"   . 
+43   USBC       "USB:ULPI_DATA[4]"   . 
+45   USBC       "USB:ULPI_DATA[5]"   . 
+46   USBC       "USB:ULPI_DATA[6]"   . 
+47   USBC       "USB:ULPI_DATA[7]"   . 
+ 
+51   USBC       "USB:ULPI_DIR"       IN. 
+53   USBC       "USB:ULPI_NXT"       IN. 
+ 
+52   USBC       "USB:ULPI_STP"       . 
+118  USBC       "USB:ULPI_XCLK"      . 
+ 
+; USBD 
+119  USBD       "USB:ULPI_DATA[0]"   . 
+120  USBD       "USB:ULPI_DATA[1]"   . 
+121  USBD       "USB:ULPI_DATA[2]"   . 
+122  USBD       "USB:ULPI_DATA[3]"   . 
+123  USBD       "USB:ULPI_DATA[4]"   . 
+124  USBD       "USB:ULPI_DATA[5]"   . 
+125  USBD       "USB:ULPI_DATA[6]"   . 
+56   USBD       "USB:ULPI_DATA[7]"   . 
+ 
+128  USBD       "USB:ULPI_DIR"       IN. 
+126  USBD       "USB:ULPI_NXT"       IN. 
+ 
+127  USBD       "USB:ULPI_STP"       . 
+129  USBD       "USB:ULPI_XCLK"      . 
+
+End.

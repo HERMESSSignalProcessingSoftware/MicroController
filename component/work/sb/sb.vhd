@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Sun Dec 12 10:37:28 2021
--- Version: v12.6 12.900.20.24
+-- Created by SmartDesign Thu Jan  6 15:02:31 2022
+-- Version: v2021.2 2021.2.0.11
 ----------------------------------------------------------------------
 
 ----------------------------------------------------------------------
@@ -162,6 +162,8 @@ component sb_sb
         FIC_0_CLK            : out std_logic;
         FIC_0_LOCK           : out std_logic;
         GPIO_12_M2F          : out std_logic;
+        GPIO_25_M2F          : out std_logic;
+        GPIO_26_M2F          : out std_logic;
         GPIO_28_M2F          : out std_logic;
         GPIO_29_M2F          : out std_logic;
         GPIO_30_M2F          : out std_logic;
@@ -225,6 +227,8 @@ signal F_CLK_net_0                         : std_logic;
 signal F_CS1_0                             : std_logic;
 signal F_CS2_0                             : std_logic;
 signal F_MOSI_net_0                        : std_logic;
+signal LED_FPGA_LOADED_net_0               : std_logic;
+signal LED_HB_MEMSYNC_net_0                : std_logic;
 signal LED_HB_MSS_net_0                    : std_logic;
 signal LED_RECORDING_net_0                 : std_logic;
 signal MemorySynchronizer_0_dataReadyReset : std_logic;
@@ -335,6 +339,7 @@ signal TM_TXD_net_0                        : std_logic;
 signal LED_HB_MSS_net_1                    : std_logic;
 signal LED_RECORDING_net_1                 : std_logic;
 signal OUT_ADC_START_net_1                 : std_logic;
+signal LED_HB_MEMSYNC_net_1                : std_logic;
 signal DAPI_TXD_net_1                      : std_logic;
 signal TM_TXD_net_1                        : std_logic;
 signal F_CS2_0_net_0                       : std_logic;
@@ -371,6 +376,7 @@ signal STAMP2_CS_SGR2_net_1                : std_logic;
 signal STAMP2_CS_SGR1_net_1                : std_logic;
 signal STAMP2_SCLK_net_1                   : std_logic;
 signal STAMP2_MOSI_net_1                   : std_logic;
+signal LED_FPGA_LOADED_net_1               : std_logic;
 signal IN_databus_net_0                    : std_logic_vector(383 downto 0);
 signal IN_newAvails_net_0                  : std_logic_vector(5 downto 0);
 signal IN_requestSync_net_0                : std_logic_vector(5 downto 0);
@@ -382,33 +388,33 @@ signal GND_net                             : std_logic;
 ----------------------------------------------------------------------
 -- Bus Interface Nets Declarations - Unequal Pin Widths
 ----------------------------------------------------------------------
-signal sb_sb_0_MemSync_PADDR_0_11to0       : std_logic_vector(11 downto 0);
-signal sb_sb_0_MemSync_PADDR_0             : std_logic_vector(11 downto 0);
 signal sb_sb_0_MemSync_PADDR               : std_logic_vector(31 downto 0);
+signal sb_sb_0_MemSync_PADDR_0             : std_logic_vector(11 downto 0);
+signal sb_sb_0_MemSync_PADDR_0_11to0       : std_logic_vector(11 downto 0);
 
-signal sb_sb_0_STAMP_PADDR_0_11to0         : std_logic_vector(11 downto 0);
-signal sb_sb_0_STAMP_PADDR_0               : std_logic_vector(11 downto 0);
 signal sb_sb_0_STAMP_PADDR                 : std_logic_vector(31 downto 0);
+signal sb_sb_0_STAMP_PADDR_0               : std_logic_vector(11 downto 0);
+signal sb_sb_0_STAMP_PADDR_0_11to0         : std_logic_vector(11 downto 0);
 
-signal sb_sb_0_STAMP_1_PADDR_0_11to0       : std_logic_vector(11 downto 0);
-signal sb_sb_0_STAMP_1_PADDR_0             : std_logic_vector(11 downto 0);
 signal sb_sb_0_STAMP_1_PADDR               : std_logic_vector(31 downto 0);
+signal sb_sb_0_STAMP_1_PADDR_0             : std_logic_vector(11 downto 0);
+signal sb_sb_0_STAMP_1_PADDR_0_11to0       : std_logic_vector(11 downto 0);
 
-signal sb_sb_0_STAMP_2_PADDR_0_11to0       : std_logic_vector(11 downto 0);
-signal sb_sb_0_STAMP_2_PADDR_0             : std_logic_vector(11 downto 0);
 signal sb_sb_0_STAMP_2_PADDR               : std_logic_vector(31 downto 0);
+signal sb_sb_0_STAMP_2_PADDR_0             : std_logic_vector(11 downto 0);
+signal sb_sb_0_STAMP_2_PADDR_0_11to0       : std_logic_vector(11 downto 0);
 
-signal sb_sb_0_STAMP_3_PADDR_0_11to0       : std_logic_vector(11 downto 0);
-signal sb_sb_0_STAMP_3_PADDR_0             : std_logic_vector(11 downto 0);
 signal sb_sb_0_STAMP_3_PADDR               : std_logic_vector(31 downto 0);
+signal sb_sb_0_STAMP_3_PADDR_0             : std_logic_vector(11 downto 0);
+signal sb_sb_0_STAMP_3_PADDR_0_11to0       : std_logic_vector(11 downto 0);
 
-signal sb_sb_0_STAMP_4_PADDR_0_11to0       : std_logic_vector(11 downto 0);
-signal sb_sb_0_STAMP_4_PADDR_0             : std_logic_vector(11 downto 0);
 signal sb_sb_0_STAMP_4_PADDR               : std_logic_vector(31 downto 0);
+signal sb_sb_0_STAMP_4_PADDR_0             : std_logic_vector(11 downto 0);
+signal sb_sb_0_STAMP_4_PADDR_0_11to0       : std_logic_vector(11 downto 0);
 
-signal sb_sb_0_STAMP_5_PADDR_0_11to0       : std_logic_vector(11 downto 0);
-signal sb_sb_0_STAMP_5_PADDR_0             : std_logic_vector(11 downto 0);
 signal sb_sb_0_STAMP_5_PADDR               : std_logic_vector(31 downto 0);
+signal sb_sb_0_STAMP_5_PADDR_0             : std_logic_vector(11 downto 0);
+signal sb_sb_0_STAMP_5_PADDR_0_11to0       : std_logic_vector(11 downto 0);
 
 
 begin
@@ -418,91 +424,90 @@ begin
  VCC_net <= '1';
  GND_net <= '0';
 ----------------------------------------------------------------------
--- TieOff assignments
-----------------------------------------------------------------------
- LED_HB_MEMSYNC       <= '1';
- LED_FPGA_LOADED      <= '1';
-----------------------------------------------------------------------
 -- Top level output port assignments
 ----------------------------------------------------------------------
- LED_HB_MSS_net_1     <= LED_HB_MSS_net_0;
- LED_HB_MSS           <= LED_HB_MSS_net_1;
- LED_RECORDING_net_1  <= LED_RECORDING_net_0;
- LED_RECORDING        <= LED_RECORDING_net_1;
- OUT_ADC_START_net_1  <= OUT_ADC_START_net_0;
- OUT_ADC_START        <= OUT_ADC_START_net_1;
- DAPI_TXD_net_1       <= DAPI_TXD_net_0;
- DAPI_TXD             <= DAPI_TXD_net_1;
- TM_TXD_net_1         <= TM_TXD_net_0;
- TM_TXD               <= TM_TXD_net_1;
- F_CS2_0_net_0        <= F_CS2_0;
- F_CS2                <= F_CS2_0_net_0;
- F_CLK_net_1          <= F_CLK_net_0;
- F_CLK                <= F_CLK_net_1;
- F_MOSI_net_1         <= F_MOSI_net_0;
- F_MOSI               <= F_MOSI_net_1;
- F_CS1_0_net_0        <= F_CS1_0;
- F_CS1                <= F_CS1_0_net_0;
- STAMP1_CS_TEMP_net_1 <= STAMP1_CS_TEMP_net_0;
- STAMP1_CS_TEMP       <= STAMP1_CS_TEMP_net_1;
- STAMP1_MOSI_net_1    <= STAMP1_MOSI_net_0;
- STAMP1_MOSI          <= STAMP1_MOSI_net_1;
- STAMP1_CS_SGR2_net_1 <= STAMP1_CS_SGR2_net_0;
- STAMP1_CS_SGR2       <= STAMP1_CS_SGR2_net_1;
- STAMP1_CS_SGR1_net_1 <= STAMP1_CS_SGR1_net_0;
- STAMP1_CS_SGR1       <= STAMP1_CS_SGR1_net_1;
- STAMP1_SCLK_net_1    <= STAMP1_SCLK_net_0;
- STAMP1_SCLK          <= STAMP1_SCLK_net_1;
- STAMP6_CS_TEMP_net_1 <= STAMP6_CS_TEMP_net_0;
- STAMP6_CS_TEMP       <= STAMP6_CS_TEMP_net_1;
- STAMP6_CS_SGR2_net_1 <= STAMP6_CS_SGR2_net_0;
- STAMP6_CS_SGR2       <= STAMP6_CS_SGR2_net_1;
- STAMP6_CS_SGR1_net_1 <= STAMP6_CS_SGR1_net_0;
- STAMP6_CS_SGR1       <= STAMP6_CS_SGR1_net_1;
- STAMP6_SCLK_net_1    <= STAMP6_SCLK_net_0;
- STAMP6_SCLK          <= STAMP6_SCLK_net_1;
- STAMP6_MOSI_net_1    <= STAMP6_MOSI_net_0;
- STAMP6_MOSI          <= STAMP6_MOSI_net_1;
- STAMP4_CS_TEMP_net_1 <= STAMP4_CS_TEMP_net_0;
- STAMP4_CS_TEMP       <= STAMP4_CS_TEMP_net_1;
- STAMP4_CS_SGR2_net_1 <= STAMP4_CS_SGR2_net_0;
- STAMP4_CS_SGR2       <= STAMP4_CS_SGR2_net_1;
- STAMP4_CS_SGR1_net_1 <= STAMP4_CS_SGR1_net_0;
- STAMP4_CS_SGR1       <= STAMP4_CS_SGR1_net_1;
- STAMP4_SCLK_net_1    <= STAMP4_SCLK_net_0;
- STAMP4_SCLK          <= STAMP4_SCLK_net_1;
- STAMP4_MOSI_net_1    <= STAMP4_MOSI_net_0;
- STAMP4_MOSI          <= STAMP4_MOSI_net_1;
- STAMP5_CS_TEMP_net_1 <= STAMP5_CS_TEMP_net_0;
- STAMP5_CS_TEMP       <= STAMP5_CS_TEMP_net_1;
- STAMP5_CS_SGR2_net_1 <= STAMP5_CS_SGR2_net_0;
- STAMP5_CS_SGR2       <= STAMP5_CS_SGR2_net_1;
- STAMP5_CS_SGR1_net_1 <= STAMP5_CS_SGR1_net_0;
- STAMP5_CS_SGR1       <= STAMP5_CS_SGR1_net_1;
- STAMP5_SCLK_net_1    <= STAMP5_SCLK_net_0;
- STAMP5_SCLK          <= STAMP5_SCLK_net_1;
- STAMP5_MOSI_net_1    <= STAMP5_MOSI_net_0;
- STAMP5_MOSI          <= STAMP5_MOSI_net_1;
- STAMP3_CS_TEMP_net_1 <= STAMP3_CS_TEMP_net_0;
- STAMP3_CS_TEMP       <= STAMP3_CS_TEMP_net_1;
- STAMP3_CS_SGR2_net_1 <= STAMP3_CS_SGR2_net_0;
- STAMP3_CS_SGR2       <= STAMP3_CS_SGR2_net_1;
- STAMP3_CS_SGR1_net_1 <= STAMP3_CS_SGR1_net_0;
- STAMP3_CS_SGR1       <= STAMP3_CS_SGR1_net_1;
- STAMP3_SCLK_net_1    <= STAMP3_SCLK_net_0;
- STAMP3_SCLK          <= STAMP3_SCLK_net_1;
- STAMP3_MOSI_net_1    <= STAMP3_MOSI_net_0;
- STAMP3_MOSI          <= STAMP3_MOSI_net_1;
- STAMP2_CS_TEMP_net_1 <= STAMP2_CS_TEMP_net_0;
- STAMP2_CS_TEMP       <= STAMP2_CS_TEMP_net_1;
- STAMP2_CS_SGR2_net_1 <= STAMP2_CS_SGR2_net_0;
- STAMP2_CS_SGR2       <= STAMP2_CS_SGR2_net_1;
- STAMP2_CS_SGR1_net_1 <= STAMP2_CS_SGR1_net_0;
- STAMP2_CS_SGR1       <= STAMP2_CS_SGR1_net_1;
- STAMP2_SCLK_net_1    <= STAMP2_SCLK_net_0;
- STAMP2_SCLK          <= STAMP2_SCLK_net_1;
- STAMP2_MOSI_net_1    <= STAMP2_MOSI_net_0;
- STAMP2_MOSI          <= STAMP2_MOSI_net_1;
+ LED_HB_MSS_net_1      <= LED_HB_MSS_net_0;
+ LED_HB_MSS            <= LED_HB_MSS_net_1;
+ LED_RECORDING_net_1   <= LED_RECORDING_net_0;
+ LED_RECORDING         <= LED_RECORDING_net_1;
+ OUT_ADC_START_net_1   <= OUT_ADC_START_net_0;
+ OUT_ADC_START         <= OUT_ADC_START_net_1;
+ LED_HB_MEMSYNC_net_1  <= LED_HB_MEMSYNC_net_0;
+ LED_HB_MEMSYNC        <= LED_HB_MEMSYNC_net_1;
+ DAPI_TXD_net_1        <= DAPI_TXD_net_0;
+ DAPI_TXD              <= DAPI_TXD_net_1;
+ TM_TXD_net_1          <= TM_TXD_net_0;
+ TM_TXD                <= TM_TXD_net_1;
+ F_CS2_0_net_0         <= F_CS2_0;
+ F_CS2                 <= F_CS2_0_net_0;
+ F_CLK_net_1           <= F_CLK_net_0;
+ F_CLK                 <= F_CLK_net_1;
+ F_MOSI_net_1          <= F_MOSI_net_0;
+ F_MOSI                <= F_MOSI_net_1;
+ F_CS1_0_net_0         <= F_CS1_0;
+ F_CS1                 <= F_CS1_0_net_0;
+ STAMP1_CS_TEMP_net_1  <= STAMP1_CS_TEMP_net_0;
+ STAMP1_CS_TEMP        <= STAMP1_CS_TEMP_net_1;
+ STAMP1_MOSI_net_1     <= STAMP1_MOSI_net_0;
+ STAMP1_MOSI           <= STAMP1_MOSI_net_1;
+ STAMP1_CS_SGR2_net_1  <= STAMP1_CS_SGR2_net_0;
+ STAMP1_CS_SGR2        <= STAMP1_CS_SGR2_net_1;
+ STAMP1_CS_SGR1_net_1  <= STAMP1_CS_SGR1_net_0;
+ STAMP1_CS_SGR1        <= STAMP1_CS_SGR1_net_1;
+ STAMP1_SCLK_net_1     <= STAMP1_SCLK_net_0;
+ STAMP1_SCLK           <= STAMP1_SCLK_net_1;
+ STAMP6_CS_TEMP_net_1  <= STAMP6_CS_TEMP_net_0;
+ STAMP6_CS_TEMP        <= STAMP6_CS_TEMP_net_1;
+ STAMP6_CS_SGR2_net_1  <= STAMP6_CS_SGR2_net_0;
+ STAMP6_CS_SGR2        <= STAMP6_CS_SGR2_net_1;
+ STAMP6_CS_SGR1_net_1  <= STAMP6_CS_SGR1_net_0;
+ STAMP6_CS_SGR1        <= STAMP6_CS_SGR1_net_1;
+ STAMP6_SCLK_net_1     <= STAMP6_SCLK_net_0;
+ STAMP6_SCLK           <= STAMP6_SCLK_net_1;
+ STAMP6_MOSI_net_1     <= STAMP6_MOSI_net_0;
+ STAMP6_MOSI           <= STAMP6_MOSI_net_1;
+ STAMP4_CS_TEMP_net_1  <= STAMP4_CS_TEMP_net_0;
+ STAMP4_CS_TEMP        <= STAMP4_CS_TEMP_net_1;
+ STAMP4_CS_SGR2_net_1  <= STAMP4_CS_SGR2_net_0;
+ STAMP4_CS_SGR2        <= STAMP4_CS_SGR2_net_1;
+ STAMP4_CS_SGR1_net_1  <= STAMP4_CS_SGR1_net_0;
+ STAMP4_CS_SGR1        <= STAMP4_CS_SGR1_net_1;
+ STAMP4_SCLK_net_1     <= STAMP4_SCLK_net_0;
+ STAMP4_SCLK           <= STAMP4_SCLK_net_1;
+ STAMP4_MOSI_net_1     <= STAMP4_MOSI_net_0;
+ STAMP4_MOSI           <= STAMP4_MOSI_net_1;
+ STAMP5_CS_TEMP_net_1  <= STAMP5_CS_TEMP_net_0;
+ STAMP5_CS_TEMP        <= STAMP5_CS_TEMP_net_1;
+ STAMP5_CS_SGR2_net_1  <= STAMP5_CS_SGR2_net_0;
+ STAMP5_CS_SGR2        <= STAMP5_CS_SGR2_net_1;
+ STAMP5_CS_SGR1_net_1  <= STAMP5_CS_SGR1_net_0;
+ STAMP5_CS_SGR1        <= STAMP5_CS_SGR1_net_1;
+ STAMP5_SCLK_net_1     <= STAMP5_SCLK_net_0;
+ STAMP5_SCLK           <= STAMP5_SCLK_net_1;
+ STAMP5_MOSI_net_1     <= STAMP5_MOSI_net_0;
+ STAMP5_MOSI           <= STAMP5_MOSI_net_1;
+ STAMP3_CS_TEMP_net_1  <= STAMP3_CS_TEMP_net_0;
+ STAMP3_CS_TEMP        <= STAMP3_CS_TEMP_net_1;
+ STAMP3_CS_SGR2_net_1  <= STAMP3_CS_SGR2_net_0;
+ STAMP3_CS_SGR2        <= STAMP3_CS_SGR2_net_1;
+ STAMP3_CS_SGR1_net_1  <= STAMP3_CS_SGR1_net_0;
+ STAMP3_CS_SGR1        <= STAMP3_CS_SGR1_net_1;
+ STAMP3_SCLK_net_1     <= STAMP3_SCLK_net_0;
+ STAMP3_SCLK           <= STAMP3_SCLK_net_1;
+ STAMP3_MOSI_net_1     <= STAMP3_MOSI_net_0;
+ STAMP3_MOSI           <= STAMP3_MOSI_net_1;
+ STAMP2_CS_TEMP_net_1  <= STAMP2_CS_TEMP_net_0;
+ STAMP2_CS_TEMP        <= STAMP2_CS_TEMP_net_1;
+ STAMP2_CS_SGR2_net_1  <= STAMP2_CS_SGR2_net_0;
+ STAMP2_CS_SGR2        <= STAMP2_CS_SGR2_net_1;
+ STAMP2_CS_SGR1_net_1  <= STAMP2_CS_SGR1_net_0;
+ STAMP2_CS_SGR1        <= STAMP2_CS_SGR1_net_1;
+ STAMP2_SCLK_net_1     <= STAMP2_SCLK_net_0;
+ STAMP2_SCLK           <= STAMP2_SCLK_net_1;
+ STAMP2_MOSI_net_1     <= STAMP2_MOSI_net_0;
+ STAMP2_MOSI           <= STAMP2_MOSI_net_1;
+ LED_FPGA_LOADED_net_1 <= LED_FPGA_LOADED_net_0;
+ LED_FPGA_LOADED       <= LED_FPGA_LOADED_net_1;
 ----------------------------------------------------------------------
 -- Concatenation assignments
 ----------------------------------------------------------------------
@@ -512,26 +517,26 @@ begin
 ----------------------------------------------------------------------
 -- Bus Interface Nets Assignments - Unequal Pin Widths
 ----------------------------------------------------------------------
- sb_sb_0_MemSync_PADDR_0_11to0(11 downto 0) <= sb_sb_0_MemSync_PADDR(11 downto 0);
  sb_sb_0_MemSync_PADDR_0(11 downto 0) <= ( sb_sb_0_MemSync_PADDR_0_11to0(11 downto 0) );
+ sb_sb_0_MemSync_PADDR_0_11to0(11 downto 0) <= sb_sb_0_MemSync_PADDR(11 downto 0);
 
- sb_sb_0_STAMP_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_PADDR(11 downto 0);
  sb_sb_0_STAMP_PADDR_0(11 downto 0) <= ( sb_sb_0_STAMP_PADDR_0_11to0(11 downto 0) );
+ sb_sb_0_STAMP_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_PADDR(11 downto 0);
 
- sb_sb_0_STAMP_1_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_1_PADDR(11 downto 0);
  sb_sb_0_STAMP_1_PADDR_0(11 downto 0) <= ( sb_sb_0_STAMP_1_PADDR_0_11to0(11 downto 0) );
+ sb_sb_0_STAMP_1_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_1_PADDR(11 downto 0);
 
- sb_sb_0_STAMP_2_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_2_PADDR(11 downto 0);
  sb_sb_0_STAMP_2_PADDR_0(11 downto 0) <= ( sb_sb_0_STAMP_2_PADDR_0_11to0(11 downto 0) );
+ sb_sb_0_STAMP_2_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_2_PADDR(11 downto 0);
 
- sb_sb_0_STAMP_3_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_3_PADDR(11 downto 0);
  sb_sb_0_STAMP_3_PADDR_0(11 downto 0) <= ( sb_sb_0_STAMP_3_PADDR_0_11to0(11 downto 0) );
+ sb_sb_0_STAMP_3_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_3_PADDR(11 downto 0);
 
- sb_sb_0_STAMP_4_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_4_PADDR(11 downto 0);
  sb_sb_0_STAMP_4_PADDR_0(11 downto 0) <= ( sb_sb_0_STAMP_4_PADDR_0_11to0(11 downto 0) );
+ sb_sb_0_STAMP_4_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_4_PADDR(11 downto 0);
 
- sb_sb_0_STAMP_5_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_5_PADDR(11 downto 0);
  sb_sb_0_STAMP_5_PADDR_0(11 downto 0) <= ( sb_sb_0_STAMP_5_PADDR_0_11to0(11 downto 0) );
+ sb_sb_0_STAMP_5_PADDR_0_11to0(11 downto 0) <= sb_sb_0_STAMP_5_PADDR(11 downto 0);
 
 ----------------------------------------------------------------------
 -- Component instances
@@ -658,6 +663,8 @@ sb_sb_0 : sb_sb
         GPIO_3_M2F           => OUT_ADC_START_net_0,
         GPIO_4_M2F           => sb_sb_0_GPIO_4_M2F,
         GPIO_12_M2F          => sb_sb_0_GPIO_12_M2F,
+        GPIO_25_M2F          => LED_HB_MEMSYNC_net_0,
+        GPIO_26_M2F          => LED_FPGA_LOADED_net_0,
         GPIO_28_M2F          => F_CS1_0,
         GPIO_29_M2F          => F_CS2_0,
         GPIO_30_M2F          => LED_RECORDING_net_0,

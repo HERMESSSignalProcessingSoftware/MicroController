@@ -84,7 +84,7 @@ apb_stamp_t APB_STAMP_init (
     APB_STAMP_writeConfig(&instance, &conf, STAMP_MOD_STATUS_RESET);
 
     // make sure the interrupt is disabled for the beginning
-    APB_STAMP_disableInterrupt(&instance);
+    //APB_STAMP_disableInterrupt(&instance);
 
     return instance;
 }

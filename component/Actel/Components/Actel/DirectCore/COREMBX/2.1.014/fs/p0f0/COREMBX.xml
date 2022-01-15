@@ -1,0 +1,2711 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREMBX</spirit:name>
+  <spirit:version>2.1.014</spirit:version>
+  <spirit:busInterfaces>
+  <spirit:busInterface>
+    <spirit:name>AHBslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="AHB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:memoryMapRef spirit:memoryMapRef="RegisterMapA" /></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>HADDR</spirit:componentSignalName><spirit:busSignalName>HADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRDATA</spirit:componentSignalName><spirit:busSignalName>HRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADYIN</spirit:componentSignalName><spirit:busSignalName>HREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HREADY</spirit:componentSignalName><spirit:busSignalName>HREADYOUT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HRESP</spirit:componentSignalName><spirit:busSignalName>HRESP</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HSEL</spirit:componentSignalName><spirit:busSignalName>HSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HTRANS</spirit:componentSignalName><spirit:busSignalName>HTRANS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWDATA</spirit:componentSignalName><spirit:busSignalName>HWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>HWRITE</spirit:componentSignalName><spirit:busSignalName>HWRITE</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>APBslave</spirit:name>
+    <spirit:busType spirit:vendor="AMBA" spirit:library="AMBA2" spirit:name="APB" spirit:version="r0p0"/>
+    <spirit:slave>
+      <spirit:memoryMapRef spirit:memoryMapRef="RegisterMapB" /></spirit:slave>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>PADDR</spirit:componentSignalName><spirit:busSignalName>PADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PENABLE</spirit:componentSignalName><spirit:busSignalName>PENABLE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PRDATA</spirit:componentSignalName><spirit:busSignalName>PRDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PSEL</spirit:componentSignalName><spirit:busSignalName>PSELx</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWDATA</spirit:componentSignalName><spirit:busSignalName>PWDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>PWRITE</spirit:componentSignalName><spirit:busSignalName>PWRITE</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:busInterface>
+  <spirit:busInterface>
+    <spirit:name>InitCfg_bif</spirit:name>
+    <spirit:busType spirit:vendor="Actel" spirit:library="busdef.memory" spirit:name="InitCfg" spirit:version="1.0"/>
+    <spirit:master></spirit:master>
+    <spirit:signalMap>
+      <spirit:signalName>
+        <spirit:componentSignalName>INITADDR</spirit:componentSignalName><spirit:busSignalName>INITADDR</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>INITDATA</spirit:componentSignalName><spirit:busSignalName>INITDATA</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>INITDONE</spirit:componentSignalName><spirit:busSignalName>INITDONE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>INITDATVAL</spirit:componentSignalName><spirit:busSignalName>INITDATVALx0</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+    <spirit:vendorExtensions>
+      <actel-cc:used>
+        <actel-cc:logicEquation>
+          <actel-cc:logicTerm spirit:referenceId="USE_INIT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+  </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  <spirit:memoryMap>
+    <spirit:name>RegisterMapA</spirit:name>
+    <spirit:addressBlock>
+      <spirit:baseAddress>0x0</spirit:baseAddress>
+      <spirit:range>0x4000</spirit:range>
+      <spirit:width>32</spirit:width>
+      <spirit:register>
+        <spirit:name>INTCTRLA</spirit:name>
+        <spirit:addressOffset>0x0000</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>EN_A_FLAGS_B2A_OR</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Enable A_FLAGS_B2A_OR bit: This bit controls whether or not the  ORed version of the flag bits from processor B to processor A  (A_FLAGS_B2A[31:0]) contributes to the INTERRUPT_A output or is  masked.  If set to 1, the ORed flag contribution is enabled,  otherwise, if 0, the ORed flag contribution is masked.  The default  value of 0 disables (masks) the contribution of the ORed flags to  the INTERRUPT_A output. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>EN_DPWRB</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Enable DPWRB bit: This bit controls whether or not the DPWRB bit of  the INTSTATA register contributes to the INTERRUPT_A output or is  masked.  If set to 1, the DPWRB bit contribution is enabled,  otherwise, if 0, the DPWRB bit is masked.  The default value of 0  disables (masks) the contribution of the DPWRB bit to the INTERRUPT_A  output. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>EN_FULL_A2B</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Enable FULL_A2B bit: This bit controls whether or not the FULL_A2B  bit of the INTSTATA register contributes to the INTERRUPT_A output or  is masked.  If set to 1, the FULL_A2B bit contribution is enabled,  otherwise, if 0, the FULL_A2B bit is masked.  The default value of 0  disables (masks) the contribution of the FULL_A2B bit to the  INTERRUPT_A output. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>EN_MSG_B2A</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Enable MSG_B2A bit: This bit controls whether or not the MSG_B2A bit  of the INTSTATA register contributes to the INTERRUPT_A output or is  masked.  If set to 1, the MSB_B2A bit contribution is enabled,  otherwise, if 0, the MSG_B2A bit is masked.  The default value of 0  disables (masks) the contribution of the MSG_B2A bit to the  INTERRUPT_A output. </spirit:description>
+          </spirit:field>
+        <spirit:description>Interrupt A control register</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INTSTATA</spirit:name>
+        <spirit:addressOffset>0x0004</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>A_FLAGS_B2A_OR</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> ORed flag bits from processor B to processor A: If set to 1, this  bit indicates that processor B has set one or more general purpose  flags in the A_FLAGS_B2A[31:0] register to indicate to processor A  that it must take some action followed by clearing of these general  purpose flags; this action that must be taken by processor A is  entirely application specific. This bit will not be cleared when  reading this register, but rather when all bits of the  A_FLAGS_B2A[31:0] register are cleared.  If MSG_B2A_FLAGS=0, this  bit will be permanently tied to logic 0. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>DPWRB</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> Processor B has written to dual-port SRAM: If set to 1, this bit  indicates that processor B has written data into the B port of the  dual-port SRAM. This bit will be cleared when reading this register.  If USE_FIFOS=1, this bit will be permanently tied to logic 0. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>FULL_A2B</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> FIFO A-&gt;B is full: If set to 1, this bit indicates that the A-&gt;B  FIFO (from processor A to processor B) is full. This bit will be  cleared when at least one message has been read from the A-&gt;B FIFO  by the B processor. If USE_FIFOS=0, this bit will be permanently  tied to logic 0. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>MSG_B2A</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> Message(s) available in FIFO B-&gt;A: If set to 1, this bit indicates  that at least one message is available in the B-&gt;A FIFO (from  processor B to processor A). This bit will be cleared when all  messages have been read from the B-&gt;A FIFO. If USE_FIFOS=0, this bit  will be permanently tied to logic 0. </spirit:description>
+          </spirit:field>
+        <spirit:description>Interrupt A status register (read-only).</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>A_FLAGS_B2A</spirit:name>
+        <spirit:addressOffset>0x0010</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>FLAGS</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Message flag bits from processor B to processor A: These 32 possible  flag logic bits can be used to send interrupts from processor B to  processor A.  Processor A can clear any of the 32 bits by writing a  logic 1 in that bit position, for example, if the A_FLAGS_B2A[31:0]  register value contains 0xFFAA0000 and processor A writes the value  0xFF000000 to this register, the value will be changed to 0x00AA0000  on subsequent reads since writing logic 0 values to any of the bits  is ignored. </spirit:description>
+          </spirit:field>
+        <spirit:description> 32 possible flag logic bits that can be used to send interrupts  from processor B to processor A (read-able and clear-able from  processor A). </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>A_FLAGS_A2B</spirit:name>
+        <spirit:addressOffset>0x0020</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>FLAGS</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Message flag bits from processor A to processor B: These 32 possible  flag logic bits can be used to send interrupts from processor A to  processor B.  Processor A can set any of the 32 bits by writing a  logic 1 in that bit position, for example, if the A_FLAGS_A2B[31:0]  register value contains 0x00550000 and processor A writes the value  0xAA000000 to this register, the value will be changed to 0xAA550000  on subsequent reads; writing logic 0 values to any of the bits is  ignored. </spirit:description>
+          </spirit:field>
+        <spirit:description> 32 possible flag logic bits that can be used to send interrupts  from processor A to processor B (read-able and set-able from  processor A). </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INITWADDR</spirit:name>
+        <spirit:addressOffset>0x0030</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INITADDR</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>16</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Init/Config write address: If the parameter USE_INIT=1, this  register is connected to the INITADDR outputs. Note that the actual  width of this register will be determined by the INITWIDTH parameter  and can range from 1 to 16 bits; unused bits will return 0 when read,  and will be ignored if processor A writes to them. If the Init/config  interface is used (USE_INIT=1), processor A should first write the  starting address for the INITADDR outputs to this register, followed  by subsequent writes to the INITWDATA register after which the  contents of this register will be automatically incremented by 1; in  this manner, the Init/Config interface can be initialized in a  connected instance of CoreABC operating in soft mode. If the  parameter USE_INIT=0, these bits are permanently tied to logic 0  and writes to it have no effect (also, the INITADDR outputs will be  tied to logic 0). </spirit:description>
+          </spirit:field>
+        <spirit:description> INITCFG indirect address register - the outputs of this register are  connected to the INITADDR outputs. The contents are incremented  after each write to the INITWDATA register. </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INITWDATA</spirit:name>
+        <spirit:addressOffset>0x0040</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>write-only</spirit:access>
+          <spirit:field>
+            <spirit:name>INITDATA</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>9</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description> Init/Config write data: If the parameter USE_INIT=1, these  write-only bits are used to send initialization data out of the  INITDATA[8:0] and INITDATVAL ports that may be connected to an  instance of CoreABC configured to operate in soft mode. If the  parameter USE_INIT=0, these bits are permanently tied to logic 0  and writes to it have no effect </spirit:description>
+          </spirit:field>
+        <spirit:description> Write-only access to INITCFG initialization address space (used to  write to the INITDATA[8:0] inputs of CoreABC). </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INITCTRL</spirit:name>
+        <spirit:addressOffset>0x0048</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>INITDONE</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Init/Config done bit: If the parameter USE_INIT=1, this bit controls  the state of the INITDONE output pin to indicate that the  initialization/configuration process is completed. This signal  should only be set to logic 1 by processor A after it has completed  writing all initialization data to the INIT* outputs that may be  connected to an instance of CoreABC configured to operate in soft  mode (this is accomplished by processor A writing to the INITWADDR  and INITWDATA registers). If the INITWIDTH parameter is 0, this  register bit is permanently tied to logic 0 and writes to it have  no effect. </spirit:description>
+          </spirit:field>
+        <spirit:description>Control register to set or clear the INITDONE output signal</spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>FIFOWDA2B</spirit:name>
+        <spirit:addressOffset>0x0050</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>write-only</spirit:access>
+          <spirit:field>
+            <spirit:name>DATA</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description> FIFO write data (width = MBX_WIDTH-1): During a write cycle, this  data will be written from processor A into the A-&gt;B FIFO (for  sending message data from processor A to processor B) if USE_FIFOS=1.  If USE_FIFOS=0, writing to this address has no effect. This register  is write-only. </spirit:description>
+          </spirit:field>
+        <spirit:description> Write-only access to send message from processor A to processor B.  This address is only used if USE_FIFOS=1. </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>FIFORDB2A</spirit:name>
+        <spirit:addressOffset>0x0054</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+          <spirit:field>
+            <spirit:name>DATA</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> FIFO read data (width = MBX_WIDTH-1): During a read cycle, this  data will be read by processor A from the B-&gt;A FIFO (for sending  message data from processor B to processor A) if USE_FIFOS=1. If  USE_FIFOS=1, reading from this address has no effect (unknown logic  values are returned and should be ignored). This register is  read-only. </spirit:description>
+          </spirit:field>
+        <spirit:description> Read-only access to read message from processor B to processor A.  This address is only used if USE_FIFOS=1. </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>DPRAMA</spirit:name>
+        <spirit:addressOffset>0x2000</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+          <spirit:field>
+            <spirit:name>DATA</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Refer to Handbook for description. </spirit:description>
+          </spirit:field>
+        <spirit:description> Processor A access to port A of internal dual-port SRAM instance(s)  or optional ROM.  This address space (0x2000 - 0x3FFC) is only used  if USE_FIFOS=0. </spirit:description>
+      </spirit:register>
+    </spirit:addressBlock>
+    <spirit:bitsInLau>32</spirit:bitsInLau>
+  </spirit:memoryMap>
+  <spirit:memoryMap>
+    <spirit:name>RegisterMapB</spirit:name>
+    <spirit:addressBlock>
+      <spirit:baseAddress>0x0</spirit:baseAddress>
+      <spirit:range>0x4000</spirit:range>
+      <spirit:width>32</spirit:width>
+      <spirit:register>
+        <spirit:name>INTCTRLB</spirit:name>
+        <spirit:addressOffset>0x0000</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>EN_B_FLAGS_A2B_OR</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Enable B_FLAGS_A2B_OR bit: This bit controls whether or not the  ORed version of the flag bits from processor A to processor B  (B_FLAGS_A2B[31:0]) contributes to the INTERRUPT_B output or is  masked. If set to 1, the ORed flag contribution is enabled,  otherwise, if 0, the ORed flag contribution is masked. The default  value of 0 disables (masks) the contribution of the ORed flags to  the INTERRUPT_B output. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>EN_DPWRA</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Enable DPWRA bit: This bit controls whether or not the DPWRA bit  of the INTSTATB register contributes to the INTERRUPT_B output or  is masked. If set to 1, the DPWRA bit contribution is enabled,  otherwise, if 0, the DPWRA bit is masked. The default value of 0  disables (masks) the contribution of the DPWRA bit to the INTERRUPT_B  output. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>EN_FULL_B2A</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Enable FULL_B2A bit: This bit controls whether or not the FULL_B2A  bit of the INTSTATB register contributes to the INTERRUPT_B output  or is masked. If set to 1, the FULL_B2A bit contribution is enabled,  otherwise, if 0, the FULL_B2A bit is masked. The default value of 0  disables (masks) the contribution of the FULL_B2A bit to the  INTERRUPT_B output. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>EN_MSG_A2B</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Enable MSG_A2B bit: This bit controls whether or not the MSG_A2B  bit of the INTSTATB register contributes to the INTERRUPT_B output  or is masked. If set to 1, the MSB_A2B bit contribution is enabled,  otherwise, if 0, the MSG_A2B bit is masked. The default value of 0  disables (masks) the contribution of the MSG_A2B bit to the  INTERRUPT_B output. </spirit:description>
+          </spirit:field>
+        <spirit:description> Interrupt B control register. </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>INTSTATB</spirit:name>
+        <spirit:addressOffset>0x0004</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>B_FLAGS_A2B_OR</spirit:name>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> ORed flag bits from processor A to processor B: If set to 1, this  bit indicates that processor A has set one or more general purpose  flags in the B_FLAGS_A2B[31:0] register to indicate to processor B  that it must take some action followed by clearing of these general  purpose flags; this action that must be taken by processor B is  entirely application specific. This bit will not be cleared when  reading this register, but rather when all bits of the  B_FLAGS_A2B[31:0] register are cleared. If MSG_A2B_FLAGS=0, this bit  will be permanently tied to logic 0. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>DPWRA</spirit:name>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> Processor A has written to dual-port SRAM: If set to 1, this bit  indicates that processor A has written data into the A port of the  dual-port SRAM. This bit will be cleared when reading this register.  If USE_FIFOS=1, this bit will be permanently tied to logic 0. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>FULL_B2A</spirit:name>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> FIFO B-&gt;A is full: If set to 1, this bit indicates that the B-&gt;A  FIFO (from processor B to processor A) is full. This bit will be  cleared when at least one message has been read from the B-&gt;A FIFO  by the A processor. If USE_FIFOS=0, this bit will be permanently  tied to logic 0. </spirit:description>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>MSG_A2B</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> Message(s) available in FIFO A-&gt;B: If set to 1, this bit indicates  that at least one message is available in the A-&gt;B FIFO (from  processor A to processor B). This bit will be cleared when all  messages have been read from the A-&gt;B FIFO. If USE_FIFOS=0, this  bit will be permanently tied to logic 0. </spirit:description>
+          </spirit:field>
+        <spirit:description>
+Interrupt B status register (read-only). </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>B_FLAGS_B2A</spirit:name>
+        <spirit:addressOffset>0x0010</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>FLAGS</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Message flag bits from processor B to processor A: These 32 possible  flag logic bits can be used to send interrupts from processor B to  processor A.  Processor B can set any of the 32 bits by writing a  logic 1 in that bit position, for example, if the B_FLAGS_B2A[31:0]  register value contains 0xFFAA0000 and processor B writes the value  0x00000055 to this register, the value will be changed to 0xFFAA0055  on subsequent reads since writing logic 0 values to any of the bits  is ignored. </spirit:description>
+          </spirit:field>
+        <spirit:description> 32 possible flag logic bits that can be used to send interrupts  from processor B to processor A (read-able and set-able from  processor B). </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>B_FLAGS_A2B</spirit:name>
+        <spirit:addressOffset>0x0020</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+        <spirit:resetValue>0x00000000</spirit:resetValue>
+          <spirit:field>
+            <spirit:name>FLAGS</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Message flag bits from processor A to processor B: These 32 possible  flag logic bits can be used to send interrupts from processor A to  processor B.  Processor B can clear any of the 32 bits by writing a  logic 1 in that bit position, for example, if the B_FLAGS_A2B[31:0]  register value contains 0x00550000 and processor B writes the value  0xFF55FFFF to this register, the value will be changed to 0x00000000  on subsequent reads; writing logic 0 values to any of the bits is  ignored. </spirit:description>
+          </spirit:field>
+        <spirit:description> 32 possible flag logic bits that can be used to send interrupts from  processor A to processor B (read-able and clear-able from processor  B). </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>FIFORDA2B</spirit:name>
+        <spirit:addressOffset>0x0050</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-only</spirit:access>
+          <spirit:field>
+            <spirit:name>DATA</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:description> FIFO read data (width = MBX_WIDTH-1): During a read cycle, this data  will be read by processor B from the A-&gt;B FIFO (for sending message  data from processor A to processor B) if USE_FIFOS=1. If USE_FIFOS=1,  reading from this address has no effect (unknown logic values are  returned and should be ignored). This register is read-only.  Note  that if PORT_B_WIDTH is less than MBX_WIDTH, then the number of data  bits accessible from processor B will be limited to the value of  PORT_B_WIDTH rather than the value of MBX_WIDTH. </spirit:description>
+          </spirit:field>
+        <spirit:description> Read-only access to read message from processor A to processor B.  This address is only used if USE_FIFOS=1. </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>FIFOWDB2A</spirit:name>
+        <spirit:addressOffset>0x0054</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>write-only</spirit:access>
+          <spirit:field>
+            <spirit:name>DATA</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:description> FIFO write data (width = MBX_WIDTH-1): During a write cycle, this  data will be written from processor B into the B-&gt;A FIFO (for  sending message data from processor B to processor A) if USE_FIFOS=1.  If USE_FIFOS=0, writing to this address has no effect. This register  is write-only.  Note that if PORT_B_WIDTH is less than MBX_WIDTH,  then the number of data bits accessible from processor B will be  limited to the value of PORT_B_WIDTH rather than the value of  MBX_WIDTH. </spirit:description>
+          </spirit:field>
+        <spirit:description> Write-only access to send message from processor B to processor A.  This address is only used if USE_FIFOS=1. </spirit:description>
+      </spirit:register>
+      <spirit:register>
+        <spirit:name>DPRAMB</spirit:name>
+        <spirit:addressOffset>0x2000</spirit:addressOffset>
+        <spirit:size>32</spirit:size>
+        <spirit:access>read-write</spirit:access>
+          <spirit:field>
+            <spirit:name>DATA</spirit:name>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>32</spirit:bitWidth>
+            <spirit:access>read-write</spirit:access>
+            <spirit:description> Refer to Handbook for description. </spirit:description>
+          </spirit:field>
+        <spirit:description> Processor B access to port B of internal dual-port SRAM instance(s)  or optional ROM.  This address space (0x2000 - 0x3FFC) is only used  if USE_FIFOS=0. </spirit:description>
+      </spirit:register>
+    </spirit:addressBlock>
+    <spirit:bitsInLau>32</spirit:bitsInLau>
+  </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>fs-VerilogSource-Base-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-AFS-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-SF2-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-A3PE-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-A3PL-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-AGL-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-AGLE-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-A3P-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-A3P-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-AFS-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-SF2-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-A3PE-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-A3PL-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-AGL-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-AGLE-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VerilogSource-Base-O</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-AFS-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="17"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-SF2-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="19"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-A3PE-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="16"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-A3PL-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="22"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-AGL-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="20"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-AGLE-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="21"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-A3P-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="15"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-A3P-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="15"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-AFS-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="17"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-SF2-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="19"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-A3PE-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="16"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-A3PL-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="22"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-AGL-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="20"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-AGLE-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="21"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VerilogSource-Base-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>TB_USER_VERILOG_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>TB_USER_VERILOG_STIMULUS_FILESET-O</spirit:fileSetRef>
+        <spirit:fileSetRef>TB_USER_VERILOG_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>VERILOG_PRECOMPILED_LIB_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>VERILOG_PRECOMPILED_LIB_FILESET-O</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="TB_USER_VERILOG_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="TB_USER_VERILOG_STIMULUS_FILESET-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="TB_USER_VERILOG_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERILOG_PRECOMPILED_LIB_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERILOG_PRECOMPILED_LIB_FILESET-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>fs-VHDLSource-Base-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-Base-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-SF2-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-SF2-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-AFS-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-AFS-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-A3P-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-A3P-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-A3PE-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-A3PE-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-A3PL-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-A3PL-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-AGL-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-AGL-O</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-AGLE-U</spirit:fileSetRef>
+        <spirit:fileSetRef>fs-VHDLSource-AGLE-O</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Base-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-Base-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-SF2-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="19"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-SF2-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="19"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-AFS-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="17"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-AFS-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="17"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-A3P-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="15"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-A3P-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="15"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-A3PE-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="16"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-A3PE-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="16"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-A3PL-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="22"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-A3PL-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="22"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-AGL-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="20"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-AGL-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="20"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-AGLE-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="21"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-VHDLSource-AGLE-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:termValue="21"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>TB_USER_VHDL_STIMULUS_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>TB_USER_VHDL_STIMULUS_FILESET-O</spirit:fileSetRef>
+        <spirit:fileSetRef>TB_USER_VHDL_ANY_SIMULATION_FILESET</spirit:fileSetRef>
+        <spirit:fileSetRef>VHDL_PRECOMPILED_LIB_FILESET-U</spirit:fileSetRef>
+        <spirit:fileSetRef>VHDL_PRECOMPILED_LIB_FILESET-O</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="TB_USER_VHDL_STIMULUS_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="TB_USER_VHDL_STIMULUS_FILESET-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="TB_USER_VHDL_ANY_SIMULATION_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDL_PRECOMPILED_LIB_FILESET-U">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="U"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDL_PRECOMPILED_LIB_FILESET-O">
+              <actel-cc:logicEquation>
+                <actel-cc:logicAndTerms>
+                  <actel-cc:logicTerm spirit:referenceId="HDL_license" actel-cc:termValue="O"></actel-cc:logicTerm>
+                  <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="User"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>fs-Docs</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="fs-Docs"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>HADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>13</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADY</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HREADYIN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HRESP</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HTRANS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>HWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INITADDR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('INITWIDTH') - 1" spirit:resolve="dependent">15</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USE_INIT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INITDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>8</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USE_INIT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INITDATVAL</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USE_INIT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INITDONE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="USE_INIT" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INTERRUPT_A</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="CFG_INTERRUPT_A" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="CFG_INTERRUPT_A" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INTERRUPT_B</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicOrTerms>
+                <actel-cc:logicTerm spirit:referenceId="CFG_INTERRUPT_B" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="CFG_INTERRUPT_B" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicOrTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PADDR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>13</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PENABLE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRDATA</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('PORT_B_WIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PRESETN</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PSEL</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWDATA</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('PORT_B_WIDTH') - 1" spirit:resolve="dependent">31</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PWRITE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ROMSEL_A</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="CFG_ROM" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ROMSEL_B</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="CFG_ROM" actel-cc:operation="notEqual" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">17</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="USE_FIFOS" spirit:name="USE_FIFOS" spirit:prompt="Mailbox Memory Type:" spirit:dataType="int" spirit:choiceRef="Choice_MsgStorage" spirit:configGroups="Mailbox Message Storage" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="MBX_DEPTH" spirit:name="MBX_DEPTH" spirit:prompt="Mailbox depth (in words):" spirit:dataType="int" spirit:choiceRef="Choice_MbxDepth" spirit:configGroups="Mailbox Message Storage" spirit:resolve="user">512</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="MBX_WIDTH" spirit:name="MBX_WIDTH" spirit:prompt="Mailbox word size (in bits):" spirit:dataType="int" spirit:choiceRef="Choice_81632" spirit:configGroups="Mailbox Message Storage" spirit:resolve="user">16</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_INTERRUPT_A" spirit:name="CFG_INTERRUPT_A" spirit:prompt="Interrupt A output:" spirit:dataType="int" spirit:choiceRef="Choice_IrqCfg" spirit:choiceStyle="combo" spirit:configGroups="Port A Interface (AHB Slave)" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="MSG_A2B_FLAGS" spirit:name="MSG_A2B_FLAGS" spirit:prompt="Number of interrupt flags (processor A to B):" spirit:dataType="int" spirit:choiceRef="Choice_Flags" spirit:choiceStyle="combo" spirit:configGroups="Port A Interface (AHB Slave)" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="PORT_B_WIDTH" spirit:name="PORT_B_WIDTH" spirit:prompt="Data bus width (in bits):" spirit:dataType="int" spirit:choiceRef="Choice_81632" spirit:choiceStyle="combo" spirit:configGroups="Port B Interface (APB Slave)" spirit:resolve="user">16</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_INTERRUPT_B" spirit:name="CFG_INTERRUPT_B" spirit:prompt="Interrupt B output:" spirit:dataType="int" spirit:choiceRef="Choice_IrqCfg" spirit:choiceStyle="combo" spirit:configGroups="Port B Interface (APB Slave)" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="MSG_B2A_FLAGS" spirit:name="MSG_B2A_FLAGS" spirit:prompt="Number of interrupt flags (processor B to A):" spirit:dataType="int" spirit:choiceRef="Choice_Flags" spirit:choiceStyle="combo" spirit:configGroups="Port B Interface (APB Slave)" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="USE_INIT" spirit:name="USE_INIT" spirit:prompt="Init/Config interface logic:" spirit:dataType="int" spirit:choiceRef="Choice_Used_Notused" spirit:choiceStyle="combo" spirit:configGroups="Init/Config Interface" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INITWIDTH" spirit:name="INITWIDTH" spirit:prompt="Init/Config interface address width:" spirit:dataType="int" spirit:choiceRef="Choice_1to16" spirit:choiceStyle="combo" spirit:configGroups="Init/Config Interface" spirit:resolve="user">16</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="CFG_ROM" spirit:name="CFG_ROM" spirit:prompt="ROM custom addresses used:" spirit:dataType="int" spirit:choiceRef="Choice_CfgRom" spirit:choiceStyle="combo" spirit:configGroups="Optional ROM Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DEF_ROM_DATA_SEL" spirit:name="DEF_ROM_DATA_SEL" spirit:prompt="Select Default ROM Data:" spirit:dataType="int" spirit:choiceRef="Choice_DefRomSel" spirit:choiceStyle="combo" spirit:configGroups="Optional ROM Configuration" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DEF_ROM_DATA" spirit:name="DEF_ROM_DATA" spirit:prompt="Default ROM Data:" spirit:dataType="int" spirit:configGroups="Optional ROM Configuration" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_1" spirit:name="ROM_ADDR_1" spirit:prompt="Addr  1:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_1" spirit:name="ROM_DATA_1" spirit:prompt="Data  1:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_2" spirit:name="ROM_ADDR_2" spirit:prompt="Addr  2:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_2" spirit:name="ROM_DATA_2" spirit:prompt="Data  2:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_3" spirit:name="ROM_ADDR_3" spirit:prompt="Addr  3:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_3" spirit:name="ROM_DATA_3" spirit:prompt="Data  3:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_4" spirit:name="ROM_ADDR_4" spirit:prompt="Addr  4:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_4" spirit:name="ROM_DATA_4" spirit:prompt="Data  4:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_5" spirit:name="ROM_ADDR_5" spirit:prompt="Addr  5:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_5" spirit:name="ROM_DATA_5" spirit:prompt="Data  5:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_6" spirit:name="ROM_ADDR_6" spirit:prompt="Addr  6:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_6" spirit:name="ROM_DATA_6" spirit:prompt="Data  6:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_7" spirit:name="ROM_ADDR_7" spirit:prompt="Addr  7:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_7" spirit:name="ROM_DATA_7" spirit:prompt="Data  7:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_8" spirit:name="ROM_ADDR_8" spirit:prompt="Addr  8:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_8" spirit:name="ROM_DATA_8" spirit:prompt="Data  8:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_9" spirit:name="ROM_ADDR_9" spirit:prompt="Addr  9:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_9" spirit:name="ROM_DATA_9" spirit:prompt="Data  9:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_10" spirit:name="ROM_ADDR_10" spirit:prompt="Addr 10:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_10" spirit:name="ROM_DATA_10" spirit:prompt="Data 10:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_11" spirit:name="ROM_ADDR_11" spirit:prompt="Addr 11:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_11" spirit:name="ROM_DATA_11" spirit:prompt="Data 11:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_12" spirit:name="ROM_ADDR_12" spirit:prompt="Addr 12:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_12" spirit:name="ROM_DATA_12" spirit:prompt="Data 12:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_13" spirit:name="ROM_ADDR_13" spirit:prompt="Addr 13:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_13" spirit:name="ROM_DATA_13" spirit:prompt="Data 13:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_14" spirit:name="ROM_ADDR_14" spirit:prompt="Addr 14:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_14" spirit:name="ROM_DATA_14" spirit:prompt="Data 14:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_15" spirit:name="ROM_ADDR_15" spirit:prompt="Addr 15:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_15" spirit:name="ROM_DATA_15" spirit:prompt="Data 15:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_16" spirit:name="ROM_ADDR_16" spirit:prompt="Addr 16:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_16" spirit:name="ROM_DATA_16" spirit:prompt="Data 16:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_17" spirit:name="ROM_ADDR_17" spirit:prompt="Addr 17:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_17" spirit:name="ROM_DATA_17" spirit:prompt="Data 17:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_18" spirit:name="ROM_ADDR_18" spirit:prompt="Addr 18:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_18" spirit:name="ROM_DATA_18" spirit:prompt="Data 18:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_19" spirit:name="ROM_ADDR_19" spirit:prompt="Addr 19:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_19" spirit:name="ROM_DATA_19" spirit:prompt="Data 19:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_20" spirit:name="ROM_ADDR_20" spirit:prompt="Addr 20:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_20" spirit:name="ROM_DATA_20" spirit:prompt="Data 20:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_21" spirit:name="ROM_ADDR_21" spirit:prompt="Addr 21:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_21" spirit:name="ROM_DATA_21" spirit:prompt="Data 21:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_22" spirit:name="ROM_ADDR_22" spirit:prompt="Addr 22:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_22" spirit:name="ROM_DATA_22" spirit:prompt="Data 22:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_23" spirit:name="ROM_ADDR_23" spirit:prompt="Addr 23:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_23" spirit:name="ROM_DATA_23" spirit:prompt="Data 23:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_24" spirit:name="ROM_ADDR_24" spirit:prompt="Addr 24:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_24" spirit:name="ROM_DATA_24" spirit:prompt="Data 24:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_25" spirit:name="ROM_ADDR_25" spirit:prompt="Addr 25:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_25" spirit:name="ROM_DATA_25" spirit:prompt="Data 25:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_26" spirit:name="ROM_ADDR_26" spirit:prompt="Addr 26:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_26" spirit:name="ROM_DATA_26" spirit:prompt="Data 26:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_27" spirit:name="ROM_ADDR_27" spirit:prompt="Addr 27:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_27" spirit:name="ROM_DATA_27" spirit:prompt="Data 27:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_28" spirit:name="ROM_ADDR_28" spirit:prompt="Addr 28:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_28" spirit:name="ROM_DATA_28" spirit:prompt="Data 28:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_29" spirit:name="ROM_ADDR_29" spirit:prompt="Addr 29:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_29" spirit:name="ROM_DATA_29" spirit:prompt="Data 29:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_30" spirit:name="ROM_ADDR_30" spirit:prompt="Addr 30:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_30" spirit:name="ROM_DATA_30" spirit:prompt="Data 30:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_31" spirit:name="ROM_ADDR_31" spirit:prompt="Addr 31:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_31" spirit:name="ROM_DATA_31" spirit:prompt="Data 31:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_32" spirit:name="ROM_ADDR_32" spirit:prompt="Addr 32:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_32" spirit:name="ROM_DATA_32" spirit:prompt="Data 32:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_33" spirit:name="ROM_ADDR_33" spirit:prompt="Addr 33:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_33" spirit:name="ROM_DATA_33" spirit:prompt="Data 33:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_34" spirit:name="ROM_ADDR_34" spirit:prompt="Addr 34:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_34" spirit:name="ROM_DATA_34" spirit:prompt="Data 34:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_35" spirit:name="ROM_ADDR_35" spirit:prompt="Addr 35:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_35" spirit:name="ROM_DATA_35" spirit:prompt="Data 35:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_36" spirit:name="ROM_ADDR_36" spirit:prompt="Addr 36:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_36" spirit:name="ROM_DATA_36" spirit:prompt="Data 36:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_37" spirit:name="ROM_ADDR_37" spirit:prompt="Addr 37:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_37" spirit:name="ROM_DATA_37" spirit:prompt="Data 37:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_38" spirit:name="ROM_ADDR_38" spirit:prompt="Addr 38:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_38" spirit:name="ROM_DATA_38" spirit:prompt="Data 38:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_39" spirit:name="ROM_ADDR_39" spirit:prompt="Addr 39:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_39" spirit:name="ROM_DATA_39" spirit:prompt="Data 39:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_ADDR_40" spirit:name="ROM_ADDR_40" spirit:prompt="Addr 40:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2047">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="ROM_DATA_40" spirit:name="ROM_DATA_40" spirit:prompt="Data 40:" spirit:dataType="int" spirit:configGroups="2Cols:Optional ROM Custom Address/Data pairs" spirit:resolve="user" spirit:minimum="0" spirit:maximum="65535">0</spirit:hwParameter>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="HDL_license" spirit:name="HDL_license" spirit:prompt="License:" spirit:dataType="string" actel-cc:choiceRef="Choice_HDL_license" spirit:resolve="user">U</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench:" spirit:dataType="string" actel-cc:choiceRef="Choice_testbench" spirit:resolve="user">User</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('USE_FIFOS', Neq('FAMILY', 'SmartFusion2'));\
+Set('USE_FIFOS', Eq('FAMILY', 'SmartFusion2'), '0');\
+Enable('INITWIDTH', Eq('USE_INIT', 'Used'));\
+Enable('DEF_ROM_DATA_SEL', Gt('CFG_ROM', '0'));\
+Enable('DEF_ROM_DATA', Gt('CFG_ROM', '0'));\
+Enable('ROM_ADDR_1', Gt('CFG_ROM', '0'));\
+Enable('ROM_ADDR_2', Gt('CFG_ROM', '0'));\
+Enable('ROM_ADDR_3', Gt('CFG_ROM', '0'));\
+Enable('ROM_ADDR_4', Gt('CFG_ROM', '0'));\
+Enable('ROM_DATA_1', Gt('CFG_ROM', '0'));\
+Enable('ROM_DATA_2', Gt('CFG_ROM', '0'));\
+Enable('ROM_DATA_3', Gt('CFG_ROM', '0'));\
+Enable('ROM_DATA_4', Gt('CFG_ROM', '0'));\
+Enable('ROM_ADDR_5', Gt('CFG_ROM', '4'));\
+Enable('ROM_ADDR_6', Gt('CFG_ROM', '4'));\
+Enable('ROM_ADDR_7', Gt('CFG_ROM', '4'));\
+Enable('ROM_ADDR_8', Gt('CFG_ROM', '4'));\
+Enable('ROM_DATA_5', Gt('CFG_ROM', '4'));\
+Enable('ROM_DATA_6', Gt('CFG_ROM', '4'));\
+Enable('ROM_DATA_7', Gt('CFG_ROM', '4'));\
+Enable('ROM_DATA_8', Gt('CFG_ROM', '4'));\
+Enable('ROM_ADDR_9', Gt('CFG_ROM', '8'));\
+Enable('ROM_ADDR_10', Gt('CFG_ROM', '8'));\
+Enable('ROM_ADDR_11', Gt('CFG_ROM', '8'));\
+Enable('ROM_ADDR_12', Gt('CFG_ROM', '8'));\
+Enable('ROM_ADDR_13', Gt('CFG_ROM', '8'));\
+Enable('ROM_ADDR_14', Gt('CFG_ROM', '8'));\
+Enable('ROM_ADDR_15', Gt('CFG_ROM', '8'));\
+Enable('ROM_ADDR_16', Gt('CFG_ROM', '8'));\
+Enable('ROM_DATA_9', Gt('CFG_ROM', '8'));\
+Enable('ROM_DATA_10', Gt('CFG_ROM', '8'));\
+Enable('ROM_DATA_11', Gt('CFG_ROM', '8'));\
+Enable('ROM_DATA_12', Gt('CFG_ROM', '8'));\
+Enable('ROM_DATA_13', Gt('CFG_ROM', '8'));\
+Enable('ROM_DATA_14', Gt('CFG_ROM', '8'));\
+Enable('ROM_DATA_15', Gt('CFG_ROM', '8'));\
+Enable('ROM_DATA_16', Gt('CFG_ROM', '8'));\
+Enable('ROM_ADDR_17', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_18', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_19', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_20', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_21', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_22', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_23', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_24', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_25', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_26', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_27', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_28', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_29', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_30', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_31', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_32', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_17', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_18', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_19', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_20', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_21', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_22', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_23', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_24', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_25', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_26', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_27', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_28', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_29', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_30', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_31', Gt('CFG_ROM', '16'));\
+Enable('ROM_DATA_32', Gt('CFG_ROM', '16'));\
+Enable('ROM_ADDR_33', Gt('CFG_ROM', '32'));\
+Enable('ROM_ADDR_34', Gt('CFG_ROM', '32'));\
+Enable('ROM_ADDR_35', Gt('CFG_ROM', '32'));\
+Enable('ROM_ADDR_36', Gt('CFG_ROM', '32'));\
+Enable('ROM_ADDR_37', Gt('CFG_ROM', '32'));\
+Enable('ROM_ADDR_38', Gt('CFG_ROM', '32'));\
+Enable('ROM_ADDR_39', Gt('CFG_ROM', '32'));\
+Enable('ROM_ADDR_40', Gt('CFG_ROM', '32'));\
+Enable('ROM_DATA_33', Gt('CFG_ROM', '32'));\
+Enable('ROM_DATA_34', Gt('CFG_ROM', '32'));\
+Enable('ROM_DATA_35', Gt('CFG_ROM', '32'));\
+Enable('ROM_DATA_36', Gt('CFG_ROM', '32'));\
+Enable('ROM_DATA_37', Gt('CFG_ROM', '32'));\
+Enable('ROM_DATA_38', Gt('CFG_ROM', '32'));\
+Enable('ROM_DATA_39', Gt('CFG_ROM', '32'));\
+Enable('ROM_DATA_40', Gt('CFG_ROM', '32'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_1to16</spirit:name>
+      <spirit:enumeration spirit:text="1">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="3">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="5">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="6">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="7">7</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="9">9</spirit:enumeration>
+      <spirit:enumeration spirit:text="10">10</spirit:enumeration>
+      <spirit:enumeration spirit:text="11">11</spirit:enumeration>
+      <spirit:enumeration spirit:text="12">12</spirit:enumeration>
+      <spirit:enumeration spirit:text="13">13</spirit:enumeration>
+      <spirit:enumeration spirit:text="14">14</spirit:enumeration>
+      <spirit:enumeration spirit:text="15">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_81632</spirit:name>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_CfgRom</spirit:name>
+      <spirit:enumeration spirit:text="0">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+      <spirit:enumeration spirit:text="40">40</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_DefRomSel</spirit:name>
+      <spirit:enumeration spirit:text="Use value below (next box)">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Use `don't care` (x) values">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="Fusion">17</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3E">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3L">22</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO">20</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOOe">21</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Flags</spirit:name>
+      <spirit:enumeration spirit:text="Disabled">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="8">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="16">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="32">32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_HDL_license</spirit:name>
+      <spirit:enumeration spirit:text="Obfuscated">O</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTL">U</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_IrqCfg</spirit:name>
+      <spirit:enumeration spirit:text="Enabled (active high)">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Enabled (active low)">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Disabled (tied low)">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="Disabled (tied high)">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_MbxDepth</spirit:name>
+      <spirit:enumeration spirit:text="512">512</spirit:enumeration>
+      <spirit:enumeration spirit:text="1024">1024</spirit:enumeration>
+      <spirit:enumeration spirit:text="2048">2048</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_MsgStorage</spirit:name>
+      <spirit:enumeration spirit:text="Dual-port SRAM macro(s)">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="FIFO macro(s)">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_Used_Notused</spirit:name>
+      <spirit:enumeration spirit:text="Not used">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Used">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Choice_testbench</spirit:name>
+      <spirit:enumeration spirit:text="None">None</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">User</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_flag_lat.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_flags.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_initcfg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_int.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_ahb2apb3.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_apb3apb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-AFS-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-SF2-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_mems_smartfusion2.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-A3PE-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-A3PL-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-AGL-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-AGLE-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-A3P-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-A3P-O">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-AFS-O">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-SF2-O">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_mems_smartfusion2.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-A3PE-O">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-A3PL-O">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-AGL-O">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-AGLE-O">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_mems.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VerilogSource-Base-O">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_flag_lat.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_flags.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_initcfg.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_int.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_ahb2apb3.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx_apb3apb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core_obf/corembx.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Base-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/components.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_flag_lat.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_flags.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_initcfg.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_int.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_ahb2apb3.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_apb3apb.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-Base-O">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/components.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_flag_lat.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_flags.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_initcfg.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_int.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_ahb2apb3.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_apb3apb.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-SF2-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_mems_smartfusion2.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-SF2-O">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_mems_smartfusion2.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-AFS-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_mems_fusion.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-AFS-O">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_mems_fusion.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-A3P-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_mems_pa3.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-A3P-O">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_mems_pa3.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-A3PE-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_mems_pa3e.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-A3PE-O">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_mems_pa3e.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-A3PL-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_mems_pa3l.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-A3PL-O">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_mems_pa3l.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-AGL-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_mems_igloo.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-AGL-O">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_mems_igloo.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-AGLE-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/corembx_mems_iglooe.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-VHDLSource-AGLE-O">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core_obf/corembx_mems_iglooe.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="TB_USER_VHDL_STIMULUS_FILESET-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/testbench.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="TB_USER_VHDL_STIMULUS_FILESET-O">
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/testbench.vhd</spirit:name>
+      <spirit:userFileType>VHDL</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="TB_USER_VERILOG_STIMULUS_FILESET-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_main.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbl.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_ahbtoapb.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/amba_bfm/bfm_apb.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/testbench.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="TB_USER_VERILOG_STIMULUS_FILESET-O">
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/testbench.v</spirit:name>
+      <spirit:userFileType>Verilog</spirit:userFileType>
+      <spirit:logicalName>COREMBX_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:ModuleUnderTest>testbench</actel-cc:ModuleUnderTest>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="TB_USER_VERILOG_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/wave_user.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec_compile.tcl</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/corembx_usertb_ahb_master.bfm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/corembx_usertb_ahb_master.vec</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/corembx_usertb_apb_master.bfm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/corembx_usertb_apb_master.vec</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="TB_USER_VHDL_ANY_SIMULATION_FILESET">
+    <spirit:file>
+      <spirit:name>mti/scripts/wave_user.do</spirit:name>
+      <spirit:userFileType>DO</spirit:userFileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec_compile.tcl</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/bfmtovec.lin</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/corembx_usertb_ahb_master.bfm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/corembx_usertb_ahb_master.vec</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/corembx_usertb_apb_master.bfm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/scripts/corembx_usertb_apb_master.vec</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDL_PRECOMPILED_LIB_FILESET-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/model.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/model.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/model.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/model.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/bfm.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/bfm.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/bfm.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/bfm.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/bfm.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/bfm.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/bfm.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/bfm.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/bfm.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/bfm.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/bfm.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/bfm.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/body.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/body.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/body.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/body.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/_vhdl.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/_vhdl.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/body.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/body.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/body.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/body.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/_vhdl.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/_vhdl.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/body.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/body.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/body.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/body.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/_vhdl.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/_vhdl.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/tb.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/tb.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/tb.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/tb.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/_info</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/_vmake</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:library>
+      <actel-cc:name>COREMBX_LIB</actel-cc:name>
+      <actel-cc:path>mti/user_vhdl/COREMBX_LIB</actel-cc:path>
+    </actel-cc:library></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDL_PRECOMPILED_LIB_FILESET-O">
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/model.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/model.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/model.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/model.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahb2apb/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/bfm.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/bfm.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/bfm.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/bfm.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_ahbl/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/bfm.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/bfm.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/bfm.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/bfm.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_apb/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/bfm.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/bfm.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/bfm.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/bfm.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_main/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/body.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/body.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/body.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/body.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/_vhdl.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_misc/_vhdl.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/body.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/body.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/body.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/body.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/_vhdl.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_package/_vhdl.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/body.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/body.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/body.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/body.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/_vhdl.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio/_vhdl.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/tb.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/tb.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/tb.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/tb.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/bfm_textio_test/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/_info</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vhdl/COREMBX_LIB/_vmake</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:library>
+      <actel-cc:name>COREMBX_LIB</actel-cc:name>
+      <actel-cc:path>mti/user_vhdl/COREMBX_LIB</actel-cc:path>
+    </actel-cc:library></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VERILOG_PRECOMPILED_LIB_FILESET-U">
+    <spirit:group>RTL</spirit:group>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/verilog.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/verilog.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/_primary.vhd</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/verilog.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/verilog.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/_primary.vhd</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/verilog.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/verilog.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/_primary.vhd</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/verilog.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/verilog.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/_primary.vhd</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/_info</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/_vmake</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:library>
+      <actel-cc:name>COREMBX_LIB</actel-cc:name>
+      <actel-cc:path>mti/user_vlog/COREMBX_LIB</actel-cc:path>
+    </actel-cc:library></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VERILOG_PRECOMPILED_LIB_FILESET-O">
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/verilog.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/verilog.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b2@a@p@b/_primary.vhd</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/verilog.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/verilog.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@h@b@l/_primary.vhd</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/verilog.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/verilog.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@a@p@b/_primary.vhd</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/verilog.prw</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/verilog.psm</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/_primary.dat</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/_primary.dbs</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/@b@f@m_@m@a@i@n/_primary.vhd</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/_info</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>mti/user_vlog/COREMBX_LIB/_vmake</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions>
+    <actel-cc:library>
+      <actel-cc:name>COREMBX_LIB</actel-cc:name>
+      <actel-cc:path>mti/user_vlog/COREMBX_LIB</actel-cc:path>
+    </actel-cc:library></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="fs-Docs">
+    <spirit:file>
+      <spirit:name>docs/CoreMBX_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreMBX_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreMBX</actel-cc:displayName>
+    <actel-cc:description> CoreMBX (Mail Box) allows data messages (mail) to pass back and forth from  one processing element to another. The user is able to choose (via  CoreConsole or SmartDesign configuration) whether this message passing  capability is implemented with one or more instances of dual-port SRAM hard  macros or with one or more instances of FIFO hard macros. </actel-cc:description>
+    <actel-cc:packageTimestamp>20121129150753</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="8.6">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Core Provider">
+      <actel-cc:category name="Actel">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Peripherals">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Market Segment">
+      <actel-cc:category name="Aerospace">
+      </actel-cc:category>
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Medical">
+      </actel-cc:category>
+      <actel-cc:category name="Consumer">
+      </actel-cc:category>
+      <actel-cc:category name="Multimedia">
+      </actel-cc:category>
+      <actel-cc:category name="Gaming">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Temperature Grade" style="hidden">
+      <actel-cc:category name="Automotive">
+      </actel-cc:category>
+      <actel-cc:category name="Commercial">
+      </actel-cc:category>
+      <actel-cc:category name="Industrial">
+      </actel-cc:category>
+      <actel-cc:category name="Military">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Interface Type">
+      <actel-cc:category name="AmbaBus">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="Fusion">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3E">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3L">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOOe">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:resources>
+      <actel-cc:resource doc_title="CoreMBX Handbook" url="http://www.actel.com/ipdocs/CoreMBX_HB.pdf">
+        <actel-cc:presentation></actel-cc:presentation></actel-cc:resource>
+      <actel-cc:resource doc_title="CoreMBX Release Notes" url="http://www.actel.com/ipdocs/CoreMBX_RN.pdf">
+        <actel-cc:presentation></actel-cc:presentation></actel-cc:resource></actel-cc:resources>
+  </spirit:vendorExtensions>
+</spirit:component>

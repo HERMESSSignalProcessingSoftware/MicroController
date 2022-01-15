@@ -1,0 +1,963 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>DirectCore</spirit:library>
+  <spirit:name>COREEDAC</spirit:name>
+  <spirit:version>2.11.107</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>VerilogSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>VerilogSource-Base</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VerilogSource-Base"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VerilogSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:fileSetRef>VERIF_TB_VERILOG_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERIF_TB_VERILOG_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSource</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>VHDLSource-Base</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VHDLSource-Base"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>VHDLSimulation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:fileSetRef>VERIF_TB_VHDL_STIMULUS_FILESET</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="VERIF_TB_VHDL_STIMULUS_FILESET">
+              <actel-cc:logicEquation>
+                <actel-cc:logicTerm spirit:referenceId="testbench" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Generator</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>GeneratorFileSet</spirit:fileSetRef>
+        <spirit:fileSetRef>ConfiguratorFileSet</spirit:fileSetRef>
+        <spirit:fileSetRef>GeneratorLinuxFileSet</spirit:fileSetRef>
+        <spirit:fileSetRef>ConfiguratorLinuxFileSet</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="GeneratorFileSet"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ConfiguratorFileSet"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="GeneratorLinuxFileSet"></actel-cc:fsInclusionRule>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="ConfiguratorLinuxFileSet"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>Documentation</spirit:name>
+        <spirit:envIdentifier></spirit:envIdentifier>
+        <spirit:language></spirit:language>
+        <spirit:fileSetRef>docsFileSet</spirit:fileSetRef>
+        <spirit:vendorExtensions>
+          <actel-cc:fsInclusionRules>
+            <actel-cc:fsInclusionRule spirit:fileSetRef="docsFileSet"></actel-cc:fsInclusionRule></actel-cc:fsInclusionRules></spirit:vendorExtensions>
+      </spirit:view>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>NGRST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WCLK</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SINGLECLK" actel-cc:termValue="false"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:requiredConnection>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="SINGLECLK" actel-cc:termValue="false"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>STOP_SCRUB_TRP1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>STOP_SCRUB_TRP2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>STOP_SCRUB_TRP3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_WEN_TRP1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_WEN_TRP2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_WEN_TRP3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MSG_TRP1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('DAT_WIDTH') - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:requiredConnection></actel-cc:requiredConnection></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MSG_TRP2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('DAT_WIDTH') - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>MSG_TRP3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="id('DAT_WIDTH') - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_WA_TRP1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('RAM_DEPTH'))) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_WA_TRP2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('RAM_DEPTH'))) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_WA_TRP3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('RAM_DEPTH'))) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_REN_TRP1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="URAM" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_REN_TRP2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="URAM" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_REN_TRP3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="URAM" actel-cc:termValue="0"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_RA_TRP1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('RAM_DEPTH'))) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>1</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_RA_TRP2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('RAM_DEPTH'))) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>USER_RA_TRP3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('RAM_DEPTH'))) - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CODE_FROM_RAM</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="(4 + number(id('DAT_WIDTH') &gt;= 5) + number(id('DAT_WIDTH') &gt;= 12) + number(id('DAT_WIDTH') &gt;= 27) + number(id('DAT_WIDTH') &gt;= 58)) + (id('DAT_WIDTH') - 1)" spirit:resolve="dependent">12</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INJ_ERR</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="(4 + number(id('DAT_WIDTH') &gt;= 5) + number(id('DAT_WIDTH') &gt;= 12) + number(id('DAT_WIDTH') &gt;= 27) + number(id('DAT_WIDTH') &gt;= 58)) + (id('DAT_WIDTH') - 1)" spirit:resolve="dependent">12</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="TEST" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>START_SCRUB_TRP1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>START_SCRUB_TRP2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>START_SCRUB_TRP3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RST_TIMER_TRP1</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RST_TIMER_TRP2</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RST_TIMER_TRP3</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="TMR" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="25"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="FAMILY" actel-cc:operation="notEqual" actel-cc:termValue="12"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ERROR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CORRECTABLE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SLOWDOWN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>TMOUTFLG</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SCRUB_DONE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DATA_OUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="id('DAT_WIDTH') - 1" spirit:resolve="dependent">7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>PARITY_OUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="(4 + number(id('DAT_WIDTH') &gt;= 5) + number(id('DAT_WIDTH') &gt;= 12) + number(id('DAT_WIDTH') &gt;= 27) + number(id('DAT_WIDTH') &gt;= 58)) - 1" spirit:resolve="dependent">4</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CODE_FROM_EXT_RAM</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left spirit:dependency="(4 + number(id('DAT_WIDTH') &gt;= 5) + number(id('DAT_WIDTH') &gt;= 12) + number(id('DAT_WIDTH') &gt;= 27) + number(id('DAT_WIDTH') &gt;= 58)) + (id('DAT_WIDTH') - 1)" spirit:resolve="dependent">12</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:defaultValue>
+          <spirit:value>0</spirit:value></spirit:defaultValue>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>CODED</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="(4 + number(id('DAT_WIDTH') &gt;= 5) + number(id('DAT_WIDTH') &gt;= 12) + number(id('DAT_WIDTH') &gt;= 27) + number(id('DAT_WIDTH') &gt;= 58)) + (id('DAT_WIDTH') - 1)" spirit:resolve="dependent">12</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="0"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>NOW_SCRUBBING</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>INIT_DONE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="INIT_RAM" actel-cc:termValue="true"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="true"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RAM_RA_LAT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left spirit:dependency="ceiling(spirit:log(2, id('RAM_DEPTH'))) - 1" spirit:resolve="dependent">0</spirit:left>
+        <spirit:right>0</spirit:right>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="DLY_RD_A_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>SCRUB_CORR</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicAndTerms>
+                <actel-cc:logicTerm spirit:referenceId="SCRUB_ON" actel-cc:termValue="1"></actel-cc:logicTerm>
+                <actel-cc:logicTerm spirit:referenceId="MODE" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicAndTerms></actel-cc:logicEquation></actel-cc:used></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+      <spirit:hwParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" spirit:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">11</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="MODE" spirit:name="MODE" spirit:prompt="Mode" spirit:dataType="int" spirit:choiceRef="Mode_ChoiceEnum" spirit:choiceStyle="radio" spirit:configGroups="Functional" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TMR" spirit:name="TMR" spirit:prompt="Use Triple Redundancy" spirit:dataType="boolean" spirit:configGroups="Functional" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DAT_WIDTH" spirit:name="DAT_WIDTH" spirit:prompt="Width ( bits )" spirit:dataType="int" spirit:configGroups="Functional" spirit:resolve="user" spirit:minimum="4" spirit:maximum="64">8</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SINGLECLK" spirit:name="SINGLECLK" spirit:prompt="Use single Read/Write clock" spirit:dataType="boolean" spirit:configGroups="Functional" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RAM_DEPTH" spirit:name="RAM_DEPTH" spirit:prompt="Depth ( words )" spirit:dataType="int" spirit:configGroups="Functional" spirit:resolve="user" spirit:minimum="8" spirit:maximum="543744">256</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="USER_ENC_PIPE" spirit:name="USER_ENC_PIPE" spirit:prompt="Limit encoder latency to " spirit:dataType="int" spirit:configGroups="Pipeline" spirit:resolve="user" spirit:minimum="0" spirit:maximum="2">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="USER_DEC_PIPE" spirit:name="USER_DEC_PIPE" spirit:prompt="Limit decoder latency to" spirit:dataType="int" spirit:configGroups="Pipeline" spirit:resolve="user" spirit:minimum="0" spirit:maximum="3">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SCRUB_ON" spirit:name="SCRUB_ON" spirit:prompt="Use scrubber to detect data errors" spirit:dataType="boolean" spirit:configGroups="Scrubber" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="WRBK_ON" spirit:name="WRBK_ON" spirit:prompt="Allow scrubber to repair detected errors" spirit:dataType="boolean" spirit:configGroups="Scrubber" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DIV_WDTH" spirit:name="DIV_WDTH" spirit:prompt="Binary Divider Width" spirit:dataType="int" spirit:configGroups="Scrubber" spirit:resolve="user" spirit:minimum="1" spirit:maximum="31">10</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TMOUT_SET" spirit:name="TMOUT_SET" spirit:prompt="Timeout" spirit:dataType="int" spirit:configGroups="Scrubber" spirit:resolve="user" spirit:minimum="1" spirit:maximum="2147483647">1000</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SCRUB_AMIN" spirit:name="SCRUB_AMIN" spirit:prompt="Start Address" spirit:dataType="int" spirit:configGroups="Scrubber" spirit:resolve="user" spirit:minimum="0" spirit:maximum="543743">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SCRUB_AMAX" spirit:name="SCRUB_AMAX" spirit:prompt="End Address" spirit:dataType="int" spirit:configGroups="Scrubber" spirit:resolve="user" spirit:minimum="1" spirit:maximum="543744">255</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="DLY_RD_A_ON" spirit:name="DLY_RD_A_ON" spirit:prompt="Provide RAM read address with the data" spirit:dataType="boolean" spirit:configGroups="Pipeline" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="RAM_PIPE" spirit:name="RAM_PIPE" spirit:prompt="Use pipeline register for read data " spirit:dataType="boolean" spirit:configGroups="Pipeline" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="SIM_RAM" spirit:name="SIM_RAM" spirit:prompt="Include RAM simulation model" spirit:dataType="boolean" spirit:resolve="generated">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="TEST" spirit:name="TEST" spirit:prompt="Create error injection test port" spirit:dataType="boolean" spirit:configGroups="Pipeline" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="URAM" spirit:name="URAM" spirit:prompt="Micro RAM" spirit:dataType="int" spirit:resolve="user" spirit:minimum="0" spirit:maximum="1">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="URAM_PORT_B" spirit:name="URAM_PORT_B" spirit:prompt="Enable Micro RAM B read port " spirit:dataType="boolean" spirit:resolve="user">0</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="URAM_A_PIPE" spirit:name="URAM_A_PIPE" spirit:prompt="Use pipeline register for read address" spirit:dataType="boolean" spirit:resolve="user">1</spirit:hwParameter>
+      <spirit:hwParameter spirit:id="INIT_RAM" spirit:name="INIT_RAM" spirit:prompt="Initialize RAM with 0's" spirit:dataType="boolean" spirit:resolve="user">0</spirit:hwParameter>
+    </spirit:hwParameters>
+    <spirit:deletedhwParameters>
+    </spirit:deletedhwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="testbench" spirit:name="testbench" spirit:prompt="Testbench" spirit:dataType="int" actel-cc:choiceRef="Testbench_Enum" spirit:resolve="user">1</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Enable('RAM_PIPE', Eq('MODE', 'Create internal RAM block with full EDAC support'));\
+Enable('DLY_RD_A_ON', Eq('MODE', 'Create internal RAM block with full EDAC support'));\
+Enable('SCRUB_ON', Eq('MODE', 'Create internal RAM block with full EDAC support'));\
+Enable('WRBK_ON', Eq('SCRUB_ON', '1'));\
+Enable('DIV_WDTH', Eq('SCRUB_ON', '1'));\
+Enable('TMOUT_SET', Eq('SCRUB_ON', '1'));\
+Enable('SCRUB_AMIN', Eq('SCRUB_ON', '1'));\
+Enable('SCRUB_AMAX', Eq('SCRUB_ON', '1'));\
+Enable('SIM_RAM', Eq('MODE', 'Create internal RAM block with full EDAC support'));\
+Enable('INIT_RAM', Eq('MODE', 'Create internal RAM block with full EDAC support'));\
+Enable('URAM', And(Eq('MODE', 'Create internal RAM block with full EDAC support'), Eq('FAMILY', 'SmartFusion2')));\
+Enable('URAM_A_PIPE', And(Eq('MODE', 'Create internal RAM block with full EDAC support'), Eq('FAMILY', 'SmartFusion2')));\
+Enable('URAM_PORT_B', And(Eq('MODE', 'Create internal RAM block with full EDAC support'), Eq('FAMILY', 'SmartFusion2')));\
+Enable('RAM_DEPTH', Eq('MODE', 'Create internal RAM block with full EDAC support'));\
+Enable('TMR', And(Neq('FAMILY', '25'), Neq('FAMILY', '12')));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:componentGenerators>
+    <spirit:componentGenerator>
+      <spirit:name>EDACGenerator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_GeneratorFileSet}/tgi/executables/windows/CoreEDACGenerator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>EDACConfigurator</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_ConfiguratorFileSet}/tgi/executables/windows/CoreEDACConfigurator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Win32</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>EDACGeneratorLinux</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_GeneratorLinuxFileSet}/tgi/executables/linux/CoreEDACGenerator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Generator,Unix</spirit:group>
+    </spirit:componentGenerator>
+    <spirit:componentGenerator>
+      <spirit:name>EDACConfiguratorLinux</spirit:name>
+      <spirit:generatorExe>file://{ACTEL_FILESET_ConfiguratorLinuxFileSet}/tgi/executables/linux/CoreEDACConfigurator.exe</spirit:generatorExe>
+      <spirit:apiType>TGI</spirit:apiType>
+      <spirit:group>Configurator,Unix</spirit:group>
+    </spirit:componentGenerator>
+  </spirit:componentGenerators>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="Axcelerator">11</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTAX-S">12</spirit:enumeration>
+      <spirit:enumeration spirit:text="Fusion">17</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3E">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="ProASIC3L">22</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO">20</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOOe">21</spirit:enumeration>
+      <spirit:enumeration spirit:text="PA">14</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO+">23</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion">18</spirit:enumeration>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="RTG4">25</spirit:enumeration>
+      <spirit:enumeration spirit:text="IGLOO2">24</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFire">26</spirit:enumeration>
+      <spirit:enumeration spirit:text="PolarFireSoC">27</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Mode_ChoiceEnum</spirit:name>
+      <spirit:enumeration spirit:text="Use external RAM block (only create codec)">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Create internal RAM block with full EDAC support">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>Testbench_Enum</spirit:name>
+      <spirit:enumeration spirit:text="None">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="User">1</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  <spirit:fileSet spirit:fileSetId="VerilogSource-Base">
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/COREEDAC.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/ecc.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/edac.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/functions.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/edac_kit.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/scrub.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/sub_edac.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/core/wideXor.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VERIF_TB_VERILOG_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/bhvKit.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coreparameters.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:isIncludeFile></actel-cc:isIncludeFile>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vlog/test/user/edac_tb.v</spirit:name>
+      <spirit:fileType>verilogSource</spirit:fileType>
+    <spirit:vendorExtensions>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VHDLSource-Base">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/COREEDAC.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/ecc.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/edac.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/edac_kit.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/edac_rtl_pack.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/scrub.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/sub_edac.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/core/wideXor.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="VERIF_TB_VHDL_STIMULUS_FILESET">
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/bhv_pack.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/bhvKit.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>coreparameters.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:IncludeInRunDo></actel-cc:IncludeInRunDo>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>rtl/vhdl/test/user/edac_tb.vhd</spirit:name>
+      <spirit:fileType>VHDLSource</spirit:fileType>
+      <spirit:logicalName>COREEDAC_LIB</spirit:logicalName>
+    <spirit:vendorExtensions>
+      <actel-cc:SimulationTime>-all</actel-cc:SimulationTime>
+      <actel-cc:requireUniquify></actel-cc:requireUniquify></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="GeneratorFileSet">
+    <spirit:file>
+      <spirit:name>tgi/executables/windows/CoreEDACGenerator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="ConfiguratorFileSet">
+    <spirit:file>
+      <spirit:name>tgi/executables/windows/CoreEDACConfigurator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="docsFileSet">
+    <spirit:file>
+      <spirit:name>docs/CoreEDAC_HB.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+    <spirit:file>
+      <spirit:name>docs/CoreEDAC_RN.pdf</spirit:name>
+      <spirit:userFileType>PDF</spirit:userFileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="GeneratorLinuxFileSet">
+    <spirit:file>
+      <spirit:name>tgi/executables/linux/CoreEDACGenerator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  <spirit:fileSet spirit:fileSetId="ConfiguratorLinuxFileSet">
+    <spirit:file>
+      <spirit:name>tgi/executables/linux/CoreEDACConfigurator.exe</spirit:name>
+      <spirit:fileType>unknown</spirit:fileType>
+    <spirit:vendorExtensions></spirit:vendorExtensions>
+    </spirit:file>
+  <spirit:vendorExtensions></spirit:vendorExtensions>
+  </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>CoreEDAC</actel-cc:displayName>
+    <actel-cc:description>Actel optimized Error Detection And Correction logic protects data stored in a RAM block.  It detects double bit errors and corrects any single bit soft (transient) errors in RAM words from 4 to 64 bits wide.  The core utilizes a specific shortened Hamming code as well, as optional pipelining to achieve high performance.
+The EDAC logic optionally implements RAM scrubbing, a procedure that prevents the RAM of accumulating the soft errors.</actel-cc:description>
+    <actel-cc:packageTimestamp>20201026181234</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:diveInPermission value="READ_WRITE"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="9.1">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Functional Category">
+      <actel-cc:category name="Memory &amp; Controllers">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="Axcelerator">
+      </actel-cc:category>
+      <actel-cc:category name="RTAX-S">
+      </actel-cc:category>
+      <actel-cc:category name="Fusion">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3E">
+      </actel-cc:category>
+      <actel-cc:category name="ProASIC3L">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOOe">
+      </actel-cc:category>
+      <actel-cc:category name="PA">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO+">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion">
+      </actel-cc:category>
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+      <actel-cc:category name="RTG4">
+      </actel-cc:category>
+      <actel-cc:category name="IGLOO2">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFire">
+      </actel-cc:category>
+      <actel-cc:category name="PolarFireSoC">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:requireUniquify></actel-cc:requireUniquify>
+  </spirit:vendorExtensions>
+</spirit:component>

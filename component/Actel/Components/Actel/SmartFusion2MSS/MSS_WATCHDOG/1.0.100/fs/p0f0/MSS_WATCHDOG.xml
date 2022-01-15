@@ -1,0 +1,81 @@
+<spirit:component xmlns:actel-cc="http://www.actel.com/XMLSchema/CoreConsole" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.1/component.xsd">
+  <spirit:vendor>Actel</spirit:vendor>
+  <spirit:library>SmartFusion2MSS</spirit:library>
+  <spirit:name>MSS_WATCHDOG</spirit:name>
+  <spirit:version>1.0.100</spirit:version>
+  <spirit:busInterfaces>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+  </spirit:memoryMaps>
+  <spirit:hwModel>
+    <spirit:views>
+    </spirit:views>
+    <spirit:signals>
+      <spirit:signal>
+        <spirit:name>WD_TIMEOUT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:export spirit:configGroups="export" spirit:prompt="WD_TIMEOUT" spirit:resolve="user">true</spirit:export>
+        <spirit:vendorExtensions>
+          <actel-cc:used>
+            <actel-cc:logicEquation>
+              <actel-cc:logicTerm spirit:referenceId="WDOGTIMEOUT_USED" actel-cc:termValue="1"></actel-cc:logicTerm></actel-cc:logicEquation></actel-cc:used>
+          <actel-cc:description>WD_TIMEOUT</actel-cc:description></spirit:vendorExtensions>
+      </spirit:signal>
+    </spirit:signals>
+    <spirit:hwParameters>
+    </spirit:hwParameters>
+  <spirit:vendorExtensions>
+    <actel-cc:variantParameters>
+      <actel-cc:variantParameter spirit:id="FAMILY" spirit:name="FAMILY" spirit:prompt="FPGA Family:" spirit:dataType="int" actel-cc:choiceRef="Choice_FamilyValue" spirit:choiceStyle="combo" spirit:configGroups="globalConfig" spirit:resolve="user">19</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="PARAM_IS_FALSE" spirit:name="PARAM_IS_FALSE" spirit:prompt="" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:resolve="generated">0</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WDOG_MODE" spirit:name="WDOG_MODE" spirit:prompt="Timeout behavior" spirit:dataType="string" actel-cc:choiceRef="MODE_CHOICES" spirit:configGroups="1Cols:Timeout" spirit:resolve="user">MODE_RESET</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WDOG_LOAD" spirit:name="WDOG_LOAD" spirit:prompt="Refresh Count" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="1Cols:Loading and Refreshing" spirit:resolve="user">0x1800000</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WDOG_MVRP" spirit:name="WDOG_MVRP" spirit:prompt="Counter Threshold" actel-cc:choiceRef="" spirit:dataType="string" spirit:configGroups="1Cols:Loading and Refreshing" spirit:resolve="user">0xFFFFFFFF</actel-cc:variantParameter>
+      <actel-cc:variantParameter spirit:id="WDOGTIMEOUT_USED" spirit:name="WDOGTIMEOUT_USED" spirit:prompt="Expose WD_TIMEOUT port to Fabric" actel-cc:choiceRef="" spirit:dataType="boolean" spirit:configGroups="1Cols:Timeout" spirit:resolve="user">0</actel-cc:variantParameter>
+    </actel-cc:variantParameters>
+    <actel-cc:script>Tooltip('WDOG_LOAD', 'Refresh Count in multiples of 64 RCOSC clock ticks');\
+Tooltip('WDOG_MVRP', 'Counter Threshold in multiples of RCOSC clock ticks above which a refresh will result in reset/interrupt, and below which a refresh will not result in reset/interrupt');\
+Enable('WDOGTIMEOUT_USED', Eq(ValueOf('WDOG_MODE'), 'MODE_INTERRUPT'));\
+Set('WDOGTIMEOUT_USED', Eq(ValueOf('WDOG_MODE'), 'MODE_RESET'), '0');\
+Validate('Value must be an hexadecimal number of 26-bits', IsHexOfWidth('WDOG_LOAD', '26'));\
+Validate('Value must be an hexadecimal number of 32-bits', IsHexOfWidth('WDOG_MVRP', '32'));\
+</actel-cc:script></spirit:vendorExtensions>
+  </spirit:hwModel>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>Choice_FamilyValue</spirit:name>
+      <spirit:enumeration spirit:text="SmartFusion2">19</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>MODE_CHOICES</spirit:name>
+      <spirit:enumeration spirit:text="Reset">MODE_RESET</spirit:enumeration>
+      <spirit:enumeration spirit:text="Interrupt">MODE_INTERRUPT</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+  </spirit:fileSets>
+  <spirit:vendorExtensions>
+    <actel-cc:displayName>MSS_WATCHDOG</actel-cc:displayName>
+    <actel-cc:packageTimestamp>20130307092719</actel-cc:packageTimestamp>
+    <actel-cc:type typeName="IP"/>
+    <actel-cc:instantiateOnCreation value="false"/>
+    <actel-cc:categories categoryName="OS" style="hidden">
+      <actel-cc:category name="PC">
+      </actel-cc:category>
+      <actel-cc:category name="Linux">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="display" style="hidden">
+      <actel-cc:category name="hidden">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="min_libero_version" style="hidden">
+      <actel-cc:category name="11.0.0">
+      </actel-cc:category>
+    </actel-cc:categories>
+    <actel-cc:categories categoryName="Product Family" style="checkbox">
+      <actel-cc:category name="SmartFusion2">
+      </actel-cc:category>
+    </actel-cc:categories>
+  </spirit:vendorExtensions>
+</spirit:component>

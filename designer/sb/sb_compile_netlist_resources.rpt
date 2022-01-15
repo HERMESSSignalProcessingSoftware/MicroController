@@ -1,6 +1,6 @@
 Resource Report
-Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
-Date: Mon Dec 13 16:01:22 2021
+Microsemi Corporation - Microsemi Libero Software Release v2021.2 (Version 2021.2.0.11)
+Date: Thu Jan  6 15:08:27 2022
 
 Device Selection
 +--------------------------------+----------------+
@@ -20,11 +20,11 @@ Device Selection
 +--------------------------------+----------------+
 
 Source Files
-+---------+--------------------------------------------------------------------------+
-| Topcell | sb                                                                       |
-| Format  | Verilog                                                                  |
-| Source  | C:\Users\jl\source\repos\hermess\hermess-MicroController\synthesis\sb.vm |
-+---------+--------------------------------------------------------------------------+
++---------+-------------------------------------------------------+
+| Topcell | sb                                                    |
+| Format  | Verilog                                               |
+| Source  | C:\Users\RG\Documents\MicroController\synthesis\sb.vm |
++---------+-------------------------------------------------------+
 
 Options
 +----------------------------------------------------+-------+
@@ -37,7 +37,7 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 4528 | 12084 | 37.47      |
+| 4LUT                      | 4524 | 12084 | 37.44      |
 | DFF                       | 2894 | 12084 | 23.95      |
 | I/O Register              | 0    | 252   | 0.00       |
 | User I/O                  | 72   | 84    | 85.71      |
@@ -58,11 +58,11 @@ Detailed Logic Resource Usage
 +--------------------------+------+------+
 | Type                     | 4LUT | DFF  |
 +--------------------------+------+------+
-| Fabric Logic             | 4528 | 2894 |
+| Fabric Logic             | 4524 | 2894 |
 | RAM64x18 Interface Logic | 0    | 0    |
 | RAM1K18 Interface Logic  | 0    | 0    |
 | MACC Interface Logic     | 0    | 0    |
-| Total Used               | 4528 | 2894 |
+| Total Used               | 4524 | 2894 |
 +--------------------------+------+------+
 
 MSS Resource Usage

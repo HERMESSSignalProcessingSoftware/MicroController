@@ -1,0 +1,72 @@
+; ********************************************************************/
+; Actel Corporation Proprietary and Confidential
+; Copyright 2007 Actel Corporation. All rights reserved.
+;
+; ANY USE OR REDISTRIBUTION IN PART OR IN WHOLE MUST BE HANDLED IN
+; ACCORDANCE WITH THE ACTEL LICENSE AGREEMENT AND MUST BE APPROVED
+; IN ADVANCE IN WRITING.
+;
+; Filename: control_file_Microsemi_SgCore_1.icf
+;
+; Description: Microsemi SgCore supported device and OS platform
+; metadata control file. Supplements/overrides core specific device/OS
+; support metadata specified at packaging/CCZ creation time and contained
+; in the core's ECN'd IP-XACT SPIRIT description.
+;
+; *********************************************************************/
+
+Version 1.102
+Timestamp 202103242035
+
+;----------------------------------------------------------------------
+; "Global" device family support mappings
+;----------------------------------------------------------------------
+
+; Map IGLOO2 to SmartFusion2 to cater
+; for cores that do not support these explicitly because they were not
+; (re)packaged since these device families appeared. The relevant mappings
+; do not apply if (a) the core already declares explicit support for IGLOO2,
+; i.e. has the relevant FAMILY or
+; deviceFamily configuration option) or (b) the core does not have explicit
+; support for SmartFusion2 (i.e. a SmartFusion2 FAMILY or deviceFamily configuration
+; option) or (c) the core has other rules in this file which override this
+; mapping.
+
+VLNV Microsemi:SgCore:PFSOC_MSS:1.0.100
+min_libero_version 12.800.0
+max_libero_version 12.800.1
+
+;----------------------------------------------------------------------
+; Libero 12.4 cores
+;----------------------------------------------------------------------
+
+VLNV Microsemi:SgCore:PFSOC_MSS:2.0.100
+min_libero_version 12.900.0
+max_libero_version 12.900.0
+
+VLNV Microsemi:SgCore:PFSOC_INIT_MONITOR:1.0.101
+min_libero_version 12.900.0
+max_libero_version 12.900.19
+
+;----------------------------------------------------------------------
+; post-Libero 12.4 cores
+;----------------------------------------------------------------------
+
+VLNV Microsemi:SgCore:PFSOC_MSS:2.0.108
+min_libero_version 12.900.0
+max_libero_version 12.900.0
+
+;----------------------------------------------------------------------
+; Libero 12.6 cores
+;----------------------------------------------------------------------
+
+VLNV Microsemi:SgCore:PFSOC_INIT_MONITOR:1.0.204
+min_libero_version 12.900.20
+max_libero_version 12.900.20
+
+;----------------------------------------------------------------------
+; Libero 2021.1 cores
+;----------------------------------------------------------------------
+
+VLNV Microsemi:SgCore:PFSOC_INIT_MONITOR:1.0.205
+min_libero_version 2021.1.0

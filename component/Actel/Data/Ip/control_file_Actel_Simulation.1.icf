@@ -1,0 +1,47 @@
+; ********************************************************************/
+; Actel Corporation Proprietary and Confidential
+; Copyright 2007 Actel Corporation. All rights reserved.
+;
+; ANY USE OR REDISTRIBUTION IN PART OR IN WHOLE MUST BE HANDLED IN
+; ACCORDANCE WITH THE ACTEL LICENSE AGREEMENT AND MUST BE APPROVED
+; IN ADVANCE IN WRITING.
+;
+; Filename: control_file_Actel_SgCore_1.icf
+;
+; Description: Actel SgCore supported device and OS platform
+; metadata control file. Supplements/overrides core specific device/OS
+; support metadata specified at packaging/CCZ creation time and contained
+; in the core's ECN'd IP-XACT SPIRIT description.
+;
+; Revision Information:
+; Date Description
+;
+; Resolved SARs
+; SAR Date Who Description
+;
+; *********************************************************************/
+
+Version 1.101
+Timestamp 201506051900
+
+;----------------------------------------------------------------------
+; "Global" device family support mappings
+;----------------------------------------------------------------------
+
+; Map IGLOO2 to SmartFusion2 to cater
+; for cores that do not support these explicitly because they were not
+; (re)packaged since these device families appeared. The relevant mappings
+; do not apply if (a) the core already declares explicit support for IGLOO2,
+; i.e. has the relevant FAMILY or
+; deviceFamily configuration option) or (b) the core does not have explicit
+; support for SmartFusion2 (i.e. a SmartFusion2 FAMILY or deviceFamily configuration
+; option) or (c) the core has other rules in this file which override this
+; mapping.
+
+VLNV Actel:Simulation:SimDRAM:1.*
+map PA4:IGLOO2 => PA4:SmartFusion2
+map PA4:RTG4   => PA4:SmartFusion2
+map PA4:PA4RT  => PA4:SmartFusion2
+
+VLNV Actel:Simulation:SimDRAM:1.0.100
+max_libero_version 11.5.7
