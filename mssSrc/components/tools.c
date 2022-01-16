@@ -12,6 +12,7 @@ static volatile uint32_t delayCounter = 0;
 
 static volatile uint32_t heartbeatCounter = 0;
 static volatile uint32_t heartbeatValue = 0;
+static volatile uint32_t telemetryGapCounter = 0;
 
 void Timer1_IRQHandler () {
     if ((--delayCounter) < 1)
@@ -23,6 +24,14 @@ void Timer2_IRQHandler() {
     if ((--heartbeatCounter) == 0) {
         mssSignals |= TIM2_HEARTBEAT_SIGNAL;
         heartbeatCounter = heartbeatValue;
+    }
+    if (mssSignals & (SIGNAL_TM_GAP)) {
+        if (telemetryGapCounter > 2) {
+            mssSignals &= ~(SIGNAL_TM_GAP);
+            telemetryGapCounter = 0;
+        } else {
+            telemetryGapCounter++;
+        }
     }
     MSS_TIM2_clear_irq();
 }

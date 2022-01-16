@@ -27,6 +27,7 @@ extern "C" {
 #define MSS_SIGNAL_UPDATE_META      (1 << 2)
 /*Living indicator*/
 #define TIM2_HEARTBEAT_SIGNAL       (1 << 3)
+#define SIGNAL_TM_GAP               (1 << 4)
 /*RXSM signals
  * do not change shifting, it will be ored with  the status reg of the synchronizer
  * */

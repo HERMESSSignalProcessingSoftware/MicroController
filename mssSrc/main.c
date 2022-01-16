@@ -41,6 +41,7 @@ uint32_t mssSignals = 0;
  * */
 int main (void) {
     uint32_t telemetryCounter = 0;
+    uint32_t telemetryByteCounter = 0;
     uint8_t *telemetryFramePtr = (uint8_t*)(&telemetryFrame);
     uint32_t memSyncHeartbeatValue = 1;
     // Initialize driver components
@@ -215,15 +216,23 @@ int main (void) {
         }
 
         if (mssSignals & MSS_SIGNAL_TELEMETRY) {
-            uint8_t *localPtr = (uint8_t*)&telemetryFrame;
-            while((mssSignals & MSS_SIGNAL_SPI_WRITE) == 0 && ((telemetryCounter) <= (FRAMESIZE - 1))) {
-                uint8_t value = localPtr[telemetryCounter++];
-                TransmitByte(value);
+            if ((mssSignals & SIGNAL_TM_GAP) == 0) {
+                uint8_t *localPtr = (uint8_t*)&telemetryFrame;
+                while((mssSignals & MSS_SIGNAL_SPI_WRITE) == 0 && (telemetryCounter++ < 24)) {
+                    uint8_t value = localPtr[telemetryByteCounter++];
+                    TransmitByte(value);
+                }
+                //Check whether the counter or the signal was the reason to leave the loop
+                if (telemetryCounter >= 24) {
+                    telemetryCounter = 0;
+                    mssSignals |= SIGNAL_TM_GAP;
+                }
             }
-            if (telemetryCounter >= (FRAMESIZE - 1)) {
+            if (telemetryByteCounter >= (FRAMESIZE - 1)) {
                 SetMemory((uint8_t*)&telemetryFrame, 0, sizeof(Telemmetry_t));
                 mssSignals &= ~(MSS_SIGNAL_TELEMETRY);
                 telemetryCounter = 0;
+                telemetryByteCounter = 0;
             }
         }
 //
@@ -334,6 +343,3 @@ void GPIO_HANDLER(IN_RXSM_SOE) (void) {
 void NMI_Handler (void) {
     MSS_WD_clear_timeout_irq();
 }
-
-
-
