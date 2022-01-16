@@ -19,6 +19,7 @@ DatasetList_t * CreateList(uint8_t *rawDataPtr) {
         if (*rawData32bitPtr == 0xFFFFFFFF) {
             return NULL; // Not valid
         } else {
+            /*Look at the documentation of the memory frame its 0x7f ... timestamp, stamps.. statusreg1 / 2 .. next */
             head = (DatasetList_t*)malloc(sizeof(DatasetList_t));
             memset(head, 0, sizeof(DatasetList_t));
             tail = head;
@@ -120,7 +121,7 @@ int main(int argc, char ** arcv) {
         size_t size = ftell(inputFilePtr);
         uint32_t pages = size / 512;
         printf("%li bytes = %.1f pages.\n", size, (double)size / 512.0);
-        fseek(inputFilePtr, 0, SEEK_SET);
+        fseek(inputFilePtr, 1024, SEEK_SET);
         //while(!feof(inputFilePtr)) {
             fread(readingBuffer, 512, 1, inputFilePtr);
             start = CreateList(readingBuffer);
