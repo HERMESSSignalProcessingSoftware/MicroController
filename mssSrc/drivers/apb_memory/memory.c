@@ -489,7 +489,9 @@ uint32_t CopyDataFabricToMaster(uint8_t *puffer, Telemmetry_t *telFrame, uint32_
     uint32_t SR1 = HW_get_32bit_reg(MEMORY_REG(SynchStatusReg));
     uint32_t local = 0;
     uint32_t *telFramePtr = (uint32_t*)(telFrame);
+    uint32_t telFrameFree = (telFrame->timestamp == 0x0);
     SR1 |= SRlocals;
+
     if (puffer) {
         uint32_t *ptr32 = (uint32_t*) puffer;
         if (MemoryPtrWatermark32Bit == 0) {
@@ -502,21 +504,26 @@ uint32_t CopyDataFabricToMaster(uint8_t *puffer, Telemmetry_t *telFrame, uint32_
         }
         local = HW_get_32bit_reg(MEMORY_REG(TimeStampReg));
         ptr32[MemoryPtrWatermark32Bit++] = local;
-        telFrame->timestamp = local;
-        telFramePtr++;
+        if (telFrameFree) {
+            telFrame->timestamp = local;
+            telFramePtr++;
+        }
         /*Copy all the data */
         for (int i = LOWESTSTAMP; i <= HIGHESTSTAMP; i += 4) {
             local = HW_get_32bit_reg(MEMORY_REG(i));
-            *(telFramePtr++) = local;
+            if (telFrameFree)
+                *(telFramePtr++) = local;
             ptr32[MemoryPtrWatermark32Bit++] = local;
             HW_set_32bit_reg(MEMORY_REG(i), 0x0); //Reset the stamp shadow registers
         }
         /* Add status registers */
         ptr32[MemoryPtrWatermark32Bit++] = SR1;
-        telFrame->statusReg1 = SR1;
+        if (telFrameFree)
+            telFrame->statusReg1 = SR1;
         local = HW_get_32bit_reg(MEMORY_REG(SynchStatusReg2));
         ptr32[MemoryPtrWatermark32Bit++] = local;
-        telFrame->statusReg2 = local;
+        if (telFrameFree)
+            telFrame->statusReg2 = local;
         /* Reset TimeStampReg, SR2, SR1 values */
         HW_set_32bit_reg(MEMORY_REG(TimeStampReg), 0x0);
         HW_set_32bit_reg(MEMORY_REG(SynchStatusReg2), 0x0);

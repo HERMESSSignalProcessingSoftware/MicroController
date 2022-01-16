@@ -215,11 +215,12 @@ int main (void) {
         }
 
         if (mssSignals & MSS_SIGNAL_TELEMETRY) {
-            while(mssSignals != MSS_SIGNAL_SPI_WRITE && ((telemetryCounter++) <= (FRAMESIZE - 1))) {
-                TransmitByte(*(telemetryFramePtr++));
+            uint8_t *localPtr = (uint8_t*)&telemetryFrame;
+            while((mssSignals & MSS_SIGNAL_SPI_WRITE) == 0 && ((telemetryCounter) <= (FRAMESIZE - 1))) {
+                uint8_t value = localPtr[telemetryCounter++];
+                TransmitByte(value);
             }
             if (telemetryCounter >= (FRAMESIZE - 1)) {
-                telemetryFramePtr = (uint8_t*)(&telemetryFrame);
                 SetMemory((uint8_t*)&telemetryFrame, 0, sizeof(Telemmetry_t));
                 mssSignals &= ~(MSS_SIGNAL_TELEMETRY);
                 telemetryCounter = 0;
@@ -265,10 +266,12 @@ void FabricIrq0_IRQHandler(void) {
             mssSignals |= MSS_SIGNAL_SPI_WRITE;
             MemoryPtrWatermark32Bit = 0; /* ! Reset the watermark to prevent a buffer overflow */
 
-        } else if (MemoryInterruptCounter % 40 == 0) {
+        }
+        if (MemoryInterruptCounter % 40 == 0) {
             mssSignals |= MSS_SIGNAL_TELEMETRY;
 
-        } else if (MemoryInterruptCounter >= 1000) {
+        }
+        if (MemoryInterruptCounter >= 1000) {
             mssSignals |= MSS_SIGNAL_UPDATE_META;
             MemoryInterruptCounter = 1;
         }
