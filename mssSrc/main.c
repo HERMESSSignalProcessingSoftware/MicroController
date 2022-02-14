@@ -113,6 +113,8 @@ int main (void) {
     metaDevice.spihandle = &g_mss_spi0;
 
     InitHeartbeat(1000); //heartbeat at 1s
+    telemetryFrame.statusReg1 = 0x0;
+    telemetryFrame.statusReg2 = 0x8000000;
     spuLog("Init DONE!\n");
     MSS_GPIO_set_output(LED_HEARTBEAT_MEMSYNC, 0);
     for (;;) {
@@ -215,7 +217,7 @@ int main (void) {
             MemoryDatasetCounter++;
         }
 
-        if (mssSignals & MSS_SIGNAL_TELEMETRY) {
+        //if (mssSignals & MSS_SIGNAL_TELEMETRY) {
             if ((mssSignals & SIGNAL_TM_GAP) == 0) {
                 uint8_t *localPtr = (uint8_t*)&telemetryFrame;
                 while((mssSignals & MSS_SIGNAL_SPI_WRITE) == 0 && (telemetryCounter++ < 24)) {
@@ -234,7 +236,7 @@ int main (void) {
                 telemetryCounter = 0;
                 telemetryByteCounter = 0;
             }
-        }
+        //}
 //
         // do nothing but toggle an led once in a while
         if (mssSignals & TIM2_HEARTBEAT_SIGNAL) {

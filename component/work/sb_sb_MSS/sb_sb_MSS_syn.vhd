@@ -1166,9 +1166,9 @@ architecture DEF_ARCH of MSS_010 is
    attribute syn_tco152: string;
    attribute syn_tco152 of DEF_ARCH : architecture is " CLK_BASE->MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT = 3.252";
    attribute syn_tco153: string;
-   attribute syn_tco153 of DEF_ARCH : architecture is " CLK_BASE->MMUART1_TXD_MGPIO24B_H2F_A = 3.711";
+   attribute syn_tco153 of DEF_ARCH : architecture is " CLK_BASE->MMUART1_TXD_MGPIO24B_H2F_A = 3.237";
    attribute syn_tco154: string;
-   attribute syn_tco154 of DEF_ARCH : architecture is " CLK_BASE->MMUART1_TXD_MGPIO24B_H2F_B = 3.717";
+   attribute syn_tco154 of DEF_ARCH : architecture is " CLK_BASE->MMUART1_TXD_MGPIO24B_H2F_B = 3.261";
    attribute syn_tco155: string;
    attribute syn_tco155 of DEF_ARCH : architecture is " CLK_BASE->MMUART1_TXD_USBC_DATA2_MGPIO24B_OE = 3.839";
    attribute syn_tco156: string;

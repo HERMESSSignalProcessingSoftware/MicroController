@@ -1,3 +1,3 @@
-project -load "C:/Users/RG/Documents/MicroController/synthesis/sb_syn.prj"
+project -load "B:/HERMESS_SPSoftware/Microcontroller/synthesis/sb_syn.prj"
 project -run
 project -save

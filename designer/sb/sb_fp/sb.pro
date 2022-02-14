@@ -1,6 +1,6 @@
 <project name="sb" version="1.2">
     <ProjectDirectory>
-        C:\Users\RG\Documents\MicroController\designer\sb\sb_fp
+        B:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb_fp
     </ProjectDirectory>
     <View>
         ChainView
@@ -9,7 +9,7 @@
         M2S010
     </LiberoTargetDevice>
     <LogFile>
-        C:\Users\RG\Documents\MicroController\designer\sb\sb_fp\sb.log
+        B:\HERMESS_SPSoftware\Microcontroller\designer\sb\sb_fp\sb.log
     </LogFile>
     <SerializationOption>
         Skip
@@ -17,7 +17,7 @@
     <ProgrammingInterface>
         JTAGMode
     </ProgrammingInterface>
-    <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="usb1.1">
+    <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="UndefConn">
         <name>
             E2005KXNA3
         </name>

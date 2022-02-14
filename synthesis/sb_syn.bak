@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
-#--  Version Q-2020.03M-SP1
+#--  Version R-2021.03M
 #--  Project file C:\Users\RG\Documents\MicroController\synthesis\sb_syn.prj
-#--  Written on Mon Dec 13 16:01:14 2021
+#--  Written on Thu Jan  6 15:08:18 2022
 
 
 #project files
@@ -49,6 +49,7 @@ set_option -srs_instrumentation 1
 
 # mapper_options
 set_option -write_verilog 0
+set_option -write_structural_verilog 0
 set_option -write_vhdl 0
 
 # actel_options
@@ -75,6 +76,7 @@ set_option -ternary_adder_decomp 66
 set_option -pack_uram_addr_reg 1
 
 # Microchip SmartFusion2
+set_option -report_preserve_cdc 1
 set_option -min_cdc_sync_flops 2
 set_option -unsafe_cdc_netlist_property 0
 

@@ -1,6 +1,6 @@
 Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)
 Microsemi Corporation - Microsemi Libero Software Release v2021.2 (Version 2021.2.0.11)
-Date: Thu Jan  6 16:00:09 2022
+Date: Mon Feb 14 21:55:25 2022
 
 sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 +-------------------+--------------------+---------------+-------+
@@ -21,9 +21,9 @@ sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 | FCCC_GPMUX3_CR    | SEL_GPMUX3[4:0]    | INIT[81:77]   | 5'h18 |
 | FCCC_NGMUX0_CR0   | SELGL[4:0]         | INIT[86:82]   | 5'h18 |
 | FCCC_NGMUX0_CR1   | SELGL[9:5]         | INIT[91:87]   | 5'h18 |
-| FCCC_NGMUX1_CR0   | SELGL[14:10]       | INIT[96:92]   | 5'h18 |
+| FCCC_NGMUX1_CR0   | SELGL[14:10]       | INIT[96:92]   | 5'h7  |
 | FCCC_NGMUX1_CR1   | SELGL[19:15]       | INIT[101:97]  | 5'h18 |
-| FCCC_NGMUX2_CR0   | SELGL[24:20]       | INIT[106:102] | 5'h7  |
+| FCCC_NGMUX2_CR0   | SELGL[24:20]       | INIT[106:102] | 5'h18 |
 | FCCC_NGMUX2_CR1   | SELGL[29:25]       | INIT[111:107] | 5'h18 |
 | FCCC_NGMUX3_CR0   | SELGL[34:30]       | INIT[116:112] | 5'h18 |
 | FCCC_NGMUX3_CR1   | SELGL[39:35]       | INIT[121:117] | 5'h18 |
@@ -207,7 +207,7 @@ sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | SOFTRESET               | PDMA_SOFTRESET              | INIT[355:355]   | 1'h0         | INIT[23]  | 1             |
 | SOFTRESET               | TIMER_SOFTRESET             | INIT[356:356]   | 1'h0         | INIT[24]  | 1             |
 | SOFTRESET               | MMUART0_SOFTRESET           | INIT[357:357]   | 1'h0         | INIT[25]  | 1             |
-| SOFTRESET               | MMUART1_SOFTRESET           | INIT[358:358]   | 1'h0         | INIT[26]  | 1             |
+| SOFTRESET               | MMUART1_SOFTRESET           | INIT[358:358]   | 1'h1         | INIT[26]  | 1             |
 | SOFTRESET               | G4SPI0_SOFTRESET            | INIT[359:359]   | 1'h0         | INIT[27]  | 1             |
 | SOFTRESET               | G4SPI1_SOFTRESET            | INIT[360:360]   | 1'h1         | INIT[28]  | 1             |
 | SOFTRESET               | I2C0_SOFTRESET              | INIT[361:361]   | 1'h1         | INIT[29]  | 1             |
@@ -762,8 +762,8 @@ sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | IOMUXCELL_41_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1287:1287] | 1'h0         | INIT[131] | 1             |
 | IOMUXCELL_42_CONFIG     | MSS_IOMUXSEL0               | INIT[1288:1288] | 1'h0         | INIT[132] | 1             |
 | IOMUXCELL_42_CONFIG     | MSS_IOMUXSEL1               | INIT[1289:1289] | 1'h0         | INIT[132] | 1             |
-| IOMUXCELL_42_CONFIG     | MSS_IOMUXSEL2               | INIT[1290:1290] | 1'h1         | INIT[132] | 1             |
-| IOMUXCELL_42_CONFIG     | MSS_IOMUXSEL3               | INIT[1291:1291] | 1'h1         | INIT[132] | 1             |
+| IOMUXCELL_42_CONFIG     | MSS_IOMUXSEL2               | INIT[1290:1290] | 1'h0         | INIT[132] | 1             |
+| IOMUXCELL_42_CONFIG     | MSS_IOMUXSEL3               | INIT[1291:1291] | 1'h0         | INIT[132] | 1             |
 | IOMUXCELL_42_CONFIG     | MSS_IOMUXSEL4UPPER          | INIT[1292:1292] | 1'h0         | INIT[132] | 1             |
 | IOMUXCELL_42_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1293:1293] | 1'h0         | INIT[132] | 1             |
 | IOMUXCELL_42_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1294:1294] | 1'h0         | INIT[132] | 1             |

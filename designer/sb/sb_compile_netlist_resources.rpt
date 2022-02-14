@@ -1,6 +1,6 @@
 Resource Report
 Microsemi Corporation - Microsemi Libero Software Release v2021.2 (Version 2021.2.0.11)
-Date: Thu Jan  6 15:08:27 2022
+Date: Mon Feb 14 21:52:17 2022
 
 Device Selection
 +--------------------------------+----------------+
@@ -23,7 +23,7 @@ Source Files
 +---------+-------------------------------------------------------+
 | Topcell | sb                                                    |
 | Format  | Verilog                                               |
-| Source  | C:\Users\RG\Documents\MicroController\synthesis\sb.vm |
+| Source  | B:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.vm |
 +---------+-------------------------------------------------------+
 
 Options
@@ -37,8 +37,8 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 4524 | 12084 | 37.44      |
-| DFF                       | 2894 | 12084 | 23.95      |
+| 4LUT                      | 6816 | 12084 | 56.41      |
+| DFF                       | 4290 | 12084 | 35.50      |
 | I/O Register              | 0    | 252   | 0.00       |
 | User I/O                  | 72   | 84    | 85.71      |
 | -- Single-ended I/O       | 72   | 84    | 85.71      |
@@ -58,11 +58,11 @@ Detailed Logic Resource Usage
 +--------------------------+------+------+
 | Type                     | 4LUT | DFF  |
 +--------------------------+------+------+
-| Fabric Logic             | 4524 | 2894 |
+| Fabric Logic             | 6816 | 4290 |
 | RAM64x18 Interface Logic | 0    | 0    |
 | RAM1K18 Interface Logic  | 0    | 0    |
 | MACC Interface Logic     | 0    | 0    |
-| Total Used               | 4524 | 2894 |
+| Total Used               | 6816 | 4290 |
 +--------------------------+------+------+
 
 MSS Resource Usage
@@ -76,7 +76,7 @@ MSS Resource Usage
 | CAN           | 0    | 1     |
 | SPI           | 1    | 2     |
 | I2C           | 0    | 2     |
-| UART          | 2    | 2     |
+| UART          | 1    | 2     |
 | USB           | 0    | 1     |
 | MAC           | 0    | 1     |
 | MDDR          | 0    | 1     |
@@ -89,17 +89,17 @@ MSS Resource Usage
 Detailed Carry Chains Resource Usage
 +--------+------+
 | Length | Used |
-| 2      | 33   |
-| 6      | 9    |
-| 7      | 9    |
+| 2      | 360  |
+| 5      | 66   |
+| 6      | 12   |
+| 7      | 6    |
 | 12     | 6    |
-| 16     | 1    |
-| 17     | 1    |
+| 17     | 3    |
 | 28     | 6    |
 | 31     | 2    |
-| 32     | 11   |
-| 33     | 1    |
-| Total  | 79   |
+| 32     | 15   |
+| 33     | 6    |
+| Total  | 482  |
 +--------+------+
 
 I/O Function
@@ -121,16 +121,16 @@ I/O Technology
 +--------------+--------+------+-------+--------+---------------+
 
 Nets assigned to chip global resources
-+--------+---------+-----------------------------------------------------------------+
-| Fanout | Type    | Name                                                            |
-+--------+---------+-----------------------------------------------------------------+
-| 2833   | INT_NET | Net   : sb_sb_0_FIC_0_CLK                                       |
-|        |         | Driver: sb_sb_0/CCC_0/GL0_INST/U0_RGB1                          |
-|        |         | Source: NETLIST                                                 |
-| 1668   | INT_NET | Net   : AND2_0_Y_arst                                           |
-|        |         | Driver: MemorySynchronizer_0/un120_in_enable_0_I_1_1618/U0_RGB1 |
-|        |         | Source: NETLIST                                                 |
-+--------+---------+-----------------------------------------------------------------+
++--------+---------+----------------------------------------+
+| Fanout | Type    | Name                                   |
++--------+---------+----------------------------------------+
+| 4229   | INT_NET | Net   : sb_sb_0_FIC_0_CLK              |
+|        |         | Driver: sb_sb_0/CCC_0/GL0_INST/U0_RGB1 |
+|        |         | Source: NETLIST                        |
+| 3056   | INT_NET | Net   : AND2_0_Y_arst                  |
+|        |         | Driver: AND2_0_RNIKOS1/U0_RGB1         |
+|        |         | Source: NETLIST                        |
++--------+---------+----------------------------------------+
 
 Nets assigned to row global resources
 +--------+------+------+
@@ -139,54 +139,54 @@ Nets assigned to row global resources
 +--------+------+------+
 
 High fanout nets
-+--------+---------+-----------------------------------------------------------------+
-| Fanout | Type    | Name                                                            |
-+--------+---------+-----------------------------------------------------------------+
-| 402    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                                  |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                      |
-| 252    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                                  |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                      |
-| 222    | INT_NET | Net   : AND2_0_Y                                                |
-|        |         | Driver: AND2_0                                                  |
-| 130    | INT_NET | Net   : sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_Z[1]          |
-|        |         | Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS[1]            |
-| 115    | INT_NET | Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_Z    |
-|        |         | Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa      |
-| 100    | INT_NET | Net   : sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_Z[2]          |
-|        |         | Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS[2]            |
-| 96     | INT_NET | Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa        |
-|        |         | Driver: MemorySynchronizer_0/stamp1shadowreg147_0_a2_0_RNIQ5T92 |
-| 73     | INT_NET | Net   : STAMP_2/component_state_0[5]                            |
-|        |         | Driver: STAMP_2/component_state[5]                              |
-| 73     | INT_NET | Net   : STAMP_6/component_state_4[5]                            |
-|        |         | Driver: STAMP_6/component_state[5]                              |
-| 73     | INT_NET | Net   : STAMP_3/component_state_1[5]                            |
-|        |         | Driver: STAMP_3/component_state[5]                              |
-+--------+---------+-----------------------------------------------------------------+
++--------+---------+-----------------------------------------------------------+
+| Fanout | Type    | Name                                                      |
++--------+---------+-----------------------------------------------------------+
+| 433    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[4]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 395    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 326    | INT_NET | Net   : telemetry_0/row_2_Z[2]                            |
+|        |         | Driver: telemetry_0/row_2[2]                              |
+| 291    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[2]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 239    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 231    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[3]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 223    | INT_NET | Net   : AND2_0_Y                                          |
+|        |         | Driver: AND2_0                                            |
+| 183    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[6]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 165    | INT_NET | Net   : telemetry_0/row_2_Z[1]                            |
+|        |         | Driver: telemetry_0/row_2[1]                              |
+| 135    | INT_NET | Net   : sb_sb_0/CoreAPB3_0/PSELSBUS[2]                    |
+|        |         | Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_0_a2[2] |
++--------+---------+-----------------------------------------------------------+
 
 High fanout nets (through buffer trees)
-+--------+---------+-----------------------------------------------------------------+
-| Fanout | Type    | Name                                                            |
-+--------+---------+-----------------------------------------------------------------+
-| 402    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                                  |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                      |
-| 252    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                                  |
-|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                      |
-| 222    | INT_NET | Net   : AND2_0_Y                                                |
-|        |         | Driver: AND2_0                                                  |
-| 130    | INT_NET | Net   : sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_Z[1]          |
-|        |         | Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS[1]            |
-| 115    | INT_NET | Net   : MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa_Z    |
-|        |         | Driver: MemorySynchronizer_0/WaitingTimerValueReg_1_sqmuxa      |
-| 100    | INT_NET | Net   : sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_Z[2]          |
-|        |         | Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS[2]            |
-| 96     | INT_NET | Net   : MemorySynchronizer_0/ResetTimerValueReg_1_sqmuxa        |
-|        |         | Driver: MemorySynchronizer_0/stamp1shadowreg147_0_a2_0_RNIQ5T92 |
-| 73     | INT_NET | Net   : STAMP_2/component_state_0[5]                            |
-|        |         | Driver: STAMP_2/component_state[5]                              |
-| 73     | INT_NET | Net   : STAMP_6/component_state_4[5]                            |
-|        |         | Driver: STAMP_6/component_state[5]                              |
-| 73     | INT_NET | Net   : STAMP_3/component_state_1[5]                            |
-|        |         | Driver: STAMP_3/component_state[5]                              |
-+--------+---------+-----------------------------------------------------------------+
++--------+---------+-----------------------------------------------------------+
+| Fanout | Type    | Name                                                      |
++--------+---------+-----------------------------------------------------------+
+| 433    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[4]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 395    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[8]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 326    | INT_NET | Net   : telemetry_0/row_2_Z[2]                            |
+|        |         | Driver: telemetry_0/row_2[2]                              |
+| 291    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[2]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 239    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[9]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 231    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[3]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 223    | INT_NET | Net   : AND2_0_Y                                          |
+|        |         | Driver: AND2_0                                            |
+| 183    | INT_NET | Net   : sb_sb_0_STAMP_PADDR[6]                            |
+|        |         | Driver: sb_sb_0/sb_sb_MSS_0/MSS_ADLIB_INST                |
+| 165    | INT_NET | Net   : telemetry_0/row_2_Z[1]                            |
+|        |         | Driver: telemetry_0/row_2[1]                              |
+| 135    | INT_NET | Net   : sb_sb_0/CoreAPB3_0/PSELSBUS[2]                    |
+|        |         | Driver: sb_sb_0/CoreAPB3_0/u_mux_p_to_b3/PSELSBUS_0_a2[2] |
++--------+---------+-----------------------------------------------------------+
 

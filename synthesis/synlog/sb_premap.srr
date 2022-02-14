@@ -1,4 +1,4 @@
-# Thu Jan  6 15:07:44 2022
+# Mon Feb 14 21:51:20 2022
 
 
 Copyright (C) 1994-2021 Synopsys, Inc.
@@ -11,7 +11,7 @@ Build: R-2021.03M
 Install: C:\Microsemi\Libero_SoC_v2021.2\SynplifyPro
 OS: Windows 6.2
 
-Hostname: DESKTOP-JON32I6
+Hostname: DESKTOP-NH8R733
 
 Implementation : synthesis
 Synopsys Generic Technology Pre-mapping, Version map202103act, Build 060R, Built Jun 17 2021 11:00:42, @
@@ -20,123 +20,131 @@ Synopsys Generic Technology Pre-mapping, Version map202103act, Build 060R, Built
 Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 119MB peak: 119MB)
 
 
-Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 126MB peak: 131MB)
+Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 125MB peak: 131MB)
 
-Reading constraint file: C:\Users\RG\Documents\MicroController\designer\sb\synthesis.fdc
-@L: C:\Users\RG\Documents\MicroController\synthesis\sb_scck.rpt 
-See clock summary report "C:\Users\RG\Documents\MicroController\synthesis\sb_scck.rpt"
+Reading constraint file: B:\HERMESS_SPSoftware\Microcontroller\designer\sb\synthesis.fdc
+@L: B:\HERMESS_SPSoftware\Microcontroller\synthesis\sb_scck.rpt 
+See clock summary report "B:\HERMESS_SPSoftware\Microcontroller\synthesis\sb_scck.rpt"
 @N: MF916 |Option synthesis_strategy=base is enabled. 
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 137MB peak: 137MB)
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 139MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 137MB peak: 137MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 139MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 138MB)
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 141MB peak: 141MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 140MB)
+Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 142MB peak: 143MB)
 
-@W: BN132 :"c:\users\rg\documents\microcontroller\hdl\timestamp.vhd":46:8:46:9|Removing sequential instance MemorySynchronizer_0.TimeStampGen.timestamp[31:0] because it is equivalent to instance MemorySynchronizer_0.TimeStampGen.counter[31:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sb_sb_0.CORERESETP_0.MDDR_DDR_AXI_S_CORE_RESET_N_int because it is equivalent to instance sb_sb_0.CORERESETP_0.FDDR_CORE_RESET_N_int. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q1 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q1 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q1 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q1 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_1.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_2.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_3.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_4.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_5.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_6.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":781:8:781:9|Sequential instance sb_sb_0.CORERESETP_0.sm1_areset_n_q1 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q2 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q2 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q2 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q2 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":781:8:781:9|Sequential instance sb_sb_0.CORERESETP_0.sm1_areset_n_clk_base is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q3 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q3 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q3 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q3 is reduced to a combinational gate by constant propagation.
-@W: MO129 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1331:8:1331:9|Sequential instance sb_sb_0.CORERESETP_0.RESET_N_F2M_int is reduced to a combinational gate by constant propagation.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance DDR_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_RELEASED_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance FDDR_CORE_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance SDIF0_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance SDIF0_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Removing sequential instance SDIF1_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Removing sequential instance SDIF1_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance SDIF2_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance SDIF2_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Removing sequential instance SynchronizerInterrupt (in view: work.MemorySynchronizer(arch)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Removing sequential instance ADCResync (in view: work.MemorySynchronizer(arch)) of type view:PrimLib.dffse(prim) because it does not drive other instances.
-@N: BN115 :"c:\users\rg\documents\microcontroller\component\work\sb_sb\sb_sb.vhd":728:0:728:11|Removing instance CORERESETP_0 (in view: work.sb_sb(rtl)) of type view:work.CoreResetP(rtl) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance INIT_DONE_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance sdif0_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Removing sequential instance sdif1_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance sdif2_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance sdif3_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sm0_state[0:6] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":922:8:922:9|Removing sequential instance CONFIG2_DONE_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":803:8:803:9|Removing sequential instance sdif0_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":814:8:814:9|Removing sequential instance sdif1_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":825:8:825:9|Removing sequential instance sdif2_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":836:8:836:9|Removing sequential instance sdif3_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Removing sequential instance sdif3_spll_lock_q2 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":908:8:908:9|Removing sequential instance CONFIG1_DONE_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif3_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif2_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif1_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":922:8:922:9|Removing sequential instance CONFIG2_DONE_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":803:8:803:9|Removing sequential instance sdif0_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":814:8:814:9|Removing sequential instance sdif1_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":825:8:825:9|Removing sequential instance sdif2_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":836:8:836:9|Removing sequential instance sdif3_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Removing sequential instance sdif3_spll_lock_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":908:8:908:9|Removing sequential instance CONFIG1_DONE_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif0_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance ddr_settled_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif3_core_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif2_core_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif1_core_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif0_core_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance ddr_settled_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1495:8:1495:9|Removing sequential instance release_sdif3_core (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1471:8:1471:9|Removing sequential instance release_sdif2_core (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1447:8:1447:9|Removing sequential instance release_sdif1_core (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1423:8:1423:9|Removing sequential instance release_sdif0_core (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1519:8:1519:9|Removing sequential instance ddr_settled (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":770:8:770:9|Removing sequential instance sm0_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":894:8:894:9|Removing sequential instance sdif3_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":883:8:883:9|Removing sequential instance sdif2_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":872:8:872:9|Removing sequential instance sdif1_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":861:8:861:9|Removing sequential instance sdif0_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":770:8:770:9|Removing sequential instance sm0_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":850:8:850:9|Removing sequential instance sm0_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":894:8:894:9|Removing sequential instance sdif3_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":883:8:883:9|Removing sequential instance sdif2_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":872:8:872:9|Removing sequential instance sdif1_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":861:8:861:9|Removing sequential instance sdif0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":850:8:850:9|Removing sequential instance sm0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":608:8:608:9|Removing sequential instance MSS_HPMS_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":593:8:593:9|Removing sequential instance mss_ready_select (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":593:8:593:9|Removing sequential instance mss_ready_state (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":577:8:577:9|Removing sequential instance FIC_2_APB_M_PRESET_N_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":565:8:565:9|Removing sequential instance RESET_N_M2F_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":577:8:577:9|Removing sequential instance FIC_2_APB_M_PRESET_N_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":565:8:565:9|Removing sequential instance RESET_N_M2F_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":553:8:553:9|Removing sequential instance POWER_ON_RESET_N_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":553:8:553:9|Removing sequential instance POWER_ON_RESET_N_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@W: BN132 :"b:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Removing sequential instance MemorySynchronizer_0.TimeStampGen.timestamp[31:0] because it is equivalent to instance MemorySynchronizer_0.TimeStampGen.counter[31:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sb_sb_0.CORERESETP_0.MDDR_DDR_AXI_S_CORE_RESET_N_int because it is equivalent to instance sb_sb_0.CORERESETP_0.FDDR_CORE_RESET_N_int. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: FX1172 :"b:\hermess_spsoftware\microcontroller\hdl\uart_tx.vhd":49:0:49:1|User-specified initial value defined for instance telemetry_0.c_TX.count_8[2:0] is being ignored due to limitations in architecture. 
+@W: FX1172 :"b:\hermess_spsoftware\microcontroller\hdl\uart_tx.vhd":49:0:49:1|User-specified initial value defined for instance telemetry_0.c_TX.TX_end is being ignored due to limitations in architecture. 
+@W: FX1172 :"b:\hermess_spsoftware\microcontroller\hdl\uart_tx.vhd":49:0:49:1|User-specified initial value defined for instance telemetry_0.c_TX.TX_active is being ignored due to limitations in architecture. 
+@W: FX1172 :"b:\hermess_spsoftware\microcontroller\hdl\uart_tx.vhd":49:0:49:1|User-specified initial value defined for instance telemetry_0.c_TX.TX_out is being ignored due to limitations in architecture. 
+@W: FX1172 :"b:\hermess_spsoftware\microcontroller\hdl\uart_tx.vhd":49:0:49:1|User-specified initial value defined for instance telemetry_0.c_TX.TX_in[7:0] is being ignored due to limitations in architecture. 
+@W: FX1172 :"b:\hermess_spsoftware\microcontroller\hdl\uart_rx.vhd":41:0:41:1|User-specified initial value defined for instance telemetry_0.c_RX.RX_end is being ignored due to limitations in architecture. 
+@W: FX1172 :"b:\hermess_spsoftware\microcontroller\hdl\uart_rx.vhd":41:0:41:1|User-specified initial value defined for instance telemetry_0.c_RX.count_8[2:0] is being ignored due to limitations in architecture. 
+@W: FX1172 :"b:\hermess_spsoftware\microcontroller\hdl\uart_rx.vhd":41:0:41:1|User-specified initial value defined for instance telemetry_0.c_RX.RX_out[7:0] is being ignored due to limitations in architecture. 
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q1 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q1 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q1 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q1 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_1.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_2.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_3.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_4.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_5.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Sequential instance STAMP_6.spi.last_bit_rx[1] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":781:8:781:9|Sequential instance sb_sb_0.CORERESETP_0.sm1_areset_n_q1 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q2 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q2 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q2 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q2 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":781:8:781:9|Sequential instance sb_sb_0.CORERESETP_0.sm1_areset_n_clk_base is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":703:8:703:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF0_PERST_N_q3 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":719:8:719:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF1_PERST_N_q3 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":735:8:735:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF2_PERST_N_q3 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":751:8:751:9|Sequential instance sb_sb_0.CORERESETP_0.SDIF3_PERST_N_q3 is reduced to a combinational gate by constant propagation.
+@W: MO129 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1331:8:1331:9|Sequential instance sb_sb_0.CORERESETP_0.RESET_N_F2M_int is reduced to a combinational gate by constant propagation.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance DDR_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance SDIF_RELEASED_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance FDDR_CORE_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance SDIF0_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance SDIF0_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Removing sequential instance SDIF1_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Removing sequential instance SDIF1_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance SDIF2_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance SDIF2_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_PHY_RESET_N_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance SDIF3_CORE_RESET_N_0 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Removing sequential instance SynchronizerInterrupt (in view: work.MemorySynchronizer(arch)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Removing sequential instance ADCResync (in view: work.MemorySynchronizer(arch)) of type view:PrimLib.dffse(prim) because it does not drive other instances.
+@N: BN115 :"b:\hermess_spsoftware\microcontroller\component\work\sb_sb\sb_sb.vhd":743:0:743:11|Removing instance CORERESETP_0 (in view: work.sb_sb(rtl)) of type view:work.CoreResetP(rtl) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance INIT_DONE_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1134:8:1134:9|Removing sequential instance sdif0_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1193:8:1193:9|Removing sequential instance sdif1_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1252:8:1252:9|Removing sequential instance sdif2_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1311:8:1311:9|Removing sequential instance sdif3_state[0:3] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1059:8:1059:9|Removing sequential instance sm0_state[0:6] (in view: work.CoreResetP(rtl)) of type view:PrimLib.statemachine(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":922:8:922:9|Removing sequential instance CONFIG2_DONE_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":803:8:803:9|Removing sequential instance sdif0_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":814:8:814:9|Removing sequential instance sdif1_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":825:8:825:9|Removing sequential instance sdif2_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":836:8:836:9|Removing sequential instance sdif3_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Removing sequential instance sdif3_spll_lock_q2 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":908:8:908:9|Removing sequential instance CONFIG1_DONE_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif3_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif2_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif1_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":922:8:922:9|Removing sequential instance CONFIG2_DONE_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":803:8:803:9|Removing sequential instance sdif0_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":814:8:814:9|Removing sequential instance sdif1_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":825:8:825:9|Removing sequential instance sdif2_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":836:8:836:9|Removing sequential instance sdif3_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":936:8:936:9|Removing sequential instance sdif3_spll_lock_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":908:8:908:9|Removing sequential instance CONFIG1_DONE_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif0_core_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance ddr_settled_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif3_core_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif2_core_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif1_core_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance release_sdif0_core_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1544:8:1544:9|Removing sequential instance ddr_settled_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1495:8:1495:9|Removing sequential instance release_sdif3_core (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1471:8:1471:9|Removing sequential instance release_sdif2_core (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1447:8:1447:9|Removing sequential instance release_sdif1_core (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1423:8:1423:9|Removing sequential instance release_sdif0_core (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":1519:8:1519:9|Removing sequential instance ddr_settled (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":770:8:770:9|Removing sequential instance sm0_areset_n_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":894:8:894:9|Removing sequential instance sdif3_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":883:8:883:9|Removing sequential instance sdif2_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":872:8:872:9|Removing sequential instance sdif1_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":861:8:861:9|Removing sequential instance sdif0_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":770:8:770:9|Removing sequential instance sm0_areset_n_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":850:8:850:9|Removing sequential instance sm0_areset_n_rcosc (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":894:8:894:9|Removing sequential instance sdif3_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":883:8:883:9|Removing sequential instance sdif2_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":872:8:872:9|Removing sequential instance sdif1_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":861:8:861:9|Removing sequential instance sdif0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":850:8:850:9|Removing sequential instance sm0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":608:8:608:9|Removing sequential instance MSS_HPMS_READY_int (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":593:8:593:9|Removing sequential instance mss_ready_select (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":593:8:593:9|Removing sequential instance mss_ready_state (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":577:8:577:9|Removing sequential instance FIC_2_APB_M_PRESET_N_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":565:8:565:9|Removing sequential instance RESET_N_M2F_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":577:8:577:9|Removing sequential instance FIC_2_APB_M_PRESET_N_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":565:8:565:9|Removing sequential instance RESET_N_M2F_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":553:8:553:9|Removing sequential instance POWER_ON_RESET_N_clk_base (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":553:8:553:9|Removing sequential instance POWER_ON_RESET_N_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: FX1184 |Applying syn_allowed_resources blockrams=21 on top level netlist sb 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 181MB peak: 181MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 185MB peak: 185MB)
 
 
 
@@ -148,7 +156,7 @@ Level     Clock                                       Frequency     Period      
 ----------------------------------------------------------------------------------------------------------------------------
 0 -       System                                      100.0 MHz     10.000        system       system_clkgroup         0    
                                                                                                                             
-0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     2784 
+0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     4236 
 ============================================================================================================================
 
 
@@ -156,21 +164,26 @@ Level     Clock                                       Frequency     Period      
 Clock Load Summary
 ***********************
 
-                                            Clock     Source                              Clock Pin                   Non-clock Pin     Non-clock Pin                 
-Clock                                       Load      Pin                                 Seq Example                 Seq Example       Comb Example                  
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-System                                      0         -                                   -                           -                 -                             
-                                                                                                                                                                      
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     2784      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_6.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
-======================================================================================================================================================================
+                                            Clock     Source                              Clock Pin                Non-clock Pin     Non-clock Pin                 
+Clock                                       Load      Pin                                 Seq Example              Seq Example       Comb Example                  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                      0         -                                   -                        -                 -                             
+                                                                                                                                                                   
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     4236      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     telemetry_0.PREADY.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
+===================================================================================================================================================================
 
-@W: MT530 :"c:\users\rg\documents\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock which controls 2784 sequential elements including MemorySynchronizer_0.TimeStampGen.counter[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"b:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found inferred clock sb_sb_CCC_0_FCCC|GL0_net_inferred_clock which controls 4236 sequential elements including MemorySynchronizer_0.TimeStampGen.counter[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
+@W: BN169 |Cyclic dependency detected among libraries: 
+  work
+  hermess_telemetry
+  work
+@W: BN170 :"b:\hermess_spsoftware\microcontroller\component\work\sb\sb.vhd":19:7:19:8|Cyclic dependencies among libraries found.
 Finished Pre Mapping Phase.
-@N: BN225 |Writing default property annotation file C:\Users\RG\Documents\MicroController\synthesis\sb.sap.
+@N: BN225 |Writing default property annotation file B:\HERMESS_SPSoftware\Microcontroller\synthesis\sb.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 178MB peak: 182MB)
+Starting constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 180MB peak: 186MB)
 
 Encoding state machine MemorySyncState[0:5] (in view: work.MemorySynchronizer(arch))
 original code -> new code
@@ -233,17 +246,51 @@ original code -> new code
    001000 -> 001000
    010000 -> 010000
    100000 -> 100000
+Encoding state machine current_state[0:3] (in view: dependency_lib.UART_TX(diagram))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"b:\hermess_spsoftware\microcontroller\hdl\uart_tx.vhd":49:0:49:1|There are no possible illegal states for state machine current_state[0:3] (in view: dependency_lib.UART_TX(diagram)); safe FSM implementation is not required.
+Encoding state machine current_state[0:3] (in view: dependency_lib.UART_RX(diagram))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"b:\hermess_spsoftware\microcontroller\hdl\uart_rx.vhd":41:0:41:1|There are no possible illegal states for state machine current_state[0:3] (in view: dependency_lib.UART_RX(diagram)); safe FSM implementation is not required.
+Encoding state machine UART_TX_State[0:5] (in view: hermess_telemetry.telemetry(arch))
+original code -> new code
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+Encoding state machine UART_RX_State[0:3] (in view: hermess_telemetry.telemetry(arch))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"b:\hermess_spsoftware\microcontroller\hdl\telemetry.vhd":172:4:172:5|There are no possible illegal states for state machine UART_RX_State[0:3] (in view: hermess_telemetry.telemetry(arch)); safe FSM implementation is not required.
+Encoding state machine APBState[0:2] (in view: hermess_telemetry.telemetry(arch))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 183MB peak: 183MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 187MB peak: 187MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 185MB peak: 185MB)
+Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 190MB peak: 190MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 99MB peak: 186MB)
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 103MB peak: 190MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:02s cputime
-# Thu Jan  6 15:07:47 2022
+Process took 0h:00m:03s realtime, 0h:00m:03s cputime
+# Mon Feb 14 21:51:23 2022
 
 ###########################################################]

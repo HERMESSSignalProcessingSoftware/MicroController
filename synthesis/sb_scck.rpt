@@ -9,14 +9,14 @@ Build: R-2021.03M
 Install: C:\Microsemi\Libero_SoC_v2021.2\SynplifyPro
 OS: Windows 6.2
 
-Hostname: DESKTOP-JON32I6
+Hostname: DESKTOP-NH8R733
 
 Implementation : synthesis
 
-# Written on Thu Jan  6 15:07:45 2022
+# Written on Mon Feb 14 21:51:20 2022
 
 ##### FILES SYNTAX CHECKED ##############################################
-Constraint File(s):      "C:\Users\RG\Documents\MicroController\designer\sb\synthesis.fdc"
+Constraint File(s):      "B:\HERMESS_SPSoftware\Microcontroller\designer\sb\synthesis.fdc"
 
 #Run constraint checker to find more issues with constraints.
 #########################################################################
@@ -35,17 +35,17 @@ Level     Clock                                       Frequency     Period      
 ----------------------------------------------------------------------------------------------------------------------------
 0 -       System                                      100.0 MHz     10.000        system       system_clkgroup         0    
                                                                                                                             
-0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     2784 
+0 -       sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     4236 
 ============================================================================================================================
 
 
 Clock Load Summary
 ******************
 
-                                            Clock     Source                              Clock Pin                   Non-clock Pin     Non-clock Pin                 
-Clock                                       Load      Pin                                 Seq Example                 Seq Example       Comb Example                  
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-System                                      0         -                                   -                           -                 -                             
-                                                                                                                                                                      
-sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     2784      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     STAMP_6.apb_is_atomic.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
-======================================================================================================================================================================
+                                            Clock     Source                              Clock Pin                Non-clock Pin     Non-clock Pin                 
+Clock                                       Load      Pin                                 Seq Example              Seq Example       Comb Example                  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                      0         -                                   -                        -                 -                             
+                                                                                                                                                                   
+sb_sb_CCC_0_FCCC|GL0_net_inferred_clock     4236      sb_sb_0.CCC_0.CCC_INST.GL0(CCC)     telemetry_0.PREADY.C     -                 sb_sb_0.CCC_0.GL0_INST.I(BUFG)
+===================================================================================================================================================================

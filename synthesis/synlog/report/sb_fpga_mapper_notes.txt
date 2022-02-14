@@ -1,39 +1,32 @@
 @N: MF916 |Option synthesis_strategy=base is enabled. 
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: MO106 :"c:\users\rg\documents\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_10[6:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 7 bits.
-@N: MO231 :"c:\users\rg\documents\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found counter in view:work.MemorySynchronizer(arch) instance TimeStampGen.counter[31:0] 
+@N: MO106 :"b:\hermess_spsoftware\microcontroller\component\actel\directcore\coreapb3\4.1.100\rtl\vhdl\core\coreapb3.vhd":648:12:648:15|Found ROM iPSELS_raw_11[7:0] (in view: coreapb3_lib.CoreAPB3(coreapb3_arch)) with 16 words by 8 bits.
+@N: MO231 :"b:\hermess_spsoftware\microcontroller\hdl\timestamp.vhd":46:8:46:9|Found counter in view:work.MemorySynchronizer(arch) instance TimeStampGen.counter[31:0] 
 @N: MF179 :|Found 32 by 32 bit equality operator ('==') un120_in_enable (in view: work.MemorySynchronizer(arch))
-@N: MF179 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":400:28:400:60|Found 32 by 32 bit equality operator ('==') un112_in_enable (in view: work.MemorySynchronizer(arch))
-@N: MO231 :"c:\users\rg\documents\microcontroller\hdl\stamp.vhd":203:8:203:9|Found counter in view:work.STAMP(architecture_stamp) instance delay_counter[27:0] 
-@N: MO231 :"c:\users\rg\documents\microcontroller\hdl\stamp.vhd":203:8:203:9|Found counter in view:work.STAMP(architecture_stamp) instance status_async_cycles[5:0] 
-@N: MO231 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance clk_toggles[5:0] 
-@N: MO231 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance count[31:0] 
-@N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_1.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_2.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_3.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_4.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_5.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\rg\documents\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_6.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[1] (in view: work.sb(rtl)) with 6 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[0] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[2] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[3] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[4] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[5] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[6] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[7] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[8] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[9] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[10] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[11] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[12] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[13] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[14] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[15] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[16] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FX271 :"c:\users\rg\documents\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[17] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
-@N: FP130 |Promoting Net AND2_0_Y_arst on CLKINT  MemorySynchronizer_0.un120_in_enable_0_I_1_1618 
+@N: MF179 :"b:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":400:28:400:60|Found 32 by 32 bit equality operator ('==') un112_in_enable (in view: work.MemorySynchronizer(arch))
+@N: MO231 :"b:\hermess_spsoftware\microcontroller\hdl\stamp.vhd":203:8:203:9|Found counter in view:work.STAMP(architecture_stamp) instance delay_counter[27:0] 
+@N: MO231 :"b:\hermess_spsoftware\microcontroller\hdl\stamp.vhd":203:8:203:9|Found counter in view:work.STAMP(architecture_stamp) instance status_async_cycles[5:0] 
+@N: MO231 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance clk_toggles[5:0] 
+@N: MO231 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Found counter in view:work.spi_master(logic) instance count[31:0] 
+@N: MO225 :"b:\hermess_spsoftware\microcontroller\hdl\telemetry.vhd":172:4:172:5|There are no possible illegal states for state machine UART_RX_State[0:3] (in view: hermess_telemetry.telemetry(arch)); safe FSM implementation is not required.
+@N: MO231 :"b:\hermess_spsoftware\microcontroller\hdl\telemetry.vhd":172:4:172:5|Found counter in view:hermess_telemetry.telemetry(arch) instance byte_counter[4:0] 
+@N: MO231 :"b:\hermess_spsoftware\microcontroller\hdl\telemetry.vhd":172:4:172:5|Found counter in view:hermess_telemetry.telemetry(arch) instance gap_counter[31:0] 
+@N: MO225 :"b:\hermess_spsoftware\microcontroller\hdl\uart_tx.vhd":49:0:49:1|There are no possible illegal states for state machine current_state[0:3] (in view: work.UART_TX(diagram)); safe FSM implementation is not required.
+@N: MO231 :"b:\hermess_spsoftware\microcontroller\hdl\uart_tx.vhd":49:0:49:1|Found counter in view:work.UART_TX(diagram) instance count_clk[31:0] 
+@N: MO225 :"b:\hermess_spsoftware\microcontroller\hdl\uart_rx.vhd":41:0:41:1|There are no possible illegal states for state machine current_state[0:3] (in view: work.UART_RX(diagram)); safe FSM implementation is not required.
+@N: MO231 :"b:\hermess_spsoftware\microcontroller\hdl\uart_rx.vhd":41:0:41:1|Found counter in view:work.UART_RX(diagram) instance count_clk[31:0] 
+@N: MF179 :|Found 32 by 32 bit equality operator ('==') RX_state_machine\.un17_count_clk (in view: work.UART_RX(diagram))
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_1.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_2.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_3.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_4.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_5.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: BN362 :"b:\hermess_spsoftware\microcontroller\hdl\spi_master.vhd":74:4:74:5|Removing sequential instance STAMP_6.spi.continue (in view: work.sb(rtl)) because it does not drive other instances.
+@N: FX271 :"b:\hermess_spsoftware\microcontroller\hdl\telemetry.vhd":346:6:346:9|Replicating instance telemetry_0.receive_reg_7_sn_m9_0_a2 (in view: work.sb(rtl)) with 70 loads 3 times to improve timing.
+@N: FX271 :"b:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[1] (in view: work.sb(rtl)) with 6 loads 1 time to improve timing.
+@N: FX271 :"b:\hermess_spsoftware\microcontroller\hdl\memorysynchronizer.vhd":284:8:284:9|Replicating instance MemorySynchronizer_0.WaitingTimerValueReg[0] (in view: work.sb(rtl)) with 5 loads 1 time to improve timing.
+@N: FP130 |Promoting Net AND2_0_Y_arst on CLKINT  I_3028 
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.

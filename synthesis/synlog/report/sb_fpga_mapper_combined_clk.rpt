@@ -7,13 +7,13 @@
 
 Clock optimization not enabled
 0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
-63 gated/generated clock tree(s) driving 2895 clock pin(s) of sequential element(s)
-0 instances converted, 2895 sequential instances remain driven by gated/generated clocks
+63 gated/generated clock tree(s) driving 4291 clock pin(s) of sequential element(s)
+0 instances converted, 4291 sequential instances remain driven by gated/generated clocks
 
 =================================================================================================== Gated/Generated Clocks ===================================================================================================
 Clock Tree ID     Driving Element                                                      Drive Element Type     Fanout     Sample Instance                           Explanation                                                
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       sb_sb_0.CCC_0.CCC_INST                                               CCC                    2833       sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST        No gated clock conversion method for cell cell:work.MSS_010
+@K:CKID0001       sb_sb_0.CCC_0.CCC_INST                                               CCC                    4229       sb_sb_0.sb_sb_MSS_0.MSS_ADLIB_INST        No gated clock conversion method for cell cell:work.MSS_010
 @K:CKID0002       MemorySynchronizer_0.un1_ResetTimerValueReg_57                       CFG2                   1          MemorySynchronizer_0.un1_nreset_29_rs     No gated clock conversion method for cell cell:ACG4.SLE    
 @K:CKID0003       MemorySynchronizer_0.un1_ResetTimerValueReg_31                       CFG2                   1          MemorySynchronizer_0.un1_nreset_11_rs     No gated clock conversion method for cell cell:ACG4.SLE    
 @K:CKID0004       MemorySynchronizer_0.un1_ResetTimerValueReg_53                       CFG2                   1          MemorySynchronizer_0.un1_nreset_9_rs      No gated clock conversion method for cell cell:ACG4.SLE    
