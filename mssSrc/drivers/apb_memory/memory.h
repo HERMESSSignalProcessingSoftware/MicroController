@@ -228,7 +228,7 @@ void writeReady(SPI_Values);
  * @param SRlocals missing three bits covering SODS SOE and LO signals to save them to memory
  * @return uint32_t the value of SR1 for interrupt reason examination after copying the data
  */
-uint32_t CopyDataFabricToMaster(uint8_t *puffer, Telemmetry_t *telFrame, uint32_t SRlocals);
+uint32_t CopyDataFabricToMaster(uint8_t *puffer, Telemetry_t *telFrame, uint32_t SRlocals);
 
 /**
  * Writes a given number of bytes to the spi device; you may use this for partial page writing

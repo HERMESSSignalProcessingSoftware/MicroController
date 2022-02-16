@@ -18,12 +18,12 @@
 #include "drivers/mss_spi/mss_spi.h"
 #include "components/HERMESS.h"
 
-
 /**
  * @brief Use this 32 bit value to add the missing three bits into the SR1 from the fabric before saving them.
  */
 static volatile uint32_t StatusRegisterLocals = 0x0;
 uint32_t mssSignals = 0;
+Telemetry_t  telemetryFrame = { 0 };
 /**
  * SODS: T - 120s <-> T + 500s = 620s  (critical)
  * SOE: T - 180s <-> T + 500s = 680s
@@ -33,17 +33,17 @@ uint32_t mssSignals = 0;
 /**
  * TODO:
  * - Implement LED_FPGA_LOADED behaviour
- * - Test telemetry, 19200 BAUD, 8n1
  * - Implement SOE / LO handling
  * - Fix VHDL Stamp component
  * - Stamp1 SGR 1 failing
  * - Stamp2 SGR 1 missing
  * */
-int main (void) {
+int main(void) {
     uint32_t telemetryCounter = 0;
     uint32_t telemetryByteCounter = 0;
-    uint8_t *telemetryFramePtr = (uint8_t*)(&telemetryFrame);
+    uint8_t *telemetryFramePtr = (uint8_t*) (&telemetryFrame);
     uint32_t memSyncHeartbeatValue = 1;
+    Frame_t rx = {0};
     // Initialize driver components
     //SystemInit();
     MSS_WD_init();
@@ -113,8 +113,7 @@ int main (void) {
     metaDevice.spihandle = &g_mss_spi0;
 
     InitHeartbeat(1000); //heartbeat at 1s
-    telemetryFrame.statusReg1 = 0x0;
-    telemetryFrame.statusReg2 = 0x8000000;
+
     spuLog("Init DONE!\n");
     MSS_GPIO_set_output(LED_HEARTBEAT_MEMSYNC, 0);
     for (;;) {
@@ -132,7 +131,7 @@ int main (void) {
         /*Start recording here*/
         if ((mssSignals & MSS_SIGNAL_SODS)) {
             mssSignals &= ~(MSS_SIGNAL_SODS);
-            StatusRegisterLocals |=  (MSS_SIGNAL_SODS);
+            StatusRegisterLocals |= (MSS_SIGNAL_SODS);
             StartMemorySync();
             MSS_GPIO_set_output(LED_RECORDING, 1);
             delay(1);
@@ -144,12 +143,13 @@ int main (void) {
             StopMemorySync();
             MSS_GPIO_set_output(LED_RECORDING, 0);
             writeReady(metaDevice);
-            MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage, MemConfig.MetaAddress, metaDevice);
+            MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage,
+                    MemConfig.MetaAddress, metaDevice);
             delay(1);
         }
 
         if (mssSignals & MSS_SIGNAL_DAPI_CMD) {
-           // mssSignals &= ~(MSS_SIGNAL_DAPI_CMD);
+            // mssSignals &= ~(MSS_SIGNAL_DAPI_CMD);
             dapiExecutePendingCommand();
         }
 
@@ -172,9 +172,11 @@ int main (void) {
              * */
             if (MemConfig.MetaAddress < START_OF_DATA_SEGMENT) {
                 writeReady(metaDevice);
-                MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage, MemConfig.MetaAddress, metaDevice);
+                MemConfig.MetaAddress = UpdateMetadata(MemConfig.CurrentPage,
+                        MemConfig.MetaAddress, metaDevice);
                 /* Memory synchronizer LED */
-                MSS_GPIO_set_output(LED_HEARTBEAT_MEMSYNC, memSyncHeartbeatValue);
+                MSS_GPIO_set_output(LED_HEARTBEAT_MEMSYNC,
+                        memSyncHeartbeatValue);
                 memSyncHeartbeatValue = ~(memSyncHeartbeatValue);
             }
             mssSignals &= ~(MSS_SIGNAL_UPDATE_META);
@@ -208,8 +210,8 @@ int main (void) {
                 if (MemConfig.MetaAddress < MemConfig.StartPage) {
                     /* TODO: implement and test killing behaviour*/
                 }
-                    /*Write32Bit(MemConfig.CurrentPage, MemConfig.MetaAddress,
-                            metaDevice);*/
+                /*Write32Bit(MemConfig.CurrentPage, MemConfig.MetaAddress,
+                 metaDevice);*/
                 /* Request killing the system */
                 // !!! TODO: Kill system here
             }
@@ -217,26 +219,24 @@ int main (void) {
             MemoryDatasetCounter++;
         }
 
-        //if (mssSignals & MSS_SIGNAL_TELEMETRY) {
-            if ((mssSignals & SIGNAL_TM_GAP) == 0) {
-                uint8_t *localPtr = (uint8_t*)&telemetryFrame;
-                while((mssSignals & MSS_SIGNAL_SPI_WRITE) == 0 && (telemetryCounter++ < 24)) {
-                    uint8_t value = localPtr[telemetryByteCounter++];
-                    TransmitByte(value);
-                }
-                //Check whether the counter or the signal was the reason to leave the loop
-                if (telemetryCounter >= 24) {
-                    telemetryCounter = 0;
-                    mssSignals |= SIGNAL_TM_GAP;
-                }
+        /* Telemetry functions below */
+        if (mssSignals & TX_ResetMSSTelemetryBuffer) {
+            mssSignals &= ~(TX_ResetMSSTelemetryBuffer);
+            ResetBuffer((uint8_t*)&telemetryFrame, 0, sizeof(Telemetry_t));
+            mssSignals |= TX_Finish_Signal;
+        }
+        if (mssSignals & (TX_Finish_Signal)) {
+            if (telemetryFrame.timestamp != 0x00) { // Check if the data was rewritten during a mem sync interrupt
+                mssSignals &= ~(TX_Finish_Signal);
+                LoadTXData(telemetryFrame);
+                StartTelemetry();
             }
-            if (telemetryByteCounter >= (FRAMESIZE - 1)) {
-                SetMemory((uint8_t*)&telemetryFrame, 0, sizeof(Telemmetry_t));
-                mssSignals &= ~(MSS_SIGNAL_TELEMETRY);
-                telemetryCounter = 0;
-                telemetryByteCounter = 0;
-            }
-        //}
+        }
+        if (mssSignals & RX_Receive_Signal) {
+            mssSignals &= ~(RX_Receive_Signal);
+            rx = RXData();
+            /* TODO: add interpreter here! */
+        }
 //
         // do nothing but toggle an led once in a while
         if (mssSignals & TIM2_HEARTBEAT_SIGNAL) {
@@ -254,7 +254,8 @@ int main (void) {
 // Handle Interrupts
 void FabricIrq0_IRQHandler(void) {
     /*At first read all data */
-    uint32_t SR1 = CopyDataFabricToMaster(MemoryPtr, &telemetryFrame,  StatusRegisterLocals);
+    uint32_t SR1 = CopyDataFabricToMaster(MemoryPtr, &telemetryFrame,
+            StatusRegisterLocals);
     uint32_t CR = HW_get_32bit_reg(MEMORY_REG(ConfigReg));
     if (SR1 & PENDING_SYNCHRONIZER_INTERRUPT) {
         mssSignals |= (MSS_SIGNAL_WRITE_AND_KILL);
@@ -297,12 +298,27 @@ void FabricIrq0_IRQHandler(void) {
     NVIC_ClearPendingIRQ(MEMORY_SYNC_IRQn);
 }
 
+void FabricIrq7_IRQHandler(void) {
+    /* Check interrupt source*/
+    uint32_t statusReg = TelemetryGetStatusRegister();
+    TelemetryClearInterrupts();
+    NVIC_ClearPendingIRQ(FabricIrq7_IRQn);
+    uint32_t configReg = TelemetryGetConfigRegister();
+
+    if (statusReg & STATUS_INTERRUPT_RX) {
+        mssSignals |= RX_Receive_Signal;
+    }
+
+    if (statusReg & STATUS_INTERRUPT_TX) {
+        mssSignals |= TX_ResetMSSTelemetryBuffer;
+    }
+}
 
 /**
  * ISR: Will be called whenever a change of the RXSM-LO Signal occurs
  * and sets the appropriate flag for the main execution loop
  */
-void GPIO_HANDLER(IN_RXSM_LO) (void) {
+void GPIO_HANDLER(IN_RXSM_LO)(void) {
     if (MSS_GPIO_get_inputs() & (1 << IN_RXSM_LO)) {
         mssSignals |= MSS_SIGNAL_LO_RESET;
     } else {
@@ -311,12 +327,11 @@ void GPIO_HANDLER(IN_RXSM_LO) (void) {
     MSS_GPIO_clear_irq(IN_RXSM_LO);
 }
 
-
 /**
  * ISR: Will be called whenever a change of the RXSM-SODS Signal occurs
  * and sets the appropriate flag for the main execution loop
  */
-void GPIO_HANDLER(IN_RXSM_SODS) (void) {
+void GPIO_HANDLER(IN_RXSM_SODS)(void) {
     if (MSS_GPIO_get_inputs() & (1 << IN_RXSM_SODS)) {
         mssSignals |= MSS_SIGNAL_SODS_RESET;
         mssSignals |= MSS_SIGNAL_UPDATE_META;
@@ -326,12 +341,11 @@ void GPIO_HANDLER(IN_RXSM_SODS) (void) {
     MSS_GPIO_clear_irq(IN_RXSM_SODS);
 }
 
-
 /**
  * ISR: Will be called whenever a change of the RXSM-SOE Signal occurs
  * and sets the appropriate flag for the main execution loop
  */
-void GPIO_HANDLER(IN_RXSM_SOE) (void) {
+void GPIO_HANDLER(IN_RXSM_SOE)(void) {
     if (MSS_GPIO_get_inputs() & (1 << IN_RXSM_SOE)) {
         mssSignals |= MSS_SIGNAL_SOE_RESET;
         mssSignals |= MSS_SIGNAL_UPDATE_META;
@@ -341,7 +355,6 @@ void GPIO_HANDLER(IN_RXSM_SOE) (void) {
     MSS_GPIO_clear_irq(IN_RXSM_SOE);
 }
 
-
-void NMI_Handler (void) {
+void NMI_Handler(void) {
     MSS_WD_clear_timeout_irq();
 }

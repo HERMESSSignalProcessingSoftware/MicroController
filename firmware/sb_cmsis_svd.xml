@@ -2,7 +2,7 @@
 <device>
   <name>sb</name>
   <version>1.0</version>
-  <description>CMSIS description for sb.  Created by Microsemi SmartDesign on Tue Dec 28 12:59:59 2021</description>
+  <description>CMSIS description for sb.  Created by Microsemi SmartDesign on Wed Feb 16 19:42:22 2022</description>
   <addressUnitBits>8</addressUnitBits>
   <width>32</width>
   <peripherals>
@@ -69,6 +69,10 @@
     <peripheral>
       <name>STAMP_6</name>
       <baseAddress>0x50006000%0x30006000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>telemetry_0</name>
+      <baseAddress>0x50007000%0x30007000</baseAddress>
     </peripheral>
     <peripheral>
       <name>CACHE_BACKDOOR</name>
@@ -3702,10 +3706,6 @@
     <peripheral>
       <name>GPIO</name>
       <baseAddress>0x40013000</baseAddress>
-    </peripheral>
-    <peripheral>
-      <name>MMUART_1</name>
-      <baseAddress>0x40010000</baseAddress>
     </peripheral>
     <peripheral>
       <name>H2FINTERRUPT</name>

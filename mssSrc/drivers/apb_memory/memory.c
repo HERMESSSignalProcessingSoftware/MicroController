@@ -485,7 +485,7 @@ void writeReady(SPI_Values SPI_val) {
  * @param SRlocals missing three bits covering SODS SOE and LO signals to save them to memory
  * @return uint32_t the value of SR1 for interrupt reason examination after copying the data
  */
-uint32_t CopyDataFabricToMaster(uint8_t *puffer, Telemmetry_t *telFrame, uint32_t SRlocals) {
+uint32_t CopyDataFabricToMaster(uint8_t *puffer, Telemetry_t *telFrame, uint32_t SRlocals) {
     uint32_t SR1 = HW_get_32bit_reg(MEMORY_REG(SynchStatusReg));
     uint32_t local = 0;
     uint32_t *telFramePtr = (uint32_t*)(telFrame);

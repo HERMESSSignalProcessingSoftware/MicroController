@@ -43,6 +43,7 @@
 #define ADDR_STAMP_3                    0x50004000U
 #define ADDR_STAMP_4                    0x50005000U
 #define ADDR_STAMP_5                    0x50006000U
+#define ADDR_TELEMETRY                  0x50007000U
 
 /*-----------------------------------------------------------------------------
 * F2M INTERRUPTS (MSS_INT_F2M[x])
@@ -54,6 +55,7 @@
 #define F2M_INT_STAMP_3                 4
 #define F2M_INT_STAMP_4                 5
 #define F2M_INT_STAMP_5                 6
+#define F2M_INT_TELEMETRY               7
 
 #define MEMORY_SYNC_IRQn                FabricIrq0_IRQn
 

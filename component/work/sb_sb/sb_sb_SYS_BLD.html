@@ -188,7 +188,7 @@
                     </tr>
                     <tr>
                         <td>Package</td>
-                        <td>400 VF</td>
+                        <td>144 TQ</td>
                     </tr>
                     <tr>
                         <td>Speed Grade</td>
@@ -2266,11 +2266,11 @@
                     </tr>
                     <tr>
                         <td>GL1_IS_USED</td>
-                        <td>1</td>
+                        <td>0</td>
                     </tr>
                     <tr>
                         <td>GL1_OUT_0_FREQ</td>
-                        <td>4.096</td>
+                        <td/>
                     </tr>
                     <tr>
                         <td>GL2_IS_USED</td>
@@ -2382,11 +2382,11 @@
                     </tr>
                     <tr>
                         <td>WDOG_LOAD</td>
-                        <td>0x17D784</td>
+                        <td>0x2FAF080</td>
                     </tr>
                     <tr>
                         <td>WDOG_MODE</td>
-                        <td>MODE_RESET</td>
+                        <td>MODE_INTERRUPT</td>
                     </tr>
                     <tr>
                         <td>WDOG_MVRP</td>
@@ -3257,50 +3257,7 @@
                     </tr>
                     <tr>
                         <td>TX_RX_MUX</td>
-                        <td>MUX_IO</td>
-                    </tr>
-                    <tr>
-                        <td>USE_MODEM</td>
-                        <td>false</td>
-                    </tr>
-                </table>
-                <br/>
-                <div class="label">MM_UART_1</div>
-                <table class="sect2">
-                    <tr>
-                        <th>Name</th>
-                        <th>Subsystem</th>
-                        <th>Vendor</th>
-                        <th>Version</th>
-                    </tr>
-                    <tr>
-                        <td>SF2_MSS_UART</td>
-                        <td>MSS Peripherals</td>
-                        <td>Actel</td>
-                        <td>0.0.101</td>
-                    </tr>
-                </table>
-                <div class="sublabel">Configuration</div>
-                <table class="sect2">
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Value</th>
-                    </tr>
-                    <tr>
-                        <td>MODE</td>
-                        <td>MODE_ASYNC</td>
-                    </tr>
-                    <tr>
-                        <td>MODE_DUPLEX</td>
-                        <td>MODE_FULL</td>
-                    </tr>
-                    <tr>
-                        <td>MODEM_MUX</td>
-                        <td>MUX_IO</td>
-                    </tr>
-                    <tr>
-                        <td>TX_RX_MUX</td>
-                        <td>MUX_IO</td>
+                        <td>MUX_FABRIC</td>
                     </tr>
                     <tr>
                         <td>USE_MODEM</td>
@@ -3415,11 +3372,11 @@
                     </tr>
                     <tr>
                         <td>GPIO6_TYPE</td>
-                        <td>CONNECTION_FABRICA</td>
+                        <td>CONNECTION_IOA</td>
                     </tr>
                     <tr>
                         <td>GPIO6_USAGE</td>
-                        <td>USAGE_OUTPUT</td>
+                        <td>NOT_USED</td>
                     </tr>
                     <tr>
                         <td>GPIO7_FAB_CAPT</td>
@@ -3487,11 +3444,11 @@
                     </tr>
                     <tr>
                         <td>GPIO12_TYPE</td>
-                        <td>CONNECTION_IOA</td>
+                        <td>CONNECTION_FABRICA</td>
                     </tr>
                     <tr>
                         <td>GPIO12_USAGE</td>
-                        <td>NOT_USED</td>
+                        <td>USAGE_OUTPUT</td>
                     </tr>
                     <tr>
                         <td>GPIO13_FAB_CAPT</td>
@@ -3643,11 +3600,11 @@
                     </tr>
                     <tr>
                         <td>GPIO25_TYPE</td>
-                        <td>CONNECTION_IOA</td>
+                        <td>CONNECTION_FABRICB</td>
                     </tr>
                     <tr>
                         <td>GPIO25_USAGE</td>
-                        <td>NOT_USED</td>
+                        <td>USAGE_OUTPUT</td>
                     </tr>
                     <tr>
                         <td>GPIO26_FAB_CAPT</td>
@@ -3655,11 +3612,11 @@
                     </tr>
                     <tr>
                         <td>GPIO26_TYPE</td>
-                        <td>CONNECTION_IOA</td>
+                        <td>CONNECTION_FABRICB</td>
                     </tr>
                     <tr>
                         <td>GPIO26_USAGE</td>
-                        <td>NOT_USED</td>
+                        <td>USAGE_OUTPUT</td>
                     </tr>
                     <tr>
                         <td>GPIO27_FAB_CAPT</td>
@@ -3679,11 +3636,11 @@
                     </tr>
                     <tr>
                         <td>GPIO28_TYPE</td>
-                        <td>CONNECTION_IOA</td>
+                        <td>CONNECTION_FABRICB</td>
                     </tr>
                     <tr>
                         <td>GPIO28_USAGE</td>
-                        <td>NOT_USED</td>
+                        <td>USAGE_OUTPUT</td>
                     </tr>
                     <tr>
                         <td>GPIO29_FAB_CAPT</td>
@@ -3691,11 +3648,11 @@
                     </tr>
                     <tr>
                         <td>GPIO29_TYPE</td>
-                        <td>CONNECTION_IOA</td>
+                        <td>CONNECTION_FABRICB</td>
                     </tr>
                     <tr>
                         <td>GPIO29_USAGE</td>
-                        <td>NOT_USED</td>
+                        <td>USAGE_OUTPUT</td>
                     </tr>
                     <tr>
                         <td>GPIO30_FAB_CAPT</td>
@@ -3786,15 +3743,15 @@
                     </tr>
                     <tr>
                         <td>NB_SLAVES</td>
-                        <td>2</td>
+                        <td>1</td>
                     </tr>
                     <tr>
                         <td>SPI_MUX</td>
-                        <td>MUX_IO</td>
+                        <td>MUX_FABRIC</td>
                     </tr>
                 </table>
                 <br/>
-                <div class="label">Memory</div>
+                <div class="label">MemSync</div>
                 <table class="sect2">
                     <tr>
                         <th>Name</th>
@@ -3821,11 +3778,42 @@
                     </tr>
                     <tr>
                         <td>NUM_OF_INTERRUPTS</td>
-                        <td>0</td>
+                        <td>1</td>
                     </tr>
                 </table>
                 <br/>
                 <div class="label">STAMP</div>
+                <table class="sect2">
+                    <tr>
+                        <th>Name</th>
+                        <th>Subsystem</th>
+                        <th>Vendor</th>
+                        <th>Version</th>
+                    </tr>
+                    <tr>
+                        <td>AMBA_SLAVE</td>
+                        <td>MSS FIC_0 - MSS Master Subsystem</td>
+                        <td>Actel</td>
+                        <td>0.0.102</td>
+                    </tr>
+                </table>
+                <div class="sublabel">Configuration</div>
+                <table class="sect2">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>AMBA_INTERFACE_TYPE</td>
+                        <td>APB3</td>
+                    </tr>
+                    <tr>
+                        <td>NUM_OF_INTERRUPTS</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+                <br/>
+                <div class="label">Telemetry</div>
                 <table class="sect2">
                     <tr>
                         <th>Name</th>
@@ -3865,33 +3853,43 @@
                     </tr>
                     <tr>
                         <td>sb_sb_MSS_0:MSS_INT_F2M[0]</td>
+                        <td>MemSync_0</td>
+                        <td>MemSync_0_INTR_0_top</td>
+                    </tr>
+                    <tr>
+                        <td>sb_sb_MSS_0:MSS_INT_F2M[1]</td>
                         <td>STAMP_0</td>
                         <td>STAMP_0_INTR_0_top</td>
                     </tr>
                     <tr>
-                        <td>sb_sb_MSS_0:MSS_INT_F2M[1]</td>
+                        <td>sb_sb_MSS_0:MSS_INT_F2M[2]</td>
                         <td>STAMP_1</td>
                         <td>STAMP_1_INTR_0_top</td>
                     </tr>
                     <tr>
-                        <td>sb_sb_MSS_0:MSS_INT_F2M[2]</td>
+                        <td>sb_sb_MSS_0:MSS_INT_F2M[3]</td>
                         <td>STAMP_2</td>
                         <td>STAMP_2_INTR_0_top</td>
                     </tr>
                     <tr>
-                        <td>sb_sb_MSS_0:MSS_INT_F2M[3]</td>
+                        <td>sb_sb_MSS_0:MSS_INT_F2M[4]</td>
                         <td>STAMP_3</td>
                         <td>STAMP_3_INTR_0_top</td>
                     </tr>
                     <tr>
-                        <td>sb_sb_MSS_0:MSS_INT_F2M[4]</td>
+                        <td>sb_sb_MSS_0:MSS_INT_F2M[5]</td>
                         <td>STAMP_4</td>
                         <td>STAMP_4_INTR_0_top</td>
                     </tr>
                     <tr>
-                        <td>sb_sb_MSS_0:MSS_INT_F2M[5]</td>
+                        <td>sb_sb_MSS_0:MSS_INT_F2M[6]</td>
                         <td>STAMP_5</td>
                         <td>STAMP_5_INTR_0_top</td>
+                    </tr>
+                    <tr>
+                        <td>sb_sb_MSS_0:MSS_INT_F2M[7]</td>
+                        <td>Telemetry_0</td>
+                        <td>Telemetry_0_INTR_0_top</td>
                     </tr>
                 </table>
                 <br/>
@@ -3926,13 +3924,18 @@
                     </tr>
                     <tr>
                         <td>Connect Generic User Slave Peripheral</td>
-                        <td>Memory is a slave on FIC0_Master_Subsystem subsystem.
-Connect your peripheral to Memory bus interface pin in the top design.</td>
+                        <td>MemSync is a slave on FIC0_Master_Subsystem subsystem.
+Connect your peripheral to MemSync bus interface pin in the top design.</td>
                     </tr>
                     <tr>
                         <td>Connect Generic User Slave Peripheral</td>
                         <td>STAMP is a slave on FIC0_Master_Subsystem subsystem.
 Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
+                    </tr>
+                    <tr>
+                        <td>Connect Generic User Slave Peripheral</td>
+                        <td>Telemetry is a slave on FIC0_Master_Subsystem subsystem.
+Connect your peripheral to Telemetry bus interface pin in the top design.</td>
                     </tr>
                 </table>
                 <br/>
@@ -3950,46 +3953,6 @@ Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
                         <th>Description</th>
                     </tr>
                     <tr>
-                        <td>SPI_0_DI</td>
-                        <td>IN</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>SPI_0_DO</td>
-                        <td>OUT</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>SPI_0_CLK</td>
-                        <td>INOUT</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>SPI_0_SS0</td>
-                        <td>INOUT</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>MMUART_1_TXD</td>
-                        <td>OUT</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>MMUART_1_RXD</td>
-                        <td>IN</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>MMUART_0_TXD</td>
-                        <td>OUT</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>MMUART_0_RXD</td>
-                        <td>IN</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
                         <td>POWER_ON_RESET_N</td>
                         <td>OUT</td>
                         <td>-</td>
@@ -4005,8 +3968,8 @@ Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td>SPI_0_SS1</td>
-                        <td>OUT</td>
+                        <td>MemSync_0_INTR_0_top</td>
+                        <td>IN</td>
                         <td>-</td>
                     </tr>
                     <tr>
@@ -4040,7 +4003,12 @@ Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td>Memory</td>
+                        <td>Telemetry_0_INTR_0_top</td>
+                        <td>IN</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>MemSync</td>
                         <td>MIRROREDSLAVE</td>
                         <td>Slave bus interface pin on  FIC0_Master_Subsystem</td>
                     </tr>
@@ -4075,6 +4043,11 @@ Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
                         <td>Slave bus interface pin on  FIC0_Master_Subsystem</td>
                     </tr>
                     <tr>
+                        <td>Telemetry</td>
+                        <td>MIRROREDSLAVE</td>
+                        <td>Slave bus interface pin on  FIC0_Master_Subsystem</td>
+                    </tr>
+                    <tr>
                         <td>FIC_0_CLK</td>
                         <td>OUT</td>
                         <td>-</td>
@@ -4085,22 +4058,22 @@ Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
                         <td>Use this clock to drive peripherals in the FIC0_Slave_Subsystem or FIC0_Master_Subsystem</td>
                     </tr>
                     <tr>
-                        <td>FAB_CCC_GL1</td>
-                        <td>OUT</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>FAB_CCC_LOCK</td>
-                        <td>OUT</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
                         <td>MSS_READY</td>
                         <td>OUT</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>DEVRST_N</td>
+                        <td>IN</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>MMUART_0_TXD_M2F</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>MMUART_0_RXD_F2M</td>
                         <td>IN</td>
                         <td>-</td>
                     </tr>
@@ -4135,7 +4108,27 @@ Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td>GPIO_6_M2F</td>
+                        <td>GPIO_12_M2F</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>GPIO_25_M2F</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>GPIO_26_M2F</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>GPIO_28_M2F</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>GPIO_29_M2F</td>
                         <td>OUT</td>
                         <td>-</td>
                     </tr>
@@ -4146,6 +4139,41 @@ Connect your peripheral to STAMP_5 bus interface pin in the top design.</td>
                     </tr>
                     <tr>
                         <td>GPIO_31_M2F</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_DI_F2M</td>
+                        <td>IN</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_DO_M2F</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_CLK_F2M</td>
+                        <td>IN</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_CLK_M2F</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_SS0_F2M</td>
+                        <td>IN</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_SS0_M2F</td>
+                        <td>OUT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>SPI_0_SS0_M2F_OE</td>
                         <td>OUT</td>
                         <td>-</td>
                     </tr>

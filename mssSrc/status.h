@@ -43,7 +43,10 @@ extern "C" {
 #define MSS_MEMORY_ERASE            (1 << 16)
 
 #define MSS_SIGNAL_WRITE_AND_KILL   (1 << 20)
-
+/* Telemetry signals */
+#define TX_Finish_Signal            (1 << 21)
+#define RX_Receive_Signal           (1 << 22)
+#define TX_ResetMSSTelemetryBuffer  (1 << 23)
 
 /**
  * A variable to signal system states from ISR to main loop

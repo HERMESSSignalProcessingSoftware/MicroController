@@ -868,12 +868,12 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf,actgen_cxf"
 STATE="utd"
-TIME="1640694198"
-SIZE="2499"
+TIME="1645036742"
+SIZE="2304"
 ENDFILE
 VALUE "<project>\component\work\sb\sb.cxf,actgen_cxf"
 STATE="utd"
-TIME="1644871851"
+TIME="1645036945"
 SIZE="14813"
 ENDFILE
 VALUE "<project>\component\work\sb\sb.vhd,hdl"
@@ -1058,8 +1058,8 @@ SIZE="1254"
 ENDFILE
 VALUE "<project>\simulation\subsystem.bfm,sim"
 STATE="utd"
-TIME="1642013620"
-SIZE="975"
+TIME="1644871850"
+SIZE="1008"
 PARENT="<project>\component\work\sb\sb.cxf"
 PARENT="<project>\component\work\sb_sb\sb_sb.cxf"
 ENDFILE
@@ -1082,22 +1082,22 @@ PARENT="<project>\component\work\sb_sb_MSS\sb_sb_MSS.cxf"
 ENDFILE
 VALUE "<project>\synthesis\sb.so,so"
 STATE="utd"
-TIME="1642413311"
+TIME="1644871922"
 SIZE="216"
 ENDFILE
 VALUE "<project>\synthesis\sb.vm,syn_vm"
 STATE="utd"
-TIME="1642413311"
-SIZE="1983144"
+TIME="1644871920"
+SIZE="2951777"
 ENDFILE
 VALUE "<project>\synthesis\sb_syn.prj,prj"
 STATE="utd"
-TIME="1642413311"
-SIZE="4194"
+TIME="1644871922"
+SIZE="4455"
 ENDFILE
 VALUE "<project>\synthesis\sb_vm.sdc,syn_sdc"
 STATE="utd"
-TIME="1642413311"
+TIME="1644871920"
 SIZE="947"
 ENDFILE
 VALUE "<project>\synthesis\synwork\layer0.so,so"
@@ -1209,6 +1209,68 @@ VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\amba_bfm\b
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\amba_bfm\bfm_apbslaveext.vhd,tb_hdl"
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\amba_bfm\bfm_apbslave.vhd,tb_hdl"
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vhdl\test\user\testbench.vhd,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl5
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl6
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
 ENDLIST
 ENDLIST
 LIST "sb_sb_MSS::work"
@@ -1651,8 +1713,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v2021.2\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -1729,6 +1791,68 @@ ENDUsed_File_List
 ENDLIST
 LIST Impl6
 ideSYNTHESIS(<project>\synthesis\sb.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "sb_sb::work"
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl5
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl6
+ideSTIMULUS=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1938,10 +2062,12 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Generate FPGA Array Data:sb_init_config.xml
-SmartDesign;sb;0
+ReportsCurrentItem;Synthesize:sb_compile_netlist_hier_resources.csv
 StartPage;StartPage;0
-ACTIVEVIEW;Reports
+SmartDesign;DESIGN_FIRMWARE;0
+HDL;hdl\telemetry.vhd;0
+SmartDesign;sb;0
+ACTIVEVIEW;hdl\telemetry.vhd
 ENDLIST
 LIST ModuleSubBlockList
 LIST "CORE16550_C0::work","component\work\CORE16550_C0\CORE16550_C0.vhd","TRUE","FALSE"
