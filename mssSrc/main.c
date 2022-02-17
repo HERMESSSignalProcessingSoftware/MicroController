@@ -44,6 +44,7 @@ int main(void) {
     uint8_t *telemetryFramePtr = (uint8_t*) (&telemetryFrame);
     uint32_t memSyncHeartbeatValue = 1;
     Frame_t rx = {0};
+    RX_cmd_t rxCMD = NOP;
     // Initialize driver components
     //SystemInit();
     MSS_WD_init();
@@ -235,6 +236,7 @@ int main(void) {
         if (mssSignals & RX_Receive_Signal) {
             mssSignals &= ~(RX_Receive_Signal);
             rx = RXData();
+            rxCMD = CMD_Parser(rx);
             /* TODO: add interpreter here! */
         }
 //

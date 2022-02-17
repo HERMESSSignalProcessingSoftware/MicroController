@@ -59,6 +59,15 @@ typedef struct {
     Frame_t frame4; /* 4 * 6 * 4 = */
 } Telemetry_Sending_t;
 
+typedef enum { ERASE, NOP } RX_cmd_t;
+
+/**
+ *
+ * @param rx
+ * @return
+ */
+RX_cmd_t CMD_Parser(Frame_t rx);
+
 /**
  *
  * @param data

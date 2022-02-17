@@ -8,6 +8,7 @@
 #include "telemetry.h"
 #include "../drivers/apb_telemetry/telemetry_driver.h"
 #include <stdint.h>
+#include "crc.h"
 
 Frame_t CreateFrame(uint32_t* ptr, uint32_t length)  {
     Frame_t frame = { 0 };
@@ -17,6 +18,7 @@ Frame_t CreateFrame(uint32_t* ptr, uint32_t length)  {
             framePtr[i] = ptr[i];
         }
     }
+    frame.endMeta = crc32((uint8_t*)framePtr, 16);
     return frame;
 }
 
@@ -74,4 +76,21 @@ Frame_t RXData(void) {
     }
     TelemetryWriteConfigReg(configReg | CONFIG_RESET_RX_BUFFER);
     return rxData;
+}
+
+RX_cmd_t CMD_Parser(Frame_t rx) {
+    uint32_t crc = crc32((uint8_t*)&(rx.data1), 16);
+    RX_cmd_t cmd = NOP;
+    if (crc == rx.endMeta) {
+        /*  RX data 2 == 0 */
+        if (rx.data3 == 0xAB && rx.data4 == 0x15) {
+            switch (rx.data1) {
+            case 0x01: {
+                cmd = ERASE;
+            } break;
+            default: break;
+            }
+        }
+    }
+    return cmd;
 }
