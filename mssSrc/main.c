@@ -17,6 +17,7 @@
 #include "drivers/apb_memory/memory.h"
 #include "drivers/mss_spi/mss_spi.h"
 #include "components/HERMESS.h"
+#include "components/storage.h"
 
 /**
  * @brief Use this 32 bit value to add the missing three bits into the SR1 from the fabric before saving them.
@@ -245,10 +246,10 @@ int main(void) {
             switch  (rxCMD) {
                 case ERASE: {
                     EraseMemory();
+                    telemetryFrame.statusReg2 |= MARKER_ERASE_DONE;
                 } break;
             default: break;
             }
-            /* TODO: add interpreter here! */
         }
 //
         // do nothing but toggle an led once in a while

@@ -67,10 +67,10 @@ extern "C" {
 
 #define PENDING_SYNCHRONIZER_INTERRUPT  (1 << 31)
 #define PENDING_READ_INTERRUPT          (1 << 30)
+#define LO_MARKER                       (1 << 29)
 #define PENDING_APB_ADDRESS_ERROR       (1 << 28)
 
 #define SODS_MARKER                     (1 << 27)
-#define LO_MARKER                       (1 << 29)
 #define SOE_MARKER                      (1 << 26)
 // SynchStatusReg
 //    --     31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0
@@ -95,6 +95,8 @@ extern "C" {
 //    --  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 //    -- U: Unused
 //    -- S1 5 bit counter; relative distance to the Timestamp value
+
+#define MARKER_ERASE_DONE   (1 << 31)
 
 #ifdef __cplusplus
 }
