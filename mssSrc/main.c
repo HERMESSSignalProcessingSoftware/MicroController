@@ -194,7 +194,9 @@ int main(void) {
         if ((mssSignals & MSS_SIGNAL_SPI_WRITE)
                 || (mssSignals & MSS_SIGNAL_WRITE_AND_KILL)) {
             writeReady(device);
-            writePage(MemoryPtr, PAGEADDR(MemConfig.CurrentPage), device);
+            if (MemConfig.CurrentPage <= 125000) {
+                writePage(MemoryPtr, PAGEADDR(MemConfig.CurrentPage), device);
+            }
             if (MemConfig.CurrentChipSelect == FLASH_CS2) {
                 MemConfig.CurrentPage++;
                 MemConfig.CurrentChipSelect = FLASH_CS1;
@@ -239,7 +241,7 @@ int main(void) {
             rxCMD = CMD_Parser(rx);
             switch  (rxCMD) {
                 case ERASE: {
-
+                    EraseMemory();
                 } break;
             default: break;
             }
