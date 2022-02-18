@@ -237,6 +237,12 @@ int main(void) {
             mssSignals &= ~(RX_Receive_Signal);
             rx = RXData();
             rxCMD = CMD_Parser(rx);
+            switch  (rxCMD) {
+                case ERASE: {
+
+                } break;
+            default: break;
+            }
             /* TODO: add interpreter here! */
         }
 //
