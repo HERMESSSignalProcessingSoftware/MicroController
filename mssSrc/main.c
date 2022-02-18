@@ -196,6 +196,9 @@ int main(void) {
             writeReady(device);
             if (MemConfig.CurrentPage <= 125000) {
                 writePage(MemoryPtr, PAGEADDR(MemConfig.CurrentPage), device);
+            } else {
+                StopMemorySync();
+                MSS_GPIO_set_output(LED_RECORDING, 0);
             }
             if (MemConfig.CurrentChipSelect == FLASH_CS2) {
                 MemConfig.CurrentPage++;
